@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KosakoDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="KosakoDBModelStoreContainer">
+    <EntitySet Name="Productos" EntityType="KosakoDBModel.Store.Productos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoProductos" EntityType="KosakoDBModel.Store.TipoProductos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Colegios" EntityType="KosakoDBModel.Store.Colegios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cajas" EntityType="KosakoDBModel.Store.Cajas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetalleCajas" EntityType="KosakoDBModel.Store.DetalleCajas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pedidos" EntityType="KosakoDBModel.Store.Pedidos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Producto_Pedidos" EntityType="KosakoDBModel.Store.Producto_Pedidos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Ventas" EntityType="KosakoDBModel.Store.Ventas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Producto_Ventas" EntityType="KosakoDBModel.Store.Producto_Ventas" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="TipoProductoProducto" Association="KosakoDBModel.Store.TipoProductoProducto">
+      <End Role="TipoProducto" EntitySet="TipoProductos" />
+      <End Role="Producto" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="ColegioProducto" Association="KosakoDBModel.Store.ColegioProducto">
+      <End Role="Colegio" EntitySet="Colegios" />
+      <End Role="Producto" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="CajaDetalleCaja" Association="KosakoDBModel.Store.CajaDetalleCaja">
+      <End Role="Caja" EntitySet="Cajas" />
+      <End Role="DetalleCaja" EntitySet="DetalleCajas" />
+    </AssociationSet>
+    <AssociationSet Name="ProductoProducto_Pedido" Association="KosakoDBModel.Store.ProductoProducto_Pedido">
+      <End Role="Producto" EntitySet="Productos" />
+      <End Role="Producto_Pedido" EntitySet="Producto_Pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="PedidoProducto_Pedido" Association="KosakoDBModel.Store.PedidoProducto_Pedido">
+      <End Role="Pedido" EntitySet="Pedidos" />
+      <End Role="Producto_Pedido" EntitySet="Producto_Pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="ProductoProducto_Venta" Association="KosakoDBModel.Store.ProductoProducto_Venta">
+      <End Role="Producto" EntitySet="Productos" />
+      <End Role="Producto_Venta" EntitySet="Producto_Ventas" />
+    </AssociationSet>
+    <AssociationSet Name="VentaProducto_Venta" Association="KosakoDBModel.Store.VentaProducto_Venta">
+      <End Role="Venta" EntitySet="Ventas" />
+      <End Role="Producto_Venta" EntitySet="Producto_Ventas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+    <Property Name="Extras" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TipoProductoId" Type="bigint" Nullable="false" />
+    <Property Name="ColegioId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoProductos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Colegios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cajas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TotalCaja" Type="decimal" Nullable="false" />
+    <Property Name="MontoApertura" Type="decimal" Nullable="false" />
+    <Property Name="MontoCierre" Type="decimal" Nullable="false" />
+    <Property Name="FechaApertura" Type="datetime" Nullable="false" />
+    <Property Name="FechaCierre" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleCajas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Total" Type="decimal" Nullable="false" />
+    <Property Name="CajaId" Type="bigint" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pedidos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Total" Type="decimal" Nullable="false" />
+    <Property Name="Adelanto" Type="decimal" Nullable="false" />
+    <Property Name="FechaPedido" Type="datetime" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Proceso" Type="bigint" Nullable="false" />
+    <Property Name="FechaEntrega" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producto_Pedidos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductoId" Type="bigint" Nullable="false" />
+    <Property Name="PedidoId" Type="bigint" Nullable="false" />
+    <Property Name="Estado" Type="bigint" Nullable="false" />
+    <Property Name="Cantidad" Type="decimal" Nullable="false" />
+    <Property Name="Talle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ventas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Total" Type="decimal" Nullable="false" />
+    <Property Name="Descuento" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Producto_Ventas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductoId" Type="bigint" Nullable="false" />
+    <Property Name="VentaId" Type="bigint" Nullable="false" />
+    <Property Name="Estado" Type="bigint" Nullable="false" />
+    <Property Name="Cantidad" Type="decimal" Nullable="false" />
+    <Property Name="Talle" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="TipoProductoProducto">
+    <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
+    <End Role="Producto" Type="KosakoDBModel.Store.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProducto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="TipoProductoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ColegioProducto">
+    <End Role="Colegio" Type="KosakoDBModel.Store.Colegios" Multiplicity="1" />
+    <End Role="Producto" Type="KosakoDBModel.Store.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Colegio">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="ColegioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CajaDetalleCaja">
+    <End Role="Caja" Type="KosakoDBModel.Store.Cajas" Multiplicity="1" />
+    <End Role="DetalleCaja" Type="KosakoDBModel.Store.DetalleCajas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Caja">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetalleCaja">
+        <PropertyRef Name="CajaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductoProducto_Pedido">
+    <End Role="Producto" Type="KosakoDBModel.Store.Productos" Multiplicity="1" />
+    <End Role="Producto_Pedido" Type="KosakoDBModel.Store.Producto_Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto_Pedido">
+        <PropertyRef Name="ProductoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PedidoProducto_Pedido">
+    <End Role="Pedido" Type="KosakoDBModel.Store.Pedidos" Multiplicity="1" />
+    <End Role="Producto_Pedido" Type="KosakoDBModel.Store.Producto_Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto_Pedido">
+        <PropertyRef Name="PedidoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductoProducto_Venta">
+    <End Role="Producto" Type="KosakoDBModel.Store.Productos" Multiplicity="1" />
+    <End Role="Producto_Venta" Type="KosakoDBModel.Store.Producto_Ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto_Venta">
+        <PropertyRef Name="ProductoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VentaProducto_Venta">
+    <End Role="Venta" Type="KosakoDBModel.Store.Ventas" Multiplicity="1" />
+    <End Role="Producto_Venta" Type="KosakoDBModel.Store.Producto_Ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Venta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto_Venta">
+        <PropertyRef Name="VentaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KosakoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="KosakoDBEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Productos" EntityType="KosakoDBModel.Producto" />
+          <EntitySet Name="TipoProductos" EntityType="KosakoDBModel.TipoProducto" />
+          <EntitySet Name="Colegios" EntityType="KosakoDBModel.Colegio" />
+          <EntitySet Name="Cajas" EntityType="KosakoDBModel.Caja" />
+          <EntitySet Name="DetalleCajas" EntityType="KosakoDBModel.DetalleCaja" />
+          <AssociationSet Name="TipoProductoProducto" Association="KosakoDBModel.TipoProductoProducto">
+            <End Role="TipoProducto" EntitySet="TipoProductos" />
+            <End Role="Producto" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="ColegioProducto" Association="KosakoDBModel.ColegioProducto">
+            <End Role="Colegio" EntitySet="Colegios" />
+            <End Role="Producto" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="CajaDetalleCaja" Association="KosakoDBModel.CajaDetalleCaja">
+            <End Role="Caja" EntitySet="Cajas" />
+            <End Role="DetalleCaja" EntitySet="DetalleCajas" />
+          </AssociationSet>
+          <EntitySet Name="Pedidos" EntityType="KosakoDBModel.Pedido" />
+          <EntitySet Name="Producto_Pedidos" EntityType="KosakoDBModel.Producto_Pedido" />
+          <AssociationSet Name="ProductoProducto_Pedido" Association="KosakoDBModel.ProductoProducto_Pedido">
+            <End Role="Producto" EntitySet="Productos" />
+            <End Role="Producto_Pedido" EntitySet="Producto_Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="PedidoProducto_Pedido" Association="KosakoDBModel.PedidoProducto_Pedido">
+            <End Role="Pedido" EntitySet="Pedidos" />
+            <End Role="Producto_Pedido" EntitySet="Producto_Pedidos" />
+          </AssociationSet>
+          <EntitySet Name="Ventas" EntityType="KosakoDBModel.Venta" />
+          <EntitySet Name="Producto_Ventas" EntityType="KosakoDBModel.Producto_Venta" />
+          <AssociationSet Name="ProductoProducto_Venta" Association="KosakoDBModel.ProductoProducto_Venta">
+            <End Role="Producto" EntitySet="Productos" />
+            <End Role="Producto_Venta" EntitySet="Producto_Ventas" />
+          </AssociationSet>
+          <AssociationSet Name="VentaProducto_Venta" Association="KosakoDBModel.VentaProducto_Venta">
+            <End Role="Venta" EntitySet="Ventas" />
+            <End Role="Producto_Venta" EntitySet="Producto_Ventas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <Property Name="Extras" Type="String" Nullable="false" />
+          <NavigationProperty Name="TipoProducto" Relationship="KosakoDBModel.TipoProductoProducto" FromRole="Producto" ToRole="TipoProducto" />
+          <Property Name="TipoProductoId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Colegio" Relationship="KosakoDBModel.ColegioProducto" FromRole="Producto" ToRole="Colegio" />
+          <Property Name="ColegioId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Producto_Pedido" Relationship="KosakoDBModel.ProductoProducto_Pedido" FromRole="Producto" ToRole="Producto_Pedido" />
+          <NavigationProperty Name="Producto_Venta" Relationship="KosakoDBModel.ProductoProducto_Venta" FromRole="Producto" ToRole="Producto_Venta" />
+        </EntityType>
+        <EntityType Name="TipoProducto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Producto" Relationship="KosakoDBModel.TipoProductoProducto" FromRole="TipoProducto" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Colegio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Producto" Relationship="KosakoDBModel.ColegioProducto" FromRole="Colegio" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Caja">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TotalCaja" Type="Decimal" Nullable="false" />
+          <Property Name="MontoApertura" Type="Decimal" Nullable="false" />
+          <Property Name="MontoCierre" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="DetalleCaja" Relationship="KosakoDBModel.CajaDetalleCaja" FromRole="Caja" ToRole="DetalleCaja" />
+          <Property Name="FechaApertura" Type="DateTime" Nullable="false" />
+          <Property Name="FechaCierre" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleCaja">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="Caja" Relationship="KosakoDBModel.CajaDetalleCaja" FromRole="DetalleCaja" ToRole="Caja" />
+          <Property Name="CajaId" Type="Int64" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <Association Name="TipoProductoProducto">
+          <End Type="KosakoDBModel.TipoProducto" Role="TipoProducto" Multiplicity="1" />
+          <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoProducto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="TipoProductoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ColegioProducto">
+          <End Type="KosakoDBModel.Colegio" Role="Colegio" Multiplicity="1" />
+          <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colegio">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="ColegioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CajaDetalleCaja">
+          <End Type="KosakoDBModel.Caja" Role="Caja" Multiplicity="1" />
+          <End Type="KosakoDBModel.DetalleCaja" Role="DetalleCaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Caja">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleCaja">
+              <PropertyRef Name="CajaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Pedido">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Total" Type="Decimal" Nullable="false" />
+          <Property Name="Adelanto" Type="Decimal" Nullable="false" />
+          <Property Name="FechaPedido" Type="DateTime" Nullable="false" />
+          <Property Name="Apellido" Type="String" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <NavigationProperty Name="Producto_Pedido" Relationship="KosakoDBModel.PedidoProducto_Pedido" FromRole="Pedido" ToRole="Producto_Pedido" />
+          <Property Name="Proceso" Type="KosakoDBModel.Proceso" Nullable="false" />
+          <Property Name="FechaEntrega" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Producto_Pedido">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Producto" Relationship="KosakoDBModel.ProductoProducto_Pedido" FromRole="Producto_Pedido" ToRole="Producto" />
+          <Property Name="ProductoId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Pedido" Relationship="KosakoDBModel.PedidoProducto_Pedido" FromRole="Producto_Pedido" ToRole="Pedido" />
+          <Property Name="PedidoId" Type="Int64" Nullable="false" />
+          <Property Name="Estado" Type="KosakoDBModel.EstadoPedido" Nullable="false" />
+          <Property Name="Cantidad" Type="Decimal" Nullable="false" />
+          <Property Name="Talle" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="ProductoProducto_Pedido">
+          <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="1" />
+          <End Type="KosakoDBModel.Producto_Pedido" Role="Producto_Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producto_Pedido">
+              <PropertyRef Name="ProductoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PedidoProducto_Pedido">
+          <End Type="KosakoDBModel.Pedido" Role="Pedido" Multiplicity="1" />
+          <End Type="KosakoDBModel.Producto_Pedido" Role="Producto_Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pedido">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producto_Pedido">
+              <PropertyRef Name="PedidoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="Proceso" UnderlyingType="Int64">
+          <Member Name="InicioPedido" Value="0" />
+          <Member Name="EsperandoRetiro" Value="1" />
+          <Member Name="PedidoTerminado" Value="2" />
+        </EnumType>
+        <EntityType Name="Venta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Nullable="false" />
+          <Property Name="Descuento" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="Producto_Venta" Relationship="KosakoDBModel.VentaProducto_Venta" FromRole="Venta" ToRole="Producto_Venta" />
+        </EntityType>
+        <EntityType Name="Producto_Venta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Producto" Relationship="KosakoDBModel.ProductoProducto_Venta" FromRole="Producto_Venta" ToRole="Producto" />
+          <Property Name="ProductoId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Venta" Relationship="KosakoDBModel.VentaProducto_Venta" FromRole="Producto_Venta" ToRole="Venta" />
+          <Property Name="VentaId" Type="Int64" Nullable="false" />
+          <Property Name="Estado" Type="KosakoDBModel.EstadoPedido" Nullable="false" />
+          <Property Name="Cantidad" Type="Decimal" Nullable="false" />
+          <Property Name="Talle" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="ProductoProducto_Venta">
+          <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="1" />
+          <End Type="KosakoDBModel.Producto_Venta" Role="Producto_Venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producto_Venta">
+              <PropertyRef Name="ProductoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VentaProducto_Venta">
+          <End Type="KosakoDBModel.Venta" Role="Venta" Multiplicity="1" />
+          <End Type="KosakoDBModel.Producto_Venta" Role="Producto_Venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Venta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producto_Venta">
+              <PropertyRef Name="VentaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="EstadoPedido" UnderlyingType="Int64">
+          <Member Name="Esperando" Value="0" />
+          <Member Name="Terminado" Value="1" />
+        </EnumType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KosakoDBModelStoreContainer" CdmEntityContainer="KosakoDBEntities">
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Producto)">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+          <ScalarProperty Name="Extras" ColumnName="Extras" />
+          <ScalarProperty Name="TipoProductoId" ColumnName="TipoProductoId" />
+          <ScalarProperty Name="ColegioId" ColumnName="ColegioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoProductos">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.TipoProducto)">
+        <MappingFragment StoreEntitySet="TipoProductos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Colegios">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Colegio)">
+        <MappingFragment StoreEntitySet="Colegios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cajas">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Caja)">
+        <MappingFragment StoreEntitySet="Cajas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TotalCaja" ColumnName="TotalCaja" />
+          <ScalarProperty Name="MontoApertura" ColumnName="MontoApertura" />
+          <ScalarProperty Name="MontoCierre" ColumnName="MontoCierre" />
+          <ScalarProperty Name="FechaApertura" ColumnName="FechaApertura" />
+          <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleCajas">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.DetalleCaja)">
+        <MappingFragment StoreEntitySet="DetalleCajas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="CajaId" ColumnName="CajaId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedidos">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Pedido)">
+        <MappingFragment StoreEntitySet="Pedidos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Adelanto" ColumnName="Adelanto" />
+          <ScalarProperty Name="FechaPedido" ColumnName="FechaPedido" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Proceso" ColumnName="Proceso" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto_Pedidos">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Producto_Pedido)">
+        <MappingFragment StoreEntitySet="Producto_Pedidos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Talle" ColumnName="Talle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ventas">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Venta)">
+        <MappingFragment StoreEntitySet="Ventas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto_Ventas">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Producto_Venta)">
+        <MappingFragment StoreEntitySet="Producto_Ventas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+          <ScalarProperty Name="VentaId" ColumnName="VentaId" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Talle" ColumnName="Talle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,340 @@
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
+-- --------------------------------------------------
+-- Date Created: 04/25/2021 00:29:16
+-- Generated from EDMX file: C:\Users\joses\source\repos\KosakoJean\AccesoDatos\ModelBD.edmx
+-- --------------------------------------------------
+
+SET QUOTED_IDENTIFIER OFF;
+GO
+USE [KosakoDB];
+GO
+IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
+GO
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[FK_TipoProductoProducto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Productos] DROP CONSTRAINT [FK_TipoProductoProducto];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ColegioProducto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Productos] DROP CONSTRAINT [FK_ColegioProducto];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CajaDetalleCaja]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetalleCajas] DROP CONSTRAINT [FK_CajaDetalleCaja];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProductoProducto_Pedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Producto_Pedidos] DROP CONSTRAINT [FK_ProductoProducto_Pedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PedidoProducto_Pedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Producto_Pedidos] DROP CONSTRAINT [FK_PedidoProducto_Pedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProductoProducto_Venta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Producto_Ventas] DROP CONSTRAINT [FK_ProductoProducto_Venta];
+GO
+IF OBJECT_ID(N'[dbo].[FK_VentaProducto_Venta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Producto_Ventas] DROP CONSTRAINT [FK_VentaProducto_Venta];
+GO
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[Productos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Productos];
+GO
+IF OBJECT_ID(N'[dbo].[TipoProductos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TipoProductos];
+GO
+IF OBJECT_ID(N'[dbo].[Colegios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Colegios];
+GO
+IF OBJECT_ID(N'[dbo].[Cajas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Cajas];
+GO
+IF OBJECT_ID(N'[dbo].[DetalleCajas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DetalleCajas];
+GO
+IF OBJECT_ID(N'[dbo].[Pedidos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Pedidos];
+GO
+IF OBJECT_ID(N'[dbo].[Producto_Pedidos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Producto_Pedidos];
+GO
+IF OBJECT_ID(N'[dbo].[Ventas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Ventas];
+GO
+IF OBJECT_ID(N'[dbo].[Producto_Ventas]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Producto_Ventas];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'Productos'
+CREATE TABLE [dbo].[Productos] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [Precio] decimal(18,0)  NOT NULL,
+    [EstaEliminado] bit  NOT NULL,
+    [Extras] nvarchar(max)  NOT NULL,
+    [TipoProductoId] bigint  NOT NULL,
+    [ColegioId] bigint  NOT NULL
+);
+GO
+
+-- Creating table 'TipoProductos'
+CREATE TABLE [dbo].[TipoProductos] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [EstaEliminado] bit  NOT NULL
+);
+GO
+
+-- Creating table 'Colegios'
+CREATE TABLE [dbo].[Colegios] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [EstaEliminado] bit  NOT NULL
+);
+GO
+
+-- Creating table 'Cajas'
+CREATE TABLE [dbo].[Cajas] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [TotalCaja] decimal(18,0)  NOT NULL,
+    [MontoApertura] decimal(18,0)  NOT NULL,
+    [MontoCierre] decimal(18,0)  NOT NULL,
+    [FechaApertura] datetime  NOT NULL,
+    [FechaCierre] datetime  NOT NULL
+);
+GO
+
+-- Creating table 'DetalleCajas'
+CREATE TABLE [dbo].[DetalleCajas] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [Total] decimal(18,0)  NOT NULL,
+    [CajaId] bigint  NOT NULL,
+    [Fecha] datetime  NOT NULL
+);
+GO
+
+-- Creating table 'Pedidos'
+CREATE TABLE [dbo].[Pedidos] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Total] decimal(18,0)  NOT NULL,
+    [Adelanto] decimal(18,0)  NOT NULL,
+    [FechaPedido] datetime  NOT NULL,
+    [Apellido] nvarchar(max)  NOT NULL,
+    [Nombre] nvarchar(max)  NOT NULL,
+    [Proceso] bigint  NOT NULL,
+    [FechaEntrega] datetime  NOT NULL
+);
+GO
+
+-- Creating table 'Producto_Pedidos'
+CREATE TABLE [dbo].[Producto_Pedidos] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [ProductoId] bigint  NOT NULL,
+    [PedidoId] bigint  NOT NULL,
+    [Estado] bigint  NOT NULL,
+    [Cantidad] decimal(18,0)  NOT NULL,
+    [Talle] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'Ventas'
+CREATE TABLE [dbo].[Ventas] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Fecha] datetime  NOT NULL,
+    [Total] decimal(18,0)  NOT NULL,
+    [Descuento] decimal(18,0)  NOT NULL
+);
+GO
+
+-- Creating table 'Producto_Ventas'
+CREATE TABLE [dbo].[Producto_Ventas] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [ProductoId] bigint  NOT NULL,
+    [VentaId] bigint  NOT NULL,
+    [Estado] bigint  NOT NULL,
+    [Cantidad] decimal(18,0)  NOT NULL,
+    [Talle] nvarchar(max)  NOT NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [Id] in table 'Productos'
+ALTER TABLE [dbo].[Productos]
+ADD CONSTRAINT [PK_Productos]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'TipoProductos'
+ALTER TABLE [dbo].[TipoProductos]
+ADD CONSTRAINT [PK_TipoProductos]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Colegios'
+ALTER TABLE [dbo].[Colegios]
+ADD CONSTRAINT [PK_Colegios]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Cajas'
+ALTER TABLE [dbo].[Cajas]
+ADD CONSTRAINT [PK_Cajas]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'DetalleCajas'
+ALTER TABLE [dbo].[DetalleCajas]
+ADD CONSTRAINT [PK_DetalleCajas]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Pedidos'
+ALTER TABLE [dbo].[Pedidos]
+ADD CONSTRAINT [PK_Pedidos]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Producto_Pedidos'
+ALTER TABLE [dbo].[Producto_Pedidos]
+ADD CONSTRAINT [PK_Producto_Pedidos]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Ventas'
+ALTER TABLE [dbo].[Ventas]
+ADD CONSTRAINT [PK_Ventas]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Producto_Ventas'
+ALTER TABLE [dbo].[Producto_Ventas]
+ADD CONSTRAINT [PK_Producto_Ventas]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- Creating foreign key on [TipoProductoId] in table 'Productos'
+ALTER TABLE [dbo].[Productos]
+ADD CONSTRAINT [FK_TipoProductoProducto]
+    FOREIGN KEY ([TipoProductoId])
+    REFERENCES [dbo].[TipoProductos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TipoProductoProducto'
+CREATE INDEX [IX_FK_TipoProductoProducto]
+ON [dbo].[Productos]
+    ([TipoProductoId]);
+GO
+
+-- Creating foreign key on [ColegioId] in table 'Productos'
+ALTER TABLE [dbo].[Productos]
+ADD CONSTRAINT [FK_ColegioProducto]
+    FOREIGN KEY ([ColegioId])
+    REFERENCES [dbo].[Colegios]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ColegioProducto'
+CREATE INDEX [IX_FK_ColegioProducto]
+ON [dbo].[Productos]
+    ([ColegioId]);
+GO
+
+-- Creating foreign key on [CajaId] in table 'DetalleCajas'
+ALTER TABLE [dbo].[DetalleCajas]
+ADD CONSTRAINT [FK_CajaDetalleCaja]
+    FOREIGN KEY ([CajaId])
+    REFERENCES [dbo].[Cajas]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_CajaDetalleCaja'
+CREATE INDEX [IX_FK_CajaDetalleCaja]
+ON [dbo].[DetalleCajas]
+    ([CajaId]);
+GO
+
+-- Creating foreign key on [ProductoId] in table 'Producto_Pedidos'
+ALTER TABLE [dbo].[Producto_Pedidos]
+ADD CONSTRAINT [FK_ProductoProducto_Pedido]
+    FOREIGN KEY ([ProductoId])
+    REFERENCES [dbo].[Productos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProductoProducto_Pedido'
+CREATE INDEX [IX_FK_ProductoProducto_Pedido]
+ON [dbo].[Producto_Pedidos]
+    ([ProductoId]);
+GO
+
+-- Creating foreign key on [PedidoId] in table 'Producto_Pedidos'
+ALTER TABLE [dbo].[Producto_Pedidos]
+ADD CONSTRAINT [FK_PedidoProducto_Pedido]
+    FOREIGN KEY ([PedidoId])
+    REFERENCES [dbo].[Pedidos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PedidoProducto_Pedido'
+CREATE INDEX [IX_FK_PedidoProducto_Pedido]
+ON [dbo].[Producto_Pedidos]
+    ([PedidoId]);
+GO
+
+-- Creating foreign key on [ProductoId] in table 'Producto_Ventas'
+ALTER TABLE [dbo].[Producto_Ventas]
+ADD CONSTRAINT [FK_ProductoProducto_Venta]
+    FOREIGN KEY ([ProductoId])
+    REFERENCES [dbo].[Productos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProductoProducto_Venta'
+CREATE INDEX [IX_FK_ProductoProducto_Venta]
+ON [dbo].[Producto_Ventas]
+    ([ProductoId]);
+GO
+
+-- Creating foreign key on [VentaId] in table 'Producto_Ventas'
+ALTER TABLE [dbo].[Producto_Ventas]
+ADD CONSTRAINT [FK_VentaProducto_Venta]
+    FOREIGN KEY ([VentaId])
+    REFERENCES [dbo].[Ventas]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_VentaProducto_Venta'
+CREATE INDEX [IX_FK_VentaProducto_Venta]
+ON [dbo].[Producto_Ventas]
+    ([VentaId]);
+GO
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------

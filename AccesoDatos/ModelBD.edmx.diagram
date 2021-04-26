@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="92da8a38682443b788053d170fa1fef4" Name="Diagram1" >
+        <EntityTypeShape EntityType="KosakoDBModel.Producto" Width="1.5" PointX="2.5" PointY="1" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="KosakoDBModel.TipoProducto" Width="1.5" PointX="0.5" PointY="0.5" FillColor="Yellow" />
+        <EntityTypeShape EntityType="KosakoDBModel.Colegio" Width="1.5" PointX="0.5" PointY="2.5" FillColor="192, 192, 0" />
+        <EntityTypeShape EntityType="KosakoDBModel.Caja" Width="1.5" PointX="9.375" PointY="1" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="KosakoDBModel.DetalleCaja" Width="1.5" PointX="11.75" PointY="1" FillColor="Yellow" />
+        <AssociationConnector Association="KosakoDBModel.TipoProductoProducto" />
+        <AssociationConnector Association="KosakoDBModel.ColegioProducto" />
+        <AssociationConnector Association="KosakoDBModel.CajaDetalleCaja" />
+        <EntityTypeShape EntityType="KosakoDBModel.Pedido" Width="1.5" PointX="7.5" PointY="2.75" FillColor="Red" />
+        <EntityTypeShape EntityType="KosakoDBModel.Producto_Pedido" Width="1.875" PointX="4.625" PointY="3.25" FillColor="Blue" />
+        <AssociationConnector Association="KosakoDBModel.ProductoProducto_Pedido" />
+        <AssociationConnector Association="KosakoDBModel.PedidoProducto_Pedido" />
+        <EntityTypeShape EntityType="KosakoDBModel.Venta" Width="1.5" PointX="6.625" PointY="0.5" FillColor="Lime" />
+        <EntityTypeShape EntityType="KosakoDBModel.Producto_Venta" Width="1.5" PointX="4.5" PointY="0.5" FillColor="Blue" />
+        <AssociationConnector Association="KosakoDBModel.ProductoProducto_Venta" />
+        <AssociationConnector Association="KosakoDBModel.VentaProducto_Venta" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
