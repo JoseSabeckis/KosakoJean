@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/25/2021 00:29:16
+-- Date Created: 04/26/2021 16:21:45
 -- Generated from EDMX file: C:\Users\joses\source\repos\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -110,7 +110,8 @@ CREATE TABLE [dbo].[Cajas] (
     [MontoApertura] decimal(18,0)  NOT NULL,
     [MontoCierre] decimal(18,0)  NOT NULL,
     [FechaApertura] datetime  NOT NULL,
-    [FechaCierre] datetime  NOT NULL
+    [FechaCierre] datetime  NOT NULL,
+    [OpenClose] bigint  NOT NULL
 );
 GO
 

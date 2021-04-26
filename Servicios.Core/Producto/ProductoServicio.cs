@@ -13,7 +13,7 @@ namespace Servicios.Core.Producto
         public void Nuevo(ProductoDto dto)
         {
 
-            using (var context = new KosakoBDEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var nuevo = new AccesoDatos.Producto
                 {
@@ -34,7 +34,7 @@ namespace Servicios.Core.Producto
         public void Eliminar(long id)
         {
 
-            using (var context = new KosakoBDEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var producto = context.Productos.FirstOrDefault(x => x.Id == id);
 
@@ -46,7 +46,7 @@ namespace Servicios.Core.Producto
 
         public void Modificar(ProductoDto dto)
         {
-            using (var context = new KosakoBDEntities())
+            using (var context = new KosakoDBEntities())
             {
 
                 var producto = context.Productos.FirstOrDefault(x => x.Id == dto.Id);
@@ -64,7 +64,7 @@ namespace Servicios.Core.Producto
 
         public IEnumerable<ProductoDto> Buscar(string cadenaBuscar)
         {
-            using (var context = new KosakoBDEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var productos = context.Productos.AsNoTracking().Where(x => x.Descripcion.Contains(cadenaBuscar) && x.EstaEliminado == false)
                     .Select(x => new ProductoDto
@@ -88,7 +88,7 @@ namespace Servicios.Core.Producto
 
         public ProductoDto ObtenerPorId(long colegioId)
         {
-            using (var context = new KosakoBDEntities())
+            using (var context = new KosakoDBEntities())
             {
                 return context.Productos
                     .AsNoTracking()

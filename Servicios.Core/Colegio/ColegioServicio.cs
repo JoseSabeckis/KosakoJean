@@ -15,7 +15,7 @@ namespace Servicios.Core.Colegio
         public void Nuevo(ColegioDto colegioDto)
         {
 
-            using (var context = new KosakoBDEntities())//KosakoDBEntities
+            using (var context = new KosakoDBEntities())
             {
                 var nuevo = new AccesoDatos.Colegio
                 {
@@ -33,7 +33,7 @@ namespace Servicios.Core.Colegio
         public void Eliminar(long id)
         {
 
-            using (var context = new KosakoBDEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var producto = context.Colegios.FirstOrDefault(x => x.Id == id);
 
@@ -45,7 +45,7 @@ namespace Servicios.Core.Colegio
 
         public void Modificar(ColegioDto colegioDto)
         {
-            using(var context = new KosakoBDEntities())
+            using(var context = new KosakoDBEntities())
             {
 
                 var producto = context.Colegios.FirstOrDefault(x => x.Id == colegioDto.Id);
@@ -59,8 +59,7 @@ namespace Servicios.Core.Colegio
 
         public IEnumerable<ColegioDto> Buscar(string cadenaBuscar)
         {
-            //metadata=res://*/ModelBD.csdl|res://*/ModelBD.ssdl|res://*/ModelBD.msl;provider=System.Data.SqlClient
-            using (var context = new KosakoBDEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var productos = context.Colegios.AsNoTracking().Where(x => x.Descripcion.Contains(cadenaBuscar) && x.EstaEliminado == false)
                     .Select(x => new ColegioDto{
@@ -79,7 +78,7 @@ namespace Servicios.Core.Colegio
 
         public ColegioDto ObtenerPorId(long colegioId)
         {
-            using (var context = new KosakoBDEntities())
+            using (var context = new KosakoDBEntities())
             {
                 return context.Colegios
                     .AsNoTracking()

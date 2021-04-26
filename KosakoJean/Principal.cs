@@ -1,4 +1,5 @@
-﻿using Presentacion.Core.Colegio;
+﻿using Presentacion.Core.Caja;
+using Presentacion.Core.Colegio;
 using Presentacion.Core.Producto;
 using Presentacion.Core.TipoProducto;
 using System;
@@ -48,6 +49,18 @@ namespace KosakoJean
         {
             lblhora.Text = DateTime.Now.ToString("hh:mm:ss ");
             lblFecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void btnCajas_Click(object sender, EventArgs e)
+        {
+            var caja = new Caja();
+            caja.ShowDialog();
+        }
+
+        private void verCajasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var caja = new Caja();
+            caja.ShowDialog();
         }
     }
 }

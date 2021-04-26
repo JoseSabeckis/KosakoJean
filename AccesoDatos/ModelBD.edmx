@@ -82,6 +82,7 @@
     <Property Name="MontoCierre" Type="decimal" Nullable="false" />
     <Property Name="FechaApertura" Type="datetime" Nullable="false" />
     <Property Name="FechaCierre" Type="datetime" Nullable="false" />
+    <Property Name="OpenClose" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="DetalleCajas">
     <Key>
@@ -309,6 +310,7 @@
           <NavigationProperty Name="DetalleCaja" Relationship="KosakoDBModel.CajaDetalleCaja" FromRole="Caja" ToRole="DetalleCaja" />
           <Property Name="FechaApertura" Type="DateTime" Nullable="false" />
           <Property Name="FechaCierre" Type="DateTime" Nullable="false" />
+          <Property Name="OpenClose" Type="KosakoDBModel.OpenClose" Nullable="false" />
         </EntityType>
         <EntityType Name="DetalleCaja">
           <Key>
@@ -464,6 +466,10 @@
           <Member Name="Esperando" Value="0" />
           <Member Name="Terminado" Value="1" />
         </EnumType>
+        <EnumType Name="OpenClose" UnderlyingType="Int64">
+          <Member Name="Abierto" Value="0" />
+          <Member Name="Cerrado" Value="1" />
+        </EnumType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -510,6 +516,7 @@
           <ScalarProperty Name="MontoCierre" ColumnName="MontoCierre" />
           <ScalarProperty Name="FechaApertura" ColumnName="FechaApertura" />
           <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
+          <ScalarProperty Name="OpenClose" ColumnName="OpenClose" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

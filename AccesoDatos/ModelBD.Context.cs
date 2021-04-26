@@ -13,10 +13,10 @@ namespace AccesoDatos
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class KosakoBDEntities : DbContext
+    public partial class KosakoDBEntities : DbContext
     {
-        public KosakoBDEntities()
-            : base("name=KosakoBDEntities")//KosakoDBEntities
+        public KosakoDBEntities()
+            : base("name=KosakoDBEntities")
         {
         }
     

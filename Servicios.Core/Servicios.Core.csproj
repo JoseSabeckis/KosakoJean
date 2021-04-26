@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caja\CajaServicio.cs" />
+    <Compile Include="Caja\Dto\CajaDto.cs" />
+    <Compile Include="Caja\ICajaServicio.cs" />
     <Compile Include="Colegio\ColegioServicio.cs" />
     <Compile Include="Colegio\Dto\ColegioDto.cs" />
     <Compile Include="Colegio\IColegioServicio.cs" />
