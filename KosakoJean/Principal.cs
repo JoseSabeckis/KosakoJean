@@ -80,22 +80,14 @@ namespace KosakoJean
         {
             if (_cajaServicio.BuscarCajaAbiertaBool())
             {
-                btnAbrirCaja.Visible = true;
-            }
-
-            if (_cajaServicio.BuscarCajaAbiertaBool())
-            {
-                btnCerrarCaja.Visible = false;
-            }
-
-            if (_cajaServicio.BuscarCajaAbiertaBool())
-            {
                 btnAbrirCaja.Visible = false;
+                btnCerrarCaja.Visible = true;
             }
 
-            if (_cajaServicio.BuscarCajaAbiertaBool())
+            if (!_cajaServicio.BuscarCajaAbiertaBool())
             {
-                btnCerrarCaja.Visible = true;
+                btnAbrirCaja.Visible = true;
+                btnCerrarCaja.Visible = false;
             }
 
         }

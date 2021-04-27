@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CerrarCaja));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrarCaja = new System.Windows.Forms.Button();
+            this.txtCobrado = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btmVolver = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btmVolver = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.txtCobrado = new System.Windows.Forms.TextBox();
-            this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
@@ -59,6 +59,74 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(813, 130);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCerrarCaja
+            // 
+            this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarCaja.Location = new System.Drawing.Point(27, 75);
+            this.btnCerrarCaja.Name = "btnCerrarCaja";
+            this.btnCerrarCaja.Size = new System.Drawing.Size(147, 47);
+            this.btnCerrarCaja.TabIndex = 6;
+            this.btnCerrarCaja.Text = "Cerrar";
+            this.btnCerrarCaja.UseVisualStyleBackColor = false;
+            this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
+            // 
+            // txtCobrado
+            // 
+            this.txtCobrado.Enabled = false;
+            this.txtCobrado.Location = new System.Drawing.Point(365, 28);
+            this.txtCobrado.Name = "txtCobrado";
+            this.txtCobrado.Size = new System.Drawing.Size(162, 33);
+            this.txtCobrado.TabIndex = 5;
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(365, 75);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(162, 33);
+            this.txtTotal.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(256, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Cobrado";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(289, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Total";
+            // 
+            // btmVolver
+            // 
+            this.btmVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmVolver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmVolver.Location = new System.Drawing.Point(666, 16);
+            this.btmVolver.Name = "btmVolver";
+            this.btmVolver.Size = new System.Drawing.Size(133, 40);
+            this.btmVolver.TabIndex = 1;
+            this.btmVolver.Text = "Volver";
+            this.btmVolver.UseVisualStyleBackColor = true;
+            this.btmVolver.Click += new System.EventHandler(this.btmVolver_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Datos de Caja";
             // 
             // panel2
             // 
@@ -86,73 +154,6 @@
             this.dgvGrilla.Size = new System.Drawing.Size(809, 347);
             this.dgvGrilla.TabIndex = 11;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Datos de Caja";
-            // 
-            // btmVolver
-            // 
-            this.btmVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btmVolver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmVolver.Location = new System.Drawing.Point(666, 16);
-            this.btmVolver.Name = "btmVolver";
-            this.btmVolver.Size = new System.Drawing.Size(133, 40);
-            this.btmVolver.TabIndex = 1;
-            this.btmVolver.Text = "Volver";
-            this.btmVolver.UseVisualStyleBackColor = true;
-            this.btmVolver.Click += new System.EventHandler(this.btmVolver_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Total";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(256, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Cobrado";
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(365, 75);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(162, 33);
-            this.txtTotal.TabIndex = 4;
-            // 
-            // txtCobrado
-            // 
-            this.txtCobrado.Enabled = false;
-            this.txtCobrado.Location = new System.Drawing.Point(365, 28);
-            this.txtCobrado.Name = "txtCobrado";
-            this.txtCobrado.Size = new System.Drawing.Size(162, 33);
-            this.txtCobrado.TabIndex = 5;
-            // 
-            // btnCerrarCaja
-            // 
-            this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarCaja.Location = new System.Drawing.Point(27, 75);
-            this.btnCerrarCaja.Name = "btnCerrarCaja";
-            this.btnCerrarCaja.Size = new System.Drawing.Size(147, 47);
-            this.btnCerrarCaja.TabIndex = 6;
-            this.btnCerrarCaja.Text = "Cerrar";
-            this.btnCerrarCaja.UseVisualStyleBackColor = false;
-            // 
             // CerrarCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -163,7 +164,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimizeBox = false;
             this.Name = "CerrarCaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

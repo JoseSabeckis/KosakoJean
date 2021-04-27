@@ -1,5 +1,6 @@
 ﻿using Servicios.Core.Caja;
 using Servicios.Core.DetalleCaja;
+using Servicios.Core.DetalleCaja.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace Presentacion.Core.Caja
     {
         private readonly ICajaServicio _cajaServicio;
         private readonly IDetalleCajaServicio _detalleCajaServicio;
+
+        decimal _Total;
 
         public CerrarCaja()
         {
@@ -56,8 +59,7 @@ namespace Presentacion.Core.Caja
             grilla.Columns["Fecha"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["Fecha"].HeaderText = @"Fecha";
             grilla.Columns["Fecha"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["Fecha"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            
+            grilla.Columns["Fecha"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;          
 
         }
 
@@ -69,11 +71,31 @@ namespace Presentacion.Core.Caja
 
             txtCobrado.Text = $"$ {total}";
             txtTotal.Text = $"$ {complete.TotalCaja}";
+
+            _Total = total + complete.TotalCaja;
         }
 
         private void btmVolver_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnCerrarCaja_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta Seguro de Cerrar Caja?","Opcion",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var caja = new DetalleCajaDto
+                {
+                    Fecha = DateTime.Now,
+                    Total = _Total
+                };
+
+                _cajaServicio.CerrarCaja(caja.Total, caja.Fecha);
+
+                MessageBox.Show("Caja Cerrada, Exitosamente!", "Caja Cerrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
         }
     }
 }

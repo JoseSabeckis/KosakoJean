@@ -40,7 +40,7 @@ namespace Servicios.Core.Caja
 
                 caja.FechaCierre = fechaCierre;
                 caja.MontoCierre = montoCierre;
-
+                caja.OpenClose = OpenClose.Cerrado;
                 caja.TotalCaja = SumarCaja();
 
                 context.SaveChanges();
@@ -53,11 +53,18 @@ namespace Servicios.Core.Caja
             using (var context = new KosakoDBEntities())
             {
 
-                var detalles = context.Cajas.AsNoTracking().FirstOrDefault(x => x.OpenClose == OpenClose.Abierto);
+                var detalles = context.Cajas.FirstOrDefault(x => x.OpenClose == OpenClose.Abierto);
 
-                var completa = context.DetalleCajas.AsNoTracking().Where(x => x.CajaId == detalles.Id);
+                var completa = context.DetalleCajas.Where(x => x.CajaId == detalles.Id);
 
-                var total = completa.Sum(x => x.Total);
+                //var total2 = completa.Sum(x => x.Total);
+
+                decimal total = 0;
+
+                foreach (var item in completa)
+                {
+                    total += item.Total;
+                }
 
                 return total + detalles.MontoApertura;
 
