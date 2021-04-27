@@ -65,6 +65,12 @@
     <Compile Include="Producto\Dto\ProductoDto.cs" />
     <Compile Include="Producto\IProductoServicio.cs" />
     <Compile Include="Producto\ProductoServicio.cs" />
+    <Compile Include="Producto_Pedido\Dto\Producto_Pedido_Dto.cs" />
+    <Compile Include="Producto_Pedido\IProducto_Pedido_Servicio.cs" />
+    <Compile Include="Producto_Pedido\Producto_Pedido_Servicio.cs" />
+    <Compile Include="Producto_Venta\Dto\Producto_Venta_Dto.cs" />
+    <Compile Include="Producto_Venta\IProducto_Venta_Servicio.cs" />
+    <Compile Include="Producto_Venta\Producto_Venta_Servicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoProducto\Dto\TipoProductoDto.cs" />
     <Compile Include="TipoProducto\ITipoProducto.cs" />
@@ -87,6 +93,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
