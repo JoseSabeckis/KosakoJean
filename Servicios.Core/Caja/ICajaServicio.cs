@@ -17,10 +17,12 @@ namespace Servicios.Core.Caja
 
         void AbrirCaja(CajaDto cajaDto);
 
-        IEnumerable<CajaDto> BuscarCajasPorCierre(DateTime cierre);
+        IEnumerable<CajaDto> BuscarCajasPorCierre(DateTime desde, DateTime hasta);
 
-        IEnumerable<CajaDto> BuscarCajasPorApertura(DateTime apertura);
+        IEnumerable<CajaDto> BuscarCajasPorApertura(DateTime desde, DateTime hasta);
 
         IEnumerable<CajaDto> BuscarCajasPorMes();
+
+        decimal SumarCaja();
     }
 }

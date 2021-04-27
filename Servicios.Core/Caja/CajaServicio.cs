@@ -41,10 +41,26 @@ namespace Servicios.Core.Caja
                 caja.FechaCierre = fechaCierre;
                 caja.MontoCierre = montoCierre;
 
-                caja.TotalCaja = caja.MontoApertura + montoCierre;
+                caja.TotalCaja = SumarCaja();
 
                 context.SaveChanges();
          
+            }
+        }
+
+        public decimal SumarCaja()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var detalles = context.Cajas.AsNoTracking().FirstOrDefault(x => x.OpenClose == OpenClose.Abierto);
+
+                var completa = context.DetalleCajas.AsNoTracking().Where(x => x.CajaId == detalles.Id);
+
+                var total = completa.Sum(x => x.Total);
+
+                return total + detalles.MontoApertura;
+
             }
         }
 
@@ -77,11 +93,11 @@ namespace Servicios.Core.Caja
             }
         }
 
-        public IEnumerable<CajaDto> BuscarCajasPorApertura(DateTime apertura)
+        public IEnumerable<CajaDto> BuscarCajasPorApertura(DateTime desde, DateTime hasta)
         {
             using (var context = new KosakoDBEntities())
             {
-                return context.Cajas.AsNoTracking().Where(x => x.FechaApertura == apertura)
+                return context.Cajas.AsNoTracking().Where(x => x.FechaApertura >= desde && x.FechaApertura <= hasta)
                     .Select(x => new CajaDto
                     {
                         TotalCaja = x.TotalCaja,
@@ -96,11 +112,11 @@ namespace Servicios.Core.Caja
             }
         }
 
-        public IEnumerable<CajaDto> BuscarCajasPorCierre(DateTime cierre)
+        public IEnumerable<CajaDto> BuscarCajasPorCierre(DateTime desde, DateTime hasta)
         {
             using (var context = new KosakoDBEntities())
             {
-                return context.Cajas.AsNoTracking().Where(x => x.FechaCierre == cierre)
+                return context.Cajas.AsNoTracking().Where(x => x.FechaCierre >= desde && x.FechaCierre <= hasta)
                     .Select(x => new CajaDto
                     {
                         TotalCaja = x.TotalCaja,

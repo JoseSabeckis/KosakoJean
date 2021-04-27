@@ -30,6 +30,18 @@ namespace Presentacion.Core.Caja
             FormatearGrilla(dgvGrilla);
         }
 
+        public void VerCajaApertura(DateTime desde, DateTime hasta)
+        {
+            dgvGrilla.DataSource = _cajaServicio.BuscarCajasPorApertura(desde.Date, hasta.Date);
+            FormatearGrilla(dgvGrilla);
+        }
+
+        public void VerCajaCierre(DateTime desde, DateTime hasta)
+        {
+            dgvGrilla.DataSource = _cajaServicio.BuscarCajasPorCierre(desde.Date, hasta.Date);
+            FormatearGrilla(dgvGrilla);
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -81,7 +93,43 @@ namespace Presentacion.Core.Caja
 
         private void ckbApertura_CheckedChanged(object sender, EventArgs e)
         {
-            
+            if (ckbApertura.Checked == true)
+            {
+                ckbCierre.Checked = false;
+            }
+            else
+            {
+                ckbCierre.Checked = true;
+            }
+        }
+
+        private void ckbCierre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbCierre.Checked == true)
+            {
+                ckbApertura.Checked = false;
+            }
+            else
+            {
+                ckbApertura.Checked = true;
+            }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            if (ckbApertura.Checked == true)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
 }
