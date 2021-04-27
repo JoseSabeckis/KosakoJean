@@ -57,11 +57,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caja\AbrirCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\AbrirCaja.Designer.cs">
+      <DependentUpon>AbrirCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Caja\Caja.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Caja\Caja.Designer.cs">
       <DependentUpon>Caja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Caja\CerrarCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\CerrarCaja.Designer.cs">
+      <DependentUpon>CerrarCaja.cs</DependentUpon>
     </Compile>
     <Compile Include="Colegio\Colegio.cs">
       <SubType>Form</SubType>
@@ -107,6 +119,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{AD486CBC-66ED-4487-8E0D-EA84FAE7CDC1}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Presentacion\Presentacion.csproj">
       <Project>{06135006-ce83-4af2-b608-5e6ed19b4741}</Project>
       <Name>Presentacion</Name>
@@ -117,8 +133,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Caja\AbrirCaja.resx">
+      <DependentUpon>AbrirCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Caja\Caja.resx">
       <DependentUpon>Caja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\CerrarCaja.resx">
+      <DependentUpon>CerrarCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colegio\Colegio.resx">
       <DependentUpon>Colegio.cs</DependentUpon>

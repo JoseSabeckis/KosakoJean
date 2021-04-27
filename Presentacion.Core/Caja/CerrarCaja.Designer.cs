@@ -1,0 +1,192 @@
+﻿namespace Presentacion.Core.Caja
+{
+    partial class CerrarCaja
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CerrarCaja));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btmVolver = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtCobrado = new System.Windows.Forms.TextBox();
+            this.btnCerrarCaja = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnCerrarCaja);
+            this.panel1.Controls.Add(this.txtCobrado);
+            this.panel1.Controls.Add(this.txtTotal);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btmVolver);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(813, 130);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.dgvGrilla);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 130);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(813, 351);
+            this.panel2.TabIndex = 1;
+            // 
+            // dgvGrilla
+            // 
+            this.dgvGrilla.AllowUserToAddRows = false;
+            this.dgvGrilla.AllowUserToDeleteRows = false;
+            this.dgvGrilla.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvGrilla.Location = new System.Drawing.Point(0, 0);
+            this.dgvGrilla.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvGrilla.MultiSelect = false;
+            this.dgvGrilla.Name = "dgvGrilla";
+            this.dgvGrilla.ReadOnly = true;
+            this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGrilla.Size = new System.Drawing.Size(809, 347);
+            this.dgvGrilla.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(22, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(152, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Datos de Caja";
+            // 
+            // btmVolver
+            // 
+            this.btmVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmVolver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmVolver.Location = new System.Drawing.Point(666, 16);
+            this.btmVolver.Name = "btmVolver";
+            this.btmVolver.Size = new System.Drawing.Size(133, 40);
+            this.btmVolver.TabIndex = 1;
+            this.btmVolver.Text = "Volver";
+            this.btmVolver.UseVisualStyleBackColor = true;
+            this.btmVolver.Click += new System.EventHandler(this.btmVolver_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(289, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Total";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(256, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Cobrado";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(365, 75);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(162, 33);
+            this.txtTotal.TabIndex = 4;
+            // 
+            // txtCobrado
+            // 
+            this.txtCobrado.Enabled = false;
+            this.txtCobrado.Location = new System.Drawing.Point(365, 28);
+            this.txtCobrado.Name = "txtCobrado";
+            this.txtCobrado.Size = new System.Drawing.Size(162, 33);
+            this.txtCobrado.TabIndex = 5;
+            // 
+            // btnCerrarCaja
+            // 
+            this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarCaja.Location = new System.Drawing.Point(27, 75);
+            this.btnCerrarCaja.Name = "btnCerrarCaja";
+            this.btnCerrarCaja.Size = new System.Drawing.Size(147, 47);
+            this.btnCerrarCaja.TabIndex = 6;
+            this.btnCerrarCaja.Text = "Cerrar";
+            this.btnCerrarCaja.UseVisualStyleBackColor = false;
+            // 
+            // CerrarCaja
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(813, 481);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MinimizeBox = false;
+            this.Name = "CerrarCaja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Cerrar Caja";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.DataGridView dgvGrilla;
+        private System.Windows.Forms.TextBox txtCobrado;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btmVolver;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCerrarCaja;
+    }
+}

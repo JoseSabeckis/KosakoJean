@@ -9,9 +9,13 @@ namespace Servicios.Core.Caja
 {
     public interface ICajaServicio
     {
+        CajaDto BuscarCajasId(long id);
+
         IEnumerable<CajaDto> BuscarCajas();
 
         long BuscarCajaAbierta();
+
+        bool BuscarCajaAbiertaBool();
 
         void CerrarCaja(decimal montoCierre, DateTime fechaCierre);
 

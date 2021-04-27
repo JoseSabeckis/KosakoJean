@@ -2,6 +2,7 @@
 using Presentacion.Core.Colegio;
 using Presentacion.Core.Producto;
 using Presentacion.Core.TipoProducto;
+using Servicios.Core.Caja;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,13 @@ namespace KosakoJean
 {
     public partial class Principal : Form
     {
+        private readonly ICajaServicio _cajaServicio;
+
         public Principal()
         {
             InitializeComponent();
+
+            _cajaServicio = new CajaServicio();
         }
 
         private void verColegiosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,6 +66,51 @@ namespace KosakoJean
         {
             var caja = new Caja();
             caja.ShowDialog();
+        }
+
+        private void btnAbrirCaja_Click(object sender, EventArgs e)
+        {
+            var abrir = new AbrirCaja();
+            abrir.ShowDialog();
+
+            ValidarCajas();
+        }
+
+        public void ValidarCajas()
+        {
+            if (_cajaServicio.BuscarCajaAbiertaBool())
+            {
+                btnAbrirCaja.Visible = true;
+            }
+
+            if (_cajaServicio.BuscarCajaAbiertaBool())
+            {
+                btnCerrarCaja.Visible = false;
+            }
+
+            if (_cajaServicio.BuscarCajaAbiertaBool())
+            {
+                btnAbrirCaja.Visible = false;
+            }
+
+            if (_cajaServicio.BuscarCajaAbiertaBool())
+            {
+                btnCerrarCaja.Visible = true;
+            }
+
+        }
+
+        private void btnCerrarCaja_Click(object sender, EventArgs e)
+        {
+            var cerrar = new CerrarCaja();
+            cerrar.ShowDialog();
+
+            ValidarCajas();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+            ValidarCajas();
         }
     }
 }

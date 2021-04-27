@@ -38,6 +38,8 @@
             this.verTiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colegioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verColegiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verCajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -45,15 +47,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCajas = new System.Windows.Forms.Button();
+            this.btnCerrarCaja = new System.Windows.Forms.Button();
+            this.btnAbrirCaja = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnAbrirCaja = new System.Windows.Forms.Button();
-            this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCajas = new System.Windows.Forms.Button();
-            this.cajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verCajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -129,6 +129,21 @@
             this.verColegiosToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.verColegiosToolStripMenuItem.Text = "Ver Colegios";
             this.verColegiosToolStripMenuItem.Click += new System.EventHandler(this.verColegiosToolStripMenuItem_Click);
+            // 
+            // cajasToolStripMenuItem
+            // 
+            this.cajasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verCajasToolStripMenuItem});
+            this.cajasToolStripMenuItem.Name = "cajasToolStripMenuItem";
+            this.cajasToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.cajasToolStripMenuItem.Text = "Cajas";
+            // 
+            // verCajasToolStripMenuItem
+            // 
+            this.verCajasToolStripMenuItem.Name = "verCajasToolStripMenuItem";
+            this.verCajasToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.verCajasToolStripMenuItem.Text = "Ver Cajas";
+            this.verCajasToolStripMenuItem.Click += new System.EventHandler(this.verCajasToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -207,6 +222,48 @@
             this.panel2.Size = new System.Drawing.Size(200, 373);
             this.panel2.TabIndex = 0;
             // 
+            // btnCajas
+            // 
+            this.btnCajas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCajas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCajas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCajas.Location = new System.Drawing.Point(32, 127);
+            this.btnCajas.Name = "btnCajas";
+            this.btnCajas.Size = new System.Drawing.Size(136, 44);
+            this.btnCajas.TabIndex = 3;
+            this.btnCajas.Text = "Ver Cajas";
+            this.btnCajas.UseVisualStyleBackColor = false;
+            this.btnCajas.Click += new System.EventHandler(this.btnCajas_Click);
+            // 
+            // btnCerrarCaja
+            // 
+            this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCerrarCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarCaja.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarCaja.Location = new System.Drawing.Point(32, 247);
+            this.btnCerrarCaja.Name = "btnCerrarCaja";
+            this.btnCerrarCaja.Size = new System.Drawing.Size(136, 44);
+            this.btnCerrarCaja.TabIndex = 2;
+            this.btnCerrarCaja.Text = "Cerrar Caja";
+            this.btnCerrarCaja.UseVisualStyleBackColor = false;
+            this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
+            // 
+            // btnAbrirCaja
+            // 
+            this.btnAbrirCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAbrirCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAbrirCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirCaja.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrirCaja.Location = new System.Drawing.Point(32, 19);
+            this.btnAbrirCaja.Name = "btnAbrirCaja";
+            this.btnAbrirCaja.Size = new System.Drawing.Size(136, 44);
+            this.btnAbrirCaja.TabIndex = 1;
+            this.btnAbrirCaja.Text = "Abrir Caja";
+            this.btnAbrirCaja.UseVisualStyleBackColor = false;
+            this.btnAbrirCaja.Click += new System.EventHandler(this.btnAbrirCaja_Click);
+            // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -234,32 +291,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnAbrirCaja
-            // 
-            this.btnAbrirCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAbrirCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAbrirCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbrirCaja.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirCaja.Location = new System.Drawing.Point(32, 19);
-            this.btnAbrirCaja.Name = "btnAbrirCaja";
-            this.btnAbrirCaja.Size = new System.Drawing.Size(136, 44);
-            this.btnAbrirCaja.TabIndex = 1;
-            this.btnAbrirCaja.Text = "Abrir Caja";
-            this.btnAbrirCaja.UseVisualStyleBackColor = false;
-            // 
-            // btnCerrarCaja
-            // 
-            this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCerrarCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarCaja.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarCaja.Location = new System.Drawing.Point(32, 247);
-            this.btnCerrarCaja.Name = "btnCerrarCaja";
-            this.btnCerrarCaja.Size = new System.Drawing.Size(136, 44);
-            this.btnCerrarCaja.TabIndex = 2;
-            this.btnCerrarCaja.Text = "Cerrar Caja";
-            this.btnCerrarCaja.UseVisualStyleBackColor = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -270,35 +301,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnCajas
-            // 
-            this.btnCajas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnCajas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCajas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCajas.Location = new System.Drawing.Point(32, 127);
-            this.btnCajas.Name = "btnCajas";
-            this.btnCajas.Size = new System.Drawing.Size(136, 44);
-            this.btnCajas.TabIndex = 3;
-            this.btnCajas.Text = "Ver Cajas";
-            this.btnCajas.UseVisualStyleBackColor = false;
-            this.btnCajas.Click += new System.EventHandler(this.btnCajas_Click);
-            // 
-            // cajasToolStripMenuItem
-            // 
-            this.cajasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verCajasToolStripMenuItem});
-            this.cajasToolStripMenuItem.Name = "cajasToolStripMenuItem";
-            this.cajasToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.cajasToolStripMenuItem.Text = "Cajas";
-            // 
-            // verCajasToolStripMenuItem
-            // 
-            this.verCajasToolStripMenuItem.Name = "verCajasToolStripMenuItem";
-            this.verCajasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.verCajasToolStripMenuItem.Text = "Ver Cajas";
-            this.verCajasToolStripMenuItem.Click += new System.EventHandler(this.verCajasToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -315,6 +317,7 @@
             this.Name = "Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.Principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);

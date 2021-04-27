@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Servicios.Core.DetalleCaja
 {
-    public class DetalleCajaServicio
+    public class DetalleCajaServicio : IDetalleCajaServicio
     {
         public void AgregarDetalleCaja(DetalleCajaDto detalleCajaDto)
         {
@@ -40,7 +40,28 @@ namespace Servicios.Core.DetalleCaja
 
         }
 
+        public IEnumerable<DetalleCajaDto> BuscarDetalles(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
 
+                var lista = context.DetalleCajas.AsNoTracking().Where(x => x.CajaId == id)
+                    .Select(x => new DetalleCajaDto
+                    {
+                      
+                        CajaId = x.CajaId,
+                        Descripcion = x.Descripcion,
+                        Fecha = x.Fecha,
+                        Total = x.Total,
+                        Id = x.Id
+
+                    }).ToList();
+
+                return lista;
+                
+            }
+
+        }
 
     }
 }

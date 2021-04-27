@@ -74,6 +74,19 @@ namespace Servicios.Core.Caja
             }
         }
 
+        public bool BuscarCajaAbiertaBool()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                if (context.Cajas.Any(x => x.FechaApertura == x.FechaCierre))
+                {
+                    return true;
+
+                }
+                return false;
+            }
+        }
+
         public IEnumerable<CajaDto> BuscarCajas()
         {
             using(var context = new KosakoDBEntities())
@@ -90,6 +103,28 @@ namespace Servicios.Core.Caja
                         OpenClose = x.OpenClose
 
                     }).ToList();
+            }
+        }
+
+        public CajaDto BuscarCajasId(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var caja = context.Cajas.AsNoTracking().FirstOrDefault(x => x.Id == id);
+
+                var cajaAux = new CajaDto
+                {
+                    FechaApertura = caja.FechaApertura,
+                    MontoCierre = caja.MontoCierre,
+                    MontoApertura = caja.MontoApertura,
+                    FechaCierre = caja.FechaCierre,
+                    TotalCaja = caja.TotalCaja,
+                    Id = caja.Id,
+                    OpenClose = caja.OpenClose
+                };
+
+                return cajaAux;
+
             }
         }
 
