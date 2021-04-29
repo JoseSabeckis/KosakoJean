@@ -86,7 +86,7 @@ namespace Servicios.Core.Producto
 
         }
 
-        public ProductoDto ObtenerPorId(long colegioId)
+        public ProductoDto ObtenerPorId(long Id)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -100,10 +100,11 @@ namespace Servicios.Core.Producto
                         Precio = x.Precio,
                         Extras = x.Extras,
                         TipoProductoId = x.TipoProductoId,
-                        ColegioId = x.ColegioId
+                        ColegioId = x.ColegioId              
 
-                    }).FirstOrDefault(x => x.Id == colegioId && x.EstaEliminado == false);
+                    }).FirstOrDefault(x => x.Id == Id && x.EstaEliminado == false);
             }
         }
+
     }
 }

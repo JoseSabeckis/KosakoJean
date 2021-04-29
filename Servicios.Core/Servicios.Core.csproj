@@ -62,6 +62,9 @@
     <Compile Include="DetalleCaja\DetalleCajaServicio.cs" />
     <Compile Include="DetalleCaja\Dto\DetalleCajaDto.cs" />
     <Compile Include="DetalleCaja\IDetalleCajaServicio.cs" />
+    <Compile Include="ParteVenta\Dto\VentaDto2.cs" />
+    <Compile Include="ParteVenta\IVentaServicio2.cs" />
+    <Compile Include="ParteVenta\VentaServicio2.cs" />
     <Compile Include="Pedido\Dto\PedidoDto.cs" />
     <Compile Include="Pedido\IPedidoServicio.cs" />
     <Compile Include="Pedido\PedidoServicio.cs" />

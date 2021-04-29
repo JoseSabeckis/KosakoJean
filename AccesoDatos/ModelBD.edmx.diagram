@@ -14,13 +14,13 @@
         <AssociationConnector Association="KosakoDBModel.ColegioProducto" />
         <AssociationConnector Association="KosakoDBModel.CajaDetalleCaja" />
         <EntityTypeShape EntityType="KosakoDBModel.Pedido" Width="1.5" PointX="7.5" PointY="2.75" FillColor="Red" />
-        <EntityTypeShape EntityType="KosakoDBModel.Producto_Pedido" Width="1.875" PointX="4.625" PointY="3.25" FillColor="Blue" />
+        <EntityTypeShape EntityType="KosakoDBModel.Producto_Pedido" Width="1.875" PointX="4.5" PointY="3.875" FillColor="Blue" />
         <AssociationConnector Association="KosakoDBModel.ProductoProducto_Pedido" />
         <AssociationConnector Association="KosakoDBModel.PedidoProducto_Pedido" />
         <EntityTypeShape EntityType="KosakoDBModel.Venta" Width="1.5" PointX="6.625" PointY="0.5" FillColor="Lime" />
         <EntityTypeShape EntityType="KosakoDBModel.Producto_Venta" Width="1.5" PointX="4.5" PointY="0.5" FillColor="Blue" />
         <AssociationConnector Association="KosakoDBModel.ProductoProducto_Venta" />
-        <AssociationConnector Association="KosakoDBModel.VentaProducto_Venta" />
+        <AssociationConnector Association="KosakoDBModel.Producto_VentaVenta" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

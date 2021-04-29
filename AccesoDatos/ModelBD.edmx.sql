@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/26/2021 16:21:45
+-- Date Created: 04/29/2021 00:56:12
 -- Generated from EDMX file: C:\Users\joses\source\repos\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -35,8 +35,8 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ProductoProducto_Venta]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Producto_Ventas] DROP CONSTRAINT [FK_ProductoProducto_Venta];
 GO
-IF OBJECT_ID(N'[dbo].[FK_VentaProducto_Venta]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Producto_Ventas] DROP CONSTRAINT [FK_VentaProducto_Venta];
+IF OBJECT_ID(N'[dbo].[FK_Producto_VentaVenta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Producto_Ventas] DROP CONSTRAINT [FK_Producto_VentaVenta];
 GO
 
 -- --------------------------------------------------
@@ -162,10 +162,13 @@ GO
 CREATE TABLE [dbo].[Producto_Ventas] (
     [Id] bigint IDENTITY(1,1) NOT NULL,
     [ProductoId] bigint  NOT NULL,
-    [VentaId] bigint  NOT NULL,
+    [VentaId] bigint  NULL,
     [Estado] bigint  NOT NULL,
     [Cantidad] decimal(18,0)  NOT NULL,
-    [Talle] nvarchar(max)  NOT NULL
+    [Talle] nvarchar(max)  NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [Precio] decimal(18,0)  NOT NULL,
+    [Venta_Id] bigint  NULL
 );
 GO
 
@@ -321,19 +324,19 @@ ON [dbo].[Producto_Ventas]
     ([ProductoId]);
 GO
 
--- Creating foreign key on [VentaId] in table 'Producto_Ventas'
+-- Creating foreign key on [Venta_Id] in table 'Producto_Ventas'
 ALTER TABLE [dbo].[Producto_Ventas]
-ADD CONSTRAINT [FK_VentaProducto_Venta]
-    FOREIGN KEY ([VentaId])
+ADD CONSTRAINT [FK_Producto_VentaVenta]
+    FOREIGN KEY ([Venta_Id])
     REFERENCES [dbo].[Ventas]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_VentaProducto_Venta'
-CREATE INDEX [IX_FK_VentaProducto_Venta]
+-- Creating non-clustered index for FOREIGN KEY 'FK_Producto_VentaVenta'
+CREATE INDEX [IX_FK_Producto_VentaVenta]
 ON [dbo].[Producto_Ventas]
-    ([VentaId]);
+    ([Venta_Id]);
 GO
 
 -- --------------------------------------------------

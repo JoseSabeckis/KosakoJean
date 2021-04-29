@@ -17,6 +17,6 @@ namespace Servicios.Core.Producto
 
         IEnumerable<ProductoDto> Buscar(string cadenaBuscar);
 
-        ProductoDto ObtenerPorId(long colegioId);
+        ProductoDto ObtenerPorId(long Id);
     }
 }

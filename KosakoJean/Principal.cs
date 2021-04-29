@@ -1,4 +1,5 @@
 ﻿using Presentacion.Core.Caja;
+using Presentacion.Core.Cobro;
 using Presentacion.Core.Colegio;
 using Presentacion.Core.Producto;
 using Presentacion.Core.TipoProducto;
@@ -82,12 +83,15 @@ namespace KosakoJean
             {
                 btnAbrirCaja.Visible = false;
                 btnCerrarCaja.Visible = true;
+
+                btnCobrar.Enabled = false;
             }
 
             if (!_cajaServicio.BuscarCajaAbiertaBool())
             {
                 btnAbrirCaja.Visible = true;
                 btnCerrarCaja.Visible = false;
+
             }
 
         }
@@ -103,6 +107,17 @@ namespace KosakoJean
         private void Principal_Load(object sender, EventArgs e)
         {
             ValidarCajas();
+        }
+
+        private void salirDeLaAplicacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCobrar_Click(object sender, EventArgs e)
+        {
+            var cobro = new Venta();
+            cobro.ShowDialog();
         }
     }
 }

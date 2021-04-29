@@ -9,7 +9,7 @@ namespace Servicios.Core.Venta
 {
     public interface IVentaServicio
     {
-        void NuevaVenta(VentaDto ventaDto);
+        long NuevaVenta(VentaDto ventaDto);
 
         IEnumerable<VentaDto> BuscarPor30Dias();
     }

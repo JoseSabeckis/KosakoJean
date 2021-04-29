@@ -75,6 +75,12 @@
     <Compile Include="Caja\CerrarCaja.Designer.cs">
       <DependentUpon>CerrarCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cobro\Venta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cobro\Venta.Designer.cs">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colegio\Colegio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     </Compile>
     <Compile Include="Colegio\Colegio_Abm.Designer.cs">
       <DependentUpon>Colegio_Abm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\ElegirProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\ElegirProducto.Designer.cs">
+      <DependentUpon>ElegirProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Producto\Producto.cs">
       <SubType>Form</SubType>
@@ -142,11 +154,17 @@
     <EmbeddedResource Include="Caja\CerrarCaja.resx">
       <DependentUpon>CerrarCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cobro\Venta.resx">
+      <DependentUpon>Venta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Colegio\Colegio.resx">
       <DependentUpon>Colegio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Colegio\Colegio_Abm.resx">
       <DependentUpon>Colegio_Abm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto\ElegirProducto.resx">
+      <DependentUpon>ElegirProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\Producto.resx">
       <DependentUpon>Producto.cs</DependentUpon>

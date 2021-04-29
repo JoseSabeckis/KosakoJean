@@ -10,7 +10,7 @@ namespace Servicios.Core.Venta
 {
     public class VentaServicio : IVentaServicio
     {
-        public void NuevaVenta(VentaDto ventaDto)
+        public long NuevaVenta(VentaDto ventaDto)
         {
             using(var context = new KosakoDBEntities())
             {
@@ -26,6 +26,7 @@ namespace Servicios.Core.Venta
 
                 context.SaveChanges();
 
+                return nueva.Id;
             }
         }
 
