@@ -39,20 +39,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnCerrarCaja);
             this.panel1.Controls.Add(this.txtCobrado);
             this.panel1.Controls.Add(this.txtTotal);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btmVolver);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -110,7 +112,7 @@
             // 
             this.btmVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btmVolver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmVolver.Location = new System.Drawing.Point(666, 16);
+            this.btmVolver.Location = new System.Drawing.Point(18, 14);
             this.btmVolver.Name = "btmVolver";
             this.btmVolver.Size = new System.Drawing.Size(133, 40);
             this.btmVolver.TabIndex = 1;
@@ -154,6 +156,16 @@
             this.dgvGrilla.Size = new System.Drawing.Size(809, 347);
             this.dgvGrilla.TabIndex = 11;
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.btmVolver);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(637, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(172, 126);
+            this.panel3.TabIndex = 7;
+            // 
             // CerrarCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -173,6 +185,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -189,5 +202,6 @@
         private System.Windows.Forms.Button btmVolver;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrarCaja;
+        private System.Windows.Forms.Panel panel3;
     }
 }

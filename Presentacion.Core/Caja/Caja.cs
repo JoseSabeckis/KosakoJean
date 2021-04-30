@@ -70,13 +70,13 @@ namespace Presentacion.Core.Caja
             grilla.Columns["MontoApertura"].HeaderText = @"Monto Apertura";
             grilla.Columns["MontoApertura"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["MontoApertura"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            /*
             grilla.Columns["MontoCierre"].Visible = true;
             grilla.Columns["MontoCierre"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["MontoCierre"].HeaderText = @"Monto Cierre";
             grilla.Columns["MontoCierre"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["MontoCierre"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            */
             grilla.Columns["FechaApertura"].Visible = true;
             grilla.Columns["FechaApertura"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["FechaApertura"].HeaderText = @"Fecha Apertura";
@@ -124,11 +124,11 @@ namespace Presentacion.Core.Caja
         {
             if (ckbApertura.Checked == true)
             {
-
+                VerCajaApertura(dtpDesde.Value.Date, dtpHasta.Value.Date);
             }
             else
             {
-
+                VerCajaCierre(dtpDesde.Value.Date, dtpHasta.Value.Date);
             }
         }
     }

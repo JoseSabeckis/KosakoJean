@@ -11,9 +11,11 @@ namespace Servicios.Core.Caja
     {
         CajaDto BuscarCajasId(long id);
 
+        void SumarDineroACaja(decimal total);
+
         IEnumerable<CajaDto> BuscarCajas();
 
-        long BuscarCajaAbierta();
+        AccesoDatos.Caja BuscarCajaAbierta();
 
         bool BuscarCajaAbiertaBool();
 

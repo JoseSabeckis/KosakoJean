@@ -67,12 +67,11 @@ namespace Presentacion.Core.Caja
         {
             var total = _cajaServicio.SumarCaja();
             var suma = _cajaServicio.BuscarCajaAbierta();
-            var complete = _cajaServicio.BuscarCajasId(suma);
 
             txtCobrado.Text = $"$ {total}";
-            txtTotal.Text = $"$ {complete.TotalCaja}";
+            txtTotal.Text = $"$ {suma.TotalCaja}";
 
-            _Total = total + complete.TotalCaja;
+            _Total = total + suma.TotalCaja;
         }
 
         private void btmVolver_Click(object sender, EventArgs e)

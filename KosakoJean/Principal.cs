@@ -84,7 +84,6 @@ namespace KosakoJean
                 btnAbrirCaja.Visible = false;
                 btnCerrarCaja.Visible = true;
 
-                btnCobrar.Enabled = false;
             }
 
             if (!_cajaServicio.BuscarCajaAbiertaBool())
@@ -114,10 +113,17 @@ namespace KosakoJean
             this.Close();
         }
 
-        private void btnCobrar_Click(object sender, EventArgs e)
+        private void btnCobrar2_Click(object sender, EventArgs e)
         {
-            var cobro = new Venta();
-            cobro.ShowDialog();
+            if (_cajaServicio.BuscarCajaAbiertaBool())
+            {
+                var cobro = new Venta();
+                cobro.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

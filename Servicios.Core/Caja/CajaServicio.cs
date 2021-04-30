@@ -34,9 +34,7 @@ namespace Servicios.Core.Caja
         {
             using (var context = new KosakoDBEntities())
             {
-                var cajaId = BuscarCajaAbierta();
-
-                var caja = context.Cajas.FirstOrDefault(x => x.Id == cajaId);
+                var caja = context.Cajas.FirstOrDefault(x => x.OpenClose == OpenClose.Abierto);
 
                 caja.FechaCierre = fechaCierre;
                 caja.MontoCierre = montoCierre;
@@ -57,8 +55,6 @@ namespace Servicios.Core.Caja
 
                 var completa = context.DetalleCajas.Where(x => x.CajaId == detalles.Id);
 
-                //var total2 = completa.Sum(x => x.Total);
-
                 decimal total = 0;
 
                 foreach (var item in completa)
@@ -71,13 +67,24 @@ namespace Servicios.Core.Caja
             }
         }
 
-        public long BuscarCajaAbierta()
+        public AccesoDatos.Caja BuscarCajaAbierta()
         {
             using(var context = new KosakoDBEntities())
             {
-                var cajaId = context.Cajas.FirstOrDefault(x => x.OpenClose == OpenClose.Abierto).Id;
+                return context.Cajas.FirstOrDefault(x => x.OpenClose == OpenClose.Abierto);
 
-                return cajaId;
+            }
+        }
+
+        public void SumarDineroACaja(decimal total)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var caja = BuscarCajaAbierta();
+
+                caja.TotalCaja += total;
+
+                context.SaveChanges();
             }
         }
 
@@ -85,7 +92,7 @@ namespace Servicios.Core.Caja
         {
             using (var context = new KosakoDBEntities())
             {
-                if (context.Cajas.Any(x => x.FechaApertura == x.FechaCierre))
+                if (context.Cajas.Any(x => x.OpenClose == OpenClose.Abierto))
                 {
                     return true;
 
@@ -139,7 +146,7 @@ namespace Servicios.Core.Caja
         {
             using (var context = new KosakoDBEntities())
             {
-                return context.Cajas.AsNoTracking().Where(x => x.FechaApertura >= desde && x.FechaApertura <= hasta)
+                return context.Cajas.AsNoTracking().Where(x => x.FechaApertura.Day >= desde.Day && x.FechaApertura.Month >= desde.Month && x.FechaApertura.Year >= desde.Year && x.FechaApertura.Day <= hasta.Day && x.FechaApertura.Month <= hasta.Month && x.FechaApertura.Year <= hasta.Year)
                     .Select(x => new CajaDto
                     {
                         TotalCaja = x.TotalCaja,
@@ -158,7 +165,7 @@ namespace Servicios.Core.Caja
         {
             using (var context = new KosakoDBEntities())
             {
-                return context.Cajas.AsNoTracking().Where(x => x.FechaCierre >= desde && x.FechaCierre <= hasta)
+                return context.Cajas.AsNoTracking().Where(x => x.FechaCierre.Day >= desde.Day && x.FechaCierre.Month >= desde.Month && x.FechaCierre.Year >= desde.Year && x.FechaCierre.Day <= hasta.Day && x.FechaCierre.Month <= hasta.Month && x.FechaCierre.Year <= hasta.Year)
                     .Select(x => new CajaDto
                     {
                         TotalCaja = x.TotalCaja,
@@ -180,7 +187,7 @@ namespace Servicios.Core.Caja
                 var fecha = DateTime.Now;
                 fecha.AddDays(-30);
 
-                return context.Cajas.AsNoTracking().Where(x => x.FechaCierre == fecha)
+                return context.Cajas.AsNoTracking().Where(x => x.FechaCierre.Day >= fecha.Day && x.FechaCierre.Month >= fecha.Month && x.FechaCierre.Year >= fecha.Year)
                     .Select(x => new CajaDto
                     {
                         TotalCaja = x.TotalCaja,

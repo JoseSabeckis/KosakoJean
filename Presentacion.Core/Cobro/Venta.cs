@@ -1,4 +1,6 @@
 ﻿using Presentacion.Core.Producto;
+using Servicios.Core.DetalleCaja;
+using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Producto;
@@ -24,6 +26,7 @@ namespace Presentacion.Core.Cobro
         private readonly IProductoServicio productoServicio;
         private readonly IProducto_Venta_Servicio producto_vent;
         private readonly IVentaServicio ventaServicio;
+        private readonly IDetalleCajaServicio detalleCajaServicio;
 
         ProductoDto producto;
         long _productoId;
@@ -40,6 +43,7 @@ namespace Presentacion.Core.Cobro
             producto_vent = new Producto_Venta_Servicio();
             ventaServicio = new VentaServicio();
             producto = new ProductoDto();
+            detalleCajaServicio = new DetalleCajaServicio();
 
             cmbTalle.SelectedIndex = 0;
 
@@ -75,8 +79,8 @@ namespace Presentacion.Core.Cobro
                 else
                 {
                     nudPrecio.Value = product.Precio;
-                }              
-                
+                }
+
 
             }
 
@@ -110,7 +114,7 @@ namespace Presentacion.Core.Cobro
                 if (prueba != null)
                 {
                     prueba.Cantidad += nudCantidad.Value;
-                    prueba.Precio += prueba.Precio;
+                    //prueba.Precio += prueba.Precio;
 
                     CargarGrilla(ListaVenta);
 
@@ -244,12 +248,12 @@ namespace Presentacion.Core.Cobro
         {
             if (dgvGrilla.RowCount > 0)
             {
-                if (MessageBox.Show("Esta Seguro de Continuar?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     var precio = ListaVenta.Sum(x => x.Precio);
                     var cantidad = ListaVenta.Sum(x => x.Cantidad);
 
-                    var pago = nudPagaron.Value - (precio * cantidad);
+                    var pago = precio * cantidad;
 
                     var venta = new VentaDto
                     {
@@ -258,6 +262,8 @@ namespace Presentacion.Core.Cobro
                     };
 
                     var ventaId = ventaServicio.NuevaVenta(venta);
+
+                    string descripcion = string.Empty;
 
                     foreach (var item in ListaVenta)
                     {
@@ -274,11 +280,22 @@ namespace Presentacion.Core.Cobro
                             VentaId = ventaId
                         };
 
+                        descripcion = $"{descripcion} - {producto_venta.Descripcion}";
+
                         producto_vent.NuevoProductoVenta(producto_venta);
                     }
 
-                    btnLimpiar.PerformClick();
+                    var detalle = new DetalleCajaDto
+                    {
+                        Fecha = DateTime.Now,
+                        Total = pago,
+                        Descripcion = $"Venta {descripcion}",
+                    };
 
+                    detalleCajaServicio.AgregarDetalleCaja(detalle);
+                    
+                    btnLimpiar.PerformClick();
+                    
                     MessageBox.Show("Felicidades, Cobro Aceptado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -286,6 +303,7 @@ namespace Presentacion.Core.Cobro
             {
                 MessageBox.Show("Cargue la Grilla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

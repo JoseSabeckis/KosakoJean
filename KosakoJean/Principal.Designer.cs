@@ -55,8 +55,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
-            this.btnCobrar = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnCobrar2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -288,8 +288,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnCobrar2);
             this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.btnCobrar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(681, 0);
             this.panel2.Name = "panel2";
@@ -318,24 +318,22 @@
             this.lblhora.TabIndex = 42;
             this.lblhora.Text = "10:59:58";
             // 
-            // btnCobrar
-            // 
-            this.btnCobrar.BackColor = System.Drawing.Color.Lime;
-            this.btnCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCobrar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar.Location = new System.Drawing.Point(23, 26);
-            this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(151, 54);
-            this.btnCobrar.TabIndex = 2;
-            this.btnCobrar.Text = "Cobrar";
-            this.btnCobrar.UseVisualStyleBackColor = false;
-            this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnCobrar2
+            // 
+            this.btnCobrar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCobrar2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobrar2.Location = new System.Drawing.Point(23, 10);
+            this.btnCobrar2.Name = "btnCobrar2";
+            this.btnCobrar2.Size = new System.Drawing.Size(151, 54);
+            this.btnCobrar2.TabIndex = 3;
+            this.btnCobrar2.Text = "Cobrar";
+            this.btnCobrar2.UseVisualStyleBackColor = false;
+            this.btnCobrar2.Click += new System.EventHandler(this.btnCobrar2_Click);
             // 
             // Principal
             // 
@@ -395,9 +393,9 @@
         private System.Windows.Forms.Button btnCajas;
         private System.Windows.Forms.ToolStripMenuItem cajasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verCajasToolStripMenuItem;
-        private System.Windows.Forms.Button btnCobrar;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirDeLaAplicacionToolStripMenuItem;
+        private System.Windows.Forms.Button btnCobrar2;
     }
 }
 
