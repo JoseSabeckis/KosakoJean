@@ -10,7 +10,7 @@ namespace Servicios.Core.Pedido
 {
     public class PedidoServicio : IPedidoServicio
     {
-        public void NuevoPedido(PedidoDto pedidoDto)
+        public long NuevoPedido(PedidoDto pedidoDto)
         {
             using(var context = new KosakoDBEntities())
             {
@@ -28,6 +28,8 @@ namespace Servicios.Core.Pedido
                 context.Pedidos.Add(nuevo);
 
                 context.SaveChanges();
+
+                return nuevo.Id;
             }
         }
 

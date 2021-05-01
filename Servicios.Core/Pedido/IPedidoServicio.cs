@@ -9,7 +9,7 @@ namespace Servicios.Core.Pedido
 {
     public interface IPedidoServicio
     {
-        void NuevoPedido(PedidoDto pedidoDto);
+        long NuevoPedido(PedidoDto pedidoDto);
 
         IEnumerable<PedidoDto> Buscar30Dias();
     }

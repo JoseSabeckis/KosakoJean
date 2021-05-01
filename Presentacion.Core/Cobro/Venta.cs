@@ -246,57 +246,75 @@ namespace Presentacion.Core.Cobro
 
         private void btnCobrar_Click(object sender, EventArgs e)
         {
+
             if (dgvGrilla.RowCount > 0)
             {
-                if (MessageBox.Show("Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (ckbNormal.Checked)
                 {
-                    var precio = ListaVenta.Sum(x => x.Precio);
-                    var cantidad = ListaVenta.Sum(x => x.Cantidad);
-
-                    var pago = precio * cantidad;
-
-                    var venta = new VentaDto
+                    if (MessageBox.Show("Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        Fecha = DateTime.Now,
-                        Total = pago
-                    };
+                        var precio = ListaVenta.Sum(x => x.Precio);
+                        var cantidad = ListaVenta.Sum(x => x.Cantidad);
 
-                    var ventaId = ventaServicio.NuevaVenta(venta);
+                        var pago = precio * cantidad;
 
-                    string descripcion = string.Empty;
-
-                    foreach (var item in ListaVenta)
-                    {
-                        var producto = productoServicio.ObtenerPorId(item.Id);
-
-                        var producto_venta = new Producto_Venta_Dto
+                        var venta = new VentaDto
                         {
-                            Cantidad = item.Cantidad,
-                            Descripcion = item.Descripcion,
-                            Estado = AccesoDatos.EstadoPedido.Terminado,
-                            ProductoId = item.Id,
-                            Talle = item.Talle,
-                            Precio = item.Precio,
-                            VentaId = ventaId
+                            Fecha = DateTime.Now,
+                            Total = pago
                         };
 
-                        descripcion = $"{descripcion} - {producto_venta.Descripcion}";
+                        var ventaId = ventaServicio.NuevaVenta(venta);
 
-                        producto_vent.NuevoProductoVenta(producto_venta);
+                        string descripcion = string.Empty;
+
+                        foreach (var item in ListaVenta)
+                        {
+                            var producto = productoServicio.ObtenerPorId(item.Id);
+
+                            var producto_venta = new Producto_Venta_Dto
+                            {
+                                Cantidad = item.Cantidad,
+                                Descripcion = item.Descripcion,
+                                Estado = AccesoDatos.EstadoPedido.Terminado,
+                                ProductoId = item.Id,
+                                Talle = item.Talle,
+                                Precio = item.Precio,
+                                VentaId = ventaId
+                            };
+
+                            descripcion = $"{descripcion} - {producto_venta.Descripcion}";
+
+                            producto_vent.NuevoProductoVenta(producto_venta);
+                        }
+
+                        var detalle = new DetalleCajaDto
+                        {
+                            Fecha = DateTime.Now,
+                            Total = pago,
+                            Descripcion = $"Venta {descripcion}",
+                        };
+
+                        detalleCajaServicio.AgregarDetalleCaja(detalle);
+
+                        MessageBox.Show("Felicidades, Cobro Aceptado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                        btnLimpiar.PerformClick();
+
                     }
 
-                    var detalle = new DetalleCajaDto
-                    {
-                        Fecha = DateTime.Now,
-                        Total = pago,
-                        Descripcion = $"Venta {descripcion}",
-                    };
+                }
+                else
+                {
+                    var pedidos = new Pedido.Pedido(ListaVenta);
+                    pedidos.ShowDialog();
 
-                    detalleCajaServicio.AgregarDetalleCaja(detalle);
-                    
-                    btnLimpiar.PerformClick();
-                    
-                    MessageBox.Show("Felicidades, Cobro Aceptado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    if (pedidos.semaforo)
+                    {
+                        btnLimpiar.PerformClick();
+                    }
                 }
             }
             else
@@ -330,6 +348,30 @@ namespace Presentacion.Core.Cobro
             {
                 _descripcionProducto = (string)dgvGrilla["Descripcion", e.RowIndex].Value;
 
+            }
+        }
+
+        private void ckbNormal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbNormal.Checked == true)
+            {
+                ckbPedido.Checked = false;
+            }
+            else
+            {
+                ckbPedido.Checked = true;
+            }
+        }
+
+        private void ckbPedido_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbPedido.Checked == true)
+            {
+                ckbNormal.Checked = false;
+            }
+            else
+            {
+                ckbNormal.Checked = true;
             }
         }
     }

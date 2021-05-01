@@ -53,10 +53,11 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPedidos = new System.Windows.Forms.Button();
+            this.btnCobrar2 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnCobrar2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -228,7 +229,7 @@
             this.btnCajas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCajas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCajas.Location = new System.Drawing.Point(22, 124);
+            this.btnCajas.Location = new System.Drawing.Point(22, 128);
             this.btnCajas.Name = "btnCajas";
             this.btnCajas.Size = new System.Drawing.Size(136, 44);
             this.btnCajas.TabIndex = 3;
@@ -288,6 +289,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnPedidos);
             this.panel2.Controls.Add(this.btnCobrar2);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -295,6 +297,29 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 373);
             this.panel2.TabIndex = 0;
+            // 
+            // btnPedidos
+            // 
+            this.btnPedidos.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPedidos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPedidos.Location = new System.Drawing.Point(23, 183);
+            this.btnPedidos.Name = "btnPedidos";
+            this.btnPedidos.Size = new System.Drawing.Size(151, 54);
+            this.btnPedidos.TabIndex = 4;
+            this.btnPedidos.Text = "Ver Pedidos";
+            this.btnPedidos.UseVisualStyleBackColor = false;
+            // 
+            // btnCobrar2
+            // 
+            this.btnCobrar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCobrar2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobrar2.Location = new System.Drawing.Point(23, 60);
+            this.btnCobrar2.Name = "btnCobrar2";
+            this.btnCobrar2.Size = new System.Drawing.Size(151, 54);
+            this.btnCobrar2.TabIndex = 3;
+            this.btnCobrar2.Text = "Cobrar";
+            this.btnCobrar2.UseVisualStyleBackColor = false;
+            this.btnCobrar2.Click += new System.EventHandler(this.btnCobrar2_Click);
             // 
             // panel6
             // 
@@ -322,18 +347,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // btnCobrar2
-            // 
-            this.btnCobrar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnCobrar2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar2.Location = new System.Drawing.Point(23, 10);
-            this.btnCobrar2.Name = "btnCobrar2";
-            this.btnCobrar2.Size = new System.Drawing.Size(151, 54);
-            this.btnCobrar2.TabIndex = 3;
-            this.btnCobrar2.Text = "Cobrar";
-            this.btnCobrar2.UseVisualStyleBackColor = false;
-            this.btnCobrar2.Click += new System.EventHandler(this.btnCobrar2_Click);
             // 
             // Principal
             // 
@@ -396,6 +409,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirDeLaAplicacionToolStripMenuItem;
         private System.Windows.Forms.Button btnCobrar2;
+        private System.Windows.Forms.Button btnPedidos;
     }
 }
 

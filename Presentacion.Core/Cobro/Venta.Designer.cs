@@ -30,17 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Venta));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.cmbTalle = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.nudPrecio = new System.Windows.Forms.NumericUpDown();
-            this.btnAgregarAlaGrilla = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnSeleccionProducto = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.txtProducto = new System.Windows.Forms.TextBox();
-            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSeleccionProducto = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btnAgregarAlaGrilla = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCobrar = new System.Windows.Forms.Button();
@@ -57,23 +61,23 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ckbNormal = new System.Windows.Forms.CheckBox();
+            this.ckbPedido = new System.Windows.Forms.CheckBox();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,6 +92,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1017, 161);
             this.panel1.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.cmbTalle);
+            this.panel8.Controls.Add(this.label3);
+            this.panel8.Controls.Add(this.nudCantidad);
+            this.panel8.Controls.Add(this.label4);
+            this.panel8.Controls.Add(this.label8);
+            this.panel8.Controls.Add(this.nudPrecio);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel8.Location = new System.Drawing.Point(451, 76);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(417, 81);
+            this.panel8.TabIndex = 16;
             // 
             // cmbTalle
             // 
@@ -106,67 +125,14 @@
             this.cmbTalle.TabIndex = 13;
             this.cmbTalle.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label8
+            // label3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(301, 28);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 22);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Talle";
-            // 
-            // nudPrecio
-            // 
-            this.nudPrecio.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.nudPrecio.Enabled = false;
-            this.nudPrecio.Location = new System.Drawing.Point(188, 26);
-            this.nudPrecio.Maximum = new decimal(new int[] {
-            100000000,
-            0,
-            0,
-            0});
-            this.nudPrecio.Name = "nudPrecio";
-            this.nudPrecio.Size = new System.Drawing.Size(109, 29);
-            this.nudPrecio.TabIndex = 11;
-            // 
-            // btnAgregarAlaGrilla
-            // 
-            this.btnAgregarAlaGrilla.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAgregarAlaGrilla.Location = new System.Drawing.Point(3, 23);
-            this.btnAgregarAlaGrilla.Name = "btnAgregarAlaGrilla";
-            this.btnAgregarAlaGrilla.Size = new System.Drawing.Size(135, 33);
-            this.btnAgregarAlaGrilla.TabIndex = 10;
-            this.btnAgregarAlaGrilla.Text = "Agregar";
-            this.btnAgregarAlaGrilla.UseVisualStyleBackColor = false;
-            this.btnAgregarAlaGrilla.Click += new System.EventHandler(this.btnAgregarAlaGrilla_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(121, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 22);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Precio";
-            // 
-            // btnSeleccionProducto
-            // 
-            this.btnSeleccionProducto.Location = new System.Drawing.Point(368, 24);
-            this.btnSeleccionProducto.Name = "btnSeleccionProducto";
-            this.btnSeleccionProducto.Size = new System.Drawing.Size(71, 32);
-            this.btnSeleccionProducto.TabIndex = 7;
-            this.btnSeleccionProducto.Text = "---";
-            this.btnSeleccionProducto.UseVisualStyleBackColor = true;
-            this.btnSeleccionProducto.Click += new System.EventHandler(this.btnSeleccionProducto_Click);
-            // 
-            // txtProducto
-            // 
-            this.txtProducto.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtProducto.Enabled = false;
-            this.txtProducto.Location = new System.Drawing.Point(91, 26);
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(271, 29);
-            this.txtProducto.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 22);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Cant.";
             // 
             // nudCantidad
             // 
@@ -192,14 +158,58 @@
             0});
             this.nudCantidad.ValueChanged += new System.EventHandler(this.nudCantidad_ValueChanged);
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 22);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Cant.";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(121, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 22);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Precio";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(301, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 22);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Talle";
+            // 
+            // nudPrecio
+            // 
+            this.nudPrecio.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.nudPrecio.Enabled = false;
+            this.nudPrecio.Location = new System.Drawing.Point(188, 26);
+            this.nudPrecio.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.nudPrecio.Name = "nudPrecio";
+            this.nudPrecio.Size = new System.Drawing.Size(109, 29);
+            this.nudPrecio.TabIndex = 11;
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.txtProducto);
+            this.panel7.Controls.Add(this.label2);
+            this.panel7.Controls.Add(this.btnSeleccionProducto);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 76);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(453, 81);
+            this.panel7.TabIndex = 15;
+            // 
+            // txtProducto
+            // 
+            this.txtProducto.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtProducto.Enabled = false;
+            this.txtProducto.Location = new System.Drawing.Point(91, 26);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.Size = new System.Drawing.Size(271, 29);
+            this.txtProducto.TabIndex = 6;
             // 
             // label2
             // 
@@ -210,9 +220,41 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Producto";
             // 
+            // btnSeleccionProducto
+            // 
+            this.btnSeleccionProducto.Location = new System.Drawing.Point(368, 24);
+            this.btnSeleccionProducto.Name = "btnSeleccionProducto";
+            this.btnSeleccionProducto.Size = new System.Drawing.Size(71, 32);
+            this.btnSeleccionProducto.TabIndex = 7;
+            this.btnSeleccionProducto.Text = "---";
+            this.btnSeleccionProducto.UseVisualStyleBackColor = true;
+            this.btnSeleccionProducto.Click += new System.EventHandler(this.btnSeleccionProducto_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.btnAgregarAlaGrilla);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(868, 76);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(145, 81);
+            this.panel6.TabIndex = 14;
+            // 
+            // btnAgregarAlaGrilla
+            // 
+            this.btnAgregarAlaGrilla.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnAgregarAlaGrilla.Location = new System.Drawing.Point(3, 23);
+            this.btnAgregarAlaGrilla.Name = "btnAgregarAlaGrilla";
+            this.btnAgregarAlaGrilla.Size = new System.Drawing.Size(135, 33);
+            this.btnAgregarAlaGrilla.TabIndex = 10;
+            this.btnAgregarAlaGrilla.Text = "Agregar";
+            this.btnAgregarAlaGrilla.UseVisualStyleBackColor = false;
+            this.btnAgregarAlaGrilla.Click += new System.EventHandler(this.btnAgregarAlaGrilla_Click);
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.btnEliminar);
             this.panel3.Controls.Add(this.btnLimpiar);
@@ -224,6 +266,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1013, 76);
             this.panel3.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.laptop_1_102326;
+            this.pictureBox1.Location = new System.Drawing.Point(449, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(86, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // btnEliminar
             // 
@@ -411,53 +464,40 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
             // 
-            // panel6
+            // ckbNormal
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.btnAgregarAlaGrilla);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(868, 76);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(145, 81);
-            this.panel6.TabIndex = 14;
+            this.ckbNormal.AutoSize = true;
+            this.ckbNormal.Checked = true;
+            this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbNormal.Location = new System.Drawing.Point(40, 6);
+            this.ckbNormal.Name = "ckbNormal";
+            this.ckbNormal.Size = new System.Drawing.Size(91, 26);
+            this.ckbNormal.TabIndex = 6;
+            this.ckbNormal.Text = "Normal";
+            this.ckbNormal.UseVisualStyleBackColor = true;
+            this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
             // 
-            // panel7
+            // ckbPedido
             // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.txtProducto);
-            this.panel7.Controls.Add(this.label2);
-            this.panel7.Controls.Add(this.btnSeleccionProducto);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 76);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(453, 81);
-            this.panel7.TabIndex = 15;
+            this.ckbPedido.AutoSize = true;
+            this.ckbPedido.Location = new System.Drawing.Point(40, 39);
+            this.ckbPedido.Name = "ckbPedido";
+            this.ckbPedido.Size = new System.Drawing.Size(87, 26);
+            this.ckbPedido.TabIndex = 7;
+            this.ckbPedido.Text = "Pedido";
+            this.ckbPedido.UseVisualStyleBackColor = true;
+            this.ckbPedido.CheckedChanged += new System.EventHandler(this.ckbPedido_CheckedChanged);
             // 
-            // panel8
+            // panel9
             // 
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel8.Controls.Add(this.cmbTalle);
-            this.panel8.Controls.Add(this.label3);
-            this.panel8.Controls.Add(this.nudCantidad);
-            this.panel8.Controls.Add(this.label4);
-            this.panel8.Controls.Add(this.label8);
-            this.panel8.Controls.Add(this.nudPrecio);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(451, 76);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(417, 81);
-            this.panel8.TabIndex = 16;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.laptop_1_102326;
-            this.pictureBox1.Location = new System.Drawing.Point(449, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.ckbPedido);
+            this.panel9.Controls.Add(this.ckbNormal);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel9.Location = new System.Drawing.Point(690, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(176, 72);
+            this.panel9.TabIndex = 8;
             // 
             // Venta
             // 
@@ -475,10 +515,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Aplicacion de Venta";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -486,12 +532,8 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -530,5 +572,8 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.CheckBox ckbPedido;
+        private System.Windows.Forms.CheckBox ckbNormal;
     }
 }
