@@ -117,6 +117,7 @@
     <Property Name="Estado" Type="bigint" Nullable="false" />
     <Property Name="Cantidad" Type="decimal" Nullable="false" />
     <Property Name="Talle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Ventas">
     <Key>
@@ -388,6 +389,7 @@
           <Property Name="Estado" Type="KosakoDBModel.EstadoPedido" Nullable="false" />
           <Property Name="Cantidad" Type="Decimal" Nullable="false" />
           <Property Name="Talle" Type="String" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="ProductoProducto_Pedido">
           <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="1" />
@@ -551,6 +553,7 @@
           <ScalarProperty Name="Estado" ColumnName="Estado" />
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
           <ScalarProperty Name="Talle" ColumnName="Talle" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

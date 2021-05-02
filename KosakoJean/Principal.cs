@@ -1,6 +1,7 @@
 ﻿using Presentacion.Core.Caja;
 using Presentacion.Core.Cobro;
 using Presentacion.Core.Colegio;
+using Presentacion.Core.Pedido;
 using Presentacion.Core.Producto;
 using Presentacion.Core.TipoProducto;
 using Servicios.Core.Caja;
@@ -119,6 +120,19 @@ namespace KosakoJean
             {
                 var cobro = new Venta();
                 cobro.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            if (_cajaServicio.BuscarCajaAbiertaBool())
+            {
+                var lista = new Lista();
+                lista.ShowDialog();
             }
             else
             {

@@ -25,6 +25,8 @@ namespace Presentacion.Core.Pedido
 
         public bool semaforo = false;
 
+        public string _Descripcion;
+
         List<VentaDto2> ListaVentas;
 
         public Pedido(List<VentaDto2> Lista)
@@ -65,6 +67,7 @@ namespace Presentacion.Core.Pedido
             {
                 if (MessageBox.Show("Esta Seguro de Continuar?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+
                     var pedido = new PedidoDto
                     {
                         Adelanto = nudAdelanto.Value,
@@ -72,8 +75,9 @@ namespace Presentacion.Core.Pedido
                         FechaPedido = DateTime.Now,
                         Nombre = txtNombre.Text,
                         Proceso = AccesoDatos.Proceso.InicioPedido,
-                        FechaEntrega = dtpFechaEntrega.Value,
-                        Total = ListaVentas.Sum(x => x.Precio)
+                        FechaEntrega = dtpFechaEntrega.Value.Date,
+                        Total = ListaVentas.Sum(x => x.Precio),
+                        
                     };
 
                     var pedidoId = pedidoServicio.NuevoPedido(pedido);
@@ -87,8 +91,11 @@ namespace Presentacion.Core.Pedido
                             ProductoId = productoServicio.ObtenerPorId(item.Id).Id,
                             Estado = AccesoDatos.EstadoPedido.Esperando,
                             Talle = item.Talle,
-                            PedidoId = pedidoId
+                            PedidoId = pedidoId,
+                            Descripcion = productoServicio.ObtenerPorId(item.Id).Descripcion
                         };
+
+                        producto_Pedido_Servicio.NuevoProductoPedido(aux);
 
                     }
 

@@ -22,6 +22,7 @@ namespace Servicios.Core.Producto_Pedido
                     Talle = producto.Talle,
                     PedidoId = producto.PedidoId,
                     ProductoId = producto.ProductoId,            
+                    Descripcion = producto.Descripcion
 
                 };
 
@@ -41,6 +42,26 @@ namespace Servicios.Core.Producto_Pedido
                 estado.Estado = EstadoPedido.Terminado;
 
                 context.SaveChanges();
+            }
+        }
+
+        public List<Producto_Pedido_Dto> BuscarId(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var estado = context.Producto_Pedidos.Where(x => x.Id == id).Select(x => new Producto_Pedido_Dto
+                {
+                    Cantidad = x.Cantidad,
+                    Estado = x.Estado,
+                    PedidoId = x.PedidoId,
+                    ProductoId = x.ProductoId,
+                    Talle = x.Talle,
+                    Descripcion = x.Descripcion,
+                    Id = x.Id
+
+                }).ToList();
+
+                return estado;
             }
         }
 

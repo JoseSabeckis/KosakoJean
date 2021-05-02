@@ -24,5 +24,6 @@ namespace Servicios.Core.Pedido.Dto
         public decimal Total { get; set; }
 
         public Proceso Proceso { get; set; }
+
     }
 }

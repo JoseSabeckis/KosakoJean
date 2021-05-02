@@ -17,6 +17,8 @@ namespace Servicios.Core.Producto_Pedido.Dto
 
         public EstadoPedido Estado { get; set; }
 
+        public string Descripcion { get; set; }
+
         public long PedidoId { get; set; }
 
         public long ProductoId { get; set; }

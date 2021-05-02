@@ -12,5 +12,7 @@ namespace Servicios.Core.Pedido
         long NuevoPedido(PedidoDto pedidoDto);
 
         IEnumerable<PedidoDto> Buscar30Dias();
+
+        IEnumerable<PedidoDto> BuscarPedidosNuevos();
     }
 }

@@ -20,6 +20,7 @@ namespace AccesoDatos
         public EstadoPedido Estado { get; set; }
         public decimal Cantidad { get; set; }
         public string Talle { get; set; }
+        public string Descripcion { get; set; }
     
         public virtual Producto Producto { get; set; }
         public virtual Pedido Pedido { get; set; }
