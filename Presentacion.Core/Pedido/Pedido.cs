@@ -82,6 +82,18 @@ namespace Presentacion.Core.Pedido
 
                     var pedidoId = pedidoServicio.NuevoPedido(pedido);
 
+                    string descripcion = string.Empty;
+
+                    string segunda = string.Empty;
+
+                    foreach (var item in ListaVentas)
+                    {
+                        descripcion = productoServicio.ObtenerPorId(item.Id).Descripcion;
+
+                        segunda += " " + descripcion + " ";
+
+                    }
+
                     foreach (var item in ListaVentas)
                     {
 
@@ -92,8 +104,8 @@ namespace Presentacion.Core.Pedido
                             Estado = AccesoDatos.EstadoPedido.Esperando,
                             Talle = item.Talle,
                             PedidoId = pedidoId,
-                            Descripcion = productoServicio.ObtenerPorId(item.Id).Descripcion
-                        };
+                            Descripcion = descripcion
+                        };                    
 
                         producto_Pedido_Servicio.NuevoProductoPedido(aux);
 

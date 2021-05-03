@@ -13,6 +13,8 @@ namespace Servicios.Core.Producto_Pedido
 
         void CambiarEstado(long id);
 
+        List<Producto_Pedido_Dto> Buscar();
+
         List<Producto_Pedido_Dto> BuscarId(long id);
     }
 }

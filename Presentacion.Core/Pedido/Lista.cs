@@ -1,4 +1,5 @@
 ﻿using Servicios.Core.Pedido;
+using Servicios.Core.Producto_Pedido;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +16,14 @@ namespace Presentacion.Core.Pedido
     public partial class Lista : Form
     {
         private readonly IPedidoServicio pedidoServicio;
+        private readonly IProducto_Pedido_Servicio producto_Pedido_Servicio;
 
         public Lista()
         {
             InitializeComponent();
 
             pedidoServicio = new PedidoServicio();
+            producto_Pedido_Servicio = new Producto_Pedido_Servicio();
 
             CrearControles();
         }
@@ -33,12 +36,14 @@ namespace Presentacion.Core.Pedido
         private void CrearControles()
         {
             var cuentas = pedidoServicio.BuscarPedidosNuevos();
+            //var cuentas = producto_Pedido_Servicio.Buscar();
 
             var flowPanel = new FlowLayoutPanel
             {
                 Name = $"flowPanel Cuenta",
                 Dock = DockStyle.Fill,
-                BackgroundImageLayout = ImageLayout.Stretch
+                BackgroundImageLayout = ImageLayout.Stretch,
+                AutoScroll = true
             };
 
             foreach (var item in cuentas)
@@ -55,5 +60,9 @@ namespace Presentacion.Core.Pedido
 
         }
 
+        private void vScroller_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto;
+using Servicios.Core.Producto_Pedido.Dto;
 
 namespace Presentacion.Core.Unidad
 {
@@ -34,7 +35,7 @@ namespace Presentacion.Core.Unidad
 
         private void VerDatos()
         {
-            lblFecha.Text = $"{Pedido.FechaEntrega.Date}";
+            lblFecha.Text = $"{Pedido.FechaEntrega.ToString("dd/MM/yyyy")}";
 
             lblNombre.Text = $"{Pedido.Apellido} - {Pedido.Nombre}";
 
@@ -42,7 +43,9 @@ namespace Presentacion.Core.Unidad
             
             foreach (var item in respuesta)
             {
-                lblProducto.Text += $"{respuesta.FirstOrDefault(x=>x.Id == item.Id).Descripcion} | ";
+
+                 lblProducto.Text += $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} | ";
+              
             }
             
         }
