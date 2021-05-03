@@ -30,58 +30,106 @@
         {
             this.components = new System.ComponentModel.Container();
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pasarAEsperaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.lblProducto = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.lblIdPedido = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.lblProducto = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRealizado = new System.Windows.Forms.Button();
+            this.lblProducto2 = new System.Windows.Forms.Label();
+            this.contextMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenu
             // 
+            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pasarAEsperaToolStripMenuItem});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(61, 4);
+            this.contextMenu.Size = new System.Drawing.Size(153, 26);
             // 
-            // panel1
+            // pasarAEsperaToolStripMenuItem
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.lblFecha);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(218, 39);
-            this.panel1.TabIndex = 2;
+            this.pasarAEsperaToolStripMenuItem.Name = "pasarAEsperaToolStripMenuItem";
+            this.pasarAEsperaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pasarAEsperaToolStripMenuItem.Text = "Pasar a Esperar";
+            this.pasarAEsperaToolStripMenuItem.Click += new System.EventHandler(this.pasarAEsperaToolStripMenuItem_Click);
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.lblNombre);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 39);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(218, 141);
+            this.panel2.Size = new System.Drawing.Size(260, 161);
             this.panel2.TabIndex = 3;
             // 
-            // lblFecha
+            // panel3
             // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.ForeColor = System.Drawing.Color.Red;
-            this.lblFecha.Location = new System.Drawing.Point(1, 0);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(69, 24);
-            this.lblFecha.TabIndex = 0;
-            this.lblFecha.Text = "Fecha";
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.lblProducto2);
+            this.panel3.Controls.Add(this.btnVer);
+            this.panel3.Controls.Add(this.lblIdPedido);
+            this.panel3.Controls.Add(this.lblId);
+            this.panel3.Controls.Add(this.lblProducto);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 85);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(256, 72);
+            this.panel3.TabIndex = 3;
+            // 
+            // btnVer
+            // 
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Location = new System.Drawing.Point(62, 36);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(63, 28);
+            this.btnVer.TabIndex = 5;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // lblIdPedido
+            // 
+            this.lblIdPedido.AutoSize = true;
+            this.lblIdPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdPedido.Location = new System.Drawing.Point(180, 36);
+            this.lblIdPedido.Name = "lblIdPedido";
+            this.lblIdPedido.Size = new System.Drawing.Size(16, 24);
+            this.lblIdPedido.TabIndex = 5;
+            this.lblIdPedido.Text = ".";
+            this.lblIdPedido.Visible = false;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(3, 37);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(16, 24);
+            this.lblId.TabIndex = 4;
+            this.lblId.Text = ".";
+            this.lblId.Visible = false;
+            // 
+            // lblProducto
+            // 
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto.Location = new System.Drawing.Point(1, -34);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(20, 20);
+            this.lblProducto.TabIndex = 2;
+            this.lblProducto.Text = "| ";
             // 
             // lblNombre
             // 
@@ -94,53 +142,49 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
             // 
-            // lblProducto
+            // lblFecha
             // 
-            this.lblProducto.AutoSize = true;
-            this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducto.Location = new System.Drawing.Point(1, 0);
-            this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(21, 24);
-            this.lblProducto.TabIndex = 2;
-            this.lblProducto.Text = "| ";
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.Color.Red;
+            this.lblFecha.Location = new System.Drawing.Point(1, 0);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(69, 24);
+            this.lblFecha.TabIndex = 0;
+            this.lblFecha.Text = "Fecha";
             // 
-            // panel3
+            // panel1
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.lblProducto);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 65);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(214, 72);
-            this.panel3.TabIndex = 3;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnRealizado);
+            this.panel1.Controls.Add(this.lblFecha);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(260, 39);
+            this.panel1.TabIndex = 2;
             // 
-            // panel4
+            // btnRealizado
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Location = new System.Drawing.Point(200, -2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 69);
-            this.panel4.TabIndex = 3;
+            this.btnRealizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRealizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRealizado.Location = new System.Drawing.Point(100, 3);
+            this.btnRealizado.Name = "btnRealizado";
+            this.btnRealizado.Size = new System.Drawing.Size(81, 28);
+            this.btnRealizado.TabIndex = 6;
+            this.btnRealizado.Text = "Terminado";
+            this.btnRealizado.UseVisualStyleBackColor = true;
+            this.btnRealizado.Click += new System.EventHandler(this.btnRealizado_Click);
             // 
-            // panel5
+            // lblProducto2
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Location = new System.Drawing.Point(202, 1);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(14, 68);
-            this.panel5.TabIndex = 4;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Location = new System.Drawing.Point(202, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(12, 43);
-            this.panel6.TabIndex = 5;
+            this.lblProducto2.AutoSize = true;
+            this.lblProducto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto2.Location = new System.Drawing.Point(1, 0);
+            this.lblProducto2.Name = "lblProducto2";
+            this.lblProducto2.Size = new System.Drawing.Size(20, 20);
+            this.lblProducto2.TabIndex = 7;
+            this.lblProducto2.Text = "| ";
             // 
             // Unidad
             // 
@@ -150,13 +194,14 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Unidad";
-            this.Size = new System.Drawing.Size(218, 180);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Size = new System.Drawing.Size(260, 200);
+            this.contextMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -164,14 +209,17 @@
         #endregion
 
         private System.Windows.Forms.ContextMenuStrip contextMenu;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem pasarAEsperaToolStripMenuItem;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblIdPedido;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label lblProducto;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.Button btnRealizado;
+        private System.Windows.Forms.Label lblProducto2;
     }
 }

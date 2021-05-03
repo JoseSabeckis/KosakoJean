@@ -11,6 +11,14 @@ namespace Servicios.Core.Pedido
     {
         long NuevoPedido(PedidoDto pedidoDto);
 
+        AccesoDatos.Pedido Buscar(long id);
+
+        IEnumerable<PedidoDto> BuscarRetiros();
+
+        void CambiarProcesoRetiro(long id);
+
+        void CambiarProcesoTerminado(long id);
+
         IEnumerable<PedidoDto> Buscar30Dias();
 
         IEnumerable<PedidoDto> BuscarPedidosNuevos();

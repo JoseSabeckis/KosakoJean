@@ -73,6 +73,16 @@ namespace Presentacion.Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap actualizarMIO {
+            get {
+                object obj = ResourceManager.GetObject("actualizarMIO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_shop_online_ecommerce_shopping_9_icon_icons_com_61652 {
             get {
                 object obj = ResourceManager.GetObject("add_shop_online_ecommerce_shopping-9_icon-icons.com_61652", resourceCulture);
@@ -86,6 +96,16 @@ namespace Presentacion.Core.Properties {
         internal static System.Drawing.Bitmap bag1_114871 {
             get {
                 object obj = ResourceManager.GetObject("bag1_114871", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BuscarDos {
+            get {
+                object obj = ResourceManager.GetObject("BuscarDos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

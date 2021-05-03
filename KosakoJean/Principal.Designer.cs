@@ -58,9 +58,11 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnListoParaEntregar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -204,6 +206,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.btnListoParaEntregar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(185, 0);
             this.panel4.Name = "panel4";
@@ -349,6 +352,18 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnListoParaEntregar
+            // 
+            this.btnListoParaEntregar.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnListoParaEntregar.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListoParaEntregar.Location = new System.Drawing.Point(118, 234);
+            this.btnListoParaEntregar.Name = "btnListoParaEntregar";
+            this.btnListoParaEntregar.Size = new System.Drawing.Size(243, 54);
+            this.btnListoParaEntregar.TabIndex = 5;
+            this.btnListoParaEntregar.Text = "Listos Para Entregar";
+            this.btnListoParaEntregar.UseVisualStyleBackColor = false;
+            this.btnListoParaEntregar.Click += new System.EventHandler(this.btnListoParaEntregar_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -370,6 +385,7 @@
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -411,6 +427,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirDeLaAplicacionToolStripMenuItem;
         private System.Windows.Forms.Button btnCobrar2;
         private System.Windows.Forms.Button btnPedidos;
+        private System.Windows.Forms.Button btnListoParaEntregar;
     }
 }
 

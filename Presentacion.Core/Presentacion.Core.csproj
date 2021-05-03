@@ -105,6 +105,18 @@
     <Compile Include="Pedido\Pedido.Designer.cs">
       <DependentUpon>Pedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedido\PedidoInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\PedidoInfo.Designer.cs">
+      <DependentUpon>PedidoInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido\PedidosEsperando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\PedidosEsperando.Designer.cs">
+      <DependentUpon>PedidosEsperando.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\ElegirProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,12 @@
     <Compile Include="Unidad\Unidad.Designer.cs">
       <DependentUpon>Unidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Unidad\UnidadRetiro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Unidad\UnidadRetiro.Designer.cs">
+      <DependentUpon>UnidadRetiro.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
@@ -187,6 +205,12 @@
     <EmbeddedResource Include="Pedido\Pedido.resx">
       <DependentUpon>Pedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\PedidoInfo.resx">
+      <DependentUpon>PedidoInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\PedidosEsperando.resx">
+      <DependentUpon>PedidosEsperando.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Producto\ElegirProducto.resx">
       <DependentUpon>ElegirProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +233,9 @@
     <EmbeddedResource Include="Unidad\Unidad.resx">
       <DependentUpon>Unidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Unidad\UnidadRetiro.resx">
+      <DependentUpon>UnidadRetiro.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -228,6 +255,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ImprimirMio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizarMIO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BuscarDos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

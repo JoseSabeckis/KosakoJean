@@ -79,5 +79,66 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public IEnumerable<PedidoDto> BuscarRetiros()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.Where(x => x.Proceso == Proceso.EsperandoRetiro)
+                    .Select(x => new PedidoDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        Nombre = x.Nombre,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        Total = x.Total,
+                        Id = x.Id,
+                        Proceso = x.Proceso
+
+                    }).ToList();
+
+            }
+        }
+
+        public AccesoDatos.Pedido Buscar(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+
+            }
+        }
+
+        public void CambiarProcesoRetiro(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.Proceso = Proceso.EsperandoRetiro;
+
+                context.SaveChanges();
+
+            }
+        }
+
+        public void CambiarProcesoTerminado(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.Proceso = Proceso.PedidoTerminado;
+
+                context.SaveChanges();
+
+            }
+        }
+
     }
 }

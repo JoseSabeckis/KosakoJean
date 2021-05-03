@@ -139,5 +139,18 @@ namespace KosakoJean
                 MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnListoParaEntregar_Click(object sender, EventArgs e)
+        {
+            if (_cajaServicio.BuscarCajaAbiertaBool())
+            {
+                var pedidos = new PedidosEsperando();
+                pedidos.Show();
+            }
+            else
+            {
+                MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

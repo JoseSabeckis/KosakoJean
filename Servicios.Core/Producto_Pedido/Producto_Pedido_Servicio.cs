@@ -65,6 +65,46 @@ namespace Servicios.Core.Producto_Pedido
             }
         }
 
+        public List<Producto_Pedido_Dto> BuscarPedidoId(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == id && x.Estado == EstadoPedido.Esperando).Select(x => new Producto_Pedido_Dto
+                {
+                    Cantidad = x.Cantidad,
+                    Estado = x.Estado,
+                    PedidoId = x.PedidoId,
+                    ProductoId = x.ProductoId,
+                    Talle = x.Talle,
+                    Descripcion = x.Descripcion,
+                    Id = x.Id
+
+                }).ToList();
+
+                return estado;
+            }
+        }
+
+        public List<Producto_Pedido_Dto> BuscarPedidoTerminado(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == id && x.Estado == EstadoPedido.Terminado).Select(x => new Producto_Pedido_Dto
+                {
+                    Cantidad = x.Cantidad,
+                    Estado = x.Estado,
+                    PedidoId = x.PedidoId,
+                    ProductoId = x.ProductoId,
+                    Talle = x.Talle,
+                    Descripcion = x.Descripcion,
+                    Id = x.Id
+
+                }).ToList();
+
+                return estado;
+            }
+        }
+
         public List<Producto_Pedido_Dto> Buscar()
         {
             using (var context = new KosakoDBEntities())
