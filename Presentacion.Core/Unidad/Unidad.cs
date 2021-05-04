@@ -24,9 +24,6 @@ namespace Presentacion.Core.Unidad
 
         PedidoDto Pedido;
 
-        long pedidoID;
-        long PedidoID;
-
         AccesoDatos.EstadoPedido estado;
 
         public Unidad(PedidoDto pedidoDto)
@@ -49,7 +46,6 @@ namespace Presentacion.Core.Unidad
             lblNombre.Text = $"{Pedido.Apellido} - {Pedido.Nombre}";
 
             lblId.Text = $"{Pedido.Id}";
-            pedidoID = Pedido.Id;
             
             var respuesta = pedido_Producto_Servicio.BuscarId(Pedido.Id);
             
@@ -57,7 +53,6 @@ namespace Presentacion.Core.Unidad
             {
                 lblProducto2.Text += $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} | ";
                 lblIdPedido.Text = $"{item.PedidoId}";
-                PedidoID = item.PedidoId;
                 estado = item.Estado;
             }
             
@@ -72,8 +67,8 @@ namespace Presentacion.Core.Unidad
         {
             if (MessageBox.Show("Esta por cambiar al Producto a Terminado, Tiene que Retirar el Cliente, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                pedido_Producto_Servicio.CambiarEstado(pedidoID);
-                pedidoServicio.CambiarProcesoRetiro(PedidoID);
+                pedido_Producto_Servicio.CambiarEstado(Pedido.Id);
+                pedidoServicio.CambiarProcesoRetiro(Pedido.Id);
 
                 MessageBox.Show("Listo!, Vamos Paula!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -83,7 +78,7 @@ namespace Presentacion.Core.Unidad
 
         private void btnVer_Click(object sender, EventArgs e)
         {
-            var pedido = new PedidoInfo(PedidoID, estado);
+            var pedido = new PedidoInfo(Pedido.Id, estado);
             pedido.ShowDialog();
         }
     }

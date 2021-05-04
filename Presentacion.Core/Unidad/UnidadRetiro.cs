@@ -11,6 +11,7 @@ using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido;
+using Presentacion.Core.Pedido;
 
 namespace Presentacion.Core.Unidad
 {
@@ -21,6 +22,8 @@ namespace Presentacion.Core.Unidad
         private readonly IPedidoServicio pedidoServicio;
 
         PedidoDto Pedido;
+
+        AccesoDatos.EstadoPedido estado;
 
         public UnidadRetiro(PedidoDto pedidoDto)
         {
@@ -43,15 +46,21 @@ namespace Presentacion.Core.Unidad
 
             lblId.Text = $"{Pedido.Id}";
 
-            var respuesta = pedido_Producto_Servicio.BuscarId(Pedido.Id);
+            var respuesta = pedido_Producto_Servicio.BuscarPedidoTerminado(Pedido.Id);
 
             foreach (var item in respuesta)
             {
                 lblProducto.Text += $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} | ";
                 lblIdPedido.Text = $"{item.PedidoId}";
+                estado = item.Estado;
             }
 
         }
 
+        private void btnVista_Click(object sender, EventArgs e)
+        {
+            var pedido = new PedidoInfo(Pedido.Id, estado);
+            pedido.ShowDialog();
+        }
     }
 }

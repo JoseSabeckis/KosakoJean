@@ -69,6 +69,7 @@
             this.btnVista.TabIndex = 8;
             this.btnVista.Text = "Vista";
             this.btnVista.UseVisualStyleBackColor = true;
+            this.btnVista.Click += new System.EventHandler(this.btnVista_Click);
             // 
             // lblIdPedido
             // 

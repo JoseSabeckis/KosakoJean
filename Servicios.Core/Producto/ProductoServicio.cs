@@ -1,5 +1,7 @@
 ﻿using AccesoDatos;
+using Servicios.Core.Colegio;
 using Servicios.Core.Producto.Dto;
+using Servicios.Core.TipoProducto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,7 @@ namespace Servicios.Core.Producto
 {
     public class ProductoServicio : IProductoServicio
     {
+
         public void Nuevo(ProductoDto dto)
         {
 
@@ -66,6 +69,7 @@ namespace Servicios.Core.Producto
         {
             using (var context = new KosakoDBEntities())
             {
+
                 var productos = context.Productos.AsNoTracking().Where(x => x.Descripcion.Contains(cadenaBuscar) && x.EstaEliminado == false)
                     .Select(x => new ProductoDto
                     {
@@ -76,7 +80,8 @@ namespace Servicios.Core.Producto
                         Precio = x.Precio,
                         Extras = x.Extras,
                         TipoProductoId = x.TipoProductoId,
-                        ColegioId = x.ColegioId
+                        ColegioId = x.ColegioId,
+
 
                     }).ToList();
 

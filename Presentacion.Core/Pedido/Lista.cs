@@ -36,7 +36,6 @@ namespace Presentacion.Core.Pedido
         private void CrearControles()
         {
             var cuentas = pedidoServicio.BuscarPedidosNuevos();
-            //var cuentas = producto_Pedido_Servicio.Buscar();
 
             var flowPanel = new FlowLayoutPanel
             {

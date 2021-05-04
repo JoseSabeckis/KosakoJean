@@ -1,6 +1,8 @@
 ﻿using Presentacion.Clases;
+using Servicios.Core.Colegio;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto.Dto;
+using Servicios.Core.TipoProducto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,11 +18,16 @@ namespace Presentacion.Core.Producto
     public partial class Producto : FormularioConsulta
     {
         private readonly IProductoServicio _Servicio;
+        private readonly IColegioServicio colegioServicio;
+        private readonly ITipoProducto tipoProducto;
 
         public Producto()
             : this(new ProductoServicio())
         {
             InitializeComponent();
+
+            colegioServicio = new ColegioServicio();
+            tipoProducto = new TipoProductoServicio();
         }
 
         public Producto(IProductoServicio Servicio)
@@ -44,23 +51,36 @@ namespace Presentacion.Core.Producto
             grilla.Columns["Precio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["ColegioId"].Visible = true;
-            grilla.Columns["ColegioId"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["ColegioId"].HeaderText = @"Colegio";
-            grilla.Columns["ColegioId"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["ColegioId"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Colegio"].Visible = true;
+            grilla.Columns["Colegio"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["Colegio"].HeaderText = @"Colegio";
+            grilla.Columns["Colegio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Colegio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["TipoProductoId"].Visible = true;
-            grilla.Columns["TipoProductoId"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["TipoProductoId"].HeaderText = @"Estilo";
-            grilla.Columns["TipoProductoId"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["TipoProductoId"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["TipoProducto"].Visible = true;
+            grilla.Columns["TipoProducto"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["TipoProducto"].HeaderText = @"Estilo";
+            grilla.Columns["TipoProducto"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["TipoProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
         }
 
         public override void ActualizarDatos(DataGridView grilla, string cadenaBuscar)
         {
-            grilla.DataSource = _Servicio.Buscar(cadenaBuscar);
+            var lista = _Servicio.Buscar(cadenaBuscar);
+
+            foreach (var item in lista)
+            {
+                var producto = _Servicio.ObtenerPorId(item.Id);
+
+                var colegioDescripcion = colegioServicio.ObtenerPorId(producto.ColegioId).Descripcion;
+                var tipoDescripcion = tipoProducto.ObtenerPorId(producto.TipoProductoId).Descripcion;
+
+                item.Colegio = colegioDescripcion;
+                item.TipoProducto = tipoDescripcion;
+            }          
+
+            grilla.DataSource = lista.ToList();
         }
 
         public override void EjecutarNuevo()

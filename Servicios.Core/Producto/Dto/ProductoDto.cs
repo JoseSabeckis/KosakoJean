@@ -20,6 +20,10 @@ namespace Servicios.Core.Producto.Dto
 
         public long ColegioId { get; set; }
 
+        public string Colegio { get; set; }
+
         public long TipoProductoId { get; set; }
+
+        public string TipoProducto { get; set; }
     }
 }

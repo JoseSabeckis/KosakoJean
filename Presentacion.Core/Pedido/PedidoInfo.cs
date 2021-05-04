@@ -24,6 +24,8 @@ namespace Presentacion.Core.Pedido
 
         AccesoDatos.EstadoPedido Estado;
 
+        long PedidoId;
+
         List<VentaDto2> list;
 
         public PedidoInfo(long pedidoId, AccesoDatos.EstadoPedido estado)
@@ -38,11 +40,20 @@ namespace Presentacion.Core.Pedido
 
             Estado = estado;
 
+            PedidoId = pedidoId;
+
             Datos(pedidoId);
 
             Esquema(pedidoId);
 
-            
+            if (pedidoServicio.Buscar(pedidoId).Proceso == AccesoDatos.Proceso.InicioPedido)
+            {
+                btnTerminar.Visible = false;
+            }
+            else
+            {
+                btnTerminar.Visible = true;
+            }
         }
 
         public void CargarGrilla()
@@ -112,12 +123,34 @@ namespace Presentacion.Core.Pedido
             else
             {
                 var esquema = producto_Pedido_Servicio.BuscarPedidoTerminado(pedidoId);
+
+                foreach (var item in esquema)
+                {
+                    var producto = productoServicio.ObtenerPorId(item.ProductoId);
+
+                    var lista = new VentaDto2
+                    {
+                        Cantidad = item.Cantidad,
+                        Talle = item.Talle,
+                        Descripcion = producto.Descripcion,
+                        Precio = producto.Precio * item.Cantidad
+                    };
+
+                    list.Add(lista);
+
+                }
+
+                CargarGrilla();
             }
         }
 
         public void Datos(long pedidoId)
         {
             var pedido = pedidoServicio.Buscar(pedidoId);
+
+            txtTotal.Text = string.Empty;
+            txtDebe.Text = string.Empty;
+            txtDineroAdelanto.Text = string.Empty;
 
             lblPersona.Text = $"{pedido.Apellido} {pedido.Nombre}";
             lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dd/MM/yyyy")}";
@@ -129,5 +162,23 @@ namespace Presentacion.Core.Pedido
             txtDebe.Text = $"{pedido.Total - pedido.Adelanto}";
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnTerminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta por Terminar el Pedido, Esta Seguro?","Preguntar",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var pedido = pedidoServicio.Buscar(PedidoId);
+
+                pedidoServicio.CambiarProcesoTerminado(pedido.Id);
+
+                btnTerminar.Visible = false;
+
+                MessageBox.Show("---- Felicidades! ----", "Felicidades", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

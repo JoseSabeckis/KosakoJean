@@ -105,10 +105,7 @@ namespace Servicios.Core.Pedido
         {
             using (var context = new KosakoDBEntities())
             {
-
                 return context.Pedidos.FirstOrDefault(x => x.Id == id);
-
-
             }
         }
 
