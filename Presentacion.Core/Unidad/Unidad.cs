@@ -51,7 +51,7 @@ namespace Presentacion.Core.Unidad
             
             foreach (var item in respuesta)
             {
-                lblProducto2.Text += $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} | ";
+                lblProducto2.Text = $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} | ";
                 lblIdPedido.Text = $"{item.PedidoId}";
                 estado = item.Estado;
             }
@@ -69,6 +69,8 @@ namespace Presentacion.Core.Unidad
             {
                 pedido_Producto_Servicio.CambiarEstado(Pedido.Id);
                 pedidoServicio.CambiarProcesoRetiro(Pedido.Id);
+
+                btnRealizado.Visible = false;
 
                 MessageBox.Show("Listo!, Vamos Paula!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

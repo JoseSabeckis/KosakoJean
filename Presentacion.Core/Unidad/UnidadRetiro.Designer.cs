@@ -41,7 +41,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.SystemColors.GrayText;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblNombre.ForeColor = System.Drawing.Color.AliceBlue;
             this.lblNombre.Location = new System.Drawing.Point(3, 65);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(85, 24);

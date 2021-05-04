@@ -103,6 +103,7 @@ namespace Presentacion.Core.Pedido
 
                 foreach (var item in esquema)
                 {
+
                     var producto = productoServicio.ObtenerPorId(item.ProductoId);
 
                     var lista = new VentaDto2
@@ -110,14 +111,14 @@ namespace Presentacion.Core.Pedido
                         Cantidad = item.Cantidad,
                         Talle = item.Talle,
                         Descripcion = producto.Descripcion,
-                        Precio = producto.Precio * item.Cantidad
+                        Precio = producto.Precio
                     };
 
                     list.Add(lista);
 
-                }
+                    CargarGrilla();
 
-                CargarGrilla();
+                }                
 
             }
             else
@@ -138,9 +139,10 @@ namespace Presentacion.Core.Pedido
 
                     list.Add(lista);
 
-                }
+                    CargarGrilla();
 
-                CargarGrilla();
+                }
+                
             }
         }
 

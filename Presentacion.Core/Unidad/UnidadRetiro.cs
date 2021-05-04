@@ -42,6 +42,8 @@ namespace Presentacion.Core.Unidad
         {
             lblFecha.Text = $"{Pedido.FechaEntrega.ToString("dd/MM/yyyy")}";
 
+            lblNombre.Text = string.Empty;
+
             lblNombre.Text = $"{Pedido.Apellido} - {Pedido.Nombre}";
 
             lblId.Text = $"{Pedido.Id}";
@@ -50,7 +52,7 @@ namespace Presentacion.Core.Unidad
 
             foreach (var item in respuesta)
             {
-                lblProducto.Text += $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} | ";
+                lblProducto.Text = $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} | ";
                 lblIdPedido.Text = $"{item.PedidoId}";
                 estado = item.Estado;
             }

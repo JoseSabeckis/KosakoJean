@@ -35,6 +35,8 @@ namespace Presentacion.Core.Cobro
 
         List<VentaDto2> ListaVenta;
 
+        decimal _total;
+
         public Venta()
         {
             InitializeComponent();
@@ -72,14 +74,7 @@ namespace Presentacion.Core.Cobro
                 txtProducto.Text = producto.Descripcion;
 
 
-                if (nudCantidad.Value != 1)
-                {
-                    nudPrecio.Value = product.Precio * nudCantidad.Value;
-                }
-                else
-                {
-                    nudPrecio.Value = product.Precio;
-                }
+                nudPrecio.Value = product.Precio;
 
 
             }
@@ -90,7 +85,7 @@ namespace Presentacion.Core.Cobro
         {
             if (!string.IsNullOrEmpty(txtProducto.Text))
             {
-                nudPrecio.Value = producto.Precio * nudCantidad.Value;
+                nudPrecio.Value = producto.Precio;
             }
             else
             {
@@ -114,7 +109,6 @@ namespace Presentacion.Core.Cobro
                 if (prueba != null)
                 {
                     prueba.Cantidad += nudCantidad.Value;
-                    //prueba.Precio += prueba.Precio;
 
                     CargarGrilla(ListaVenta);
 
@@ -151,10 +145,33 @@ namespace Presentacion.Core.Cobro
 
         public void Total()
         {
-            var precio = ListaVenta.Sum(x => x.Precio);
-            var cantidad = ListaVenta.Sum(x => x.Cantidad);
+            decimal total = 0;
 
-            txtTotal.Text = $"$ {precio * cantidad}";
+            decimal precio = 0;
+
+            foreach (var item in ListaVenta)
+            {
+                foreach (var producto in productoServicio.Buscar(string.Empty))
+                {
+                    if (item.Descripcion == producto.Descripcion)
+                    {
+                        precio += item.Cantidad * item.Precio;
+                    }
+                    else
+                    {
+                        if (producto.Descripcion == item.Descripcion)
+                        {
+                            precio += item.Precio;
+                        }
+                        
+                    }
+                }
+            }
+
+            total = precio;
+            _total = precio;
+
+            nudTotal.Value = total;
         }
 
         public void Limpiar()
@@ -213,9 +230,11 @@ namespace Presentacion.Core.Cobro
             nudCantidad.Value = 1;
             nudPrecio.Value = 0;
 
-            txtTotal.Text = string.Empty;
+            nudTotal.Value = 0;
             txtVuelto.Text = string.Empty;
             nudPagaron.Value = 0;
+
+            _total = 0;
 
             _productoId = 0;
 
@@ -228,12 +247,10 @@ namespace Presentacion.Core.Cobro
         {
             if (nudPagaron.Value > 0)
             {
-                if (txtTotal.Text != string.Empty)
-                {
-                    var precio = ListaVenta.Sum(x => x.Precio);
-                    var cantidad = ListaVenta.Sum(x => x.Cantidad);
+                if (nudTotal.Value != 0)
+                {                   
 
-                    var pago = nudPagaron.Value - (precio * cantidad);
+                    var pago = _total - nudPagaron.Value;
 
                     txtVuelto.Text = $" $ {pago}";
                 }
@@ -253,15 +270,11 @@ namespace Presentacion.Core.Cobro
                 {
                     if (MessageBox.Show("Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        var precio = ListaVenta.Sum(x => x.Precio);
-                        var cantidad = ListaVenta.Sum(x => x.Cantidad);
-
-                        var pago = precio * cantidad;
 
                         var venta = new VentaDto
                         {
                             Fecha = DateTime.Now,
-                            Total = pago
+                            Total = _total
                         };
 
                         var ventaId = ventaServicio.NuevaVenta(venta);
@@ -279,7 +292,7 @@ namespace Presentacion.Core.Cobro
                                 Estado = AccesoDatos.EstadoPedido.Terminado,
                                 ProductoId = item.Id,
                                 Talle = item.Talle,
-                                Precio = item.Precio,
+                                Precio = item.Precio * item.Cantidad,
                                 VentaId = ventaId
                             };
 
@@ -291,7 +304,7 @@ namespace Presentacion.Core.Cobro
                         var detalle = new DetalleCajaDto
                         {
                             Fecha = DateTime.Now,
-                            Total = pago,
+                            Total = _total,
                             Descripcion = $"Venta {descripcion}",
                         };
 
@@ -307,7 +320,7 @@ namespace Presentacion.Core.Cobro
                 }
                 else
                 {
-                    var pedidos = new Pedido.Pedido(ListaVenta);
+                    var pedidos = new Pedido.Pedido(ListaVenta, _total);
                     pedidos.ShowDialog();
 
 

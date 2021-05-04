@@ -41,6 +41,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnTerminar = new System.Windows.Forms.Button();
             this.txtDebe = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDineroAdelanto = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnTerminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -205,45 +205,57 @@
             this.panel3.Size = new System.Drawing.Size(802, 111);
             this.panel3.TabIndex = 1;
             // 
+            // btnTerminar
+            // 
+            this.btnTerminar.BackColor = System.Drawing.Color.Lime;
+            this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerminar.Location = new System.Drawing.Point(436, 19);
+            this.btnTerminar.Name = "btnTerminar";
+            this.btnTerminar.Size = new System.Drawing.Size(99, 55);
+            this.btnTerminar.TabIndex = 8;
+            this.btnTerminar.Text = "Terminar";
+            this.btnTerminar.UseVisualStyleBackColor = false;
+            this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
+            // 
             // txtDebe
             // 
             this.txtDebe.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtDebe.Enabled = false;
             this.txtDebe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDebe.Location = new System.Drawing.Point(690, 73);
+            this.txtDebe.Location = new System.Drawing.Point(707, 73);
             this.txtDebe.Name = "txtDebe";
-            this.txtDebe.Size = new System.Drawing.Size(100, 26);
+            this.txtDebe.Size = new System.Drawing.Size(83, 26);
             this.txtDebe.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(634, 76);
+            this.label4.Location = new System.Drawing.Point(631, 76);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 20);
+            this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Debe";
+            this.label4.Text = "Debe  $";
             // 
             // txtDineroAdelanto
             // 
             this.txtDineroAdelanto.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtDineroAdelanto.Enabled = false;
             this.txtDineroAdelanto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDineroAdelanto.Location = new System.Drawing.Point(690, 44);
+            this.txtDineroAdelanto.Location = new System.Drawing.Point(707, 44);
             this.txtDineroAdelanto.Name = "txtDineroAdelanto";
-            this.txtDineroAdelanto.Size = new System.Drawing.Size(100, 26);
+            this.txtDineroAdelanto.Size = new System.Drawing.Size(83, 26);
             this.txtDineroAdelanto.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(602, 46);
+            this.label3.Location = new System.Drawing.Point(599, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 22);
+            this.label3.Size = new System.Drawing.Size(104, 22);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Adelanto";
+            this.label3.Text = "Adelanto  $";
             // 
             // txtNotas
             // 
@@ -268,32 +280,20 @@
             this.txtTotal.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(690, 15);
+            this.txtTotal.Location = new System.Drawing.Point(707, 15);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(100, 26);
+            this.txtTotal.Size = new System.Drawing.Size(83, 26);
             this.txtTotal.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(634, 19);
+            this.label2.Location = new System.Drawing.Point(634, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Total";
-            // 
-            // btnTerminar
-            // 
-            this.btnTerminar.BackColor = System.Drawing.Color.Lime;
-            this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminar.Location = new System.Drawing.Point(436, 19);
-            this.btnTerminar.Name = "btnTerminar";
-            this.btnTerminar.Size = new System.Drawing.Size(99, 55);
-            this.btnTerminar.TabIndex = 8;
-            this.btnTerminar.Text = "Terminar";
-            this.btnTerminar.UseVisualStyleBackColor = false;
-            this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
+            this.label2.Text = "Total  $";
             // 
             // PedidoInfo
             // 

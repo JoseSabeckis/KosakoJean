@@ -44,6 +44,9 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnAgregarAlaGrilla = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.ckbPedido = new System.Windows.Forms.CheckBox();
+            this.ckbNormal = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -55,15 +58,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.nudPagaron = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.ckbNormal = new System.Windows.Forms.CheckBox();
-            this.ckbPedido = new System.Windows.Forms.CheckBox();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.nudTotal = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -71,13 +71,14 @@
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).BeginInit();
-            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -267,6 +268,41 @@
             this.panel3.Size = new System.Drawing.Size(1013, 76);
             this.panel3.TabIndex = 2;
             // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.ckbPedido);
+            this.panel9.Controls.Add(this.ckbNormal);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel9.Location = new System.Drawing.Point(690, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(176, 72);
+            this.panel9.TabIndex = 8;
+            // 
+            // ckbPedido
+            // 
+            this.ckbPedido.AutoSize = true;
+            this.ckbPedido.Location = new System.Drawing.Point(40, 39);
+            this.ckbPedido.Name = "ckbPedido";
+            this.ckbPedido.Size = new System.Drawing.Size(87, 26);
+            this.ckbPedido.TabIndex = 7;
+            this.ckbPedido.Text = "Pedido";
+            this.ckbPedido.UseVisualStyleBackColor = true;
+            this.ckbPedido.CheckedChanged += new System.EventHandler(this.ckbPedido_CheckedChanged);
+            // 
+            // ckbNormal
+            // 
+            this.ckbNormal.AutoSize = true;
+            this.ckbNormal.Checked = true;
+            this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbNormal.Location = new System.Drawing.Point(40, 6);
+            this.ckbNormal.Name = "ckbNormal";
+            this.ckbNormal.Size = new System.Drawing.Size(91, 26);
+            this.ckbNormal.TabIndex = 6;
+            this.ckbNormal.Text = "Normal";
+            this.ckbNormal.UseVisualStyleBackColor = true;
+            this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -393,23 +429,13 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.txtTotal);
+            this.panel5.Controls.Add(this.nudTotal);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(773, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(236, 77);
             this.panel5.TabIndex = 6;
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtTotal.Enabled = false;
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(91, 22);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(135, 33);
-            this.txtTotal.TabIndex = 5;
             // 
             // label7
             // 
@@ -464,40 +490,19 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
             // 
-            // ckbNormal
+            // nudTotal
             // 
-            this.ckbNormal.AutoSize = true;
-            this.ckbNormal.Checked = true;
-            this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbNormal.Location = new System.Drawing.Point(40, 6);
-            this.ckbNormal.Name = "ckbNormal";
-            this.ckbNormal.Size = new System.Drawing.Size(91, 26);
-            this.ckbNormal.TabIndex = 6;
-            this.ckbNormal.Text = "Normal";
-            this.ckbNormal.UseVisualStyleBackColor = true;
-            this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
-            // 
-            // ckbPedido
-            // 
-            this.ckbPedido.AutoSize = true;
-            this.ckbPedido.Location = new System.Drawing.Point(40, 39);
-            this.ckbPedido.Name = "ckbPedido";
-            this.ckbPedido.Size = new System.Drawing.Size(87, 26);
-            this.ckbPedido.TabIndex = 7;
-            this.ckbPedido.Text = "Pedido";
-            this.ckbPedido.UseVisualStyleBackColor = true;
-            this.ckbPedido.CheckedChanged += new System.EventHandler(this.ckbPedido_CheckedChanged);
-            // 
-            // panel9
-            // 
-            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel9.Controls.Add(this.ckbPedido);
-            this.panel9.Controls.Add(this.ckbNormal);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(690, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(176, 72);
-            this.panel9.TabIndex = 8;
+            this.nudTotal.Enabled = false;
+            this.nudTotal.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudTotal.Location = new System.Drawing.Point(91, 22);
+            this.nudTotal.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.nudTotal.Name = "nudTotal";
+            this.nudTotal.Size = new System.Drawing.Size(135, 35);
+            this.nudTotal.TabIndex = 6;
             // 
             // Venta
             // 
@@ -524,6 +529,8 @@
             this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
@@ -532,8 +539,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).EndInit();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -553,7 +559,6 @@
         private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Button btnAgregarAlaGrilla;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown nudPagaron;
         private System.Windows.Forms.Label label6;
@@ -575,5 +580,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.CheckBox ckbPedido;
         private System.Windows.Forms.CheckBox ckbNormal;
+        private System.Windows.Forms.NumericUpDown nudTotal;
     }
 }

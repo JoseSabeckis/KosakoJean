@@ -26,10 +26,11 @@ namespace Presentacion.Core.Pedido
         public bool semaforo = false;
 
         public string _Descripcion;
+        decimal _total;
 
         List<VentaDto2> ListaVentas;
 
-        public Pedido(List<VentaDto2> Lista)
+        public Pedido(List<VentaDto2> Lista, decimal total)
         {
             InitializeComponent();
 
@@ -37,6 +38,7 @@ namespace Presentacion.Core.Pedido
             producto_Pedido_Servicio = new Producto_Pedido_Servicio();
             productoServicio = new ProductoServicio();
 
+            _total = total;
             ListaVentas = Lista;
         }
 
@@ -76,7 +78,7 @@ namespace Presentacion.Core.Pedido
                         Nombre = txtNombre.Text,
                         Proceso = AccesoDatos.Proceso.InicioPedido,
                         FechaEntrega = dtpFechaEntrega.Value.Date,
-                        Total = ListaVentas.Sum(x => x.Precio),
+                        Total = _total,
                         
                     };
 
@@ -104,7 +106,7 @@ namespace Presentacion.Core.Pedido
                             Estado = AccesoDatos.EstadoPedido.Esperando,
                             Talle = item.Talle,
                             PedidoId = pedidoId,
-                            Descripcion = descripcion
+                            Descripcion = segunda
                         };                    
 
                         producto_Pedido_Servicio.NuevoProductoPedido(aux);
