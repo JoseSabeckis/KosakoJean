@@ -19,7 +19,7 @@ namespace Servicios.Core.DetalleCaja
                     Descripcion = detalleCajaDto.Descripcion,
                     Fecha = detalleCajaDto.Fecha,
                     Total = detalleCajaDto.Total,
-                    CajaId = BuscarCajaAbierta()
+                    CajaId = detalleCajaDto.CajaId
                 };
 
                 context.DetalleCajas.Add(detalleCaja);
@@ -32,7 +32,6 @@ namespace Servicios.Core.DetalleCaja
         {
             using(var context = new KosakoDBEntities())
             {
-
                 var cajaId = context.Cajas.AsNoTracking().FirstOrDefault(x => x.OpenClose == OpenClose.Abierto).Id;
 
                 return cajaId;

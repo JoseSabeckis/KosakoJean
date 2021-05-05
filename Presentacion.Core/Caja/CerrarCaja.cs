@@ -69,9 +69,9 @@ namespace Presentacion.Core.Caja
             var suma = _cajaServicio.BuscarCajaAbierta();
 
             txtCobrado.Text = $"$ {total}";
-            txtTotal.Text = $"$ {suma.TotalCaja}";
+            txtTotal.Text = $"$ {total}";
 
-            _Total = total + suma.TotalCaja;
+            _Total = total;
         }
 
         private void btmVolver_Click(object sender, EventArgs e)

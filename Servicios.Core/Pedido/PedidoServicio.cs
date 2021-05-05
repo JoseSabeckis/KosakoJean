@@ -101,6 +101,28 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public IEnumerable<PedidoDto> BuscandoTerminados()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.Where(x => x.Proceso == Proceso.PedidoTerminado)
+                    .Select(x => new PedidoDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        Nombre = x.Nombre,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        Total = x.Total,
+                        Id = x.Id,
+                        Proceso = x.Proceso
+
+                    }).ToList();
+
+            }
+        }
+
         public AccesoDatos.Pedido Buscar(long id)
         {
             using (var context = new KosakoDBEntities())

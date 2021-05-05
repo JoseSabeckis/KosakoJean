@@ -1,4 +1,6 @@
-﻿using Servicios.Core.ParteVenta.Dto;
+﻿using Servicios.Core.DetalleCaja;
+using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido;
@@ -22,9 +24,13 @@ namespace Presentacion.Core.Pedido
         private readonly IPedidoServicio pedidoServicio;
         private readonly IProductoServicio productoServicio;
 
+        private readonly IDetalleCajaServicio detalleCajaServicio;
+
         AccesoDatos.EstadoPedido Estado;
 
         long PedidoId;
+
+        decimal _Debe;
 
         List<VentaDto2> list;
 
@@ -162,6 +168,7 @@ namespace Presentacion.Core.Pedido
             txtTotal.Text = $"{pedido.Total}";
 
             txtDebe.Text = $"{pedido.Total - pedido.Adelanto}";
+            _Debe = pedido.Total - pedido.Adelanto;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -178,6 +185,17 @@ namespace Presentacion.Core.Pedido
                 pedidoServicio.CambiarProcesoTerminado(pedido.Id);
 
                 btnTerminar.Visible = false;
+
+                //caja
+
+                var detalle = new DetalleCajaDto
+                {
+                    Descripcion = $"{lblPersona.Text} - Pedido Terminado",
+                    Fecha = DateTime.Now,
+                    Total = _Debe
+                };
+
+                detalleCajaServicio.AgregarDetalleCaja(detalle);
 
                 MessageBox.Show("---- Felicidades! ----", "Felicidades", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

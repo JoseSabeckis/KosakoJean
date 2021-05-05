@@ -36,39 +36,50 @@
             this.verProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colegioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verColegiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoColegioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verCajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDeLaAplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiposToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoTipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verTiposToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.btnListoParaEntregar = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnTerminados = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCajas = new System.Windows.Forms.Button();
-            this.btnCerrarCaja = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.btnAbrirCaja = new System.Windows.Forms.Button();
+            this.btnCajas = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPedidos = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.btnCobrar2 = new System.Windows.Forms.Button();
+            this.btnPedidos = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.nuevoColegioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tiposToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevoTipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verTiposToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,14 +109,14 @@
             // nuevoProductoToolStripMenuItem
             // 
             this.nuevoProductoToolStripMenuItem.Name = "nuevoProductoToolStripMenuItem";
-            this.nuevoProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoProductoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.nuevoProductoToolStripMenuItem.Text = "Nuevo Producto";
             this.nuevoProductoToolStripMenuItem.Click += new System.EventHandler(this.nuevoProductoToolStripMenuItem_Click);
             // 
             // verProductosToolStripMenuItem
             // 
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.verProductosToolStripMenuItem.Text = "Ver Productos";
             this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
@@ -121,9 +132,16 @@
             // verColegiosToolStripMenuItem
             // 
             this.verColegiosToolStripMenuItem.Name = "verColegiosToolStripMenuItem";
-            this.verColegiosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verColegiosToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.verColegiosToolStripMenuItem.Text = "Nuevo Colegio";
             this.verColegiosToolStripMenuItem.Click += new System.EventHandler(this.verColegiosToolStripMenuItem_Click);
+            // 
+            // nuevoColegioToolStripMenuItem
+            // 
+            this.nuevoColegioToolStripMenuItem.Name = "nuevoColegioToolStripMenuItem";
+            this.nuevoColegioToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.nuevoColegioToolStripMenuItem.Text = "Ver Colegios";
+            this.nuevoColegioToolStripMenuItem.Click += new System.EventHandler(this.nuevoColegioToolStripMenuItem_Click);
             // 
             // cajasToolStripMenuItem
             // 
@@ -152,9 +170,32 @@
             // salirDeLaAplicacionToolStripMenuItem
             // 
             this.salirDeLaAplicacionToolStripMenuItem.Name = "salirDeLaAplicacionToolStripMenuItem";
-            this.salirDeLaAplicacionToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.salirDeLaAplicacionToolStripMenuItem.Text = "Salir de la Aplicacion";
+            this.salirDeLaAplicacionToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirDeLaAplicacionToolStripMenuItem.Text = "Salir";
             this.salirDeLaAplicacionToolStripMenuItem.Click += new System.EventHandler(this.salirDeLaAplicacionToolStripMenuItem_Click);
+            // 
+            // tiposToolStripMenuItem1
+            // 
+            this.tiposToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoTipoToolStripMenuItem,
+            this.verTiposToolStripMenuItem1});
+            this.tiposToolStripMenuItem1.Name = "tiposToolStripMenuItem1";
+            this.tiposToolStripMenuItem1.Size = new System.Drawing.Size(47, 20);
+            this.tiposToolStripMenuItem1.Text = "Tipos";
+            // 
+            // nuevoTipoToolStripMenuItem
+            // 
+            this.nuevoTipoToolStripMenuItem.Name = "nuevoTipoToolStripMenuItem";
+            this.nuevoTipoToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.nuevoTipoToolStripMenuItem.Text = "Nuevo Tipo";
+            this.nuevoTipoToolStripMenuItem.Click += new System.EventHandler(this.nuevoTipoToolStripMenuItem_Click);
+            // 
+            // verTiposToolStripMenuItem1
+            // 
+            this.verTiposToolStripMenuItem1.Name = "verTiposToolStripMenuItem1";
+            this.verTiposToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
+            this.verTiposToolStripMenuItem1.Text = "Ver Tipos";
+            this.verTiposToolStripMenuItem1.Click += new System.EventHandler(this.verTiposToolStripMenuItem1_Click);
             // 
             // panel1
             // 
@@ -174,9 +215,9 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.lblFecha);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(185, 308);
+            this.panel5.Location = new System.Drawing.Point(191, 308);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(496, 65);
+            this.panel5.Size = new System.Drawing.Size(494, 65);
             this.panel5.TabIndex = 3;
             // 
             // lblFecha
@@ -194,65 +235,86 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.btnListoParaEntregar);
+            this.panel4.Controls.Add(this.panel9);
+            this.panel4.Controls.Add(this.panel8);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(185, 0);
+            this.panel4.Location = new System.Drawing.Point(191, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(496, 373);
+            this.panel4.Size = new System.Drawing.Size(494, 373);
             this.panel4.TabIndex = 2;
+            // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.btnListoParaEntregar);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(0, 195);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(490, 174);
+            this.panel9.TabIndex = 8;
             // 
             // btnListoParaEntregar
             // 
+            this.btnListoParaEntregar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnListoParaEntregar.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btnListoParaEntregar.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListoParaEntregar.Location = new System.Drawing.Point(118, 234);
+            this.btnListoParaEntregar.Location = new System.Drawing.Point(116, 32);
             this.btnListoParaEntregar.Name = "btnListoParaEntregar";
-            this.btnListoParaEntregar.Size = new System.Drawing.Size(243, 54);
+            this.btnListoParaEntregar.Size = new System.Drawing.Size(241, 54);
             this.btnListoParaEntregar.TabIndex = 5;
             this.btnListoParaEntregar.Text = "Listos Para Entregar";
             this.btnListoParaEntregar.UseVisualStyleBackColor = false;
             this.btnListoParaEntregar.Click += new System.EventHandler(this.btnListoParaEntregar_Click);
             // 
+            // panel8
+            // 
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.btnTerminados);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(490, 195);
+            this.panel8.TabIndex = 7;
+            // 
+            // btnTerminados
+            // 
+            this.btnTerminados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTerminados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTerminados.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerminados.Location = new System.Drawing.Point(116, 70);
+            this.btnTerminados.Name = "btnTerminados";
+            this.btnTerminados.Size = new System.Drawing.Size(241, 54);
+            this.btnTerminados.TabIndex = 6;
+            this.btnTerminados.Text = "Pedidos Terminados";
+            this.btnTerminados.UseVisualStyleBackColor = false;
+            this.btnTerminados.Click += new System.EventHandler(this.btnTerminados_Click);
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.panel12);
             this.panel3.Controls.Add(this.btnCajas);
-            this.panel3.Controls.Add(this.btnCerrarCaja);
-            this.panel3.Controls.Add(this.btnAbrirCaja);
+            this.panel3.Controls.Add(this.panel11);
             this.panel3.Controls.Add(this.panel7);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(185, 373);
+            this.panel3.Size = new System.Drawing.Size(191, 373);
             this.panel3.TabIndex = 1;
             // 
-            // btnCajas
+            // panel12
             // 
-            this.btnCajas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnCajas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCajas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCajas.Location = new System.Drawing.Point(22, 128);
-            this.btnCajas.Name = "btnCajas";
-            this.btnCajas.Size = new System.Drawing.Size(136, 44);
-            this.btnCajas.TabIndex = 3;
-            this.btnCajas.Text = "Ver Cajas";
-            this.btnCajas.UseVisualStyleBackColor = false;
-            this.btnCajas.Click += new System.EventHandler(this.btnCajas_Click);
-            // 
-            // btnCerrarCaja
-            // 
-            this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnCerrarCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarCaja.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarCaja.Location = new System.Drawing.Point(22, 244);
-            this.btnCerrarCaja.Name = "btnCerrarCaja";
-            this.btnCerrarCaja.Size = new System.Drawing.Size(136, 44);
-            this.btnCerrarCaja.TabIndex = 2;
-            this.btnCerrarCaja.Text = "Cerrar Caja";
-            this.btnCerrarCaja.UseVisualStyleBackColor = false;
-            this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel12.Controls.Add(this.btnAbrirCaja);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(187, 100);
+            this.panel12.TabIndex = 5;
             // 
             // btnAbrirCaja
             // 
@@ -260,13 +322,54 @@
             this.btnAbrirCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAbrirCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbrirCaja.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbrirCaja.Location = new System.Drawing.Point(22, 16);
+            this.btnAbrirCaja.Location = new System.Drawing.Point(20, 29);
             this.btnAbrirCaja.Name = "btnAbrirCaja";
             this.btnAbrirCaja.Size = new System.Drawing.Size(136, 44);
             this.btnAbrirCaja.TabIndex = 1;
             this.btnAbrirCaja.Text = "Abrir Caja";
             this.btnAbrirCaja.UseVisualStyleBackColor = false;
             this.btnAbrirCaja.Click += new System.EventHandler(this.btnAbrirCaja_Click);
+            // 
+            // btnCajas
+            // 
+            this.btnCajas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCajas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCajas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCajas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCajas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCajas.Location = new System.Drawing.Point(22, 130);
+            this.btnCajas.Name = "btnCajas";
+            this.btnCajas.Size = new System.Drawing.Size(136, 44);
+            this.btnCajas.TabIndex = 3;
+            this.btnCajas.Text = "Ver Cajas";
+            this.btnCajas.UseVisualStyleBackColor = false;
+            this.btnCajas.Click += new System.EventHandler(this.btnCajas_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel11.Controls.Add(this.btnCerrarCaja);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel11.Location = new System.Drawing.Point(0, 206);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(187, 100);
+            this.panel11.TabIndex = 4;
+            // 
+            // btnCerrarCaja
+            // 
+            this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCerrarCaja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarCaja.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarCaja.Location = new System.Drawing.Point(20, 27);
+            this.btnCerrarCaja.Name = "btnCerrarCaja";
+            this.btnCerrarCaja.Size = new System.Drawing.Size(136, 44);
+            this.btnCerrarCaja.TabIndex = 2;
+            this.btnCerrarCaja.Text = "Cerrar Caja";
+            this.btnCerrarCaja.UseVisualStyleBackColor = false;
+            this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
             // 
             // panel7
             // 
@@ -275,7 +378,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel7.Location = new System.Drawing.Point(0, 306);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(181, 63);
+            this.panel7.Size = new System.Drawing.Size(187, 63);
             this.panel7.TabIndex = 0;
             // 
             // pictureBox1
@@ -292,38 +395,54 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.btnPedidos);
-            this.panel2.Controls.Add(this.btnCobrar2);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(681, 0);
+            this.panel2.Location = new System.Drawing.Point(685, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 373);
+            this.panel2.Size = new System.Drawing.Size(196, 373);
             this.panel2.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.btnCobrar2);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(192, 195);
+            this.panel10.TabIndex = 5;
+            // 
+            // btnCobrar2
+            // 
+            this.btnCobrar2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCobrar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCobrar2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobrar2.Location = new System.Drawing.Point(21, 29);
+            this.btnCobrar2.Name = "btnCobrar2";
+            this.btnCobrar2.Size = new System.Drawing.Size(151, 127);
+            this.btnCobrar2.TabIndex = 3;
+            this.btnCobrar2.Text = "Cobrar";
+            this.btnCobrar2.UseVisualStyleBackColor = false;
+            this.btnCobrar2.Click += new System.EventHandler(this.btnCobrar2_Click);
             // 
             // btnPedidos
             // 
+            this.btnPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPedidos.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnPedidos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPedidos.Location = new System.Drawing.Point(23, 183);
+            this.btnPedidos.Location = new System.Drawing.Point(23, 217);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(151, 54);
             this.btnPedidos.TabIndex = 4;
             this.btnPedidos.Text = "Ver Pedidos";
             this.btnPedidos.UseVisualStyleBackColor = false;
             this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
-            // 
-            // btnCobrar2
-            // 
-            this.btnCobrar2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnCobrar2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobrar2.Location = new System.Drawing.Point(23, 60);
-            this.btnCobrar2.Name = "btnCobrar2";
-            this.btnCobrar2.Size = new System.Drawing.Size(151, 54);
-            this.btnCobrar2.TabIndex = 3;
-            this.btnCobrar2.Text = "Cobrar";
-            this.btnCobrar2.UseVisualStyleBackColor = false;
-            this.btnCobrar2.Click += new System.EventHandler(this.btnCobrar2_Click);
             // 
             // panel6
             // 
@@ -332,7 +451,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Location = new System.Drawing.Point(0, 306);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(196, 63);
+            this.panel6.Size = new System.Drawing.Size(192, 63);
             this.panel6.TabIndex = 0;
             // 
             // lblhora
@@ -351,36 +470,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // nuevoColegioToolStripMenuItem
-            // 
-            this.nuevoColegioToolStripMenuItem.Name = "nuevoColegioToolStripMenuItem";
-            this.nuevoColegioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nuevoColegioToolStripMenuItem.Text = "Ver Colegios";
-            this.nuevoColegioToolStripMenuItem.Click += new System.EventHandler(this.nuevoColegioToolStripMenuItem_Click);
-            // 
-            // tiposToolStripMenuItem1
-            // 
-            this.tiposToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevoTipoToolStripMenuItem,
-            this.verTiposToolStripMenuItem1});
-            this.tiposToolStripMenuItem1.Name = "tiposToolStripMenuItem1";
-            this.tiposToolStripMenuItem1.Size = new System.Drawing.Size(47, 20);
-            this.tiposToolStripMenuItem1.Text = "Tipos";
-            // 
-            // nuevoTipoToolStripMenuItem
-            // 
-            this.nuevoTipoToolStripMenuItem.Name = "nuevoTipoToolStripMenuItem";
-            this.nuevoTipoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nuevoTipoToolStripMenuItem.Text = "Nuevo Tipo";
-            this.nuevoTipoToolStripMenuItem.Click += new System.EventHandler(this.nuevoTipoToolStripMenuItem_Click);
-            // 
-            // verTiposToolStripMenuItem1
-            // 
-            this.verTiposToolStripMenuItem1.Name = "verTiposToolStripMenuItem1";
-            this.verTiposToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.verTiposToolStripMenuItem1.Text = "Ver Tipos";
-            this.verTiposToolStripMenuItem1.Click += new System.EventHandler(this.verTiposToolStripMenuItem1_Click);
             // 
             // Principal
             // 
@@ -404,10 +493,15 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.ResumeLayout(false);
@@ -448,6 +542,12 @@
         private System.Windows.Forms.ToolStripMenuItem tiposToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nuevoTipoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verTiposToolStripMenuItem1;
+        private System.Windows.Forms.Button btnTerminados;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel11;
     }
 }
 

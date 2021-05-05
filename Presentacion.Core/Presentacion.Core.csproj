@@ -117,6 +117,12 @@
     <Compile Include="Pedido\PedidosEsperando.Designer.cs">
       <DependentUpon>PedidosEsperando.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedido\PedidosTerminados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\PedidosTerminados.Designer.cs">
+      <DependentUpon>PedidosTerminados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\ElegirProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     <EmbeddedResource Include="Pedido\PedidosEsperando.resx">
       <DependentUpon>PedidosEsperando.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\PedidosTerminados.resx">
+      <DependentUpon>PedidosTerminados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Producto\ElegirProducto.resx">
       <DependentUpon>ElegirProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +270,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BuscarDos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics_78917.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

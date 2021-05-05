@@ -1,4 +1,6 @@
 ﻿using Presentacion.Core.Cobro;
+using Servicios.Core.DetalleCaja;
+using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
@@ -23,6 +25,8 @@ namespace Presentacion.Core.Pedido
         private readonly IProducto_Pedido_Servicio producto_Pedido_Servicio;
         private readonly IProductoServicio productoServicio;
 
+        private readonly IDetalleCajaServicio detallCajaServicio;
+
         public bool semaforo = false;
 
         public string _Descripcion;
@@ -38,8 +42,12 @@ namespace Presentacion.Core.Pedido
             producto_Pedido_Servicio = new Producto_Pedido_Servicio();
             productoServicio = new ProductoServicio();
 
+            detallCajaServicio = new DetalleCajaServicio();
+
             _total = total;
             ListaVentas = Lista;
+
+            nudAdelanto.Maximum = _total;
         }
 
         public bool AsignarControles()
@@ -112,6 +120,16 @@ namespace Presentacion.Core.Pedido
                         producto_Pedido_Servicio.NuevoProductoPedido(aux);
 
                     }
+
+                    var detalle = new DetalleCajaDto
+                    {
+                        Descripcion = segunda,
+                        Fecha = DateTime.Now,
+                        Total = nudAdelanto.Value,
+                        CajaId = detallCajaServicio.BuscarCajaAbierta()
+                    };
+
+                    detallCajaServicio.AgregarDetalleCaja(detalle);
 
                     MessageBox.Show("Listo Pedido Creado!", "Terminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

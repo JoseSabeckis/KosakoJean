@@ -171,5 +171,11 @@ namespace KosakoJean
             var tipo = new TipoProducto();
             tipo.ShowDialog();
         }
+
+        private void btnTerminados_Click(object sender, EventArgs e)
+        {
+            var terminado = new PedidosTerminados();
+            terminado.ShowDialog();
+        }
     }
 }

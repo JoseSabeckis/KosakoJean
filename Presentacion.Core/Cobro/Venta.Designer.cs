@@ -58,12 +58,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.nudTotal = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.nudPagaron = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.nudTotal = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -77,8 +77,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -251,6 +251,7 @@
             this.btnAgregarAlaGrilla.Text = "Agregar";
             this.btnAgregarAlaGrilla.UseVisualStyleBackColor = false;
             this.btnAgregarAlaGrilla.Click += new System.EventHandler(this.btnAgregarAlaGrilla_Click);
+            this.btnAgregarAlaGrilla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnAgregarAlaGrilla_KeyPress);
             // 
             // panel3
             // 
@@ -437,14 +438,28 @@
             this.panel5.Size = new System.Drawing.Size(236, 77);
             this.panel5.TabIndex = 6;
             // 
+            // nudTotal
+            // 
+            this.nudTotal.Enabled = false;
+            this.nudTotal.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudTotal.Location = new System.Drawing.Point(91, 22);
+            this.nudTotal.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.nudTotal.Name = "nudTotal";
+            this.nudTotal.Size = new System.Drawing.Size(135, 35);
+            this.nudTotal.TabIndex = 6;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 29);
+            this.label7.Location = new System.Drawing.Point(7, 28);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 22);
+            this.label7.Size = new System.Drawing.Size(84, 22);
             this.label7.TabIndex = 4;
-            this.label7.Text = "TOTAL";
+            this.label7.Text = "TOTAL  $";
             // 
             // nudPagaron
             // 
@@ -490,20 +505,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
             // 
-            // nudTotal
-            // 
-            this.nudTotal.Enabled = false;
-            this.nudTotal.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudTotal.Location = new System.Drawing.Point(91, 22);
-            this.nudTotal.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
-            0,
-            0});
-            this.nudTotal.Name = "nudTotal";
-            this.nudTotal.Size = new System.Drawing.Size(135, 35);
-            this.nudTotal.TabIndex = 6;
-            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -538,8 +539,8 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).EndInit();
             this.ResumeLayout(false);
 
         }

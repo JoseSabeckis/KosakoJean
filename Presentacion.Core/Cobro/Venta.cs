@@ -387,5 +387,13 @@ namespace Presentacion.Core.Cobro
                 ckbNormal.Checked = true;
             }
         }
+
+        private void btnAgregarAlaGrilla_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+
+            }
+        }
     }
 }
