@@ -1,4 +1,5 @@
-﻿using Presentacion.Core.Caja;
+﻿using Presentacion.Clases;
+using Presentacion.Core.Caja;
 using Presentacion.Core.Cobro;
 using Presentacion.Core.Colegio;
 using Presentacion.Core.Pedido;
@@ -30,7 +31,7 @@ namespace KosakoJean
 
         private void verColegiosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var colegio = new Colegio();
+            var colegio = new Colegio_Abm(TipoOperacion.Nuevo);
             colegio.ShowDialog();
         }
 
@@ -42,7 +43,7 @@ namespace KosakoJean
 
         private void nuevoProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var producto = new Producto_Abm(Presentacion.Clases.TipoOperacion.Nuevo);
+            var producto = new Producto_Abm(TipoOperacion.Nuevo);
             producto.ShowDialog();
         }
 
@@ -151,6 +152,24 @@ namespace KosakoJean
             {
                 MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void nuevoColegioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var colegio = new Colegio();
+            colegio.ShowDialog();
+        }
+
+        private void nuevoTipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var tipo = new TipoProducto_Abm(TipoOperacion.Nuevo);
+            tipo.ShowDialog();
+        }
+
+        private void verTiposToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var tipo = new TipoProducto();
+            tipo.ShowDialog();
         }
     }
 }

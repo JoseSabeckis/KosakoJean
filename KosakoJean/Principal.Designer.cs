@@ -34,8 +34,6 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verTiposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colegioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verColegiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cajasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +44,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnListoParaEntregar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCajas = new System.Windows.Forms.Button();
             this.btnCerrarCaja = new System.Windows.Forms.Button();
@@ -58,7 +57,10 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnListoParaEntregar = new System.Windows.Forms.Button();
+            this.nuevoColegioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiposToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoTipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verTiposToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -76,7 +78,8 @@
             this.productosToolStripMenuItem,
             this.colegioToolStripMenuItem,
             this.cajasToolStripMenuItem,
-            this.salirToolStripMenuItem});
+            this.salirToolStripMenuItem,
+            this.tiposToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(885, 24);
@@ -87,8 +90,7 @@
             // 
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nuevoProductoToolStripMenuItem,
-            this.verProductosToolStripMenuItem,
-            this.tiposToolStripMenuItem});
+            this.verProductosToolStripMenuItem});
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.productosToolStripMenuItem.Text = "Productos";
@@ -96,36 +98,22 @@
             // nuevoProductoToolStripMenuItem
             // 
             this.nuevoProductoToolStripMenuItem.Name = "nuevoProductoToolStripMenuItem";
-            this.nuevoProductoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.nuevoProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.nuevoProductoToolStripMenuItem.Text = "Nuevo Producto";
             this.nuevoProductoToolStripMenuItem.Click += new System.EventHandler(this.nuevoProductoToolStripMenuItem_Click);
             // 
             // verProductosToolStripMenuItem
             // 
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verProductosToolStripMenuItem.Text = "Ver Productos";
             this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
-            // 
-            // tiposToolStripMenuItem
-            // 
-            this.tiposToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verTiposToolStripMenuItem});
-            this.tiposToolStripMenuItem.Name = "tiposToolStripMenuItem";
-            this.tiposToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.tiposToolStripMenuItem.Text = "Tipos";
-            // 
-            // verTiposToolStripMenuItem
-            // 
-            this.verTiposToolStripMenuItem.Name = "verTiposToolStripMenuItem";
-            this.verTiposToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.verTiposToolStripMenuItem.Text = "Ver Tipos";
-            this.verTiposToolStripMenuItem.Click += new System.EventHandler(this.verTiposToolStripMenuItem_Click);
             // 
             // colegioToolStripMenuItem
             // 
             this.colegioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verColegiosToolStripMenuItem});
+            this.verColegiosToolStripMenuItem,
+            this.nuevoColegioToolStripMenuItem});
             this.colegioToolStripMenuItem.Name = "colegioToolStripMenuItem";
             this.colegioToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.colegioToolStripMenuItem.Text = "Colegio";
@@ -133,8 +121,8 @@
             // verColegiosToolStripMenuItem
             // 
             this.verColegiosToolStripMenuItem.Name = "verColegiosToolStripMenuItem";
-            this.verColegiosToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
-            this.verColegiosToolStripMenuItem.Text = "Ver Colegios";
+            this.verColegiosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verColegiosToolStripMenuItem.Text = "Nuevo Colegio";
             this.verColegiosToolStripMenuItem.Click += new System.EventHandler(this.verColegiosToolStripMenuItem_Click);
             // 
             // cajasToolStripMenuItem
@@ -212,6 +200,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(496, 373);
             this.panel4.TabIndex = 2;
+            // 
+            // btnListoParaEntregar
+            // 
+            this.btnListoParaEntregar.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnListoParaEntregar.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListoParaEntregar.Location = new System.Drawing.Point(118, 234);
+            this.btnListoParaEntregar.Name = "btnListoParaEntregar";
+            this.btnListoParaEntregar.Size = new System.Drawing.Size(243, 54);
+            this.btnListoParaEntregar.TabIndex = 5;
+            this.btnListoParaEntregar.Text = "Listos Para Entregar";
+            this.btnListoParaEntregar.UseVisualStyleBackColor = false;
+            this.btnListoParaEntregar.Click += new System.EventHandler(this.btnListoParaEntregar_Click);
             // 
             // panel3
             // 
@@ -352,17 +352,35 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnListoParaEntregar
+            // nuevoColegioToolStripMenuItem
             // 
-            this.btnListoParaEntregar.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.btnListoParaEntregar.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListoParaEntregar.Location = new System.Drawing.Point(118, 234);
-            this.btnListoParaEntregar.Name = "btnListoParaEntregar";
-            this.btnListoParaEntregar.Size = new System.Drawing.Size(243, 54);
-            this.btnListoParaEntregar.TabIndex = 5;
-            this.btnListoParaEntregar.Text = "Listos Para Entregar";
-            this.btnListoParaEntregar.UseVisualStyleBackColor = false;
-            this.btnListoParaEntregar.Click += new System.EventHandler(this.btnListoParaEntregar_Click);
+            this.nuevoColegioToolStripMenuItem.Name = "nuevoColegioToolStripMenuItem";
+            this.nuevoColegioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoColegioToolStripMenuItem.Text = "Ver Colegios";
+            this.nuevoColegioToolStripMenuItem.Click += new System.EventHandler(this.nuevoColegioToolStripMenuItem_Click);
+            // 
+            // tiposToolStripMenuItem1
+            // 
+            this.tiposToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevoTipoToolStripMenuItem,
+            this.verTiposToolStripMenuItem1});
+            this.tiposToolStripMenuItem1.Name = "tiposToolStripMenuItem1";
+            this.tiposToolStripMenuItem1.Size = new System.Drawing.Size(47, 20);
+            this.tiposToolStripMenuItem1.Text = "Tipos";
+            // 
+            // nuevoTipoToolStripMenuItem
+            // 
+            this.nuevoTipoToolStripMenuItem.Name = "nuevoTipoToolStripMenuItem";
+            this.nuevoTipoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoTipoToolStripMenuItem.Text = "Nuevo Tipo";
+            this.nuevoTipoToolStripMenuItem.Click += new System.EventHandler(this.nuevoTipoToolStripMenuItem_Click);
+            // 
+            // verTiposToolStripMenuItem1
+            // 
+            this.verTiposToolStripMenuItem1.Name = "verTiposToolStripMenuItem1";
+            this.verTiposToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.verTiposToolStripMenuItem1.Text = "Ver Tipos";
+            this.verTiposToolStripMenuItem1.Click += new System.EventHandler(this.verTiposToolStripMenuItem1_Click);
             // 
             // Principal
             // 
@@ -409,8 +427,6 @@
         private System.Windows.Forms.ToolStripMenuItem colegioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verColegiosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tiposToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verTiposToolStripMenuItem;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblhora;
@@ -428,6 +444,10 @@
         private System.Windows.Forms.Button btnCobrar2;
         private System.Windows.Forms.Button btnPedidos;
         private System.Windows.Forms.Button btnListoParaEntregar;
+        private System.Windows.Forms.ToolStripMenuItem nuevoColegioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tiposToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem nuevoTipoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verTiposToolStripMenuItem1;
     }
 }
 
