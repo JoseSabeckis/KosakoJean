@@ -13,6 +13,8 @@ namespace Servicios.Core.Pedido
 
         IEnumerable<PedidoDto> BuscandoTerminados();
 
+        void CambiarRamas(decimal total, long id);
+
         AccesoDatos.Pedido Buscar(long id);
 
         IEnumerable<PedidoDto> BuscarRetiros();

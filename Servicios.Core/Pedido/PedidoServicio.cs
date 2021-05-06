@@ -145,6 +145,20 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public void CambiarRamas(decimal total, long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.Adelanto += total;
+
+                context.SaveChanges();
+
+            }
+        }
+
         public void CambiarProcesoTerminado(long id)
         {
             using (var context = new KosakoDBEntities())

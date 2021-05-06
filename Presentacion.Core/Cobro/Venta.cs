@@ -306,6 +306,7 @@ namespace Presentacion.Core.Cobro
                             Fecha = DateTime.Now,
                             Total = _total,
                             Descripcion = $"Venta {descripcion}",
+                            CajaId = detalleCajaServicio.BuscarCajaAbierta()
                         };
 
                         detalleCajaServicio.AgregarDetalleCaja(detalle);

@@ -1,4 +1,5 @@
-﻿using Servicios.Core.DetalleCaja;
+﻿using Servicios.Core.Caja;
+using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
@@ -24,6 +25,7 @@ namespace Presentacion.Core.Pedido
         private readonly IPedidoServicio pedidoServicio;
         private readonly IProductoServicio productoServicio;
 
+        private readonly ICajaServicio cajaServicio;
         private readonly IDetalleCajaServicio detalleCajaServicio;
 
         AccesoDatos.EstadoPedido Estado;
@@ -41,6 +43,8 @@ namespace Presentacion.Core.Pedido
             producto_Pedido_Servicio = new Producto_Pedido_Servicio();
             pedidoServicio = new PedidoServicio();
             productoServicio = new ProductoServicio();
+            cajaServicio = new CajaServicio();
+            detalleCajaServicio = new DetalleCajaServicio();
 
             list = new List<VentaDto2>();
 
@@ -52,14 +56,25 @@ namespace Presentacion.Core.Pedido
 
             Esquema(pedidoId);
 
+            lblVendido.Visible = false;
+
             if (pedidoServicio.Buscar(pedidoId).Proceso == AccesoDatos.Proceso.InicioPedido)
             {
                 btnTerminar.Visible = false;
             }
             else
             {
-                btnTerminar.Visible = true;
+                if (pedidoServicio.Buscar(pedidoId).Proceso == AccesoDatos.Proceso.EsperandoRetiro)
+                {
+                    btnTerminar.Visible = true;
+                }
+                else
+                {
+                    btnTerminar.Visible = false;
+                    lblVendido.Visible = true;
+                }
             }
+
         }
 
         public void CargarGrilla()
@@ -178,27 +193,43 @@ namespace Presentacion.Core.Pedido
 
         private void btnTerminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta por Terminar el Pedido, Esta Seguro?","Preguntar",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+
+            if (cajaServicio.BuscarCajaAbierta() != null)
             {
-                var pedido = pedidoServicio.Buscar(PedidoId);
-
-                pedidoServicio.CambiarProcesoTerminado(pedido.Id);
-
-                btnTerminar.Visible = false;
-
-                //caja
-
-                var detalle = new DetalleCajaDto
+                if (MessageBox.Show("Esta por Terminar el Pedido, Esta Seguro?", "Preguntar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Descripcion = $"{lblPersona.Text} - Pedido Terminado",
-                    Fecha = DateTime.Now,
-                    Total = _Debe
-                };
+                    var pedido = pedidoServicio.Buscar(PedidoId);
 
-                detalleCajaServicio.AgregarDetalleCaja(detalle);
+                    pedidoServicio.CambiarProcesoTerminado(pedido.Id);
 
-                MessageBox.Show("---- Felicidades! ----", "Felicidades", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnTerminar.Visible = false;
+
+                    //caja
+
+                    var detalle = new DetalleCajaDto
+                    {
+                        Descripcion = $"{lblPersona.Text} - Pedido Terminado",
+                        Fecha = DateTime.Now,
+                        Total = _Debe,
+                        CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                    };
+
+                    detalleCajaServicio.AgregarDetalleCaja(detalle);
+
+                    pedidoServicio.CambiarRamas(_Debe, PedidoId);
+
+                    Datos(PedidoId);
+
+                    lblVendido.Visible = true;
+
+                    MessageBox.Show("---- Felicidades! ----", "Felicidades", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+            else
+            {
+                MessageBox.Show("la Caja se encuentra cerrada", "Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }

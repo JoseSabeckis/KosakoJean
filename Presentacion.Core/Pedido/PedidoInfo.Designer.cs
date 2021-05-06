@@ -50,6 +50,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblVendido = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -190,6 +191,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.lblVendido);
             this.panel3.Controls.Add(this.btnTerminar);
             this.panel3.Controls.Add(this.txtDebe);
             this.panel3.Controls.Add(this.label4);
@@ -295,6 +297,17 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Total  $";
             // 
+            // lblVendido
+            // 
+            this.lblVendido.AutoSize = true;
+            this.lblVendido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVendido.ForeColor = System.Drawing.Color.Red;
+            this.lblVendido.Location = new System.Drawing.Point(451, 32);
+            this.lblVendido.Name = "lblVendido";
+            this.lblVendido.Size = new System.Drawing.Size(120, 26);
+            this.lblVendido.TabIndex = 9;
+            this.lblVendido.Text = "Vendido !!!";
+            // 
             // PedidoInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,5 +355,6 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnTerminar;
+        private System.Windows.Forms.Label lblVendido;
     }
 }

@@ -13,6 +13,8 @@ using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Pedido;
 using Presentacion.Core.Pedido;
+using Servicios.Core.DetalleCaja;
+using Servicios.Core.Caja;
 
 namespace Presentacion.Core.Unidad
 {
@@ -21,6 +23,7 @@ namespace Presentacion.Core.Unidad
         private readonly IProducto_Pedido_Servicio pedido_Producto_Servicio;
         private readonly IProductoServicio producto;
         private readonly IPedidoServicio pedidoServicio;
+        private readonly ICajaServicio cajaServicio;
 
         PedidoDto Pedido;
 
@@ -33,6 +36,7 @@ namespace Presentacion.Core.Unidad
             pedido_Producto_Servicio = new Producto_Pedido_Servicio();
             producto = new ProductoServicio();
             pedidoServicio = new PedidoServicio();
+            cajaServicio = new CajaServicio();
 
             Pedido = pedidoDto;
 
@@ -65,16 +69,24 @@ namespace Presentacion.Core.Unidad
 
         private void btnRealizado_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta por cambiar al Producto a Terminado, Tiene que Retirar el Cliente, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (cajaServicio.BuscarCajaAbierta() != null)
             {
-                pedido_Producto_Servicio.CambiarEstado(Pedido.Id);
-                pedidoServicio.CambiarProcesoRetiro(Pedido.Id);
+                if (MessageBox.Show("Esta por cambiar al Producto a Terminado, Tiene que Retirar el Cliente, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    pedido_Producto_Servicio.CambiarEstado(Pedido.Id);
+                    pedidoServicio.CambiarProcesoRetiro(Pedido.Id);
 
-                btnRealizado.Visible = false;
+                    btnRealizado.Visible = false;
 
-                MessageBox.Show("Listo!, Vamos Paula!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    VerDatos();
 
-                
+                    MessageBox.Show("Listo!, Vamos Paula!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("La Caja se encuentra Cerrada", "Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -34,8 +34,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelGrilla = new System.Windows.Forms.Panel();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelGrilla.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,11 +91,20 @@
             // 
             this.panelGrilla.BackColor = System.Drawing.Color.DodgerBlue;
             this.panelGrilla.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelGrilla.Controls.Add(this.vScrollBar1);
             this.panelGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGrilla.Location = new System.Drawing.Point(0, 84);
             this.panelGrilla.Name = "panelGrilla";
             this.panelGrilla.Size = new System.Drawing.Size(1103, 416);
             this.panelGrilla.TabIndex = 1;
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.vScrollBar1.Location = new System.Drawing.Point(1082, 0);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 412);
+            this.vScrollBar1.TabIndex = 0;
             // 
             // PedidosEsperando
             // 
@@ -112,6 +123,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelGrilla.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -123,5 +135,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelGrilla;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
     }
 }
