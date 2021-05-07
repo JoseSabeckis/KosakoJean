@@ -75,6 +75,12 @@
     <Compile Include="Caja\CerrarCaja.Designer.cs">
       <DependentUpon>CerrarCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Caja\Historia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\Historia.Designer.cs">
+      <DependentUpon>Historia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cobro\Venta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     <EmbeddedResource Include="Caja\CerrarCaja.resx">
       <DependentUpon>CerrarCaja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Caja\Historia.resx">
+      <DependentUpon>Historia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cobro\Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +282,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\analytics_78917.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode_shop_online_ecommerce_shopping-1_icon-icons.com_61653.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

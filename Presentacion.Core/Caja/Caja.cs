@@ -15,6 +15,8 @@ namespace Presentacion.Core.Caja
     {
         private readonly ICajaServicio _cajaServicio;
 
+        long _Id;
+
         public Caja()
         {
             InitializeComponent();
@@ -129,6 +131,32 @@ namespace Presentacion.Core.Caja
             else
             {
                 VerCajaCierre(dtpDesde.Value.Date, dtpHasta.Value.Date);
+            }
+        }
+
+        private void dgvGrilla_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvGrilla.RowCount == 0)
+            {
+                MessageBox.Show("Error no hay nada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
+            var historial = new Historia(_Id);
+            historial.ShowDialog();
+            
+        }
+
+        private void dgvGrilla_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvGrilla.RowCount > 0)
+            {
+                _Id = (long)dgvGrilla["Id", e.RowIndex].Value;
+            }
+            else
+            {
+                _Id = 0;
             }
         }
     }

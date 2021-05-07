@@ -41,6 +41,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblVendido = new System.Windows.Forms.Label();
             this.btnTerminar = new System.Windows.Forms.Button();
             this.txtDebe = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblVendido = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -207,6 +207,17 @@
             this.panel3.Size = new System.Drawing.Size(802, 111);
             this.panel3.TabIndex = 1;
             // 
+            // lblVendido
+            // 
+            this.lblVendido.AutoSize = true;
+            this.lblVendido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVendido.ForeColor = System.Drawing.Color.Red;
+            this.lblVendido.Location = new System.Drawing.Point(451, 32);
+            this.lblVendido.Name = "lblVendido";
+            this.lblVendido.Size = new System.Drawing.Size(120, 26);
+            this.lblVendido.TabIndex = 9;
+            this.lblVendido.Text = "Vendido !!!";
+            // 
             // btnTerminar
             // 
             this.btnTerminar.BackColor = System.Drawing.Color.Lime;
@@ -297,17 +308,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Total  $";
             // 
-            // lblVendido
-            // 
-            this.lblVendido.AutoSize = true;
-            this.lblVendido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVendido.ForeColor = System.Drawing.Color.Red;
-            this.lblVendido.Location = new System.Drawing.Point(451, 32);
-            this.lblVendido.Name = "lblVendido";
-            this.lblVendido.Size = new System.Drawing.Size(120, 26);
-            this.lblVendido.TabIndex = 9;
-            this.lblVendido.Text = "Vendido !!!";
-            // 
             // PedidoInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +318,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(822, 500);
             this.Name = "PedidoInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedido Info";

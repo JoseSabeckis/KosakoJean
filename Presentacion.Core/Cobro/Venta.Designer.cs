@@ -517,6 +517,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1033, 564);
             this.Name = "Venta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Aplicacion de Venta";

@@ -216,6 +216,8 @@ namespace Presentacion.Core.Pedido
 
                     detalleCajaServicio.AgregarDetalleCaja(detalle);
 
+                    cajaServicio.SumarDineroACaja(_Debe);
+
                     pedidoServicio.CambiarRamas(_Debe, PedidoId);
 
                     Datos(PedidoId);

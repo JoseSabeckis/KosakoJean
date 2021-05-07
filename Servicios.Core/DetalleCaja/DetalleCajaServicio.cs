@@ -28,6 +28,26 @@ namespace Servicios.Core.DetalleCaja
             }
         }
 
+        public IEnumerable<DetalleCajaDto> Lista(long cajaId)
+        {
+            using(var context = new KosakoDBEntities())
+            {
+
+                return context.DetalleCajas.AsNoTracking().Where(x => x.CajaId == cajaId)
+                    .Select(x => new DetalleCajaDto
+                    {
+
+                        Id = x.Id,
+                        CajaId = x.CajaId,
+                        Descripcion = x.Descripcion,
+                        Total = x.Total,
+                        Fecha = x.Fecha
+
+                    }).ToList();
+
+            }
+        }
+
         public long BuscarCajaAbierta()
         {
             using(var context = new KosakoDBEntities())

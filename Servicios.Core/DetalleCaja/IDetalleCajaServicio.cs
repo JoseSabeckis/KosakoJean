@@ -9,6 +9,8 @@ namespace Servicios.Core.DetalleCaja
 {
     public interface IDetalleCajaServicio
     {
+        IEnumerable<DetalleCajaDto> Lista(long cajaId);
+
         void AgregarDetalleCaja(DetalleCajaDto detalleCajaDto);
 
         IEnumerable<DetalleCajaDto> BuscarDetalles(long id);

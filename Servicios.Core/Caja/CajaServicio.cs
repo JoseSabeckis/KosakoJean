@@ -80,7 +80,7 @@ namespace Servicios.Core.Caja
         {
             using (var context = new KosakoDBEntities())
             {
-                var caja = BuscarCajaAbierta();
+                var caja = context.Cajas.FirstOrDefault(x => x.OpenClose == OpenClose.Abierto);
 
                 caja.TotalCaja += total;
 

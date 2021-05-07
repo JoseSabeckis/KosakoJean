@@ -113,6 +113,16 @@ namespace Presentacion.Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap barcode_shop_online_ecommerce_shopping_1_icon_icons_com_61653 {
+            get {
+                object obj = ResourceManager.GetObject("barcode_shop_online_ecommerce_shopping-1_icon-icons.com_61653", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BuscarDos {
             get {
                 object obj = ResourceManager.GetObject("BuscarDos", resourceCulture);

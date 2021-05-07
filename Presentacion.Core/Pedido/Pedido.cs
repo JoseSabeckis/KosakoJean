@@ -1,4 +1,5 @@
 ﻿using Presentacion.Core.Cobro;
+using Servicios.Core.Caja;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta.Dto;
@@ -24,7 +25,7 @@ namespace Presentacion.Core.Pedido
         private readonly IPedidoServicio pedidoServicio;
         private readonly IProducto_Pedido_Servicio producto_Pedido_Servicio;
         private readonly IProductoServicio productoServicio;
-
+        private readonly ICajaServicio cajaServicio;
         private readonly IDetalleCajaServicio detallCajaServicio;
 
         public bool semaforo = false;
@@ -41,7 +42,7 @@ namespace Presentacion.Core.Pedido
             pedidoServicio = new PedidoServicio();
             producto_Pedido_Servicio = new Producto_Pedido_Servicio();
             productoServicio = new ProductoServicio();
-
+            cajaServicio = new CajaServicio();
             detallCajaServicio = new DetalleCajaServicio();
 
             _total = total;
@@ -130,6 +131,9 @@ namespace Presentacion.Core.Pedido
                     };
 
                     detallCajaServicio.AgregarDetalleCaja(detalle);
+
+                    //dinero a caja
+                    cajaServicio.SumarDineroACaja(nudAdelanto.Value);
 
                     MessageBox.Show("Listo Pedido Creado!", "Terminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

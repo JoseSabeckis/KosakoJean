@@ -157,6 +157,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Producto_Abm";
             this.Text = "Producto_Abm";
             this.panel1.ResumeLayout(false);

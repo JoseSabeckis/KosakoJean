@@ -1,4 +1,5 @@
 ﻿using Presentacion.Core.Producto;
+using Servicios.Core.Caja;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta;
@@ -27,6 +28,7 @@ namespace Presentacion.Core.Cobro
         private readonly IProducto_Venta_Servicio producto_vent;
         private readonly IVentaServicio ventaServicio;
         private readonly IDetalleCajaServicio detalleCajaServicio;
+        private readonly ICajaServicio cajaServicio;
 
         ProductoDto producto;
         long _productoId;
@@ -46,6 +48,7 @@ namespace Presentacion.Core.Cobro
             ventaServicio = new VentaServicio();
             producto = new ProductoDto();
             detalleCajaServicio = new DetalleCajaServicio();
+            cajaServicio = new CajaServicio();
 
             cmbTalle.SelectedIndex = 0;
 
@@ -310,6 +313,8 @@ namespace Presentacion.Core.Cobro
                         };
 
                         detalleCajaServicio.AgregarDetalleCaja(detalle);
+
+                        cajaServicio.SumarDineroACaja(_total);
 
                         MessageBox.Show("Felicidades, Cobro Aceptado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

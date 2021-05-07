@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CerrarCaja));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btmVolver = new System.Windows.Forms.Button();
             this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.txtCobrado = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btmVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,6 +61,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(813, 130);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.btmVolver);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(637, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(172, 126);
+            this.panel3.TabIndex = 7;
+            // 
+            // btmVolver
+            // 
+            this.btmVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmVolver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmVolver.Location = new System.Drawing.Point(18, 14);
+            this.btmVolver.Name = "btmVolver";
+            this.btmVolver.Size = new System.Drawing.Size(133, 40);
+            this.btmVolver.TabIndex = 1;
+            this.btmVolver.Text = "Volver";
+            this.btmVolver.UseVisualStyleBackColor = true;
+            this.btmVolver.Click += new System.EventHandler(this.btmVolver_Click);
             // 
             // btnCerrarCaja
             // 
@@ -108,18 +130,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Total";
             // 
-            // btmVolver
-            // 
-            this.btmVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btmVolver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmVolver.Location = new System.Drawing.Point(18, 14);
-            this.btmVolver.Name = "btmVolver";
-            this.btmVolver.Size = new System.Drawing.Size(133, 40);
-            this.btmVolver.TabIndex = 1;
-            this.btmVolver.Text = "Volver";
-            this.btmVolver.UseVisualStyleBackColor = true;
-            this.btmVolver.Click += new System.EventHandler(this.btmVolver_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -156,16 +166,6 @@
             this.dgvGrilla.Size = new System.Drawing.Size(809, 347);
             this.dgvGrilla.TabIndex = 11;
             // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.btmVolver);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(637, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(172, 126);
-            this.panel3.TabIndex = 7;
-            // 
             // CerrarCaja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -178,14 +178,15 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(829, 520);
             this.Name = "CerrarCaja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cerrar Caja";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
