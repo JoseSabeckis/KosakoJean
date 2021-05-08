@@ -22,5 +22,6 @@ namespace Servicios.Core.Caja.Dto
         public DateTime FechaCierre { get; set; }
 
         public OpenClose OpenClose { get; set; }
+
     }
 }

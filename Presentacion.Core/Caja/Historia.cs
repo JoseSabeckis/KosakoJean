@@ -47,6 +47,10 @@ namespace Presentacion.Core.Caja
 
             nudTotal.Value = caja.TotalCaja;
 
+            nudSinMonto.Value = caja.TotalCaja - caja.MontoApertura;
+
+            nudComienzoCaja.Value = caja.MontoApertura;
+
         }
 
         public void FormatearGrilla(DataGridView grilla)

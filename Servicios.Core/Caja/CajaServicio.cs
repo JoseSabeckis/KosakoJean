@@ -21,7 +21,8 @@ namespace Servicios.Core.Caja
                     MontoApertura = cajaDto.MontoApertura,
                     MontoCierre = cajaDto.MontoCierre,
                     TotalCaja = cajaDto.TotalCaja,
-                    OpenClose = OpenClose.Abierto
+                    OpenClose = OpenClose.Abierto,
+
                 };
 
                 context.Cajas.Add(newCaja);
@@ -114,7 +115,7 @@ namespace Servicios.Core.Caja
                         MontoApertura = x.MontoApertura,
                         MontoCierre = x.MontoCierre,
                         Id = x.Id,
-                        OpenClose = x.OpenClose
+                        OpenClose = x.OpenClose,
 
                     }).ToList();
             }
@@ -134,7 +135,8 @@ namespace Servicios.Core.Caja
                     FechaCierre = caja.FechaCierre,
                     TotalCaja = caja.TotalCaja,
                     Id = caja.Id,
-                    OpenClose = caja.OpenClose
+                    OpenClose = caja.OpenClose,
+
                 };
 
                 return cajaAux;
@@ -155,7 +157,7 @@ namespace Servicios.Core.Caja
                         MontoApertura = x.MontoApertura,
                         MontoCierre = x.MontoCierre,
                         Id = x.Id,
-                        OpenClose = x.OpenClose
+                        OpenClose = x.OpenClose,
 
                     }).ToList();
             }
@@ -174,7 +176,7 @@ namespace Servicios.Core.Caja
                         MontoApertura = x.MontoApertura,
                         MontoCierre = x.MontoCierre,
                         Id = x.Id,
-                        OpenClose = x.OpenClose
+                        OpenClose = x.OpenClose,
 
                     }).ToList();
             }
@@ -196,7 +198,7 @@ namespace Servicios.Core.Caja
                         MontoApertura = x.MontoApertura,
                         MontoCierre = x.MontoCierre,
                         Id = x.Id,
-                        OpenClose = x.OpenClose
+                        OpenClose = x.OpenClose,
 
                     }).ToList();
             }

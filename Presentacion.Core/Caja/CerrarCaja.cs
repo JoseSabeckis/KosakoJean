@@ -68,7 +68,7 @@ namespace Presentacion.Core.Caja
             var total = _cajaServicio.SumarCaja();
             var suma = _cajaServicio.BuscarCajaAbierta();
 
-            txtCobrado.Text = $"$ {total}";
+            txtCobrado.Text = $"$ {total - suma.MontoApertura}";
             txtTotal.Text = $"$ {total}";
 
             _Total = total;

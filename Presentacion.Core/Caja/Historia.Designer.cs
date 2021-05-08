@@ -43,12 +43,20 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nudSinMonto = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.nudComienzoCaja = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSinMonto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudComienzoCaja)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,7 +91,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(449, 11);
+            this.label3.Location = new System.Drawing.Point(471, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 5;
@@ -102,7 +110,7 @@
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(449, 42);
+            this.lblHasta.Location = new System.Drawing.Point(471, 42);
             this.lblHasta.Name = "lblHasta";
             this.lblHasta.Size = new System.Drawing.Size(57, 20);
             this.lblHasta.TabIndex = 3;
@@ -140,6 +148,12 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.nudComienzoCaja);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.nudSinMonto);
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.nudTotal);
             this.panel2.Controls.Add(this.lblTotal);
@@ -152,7 +166,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 95);
+            this.label4.Location = new System.Drawing.Point(9, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(19, 20);
             this.label4.TabIndex = 2;
@@ -161,7 +175,7 @@
             // nudTotal
             // 
             this.nudTotal.Enabled = false;
-            this.nudTotal.Location = new System.Drawing.Point(41, 93);
+            this.nudTotal.Location = new System.Drawing.Point(34, 86);
             this.nudTotal.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -174,7 +188,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(37, 58);
+            this.lblTotal.Location = new System.Drawing.Point(30, 51);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(118, 20);
             this.lblTotal.TabIndex = 0;
@@ -206,6 +220,68 @@
             this.dgvGrilla.Size = new System.Drawing.Size(567, 339);
             this.dgvGrilla.TabIndex = 12;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(19, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "$";
+            // 
+            // nudSinMonto
+            // 
+            this.nudSinMonto.Enabled = false;
+            this.nudSinMonto.Location = new System.Drawing.Point(36, 185);
+            this.nudSinMonto.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.nudSinMonto.Name = "nudSinMonto";
+            this.nudSinMonto.Size = new System.Drawing.Size(120, 26);
+            this.nudSinMonto.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 133);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(159, 40);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Ganado sin \r\nMonto de Apertura";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(11, 266);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(19, 20);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "$";
+            // 
+            // nudComienzoCaja
+            // 
+            this.nudComienzoCaja.Enabled = false;
+            this.nudComienzoCaja.Location = new System.Drawing.Point(36, 264);
+            this.nudComienzoCaja.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.nudComienzoCaja.Name = "nudComienzoCaja";
+            this.nudComienzoCaja.Size = new System.Drawing.Size(120, 26);
+            this.nudComienzoCaja.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(32, 229);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(154, 20);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Comienzo en Caja";
+            // 
             // Historia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -231,6 +307,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudSinMonto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudComienzoCaja)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,5 +329,11 @@
         private System.Windows.Forms.NumericUpDown nudTotal;
         private System.Windows.Forms.Label lblTotal;
         protected System.Windows.Forms.DataGridView dgvGrilla;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown nudComienzoCaja;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown nudSinMonto;
+        private System.Windows.Forms.Label label6;
     }
 }
