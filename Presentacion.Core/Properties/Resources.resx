@@ -121,17 +121,11 @@
   <data name="add_shop_online_ecommerce_shopping-9_icon-icons.com_61652" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_shop_online_ecommerce_shopping-9_icon-icons.com_61652.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="analytics_78917" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\analytics_78917.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ImprimirMio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImprimirMio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="actualizarMIO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actualizarMIO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bag1_114871" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bag1_114871.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="laptop-1_102326" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\laptop-1_102326.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,7 +136,13 @@
   <data name="BuscarDos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BuscarDos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="barcode_shop_online_ecommerce_shopping-1_icon-icons.com_61653" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="analytics_78917" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\analytics_78917.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bag1_114871" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bag1_114871.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_shop_online_ecommerce_shopping_1_icon_icons_com_61653" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barcode_shop_online_ecommerce_shopping-1_icon-icons.com_61653.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

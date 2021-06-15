@@ -193,11 +193,12 @@
             // 
             // panel7
             // 
+            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel7.Controls.Add(this.txtProducto);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.btnSeleccionProducto);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 76);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(453, 81);
@@ -205,9 +206,11 @@
             // 
             // txtProducto
             // 
+            this.txtProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProducto.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtProducto.Enabled = false;
-            this.txtProducto.Location = new System.Drawing.Point(91, 26);
+            this.txtProducto.Location = new System.Drawing.Point(91, 25);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(271, 29);
             this.txtProducto.TabIndex = 6;
@@ -223,6 +226,7 @@
             // 
             // btnSeleccionProducto
             // 
+            this.btnSeleccionProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSeleccionProducto.Location = new System.Drawing.Point(368, 24);
             this.btnSeleccionProducto.Name = "btnSeleccionProducto";
             this.btnSeleccionProducto.Size = new System.Drawing.Size(71, 32);
@@ -521,6 +525,7 @@
             this.Name = "Venta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Aplicacion de Venta";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();

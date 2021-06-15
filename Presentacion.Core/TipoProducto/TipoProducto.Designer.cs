@@ -38,7 +38,7 @@
             this.ClientSize = new System.Drawing.Size(902, 450);
             this.MinimumSize = new System.Drawing.Size(918, 489);
             this.Name = "TipoProducto";
-            this.Text = "TipoProducto";
+            this.Text = "Tipo de Producto";
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

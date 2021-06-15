@@ -19,7 +19,7 @@ namespace Presentacion.Core.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -115,7 +115,7 @@ namespace Presentacion.Core.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap barcode_shop_online_ecommerce_shopping_1_icon_icons_com_61653 {
             get {
-                object obj = ResourceManager.GetObject("barcode_shop_online_ecommerce_shopping-1_icon-icons.com_61653", resourceCulture);
+                object obj = ResourceManager.GetObject("barcode_shop_online_ecommerce_shopping_1_icon_icons_com_61653", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
