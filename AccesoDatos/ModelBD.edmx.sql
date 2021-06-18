@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/07/2021 23:50:11
--- Generated from EDMX file: C:\Users\joses\source\repos\KosakoJean\AccesoDatos\ModelBD.edmx
+-- Date Created: 06/18/2021 17:26:22
+-- Generated from EDMX file: C:\Users\joses\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -83,7 +83,8 @@ CREATE TABLE [dbo].[Productos] (
     [EstaEliminado] bit  NOT NULL,
     [Extras] nvarchar(max)  NOT NULL,
     [TipoProductoId] bigint  NOT NULL,
-    [ColegioId] bigint  NOT NULL
+    [ColegioId] bigint  NOT NULL,
+    [Foto] varbinary(max)  NOT NULL
 );
 GO
 

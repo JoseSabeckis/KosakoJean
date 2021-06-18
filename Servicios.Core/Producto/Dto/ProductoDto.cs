@@ -25,5 +25,7 @@ namespace Servicios.Core.Producto.Dto
         public long TipoProductoId { get; set; }
 
         public string TipoProducto { get; set; }
+
+        public byte[] Foto { get; set; }
     }
 }

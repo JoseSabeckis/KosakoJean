@@ -55,6 +55,7 @@
     <Property Name="Extras" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TipoProductoId" Type="bigint" Nullable="false" />
     <Property Name="ColegioId" Type="bigint" Nullable="false" />
+    <Property Name="Foto" Type="varbinary(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="TipoProductos">
     <Key>
@@ -284,6 +285,7 @@
           <Property Name="ColegioId" Type="Int64" Nullable="false" />
           <NavigationProperty Name="Producto_Pedido" Relationship="KosakoDBModel.ProductoProducto_Pedido" FromRole="Producto" ToRole="Producto_Pedido" />
           <NavigationProperty Name="Producto_Venta" Relationship="KosakoDBModel.ProductoProducto_Venta" FromRole="Producto" ToRole="Producto_Venta" />
+          <Property Name="Foto" Type="Binary" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoProducto">
           <Key>
@@ -485,6 +487,7 @@
           <ScalarProperty Name="Extras" ColumnName="Extras" />
           <ScalarProperty Name="TipoProductoId" ColumnName="TipoProductoId" />
           <ScalarProperty Name="ColegioId" ColumnName="ColegioId" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

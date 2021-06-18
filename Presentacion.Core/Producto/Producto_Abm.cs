@@ -61,6 +61,8 @@ namespace Presentacion.Core.Producto
 
             txtDescripcion.KeyPress += Validacion.NoSimbolos;
 
+            imgFotoEmpleado.Image = Imagen.Usuario;
+
             txtDescripcion.Focus();
         }
 
@@ -88,6 +90,8 @@ namespace Presentacion.Core.Producto
 
             cmbColegio.SelectedValue = dto.ColegioId;
             cmbTipo.SelectedValue = dto.TipoProductoId;
+
+            imgFotoEmpleado.Image = ImagenDb.Convertir_Bytes_Imagen(dto.Foto);
         }
 
         public override bool EjecutarComandoNuevo()
@@ -105,7 +109,8 @@ namespace Presentacion.Core.Producto
                 Extras = txtExtras.Text,
                 Precio = nudPrecio.Value,
                 ColegioId = ((ColegioDto)cmbColegio.SelectedItem).Id,
-                TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id
+                TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id,
+                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image)
             };
 
             _Servicio.Nuevo(nueva);
@@ -129,7 +134,8 @@ namespace Presentacion.Core.Producto
                 Extras = txtExtras.Text,
                 Precio = nudPrecio.Value,
                 ColegioId = ((ColegioDto)cmbColegio.SelectedItem).Id,
-                TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id
+                TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id,
+                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image)
             };
 
             _Servicio.Modificar(localidadParaModificar);
@@ -171,6 +177,27 @@ namespace Presentacion.Core.Producto
             var zon = new Producto_Abm(TipoOperacion.Nuevo);
             zon.ShowDialog();
 
+        }
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+
+                // Pregunta si Selecciono un Archivo
+                if (!string.IsNullOrEmpty(archivo.FileName))
+                {
+                    imgFotoEmpleado.Image = Image.FromFile(archivo.FileName);
+                }
+                else
+                {
+                    imgFotoEmpleado.Image = Imagen.Usuario;
+                }
+            }
+            else
+            {
+                imgFotoEmpleado.Image = Imagen.Usuario;
+            }
         }
     }
 }

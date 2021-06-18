@@ -24,7 +24,8 @@ namespace Servicios.Core.Producto
                     Precio = dto.Precio,
                     Extras = dto.Extras,
                     TipoProductoId = dto.TipoProductoId,
-                    ColegioId = dto.ColegioId
+                    ColegioId = dto.ColegioId,
+                    Foto = dto.Foto
                 };
 
                 context.Productos.Add(nuevo);
@@ -59,6 +60,7 @@ namespace Servicios.Core.Producto
                 producto.Extras = dto.Extras;
                 producto.Precio = dto.Precio;
                 producto.TipoProductoId = dto.TipoProductoId;
+                producto.Foto = dto.Foto;
 
                 context.SaveChanges();
 
@@ -81,7 +83,7 @@ namespace Servicios.Core.Producto
                         Extras = x.Extras,
                         TipoProductoId = x.TipoProductoId,
                         ColegioId = x.ColegioId,
-
+                        Foto = x.Foto
 
                     }).ToList();
 
@@ -105,7 +107,8 @@ namespace Servicios.Core.Producto
                         Precio = x.Precio,
                         Extras = x.Extras,
                         TipoProductoId = x.TipoProductoId,
-                        ColegioId = x.ColegioId              
+                        ColegioId = x.ColegioId,
+                        Foto = x.Foto              
 
                     }).FirstOrDefault(x => x.Id == Id && x.EstaEliminado == false);
             }

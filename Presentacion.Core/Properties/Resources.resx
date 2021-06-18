@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="add_shop_online_ecommerce_shopping-9_icon-icons.com_61652" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_shop_online_ecommerce_shopping-9_icon-icons.com_61652.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="analytics_78917" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\analytics_78917.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImprimirMio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImprimirMio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -127,22 +127,28 @@
   <data name="actualizarMIO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actualizarMIO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="laptop-1_102326" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\laptop-1_102326.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1490129335-rounded14_82192" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1490129335-rounded14_82192.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BuscarDos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BuscarDos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="analytics_78917" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\analytics_78917.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bag1_114871" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bag1_114871.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="barcode_shop_online_ecommerce_shopping_1_icon_icons_com_61653" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barcode_shop_online_ecommerce_shopping-1_icon-icons.com_61653.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BuscarDos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BuscarDos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iPhoto_photo_picture_camera_2661" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iPhoto_photo_picture_camera_2661.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_shop_online_ecommerce_shopping_9_icon_icons_com_61652" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_shop_online_ecommerce_shopping-9_icon-icons.com_61652.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="laptop_1_102326" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\laptop-1_102326.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoginDos_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoginDos.png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="volver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

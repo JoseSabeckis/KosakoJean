@@ -56,6 +56,7 @@
     <Compile Include="Clases\Color.cs" />
     <Compile Include="Clases\ControlDto.cs" />
     <Compile Include="Clases\Imagen.cs" />
+    <Compile Include="Clases\ImagenDb.cs" />
     <Compile Include="Clases\TipoOperacion.cs" />
     <Compile Include="Clases\Validacion.cs" />
     <Compile Include="FormularioAbm.cs">

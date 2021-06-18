@@ -320,7 +320,7 @@ namespace Presentacion
         public virtual bool VerificarDatosObligatorios()
         {
             foreach (var objeto in _listaControlesObligatorios)
-            {
+            {/*
                 switch (objeto.Control)
                 {
                     case TextBox _:
@@ -335,7 +335,7 @@ namespace Presentacion
                     case ComboBox _:
                         if (((ComboBox)objeto.Control).Items.Count <= 0) return false;
                         break;
-                }
+                }*/
             }
 
             return true;
