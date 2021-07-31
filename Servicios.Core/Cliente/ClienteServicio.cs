@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Servicios.Core.Cliente
 {
-    public class ClienteServicio
+    public class ClienteServicio : IClienteServicio
     {
         public void Nuevo(ClienteDto Dto)
         {

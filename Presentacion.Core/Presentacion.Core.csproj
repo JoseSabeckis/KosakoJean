@@ -81,6 +81,18 @@
     <Compile Include="Caja\Historia.Designer.cs">
       <DependentUpon>Historia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cliente\Cliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\Cliente.Designer.cs">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente\Cliente_Abm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\Cliente_Abm.Designer.cs">
+      <DependentUpon>Cliente_Abm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cobro\Venta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +216,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\Historia.resx">
       <DependentUpon>Historia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\Cliente.resx">
+      <DependentUpon>Cliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\Cliente_Abm.resx">
+      <DependentUpon>Cliente_Abm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cobro\Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
