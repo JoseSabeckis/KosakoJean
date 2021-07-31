@@ -53,6 +53,9 @@
     <Compile Include="Caja.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Colegio.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>

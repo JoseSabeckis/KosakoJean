@@ -56,6 +56,9 @@
     <Compile Include="Caja\CajaServicio.cs" />
     <Compile Include="Caja\Dto\CajaDto.cs" />
     <Compile Include="Caja\ICajaServicio.cs" />
+    <Compile Include="Cliente\ClienteServicio.cs" />
+    <Compile Include="Cliente\Dto\ClienteDto.cs" />
+    <Compile Include="Cliente\IClienteServicio.cs" />
     <Compile Include="Colegio\ColegioServicio.cs" />
     <Compile Include="Colegio\Dto\ColegioDto.cs" />
     <Compile Include="Colegio\IColegioServicio.cs" />
