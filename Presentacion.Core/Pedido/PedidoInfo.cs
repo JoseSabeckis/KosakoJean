@@ -175,7 +175,7 @@ namespace Presentacion.Core.Pedido
             txtDebe.Text = string.Empty;
             txtDineroAdelanto.Text = string.Empty;
 
-            lblPersona.Text = $"{pedido.Apellido} {pedido.Nombre}";
+            lblPersona.Text = $"{pedido.Apellido}";
             lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dd/MM/yyyy")}";
             lblFecha.Text = $"{pedido.FechaEntrega.ToString("dd/MM/yyyy")}";
 
