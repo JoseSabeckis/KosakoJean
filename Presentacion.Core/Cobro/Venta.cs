@@ -1,5 +1,7 @@
-﻿using Presentacion.Core.Producto;
+﻿using Presentacion.Core.Cliente;
+using Presentacion.Core.Producto;
 using Servicios.Core.Caja;
+using Servicios.Core.Cliente;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta;
@@ -29,15 +31,20 @@ namespace Presentacion.Core.Cobro
         private readonly IVentaServicio ventaServicio;
         private readonly IDetalleCajaServicio detalleCajaServicio;
         private readonly ICajaServicio cajaServicio;
+        private readonly IClienteServicio clienteServicio;
 
         ProductoDto producto;
         long _productoId;
+        long _clienteId;
 
         string _descripcionProducto;
 
         List<VentaDto2> ListaVenta;
+        VentaDto ventaDto;
 
         decimal _total;
+
+        string ConsumidorFinal = "Consumidor Final";
 
         public Venta()
         {
@@ -49,10 +56,14 @@ namespace Presentacion.Core.Cobro
             producto = new ProductoDto();
             detalleCajaServicio = new DetalleCajaServicio();
             cajaServicio = new CajaServicio();
+            clienteServicio = new ClienteServicio();
 
             cmbTalle.SelectedIndex = 0;
 
             ListaVenta = new List<VentaDto2>();
+            ventaDto = new VentaDto();
+
+            txtCliente.Text = ConsumidorFinal;
 
             CargarGrilla(ListaVenta);
         }
@@ -187,6 +198,7 @@ namespace Presentacion.Core.Cobro
 
             txtVuelto.Text = string.Empty;
             nudPagaron.Value = 0;
+
         }
 
         public void FormatearGrilla(DataGridView grilla)
@@ -240,8 +252,12 @@ namespace Presentacion.Core.Cobro
             _total = 0;
 
             _productoId = 0;
+            _clienteId = 0;
 
             ListaVenta = new List<VentaDto2>();
+            ventaDto = new VentaDto();
+
+            txtCliente.Text = ConsumidorFinal;
 
             CargarGrilla(ListaVenta);
         }
@@ -274,13 +290,16 @@ namespace Presentacion.Core.Cobro
                     if (MessageBox.Show("Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
-                        var venta = new VentaDto
+                        if (ventaDto.ClienteId == 0)
                         {
-                            Fecha = DateTime.Now,
-                            Total = _total
-                        };
+                            ventaDto.ClienteId = 0;
+                        }
 
-                        var ventaId = ventaServicio.NuevaVenta(venta);
+                        ventaDto.Fecha = DateTime.Now;
+                        ventaDto.Total = _total;                           
+                        
+
+                        var ventaId = ventaServicio.NuevaVenta(ventaDto);
 
                         string descripcion = string.Empty;
 
@@ -326,7 +345,7 @@ namespace Presentacion.Core.Cobro
                 }
                 else
                 {
-                    var pedidos = new Pedido.Pedido(ListaVenta, _total);
+                    var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId);
                     pedidos.ShowDialog();
 
 
@@ -399,6 +418,22 @@ namespace Presentacion.Core.Cobro
             if (e.KeyChar == (char)Keys.Enter)
             {
 
+            }
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            var seleccionar = new ElegirCliente();
+            seleccionar.ShowDialog();
+
+            if (seleccionar._codigo != 0)
+            {
+                var aux = clienteServicio.ObtenerPorId(seleccionar._codigo);
+
+                _clienteId = aux.Id;
+                txtCliente.Text = aux.Apellido + " " + aux.Nombre;
+
+                ventaDto.ClienteId = _clienteId;
             }
         }
     }

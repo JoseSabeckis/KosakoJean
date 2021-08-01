@@ -116,7 +116,8 @@
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Proceso" Type="bigint" Nullable="false" />
     <Property Name="FechaEntrega" Type="datetime" Nullable="false" />
-    <Property Name="ClienteId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClienteId" Type="bigint" Nullable="false" />
+    <Property Name="ApyNom" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Cliente_Id" Type="bigint" Nullable="true" />
   </EntityType>
   <EntityType Name="Producto_Pedidos">
@@ -139,7 +140,7 @@
     <Property Name="Fecha" Type="datetime" Nullable="false" />
     <Property Name="Total" Type="decimal" Nullable="false" />
     <Property Name="Descuento" Type="decimal" Nullable="false" />
-    <Property Name="ClienteId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClienteId" Type="bigint" Nullable="false" />
     <Property Name="Cliente_Id" Type="bigint" Nullable="true" />
   </EntityType>
   <EntityType Name="Producto_Ventas">
@@ -436,7 +437,8 @@
           <Property Name="Proceso" Type="KosakoDBModel.Proceso" Nullable="false" />
           <Property Name="FechaEntrega" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="KosakoDBModel.PedidoCliente" FromRole="Pedido" ToRole="Cliente" />
-          <Property Name="ClienteId" Type="String" Nullable="false" />
+          <Property Name="ClienteId" Type="Int64" Nullable="false" />
+          <Property Name="ApyNom" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Producto_Pedido">
           <Key>
@@ -491,7 +493,7 @@
           <Property Name="Descuento" Type="Decimal" Nullable="false" />
           <NavigationProperty Name="Producto_Venta" Relationship="KosakoDBModel.Producto_VentaVenta" FromRole="Venta" ToRole="Producto_Venta" />
           <NavigationProperty Name="Cliente" Relationship="KosakoDBModel.VentaCliente" FromRole="Venta" ToRole="Cliente" />
-          <Property Name="ClienteId" Type="String" Nullable="false" />
+          <Property Name="ClienteId" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="Producto_Venta">
           <Key>
@@ -627,6 +629,7 @@
           <ScalarProperty Name="Proceso" ColumnName="Proceso" />
           <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
           <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+          <ScalarProperty Name="ApyNom" ColumnName="ApyNom" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

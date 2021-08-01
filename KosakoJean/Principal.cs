@@ -1,5 +1,6 @@
 ﻿using Presentacion.Clases;
 using Presentacion.Core.Caja;
+using Presentacion.Core.Cliente;
 using Presentacion.Core.Cobro;
 using Presentacion.Core.Colegio;
 using Presentacion.Core.Pedido;
@@ -176,6 +177,18 @@ namespace KosakoJean
         {
             var terminado = new PedidosTerminados();
             terminado.ShowDialog();
+        }
+
+        private void nuevoClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var cliente = new Cliente_Abm(TipoOperacion.Nuevo);
+            cliente.ShowDialog();
+        }
+
+        private void verClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var cliente = new Cliente();
+            cliente.ShowDialog();
         }
     }
 }

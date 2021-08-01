@@ -18,11 +18,13 @@ namespace Servicios.Core.Pedido
                 {
                     Adelanto = pedidoDto.Adelanto,
                     Apellido = pedidoDto.Apellido,
-                    Nombre = pedidoDto.Nombre,
+                    Nombre = pedidoDto.Apellido,
                     FechaEntrega = pedidoDto.FechaEntrega,
                     FechaPedido = pedidoDto.FechaPedido,
                     Total = pedidoDto.Total,
-                    Proceso = pedidoDto.Proceso
+                    Proceso = pedidoDto.Proceso,
+                    ClienteId = pedidoDto.ClienteId,
+                    ApyNom = pedidoDto.Apellido
                 };
 
                 context.Pedidos.Add(nuevo);
@@ -45,12 +47,14 @@ namespace Servicios.Core.Pedido
                     {
                         Adelanto = x.Adelanto,
                         Apellido = x.Apellido,
-                        Nombre = x.Nombre,
+                        Nombre = x.Apellido,
                         FechaEntrega = x.FechaEntrega,
                         FechaPedido = x.FechaPedido,
                         Total = x.Total,
                         Id = x.Id,
-                        Proceso = x.Proceso
+                        Proceso = x.Proceso,
+                        ClienteId = x.ClienteId,
+                        
 
                     }).ToList();
 
@@ -67,12 +71,13 @@ namespace Servicios.Core.Pedido
                     {
                         Adelanto = x.Adelanto,
                         Apellido = x.Apellido,
-                        Nombre = x.Nombre,
+                        Nombre = x.Apellido,
                         FechaEntrega = x.FechaEntrega,
                         FechaPedido = x.FechaPedido,
                         Total = x.Total,
                         Id = x.Id,
-                        Proceso = x.Proceso
+                        Proceso = x.Proceso,
+                        ClienteId = x.ClienteId
 
                     }).ToList();
 
@@ -89,12 +94,13 @@ namespace Servicios.Core.Pedido
                     {
                         Adelanto = x.Adelanto,
                         Apellido = x.Apellido,
-                        Nombre = x.Nombre,
+                        Nombre = x.Apellido,
                         FechaEntrega = x.FechaEntrega,
                         FechaPedido = x.FechaPedido,
                         Total = x.Total,
                         Id = x.Id,
-                        Proceso = x.Proceso
+                        Proceso = x.Proceso,
+                        ClienteId = x.ClienteId
 
                     }).ToList();
 
@@ -111,12 +117,13 @@ namespace Servicios.Core.Pedido
                     {
                         Adelanto = x.Adelanto,
                         Apellido = x.Apellido,
-                        Nombre = x.Nombre,
+                        Nombre = x.Apellido,
                         FechaEntrega = x.FechaEntrega,
                         FechaPedido = x.FechaPedido,
                         Total = x.Total,
                         Id = x.Id,
-                        Proceso = x.Proceso
+                        Proceso = x.Proceso,
+                        ClienteId = x.ClienteId
 
                     }).ToList();
 

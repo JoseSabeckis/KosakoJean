@@ -28,7 +28,8 @@ namespace AccesoDatos
         public string Nombre { get; set; }
         public Proceso Proceso { get; set; }
         public System.DateTime FechaEntrega { get; set; }
-        public string ClienteId { get; set; }
+        public long ClienteId { get; set; }
+        public string ApyNom { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producto_Pedido> Producto_Pedido { get; set; }

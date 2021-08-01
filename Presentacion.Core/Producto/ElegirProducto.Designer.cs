@@ -35,14 +35,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.txtBusqueda);
             this.panel1.Controls.Add(this.label1);
@@ -56,7 +59,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnBuscar.Location = new System.Drawing.Point(498, 10);
+            this.btnBuscar.Location = new System.Drawing.Point(557, 9);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(113, 52);
             this.btnBuscar.TabIndex = 2;
@@ -67,7 +70,7 @@
             // txtBusqueda
             // 
             this.txtBusqueda.BackColor = System.Drawing.SystemColors.Info;
-            this.txtBusqueda.Location = new System.Drawing.Point(180, 24);
+            this.txtBusqueda.Location = new System.Drawing.Point(239, 23);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(302, 29);
             this.txtBusqueda.TabIndex = 1;
@@ -76,7 +79,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 24);
+            this.label1.Location = new System.Drawing.Point(126, 23);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 24);
@@ -112,6 +115,17 @@
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.add_shop_online_ecommerce_shopping_9_icon_icons_com_61652;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // ElegirProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
@@ -136,6 +150,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -148,5 +163,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.DataGridView dgvGrilla;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

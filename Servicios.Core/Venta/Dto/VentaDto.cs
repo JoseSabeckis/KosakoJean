@@ -16,5 +16,7 @@ namespace Servicios.Core.Venta.Dto
 
         public DateTime Fecha { get; set; }
 
+        public long ClienteId { get; set; }
+
     }
 }

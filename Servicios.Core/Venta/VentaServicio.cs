@@ -19,7 +19,8 @@ namespace Servicios.Core.Venta
                 {
                     Descuento = ventaDto.Descuento,
                     Fecha = ventaDto.Fecha,
-                    Total = ventaDto.Total
+                    Total = ventaDto.Total,
+                    ClienteId = ventaDto.ClienteId
                 };
 
                 context.Ventas.Add(nueva);
@@ -30,6 +31,35 @@ namespace Servicios.Core.Venta
             }
         }
 
+        public string ObtenerClienteName(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var cliente = context.Clientes.AsNoTracking().FirstOrDefault(x => x.Id == id);
+
+                string client = " .";
+
+                if (cliente != null)
+                {
+                    client = cliente.Apellido + " " + cliente.Nombre;
+                }
+                
+
+                if (client == " .")
+                {
+
+                    client = string.Empty;
+
+                    return client;
+
+                }
+                else
+                {
+                    return client;
+                }
+
+            }
+        }
         public IEnumerable<VentaDto> BuscarPor30Dias()
         {
             using (var context = new KosakoDBEntities())

@@ -32,10 +32,11 @@ namespace Presentacion.Core.Pedido
 
         public string _Descripcion;
         decimal _total;
+        long ClienteId;
 
         List<VentaDto2> ListaVentas;
 
-        public Pedido(List<VentaDto2> Lista, decimal total)
+        public Pedido(List<VentaDto2> Lista, decimal total, string nombre, long clienteId)
         {
             InitializeComponent();
 
@@ -45,10 +46,22 @@ namespace Presentacion.Core.Pedido
             cajaServicio = new CajaServicio();
             detallCajaServicio = new DetalleCajaServicio();
 
+            if (nombre != null)
+            {
+                txtApellido.Text = nombre;
+            }
+
             _total = total;
             ListaVentas = Lista;
 
             nudAdelanto.Maximum = _total;
+
+            ClienteId = clienteId;
+
+            if (clienteId != 0)
+            {
+                txtApellido.Enabled = false;
+            }
         }
 
         public bool AsignarControles()
@@ -57,12 +70,12 @@ namespace Presentacion.Core.Pedido
             {
                 return false;
             }
-
+            /*
             if (txtNombre.Text == string.Empty)
             {
                 return false;
             }
-
+            */
             return true;
 
         }
@@ -88,6 +101,7 @@ namespace Presentacion.Core.Pedido
                         Proceso = AccesoDatos.Proceso.InicioPedido,
                         FechaEntrega = dtpFechaEntrega.Value.Date,
                         Total = _total,
+                        ClienteId = ClienteId
                         
                     };
 
@@ -116,6 +130,7 @@ namespace Presentacion.Core.Pedido
                             Talle = item.Talle,
                             PedidoId = pedidoId,
                             Descripcion = segunda
+                            
                         };                    
 
                         producto_Pedido_Servicio.NuevoProductoPedido(aux);

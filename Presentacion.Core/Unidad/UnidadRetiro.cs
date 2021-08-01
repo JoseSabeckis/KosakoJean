@@ -44,7 +44,7 @@ namespace Presentacion.Core.Unidad
 
             lblNombre.Text = string.Empty;
 
-            lblNombre.Text = $"{Pedido.Apellido} - {Pedido.Nombre}";
+            lblNombre.Text = $"{Pedido.Apellido}";
 
             lblId.Text = $"{Pedido.Id}";
 

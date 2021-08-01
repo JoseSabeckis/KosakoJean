@@ -24,7 +24,7 @@ namespace AccesoDatos
         public System.DateTime Fecha { get; set; }
         public decimal Total { get; set; }
         public decimal Descuento { get; set; }
-        public string ClienteId { get; set; }
+        public long ClienteId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producto_Venta> Producto_Venta { get; set; }

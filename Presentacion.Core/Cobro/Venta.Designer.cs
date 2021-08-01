@@ -64,6 +64,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.btnCliente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -196,6 +199,9 @@
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.txtCliente);
+            this.panel7.Controls.Add(this.btnCliente);
+            this.panel7.Controls.Add(this.label9);
             this.panel7.Controls.Add(this.txtProducto);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.btnSeleccionProducto);
@@ -210,7 +216,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProducto.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtProducto.Enabled = false;
-            this.txtProducto.Location = new System.Drawing.Point(91, 25);
+            this.txtProducto.Location = new System.Drawing.Point(95, 43);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(271, 29);
             this.txtProducto.TabIndex = 6;
@@ -218,7 +224,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(-1, 29);
+            this.label2.Location = new System.Drawing.Point(3, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 22);
             this.label2.TabIndex = 3;
@@ -227,7 +233,7 @@
             // btnSeleccionProducto
             // 
             this.btnSeleccionProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeleccionProducto.Location = new System.Drawing.Point(368, 24);
+            this.btnSeleccionProducto.Location = new System.Drawing.Point(372, 42);
             this.btnSeleccionProducto.Name = "btnSeleccionProducto";
             this.btnSeleccionProducto.Size = new System.Drawing.Size(71, 32);
             this.btnSeleccionProducto.TabIndex = 7;
@@ -509,6 +515,37 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(23, 11);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 22);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Cliente";
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCliente.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtCliente.Enabled = false;
+            this.txtCliente.Location = new System.Drawing.Point(95, 8);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(296, 29);
+            this.txtCliente.TabIndex = 9;
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCliente.Location = new System.Drawing.Point(397, 6);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(46, 32);
+            this.btnCliente.TabIndex = 10;
+            this.btnCliente.Text = "---";
+            this.btnCliente.UseVisualStyleBackColor = true;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -588,5 +625,8 @@
         private System.Windows.Forms.CheckBox ckbPedido;
         private System.Windows.Forms.CheckBox ckbNormal;
         private System.Windows.Forms.NumericUpDown nudTotal;
+        private System.Windows.Forms.TextBox txtCliente;
+        private System.Windows.Forms.Button btnCliente;
+        private System.Windows.Forms.Label label9;
     }
 }

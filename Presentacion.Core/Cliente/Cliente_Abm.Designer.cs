@@ -30,14 +30,14 @@ namespace Presentacion.Core.Cliente
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel2.SuspendLayout();
@@ -64,31 +64,39 @@ namespace Presentacion.Core.Cliente
             this.panel2.Size = new System.Drawing.Size(599, 246);
             this.panel2.TabIndex = 0;
             // 
-            // label1
+            // txtDireccion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Location = new System.Drawing.Point(104, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Apellido";
+            this.txtDireccion.Location = new System.Drawing.Point(208, 185);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(259, 33);
+            this.txtDireccion.TabIndex = 11;
             // 
-            // label2
+            // txtTelefono
             // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label2.Location = new System.Drawing.Point(104, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre";
+            this.txtTelefono.Location = new System.Drawing.Point(209, 132);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(259, 33);
+            this.txtTelefono.TabIndex = 10;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(209, 78);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(259, 33);
+            this.txtNombre.TabIndex = 9;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(209, 27);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(259, 33);
+            this.txtApellido.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label3.Location = new System.Drawing.Point(104, 199);
+            this.label3.Location = new System.Drawing.Point(104, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 7;
@@ -98,39 +106,31 @@ namespace Presentacion.Core.Cliente
             // 
             this.label4.AutoSize = true;
             this.label4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label4.Location = new System.Drawing.Point(104, 146);
+            this.label4.Location = new System.Drawing.Point(104, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 25);
             this.label4.TabIndex = 2;
             this.label4.Text = "Telefono";
             // 
-            // txtApellido
+            // label2
             // 
-            this.txtApellido.Location = new System.Drawing.Point(209, 33);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(259, 33);
-            this.txtApellido.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label2.Location = new System.Drawing.Point(104, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre";
             // 
-            // txtNombre
+            // label1
             // 
-            this.txtNombre.Location = new System.Drawing.Point(209, 84);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(259, 33);
-            this.txtNombre.TabIndex = 9;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(209, 138);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(259, 33);
-            this.txtTelefono.TabIndex = 10;
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(208, 191);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(259, 33);
-            this.txtDireccion.TabIndex = 11;
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label1.Location = new System.Drawing.Point(104, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Apellido";
             // 
             // Cliente_Abm
             // 

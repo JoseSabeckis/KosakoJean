@@ -25,5 +25,7 @@ namespace Servicios.Core.Pedido.Dto
 
         public Proceso Proceso { get; set; }
 
+        public long ClienteId { get; set; }
+
     }
 }

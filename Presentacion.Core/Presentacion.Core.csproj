@@ -93,6 +93,12 @@
     <Compile Include="Cliente\Cliente_Abm.Designer.cs">
       <DependentUpon>Cliente_Abm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cliente\ElegirCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\ElegirCliente.Designer.cs">
+      <DependentUpon>ElegirCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cobro\Venta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\Cliente_Abm.resx">
       <DependentUpon>Cliente_Abm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\ElegirCliente.resx">
+      <DependentUpon>ElegirCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cobro\Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
