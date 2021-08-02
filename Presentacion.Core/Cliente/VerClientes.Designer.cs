@@ -52,7 +52,7 @@ namespace Presentacion.Core.Cliente
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(908, 106);
+            this.panel1.Size = new System.Drawing.Size(908, 102);
             this.panel1.TabIndex = 0;
             // 
             // btnVolver
@@ -62,7 +62,7 @@ namespace Presentacion.Core.Cliente
             this.btnVolver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(809, 0);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(95, 102);
+            this.btnVolver.Size = new System.Drawing.Size(95, 98);
             this.btnVolver.TabIndex = 4;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -117,11 +117,12 @@ namespace Presentacion.Core.Cliente
             // pnlPrincipal
             // 
             this.pnlPrincipal.AutoScroll = true;
+            this.pnlPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlPrincipal.Location = new System.Drawing.Point(0, 106);
+            this.pnlPrincipal.Location = new System.Drawing.Point(0, 102);
             this.pnlPrincipal.Name = "pnlPrincipal";
-            this.pnlPrincipal.Size = new System.Drawing.Size(908, 414);
+            this.pnlPrincipal.Size = new System.Drawing.Size(908, 418);
             this.pnlPrincipal.TabIndex = 1;
             // 
             // VerClientes

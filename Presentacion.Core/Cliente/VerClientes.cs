@@ -29,25 +29,29 @@ namespace Presentacion.Core.Cliente
         {
             var cuadros = clienteServicio.Buscar(string.Empty);
 
+            var flowPanel = new FlowLayoutPanel
+            {
+                Name = $"flowPanel Cuenta",
+                Dock = DockStyle.Fill,
+                BackgroundImageLayout = ImageLayout.Stretch,
+                AutoScroll = true
+            };
+
             foreach (var item in cuadros)
             {
                 var cuadro = item;
 
                 var control = new Ctrol.UserClientes(cuadro.Id);
 
-                pnlPrincipal.Controls.Add(control);
+                flowPanel.Controls.Add(control);
 
             }
+
+            pnlPrincipal.Controls.Add(flowPanel);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtBusqueda.Text))
-            {
-                MessageBox.Show("Complete el Campo de busqueda", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                return;
-            }
 
             pnlPrincipal.Controls.Clear();
 
@@ -61,15 +65,25 @@ namespace Presentacion.Core.Cliente
                 return;
             }
 
+            var flowPanel = new FlowLayoutPanel
+            {
+                Name = $"flowPanel Cuenta",
+                Dock = DockStyle.Fill,
+                BackgroundImageLayout = ImageLayout.Stretch,
+                AutoScroll = true
+            };
+
             foreach (var item in cuadros)
             {
                 var cuadro = item;
 
                 var control = new Ctrol.UserClientes(cuadro.Id);
 
-                pnlPrincipal.Controls.Add(control);
+                flowPanel.Controls.Add(control);
 
             }
+
+            pnlPrincipal.Controls.Add(flowPanel);
 
         }
 

@@ -16,6 +16,8 @@ namespace Presentacion.Core.Cliente.Ctrol
     {
         private readonly IClienteServicio clienteServicio;
 
+        private long Id;
+
         public UserClientes(long idCliente)
         {
             InitializeComponent();
@@ -23,6 +25,8 @@ namespace Presentacion.Core.Cliente.Ctrol
             clienteServicio = new ClienteServicio();
 
             Datos(clienteServicio.ObtenerPorId(idCliente));
+
+            Id = idCliente;
 
         }
 
@@ -36,6 +40,10 @@ namespace Presentacion.Core.Cliente.Ctrol
 
         }
 
-
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            var cliente = new Cliente_Abm(Clases.TipoOperacion.Modificar, Id);
+            cliente.ShowDialog();
+        }
     }
 }
