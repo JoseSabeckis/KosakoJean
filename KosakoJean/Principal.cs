@@ -190,5 +190,11 @@ namespace KosakoJean
             var cliente = new Cliente();
             cliente.ShowDialog();
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            var cliente = new VerClientes();
+            cliente.ShowDialog();
+        }
     }
 }
