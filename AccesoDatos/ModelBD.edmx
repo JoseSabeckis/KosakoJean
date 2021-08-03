@@ -167,6 +167,7 @@
     <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Telefono" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+    <Property Name="Foto" Type="varbinary(max)" Nullable="false" />
   </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
@@ -546,6 +547,7 @@
           <NavigationProperty Name="Pedido" Relationship="KosakoDBModel.PedidoCliente" FromRole="Cliente" ToRole="Pedido" />
           <NavigationProperty Name="Venta" Relationship="KosakoDBModel.VentaCliente" FromRole="Cliente" ToRole="Venta" />
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <Property Name="Foto" Type="Binary" Nullable="false" />
         </EntityType>
         <Association Name="PedidoCliente">
           <End Type="KosakoDBModel.Pedido" Role="Pedido" Multiplicity="*" />
@@ -680,6 +682,7 @@
           <ScalarProperty Name="Direccion" ColumnName="Direccion" />
           <ScalarProperty Name="Telefono" ColumnName="Telefono" />
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

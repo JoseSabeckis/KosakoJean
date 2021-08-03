@@ -73,6 +73,7 @@ namespace Presentacion.Core.Cliente
             txtNombre.Text = localidad.Nombre;
             txtDireccion.Text = localidad.Direccion;
             txtTelefono.Text = localidad.Telefono;
+            imgFotoEmpleado.Image = ImagenDb.Convertir_Bytes_Imagen(localidad.Foto);
         }
 
         public override bool EjecutarComandoNuevo()
@@ -89,7 +90,8 @@ namespace Presentacion.Core.Cliente
                 Apellido = $"{txtApellido.Text}",
                 Nombre = txtNombre.Text,
                 Direccion = txtDireccion.Text,
-                Telefono = txtTelefono.Text
+                Telefono = txtTelefono.Text,
+                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image)
             };
 
             _Servicio.Nuevo(nuevaLocalidad);
@@ -112,7 +114,8 @@ namespace Presentacion.Core.Cliente
                 Apellido = $"{txtApellido.Text}",
                 Nombre = txtNombre.Text,
                 Direccion = txtDireccion.Text,
-                Telefono = txtTelefono.Text
+                Telefono = txtTelefono.Text,
+                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image)
 
             };
 
@@ -130,6 +133,25 @@ namespace Presentacion.Core.Cliente
             return true;
         }
 
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
 
+                // Pregunta si Selecciono un Archivo
+                if (!string.IsNullOrEmpty(openFileDialog.FileName))
+                {
+                    imgFotoEmpleado.Image = Image.FromFile(openFileDialog.FileName);
+                }
+                else
+                {
+                    imgFotoEmpleado.Image = Imagen.Usuario;
+                }
+            }
+            else
+            {
+                imgFotoEmpleado.Image = Imagen.Usuario;
+            }
+        }
     }
 }

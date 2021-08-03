@@ -19,5 +19,7 @@ namespace Servicios.Core.Cliente.Dto
         public string Telefono { get; set; }
 
         public bool EstaEliminado { get; set; }
+
+        public byte[] Foto { get; set; }
     }
 }

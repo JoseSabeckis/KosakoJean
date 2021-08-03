@@ -20,7 +20,8 @@ namespace Servicios.Core.Cliente
                     Apellido = Dto.Apellido,
                     Nombre = Dto.Nombre,
                     Direccion = Dto.Direccion,
-                    Telefono = Dto.Telefono
+                    Telefono = Dto.Telefono,
+                    Foto = Dto.Foto
                 };
 
                 context.Clientes.Add(nuevo);
@@ -54,6 +55,7 @@ namespace Servicios.Core.Cliente
                 producto.Nombre = Dto.Nombre;
                 producto.Direccion = Dto.Direccion;
                 producto.Telefono = Dto.Telefono;
+                producto.Foto = Dto.Foto;
 
                 context.SaveChanges();
 
@@ -73,7 +75,8 @@ namespace Servicios.Core.Cliente
                         Nombre = x.Nombre,
                         Direccion = x.Direccion,
                         Telefono = x.Telefono,
-                        EstaEliminado = x.EstaEliminado
+                        EstaEliminado = x.EstaEliminado,
+                        Foto = x.Foto
 
                     }).ToList();
 
@@ -96,7 +99,8 @@ namespace Servicios.Core.Cliente
                         Nombre = x.Nombre,
                         Direccion = x.Direccion,
                         Telefono = x.Telefono,
-                        EstaEliminado = x.EstaEliminado
+                        EstaEliminado = x.EstaEliminado,
+                        Foto = x.Foto
 
                     }).FirstOrDefault(x => x.Id == colegioId && x.EstaEliminado == false);
             }

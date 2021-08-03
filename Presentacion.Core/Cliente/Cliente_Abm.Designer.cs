@@ -38,9 +38,16 @@ namespace Presentacion.Core.Cliente
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnlFoto = new System.Windows.Forms.Panel();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
+            this.lblTituloFoto = new System.Windows.Forms.Label();
+            this.imgFotoEmpleado = new System.Windows.Forms.PictureBox();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel2.SuspendLayout();
+            this.pnlFoto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFotoEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,6 +58,7 @@ namespace Presentacion.Core.Cliente
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.pnlFoto);
             this.panel2.Controls.Add(this.txtDireccion);
             this.panel2.Controls.Add(this.txtTelefono);
             this.panel2.Controls.Add(this.txtNombre);
@@ -61,33 +69,33 @@ namespace Presentacion.Core.Cliente
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(27, 19);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(599, 246);
+            this.panel2.Size = new System.Drawing.Size(620, 246);
             this.panel2.TabIndex = 0;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(208, 185);
+            this.txtDireccion.Location = new System.Drawing.Point(136, 196);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(259, 33);
             this.txtDireccion.TabIndex = 11;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(209, 132);
+            this.txtTelefono.Location = new System.Drawing.Point(136, 139);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(259, 33);
             this.txtTelefono.TabIndex = 10;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(209, 78);
+            this.txtNombre.Location = new System.Drawing.Point(136, 83);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(259, 33);
             this.txtNombre.TabIndex = 9;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(209, 27);
+            this.txtApellido.Location = new System.Drawing.Point(136, 23);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(259, 33);
             this.txtApellido.TabIndex = 8;
@@ -96,7 +104,7 @@ namespace Presentacion.Core.Cliente
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label3.Location = new System.Drawing.Point(104, 193);
+            this.label3.Location = new System.Drawing.Point(32, 204);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 25);
             this.label3.TabIndex = 7;
@@ -106,7 +114,7 @@ namespace Presentacion.Core.Cliente
             // 
             this.label4.AutoSize = true;
             this.label4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label4.Location = new System.Drawing.Point(104, 140);
+            this.label4.Location = new System.Drawing.Point(31, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 25);
             this.label4.TabIndex = 2;
@@ -116,7 +124,7 @@ namespace Presentacion.Core.Cliente
             // 
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label2.Location = new System.Drawing.Point(104, 86);
+            this.label2.Location = new System.Drawing.Point(31, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 25);
             this.label2.TabIndex = 1;
@@ -126,11 +134,66 @@ namespace Presentacion.Core.Cliente
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.Location = new System.Drawing.Point(104, 35);
+            this.label1.Location = new System.Drawing.Point(31, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Apellido";
+            // 
+            // pnlFoto
+            // 
+            this.pnlFoto.BackColor = System.Drawing.Color.Silver;
+            this.pnlFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFoto.Controls.Add(this.btnAgregarImagen);
+            this.pnlFoto.Controls.Add(this.lblTituloFoto);
+            this.pnlFoto.Controls.Add(this.imgFotoEmpleado);
+            this.pnlFoto.Location = new System.Drawing.Point(430, 23);
+            this.pnlFoto.Name = "pnlFoto";
+            this.pnlFoto.Size = new System.Drawing.Size(159, 206);
+            this.pnlFoto.TabIndex = 72;
+            // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.BackColor = System.Drawing.Color.Gray;
+            this.btnAgregarImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAgregarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarImagen.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarImagen.Location = new System.Drawing.Point(3, 164);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(152, 38);
+            this.btnAgregarImagen.TabIndex = 0;
+            this.btnAgregarImagen.Text = "Agregar Imagen";
+            this.btnAgregarImagen.UseVisualStyleBackColor = false;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
+            // 
+            // lblTituloFoto
+            // 
+            this.lblTituloFoto.BackColor = System.Drawing.Color.CadetBlue;
+            this.lblTituloFoto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTituloFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloFoto.ForeColor = System.Drawing.Color.Black;
+            this.lblTituloFoto.Location = new System.Drawing.Point(0, 0);
+            this.lblTituloFoto.Name = "lblTituloFoto";
+            this.lblTituloFoto.Size = new System.Drawing.Size(157, 31);
+            this.lblTituloFoto.TabIndex = 57;
+            this.lblTituloFoto.Text = "Foto";
+            this.lblTituloFoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // imgFotoEmpleado
+            // 
+            this.imgFotoEmpleado.BackColor = System.Drawing.Color.White;
+            this.imgFotoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imgFotoEmpleado.Image = global::Presentacion.Core.Properties.Resources.iPhoto_photo_picture_camera_2661;
+            this.imgFotoEmpleado.Location = new System.Drawing.Point(3, 34);
+            this.imgFotoEmpleado.Name = "imgFotoEmpleado";
+            this.imgFotoEmpleado.Size = new System.Drawing.Size(148, 124);
+            this.imgFotoEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgFotoEmpleado.TabIndex = 0;
+            this.imgFotoEmpleado.TabStop = false;
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
             // 
             // Cliente_Abm
             // 
@@ -146,6 +209,8 @@ namespace Presentacion.Core.Cliente
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.pnlFoto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgFotoEmpleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +227,10 @@ namespace Presentacion.Core.Cliente
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlFoto;
+        private System.Windows.Forms.Button btnAgregarImagen;
+        private System.Windows.Forms.Label lblTituloFoto;
+        private System.Windows.Forms.PictureBox imgFotoEmpleado;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }

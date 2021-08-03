@@ -117,5 +117,15 @@ namespace Presentacion.Core.Cliente
                 }
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var nuevo = new Cliente_Abm(Clases.TipoOperacion.Nuevo);
+            nuevo.ShowDialog();
+
+            pnlPrincipal.Controls.Clear();
+
+            CrearControles();
+        }
     }
 }

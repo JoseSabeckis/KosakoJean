@@ -1,4 +1,5 @@
-﻿using Servicios.Core.Cliente;
+﻿using Presentacion.Clases;
+using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,11 @@ namespace Presentacion.Core.Cliente.Ctrol
             lblNombre.Text = cliente.Nombre;
 
             nudId.Value = cliente.Id;
+
+            if (cliente.Foto != null)
+            {
+                pictureBox1.Image = ImagenDb.Convertir_Bytes_Imagen(cliente.Foto);
+            }
 
         }
 
