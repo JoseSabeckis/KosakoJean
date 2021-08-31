@@ -50,7 +50,7 @@ namespace Presentacion.Core.Cliente
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(708, 378);
+            this.panel1.Size = new System.Drawing.Size(786, 378);
             this.panel1.TabIndex = 0;
             // 
             // dgvGrilla
@@ -66,7 +66,7 @@ namespace Presentacion.Core.Cliente
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(704, 274);
+            this.dgvGrilla.Size = new System.Drawing.Size(782, 274);
             this.dgvGrilla.TabIndex = 13;
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick);
@@ -81,14 +81,14 @@ namespace Presentacion.Core.Cliente
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(704, 100);
+            this.panel2.Size = new System.Drawing.Size(782, 100);
             this.panel2.TabIndex = 0;
             // 
             // btnBuscar
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnBuscar.Location = new System.Drawing.Point(564, 21);
+            this.btnBuscar.Location = new System.Drawing.Point(642, 21);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(113, 52);
             this.btnBuscar.TabIndex = 5;
@@ -103,7 +103,7 @@ namespace Presentacion.Core.Cliente
             this.txtBusqueda.BackColor = System.Drawing.SystemColors.Info;
             this.txtBusqueda.Location = new System.Drawing.Point(246, 35);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(302, 26);
+            this.txtBusqueda.Size = new System.Drawing.Size(380, 26);
             this.txtBusqueda.TabIndex = 4;
             this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
@@ -133,12 +133,12 @@ namespace Presentacion.Core.Cliente
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(732, 402);
+            this.ClientSize = new System.Drawing.Size(810, 402);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximumSize = new System.Drawing.Size(748, 441);
+            this.MaximumSize = new System.Drawing.Size(826, 441);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(748, 441);
             this.Name = "ElegirCliente";

@@ -7,6 +7,8 @@ using Presentacion.Core.Pedido;
 using Presentacion.Core.Producto;
 using Presentacion.Core.TipoProducto;
 using Servicios.Core.Caja;
+using Servicios.Core.Cliente;
+using Servicios.Core.Cliente.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,12 +24,14 @@ namespace KosakoJean
     public partial class Principal : Form
     {
         private readonly ICajaServicio _cajaServicio;
+        private readonly IClienteServicio clienteServicio;
 
         public Principal()
         {
             InitializeComponent();
 
             _cajaServicio = new CajaServicio();
+            clienteServicio = new ClienteServicio();
         }
 
         private void verColegiosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,6 +113,25 @@ namespace KosakoJean
         private void Principal_Load(object sender, EventArgs e)
         {
             ValidarCajas();
+
+            CargarConsumidorFinal();
+        }
+
+        public void CargarConsumidorFinal()
+        {
+            if (clienteServicio.Buscar("Consumidor Final").Count() == 0)
+            {
+                var confumidor = new ClienteDto
+                {
+                    Apellido = "Consumidor Final",
+                    Foto = ImagenDb.Convertir_Imagen_Bytes(Imagen.Usuario),
+                    Nombre = "",
+                    Direccion = "",
+                    Telefono = ""
+                };
+
+                clienteServicio.Nuevo(confumidor);
+            }
         }
 
         private void salirDeLaAplicacionToolStripMenuItem_Click(object sender, EventArgs e)

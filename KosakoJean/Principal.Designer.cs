@@ -54,6 +54,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnListoParaEntregar = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.btnTerminados = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -70,7 +71,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnClientes = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -98,7 +98,7 @@
             this.clienteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(885, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1018, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -235,7 +235,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(885, 377);
+            this.panel1.Size = new System.Drawing.Size(1018, 430);
             this.panel1.TabIndex = 1;
             // 
             // panel5
@@ -243,9 +243,9 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.lblFecha);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(191, 308);
+            this.panel5.Location = new System.Drawing.Point(191, 361);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(494, 65);
+            this.panel5.Size = new System.Drawing.Size(627, 65);
             this.panel5.TabIndex = 3;
             // 
             // lblFecha
@@ -268,7 +268,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(191, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(494, 373);
+            this.panel4.Size = new System.Drawing.Size(627, 426);
             this.panel4.TabIndex = 2;
             // 
             // panel9
@@ -278,7 +278,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 195);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(490, 174);
+            this.panel9.Size = new System.Drawing.Size(623, 227);
             this.panel9.TabIndex = 8;
             // 
             // btnListoParaEntregar
@@ -290,7 +290,7 @@
             this.btnListoParaEntregar.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListoParaEntregar.Location = new System.Drawing.Point(116, 32);
             this.btnListoParaEntregar.Name = "btnListoParaEntregar";
-            this.btnListoParaEntregar.Size = new System.Drawing.Size(241, 54);
+            this.btnListoParaEntregar.Size = new System.Drawing.Size(374, 107);
             this.btnListoParaEntregar.TabIndex = 5;
             this.btnListoParaEntregar.Text = "Listos Para Entregar";
             this.btnListoParaEntregar.UseVisualStyleBackColor = false;
@@ -304,8 +304,23 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(490, 195);
+            this.panel8.Size = new System.Drawing.Size(623, 195);
             this.panel8.TabIndex = 7;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClientes.BackColor = System.Drawing.Color.Silver;
+            this.btnClientes.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.Location = new System.Drawing.Point(116, 102);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(374, 54);
+            this.btnClientes.TabIndex = 7;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnTerminados
             // 
@@ -316,7 +331,7 @@
             this.btnTerminados.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerminados.Location = new System.Drawing.Point(116, 29);
             this.btnTerminados.Name = "btnTerminados";
-            this.btnTerminados.Size = new System.Drawing.Size(241, 54);
+            this.btnTerminados.Size = new System.Drawing.Size(374, 54);
             this.btnTerminados.TabIndex = 6;
             this.btnTerminados.Text = "Pedidos Terminados";
             this.btnTerminados.UseVisualStyleBackColor = false;
@@ -332,7 +347,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(191, 373);
+            this.panel3.Size = new System.Drawing.Size(191, 426);
             this.panel3.TabIndex = 1;
             // 
             // panel12
@@ -370,7 +385,7 @@
             this.btnCajas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCajas.Location = new System.Drawing.Point(22, 130);
             this.btnCajas.Name = "btnCajas";
-            this.btnCajas.Size = new System.Drawing.Size(136, 44);
+            this.btnCajas.Size = new System.Drawing.Size(136, 97);
             this.btnCajas.TabIndex = 3;
             this.btnCajas.Text = "Ver Cajas";
             this.btnCajas.UseVisualStyleBackColor = false;
@@ -381,7 +396,7 @@
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel11.Controls.Add(this.btnCerrarCaja);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(0, 206);
+            this.panel11.Location = new System.Drawing.Point(0, 259);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(187, 100);
             this.panel11.TabIndex = 4;
@@ -405,7 +420,7 @@
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel7.Controls.Add(this.pictureBox1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 306);
+            this.panel7.Location = new System.Drawing.Point(0, 359);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(187, 63);
             this.panel7.TabIndex = 0;
@@ -428,9 +443,9 @@
             this.panel2.Controls.Add(this.btnPedidos);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(685, 0);
+            this.panel2.Location = new System.Drawing.Point(818, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(196, 373);
+            this.panel2.Size = new System.Drawing.Size(196, 426);
             this.panel2.TabIndex = 0;
             // 
             // panel10
@@ -467,7 +482,7 @@
             this.btnPedidos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPedidos.Location = new System.Drawing.Point(23, 217);
             this.btnPedidos.Name = "btnPedidos";
-            this.btnPedidos.Size = new System.Drawing.Size(151, 54);
+            this.btnPedidos.Size = new System.Drawing.Size(151, 107);
             this.btnPedidos.TabIndex = 4;
             this.btnPedidos.Text = "Ver Pedidos";
             this.btnPedidos.UseVisualStyleBackColor = false;
@@ -478,7 +493,7 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.lblhora);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 306);
+            this.panel6.Location = new System.Drawing.Point(0, 359);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(192, 63);
             this.panel6.TabIndex = 0;
@@ -500,27 +515,12 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnClientes
-            // 
-            this.btnClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClientes.BackColor = System.Drawing.Color.Silver;
-            this.btnClientes.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.Location = new System.Drawing.Point(116, 102);
-            this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(241, 54);
-            this.btnClientes.TabIndex = 7;
-            this.btnClientes.Text = "Clientes";
-            this.btnClientes.UseVisualStyleBackColor = false;
-            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(885, 401);
+            this.ClientSize = new System.Drawing.Size(1018, 454);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -1,7 +1,9 @@
-﻿using Presentacion.Core.Cliente;
+﻿using Presentacion.Clases;
+using Presentacion.Core.Cliente;
 using Presentacion.Core.Producto;
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
+using Servicios.Core.Cliente.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta;
@@ -44,8 +46,6 @@ namespace Presentacion.Core.Cobro
 
         decimal _total;
 
-        string ConsumidorFinal = "Consumidor Final";
-
         public Venta()
         {
             InitializeComponent();
@@ -63,9 +63,22 @@ namespace Presentacion.Core.Cobro
             ListaVenta = new List<VentaDto2>();
             ventaDto = new VentaDto();
 
-            txtCliente.Text = ConsumidorFinal;
+            ConsumidorFinall();
 
             CargarGrilla(ListaVenta);
+
+            
+        }
+
+        public void ConsumidorFinall()
+        {
+            var consumer = clienteServicio.ObtenerPorId(1);
+
+            txtCliente.Text = "Consumidor Final";
+
+            _clienteId = consumer.Id;
+            ventaDto.ClienteId = consumer.Id;
+            
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -257,7 +270,7 @@ namespace Presentacion.Core.Cobro
             ListaVenta = new List<VentaDto2>();
             ventaDto = new VentaDto();
 
-            txtCliente.Text = ConsumidorFinal;
+            ConsumidorFinall();
 
             CargarGrilla(ListaVenta);
         }
@@ -417,7 +430,7 @@ namespace Presentacion.Core.Cobro
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-
+                btnAgregarAlaGrilla.PerformClick();
             }
         }
 
@@ -436,5 +449,28 @@ namespace Presentacion.Core.Cobro
                 ventaDto.ClienteId = _clienteId;
             }
         }
+
+        private void Venta_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void CargarConsumidorFinal()
+        {
+            if (clienteServicio.Buscar("Consumidor Final").Count() == 0)
+            {
+                var confumidor = new ClienteDto
+                {
+                    Apellido = "Consumidor Final",
+                    Foto = ImagenDb.Convertir_Imagen_Bytes(Imagen.Usuario),
+                    Nombre = "",
+                    Direccion = "",
+                    Telefono = ""
+                };
+
+                clienteServicio.Nuevo(confumidor);
+            }
+        }
+
     }
 }
