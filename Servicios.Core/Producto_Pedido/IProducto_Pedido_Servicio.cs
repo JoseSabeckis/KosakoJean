@@ -11,6 +11,8 @@ namespace Servicios.Core.Producto_Pedido
     {
         void NuevoProductoPedido(Producto_Pedido_Dto producto);
 
+        Producto_Pedido_Dto BuscarPedidoId2(long id);
+
         List<Producto_Pedido_Dto> BuscarPedidoId(long id);
 
         List<Producto_Pedido_Dto> BuscarPedidoTerminado(long id);

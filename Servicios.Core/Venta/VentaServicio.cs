@@ -31,6 +31,24 @@ namespace Servicios.Core.Venta
             }
         }
 
+        public IEnumerable<VentaDto> VentaPorCliente(long idCliente)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Ventas.Where(x => x.ClienteId == idCliente).Select(x => new VentaDto
+                {
+                    ClienteId = x.ClienteId,
+                    Descuento = x.Descuento,
+                    Fecha = x.Fecha,
+                    Id = x.Id,
+                    Total = x.Total
+
+                }).ToList();
+
+            }
+        }
+
         public string ObtenerClienteName(long id)
         {
             using (var context = new KosakoDBEntities())
@@ -60,6 +78,7 @@ namespace Servicios.Core.Venta
 
             }
         }
+
         public IEnumerable<VentaDto> BuscarPor30Dias()
         {
             using (var context = new KosakoDBEntities())

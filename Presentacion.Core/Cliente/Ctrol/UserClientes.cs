@@ -51,5 +51,11 @@ namespace Presentacion.Core.Cliente.Ctrol
             var cliente = new Cliente_Abm(Clases.TipoOperacion.Modificar, Id);
             cliente.ShowDialog();
         }
+
+        private void btnVer_Click(object sender, EventArgs e)
+        {
+            var historial = new HistorialClientes(Id);
+            historial.ShowDialog();
+        }
     }
 }

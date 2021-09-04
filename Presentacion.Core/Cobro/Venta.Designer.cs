@@ -183,7 +183,11 @@
             // nudPrecio
             // 
             this.nudPrecio.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.nudPrecio.Enabled = false;
+            this.nudPrecio.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.nudPrecio.Location = new System.Drawing.Point(188, 26);
             this.nudPrecio.Maximum = new decimal(new int[] {
             100000000,

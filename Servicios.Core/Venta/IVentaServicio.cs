@@ -11,6 +11,8 @@ namespace Servicios.Core.Venta
     {
         long NuevaVenta(VentaDto ventaDto);
 
+        IEnumerable<VentaDto> VentaPorCliente(long idCliente);
+
         string ObtenerClienteName(long id);
 
         IEnumerable<VentaDto> BuscarPor30Dias();

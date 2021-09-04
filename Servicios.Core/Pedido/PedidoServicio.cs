@@ -107,12 +107,59 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public PedidoDto BuscarIDPedidos(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var aux = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                    var aux2 = new PedidoDto
+                    {
+                        Adelanto = aux.Adelanto,
+                        Apellido = aux.Apellido,
+                        Nombre = aux.Apellido,
+                        FechaEntrega = aux.FechaEntrega,
+                        FechaPedido = aux.FechaPedido,
+                        Total = aux.Total,
+                        Id = aux.Id,
+                        Proceso = aux.Proceso,
+                        ClienteId = aux.ClienteId
+
+                    };
+                return aux2;
+            }
+        }
+
         public IEnumerable<PedidoDto> BuscandoTerminados()
         {
             using (var context = new KosakoDBEntities())
             {
 
                 return context.Pedidos.Where(x => x.Proceso == Proceso.PedidoTerminado)
+                    .Select(x => new PedidoDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        Nombre = x.Apellido,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        Total = x.Total,
+                        Id = x.Id,
+                        Proceso = x.Proceso,
+                        ClienteId = x.ClienteId
+
+                    }).ToList();
+
+            }
+        }
+
+        public IEnumerable<PedidoDto> BuscandoTerminadosyClientes(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.Where(x => x.ClienteId == id && x.Proceso == Proceso.PedidoTerminado)
                     .Select(x => new PedidoDto
                     {
                         Adelanto = x.Adelanto,

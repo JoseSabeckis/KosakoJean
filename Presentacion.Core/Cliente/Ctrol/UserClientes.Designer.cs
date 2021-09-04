@@ -30,6 +30,7 @@ namespace Presentacion.Core.Cliente.Ctrol
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVer = new System.Windows.Forms.Button();
             this.nudId = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnVer);
             this.panel1.Controls.Add(this.nudId);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblNombre);
@@ -50,8 +52,20 @@ namespace Presentacion.Core.Cliente.Ctrol
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(168, 161);
+            this.panel1.Size = new System.Drawing.Size(190, 161);
             this.panel1.TabIndex = 0;
+            // 
+            // btnVer
+            // 
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVer.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Location = new System.Drawing.Point(104, 3);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(68, 75);
+            this.btnVer.TabIndex = 1;
+            this.btnVer.Text = "Historial";
+            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // nudId
             // 
@@ -70,7 +84,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.LoginDos_png;
-            this.pictureBox1.Location = new System.Drawing.Point(42, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(84, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -82,7 +96,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(38, 123);
+            this.lblNombre.Location = new System.Drawing.Point(10, 122);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(78, 22);
             this.lblNombre.TabIndex = 1;
@@ -92,7 +106,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(38, 87);
+            this.lblApellido.Location = new System.Drawing.Point(10, 86);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(79, 22);
             this.lblApellido.TabIndex = 0;
@@ -104,7 +118,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "UserClientes";
-            this.Size = new System.Drawing.Size(168, 161);
+            this.Size = new System.Drawing.Size(190, 161);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).EndInit();
@@ -120,5 +134,6 @@ namespace Presentacion.Core.Cliente.Ctrol
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown nudId;
+        private System.Windows.Forms.Button btnVer;
     }
 }

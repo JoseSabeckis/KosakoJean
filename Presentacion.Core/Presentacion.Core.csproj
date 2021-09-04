@@ -105,6 +105,12 @@
     <Compile Include="Cliente\ElegirCliente.Designer.cs">
       <DependentUpon>ElegirCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cliente\HistorialClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cliente\HistorialClientes.Designer.cs">
+      <DependentUpon>HistorialClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cliente\VerClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\ElegirCliente.resx">
       <DependentUpon>ElegirCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cliente\HistorialClientes.resx">
+      <DependentUpon>HistorialClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\VerClientes.resx">
       <DependentUpon>VerClientes.cs</DependentUpon>

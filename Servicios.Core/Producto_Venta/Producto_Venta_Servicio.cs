@@ -81,6 +81,54 @@ namespace Servicios.Core.Producto_Venta
             }
         }
 
+        public Producto_Venta_Dto ObtenerDescripcion(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var aux = context.Producto_Ventas.FirstOrDefault(x => x.VentaId == id);
+
+                var producto = new Producto_Venta_Dto
+                {
+                    Cantidad = aux.Cantidad,
+                    Descripcion = aux.Descripcion,
+                    Estado = aux.Estado,
+                    Id = aux.Id,
+                    Precio = aux.Precio,
+                    ProductoId = aux.ProductoId,
+                    Talle = aux.Talle,
+                    VentaId = aux.VentaId
+                };
+
+                return producto;
+
+            }
+        }
+
+        public Producto_Venta_Dto ObtenerId(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var aux = context.Producto_Ventas.FirstOrDefault(x => x.Id == id);
+
+                var producto = new Producto_Venta_Dto
+                {
+                    Cantidad = aux.Cantidad,
+                    Descripcion = aux.Descripcion,
+                    Estado = aux.Estado,
+                    Id = aux.Id,
+                    Precio = aux.Precio,
+                    ProductoId = aux.ProductoId,
+                    Talle = aux.Talle,
+                    VentaId = aux.VentaId
+                };
+
+                return producto;
+
+            }
+        }
+
         public void Eliminar()
         {
             using (var context = new KosakoDBEntities())

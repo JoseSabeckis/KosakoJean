@@ -11,6 +11,10 @@ namespace Servicios.Core.Pedido
     {
         long NuevoPedido(PedidoDto pedidoDto);
 
+        PedidoDto BuscarIDPedidos(long id);
+
+        IEnumerable<PedidoDto> BuscandoTerminadosyClientes(long id);
+
         IEnumerable<PedidoDto> BuscandoTerminados();
 
         void CambiarRamas(decimal total, long id);
