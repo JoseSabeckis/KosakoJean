@@ -49,6 +49,43 @@ namespace Servicios.Core.Venta
             }
         }
 
+        public IEnumerable<VentaDto> VentaPorClienteDesdeHasta(long clienteId, DateTime desde, DateTime hasta)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Ventas.Where(x => x.Fecha.Day >= desde.Day && x.Fecha.Month >= desde.Month && x.Fecha.Year >= desde.Year && x.Fecha.Year <= hasta.Year && x.Fecha.Month <= hasta.Month && x.Fecha.Day <= hasta.Day
+                && x.ClienteId == clienteId).Select(x => new VentaDto
+                {
+                    ClienteId = x.ClienteId,
+                    Descuento = x.Descuento,
+                    Fecha = x.Fecha,
+                    Id = x.Id,
+                    Total = x.Total
+
+                }).ToList();
+
+            }
+        }
+
+        public IEnumerable<VentaDto> VentaPorClienteFecha(long clienteId, DateTime date)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Ventas.Where(x => x.Fecha.Day == date.Day && x.Fecha.Month == date.Month && x.Fecha.Year == date.Year && x.ClienteId == clienteId).Select(x => new VentaDto
+                {
+                    ClienteId = x.ClienteId,
+                    Descuento = x.Descuento,
+                    Fecha = x.Fecha,
+                    Id = x.Id,
+                    Total = x.Total
+
+                }).ToList();
+
+            }
+        }
+
         public string ObtenerClienteName(long id)
         {
             using (var context = new KosakoDBEntities())

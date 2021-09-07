@@ -32,6 +32,8 @@ namespace Presentacion.Core.Cliente
 
         List<HistorialCompras> Lista;
 
+        long IdCliente;
+
         public HistorialClientes(long idCliente)
         {
             InitializeComponent();
@@ -47,6 +49,8 @@ namespace Presentacion.Core.Cliente
             CargarNombre(idCliente);
 
             CargarGrilla(idCliente);
+
+            IdCliente = idCliente;
 
             dgvGrilla.DataSource = Lista.ToList();
 
@@ -91,6 +95,86 @@ namespace Presentacion.Core.Cliente
             
         }
 
+        private void CargarGrillaDesdeHasta(long idCliente)
+        {
+            Lista = new List<HistorialCompras>();
+            nudTotal.Value = 0;
+
+            foreach (var ventas in ventaServicio.VentaPorClienteDesdeHasta(idCliente, dtpDesde.Value, dtpHasta.Value))
+            {
+
+                var historial = new HistorialCompras
+                {
+                    Fecha = ventas.Fecha,
+                    Total = ventas.Total,
+                    Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
+                };
+
+                nudTotal.Value += historial.Total;
+
+                Lista.Add(historial);
+
+            }
+            
+            
+            foreach (var item in pedidoServicio.BuscandoTerminadosyClientesDesdeHasta(idCliente, dtpDesde.Value, dtpHasta.Value))
+            {
+
+                var pedido = new HistorialCompras
+                {
+                    Fecha = item.FechaPedido,
+                    Total = item.Total,
+                    Descripcion = producto_Pedido_Servicio.BuscarPedidoId2(item.Id).Descripcion
+                };
+
+                nudTotal.Value += pedido.Total;
+
+                Lista.Add(pedido);
+
+            }
+
+        }
+
+        private void CargarGrillaFecha(long idCliente)
+        {
+            Lista = new List<HistorialCompras>();
+            nudTotal.Value = 0;
+
+            foreach (var ventas in ventaServicio.VentaPorClienteFecha(idCliente, dtpDesde.Value))
+            {
+
+                var historial = new HistorialCompras
+                {
+                    Fecha = ventas.Fecha,
+                    Total = ventas.Total,
+                    Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
+                };
+
+                nudTotal.Value += historial.Total;
+
+                Lista.Add(historial);
+
+            }
+
+
+            foreach (var item in pedidoServicio.BuscandoTerminadosyClientesFecha(idCliente, dtpDesde.Value))
+            {
+
+                var pedido = new HistorialCompras
+                {
+                    Fecha = item.FechaPedido,
+                    Total = item.Total,
+                    Descripcion = producto_Pedido_Servicio.BuscarPedidoId2(item.Id).Descripcion
+                };
+
+                nudTotal.Value += pedido.Total;
+
+                Lista.Add(pedido);
+
+            }
+
+        }
+
         public void CargarNombre(long idCliente)
         {
             lblNombre.Text = ventaServicio.ObtenerClienteName(idCliente);
@@ -128,5 +212,21 @@ namespace Presentacion.Core.Cliente
 
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            if (dtpDesde == dtpHasta)
+            {
+                CargarGrillaFecha(IdCliente);
+
+            }
+            else
+            {
+                CargarGrillaDesdeHasta(IdCliente);
+            }
+            
+
+            dgvGrilla.DataSource = Lista.ToList();
+        }
     }
 }

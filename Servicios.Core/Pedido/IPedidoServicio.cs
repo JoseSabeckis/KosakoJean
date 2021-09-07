@@ -13,6 +13,10 @@ namespace Servicios.Core.Pedido
 
         PedidoDto BuscarIDPedidos(long id);
 
+        IEnumerable<PedidoDto> BuscandoTerminadosyClientesFecha(long id, DateTime date);
+
+        IEnumerable<PedidoDto> BuscandoTerminadosyClientesDesdeHasta(long id, DateTime desde, DateTime hasta);
+
         IEnumerable<PedidoDto> BuscandoTerminadosyClientes(long id);
 
         IEnumerable<PedidoDto> BuscandoTerminados();

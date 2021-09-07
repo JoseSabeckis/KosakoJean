@@ -177,6 +177,52 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public IEnumerable<PedidoDto> BuscandoTerminadosyClientesDesdeHasta(long id, DateTime desde, DateTime hasta)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.Where(x => x.FechaEntrega.Day >= desde.Day && x.FechaEntrega.Month >= desde.Month && x.FechaEntrega.Year >= desde.Year && x.FechaEntrega.Year <= hasta.Year && x.FechaEntrega.Month <= hasta.Month && x.FechaEntrega.Day <= hasta.Day && x.ClienteId == id && x.Proceso == Proceso.PedidoTerminado)
+                    .Select(x => new PedidoDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        Nombre = x.Apellido,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        Total = x.Total,
+                        Id = x.Id,
+                        Proceso = x.Proceso,
+                        ClienteId = x.ClienteId
+
+                    }).ToList();
+
+            }
+        }
+
+        public IEnumerable<PedidoDto> BuscandoTerminadosyClientesFecha(long id, DateTime date)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.Where(x => x.FechaEntrega.Day == date.Day && x.FechaEntrega.Month == date.Month && x.FechaEntrega.Year == date.Year && x.ClienteId == id && x.Proceso == Proceso.PedidoTerminado)
+                    .Select(x => new PedidoDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        Nombre = x.Apellido,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        Total = x.Total,
+                        Id = x.Id,
+                        Proceso = x.Proceso,
+                        ClienteId = x.ClienteId
+
+                    }).ToList();
+
+            }
+        }
+
         public AccesoDatos.Pedido Buscar(long id)
         {
             using (var context = new KosakoDBEntities())
