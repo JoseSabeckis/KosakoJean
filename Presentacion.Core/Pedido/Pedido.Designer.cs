@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedido));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -39,17 +40,16 @@
             this.nudAdelanto = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnCargar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdelanto)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,6 +71,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(656, 363);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Location = new System.Drawing.Point(113, 207);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(429, 11);
+            this.panel3.TabIndex = 9;
             // 
             // dtpFechaEntrega
             // 
@@ -164,6 +172,17 @@
             this.panel2.Size = new System.Drawing.Size(652, 100);
             this.panel2.TabIndex = 0;
             // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.btnCargar);
+            this.panel4.Controls.Add(this.btnVolver);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(344, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(304, 96);
+            this.panel4.TabIndex = 3;
+            // 
             // btnCargar
             // 
             this.btnCargar.BackColor = System.Drawing.Color.Lime;
@@ -176,6 +195,19 @@
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Location = new System.Drawing.Point(191, 0);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(109, 92);
+            this.btnVolver.TabIndex = 0;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // pictureBox1
             // 
@@ -196,38 +228,6 @@
             this.label1.Size = new System.Drawing.Size(215, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cargue mas Informacion";
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.Yellow;
-            this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Location = new System.Drawing.Point(191, 0);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(109, 92);
-            this.btnVolver.TabIndex = 0;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Location = new System.Drawing.Point(113, 207);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(429, 11);
-            this.panel3.TabIndex = 9;
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.btnCargar);
-            this.panel4.Controls.Add(this.btnVolver);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(344, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(304, 96);
-            this.panel4.TabIndex = 3;
             // 
             // Pedido
             // 
@@ -250,8 +250,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudAdelanto)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

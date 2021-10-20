@@ -75,7 +75,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVolver.BackColor = System.Drawing.Color.Silver;
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(869, 0);

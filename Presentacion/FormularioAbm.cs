@@ -1,4 +1,5 @@
 ﻿using Presentacion.Clases;
+using Presentacion.Core.Mensaje;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,27 +41,33 @@ namespace Presentacion
             {
                 case TipoOperacion.Nuevo:
                     if (EjecutarComandoNuevo())
-                    {
+                    {/*
                         MessageBox.Show(@"Los datos se Guardaron Correctamente.", @"Atención", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+                            MessageBoxIcon.Information);*/
+                        var nuevo = new Afirmacion("Atencion","Datos Guardados Correctamente");
+                        nuevo.ShowDialog();
                         Limpiar(this);
                         RealizoAlgunaOperacion = true;
                     }
                     break;
                 case TipoOperacion.Eliminar:
                     if (EjecutarComandoEliminar())
-                    {
+                    {/*
                         MessageBox.Show(@"Los datos se Eliminaron Correctamente.", @"Atención", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+                            MessageBoxIcon.Information);*/
+                        var eliminar = new Negativo("Atencion","Datos Eliminados Correctamente");
+                        eliminar.ShowDialog();
                         RealizoAlgunaOperacion = true;
                         this.Close();
                     }
                     break;
                 case TipoOperacion.Modificar:
                     if (EjecutarComandoModificar())
-                    {
+                    {/*
                         MessageBox.Show(@"Los datos se Modificaron Correctamente.", @"Atención", MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+                            MessageBoxIcon.Information);*/
+                        var nuevo = new Afirmacion("Atencion", "Los Datos se Modificaron Correctamente");
+                        nuevo.ShowDialog();
                         RealizoAlgunaOperacion = true;
                         this.Close();
                     }

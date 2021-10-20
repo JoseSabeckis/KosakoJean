@@ -73,6 +73,7 @@ namespace Presentacion.Core.Mensaje
             // txtParrafo
             // 
             this.txtParrafo.BackColor = System.Drawing.Color.Lime;
+            this.txtParrafo.Enabled = false;
             this.txtParrafo.Location = new System.Drawing.Point(186, 39);
             this.txtParrafo.Multiline = true;
             this.txtParrafo.Name = "txtParrafo";

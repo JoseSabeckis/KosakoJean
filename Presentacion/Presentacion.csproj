@@ -77,6 +77,18 @@
     <Compile Include="FormularioConsulta.Designer.cs">
       <DependentUpon>FormularioConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mensaje\Afirmacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensaje\Afirmacion.Designer.cs">
+      <DependentUpon>Afirmacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje\Negativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensaje\Negativo.Designer.cs">
+      <DependentUpon>Negativo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -93,6 +105,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioConsulta.resx">
       <DependentUpon>FormularioConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje\Afirmacion.resx">
+      <DependentUpon>Afirmacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje\Negativo.resx">
+      <DependentUpon>Negativo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

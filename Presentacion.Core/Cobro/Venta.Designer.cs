@@ -47,6 +47,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnAgregarAlaGrilla = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnNewCliente = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.ckbPedido = new System.Windows.Forms.CheckBox();
             this.ckbNormal = new System.Windows.Forms.CheckBox();
@@ -302,6 +303,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.btnNewCliente);
             this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.btnEliminar);
@@ -314,6 +316,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1013, 76);
             this.panel3.TabIndex = 2;
+            // 
+            // btnNewCliente
+            // 
+            this.btnNewCliente.BackColor = System.Drawing.Color.Aqua;
+            this.btnNewCliente.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnNewCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewCliente.Location = new System.Drawing.Point(351, 0);
+            this.btnNewCliente.Name = "btnNewCliente";
+            this.btnNewCliente.Size = new System.Drawing.Size(117, 72);
+            this.btnNewCliente.TabIndex = 9;
+            this.btnNewCliente.Text = "Nuevo Cliente";
+            this.btnNewCliente.UseVisualStyleBackColor = false;
+            this.btnNewCliente.Click += new System.EventHandler(this.btnNewCliente_Click);
             // 
             // panel9
             // 
@@ -354,7 +369,7 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.laptop_1_102326;
-            this.pictureBox1.Location = new System.Drawing.Point(449, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(525, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(86, 65);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -365,6 +380,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Location = new System.Drawing.Point(236, 0);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(115, 72);
@@ -377,6 +393,7 @@
             // 
             this.btnLimpiar.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnLimpiar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Location = new System.Drawing.Point(121, 0);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(115, 72);
@@ -389,6 +406,7 @@
             // 
             this.btnCobrar.BackColor = System.Drawing.Color.Lime;
             this.btnCobrar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCobrar.Location = new System.Drawing.Point(0, 0);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(121, 72);
@@ -401,7 +419,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(544, 20);
+            this.label1.Location = new System.Drawing.Point(620, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 28);
             this.label1.TabIndex = 1;
@@ -634,5 +652,6 @@
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnNewCliente;
     }
 }

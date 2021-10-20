@@ -79,7 +79,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVolver.BackColor = System.Drawing.Color.DarkGray;
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(979, 0);

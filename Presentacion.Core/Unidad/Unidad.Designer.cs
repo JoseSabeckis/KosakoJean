@@ -33,6 +33,7 @@
             this.pasarAEsperaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblProducto2 = new System.Windows.Forms.Label();
             this.btnVer = new System.Windows.Forms.Button();
             this.lblIdPedido = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRealizado = new System.Windows.Forms.Button();
-            this.lblProducto2 = new System.Windows.Forms.Label();
             this.contextMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -86,6 +86,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(256, 72);
             this.panel3.TabIndex = 3;
+            // 
+            // lblProducto2
+            // 
+            this.lblProducto2.AutoSize = true;
+            this.lblProducto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto2.Location = new System.Drawing.Point(1, 0);
+            this.lblProducto2.Name = "lblProducto2";
+            this.lblProducto2.Size = new System.Drawing.Size(20, 20);
+            this.lblProducto2.TabIndex = 7;
+            this.lblProducto2.Text = "| ";
             // 
             // btnVer
             // 
@@ -175,16 +185,6 @@
             this.btnRealizado.Text = "Terminado";
             this.btnRealizado.UseVisualStyleBackColor = true;
             this.btnRealizado.Click += new System.EventHandler(this.btnRealizado_Click);
-            // 
-            // lblProducto2
-            // 
-            this.lblProducto2.AutoSize = true;
-            this.lblProducto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducto2.Location = new System.Drawing.Point(1, 0);
-            this.lblProducto2.Name = "lblProducto2";
-            this.lblProducto2.Size = new System.Drawing.Size(20, 20);
-            this.lblProducto2.TabIndex = 7;
-            this.lblProducto2.Text = "| ";
             // 
             // Unidad
             // 

@@ -485,5 +485,11 @@ namespace Presentacion.Core.Cobro
             }
         }
 
+        private void btnNewCliente_Click(object sender, EventArgs e)
+        {
+            var cliente = new Cliente_Abm(TipoOperacion.Nuevo);
+            cliente.ShowDialog();
+
+        }
     }
 }
