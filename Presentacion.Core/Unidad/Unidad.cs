@@ -15,6 +15,7 @@ using Servicios.Core.Pedido;
 using Presentacion.Core.Pedido;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.Caja;
+using Presentacion.Core.Mensaje;
 
 namespace Presentacion.Core.Unidad
 {
@@ -80,7 +81,9 @@ namespace Presentacion.Core.Unidad
 
                     VerDatos();
 
-                    MessageBox.Show("Listo!, Vamos Paula!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Listo!, Vamos Paula!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var completado = new Afirmacion("Listo !!!", "Ahora hay que esperar Paula");
+                    completado.ShowDialog();
 
                 }
             }

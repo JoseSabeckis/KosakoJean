@@ -1,4 +1,5 @@
-﻿using Servicios.Core.Caja;
+﻿using Presentacion.Core.Mensaje;
+using Servicios.Core.Caja;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta.Dto;
@@ -220,11 +221,14 @@ namespace Presentacion.Core.Pedido
 
                     pedidoServicio.CambiarRamas(_Debe, PedidoId);
 
+                    var completado = new Afirmacion("Felicidades!", $"Completado se obtuvo de ganancias $ {_Debe}");
+                    completado.ShowDialog();
+
                     Datos(PedidoId);
 
-                    lblVendido.Visible = true;
+                    lblVendido.Visible = true;                    
 
-                    MessageBox.Show("---- Felicidades! ----", "Felicidades", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("---- Felicidades! ----", "Felicidades", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

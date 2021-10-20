@@ -283,7 +283,7 @@ namespace Presentacion.Core.Cobro
                 if (nudTotal.Value != 0)
                 {                   
 
-                    var pago = _total - nudPagaron.Value;
+                    var pago = nudPagaron.Value - _total;
 
                     txtVuelto.Text = $" $ {pago}";
                 }
@@ -361,6 +361,14 @@ namespace Presentacion.Core.Cobro
                 }
                 else
                 {
+                    if (txtCliente.Text == "Consumidor Final")
+                    {
+                        var pedis = new Negativo("Error ...", "No Puede Cobrar a un Consumidor Final");
+                        pedis.ShowDialog();
+
+                        return;
+                    }
+
                     var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId);
                     pedidos.ShowDialog();
 

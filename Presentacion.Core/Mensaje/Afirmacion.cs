@@ -17,7 +17,7 @@ namespace Presentacion.Core.Mensaje
             InitializeComponent();
 
             lblTitulo.Text = titulo;
-            lblParrafo.Text = parrafo;
+            txtParrafo.Text = parrafo;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

@@ -32,8 +32,8 @@ namespace Presentacion.Core.Mensaje
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Negativo));
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblParrafo = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.txtParrafo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,16 +60,6 @@ namespace Presentacion.Core.Mensaje
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // lblParrafo
-            // 
-            this.lblParrafo.AutoSize = true;
-            this.lblParrafo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblParrafo.Location = new System.Drawing.Point(181, 48);
-            this.lblParrafo.Name = "lblParrafo";
-            this.lblParrafo.Size = new System.Drawing.Size(66, 21);
-            this.lblParrafo.TabIndex = 7;
-            this.lblParrafo.Text = "Parrafo";
-            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
@@ -80,19 +70,28 @@ namespace Presentacion.Core.Mensaje
             this.lblTitulo.TabIndex = 6;
             this.lblTitulo.Text = "Titulo";
             // 
+            // txtParrafo
+            // 
+            this.txtParrafo.BackColor = System.Drawing.Color.Red;
+            this.txtParrafo.Location = new System.Drawing.Point(185, 39);
+            this.txtParrafo.Multiline = true;
+            this.txtParrafo.Name = "txtParrafo";
+            this.txtParrafo.Size = new System.Drawing.Size(279, 56);
+            this.txtParrafo.TabIndex = 8;
+            // 
             // Negativo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Red;
             this.ClientSize = new System.Drawing.Size(476, 145);
-            this.Controls.Add(this.lblParrafo);
+            this.Controls.Add(this.txtParrafo);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCerrar);
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(492, 184);
             this.MinimizeBox = false;
@@ -110,7 +109,7 @@ namespace Presentacion.Core.Mensaje
 
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblParrafo;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.TextBox txtParrafo;
     }
 }
