@@ -123,6 +123,16 @@ namespace Presentacion.Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap EliminarDos {
+            get {
+                object obj = ResourceManager.GetObject("EliminarDos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap guardarMio {
             get {
                 object obj = ResourceManager.GetObject("guardarMio", resourceCulture);
@@ -136,6 +146,16 @@ namespace Presentacion.Core.Properties {
         internal static System.Drawing.Bitmap ImprimirMio {
             get {
                 object obj = ResourceManager.GetObject("ImprimirMio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InsertarDos {
+            get {
+                object obj = ResourceManager.GetObject("InsertarDos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

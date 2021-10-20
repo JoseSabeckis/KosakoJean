@@ -1,5 +1,6 @@
 ﻿using Presentacion.Clases;
 using Presentacion.Core.Cliente;
+using Presentacion.Core.Mensaje;
 using Presentacion.Core.Producto;
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
@@ -348,8 +349,10 @@ namespace Presentacion.Core.Cobro
 
                         cajaServicio.SumarDineroACaja(_total);
 
-                        MessageBox.Show("Felicidades, Cobro Aceptado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //MessageBox.Show("Felicidades, Cobro Aceptado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                        var mensaje = new Afirmacion("Felicidades...", "Cobro Aceptado!");
+                        mensaje.ShowDialog();
 
                         btnLimpiar.PerformClick();
 
@@ -389,7 +392,9 @@ namespace Presentacion.Core.Cobro
             }
             else
             {
-                MessageBox.Show("No Hay Nada Para Eliminar...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var error = new Negativo("Error...", "No Hay Nada Para Eliminar");
+                error.ShowDialog();
+                //MessageBox.Show("No Hay Nada Para Eliminar...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

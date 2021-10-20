@@ -1,4 +1,5 @@
 ﻿using Presentacion.Core.Cobro;
+using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
@@ -139,7 +140,7 @@ namespace Presentacion.Core.Pedido
 
                     var detalle = new DetalleCajaDto
                     {
-                        Descripcion = segunda,
+                        Descripcion =  txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
                         Fecha = DateTime.Now,
                         Total = nudAdelanto.Value,
                         CajaId = detallCajaServicio.BuscarCajaAbierta()
@@ -150,7 +151,10 @@ namespace Presentacion.Core.Pedido
                     //dinero a caja
                     cajaServicio.SumarDineroACaja(nudAdelanto.Value);
 
-                    MessageBox.Show("Listo Pedido Creado!", "Terminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    var mensaje = new Afirmacion("Pedido Creado!", "Quedara Bien Gracias!");
+                    mensaje.ShowDialog();
+
+                    //MessageBox.Show("Listo Pedido Creado!", "Terminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     semaforo = true;
 
@@ -161,7 +165,9 @@ namespace Presentacion.Core.Pedido
             }
             else
             {
-                MessageBox.Show("El Campo Apellido y Nombre no puede estar vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var mens = new Negativo("Error", "El Campo Apellido y Nombre no puede estar vacio");
+                mens.ShowDialog();
+                //MessageBox.Show("El Campo Apellido y Nombre no puede estar vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

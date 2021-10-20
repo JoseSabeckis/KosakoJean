@@ -135,6 +135,18 @@
     <Compile Include="Colegio\Colegio_Abm.Designer.cs">
       <DependentUpon>Colegio_Abm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mensaje\Afirmacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensaje\Afirmacion.Designer.cs">
+      <DependentUpon>Afirmacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje\Negativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensaje\Negativo.Designer.cs">
+      <DependentUpon>Negativo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedido\Lista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +280,12 @@
     <EmbeddedResource Include="Colegio\Colegio_Abm.resx">
       <DependentUpon>Colegio_Abm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje\Afirmacion.resx">
+      <DependentUpon>Afirmacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensaje\Negativo.resx">
+      <DependentUpon>Negativo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pedido\Lista.resx">
       <DependentUpon>Lista.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,6 +369,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\guardarMio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertarDos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EliminarDos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

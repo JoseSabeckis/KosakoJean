@@ -288,10 +288,11 @@
             // 
             // btnAgregarAlaGrilla
             // 
-            this.btnAgregarAlaGrilla.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAgregarAlaGrilla.Location = new System.Drawing.Point(3, 23);
+            this.btnAgregarAlaGrilla.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAgregarAlaGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAgregarAlaGrilla.Location = new System.Drawing.Point(0, 0);
             this.btnAgregarAlaGrilla.Name = "btnAgregarAlaGrilla";
-            this.btnAgregarAlaGrilla.Size = new System.Drawing.Size(135, 33);
+            this.btnAgregarAlaGrilla.Size = new System.Drawing.Size(141, 77);
             this.btnAgregarAlaGrilla.TabIndex = 10;
             this.btnAgregarAlaGrilla.Text = "Agregar";
             this.btnAgregarAlaGrilla.UseVisualStyleBackColor = false;
