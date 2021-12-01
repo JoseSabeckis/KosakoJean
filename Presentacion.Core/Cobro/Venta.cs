@@ -460,12 +460,31 @@ namespace Presentacion.Core.Cobro
                 txtCliente.Text = aux.Apellido + " " + aux.Nombre;
 
                 ventaDto.ClienteId = _clienteId;
+
+                PedidoEnabled();
             }
+
         }
 
         private void Venta_Load(object sender, EventArgs e)
         {
-            
+            PedidoEnabled();
+        }
+
+        public void PedidoEnabled()
+        {
+            if (txtCliente.Text == "Consumidor Final" || _clienteId == 1)
+            {
+
+                ckbPedido.Enabled = false;
+                ckbPedido.Checked = false;
+
+            }
+            else
+            {
+                ckbPedido.Enabled = true;
+                ckbPedido.Checked = true;
+            }
         }
 
         public void CargarConsumidorFinal()

@@ -49,6 +49,15 @@ namespace Presentacion.Core.Pedido
 
             list = new List<VentaDto2>();
 
+            if (pedidoServicio.Buscar(pedidoId).Proceso == AccesoDatos.Proceso.PedidoTerminado)
+            {
+                btnEliminar.Visible = true;
+            }
+            else
+            {
+                btnEliminar.Visible = false;
+            }
+
             Estado = estado;
 
             PedidoId = pedidoId;
@@ -236,6 +245,16 @@ namespace Presentacion.Core.Pedido
                 MessageBox.Show("la Caja se encuentra cerrada", "Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Este seguro de eliminar este Pedido?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                pedidoServicio.Eliminar(PedidoId);
+
+                MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
         }
     }
 }

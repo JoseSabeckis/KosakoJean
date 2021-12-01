@@ -61,6 +61,17 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public void Eliminar(long id)
+        {
+            using(var context = new KosakoDBEntities())
+            {
+                var eliminado = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                eliminado.EstaEliminado = true;
+
+            }
+        }
+
         public IEnumerable<PedidoDto> BuscarPedidosNuevos()
         {
             using (var context = new KosakoDBEntities())
@@ -136,7 +147,7 @@ namespace Servicios.Core.Pedido
             using (var context = new KosakoDBEntities())
             {
 
-                return context.Pedidos.Where(x => x.Proceso == Proceso.PedidoTerminado)
+                return context.Pedidos.Where(x => x.Proceso == Proceso.PedidoTerminado && x.EstaEliminado)
                     .Select(x => new PedidoDto
                     {
                         Adelanto = x.Adelanto,

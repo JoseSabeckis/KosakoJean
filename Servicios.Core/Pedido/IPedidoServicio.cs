@@ -11,6 +11,8 @@ namespace Servicios.Core.Pedido
     {
         long NuevoPedido(PedidoDto pedidoDto);
 
+        void Eliminar(long id);
+
         PedidoDto BuscarIDPedidos(long id);
 
         IEnumerable<PedidoDto> BuscandoTerminadosyClientesFecha(long id, DateTime date);

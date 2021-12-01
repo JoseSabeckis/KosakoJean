@@ -71,6 +71,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -85,6 +86,7 @@
             this.panel2.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -288,7 +290,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnListoParaEntregar.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btnListoParaEntregar.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListoParaEntregar.Location = new System.Drawing.Point(116, 32);
+            this.btnListoParaEntregar.Location = new System.Drawing.Point(116, 28);
             this.btnListoParaEntregar.Name = "btnListoParaEntregar";
             this.btnListoParaEntregar.Size = new System.Drawing.Size(374, 107);
             this.btnListoParaEntregar.TabIndex = 5;
@@ -299,6 +301,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.pictureBox2);
             this.panel8.Controls.Add(this.btnClientes);
             this.panel8.Controls.Add(this.btnTerminados);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -314,9 +317,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClientes.BackColor = System.Drawing.Color.Silver;
             this.btnClientes.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.Location = new System.Drawing.Point(116, 102);
+            this.btnClientes.Location = new System.Drawing.Point(205, 102);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(374, 54);
+            this.btnClientes.Size = new System.Drawing.Size(334, 54);
             this.btnClientes.TabIndex = 7;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
@@ -329,9 +332,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTerminados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnTerminados.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminados.Location = new System.Drawing.Point(116, 29);
+            this.btnTerminados.Location = new System.Drawing.Point(205, 29);
             this.btnTerminados.Name = "btnTerminados";
-            this.btnTerminados.Size = new System.Drawing.Size(374, 54);
+            this.btnTerminados.Size = new System.Drawing.Size(334, 54);
             this.btnTerminados.TabIndex = 6;
             this.btnTerminados.Text = "Pedidos Terminados";
             this.btnTerminados.UseVisualStyleBackColor = false;
@@ -515,6 +518,17 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::KosakoJean.Properties.Resources.kosako;
+            this.pictureBox2.Location = new System.Drawing.Point(47, 29);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(134, 127);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -548,6 +562,7 @@
             this.panel10.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,6 +611,7 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verClientesToolStripMenuItem;
         private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

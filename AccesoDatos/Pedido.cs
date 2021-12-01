@@ -30,6 +30,7 @@ namespace AccesoDatos
         public System.DateTime FechaEntrega { get; set; }
         public long ClienteId { get; set; }
         public string ApyNom { get; set; }
+        public bool EstaEliminado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producto_Pedido> Producto_Pedido { get; set; }

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/31/2021 16:30:18
+-- Date Created: 12/01/2021 11:19:01
 -- Generated from EDMX file: C:\Users\joses\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -147,6 +147,7 @@ CREATE TABLE [dbo].[Pedidos] (
     [FechaEntrega] datetime  NOT NULL,
     [ClienteId] bigint  NOT NULL,
     [ApyNom] nvarchar(max)  NOT NULL,
+    [EstaEliminado] bit  NOT NULL,
     [Cliente_Id] bigint  NULL
 );
 GO
