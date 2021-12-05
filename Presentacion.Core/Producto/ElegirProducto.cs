@@ -1,4 +1,6 @@
-﻿using Servicios.Core.Producto;
+﻿using Servicios.Core.Colegio;
+using Servicios.Core.Producto;
+using Servicios.Core.TipoProducto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,8 @@ namespace Presentacion.Core.Producto
     public partial class ElegirProducto : Form
     {
         private readonly IProductoServicio productoServicio;
+        private readonly IColegioServicio colegioServicio;
+        private readonly ITipoProducto tipoDeProducto;
 
         public bool Bandera = false;
         public long _codigo;
@@ -23,6 +27,8 @@ namespace Presentacion.Core.Producto
             InitializeComponent();
 
             productoServicio = new ProductoServicio();
+            colegioServicio = new ColegioServicio();
+            tipoDeProducto = new TipoProductoServicio();
 
             CargarGrilla();
         }
@@ -37,14 +43,15 @@ namespace Presentacion.Core.Producto
         {
             for (var i = 0; i < grilla.ColumnCount; i++)
             {
-                grilla.Columns[i].Visible = false;
+                grilla.Columns[i].Visible = false;                
+
             }
 
-            grilla.Columns["Id"].Visible = true;
-            grilla.Columns["Id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["Id"].HeaderText = @"Nro";
-            grilla.Columns["Id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //grilla.Columns["Id"].Visible = true;
+            //grilla.Columns["Id"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //grilla.Columns["Id"].HeaderText = @"Nro";
+            //grilla.Columns["Id"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //grilla.Columns["Id"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             grilla.Columns["Descripcion"].Visible = true;
             grilla.Columns["Descripcion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -58,17 +65,17 @@ namespace Presentacion.Core.Producto
             grilla.Columns["Precio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["ColegioId"].Visible = true;
-            grilla.Columns["ColegioId"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["ColegioId"].HeaderText = @"Colegio";
-            grilla.Columns["ColegioId"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["ColegioId"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Colegio"].Visible = true;
+            grilla.Columns["Colegio"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["Colegio"].HeaderText = @"Colegio";
+            grilla.Columns["Colegio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Colegio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["TipoProductoId"].Visible = true;
-            grilla.Columns["TipoProductoId"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["TipoProductoId"].HeaderText = @"Estilo";
-            grilla.Columns["TipoProductoId"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["TipoProductoId"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["TipoProducto"].Visible = true;
+            grilla.Columns["TipoProducto"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["TipoProducto"].HeaderText = @"Estilo";
+            grilla.Columns["TipoProducto"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["TipoProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
         }
 

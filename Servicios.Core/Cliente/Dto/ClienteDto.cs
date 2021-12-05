@@ -21,5 +21,7 @@ namespace Servicios.Core.Cliente.Dto
         public bool EstaEliminado { get; set; }
 
         public byte[] Foto { get; set; }
+
+        public bool Principal { get; set; }
     }
 }

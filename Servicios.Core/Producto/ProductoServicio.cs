@@ -83,7 +83,9 @@ namespace Servicios.Core.Producto
                         Extras = x.Extras,
                         TipoProductoId = x.TipoProductoId,
                         ColegioId = x.ColegioId,
-                        Foto = x.Foto
+                        Foto = x.Foto,
+                        Colegio = context.Colegios.FirstOrDefault(f=>f.Id == x.ColegioId).Descripcion,
+                        TipoProducto = context.TipoProductos.FirstOrDefault(f=>f.Id == x.TipoProductoId).Descripcion
 
                     }).ToList();
 
@@ -108,7 +110,9 @@ namespace Servicios.Core.Producto
                         Extras = x.Extras,
                         TipoProductoId = x.TipoProductoId,
                         ColegioId = x.ColegioId,
-                        Foto = x.Foto              
+                        Foto = x.Foto,
+                        Colegio = context.Colegios.FirstOrDefault(f => f.Id == x.ColegioId).Descripcion,
+                        TipoProducto = context.TipoProductos.FirstOrDefault(f => f.Id == x.TipoProductoId).Descripcion
 
                     }).FirstOrDefault(x => x.Id == Id && x.EstaEliminado == false);
             }

@@ -1,8 +1,11 @@
 ﻿using Presentacion.Core.Mensaje;
+using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
 using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
+using Servicios.Core.DetalleCaja;
+using Servicios.Core.DetalleCaja.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,9 +22,11 @@ namespace Presentacion.Core.CtaCte
     {
         private readonly IClienteServicio _clienteServicio;
         private readonly ICtaCteServicio _ctaCteServicio;
+        private readonly IDetalleCajaServicio detalleCajaServicio;
+        private readonly ICajaServicio cajaServicio;
 
-        long _ClienteId;
-        long _CtaCteId;
+        long _ClienteId = 0;
+        long _CtaCteId = 0;
         ClienteDto _clienteDto;
         CtaCteDto _ctaDto;
 
@@ -31,6 +36,8 @@ namespace Presentacion.Core.CtaCte
 
             _clienteServicio = new ClienteServicio();
             _ctaCteServicio = new CtaCteServicio();
+            detalleCajaServicio = new DetalleCajaServicio();
+            cajaServicio = new CajaServicio();
 
             _ClienteId = clienteId;
             _clienteDto = _clienteServicio.ObtenerPorId(clienteId);
@@ -50,41 +57,25 @@ namespace Presentacion.Core.CtaCte
             nudCobro.Maximum = _ctaDto.Debe;
         }
 
-        public void CobrarEnabled()
-        {
-            if (Convert.ToDecimal(txtDebe.Text) == 0)
-            {
-                nudCobro.Enabled = false;
-                btnCobrar.Enabled = false;
-            }
-            else
-            {
-                
-                nudCobro.Enabled = true;
-                btnCobrar.Enabled = true;
-                nudCobroMaximo();
-            }
-            
-        }
-
         public void Datos()
         {
-            if (_CtaCteId != 0 || _ctaDto != null)
+            if (_CtaCteId != 0)
             {
 
-                CobrarEnabled();
+                nudCobroMaximo();
 
             }
-            //else
-            //{
-            //    CobrarEnabled();
-            //}
         }
 
         public void Grilla()
         {
             dgvGrilla.DataSource = _ctaCteServicio.Lista(_ClienteId);
             FormatearGrilla(dgvGrilla);
+
+            if (Convert.ToDecimal(txtDebe.Text) == 0)
+            {
+                nudCobro.Enabled = false;
+            }
         }
 
         public void FormatearGrilla(DataGridView grilla)
@@ -137,7 +128,7 @@ namespace Presentacion.Core.CtaCte
             {
                 _CtaCteId = (long)dgvGrilla["Id", e.RowIndex].Value;
                 _ctaDto = _ctaCteServicio.ObtenerPorId(_CtaCteId);
-                CobrarEnabled();
+                nudCobroMaximo();
             }
             else
             {
@@ -172,20 +163,42 @@ namespace Presentacion.Core.CtaCte
         {
             if (_CtaCteId != 0)
             {
-                if (MessageBox.Show("Esta Seguro de Cobrar?","Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                if (nudCobro.Value > 0)
                 {
-                    _ctaCteServicio.Pagar(nudCobro.Value, _ClienteId, _CtaCteId);
+                    if (MessageBox.Show("Esta Seguro de Cobrar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        _ctaCteServicio.Pagar(nudCobro.Value, _ClienteId, _CtaCteId);
 
-                    var mensaje = new Afirmacion("Cobrado", $"Se Le Cobro $ {nudCobro.Value} Exitosamente!");
-                    mensaje.ShowDialog();
+                        var mensaje = new Afirmacion("Cobrado", $"Se Le Cobro $ {nudCobro.Value} Exitosamente!");
+                        mensaje.ShowDialog();
 
-                    DebeYTotal(_ctaCteServicio.Lista(_ClienteId));
+                        //caja
 
-                    Grilla();
+                        var detalle = new DetalleCajaDto
+                        {
+                            Fecha = DateTime.Now,
+                            Total = nudCobro.Value,
+                            Descripcion = $"Cobro a {_clienteDto.Apellido} {_clienteDto.Nombre}",
+                            CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                        };
 
-                    Datos();
+                        detalleCajaServicio.AgregarDetalleCaja(detalle);
 
+                        cajaServicio.SumarDineroACaja(nudCobro.Value);
+
+                        //---//
+
+                        DebeYTotal(_ctaCteServicio.Lista(_ClienteId));
+
+                        Grilla();
+
+                        Datos();
+
+                        nudCobro.Value = 0;
+
+                    }
                 }
+                
             }
         }
     }

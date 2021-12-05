@@ -13,6 +13,8 @@ namespace Servicios.Core.Cliente
 
         IEnumerable<ClienteDto> Buscar(string cadenaBuscar);
 
+        void PasarPrincipal(long clienteId);
+
         void Modificar(ClienteDto Dto);
 
         void Eliminar(long id);

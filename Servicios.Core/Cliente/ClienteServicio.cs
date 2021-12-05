@@ -21,7 +21,8 @@ namespace Servicios.Core.Cliente
                     Nombre = Dto.Nombre,
                     Direccion = Dto.Direccion,
                     Telefono = Dto.Telefono,
-                    Foto = Dto.Foto
+                    Foto = Dto.Foto,
+                    Principal = Dto.Principal
                 };
 
                 context.Clientes.Add(nuevo);
@@ -56,6 +57,7 @@ namespace Servicios.Core.Cliente
                 producto.Direccion = Dto.Direccion;
                 producto.Telefono = Dto.Telefono;
                 producto.Foto = Dto.Foto;
+                producto.Principal = Dto.Principal;
 
                 context.SaveChanges();
 
@@ -76,7 +78,8 @@ namespace Servicios.Core.Cliente
                         Direccion = x.Direccion,
                         Telefono = x.Telefono,
                         EstaEliminado = x.EstaEliminado,
-                        Foto = x.Foto
+                        Foto = x.Foto,
+                        Principal = x.Principal
 
                     }).ToList();
 
@@ -100,9 +103,28 @@ namespace Servicios.Core.Cliente
                         Direccion = x.Direccion,
                         Telefono = x.Telefono,
                         EstaEliminado = x.EstaEliminado,
-                        Foto = x.Foto
+                        Foto = x.Foto,
+                        Principal = x.Principal
 
                     }).FirstOrDefault(x => x.Id == colegioId && x.EstaEliminado == false);
+            }
+        }
+
+        public void PasarPrincipal(long clienteId)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var cliente = context.Clientes.FirstOrDefault(x => x.Id == clienteId);
+
+                if (cliente.Principal == false)
+                {
+                    cliente.Principal = true;
+                }
+                else
+                {
+                    cliente.Principal = false;
+                }
+
             }
         }
 

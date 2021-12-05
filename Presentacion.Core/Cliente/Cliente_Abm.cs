@@ -74,6 +74,7 @@ namespace Presentacion.Core.Cliente
             txtDireccion.Text = localidad.Direccion;
             txtTelefono.Text = localidad.Telefono;
             imgFotoEmpleado.Image = ImagenDb.Convertir_Bytes_Imagen(localidad.Foto);
+            ckbPrincipal.Checked = localidad.Principal;
         }
 
         public override bool EjecutarComandoNuevo()
@@ -91,10 +92,13 @@ namespace Presentacion.Core.Cliente
                 Nombre = txtNombre.Text,
                 Direccion = txtDireccion.Text,
                 Telefono = txtTelefono.Text,
-                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image)
+                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
+                Principal = ckbPrincipal.Checked
             };
 
             _Servicio.Nuevo(nuevaLocalidad);
+
+            ckbPrincipal.Checked = false;
 
             return true;
         }
@@ -115,7 +119,8 @@ namespace Presentacion.Core.Cliente
                 Nombre = txtNombre.Text,
                 Direccion = txtDireccion.Text,
                 Telefono = txtTelefono.Text,
-                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image)
+                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
+                Principal = ckbPrincipal.Checked
 
             };
 
