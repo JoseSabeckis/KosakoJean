@@ -170,5 +170,29 @@ namespace Presentacion.Core.Pedido
                 //MessageBox.Show("El Campo Apellido y Nombre no puede estar vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ckbNormal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbNormal.Checked == true)
+            {
+                ckbCtaCte.Checked = false;
+            }
+            else
+            {
+                ckbCtaCte.Checked = true;
+            }
+        }
+
+        private void ckbCtaCte_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbCtaCte.Checked == true)
+            {
+                ckbNormal.Checked = false;
+            }
+            else
+            {
+                ckbNormal.Checked = true;
+            }
+        }
     }
 }

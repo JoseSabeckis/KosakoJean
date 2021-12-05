@@ -135,6 +135,12 @@
     <Compile Include="Colegio\Colegio_Abm.Designer.cs">
       <DependentUpon>Colegio_Abm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CtaCte\CtaCte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CtaCte\CtaCte.Designer.cs">
+      <DependentUpon>CtaCte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mensaje\Afirmacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Colegio\Colegio_Abm.resx">
       <DependentUpon>Colegio_Abm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtaCte\CtaCte.resx">
+      <DependentUpon>CtaCte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mensaje\Afirmacion.resx">
       <DependentUpon>Afirmacion.cs</DependentUpon>

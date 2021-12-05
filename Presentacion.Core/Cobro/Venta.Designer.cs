@@ -344,7 +344,7 @@
             // ckbPedido
             // 
             this.ckbPedido.AutoSize = true;
-            this.ckbPedido.Location = new System.Drawing.Point(40, 39);
+            this.ckbPedido.Location = new System.Drawing.Point(44, 39);
             this.ckbPedido.Name = "ckbPedido";
             this.ckbPedido.Size = new System.Drawing.Size(87, 26);
             this.ckbPedido.TabIndex = 7;
@@ -357,7 +357,7 @@
             this.ckbNormal.AutoSize = true;
             this.ckbNormal.Checked = true;
             this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbNormal.Location = new System.Drawing.Point(40, 6);
+            this.ckbNormal.Location = new System.Drawing.Point(44, 7);
             this.ckbNormal.Name = "ckbNormal";
             this.ckbNormal.Size = new System.Drawing.Size(91, 26);
             this.ckbNormal.TabIndex = 6;

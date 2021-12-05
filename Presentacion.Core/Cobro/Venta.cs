@@ -439,6 +439,11 @@ namespace Presentacion.Core.Cobro
             }
         }
 
+        private void ckbCtaCte_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnAgregarAlaGrilla_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -510,5 +515,7 @@ namespace Presentacion.Core.Cobro
             cliente.ShowDialog();
 
         }
+
+
     }
 }

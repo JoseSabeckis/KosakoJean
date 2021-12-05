@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/01/2021 11:19:01
+-- Date Created: 12/04/2021 21:54:26
 -- Generated from EDMX file: C:\Users\joses\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -201,6 +201,18 @@ CREATE TABLE [dbo].[Clientes] (
 );
 GO
 
+-- Creating table 'CtasCtes'
+CREATE TABLE [dbo].[CtasCtes] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Fecha] datetime  NOT NULL,
+    [Total] decimal(18,0)  NOT NULL,
+    [Debe] decimal(18,0)  NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [ClienteId] bigint  NOT NULL,
+    [Estado] bigint  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -262,6 +274,12 @@ GO
 -- Creating primary key on [Id] in table 'Clientes'
 ALTER TABLE [dbo].[Clientes]
 ADD CONSTRAINT [PK_Clientes]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'CtasCtes'
+ALTER TABLE [dbo].[CtasCtes]
+ADD CONSTRAINT [PK_CtasCtes]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -402,6 +420,21 @@ GO
 CREATE INDEX [IX_FK_VentaCliente]
 ON [dbo].[Ventas]
     ([Cliente_Id]);
+GO
+
+-- Creating foreign key on [ClienteId] in table 'CtasCtes'
+ALTER TABLE [dbo].[CtasCtes]
+ADD CONSTRAINT [FK_ClienteCtaCte]
+    FOREIGN KEY ([ClienteId])
+    REFERENCES [dbo].[Clientes]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ClienteCtaCte'
+CREATE INDEX [IX_FK_ClienteCtaCte]
+ON [dbo].[CtasCtes]
+    ([ClienteId]);
 GO
 
 -- --------------------------------------------------

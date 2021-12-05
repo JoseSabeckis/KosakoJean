@@ -45,24 +45,30 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ckbNormal = new System.Windows.Forms.CheckBox();
+            this.ckbCtaCte = new System.Windows.Forms.CheckBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdelanto)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.dtpFechaEntrega);
             this.panel1.Controls.Add(this.txtNombre);
-            this.panel1.Controls.Add(this.txtApellido);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.nudAdelanto);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
@@ -77,7 +83,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Location = new System.Drawing.Point(113, 207);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(429, 11);
+            this.panel3.Size = new System.Drawing.Size(443, 10);
             this.panel3.TabIndex = 9;
             // 
             // dtpFechaEntrega
@@ -99,7 +105,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(222, 157);
+            this.txtApellido.Location = new System.Drawing.Point(106, 18);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(297, 29);
             this.txtApellido.TabIndex = 6;
@@ -127,7 +133,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(137, 157);
+            this.label3.Location = new System.Drawing.Point(21, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 24);
             this.label3.TabIndex = 3;
@@ -229,6 +235,51 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Cargue mas Informacion";
             // 
+            // ckbNormal
+            // 
+            this.ckbNormal.AutoSize = true;
+            this.ckbNormal.Checked = true;
+            this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbNormal.Location = new System.Drawing.Point(9, 12);
+            this.ckbNormal.Name = "ckbNormal";
+            this.ckbNormal.Size = new System.Drawing.Size(90, 28);
+            this.ckbNormal.TabIndex = 10;
+            this.ckbNormal.Text = "Normal";
+            this.ckbNormal.UseVisualStyleBackColor = true;
+            this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
+            // 
+            // ckbCtaCte
+            // 
+            this.ckbCtaCte.AutoSize = true;
+            this.ckbCtaCte.Location = new System.Drawing.Point(9, 46);
+            this.ckbCtaCte.Name = "ckbCtaCte";
+            this.ckbCtaCte.Size = new System.Drawing.Size(84, 28);
+            this.ckbCtaCte.TabIndex = 11;
+            this.ckbCtaCte.Text = "CtaCte";
+            this.ckbCtaCte.UseVisualStyleBackColor = true;
+            this.ckbCtaCte.CheckedChanged += new System.EventHandler(this.ckbCtaCte_CheckedChanged);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.ckbCtaCte);
+            this.panel5.Controls.Add(this.ckbNormal);
+            this.panel5.Location = new System.Drawing.Point(445, 230);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(111, 91);
+            this.panel5.TabIndex = 12;
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.txtApellido);
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Location = new System.Drawing.Point(113, 132);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(443, 69);
+            this.panel6.TabIndex = 13;
+            // 
             // Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -252,6 +303,10 @@
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -274,5 +329,9 @@
         private System.Windows.Forms.Button btnCargar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.CheckBox ckbCtaCte;
+        private System.Windows.Forms.CheckBox ckbNormal;
+        private System.Windows.Forms.Panel panel6;
     }
 }

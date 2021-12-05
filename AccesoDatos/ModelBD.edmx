@@ -16,6 +16,7 @@
     <EntitySet Name="Ventas" EntityType="KosakoDBModel.Store.Ventas" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Producto_Ventas" EntityType="KosakoDBModel.Store.Producto_Ventas" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Clientes" EntityType="KosakoDBModel.Store.Clientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CtasCtes" EntityType="KosakoDBModel.Store.CtasCtes" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="TipoProductoProducto" Association="KosakoDBModel.Store.TipoProductoProducto">
       <End Role="TipoProducto" EntitySet="TipoProductos" />
       <End Role="Producto" EntitySet="Productos" />
@@ -51,6 +52,10 @@
     <AssociationSet Name="VentaCliente" Association="KosakoDBModel.Store.VentaCliente">
       <End Role="Venta" EntitySet="Ventas" />
       <End Role="Cliente" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="ClienteCtaCte" Association="KosakoDBModel.Store.ClienteCtaCte">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="CtaCte" EntitySet="CtasCtes" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Productos">
@@ -170,6 +175,18 @@
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
     <Property Name="Foto" Type="varbinary(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="CtasCtes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Total" Type="decimal" Nullable="false" />
+    <Property Name="Debe" Type="decimal" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClienteId" Type="bigint" Nullable="false" />
+    <Property Name="Estado" Type="bigint" Nullable="false" />
+  </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
     <End Role="Producto" Type="KosakoDBModel.Store.Productos" Multiplicity="*" />
@@ -278,6 +295,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ClienteCtaCte">
+    <End Role="Cliente" Type="KosakoDBModel.Store.Clientes" Multiplicity="1" />
+    <End Role="CtaCte" Type="KosakoDBModel.Store.CtasCtes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CtaCte">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -328,6 +357,11 @@
           <AssociationSet Name="VentaCliente" Association="KosakoDBModel.VentaCliente">
             <End Role="Venta" EntitySet="Ventas" />
             <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <EntitySet Name="CtasCtes" EntityType="KosakoDBModel.CtaCte" />
+          <AssociationSet Name="ClienteCtaCte" Association="KosakoDBModel.ClienteCtaCte">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="CtaCte" EntitySet="CtasCtes" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Producto">
@@ -550,6 +584,7 @@
           <NavigationProperty Name="Venta" Relationship="KosakoDBModel.VentaCliente" FromRole="Cliente" ToRole="Venta" />
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
           <Property Name="Foto" Type="Binary" Nullable="false" />
+          <NavigationProperty Name="CtaCte" Relationship="KosakoDBModel.ClienteCtaCte" FromRole="Cliente" ToRole="CtaCte" />
         </EntityType>
         <Association Name="PedidoCliente">
           <End Type="KosakoDBModel.Pedido" Role="Pedido" Multiplicity="*" />
@@ -559,6 +594,35 @@
           <End Type="KosakoDBModel.Venta" Role="Venta" Multiplicity="*" />
           <End Type="KosakoDBModel.Cliente" Role="Cliente" Multiplicity="0..1" />
         </Association>
+        <EntityType Name="CtaCte">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Nullable="false" />
+          <Property Name="Debe" Type="Decimal" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="KosakoDBModel.ClienteCtaCte" FromRole="CtaCte" ToRole="Cliente" />
+          <Property Name="ClienteId" Type="Int64" Nullable="false" />
+          <Property Name="Estado" Type="KosakoDBModel.CtaCteEstado" Nullable="false" />
+        </EntityType>
+        <Association Name="ClienteCtaCte">
+          <End Type="KosakoDBModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="KosakoDBModel.CtaCte" Role="CtaCte" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CtaCte">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="CtaCteEstado" UnderlyingType="Int64">
+          <Member Name="EnEspera" Value="0" />
+          <Member Name="Pagado" Value="1" />
+        </EnumType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -686,6 +750,19 @@
           <ScalarProperty Name="Telefono" ColumnName="Telefono" />
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
           <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CtasCtes">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.CtaCte)">
+        <MappingFragment StoreEntitySet="CtasCtes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Debe" ColumnName="Debe" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

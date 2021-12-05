@@ -19,6 +19,7 @@ namespace AccesoDatos
         {
             this.Pedido = new HashSet<Pedido>();
             this.Venta = new HashSet<Venta>();
+            this.CtaCte = new HashSet<CtaCte>();
         }
     
         public long Id { get; set; }
@@ -33,5 +34,7 @@ namespace AccesoDatos
         public virtual ICollection<Pedido> Pedido { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Venta> Venta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CtaCte> CtaCte { get; set; }
     }
 }
