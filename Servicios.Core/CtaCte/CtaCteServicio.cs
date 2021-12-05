@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Servicios.Core.CtaCte
 {
-    public class CtaCteServicio
+    public class CtaCteServicio : ICtaCteServicio
     {
         public void Agregar(CtaCteDto ctaCteDto)
         {
@@ -39,6 +39,11 @@ namespace Servicios.Core.CtaCte
 
                 cuenta.Debe -= monto;
 
+                if (cuenta.Debe == 0)
+                {
+                    cuenta.Estado = CtaCteEstado.Pagado;
+                }
+
                 context.SaveChanges();
 
             }
@@ -59,6 +64,29 @@ namespace Servicios.Core.CtaCte
                     Estado = x.Estado
 
                 }).ToList();
+            }
+        }
+
+        public CtaCteDto ObtenerPorId(long ctaId)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var cuenta = context.CtasCtes.FirstOrDefault(x => x.Id == ctaId);
+
+                var cuentaNueva = new CtaCteDto
+                {
+                    Id = cuenta.Id,
+                    ClienteId = cuenta.ClienteId,
+                    Debe = cuenta.Debe,
+                    Descripcion = cuenta.Descripcion,
+                    Total = cuenta.Total,
+                    Fecha = cuenta.Fecha,
+                    Estado = cuenta.Estado
+
+                };
+
+                return cuentaNueva;
+
             }
         }
 

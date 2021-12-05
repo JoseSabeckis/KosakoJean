@@ -14,5 +14,7 @@ namespace Servicios.Core.CtaCte
         void Pagar(decimal monto, long clienteId, long cuentaId);
 
         IEnumerable<CtaCteDto> Lista(long clienteId);
+
+        CtaCteDto ObtenerPorId(long ctaId);
     }
 }

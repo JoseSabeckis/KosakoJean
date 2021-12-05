@@ -79,7 +79,9 @@ namespace Presentacion.Core.Cobro
 
             _clienteId = consumer.Id;
             ventaDto.ClienteId = consumer.Id;
-            
+
+            ckbNormal.Checked = true;
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -516,6 +518,9 @@ namespace Presentacion.Core.Cobro
 
         }
 
-
+        private void nudPagaron_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

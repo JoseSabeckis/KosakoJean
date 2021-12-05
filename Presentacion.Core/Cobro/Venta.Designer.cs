@@ -116,6 +116,7 @@
             // cmbTalle
             // 
             this.cmbTalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTalle.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTalle.FormattingEnabled = true;
             this.cmbTalle.Items.AddRange(new object[] {
             "16",
@@ -126,7 +127,7 @@
             "XXXL"});
             this.cmbTalle.Location = new System.Drawing.Point(355, 26);
             this.cmbTalle.Name = "cmbTalle";
-            this.cmbTalle.Size = new System.Drawing.Size(48, 30);
+            this.cmbTalle.Size = new System.Drawing.Size(54, 27);
             this.cmbTalle.TabIndex = 13;
             this.cmbTalle.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -541,6 +542,7 @@
             this.nudPagaron.Name = "nudPagaron";
             this.nudPagaron.Size = new System.Drawing.Size(120, 29);
             this.nudPagaron.TabIndex = 3;
+            this.nudPagaron.ValueChanged += new System.EventHandler(this.nudPagaron_ValueChanged);
             // 
             // label6
             // 

@@ -57,5 +57,11 @@ namespace Presentacion.Core.Cliente.Ctrol
             var historial = new HistorialClientes(Id);
             historial.ShowDialog();
         }
+
+        private void btnCuenta_Click(object sender, EventArgs e)
+        {
+            var cuenta = new CtaCte.CtaCte(Id);
+            cuenta.ShowDialog();
+        }
     }
 }

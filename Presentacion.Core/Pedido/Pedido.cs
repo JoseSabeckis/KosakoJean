@@ -1,6 +1,8 @@
 ﻿using Presentacion.Core.Cobro;
 using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
+using Servicios.Core.CtaCte;
+using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta.Dto;
@@ -28,6 +30,7 @@ namespace Presentacion.Core.Pedido
         private readonly IProductoServicio productoServicio;
         private readonly ICajaServicio cajaServicio;
         private readonly IDetalleCajaServicio detallCajaServicio;
+        private readonly ICtaCteServicio ctaCteServicio;
 
         public bool semaforo = false;
 
@@ -46,6 +49,7 @@ namespace Presentacion.Core.Pedido
             productoServicio = new ProductoServicio();
             cajaServicio = new CajaServicio();
             detallCajaServicio = new DetalleCajaServicio();
+            ctaCteServicio = new CtaCteServicio();
 
             if (nombre != null)
             {
@@ -90,6 +94,59 @@ namespace Presentacion.Core.Pedido
         {
             if (AsignarControles())
             {
+                if (ckbCtaCte.Checked == true)
+                {
+                    if (MessageBox.Show("Esta Seguro de Continuar? Puede ser un Cobro para Despues", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        string descripcion = string.Empty;
+
+                        string segunda = string.Empty;
+
+                        foreach (var item in ListaVentas)
+                        {
+                            descripcion = productoServicio.ObtenerPorId(item.Id).Descripcion;
+
+                            segunda += " " + descripcion + " ";
+
+                        }
+
+                        var cuenta = new CtaCteDto
+                        {
+                            ClienteId = ClienteId,
+                            Estado = AccesoDatos.CtaCteEstado.EnEspera,
+                            Fecha = dtpFechaEntrega.Value.Date,
+                            Total = _total,
+                            Debe = _total - nudAdelanto.Value,
+                            Descripcion = $"{segunda}"
+                        };
+
+                        ctaCteServicio.Agregar(cuenta);
+
+                        var detalle = new DetalleCajaDto
+                        {
+                            Descripcion = txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
+                            Fecha = DateTime.Now,
+                            Total = nudAdelanto.Value,
+                            CajaId = detallCajaServicio.BuscarCajaAbierta()
+                        };
+
+                        detallCajaServicio.AgregarDetalleCaja(detalle);
+
+                        //dinero a caja
+                        cajaServicio.SumarDineroACaja(nudAdelanto.Value);
+
+                        var mensaje = new Afirmacion("Agregado a la Cuenta!", $"Dinero Cobrado Por Adelanto $ {nudAdelanto.Value}");
+                        mensaje.ShowDialog();
+
+                        semaforo = true;
+
+                        this.Close();
+
+                        return;
+                    }
+                }
+                
+
                 if (MessageBox.Show("Esta Seguro de Continuar?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
