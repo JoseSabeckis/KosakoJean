@@ -122,5 +122,10 @@ namespace Presentacion.Core.Cliente
                 _codigo = 0;
             }
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

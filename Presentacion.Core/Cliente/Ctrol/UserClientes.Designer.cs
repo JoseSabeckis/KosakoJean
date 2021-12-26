@@ -30,12 +30,13 @@ namespace Presentacion.Core.Cliente.Ctrol
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCuenta = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.nudId = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
-            this.btnCuenta = new System.Windows.Forms.Button();
+            this.ckbPrincipal = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -45,6 +46,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.ckbPrincipal);
             this.panel1.Controls.Add(this.btnCuenta);
             this.panel1.Controls.Add(this.btnVer);
             this.panel1.Controls.Add(this.nudId);
@@ -56,6 +58,19 @@ namespace Presentacion.Core.Cliente.Ctrol
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(190, 161);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCuenta
+            // 
+            this.btnCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCuenta.Location = new System.Drawing.Point(104, 45);
+            this.btnCuenta.Name = "btnCuenta";
+            this.btnCuenta.Size = new System.Drawing.Size(79, 33);
+            this.btnCuenta.TabIndex = 5;
+            this.btnCuenta.Text = "Cuenta";
+            this.btnCuenta.UseVisualStyleBackColor = false;
+            this.btnCuenta.Click += new System.EventHandler(this.btnCuenta_Click);
             // 
             // btnVer
             // 
@@ -114,18 +129,16 @@ namespace Presentacion.Core.Cliente.Ctrol
             this.lblApellido.TabIndex = 0;
             this.lblApellido.Text = "Apellido";
             // 
-            // btnCuenta
+            // ckbPrincipal
             // 
-            this.btnCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCuenta.Location = new System.Drawing.Point(104, 45);
-            this.btnCuenta.Name = "btnCuenta";
-            this.btnCuenta.Size = new System.Drawing.Size(79, 33);
-            this.btnCuenta.TabIndex = 5;
-            this.btnCuenta.Text = "Cuenta";
-            this.btnCuenta.UseVisualStyleBackColor = false;
-            this.btnCuenta.Click += new System.EventHandler(this.btnCuenta_Click);
+            this.ckbPrincipal.AutoSize = true;
+            this.ckbPrincipal.Enabled = false;
+            this.ckbPrincipal.Location = new System.Drawing.Point(116, 140);
+            this.ckbPrincipal.Name = "ckbPrincipal";
+            this.ckbPrincipal.Size = new System.Drawing.Size(67, 17);
+            this.ckbPrincipal.TabIndex = 6;
+            this.ckbPrincipal.Text = "Favortiro";
+            this.ckbPrincipal.UseVisualStyleBackColor = true;
             // 
             // UserClientes
             // 
@@ -151,5 +164,6 @@ namespace Presentacion.Core.Cliente.Ctrol
         private System.Windows.Forms.NumericUpDown nudId;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnCuenta;
+        private System.Windows.Forms.CheckBox ckbPrincipal;
     }
 }

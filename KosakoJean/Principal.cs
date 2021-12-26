@@ -127,7 +127,8 @@ namespace KosakoJean
                     Foto = ImagenDb.Convertir_Imagen_Bytes(Imagen.Usuario),
                     Nombre = "",
                     Direccion = "",
-                    Telefono = ""
+                    Telefono = "",
+                    Principal = true
                 };
 
                 clienteServicio.Nuevo(confumidor);

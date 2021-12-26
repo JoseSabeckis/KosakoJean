@@ -127,5 +127,15 @@ namespace Presentacion.Core.Cliente
 
             CrearControles();
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -44,6 +44,13 @@ namespace Presentacion.Core.Cliente.Ctrol
 
             nudId.Value = cliente.Id;
 
+            ckbPrincipal.Checked = cliente.Principal;
+
+            if(ckbPrincipal.Checked == false)
+            {
+                ckbPrincipal.Visible = false;
+            }
+
             if (cliente.Foto != null)
             {
                 pictureBox1.Image = ImagenDb.Convertir_Bytes_Imagen(cliente.Foto);
