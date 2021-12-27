@@ -68,7 +68,9 @@ namespace Servicios.Core.Cliente
         {
             using (var context = new KosakoDBEntities())
             {
-                var productos = context.Clientes.AsNoTracking().OrderBy(x => x.Apellido.Contains(cadenaBuscar) && x.EstaEliminado == false && x.Principal == false|| x.Nombre.Contains(cadenaBuscar) && x.EstaEliminado == false && x.Principal == false)
+                var productosDemo = context.Clientes.AsNoTracking().Where(x => x.EstaEliminado == false);
+
+                var productos = productosDemo.OrderBy(x => x.Apellido.Contains(cadenaBuscar) && x.Principal == false|| x.Nombre.Contains(cadenaBuscar) && x.Principal == false)
                     .Select(x => new ClienteDto
                     {
 
