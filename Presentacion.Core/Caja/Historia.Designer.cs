@@ -49,6 +49,8 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,16 +59,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btnVolver);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lblHasta);
-            this.panel1.Controls.Add(this.lblDesde);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -91,7 +91,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(471, 11);
+            this.label3.Location = new System.Drawing.Point(194, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(293, 11);
+            this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 20);
             this.label2.TabIndex = 4;
@@ -110,7 +110,7 @@
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(471, 42);
+            this.lblHasta.Location = new System.Drawing.Point(194, 40);
             this.lblHasta.Name = "lblHasta";
             this.lblHasta.Size = new System.Drawing.Size(57, 20);
             this.lblHasta.TabIndex = 3;
@@ -119,7 +119,7 @@
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
-            this.lblDesde.Location = new System.Drawing.Point(293, 42);
+            this.lblDesde.Location = new System.Drawing.Point(3, 40);
             this.lblDesde.Name = "lblDesde";
             this.lblDesde.Size = new System.Drawing.Size(61, 20);
             this.lblDesde.TabIndex = 2;
@@ -282,6 +282,28 @@
             this.dgvGrilla.Size = new System.Drawing.Size(567, 339);
             this.dgvGrilla.TabIndex = 12;
             // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.lblDesde);
+            this.panel4.Controls.Add(this.lblHasta);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(263, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(391, 104);
+            this.panel4.TabIndex = 7;
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Location = new System.Drawing.Point(178, -5);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 105);
+            this.panel5.TabIndex = 6;
+            // 
             // Historia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -309,6 +331,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -335,5 +359,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown nudSinMonto;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }

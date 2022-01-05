@@ -43,25 +43,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.btnVer);
             this.panel1.Controls.Add(this.ckbCierre);
             this.panel1.Controls.Add(this.ckbApertura);
-            this.panel1.Controls.Add(this.dtpHasta);
-            this.panel1.Controls.Add(this.dtpDesde);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -107,7 +105,7 @@
             this.btnVer.BackColor = System.Drawing.Color.Aqua;
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(564, 89);
+            this.btnVer.Location = new System.Drawing.Point(98, 82);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(151, 33);
             this.btnVer.TabIndex = 8;
@@ -118,7 +116,7 @@
             // ckbCierre
             // 
             this.ckbCierre.AutoSize = true;
-            this.ckbCierre.Location = new System.Drawing.Point(314, 44);
+            this.ckbCierre.Location = new System.Drawing.Point(324, 38);
             this.ckbCierre.Name = "ckbCierre";
             this.ckbCierre.Size = new System.Drawing.Size(85, 29);
             this.ckbCierre.TabIndex = 7;
@@ -131,7 +129,7 @@
             this.ckbApertura.AutoSize = true;
             this.ckbApertura.Checked = true;
             this.ckbApertura.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbApertura.Location = new System.Drawing.Point(314, 19);
+            this.ckbApertura.Location = new System.Drawing.Point(324, 13);
             this.ckbApertura.Name = "ckbApertura";
             this.ckbApertura.Size = new System.Drawing.Size(111, 29);
             this.ckbApertura.TabIndex = 6;
@@ -143,7 +141,7 @@
             // 
             this.dtpHasta.CalendarMonthBackground = System.Drawing.SystemColors.MenuBar;
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(564, 54);
+            this.dtpHasta.Location = new System.Drawing.Point(97, 43);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(151, 33);
             this.dtpHasta.TabIndex = 5;
@@ -152,7 +150,7 @@
             // 
             this.dtpDesde.CalendarMonthBackground = System.Drawing.SystemColors.MenuBar;
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(564, 19);
+            this.dtpDesde.Location = new System.Drawing.Point(97, 8);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(151, 33);
             this.dtpDesde.TabIndex = 4;
@@ -160,7 +158,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(491, 61);
+            this.label3.Location = new System.Drawing.Point(22, 49);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 25);
             this.label3.TabIndex = 3;
@@ -169,7 +167,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(491, 22);
+            this.label2.Location = new System.Drawing.Point(22, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 25);
             this.label2.TabIndex = 2;
@@ -180,7 +178,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(107, 27);
+            this.label1.Location = new System.Drawing.Point(117, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 28);
             this.label1.TabIndex = 1;
@@ -214,6 +212,20 @@
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick);
             // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.btnVer);
+            this.panel4.Controls.Add(this.dtpHasta);
+            this.panel4.Controls.Add(this.dtpDesde);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(490, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(267, 132);
+            this.panel4.TabIndex = 11;
+            // 
             // Caja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -236,6 +248,8 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -256,5 +270,6 @@
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

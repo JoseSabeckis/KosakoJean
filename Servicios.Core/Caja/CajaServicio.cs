@@ -148,7 +148,9 @@ namespace Servicios.Core.Caja
         {
             using (var context = new KosakoDBEntities())
             {
-                return context.Cajas.AsNoTracking().Where(x => x.FechaApertura.Day >= desde.Day && x.FechaApertura.Month >= desde.Month && x.FechaApertura.Year >= desde.Year && x.FechaApertura.Day <= hasta.Day && x.FechaApertura.Month <= hasta.Month && x.FechaApertura.Year <= hasta.Year)
+                var caja = context.Cajas.Where(x => x.FechaApertura.Day >= desde.Day && x.FechaApertura.Month >= desde.Month && x.FechaApertura.Year >= desde.Year);
+
+                return caja.Where(x=>x.FechaApertura.Day <= hasta.Day && x.FechaApertura.Month <= hasta.Month && x.FechaApertura.Year <= hasta.Year)
                     .Select(x => new CajaDto
                     {
                         TotalCaja = x.TotalCaja,
@@ -160,6 +162,10 @@ namespace Servicios.Core.Caja
                         OpenClose = x.OpenClose,
 
                     }).ToList();
+
+
+
+
             }
         }
 
@@ -167,7 +173,9 @@ namespace Servicios.Core.Caja
         {
             using (var context = new KosakoDBEntities())
             {
-                return context.Cajas.AsNoTracking().Where(x => x.FechaCierre.Day >= desde.Day && x.FechaCierre.Month >= desde.Month && x.FechaCierre.Year >= desde.Year && x.FechaCierre.Day <= hasta.Day && x.FechaCierre.Month <= hasta.Month && x.FechaCierre.Year <= hasta.Year)
+                var caja = context.Cajas.Where(x => x.FechaCierre.Day >= desde.Day && x.FechaCierre.Month >= desde.Month && x.FechaCierre.Year >= desde.Year);
+
+                return caja.Where(x => x.FechaCierre.Day <= hasta.Day && x.FechaCierre.Month <= hasta.Month && x.FechaCierre.Year <= hasta.Year)
                     .Select(x => new CajaDto
                     {
                         TotalCaja = x.TotalCaja,
