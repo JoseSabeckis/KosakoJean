@@ -38,6 +38,7 @@ namespace Presentacion.Core.CtaCte
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblDomicilio = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@ namespace Presentacion.Core.CtaCte
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblDomicilio = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
@@ -157,6 +157,15 @@ namespace Presentacion.Core.CtaCte
             this.panel2.Size = new System.Drawing.Size(885, 119);
             this.panel2.TabIndex = 0;
             // 
+            // lblDomicilio
+            // 
+            this.lblDomicilio.AutoSize = true;
+            this.lblDomicilio.Location = new System.Drawing.Point(141, 47);
+            this.lblDomicilio.Name = "lblDomicilio";
+            this.lblDomicilio.Size = new System.Drawing.Size(81, 21);
+            this.lblDomicilio.TabIndex = 10;
+            this.lblDomicilio.Text = "Domicilio";
+            // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -184,7 +193,7 @@ namespace Presentacion.Core.CtaCte
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(10, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(223, 28);
@@ -273,15 +282,6 @@ namespace Presentacion.Core.CtaCte
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblDomicilio
-            // 
-            this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Location = new System.Drawing.Point(141, 47);
-            this.lblDomicilio.Name = "lblDomicilio";
-            this.lblDomicilio.Size = new System.Drawing.Size(81, 21);
-            this.lblDomicilio.TabIndex = 10;
-            this.lblDomicilio.Text = "Domicilio";
             // 
             // CtaCte
             // 

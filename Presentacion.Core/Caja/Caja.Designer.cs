@@ -30,26 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Caja));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.btnVer = new System.Windows.Forms.Button();
             this.ckbCierre = new System.Windows.Forms.CheckBox();
             this.ckbApertura = new System.Windows.Forms.CheckBox();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,6 +66,70 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(906, 136);
             this.panel1.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.btnVer);
+            this.panel4.Controls.Add(this.dtpHasta);
+            this.panel4.Controls.Add(this.dtpDesde);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(490, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(267, 132);
+            this.panel4.TabIndex = 11;
+            // 
+            // btnVer
+            // 
+            this.btnVer.BackColor = System.Drawing.Color.Aqua;
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVer.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVer.Location = new System.Drawing.Point(98, 82);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(151, 33);
+            this.btnVer.TabIndex = 8;
+            this.btnVer.Text = "Ver";
+            this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.CalendarMonthBackground = System.Drawing.SystemColors.MenuBar;
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(97, 43);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(151, 33);
+            this.dtpHasta.TabIndex = 5;
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.CalendarMonthBackground = System.Drawing.SystemColors.MenuBar;
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(97, 8);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(151, 33);
+            this.dtpDesde.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Desde";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Hasta";
             // 
             // pictureBox1
             // 
@@ -90,28 +154,16 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.Black;
-            this.btnVolver.Location = new System.Drawing.Point(11, 17);
+            this.btnVolver.Location = new System.Drawing.Point(0, 0);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(122, 47);
+            this.btnVolver.Size = new System.Drawing.Size(141, 128);
             this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnVer
-            // 
-            this.btnVer.BackColor = System.Drawing.Color.Aqua;
-            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVer.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(98, 82);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(151, 33);
-            this.btnVer.TabIndex = 8;
-            this.btnVer.Text = "Ver";
-            this.btnVer.UseVisualStyleBackColor = false;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // ckbCierre
             // 
@@ -136,43 +188,6 @@
             this.ckbApertura.Text = "Apertura";
             this.ckbApertura.UseVisualStyleBackColor = true;
             this.ckbApertura.CheckedChanged += new System.EventHandler(this.ckbApertura_CheckedChanged);
-            // 
-            // dtpHasta
-            // 
-            this.dtpHasta.CalendarMonthBackground = System.Drawing.SystemColors.MenuBar;
-            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(97, 43);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(151, 33);
-            this.dtpHasta.TabIndex = 5;
-            // 
-            // dtpDesde
-            // 
-            this.dtpDesde.CalendarMonthBackground = System.Drawing.SystemColors.MenuBar;
-            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(97, 8);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(151, 33);
-            this.dtpDesde.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Hasta";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 25);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Desde";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -212,20 +227,6 @@
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick);
             // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.btnVer);
-            this.panel4.Controls.Add(this.dtpHasta);
-            this.panel4.Controls.Add(this.dtpDesde);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(490, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(267, 132);
-            this.panel4.TabIndex = 11;
-            // 
             // Caja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -244,12 +245,12 @@
             this.Load += new System.EventHandler(this.Caja_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

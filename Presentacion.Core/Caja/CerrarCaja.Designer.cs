@@ -74,11 +74,12 @@
             // 
             // btmVolver
             // 
+            this.btmVolver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btmVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btmVolver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btmVolver.Location = new System.Drawing.Point(18, 14);
+            this.btmVolver.Location = new System.Drawing.Point(0, 0);
             this.btmVolver.Name = "btmVolver";
-            this.btmVolver.Size = new System.Drawing.Size(133, 40);
+            this.btmVolver.Size = new System.Drawing.Size(168, 122);
             this.btmVolver.TabIndex = 1;
             this.btmVolver.Text = "Volver";
             this.btmVolver.UseVisualStyleBackColor = true;
