@@ -34,13 +34,13 @@ namespace Presentacion.Core.Caja
 
         public void VerCajaApertura(DateTime desde, DateTime hasta)
         {
-            dgvGrilla.DataSource = _cajaServicio.BuscarCajasPorApertura(desde.Date, hasta.Date);
+            dgvGrilla.DataSource = _cajaServicio.BuscarCajasPorApertura(desde, hasta);
             FormatearGrilla(dgvGrilla);
         }
 
         public void VerCajaCierre(DateTime desde, DateTime hasta)
         {
-            dgvGrilla.DataSource = _cajaServicio.BuscarCajasPorCierre(desde.Date, hasta.Date);
+            dgvGrilla.DataSource = _cajaServicio.BuscarCajasPorCierre(desde, hasta);
             FormatearGrilla(dgvGrilla);
         }
 
@@ -126,11 +126,11 @@ namespace Presentacion.Core.Caja
         {
             if (ckbApertura.Checked == true)
             {
-                VerCajaApertura(dtpDesde.Value.Date, dtpHasta.Value.Date);
+                VerCajaApertura(dtpDesde.Value, dtpHasta.Value);
             }
             else
             {
-                VerCajaCierre(dtpDesde.Value.Date, dtpHasta.Value.Date);
+                VerCajaCierre(dtpDesde.Value, dtpHasta.Value);
             }
         }
 
