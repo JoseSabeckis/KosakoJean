@@ -34,17 +34,19 @@
             this.lblIdPedido = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.lblProducto = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.BackColor = System.Drawing.SystemColors.GrayText;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.Black;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
             this.lblNombre.Location = new System.Drawing.Point(3, 65);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(85, 24);
+            this.lblNombre.Size = new System.Drawing.Size(93, 25);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre";
             // 
@@ -53,7 +55,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.Red;
-            this.lblFecha.Location = new System.Drawing.Point(3, 0);
+            this.lblFecha.Location = new System.Drawing.Point(1, 0);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(69, 24);
             this.lblFecha.TabIndex = 2;
@@ -103,20 +105,32 @@
             this.lblProducto.TabIndex = 6;
             this.lblProducto.Text = "| ";
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblFecha);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(229, 35);
+            this.panel1.TabIndex = 10;
+            // 
             // UnidadRetiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnVista);
             this.Controls.Add(this.lblIdPedido);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.lblFecha);
             this.Name = "UnidadRetiro";
             this.Size = new System.Drawing.Size(229, 204);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,5 +144,6 @@
         private System.Windows.Forms.Label lblIdPedido;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblProducto;
+        private System.Windows.Forms.Panel panel1;
     }
 }

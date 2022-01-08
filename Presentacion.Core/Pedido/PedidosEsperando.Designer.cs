@@ -78,10 +78,10 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Silver;
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(997, 0);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(976, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 80);
+            this.button1.Size = new System.Drawing.Size(123, 80);
             this.button1.TabIndex = 0;
             this.button1.Text = "Volver";
             this.button1.UseVisualStyleBackColor = false;

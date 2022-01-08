@@ -77,20 +77,22 @@ namespace Servicios.Core.Pedido
             using (var context = new KosakoDBEntities())
             {
 
-                return context.Pedidos.Where(x => x.Proceso == Proceso.InicioPedido)
-                    .Select(x => new PedidoDto
-                    {
-                        Adelanto = x.Adelanto,
-                        Apellido = x.Apellido,
-                        Nombre = x.Apellido,
-                        FechaEntrega = x.FechaEntrega,
-                        FechaPedido = x.FechaPedido,
-                        Total = x.Total,
-                        Id = x.Id,
-                        Proceso = x.Proceso,
-                        ClienteId = x.ClienteId
+                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.InicioPedido);
+                    
 
-                    }).ToList();
+                return lista.OrderBy(x=>x.FechaEntrega).Select(x => new PedidoDto
+                {
+                    Adelanto = x.Adelanto,
+                    Apellido = x.Apellido,
+                    Nombre = x.Apellido,
+                    FechaEntrega = x.FechaEntrega,
+                    FechaPedido = x.FechaPedido,
+                    Total = x.Total,
+                    Id = x.Id,
+                    Proceso = x.Proceso,
+                    ClienteId = x.ClienteId
+
+                }).ToList();
 
             }
         }
@@ -100,20 +102,22 @@ namespace Servicios.Core.Pedido
             using (var context = new KosakoDBEntities())
             {
 
-                return context.Pedidos.Where(x => x.Proceso == Proceso.EsperandoRetiro)
-                    .Select(x => new PedidoDto
-                    {
-                        Adelanto = x.Adelanto,
-                        Apellido = x.Apellido,
-                        Nombre = x.Apellido,
-                        FechaEntrega = x.FechaEntrega,
-                        FechaPedido = x.FechaPedido,
-                        Total = x.Total,
-                        Id = x.Id,
-                        Proceso = x.Proceso,
-                        ClienteId = x.ClienteId
+                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.EsperandoRetiro);
+                    
 
-                    }).ToList();
+                return lista.OrderBy(x=>x.FechaEntrega).Select(x => new PedidoDto
+                {
+                    Adelanto = x.Adelanto,
+                    Apellido = x.Apellido,
+                    Nombre = x.Apellido,
+                    FechaEntrega = x.FechaEntrega,
+                    FechaPedido = x.FechaPedido,
+                    Total = x.Total,
+                    Id = x.Id,
+                    Proceso = x.Proceso,
+                    ClienteId = x.ClienteId
+
+                }).ToList();
 
             }
         }
@@ -147,20 +151,19 @@ namespace Servicios.Core.Pedido
             using (var context = new KosakoDBEntities())
             {
 
-                return context.Pedidos.Where(x => x.Proceso == Proceso.PedidoTerminado && x.EstaEliminado)
-                    .Select(x => new PedidoDto
-                    {
-                        Adelanto = x.Adelanto,
-                        Apellido = x.Apellido,
-                        Nombre = x.Apellido,
-                        FechaEntrega = x.FechaEntrega,
-                        FechaPedido = x.FechaPedido,
-                        Total = x.Total,
-                        Id = x.Id,
-                        Proceso = x.Proceso,
-                        ClienteId = x.ClienteId
+                return context.Pedidos.Where(x => x.Proceso == Proceso.PedidoTerminado && x.EstaEliminado == false).Select(x => new PedidoDto
+                {
+                    Adelanto = x.Adelanto,
+                    Apellido = x.Apellido,
+                    Nombre = x.Apellido,
+                    FechaEntrega = x.FechaEntrega,
+                    FechaPedido = x.FechaPedido,
+                    Total = x.Total,
+                    Id = x.Id,
+                    Proceso = x.Proceso,
+                    ClienteId = x.ClienteId
 
-                    }).ToList();
+                }).ToList();
 
             }
         }

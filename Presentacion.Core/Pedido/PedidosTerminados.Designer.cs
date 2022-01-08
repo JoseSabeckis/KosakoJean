@@ -78,9 +78,9 @@
             this.btnVolver.BackColor = System.Drawing.Color.Silver;
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(869, 0);
+            this.btnVolver.Location = new System.Drawing.Point(857, 0);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(111, 90);
+            this.btnVolver.Size = new System.Drawing.Size(123, 90);
             this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
