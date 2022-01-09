@@ -126,6 +126,7 @@ namespace KosakoJean
                     Apellido = "Consumidor Final",
                     Foto = ImagenDb.Convertir_Imagen_Bytes(Imagen.Usuario),
                     Nombre = "",
+                    Dni = "11111111",
                     Direccion = "",
                     Telefono = "",
                     Principal = true

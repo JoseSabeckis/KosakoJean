@@ -41,6 +41,7 @@ namespace Presentacion.Core.Cliente.Ctrol
 
             lblApellido.Text = cliente.Apellido;
             lblNombre.Text = cliente.Nombre;
+            lblDni.Text = cliente.Dni;
 
             nudId.Value = cliente.Id;
 

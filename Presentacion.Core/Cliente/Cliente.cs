@@ -50,6 +50,12 @@ namespace Presentacion.Core.Cliente
             grilla.Columns["Nombre"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Nombre"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            grilla.Columns["Dni"].Visible = true;
+            grilla.Columns["Dni"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["Dni"].HeaderText = @"Dni";
+            grilla.Columns["Dni"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Dni"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             grilla.Columns["Telefono"].Visible = true;
             grilla.Columns["Telefono"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["Telefono"].HeaderText = @"Telefono";
@@ -115,6 +121,13 @@ namespace Presentacion.Core.Cliente
 
                 if (!((ClienteDto)EntidadSeleccionada).EstaEliminado)
                 {
+                    if (((ClienteDto)EntidadSeleccionada).Id == 1)
+                    {
+                        MessageBox.Show("No Puede Eliminar el Consumidor Final", "Nop", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        return;
+                    }
+
                     base.EjecutarEliminar();
 
                     if (!PuedeEjecutarComando) return;
@@ -127,7 +140,7 @@ namespace Presentacion.Core.Cliente
                 }
                 else
                 {
-                    MessageBox.Show(@"El empleado se encuetra Elimnado", @"Atención", MessageBoxButtons.OK,
+                    MessageBox.Show(@"El empleado se encuetra Eliminado", @"Atención", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }

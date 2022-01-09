@@ -39,6 +39,8 @@ namespace Servicios.Core.Colegio
 
                 producto.EstaEliminado = true;
 
+                context.SaveChanges();
+
             }
 
         }

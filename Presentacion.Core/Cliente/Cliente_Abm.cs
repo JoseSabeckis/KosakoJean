@@ -24,6 +24,15 @@ namespace Presentacion.Core.Cliente
 
             _Servicio = new ClienteServicio();
 
+            if (entidadId == 1)
+            {
+                txtApellido.Enabled = false;
+                txtDireccion.Enabled = false;
+                txtDni.Enabled = false;
+                txtNombre.Enabled = false;
+                txtTelefono.Enabled = false;
+            }
+
             if (tipoOperacion == TipoOperacion.Eliminar || tipoOperacion == TipoOperacion.Modificar)
             {
                 CargarDatos(entidadId);
@@ -48,6 +57,7 @@ namespace Presentacion.Core.Cliente
 
             txtApellido.KeyPress += Validacion.NoSimbolos;
             txtNombre.KeyPress += Validacion.NoSimbolos;
+            txtDni.KeyPress += Validacion.NoSimbolos;
 
             txtApellido.Focus();
         }
@@ -71,6 +81,7 @@ namespace Presentacion.Core.Cliente
             // Datos Personales
             txtApellido.Text = localidad.Apellido;
             txtNombre.Text = localidad.Nombre;
+            txtDni.Text = localidad.Dni;
             txtDireccion.Text = localidad.Direccion;
             txtTelefono.Text = localidad.Telefono;
             imgFotoEmpleado.Image = ImagenDb.Convertir_Bytes_Imagen(localidad.Foto);
@@ -90,6 +101,7 @@ namespace Presentacion.Core.Cliente
             {
                 Apellido = $"{txtApellido.Text}",
                 Nombre = txtNombre.Text,
+                Dni = txtDni.Text,
                 Direccion = txtDireccion.Text,
                 Telefono = txtTelefono.Text,
                 Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
@@ -117,6 +129,7 @@ namespace Presentacion.Core.Cliente
                 Id = EntidadId.Value,
                 Apellido = $"{txtApellido.Text}",
                 Nombre = txtNombre.Text,
+                Dni = txtDni.Text,
                 Direccion = txtDireccion.Text,
                 Telefono = txtTelefono.Text,
                 Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),

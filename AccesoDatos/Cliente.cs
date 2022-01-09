@@ -30,6 +30,7 @@ namespace AccesoDatos
         public bool EstaEliminado { get; set; }
         public byte[] Foto { get; set; }
         public bool Principal { get; set; }
+        public string Dni { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }

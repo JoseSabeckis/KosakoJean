@@ -37,6 +37,8 @@ namespace Servicios.Core.TipoProducto
 
                 producto.EstaEliminado = true;
 
+                context.SaveChanges();
+
             }
 
         }

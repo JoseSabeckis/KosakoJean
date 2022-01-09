@@ -19,6 +19,7 @@ namespace Servicios.Core.Cliente
                 {
                     Apellido = Dto.Apellido,
                     Nombre = Dto.Nombre,
+                    Dni = Dto.Dni,
                     Direccion = Dto.Direccion,
                     Telefono = Dto.Telefono,
                     Foto = Dto.Foto,
@@ -41,6 +42,8 @@ namespace Servicios.Core.Cliente
 
                 producto.EstaEliminado = true;
 
+                context.SaveChanges();
+
             }
 
         }
@@ -58,6 +61,7 @@ namespace Servicios.Core.Cliente
                 producto.Telefono = Dto.Telefono;
                 producto.Foto = Dto.Foto;
                 producto.Principal = Dto.Principal;
+                producto.Dni = Dto.Dni;
 
                 context.SaveChanges();
 
@@ -68,15 +72,17 @@ namespace Servicios.Core.Cliente
         {
             using (var context = new KosakoDBEntities())
             {
-                var productosDemo = context.Clientes.AsNoTracking().Where(x => x.EstaEliminado == false);
 
-                var productos = productosDemo.OrderBy(x => x.Apellido.Contains(cadenaBuscar) && x.Principal == false|| x.Nombre.Contains(cadenaBuscar) && x.Principal == false)
+                var lista = context.Clientes.Where(x => x.EstaEliminado == false);
+
+                   return lista.OrderBy(x => x.Apellido.Contains(cadenaBuscar) && x.Principal == false || x.Nombre.Contains(cadenaBuscar) && x.Principal == false)
                     .Select(x => new ClienteDto
                     {
 
                         Id = x.Id,
                         Apellido = x.Apellido,
                         Nombre = x.Nombre,
+                        Dni = x.Dni,
                         Direccion = x.Direccion,
                         Telefono = x.Telefono,
                         EstaEliminado = x.EstaEliminado,
@@ -85,8 +91,6 @@ namespace Servicios.Core.Cliente
 
                     }).ToList();
 
-
-                return productos;
             }
 
         }
@@ -102,6 +106,7 @@ namespace Servicios.Core.Cliente
                         Id = x.Id,
                         Apellido = x.Apellido,
                         Nombre = x.Nombre,
+                        Dni = x.Dni,
                         Direccion = x.Direccion,
                         Telefono = x.Telefono,
                         EstaEliminado = x.EstaEliminado,

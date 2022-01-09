@@ -30,34 +30,48 @@ namespace Presentacion.Core.Cliente.Ctrol
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ckbPrincipal = new System.Windows.Forms.CheckBox();
             this.btnCuenta = new System.Windows.Forms.Button();
             this.btnVer = new System.Windows.Forms.Button();
             this.nudId = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
-            this.ckbPrincipal = new System.Windows.Forms.CheckBox();
+            this.lblDni = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.lblDni);
             this.panel1.Controls.Add(this.ckbPrincipal);
             this.panel1.Controls.Add(this.btnCuenta);
             this.panel1.Controls.Add(this.btnVer);
             this.panel1.Controls.Add(this.nudId);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.lblNombre);
-            this.panel1.Controls.Add(this.lblApellido);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(190, 161);
             this.panel1.TabIndex = 0;
+            // 
+            // ckbPrincipal
+            // 
+            this.ckbPrincipal.AutoSize = true;
+            this.ckbPrincipal.Enabled = false;
+            this.ckbPrincipal.Location = new System.Drawing.Point(116, 140);
+            this.ckbPrincipal.Name = "ckbPrincipal";
+            this.ckbPrincipal.Size = new System.Drawing.Size(67, 17);
+            this.ckbPrincipal.TabIndex = 6;
+            this.ckbPrincipal.Text = "Favortiro";
+            this.ckbPrincipal.UseVisualStyleBackColor = true;
             // 
             // btnCuenta
             // 
@@ -113,7 +127,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(10, 122);
+            this.lblNombre.Location = new System.Drawing.Point(2, 22);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(78, 22);
             this.lblNombre.TabIndex = 1;
@@ -123,22 +137,30 @@ namespace Presentacion.Core.Cliente.Ctrol
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(10, 86);
+            this.lblApellido.Location = new System.Drawing.Point(2, 0);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(79, 22);
             this.lblApellido.TabIndex = 0;
             this.lblApellido.Text = "Apellido";
             // 
-            // ckbPrincipal
+            // lblDni
             // 
-            this.ckbPrincipal.AutoSize = true;
-            this.ckbPrincipal.Enabled = false;
-            this.ckbPrincipal.Location = new System.Drawing.Point(116, 140);
-            this.ckbPrincipal.Name = "ckbPrincipal";
-            this.ckbPrincipal.Size = new System.Drawing.Size(67, 17);
-            this.ckbPrincipal.TabIndex = 6;
-            this.ckbPrincipal.Text = "Favortiro";
-            this.ckbPrincipal.UseVisualStyleBackColor = true;
+            this.lblDni.AutoSize = true;
+            this.lblDni.Location = new System.Drawing.Point(1, 141);
+            this.lblDni.Name = "lblDni";
+            this.lblDni.Size = new System.Drawing.Size(23, 13);
+            this.lblDni.TabIndex = 7;
+            this.lblDni.Text = "Dni";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblApellido);
+            this.panel2.Controls.Add(this.lblNombre);
+            this.panel2.Location = new System.Drawing.Point(4, 84);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(179, 50);
+            this.panel2.TabIndex = 8;
             // 
             // UserClientes
             // 
@@ -151,6 +173,8 @@ namespace Presentacion.Core.Cliente.Ctrol
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -165,5 +189,7 @@ namespace Presentacion.Core.Cliente.Ctrol
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnCuenta;
         private System.Windows.Forms.CheckBox ckbPrincipal;
+        private System.Windows.Forms.Label lblDni;
+        private System.Windows.Forms.Panel panel2;
     }
 }

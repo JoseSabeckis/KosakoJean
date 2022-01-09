@@ -44,6 +44,8 @@ namespace Servicios.Core.Producto
 
                 producto.EstaEliminado = true;
 
+                context.SaveChanges();
+
             }
 
         }

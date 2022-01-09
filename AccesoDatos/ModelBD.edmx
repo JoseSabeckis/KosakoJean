@@ -175,6 +175,7 @@
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
     <Property Name="Foto" Type="varbinary(max)" Nullable="false" />
     <Property Name="Principal" Type="bit" Nullable="false" />
+    <Property Name="Dni" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="CtasCtes">
     <Key>
@@ -587,6 +588,7 @@
           <Property Name="Foto" Type="Binary" Nullable="false" />
           <NavigationProperty Name="CtaCte" Relationship="KosakoDBModel.ClienteCtaCte" FromRole="Cliente" ToRole="CtaCte" />
           <Property Name="Principal" Type="Boolean" Nullable="false" />
+          <Property Name="Dni" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="PedidoCliente">
           <End Type="KosakoDBModel.Pedido" Role="Pedido" Multiplicity="*" />
@@ -753,6 +755,7 @@
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
           <ScalarProperty Name="Foto" ColumnName="Foto" />
           <ScalarProperty Name="Principal" ColumnName="Principal" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
