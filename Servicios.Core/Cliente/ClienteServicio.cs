@@ -95,6 +95,18 @@ namespace Servicios.Core.Cliente
 
         }
 
+        public bool VerificarDni(string _dni)
+        {
+            using(var context = new KosakoDBEntities())
+            {
+                if (context.Clientes.FirstOrDefault(x => x.Dni == _dni) == null)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
         public ClienteDto ObtenerPorId(long colegioId)
         {
             using (var context = new KosakoDBEntities())

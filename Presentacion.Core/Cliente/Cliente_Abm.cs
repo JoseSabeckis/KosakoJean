@@ -88,8 +88,17 @@ namespace Presentacion.Core.Cliente
             ckbPrincipal.Checked = localidad.Principal;
         }
 
+
         public override bool EjecutarComandoNuevo()
         {
+
+            if (_Servicio.VerificarDni(txtDni.Text) == false)
+            {
+                MessageBox.Show("Este Dni Ya Existe","Atencion",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+
+                return false;
+            }
+
             if (!VerificarDatosObligatorios())
             {
                 MessageBox.Show(@"Por favor ingrese los campos Obligatorios.", @"Atención", MessageBoxButtons.OK,
@@ -117,6 +126,7 @@ namespace Presentacion.Core.Cliente
 
         public override bool EjecutarComandoModificar()
         {
+
             if (!VerificarDatosObligatorios())
             {
                 MessageBox.Show(@"Por favor ingrese los campos Obligatorios.", @"Atención", MessageBoxButtons.OK,

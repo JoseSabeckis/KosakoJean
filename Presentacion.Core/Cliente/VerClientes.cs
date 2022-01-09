@@ -25,7 +25,7 @@ namespace Presentacion.Core.Cliente
 
         }
 
-        private void CrearControles()
+        public void CrearControles()
         {
             var cuadros = clienteServicio.Buscar(string.Empty);
 
@@ -127,6 +127,11 @@ namespace Presentacion.Core.Cliente
 
             CrearControles();
            
+        }
+
+        public void LimpiarPanel()
+        {
+            pnlPrincipal.Controls.Clear();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

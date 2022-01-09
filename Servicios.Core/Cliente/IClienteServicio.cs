@@ -13,6 +13,8 @@ namespace Servicios.Core.Cliente
 
         IEnumerable<ClienteDto> Buscar(string cadenaBuscar);
 
+        bool VerificarDni(string _dni);
+
         void PasarPrincipal(long clienteId);
 
         void Modificar(ClienteDto Dto);
