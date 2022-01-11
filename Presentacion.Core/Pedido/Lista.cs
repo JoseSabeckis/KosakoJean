@@ -1,4 +1,5 @@
 ﻿using Servicios.Core.Pedido;
+using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto_Pedido;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,9 @@ namespace Presentacion.Core.Pedido
             pedidoServicio = new PedidoServicio();
             producto_Pedido_Servicio = new Producto_Pedido_Servicio();
 
-            CrearControles();
+            var cuentas = pedidoServicio.BuscarPedidosNuevos();
+
+            CrearControles(cuentas);
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -33,9 +36,8 @@ namespace Presentacion.Core.Pedido
             Close();
         }
 
-        private void CrearControles()
+        private void CrearControles(IEnumerable<PedidoDto> cuentas)
         {
-            var cuentas = pedidoServicio.BuscarPedidosNuevos();
 
             var flowPanel = new FlowLayoutPanel
             {
@@ -62,6 +64,22 @@ namespace Presentacion.Core.Pedido
         private void vScroller_Scroll(object sender, ScrollEventArgs e)
         {
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtBusqueda.Text))
+            {
+                panelGrilla.Controls.Clear();
+
+                var cuenta = pedidoServicio.Buscar(txtBusqueda.Text);
+
+                CrearControles(cuenta);
+            }
+            else
+            {
+                MessageBox.Show("El Campo de descripcion esta vacio", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
     }
 }

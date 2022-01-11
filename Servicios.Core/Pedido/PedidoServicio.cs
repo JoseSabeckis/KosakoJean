@@ -61,6 +61,29 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public IEnumerable<PedidoDto> Buscar(string busqueda)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.AsNoTracking().Where(x => x.Apellido.Contains(busqueda) && x.EstaEliminado == false)
+                    .Select(x => new PedidoDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        Nombre = x.Apellido,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        Total = x.Total,
+                        Id = x.Id,
+                        Proceso = x.Proceso,
+                        ClienteId = x.ClienteId,
+
+                    }).ToList();
+
+            }
+        }
+
         public void Eliminar(long id)
         {
             using(var context = new KosakoDBEntities())

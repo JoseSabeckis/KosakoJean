@@ -11,6 +11,8 @@ namespace Servicios.Core.Pedido
     {
         long NuevoPedido(PedidoDto pedidoDto);
 
+        IEnumerable<PedidoDto> Buscar(string busqueda);
+
         void Eliminar(long id);
 
         PedidoDto BuscarIDPedidos(long id);

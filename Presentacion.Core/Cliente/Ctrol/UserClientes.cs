@@ -64,9 +64,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             var cliente = new Cliente_Abm(Clases.TipoOperacion.Modificar, Id);
             cliente.ShowDialog();
 
-            var ver = new VerClientes();
-            ver.LimpiarPanel();
-            ver.CrearControles();
+            //here
         }
 
         private void btnVer_Click(object sender, EventArgs e)
