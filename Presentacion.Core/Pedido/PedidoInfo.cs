@@ -188,6 +188,7 @@ namespace Presentacion.Core.Pedido
             lblPersona.Text = $"{pedido.Apellido}";
             lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dd/MM/yyyy")}";
             lblFecha.Text = $"{pedido.FechaEntrega.ToString("dd/MM/yyyy")}";
+            txtNotas.Text = $"{pedido.Descripcion}";
 
             txtDineroAdelanto.Text = $"{pedido.Adelanto}";
             txtTotal.Text = $"{pedido.Total}";
@@ -255,6 +256,13 @@ namespace Presentacion.Core.Pedido
 
                 MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            pedidoServicio.GuardarDatosString(txtNotas.Text, PedidoId);
+
+            MessageBox.Show("Datos Guardados!", "Bien", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

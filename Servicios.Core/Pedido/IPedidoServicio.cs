@@ -38,5 +38,7 @@ namespace Servicios.Core.Pedido
         IEnumerable<PedidoDto> Buscar30Dias();
 
         IEnumerable<PedidoDto> BuscarPedidosNuevos();
+
+        void GuardarDatosString(string datos, long id);
     }
 }

@@ -24,7 +24,8 @@ namespace Servicios.Core.Pedido
                     Total = pedidoDto.Total,
                     Proceso = pedidoDto.Proceso,
                     ClienteId = pedidoDto.ClienteId,
-                    ApyNom = pedidoDto.Apellido
+                    ApyNom = pedidoDto.Apellido,
+                    Descripcion = pedidoDto.Descripcion
                 };
 
                 context.Pedidos.Add(nuevo);
@@ -54,7 +55,7 @@ namespace Servicios.Core.Pedido
                         Id = x.Id,
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
-                        
+                        Descripcion = x.Descripcion
 
                     }).ToList();
 
@@ -78,6 +79,7 @@ namespace Servicios.Core.Pedido
                         Id = x.Id,
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
+                        Descripcion = x.Descripcion
 
                     }).ToList();
 
@@ -113,7 +115,8 @@ namespace Servicios.Core.Pedido
                     Total = x.Total,
                     Id = x.Id,
                     Proceso = x.Proceso,
-                    ClienteId = x.ClienteId
+                    ClienteId = x.ClienteId,
+                    Descripcion = x.Descripcion
 
                 }).ToList();
 
@@ -138,7 +141,8 @@ namespace Servicios.Core.Pedido
                     Total = x.Total,
                     Id = x.Id,
                     Proceso = x.Proceso,
-                    ClienteId = x.ClienteId
+                    ClienteId = x.ClienteId,
+                    Descripcion = x.Descripcion
 
                 }).ToList();
 
@@ -162,7 +166,8 @@ namespace Servicios.Core.Pedido
                         Total = aux.Total,
                         Id = aux.Id,
                         Proceso = aux.Proceso,
-                        ClienteId = aux.ClienteId
+                        ClienteId = aux.ClienteId,
+                        Descripcion = aux.Descripcion
 
                     };
                 return aux2;
@@ -184,7 +189,8 @@ namespace Servicios.Core.Pedido
                     Total = x.Total,
                     Id = x.Id,
                     Proceso = x.Proceso,
-                    ClienteId = x.ClienteId
+                    ClienteId = x.ClienteId,
+                    Descripcion = x.Descripcion
 
                 }).ToList();
 
@@ -207,7 +213,8 @@ namespace Servicios.Core.Pedido
                         Total = x.Total,
                         Id = x.Id,
                         Proceso = x.Proceso,
-                        ClienteId = x.ClienteId
+                        ClienteId = x.ClienteId,
+                        Descripcion = x.Descripcion
 
                     }).ToList();
 
@@ -230,7 +237,8 @@ namespace Servicios.Core.Pedido
                         Total = x.Total,
                         Id = x.Id,
                         Proceso = x.Proceso,
-                        ClienteId = x.ClienteId
+                        ClienteId = x.ClienteId,
+                        Descripcion = x.Descripcion
 
                     }).ToList();
 
@@ -253,7 +261,8 @@ namespace Servicios.Core.Pedido
                         Total = x.Total,
                         Id = x.Id,
                         Proceso = x.Proceso,
-                        ClienteId = x.ClienteId
+                        ClienteId = x.ClienteId,
+                        Descripcion = x.Descripcion
 
                     }).ToList();
 
@@ -304,6 +313,20 @@ namespace Servicios.Core.Pedido
                 var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
 
                 pedido.Proceso = Proceso.PedidoTerminado;
+
+                context.SaveChanges();
+
+            }
+        }
+
+        public void GuardarDatosString(string datos, long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.Descripcion = datos;
 
                 context.SaveChanges();
 

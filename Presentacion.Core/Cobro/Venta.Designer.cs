@@ -68,6 +68,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -83,6 +86,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).BeginInit();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -290,7 +294,7 @@
             // 
             // btnAgregarAlaGrilla
             // 
-            this.btnAgregarAlaGrilla.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAgregarAlaGrilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnAgregarAlaGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAgregarAlaGrilla.Location = new System.Drawing.Point(0, 0);
             this.btnAgregarAlaGrilla.Name = "btnAgregarAlaGrilla";
@@ -446,7 +450,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 161);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1017, 364);
+            this.panel2.Size = new System.Drawing.Size(1017, 421);
             this.panel2.TabIndex = 1;
             // 
             // dgvGrilla
@@ -462,13 +466,14 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(1013, 279);
+            this.dgvGrilla.Size = new System.Drawing.Size(1013, 303);
             this.dgvGrilla.TabIndex = 11;
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.panel10);
             this.panel4.Controls.Add(this.btnCalcular);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.nudPagaron);
@@ -476,17 +481,17 @@
             this.panel4.Controls.Add(this.txtVuelto);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 279);
+            this.panel4.Location = new System.Drawing.Point(0, 303);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1013, 81);
+            this.panel4.Size = new System.Drawing.Size(1013, 114);
             this.panel4.TabIndex = 0;
             // 
             // btnCalcular
             // 
             this.btnCalcular.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnCalcular.Location = new System.Drawing.Point(549, 24);
+            this.btnCalcular.Location = new System.Drawing.Point(169, 70);
             this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(88, 34);
+            this.btnCalcular.Size = new System.Drawing.Size(83, 32);
             this.btnCalcular.TabIndex = 7;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = false;
@@ -500,7 +505,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(773, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(236, 77);
+            this.panel5.Size = new System.Drawing.Size(236, 110);
             this.panel5.TabIndex = 6;
             // 
             // nudTotal
@@ -528,62 +533,95 @@
             // 
             // nudPagaron
             // 
+            this.nudPagaron.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPagaron.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.nudPagaron.Location = new System.Drawing.Point(174, 28);
+            this.nudPagaron.Location = new System.Drawing.Point(152, 8);
             this.nudPagaron.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
             this.nudPagaron.Name = "nudPagaron";
-            this.nudPagaron.Size = new System.Drawing.Size(120, 29);
+            this.nudPagaron.Size = new System.Drawing.Size(121, 26);
             this.nudPagaron.TabIndex = 3;
             this.nudPagaron.ValueChanged += new System.EventHandler(this.nudPagaron_ValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(328, 30);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(85, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 22);
+            this.label6.Size = new System.Drawing.Size(61, 20);
             this.label6.TabIndex = 2;
             this.label6.Text = "Vuelto";
             // 
             // txtVuelto
             // 
             this.txtVuelto.Enabled = false;
-            this.txtVuelto.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVuelto.Location = new System.Drawing.Point(397, 25);
+            this.txtVuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVuelto.Location = new System.Drawing.Point(152, 37);
             this.txtVuelto.Name = "txtVuelto";
-            this.txtVuelto.Size = new System.Drawing.Size(115, 33);
+            this.txtVuelto.Size = new System.Drawing.Size(121, 26);
             this.txtVuelto.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 30);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(10, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 22);
+            this.label5.Size = new System.Drawing.Size(139, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 6);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(105, 22);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Descripcion";
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.txtDescripcion);
+            this.panel10.Controls.Add(this.label10);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel10.Location = new System.Drawing.Point(316, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(457, 110);
+            this.panel10.TabIndex = 9;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(114, 3);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(335, 97);
+            this.txtDescripcion.TabIndex = 9;
             // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1017, 525);
+            this.ClientSize = new System.Drawing.Size(1017, 582);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1033, 564);
+            this.MinimumSize = new System.Drawing.Size(1033, 621);
             this.Name = "Venta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Aplicacion de Venta";
@@ -610,6 +648,8 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -655,5 +695,8 @@
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnNewCliente;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label10;
     }
 }

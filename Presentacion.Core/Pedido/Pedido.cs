@@ -40,7 +40,7 @@ namespace Presentacion.Core.Pedido
 
         List<VentaDto2> ListaVentas;
 
-        public Pedido(List<VentaDto2> Lista, decimal total, string nombre, long clienteId)
+        public Pedido(List<VentaDto2> Lista, decimal total, string nombre, long clienteId, string descripcion)
         {
             InitializeComponent();
 
@@ -58,6 +58,7 @@ namespace Presentacion.Core.Pedido
 
             _total = total;
             ListaVentas = Lista;
+            _Descripcion = descripcion;
 
             nudAdelanto.Maximum = _total;
 
@@ -159,7 +160,8 @@ namespace Presentacion.Core.Pedido
                         Proceso = AccesoDatos.Proceso.InicioPedido,
                         FechaEntrega = dtpFechaEntrega.Value.Date,
                         Total = _total,
-                        ClienteId = ClienteId
+                        ClienteId = ClienteId,
+                        Descripcion = _Descripcion
                         
                     };
 

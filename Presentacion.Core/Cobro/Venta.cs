@@ -263,6 +263,7 @@ namespace Presentacion.Core.Cobro
 
             nudTotal.Value = 0;
             txtVuelto.Text = string.Empty;
+            txtDescripcion.Text = string.Empty;
             nudPagaron.Value = 0;
 
             _total = 0;
@@ -371,7 +372,7 @@ namespace Presentacion.Core.Cobro
                         return;
                     }
 
-                    var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId);
+                    var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId, txtDescripcion.Text);
                     pedidos.ShowDialog();
 
 

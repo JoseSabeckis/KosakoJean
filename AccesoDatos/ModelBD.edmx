@@ -124,6 +124,7 @@
     <Property Name="ClienteId" Type="bigint" Nullable="false" />
     <Property Name="ApyNom" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Cliente_Id" Type="bigint" Nullable="true" />
   </EntityType>
   <EntityType Name="Producto_Pedidos">
@@ -478,6 +479,7 @@
           <Property Name="ClienteId" Type="Int64" Nullable="false" />
           <Property Name="ApyNom" Type="String" Nullable="false" />
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Producto_Pedido">
           <Key>
@@ -703,6 +705,7 @@
           <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
           <ScalarProperty Name="ApyNom" ColumnName="ApyNom" />
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
