@@ -5,10 +5,15 @@ using Presentacion.Core.Cobro;
 using Presentacion.Core.Colegio;
 using Presentacion.Core.Pedido;
 using Presentacion.Core.Producto;
+using Presentacion.Core.Talle;
 using Presentacion.Core.TipoProducto;
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
+using Servicios.Core.Colegio;
+using Servicios.Core.Talle;
+using Servicios.Core.TipoProducto;
+using Servicios.Core.TipoProducto.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +30,9 @@ namespace KosakoJean
     {
         private readonly ICajaServicio _cajaServicio;
         private readonly IClienteServicio clienteServicio;
+        private readonly ITalleServicio talleServicio;
+        private readonly ITipoProducto tipoProductoServicio;
+        private readonly IColegioServicio colegioServicio;
 
         public Principal()
         {
@@ -32,6 +40,9 @@ namespace KosakoJean
 
             _cajaServicio = new CajaServicio();
             clienteServicio = new ClienteServicio();
+            talleServicio = new TalleServicio();
+            tipoProductoServicio = new TipoProductoServicio();
+            colegioServicio = new ColegioServicio();
         }
 
         private void verColegiosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,6 +126,32 @@ namespace KosakoJean
             ValidarCajas();
 
             CargarConsumidorFinal();
+
+            VerificarPrimeraVez();
+        }
+
+        public void VerificarPrimeraVez()
+        {
+            if (tipoProductoServicio.ObtenerPorId(1) == null)
+            {
+                var tipo = new TipoProductoDto
+                {
+                    Descripcion = "Otros"
+                };
+
+                tipoProductoServicio.Nuevo(tipo);
+            }
+
+            if (colegioServicio.ObtenerPorId(1) == null)
+            {
+                var colegio = new ColegioDto
+                {
+                    Descripcion = "Otro"
+                };
+
+                colegioServicio.Nuevo(colegio);
+            }
+
         }
 
         public void CargarConsumidorFinal()
@@ -143,6 +180,13 @@ namespace KosakoJean
 
         private void btnCobrar2_Click(object sender, EventArgs e)
         {
+            if (talleServicio.Buscar(string.Empty).Count() == 0)
+            {
+                MessageBox.Show("No Existes Los Talles, Cree Algunos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
             if (_cajaServicio.BuscarCajaAbiertaBool())
             {
                 var cobro = new Venta();
@@ -220,6 +264,18 @@ namespace KosakoJean
         {
             var cliente = new VerClientes();
             cliente.ShowDialog();
+        }
+
+        private void nuevoTalleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var talle = new Talle_Abm(TipoOperacion.Nuevo);
+            talle.ShowDialog();
+        }
+
+        private void verTallesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var talle = new Talle();
+            talle.ShowDialog();
         }
     }
 }

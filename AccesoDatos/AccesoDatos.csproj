@@ -105,6 +105,9 @@
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Talle.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="TipoProducto.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>

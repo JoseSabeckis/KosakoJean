@@ -21,8 +21,10 @@ namespace AccesoDatos
         public decimal Cantidad { get; set; }
         public string Talle { get; set; }
         public string Descripcion { get; set; }
+        public long TalleId { get; set; }
     
         public virtual Producto Producto { get; set; }
         public virtual Pedido Pedido { get; set; }
+        public virtual Talle TalleEntidad { get; set; }
     }
 }

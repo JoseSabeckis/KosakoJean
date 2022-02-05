@@ -17,6 +17,7 @@
     <EntitySet Name="Producto_Ventas" EntityType="KosakoDBModel.Store.Producto_Ventas" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Clientes" EntityType="KosakoDBModel.Store.Clientes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CtasCtes" EntityType="KosakoDBModel.Store.CtasCtes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Talles" EntityType="KosakoDBModel.Store.Talles" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="TipoProductoProducto" Association="KosakoDBModel.Store.TipoProductoProducto">
       <End Role="TipoProducto" EntitySet="TipoProductos" />
       <End Role="Producto" EntitySet="Productos" />
@@ -56,6 +57,14 @@
     <AssociationSet Name="ClienteCtaCte" Association="KosakoDBModel.Store.ClienteCtaCte">
       <End Role="Cliente" EntitySet="Clientes" />
       <End Role="CtaCte" EntitySet="CtasCtes" />
+    </AssociationSet>
+    <AssociationSet Name="TalleProducto_Pedido" Association="KosakoDBModel.Store.TalleProducto_Pedido">
+      <End Role="Talle" EntitySet="Talles" />
+      <End Role="Producto_Pedido" EntitySet="Producto_Pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="TalleProducto_Venta" Association="KosakoDBModel.Store.TalleProducto_Venta">
+      <End Role="Talle" EntitySet="Talles" />
+      <End Role="Producto_Venta" EntitySet="Producto_Ventas" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Productos">
@@ -138,6 +147,7 @@
     <Property Name="Cantidad" Type="decimal" Nullable="false" />
     <Property Name="Talle" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TalleId" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="Ventas">
     <Key>
@@ -162,6 +172,7 @@
     <Property Name="Talle" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Precio" Type="decimal" Nullable="false" />
+    <Property Name="TalleId" Type="bigint" Nullable="false" />
     <Property Name="Venta_Id" Type="bigint" Nullable="true" />
   </EntityType>
   <EntityType Name="Clientes">
@@ -189,6 +200,14 @@
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ClienteId" Type="bigint" Nullable="false" />
     <Property Name="Estado" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Talles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
@@ -310,6 +329,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="TalleProducto_Pedido">
+    <End Role="Talle" Type="KosakoDBModel.Store.Talles" Multiplicity="1" />
+    <End Role="Producto_Pedido" Type="KosakoDBModel.Store.Producto_Pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Talle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto_Pedido">
+        <PropertyRef Name="TalleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TalleProducto_Venta">
+    <End Role="Talle" Type="KosakoDBModel.Store.Talles" Multiplicity="1" />
+    <End Role="Producto_Venta" Type="KosakoDBModel.Store.Producto_Ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Talle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto_Venta">
+        <PropertyRef Name="TalleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -365,6 +408,15 @@
           <AssociationSet Name="ClienteCtaCte" Association="KosakoDBModel.ClienteCtaCte">
             <End Role="Cliente" EntitySet="Clientes" />
             <End Role="CtaCte" EntitySet="CtasCtes" />
+          </AssociationSet>
+          <EntitySet Name="Talles" EntityType="KosakoDBModel.Talle" />
+          <AssociationSet Name="TalleProducto_Pedido" Association="KosakoDBModel.TalleProducto_Pedido">
+            <End Role="Talle" EntitySet="Talles" />
+            <End Role="Producto_Pedido" EntitySet="Producto_Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="TalleProducto_Venta" Association="KosakoDBModel.TalleProducto_Venta">
+            <End Role="Talle" EntitySet="Talles" />
+            <End Role="Producto_Venta" EntitySet="Producto_Ventas" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Producto">
@@ -494,6 +546,8 @@
           <Property Name="Cantidad" Type="Decimal" Nullable="false" />
           <Property Name="Talle" Type="String" Nullable="false" />
           <Property Name="Descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="TalleEntidad" Relationship="KosakoDBModel.TalleProducto_Pedido" FromRole="Producto_Pedido" ToRole="Talle" />
+          <Property Name="TalleId" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="ProductoProducto_Pedido">
           <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="1" />
@@ -550,6 +604,8 @@
           <Property Name="Descripcion" Type="String" Nullable="false" />
           <Property Name="Precio" Type="Decimal" Nullable="false" />
           <NavigationProperty Name="Venta" Relationship="KosakoDBModel.Producto_VentaVenta" FromRole="Producto_Venta" ToRole="Venta" />
+          <NavigationProperty Name="TalleEntidad" Relationship="KosakoDBModel.TalleProducto_Venta" FromRole="Producto_Venta" ToRole="Talle" />
+          <Property Name="TalleId" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="ProductoProducto_Venta">
           <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="1" />
@@ -629,6 +685,40 @@
           <Member Name="EnEspera" Value="0" />
           <Member Name="Pagado" Value="1" />
         </EnumType>
+        <EntityType Name="Talle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Producto_Pedido" Relationship="KosakoDBModel.TalleProducto_Pedido" FromRole="Talle" ToRole="Producto_Pedido" />
+          <NavigationProperty Name="Producto_Venta" Relationship="KosakoDBModel.TalleProducto_Venta" FromRole="Talle" ToRole="Producto_Venta" />
+        </EntityType>
+        <Association Name="TalleProducto_Pedido">
+          <End Type="KosakoDBModel.Talle" Role="Talle" Multiplicity="1" />
+          <End Type="KosakoDBModel.Producto_Pedido" Role="Producto_Pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Talle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producto_Pedido">
+              <PropertyRef Name="TalleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TalleProducto_Venta">
+          <End Type="KosakoDBModel.Talle" Role="Talle" Multiplicity="1" />
+          <End Type="KosakoDBModel.Producto_Venta" Role="Producto_Venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Talle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producto_Venta">
+              <PropertyRef Name="TalleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -719,6 +809,7 @@
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
           <ScalarProperty Name="Talle" ColumnName="Talle" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="TalleId" ColumnName="TalleId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -744,6 +835,7 @@
           <ScalarProperty Name="Talle" ColumnName="Talle" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="TalleId" ColumnName="TalleId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -772,6 +864,15 @@
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
           <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Talles">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Talle)">
+        <MappingFragment StoreEntitySet="Talles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

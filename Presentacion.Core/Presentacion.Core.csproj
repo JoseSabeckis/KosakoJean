@@ -207,6 +207,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Talle\Talle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talle\Talle.Designer.cs">
+      <DependentUpon>Talle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Talle\Talle_Abm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Talle\Talle_Abm.Designer.cs">
+      <DependentUpon>Talle_Abm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TipoProducto\TipoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +335,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Talle\Talle.resx">
+      <DependentUpon>Talle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Talle\Talle_Abm.resx">
+      <DependentUpon>Talle_Abm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TipoProducto\TipoProducto.resx">
       <DependentUpon>TipoProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -384,6 +402,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EliminarDos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Producto\Ctrl\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

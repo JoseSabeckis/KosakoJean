@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/30/2022 14:45:06
+-- Date Created: 02/05/2022 16:06:52
 -- Generated from EDMX file: C:\Users\joses\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -47,6 +47,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ClienteCtaCte]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[CtasCtes] DROP CONSTRAINT [FK_ClienteCtaCte];
 GO
+IF OBJECT_ID(N'[dbo].[FK_TalleProducto_Pedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Producto_Pedidos] DROP CONSTRAINT [FK_TalleProducto_Pedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TalleProducto_Venta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Producto_Ventas] DROP CONSTRAINT [FK_TalleProducto_Venta];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -84,6 +90,9 @@ IF OBJECT_ID(N'[dbo].[Clientes]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[CtasCtes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[CtasCtes];
+GO
+IF OBJECT_ID(N'[dbo].[Talles]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Talles];
 GO
 
 -- --------------------------------------------------
@@ -167,7 +176,8 @@ CREATE TABLE [dbo].[Producto_Pedidos] (
     [Estado] bigint  NOT NULL,
     [Cantidad] decimal(18,0)  NOT NULL,
     [Talle] nvarchar(max)  NOT NULL,
-    [Descripcion] nvarchar(max)  NOT NULL
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [TalleId] bigint  NOT NULL
 );
 GO
 
@@ -192,6 +202,7 @@ CREATE TABLE [dbo].[Producto_Ventas] (
     [Talle] nvarchar(max)  NOT NULL,
     [Descripcion] nvarchar(max)  NOT NULL,
     [Precio] decimal(18,0)  NOT NULL,
+    [TalleId] bigint  NOT NULL,
     [Venta_Id] bigint  NULL
 );
 GO
@@ -219,6 +230,14 @@ CREATE TABLE [dbo].[CtasCtes] (
     [Descripcion] nvarchar(max)  NOT NULL,
     [ClienteId] bigint  NOT NULL,
     [Estado] bigint  NOT NULL
+);
+GO
+
+-- Creating table 'Talles'
+CREATE TABLE [dbo].[Talles] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [EstaEliminado] bit  NOT NULL
 );
 GO
 
@@ -289,6 +308,12 @@ GO
 -- Creating primary key on [Id] in table 'CtasCtes'
 ALTER TABLE [dbo].[CtasCtes]
 ADD CONSTRAINT [PK_CtasCtes]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Talles'
+ALTER TABLE [dbo].[Talles]
+ADD CONSTRAINT [PK_Talles]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -444,6 +469,36 @@ GO
 CREATE INDEX [IX_FK_ClienteCtaCte]
 ON [dbo].[CtasCtes]
     ([ClienteId]);
+GO
+
+-- Creating foreign key on [TalleId] in table 'Producto_Pedidos'
+ALTER TABLE [dbo].[Producto_Pedidos]
+ADD CONSTRAINT [FK_TalleProducto_Pedido]
+    FOREIGN KEY ([TalleId])
+    REFERENCES [dbo].[Talles]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TalleProducto_Pedido'
+CREATE INDEX [IX_FK_TalleProducto_Pedido]
+ON [dbo].[Producto_Pedidos]
+    ([TalleId]);
+GO
+
+-- Creating foreign key on [TalleId] in table 'Producto_Ventas'
+ALTER TABLE [dbo].[Producto_Ventas]
+ADD CONSTRAINT [FK_TalleProducto_Venta]
+    FOREIGN KEY ([TalleId])
+    REFERENCES [dbo].[Talles]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TalleProducto_Venta'
+CREATE INDEX [IX_FK_TalleProducto_Venta]
+ON [dbo].[Producto_Ventas]
+    ([TalleId]);
 GO
 
 -- --------------------------------------------------

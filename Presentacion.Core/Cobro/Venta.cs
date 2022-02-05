@@ -13,6 +13,7 @@ using Servicios.Core.Producto;
 using Servicios.Core.Producto.Dto;
 using Servicios.Core.Producto_Venta;
 using Servicios.Core.Producto_Venta.Dto;
+using Servicios.Core.Talle;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
@@ -35,6 +36,7 @@ namespace Presentacion.Core.Cobro
         private readonly IDetalleCajaServicio detalleCajaServicio;
         private readonly ICajaServicio cajaServicio;
         private readonly IClienteServicio clienteServicio;
+        private readonly ITalleServicio talleServicio;
 
         ProductoDto producto;
         long _productoId;
@@ -58,8 +60,9 @@ namespace Presentacion.Core.Cobro
             detalleCajaServicio = new DetalleCajaServicio();
             cajaServicio = new CajaServicio();
             clienteServicio = new ClienteServicio();
+            talleServicio = new TalleServicio();
 
-            cmbTalle.SelectedIndex = 0;
+            CargarComboBox(cmbTalle, talleServicio.Buscar(string.Empty), "Descripcion", "Id");
 
             ListaVenta = new List<VentaDto2>();
             ventaDto = new VentaDto();
@@ -69,6 +72,14 @@ namespace Presentacion.Core.Cobro
             CargarGrilla(ListaVenta);
 
             
+        }
+
+        public void CargarComboBox(ComboBox cmb, object datos, string propiedadMostrar,
+            string propiedadDevolver)
+        {
+            cmb.DataSource = datos;
+            cmb.DisplayMember = propiedadMostrar;
+            cmb.ValueMember = propiedadDevolver;
         }
 
         public void ConsumidorFinall()
@@ -135,6 +146,12 @@ namespace Presentacion.Core.Cobro
             {
                 var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text);
 
+                if (nudPrecio.Value == 0)
+                {
+                    MessageBox.Show("El Precio No Puede Ser Cero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return;
+                }
 
                 if (prueba != null)
                 {

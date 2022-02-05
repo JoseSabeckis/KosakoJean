@@ -60,6 +60,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.nudTotal = new System.Windows.Forms.NumericUpDown();
@@ -68,9 +71,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -83,10 +83,10 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).BeginInit();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,7 +99,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1017, 161);
+            this.panel1.Size = new System.Drawing.Size(1093, 161);
             this.panel1.TabIndex = 0;
             // 
             // panel8
@@ -112,7 +112,7 @@
             this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.nudPrecio);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(451, 76);
+            this.panel8.Location = new System.Drawing.Point(527, 76);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(417, 81);
             this.panel8.TabIndex = 16;
@@ -122,13 +122,6 @@
             this.cmbTalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTalle.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTalle.FormattingEnabled = true;
-            this.cmbTalle.Items.AddRange(new object[] {
-            "16",
-            "L",
-            "M",
-            "XL",
-            "XXL",
-            "XXXL"});
             this.cmbTalle.Location = new System.Drawing.Point(355, 26);
             this.cmbTalle.Name = "cmbTalle";
             this.cmbTalle.Size = new System.Drawing.Size(54, 27);
@@ -217,7 +210,7 @@
             this.panel7.Controls.Add(this.btnSeleccionProducto);
             this.panel7.Location = new System.Drawing.Point(0, 76);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(453, 81);
+            this.panel7.Size = new System.Drawing.Size(529, 81);
             this.panel7.TabIndex = 15;
             // 
             // txtCliente
@@ -228,13 +221,13 @@
             this.txtCliente.Enabled = false;
             this.txtCliente.Location = new System.Drawing.Point(95, 8);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(296, 29);
+            this.txtCliente.Size = new System.Drawing.Size(372, 29);
             this.txtCliente.TabIndex = 9;
             // 
             // btnCliente
             // 
             this.btnCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCliente.Location = new System.Drawing.Point(397, 6);
+            this.btnCliente.Location = new System.Drawing.Point(473, 6);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(46, 32);
             this.btnCliente.TabIndex = 10;
@@ -259,7 +252,7 @@
             this.txtProducto.Enabled = false;
             this.txtProducto.Location = new System.Drawing.Point(95, 43);
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(271, 29);
+            this.txtProducto.Size = new System.Drawing.Size(347, 29);
             this.txtProducto.TabIndex = 6;
             // 
             // label2
@@ -274,7 +267,7 @@
             // btnSeleccionProducto
             // 
             this.btnSeleccionProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeleccionProducto.Location = new System.Drawing.Point(372, 42);
+            this.btnSeleccionProducto.Location = new System.Drawing.Point(448, 42);
             this.btnSeleccionProducto.Name = "btnSeleccionProducto";
             this.btnSeleccionProducto.Size = new System.Drawing.Size(71, 32);
             this.btnSeleccionProducto.TabIndex = 7;
@@ -287,7 +280,7 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.btnAgregarAlaGrilla);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(868, 76);
+            this.panel6.Location = new System.Drawing.Point(944, 76);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(145, 81);
             this.panel6.TabIndex = 14;
@@ -319,7 +312,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1013, 76);
+            this.panel3.Size = new System.Drawing.Size(1089, 76);
             this.panel3.TabIndex = 2;
             // 
             // btnNewCliente
@@ -341,7 +334,7 @@
             this.panel9.Controls.Add(this.ckbPedido);
             this.panel9.Controls.Add(this.ckbNormal);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(690, 0);
+            this.panel9.Location = new System.Drawing.Point(766, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(176, 72);
             this.panel9.TabIndex = 8;
@@ -434,7 +427,7 @@
             // 
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Location = new System.Drawing.Point(866, 0);
+            this.btnVolver.Location = new System.Drawing.Point(942, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(143, 72);
             this.btnVolver.TabIndex = 0;
@@ -450,7 +443,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 161);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1017, 421);
+            this.panel2.Size = new System.Drawing.Size(1093, 440);
             this.panel2.TabIndex = 1;
             // 
             // dgvGrilla
@@ -466,7 +459,7 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(1013, 303);
+            this.dgvGrilla.Size = new System.Drawing.Size(1089, 287);
             this.dgvGrilla.TabIndex = 11;
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             // 
@@ -481,15 +474,45 @@
             this.panel4.Controls.Add(this.txtVuelto);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 303);
+            this.panel4.Location = new System.Drawing.Point(0, 287);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1013, 114);
+            this.panel4.Size = new System.Drawing.Size(1089, 149);
             this.panel4.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.txtDescripcion);
+            this.panel10.Controls.Add(this.label10);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel10.Location = new System.Drawing.Point(279, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(570, 145);
+            this.panel10.TabIndex = 9;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(114, 3);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(448, 135);
+            this.txtDescripcion.TabIndex = 9;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(105, 22);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Descripcion";
             // 
             // btnCalcular
             // 
             this.btnCalcular.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnCalcular.Location = new System.Drawing.Point(169, 70);
+            this.btnCalcular.Location = new System.Drawing.Point(169, 105);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(83, 32);
             this.btnCalcular.TabIndex = 7;
@@ -503,16 +526,16 @@
             this.panel5.Controls.Add(this.nudTotal);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(773, 0);
+            this.panel5.Location = new System.Drawing.Point(849, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(236, 110);
+            this.panel5.Size = new System.Drawing.Size(236, 145);
             this.panel5.TabIndex = 6;
             // 
             // nudTotal
             // 
             this.nudTotal.Enabled = false;
             this.nudTotal.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudTotal.Location = new System.Drawing.Point(91, 22);
+            this.nudTotal.Location = new System.Drawing.Point(91, 8);
             this.nudTotal.Maximum = new decimal(new int[] {
             1410065408,
             2,
@@ -525,7 +548,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 28);
+            this.label7.Location = new System.Drawing.Point(7, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 22);
             this.label7.TabIndex = 4;
@@ -539,7 +562,7 @@
             0,
             0,
             0});
-            this.nudPagaron.Location = new System.Drawing.Point(152, 8);
+            this.nudPagaron.Location = new System.Drawing.Point(152, 16);
             this.nudPagaron.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -554,7 +577,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(85, 40);
+            this.label6.Location = new System.Drawing.Point(85, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 20);
             this.label6.TabIndex = 2;
@@ -564,7 +587,7 @@
             // 
             this.txtVuelto.Enabled = false;
             this.txtVuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVuelto.Location = new System.Drawing.Point(152, 37);
+            this.txtVuelto.Location = new System.Drawing.Point(152, 58);
             this.txtVuelto.Name = "txtVuelto";
             this.txtVuelto.Size = new System.Drawing.Size(121, 26);
             this.txtVuelto.TabIndex = 1;
@@ -573,48 +596,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 10);
+            this.label5.Location = new System.Drawing.Point(10, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(105, 22);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Descripcion";
-            // 
-            // panel10
-            // 
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel10.Controls.Add(this.txtDescripcion);
-            this.panel10.Controls.Add(this.label10);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(316, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(457, 110);
-            this.panel10.TabIndex = 9;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(114, 3);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(335, 97);
-            this.txtDescripcion.TabIndex = 9;
             // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1017, 582);
+            this.ClientSize = new System.Drawing.Size(1093, 601);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -644,12 +637,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }

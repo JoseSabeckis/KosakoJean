@@ -36,5 +36,6 @@ namespace AccesoDatos
         public virtual DbSet<Producto_Venta> Producto_Ventas { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<CtaCte> CtasCtes { get; set; }
+        public virtual DbSet<Talle> Talles { get; set; }
     }
 }
