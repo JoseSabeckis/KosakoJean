@@ -277,5 +277,11 @@ namespace KosakoJean
             var talle = new Talle();
             talle.ShowDialog();
         }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            var lista = new ListaProductos();
+            lista.ShowDialog();
+        }
     }
 }
