@@ -43,7 +43,7 @@ namespace Presentacion.Core.Producto.Ctrl
             // 
             this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptbImagen.Image = global::Presentacion.Core.Properties.Resources.add_shop_online_ecommerce_shopping_9_icon_icons_com_61652;
-            this.ptbImagen.Location = new System.Drawing.Point(32, 1);
+            this.ptbImagen.Location = new System.Drawing.Point(28, 1);
             this.ptbImagen.Name = "ptbImagen";
             this.ptbImagen.Size = new System.Drawing.Size(100, 85);
             this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -65,7 +65,7 @@ namespace Presentacion.Core.Producto.Ctrl
             // 
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(4, 130);
+            this.lblPrecio.Location = new System.Drawing.Point(59, 108);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(41, 17);
             this.lblPrecio.TabIndex = 2;

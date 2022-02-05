@@ -54,5 +54,17 @@ namespace Presentacion.Core.Producto
         {
             Close();
         }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            pnlPrincipal.Controls.Clear();
+            CrearControles();
+        }
+
+        private void btnNuevoProducto_Click(object sender, EventArgs e)
+        {
+            var nuevo = new Producto_Abm(Clases.TipoOperacion.Nuevo);
+            nuevo.ShowDialog();
+        }
     }
 }
