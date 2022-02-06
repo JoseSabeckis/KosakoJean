@@ -1,5 +1,6 @@
 ﻿using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
+using Servicios.Core.CtaCte;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta.Dto;
@@ -29,6 +30,8 @@ namespace Presentacion.Core.Pedido
         private readonly ICajaServicio cajaServicio;
         private readonly IDetalleCajaServicio detalleCajaServicio;
 
+        private readonly ICtaCteServicio ctaCteServicio;
+
         AccesoDatos.EstadoPedido Estado;
 
         long PedidoId;
@@ -46,6 +49,7 @@ namespace Presentacion.Core.Pedido
             productoServicio = new ProductoServicio();
             cajaServicio = new CajaServicio();
             detalleCajaServicio = new DetalleCajaServicio();
+            ctaCteServicio = new CtaCteServicio();
 
             list = new List<VentaDto2>();
 
@@ -212,6 +216,13 @@ namespace Presentacion.Core.Pedido
                     var pedido = pedidoServicio.Buscar(PedidoId);
 
                     pedidoServicio.CambiarProcesoTerminado(pedido.Id);
+
+                    //Total Cta Cte
+
+                    var cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
+                    ctaCteServicio.Pagar(_Debe, pedido.ClienteId, cuentaId.Id);
+
+                    //Fin Cta Cte
 
                     btnTerminar.Visible = false;
 

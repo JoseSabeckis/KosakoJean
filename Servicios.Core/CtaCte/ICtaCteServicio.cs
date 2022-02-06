@@ -16,5 +16,7 @@ namespace Servicios.Core.CtaCte
         IEnumerable<CtaCteDto> Lista(long clienteId);
 
         CtaCteDto ObtenerPorId(long ctaId);
+
+        CtaCteDto ObtenerPorIdDePedidosId(long pedidoId);
     }
 }

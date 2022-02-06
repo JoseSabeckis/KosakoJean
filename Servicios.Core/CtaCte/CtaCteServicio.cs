@@ -21,7 +21,8 @@ namespace Servicios.Core.CtaCte
                     Total = ctaCteDto.Total,
                     Debe = ctaCteDto.Debe,
                     Estado = ctaCteDto.Estado,
-                    ClienteId = ctaCteDto.ClienteId
+                    ClienteId = ctaCteDto.ClienteId,
+                    PedidoId = ctaCteDto.PedidoId
                 };
 
                 contex.CtasCtes.Add(cuenta);
@@ -61,7 +62,8 @@ namespace Servicios.Core.CtaCte
                     Descripcion = x.Descripcion,
                     Total = x.Total,
                     Fecha = x.Fecha,
-                    Estado = x.Estado
+                    Estado = x.Estado,
+                    PedidoId = x.PedidoId
 
                 }).ToList();
             }
@@ -81,7 +83,32 @@ namespace Servicios.Core.CtaCte
                     Descripcion = cuenta.Descripcion,
                     Total = cuenta.Total,
                     Fecha = cuenta.Fecha,
-                    Estado = cuenta.Estado
+                    Estado = cuenta.Estado,
+                    PedidoId = cuenta.PedidoId
+
+                };
+
+                return cuentaNueva;
+
+            }
+        }
+
+        public CtaCteDto ObtenerPorIdDePedidosId(long pedidoId)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var cuenta = context.CtasCtes.FirstOrDefault(x => x.PedidoId == pedidoId);
+
+                var cuentaNueva = new CtaCteDto
+                {
+                    Id = cuenta.Id,
+                    ClienteId = cuenta.ClienteId,
+                    Debe = cuenta.Debe,
+                    Descripcion = cuenta.Descripcion,
+                    Total = cuenta.Total,
+                    Fecha = cuenta.Fecha,
+                    Estado = cuenta.Estado,
+                    PedidoId = cuenta.PedidoId
 
                 };
 

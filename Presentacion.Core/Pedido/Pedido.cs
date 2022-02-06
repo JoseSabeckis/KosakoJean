@@ -157,7 +157,8 @@ namespace Presentacion.Core.Pedido
                             Fecha = dtpFechaEntrega.Value.Date,
                             Total = _total,
                             Debe = _total - nudAdelanto.Value,
-                            Descripcion = $"{segunda}"
+                            Descripcion = $"{segunda}",
+                            PedidoId = pedidoId
                         };
 
                         ctaCteServicio.Agregar(cuenta);

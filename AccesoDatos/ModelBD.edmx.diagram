@@ -8,8 +8,8 @@
         <EntityTypeShape EntityType="KosakoDBModel.Producto" Width="1.5" PointX="2.5" PointY="1" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="KosakoDBModel.TipoProducto" Width="1.5" PointX="0.5" PointY="0.5" FillColor="Yellow" />
         <EntityTypeShape EntityType="KosakoDBModel.Colegio" Width="1.5" PointX="0.5" PointY="2.5" FillColor="192, 192, 0" />
-        <EntityTypeShape EntityType="KosakoDBModel.Caja" Width="1.5" PointX="9.75" PointY="3.875" FillColor="255, 128, 0" />
-        <EntityTypeShape EntityType="KosakoDBModel.DetalleCaja" Width="1.5" PointX="12" PointY="4" FillColor="Yellow" />
+        <EntityTypeShape EntityType="KosakoDBModel.Caja" Width="1.5" PointX="9.875" PointY="5.875" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="KosakoDBModel.DetalleCaja" Width="1.5" PointX="12.625" PointY="6.125" FillColor="Yellow" />
         <AssociationConnector Association="KosakoDBModel.TipoProductoProducto" />
         <AssociationConnector Association="KosakoDBModel.ColegioProducto" />
         <AssociationConnector Association="KosakoDBModel.CajaDetalleCaja" />
@@ -21,10 +21,10 @@
         <EntityTypeShape EntityType="KosakoDBModel.Producto_Venta" Width="1.5" PointX="4.5" PointY="0.5" FillColor="Blue" />
         <AssociationConnector Association="KosakoDBModel.ProductoProducto_Venta" />
         <AssociationConnector Association="KosakoDBModel.Producto_VentaVenta" />
-        <EntityTypeShape EntityType="KosakoDBModel.Cliente" Width="1.5" PointX="9.125" PointY="0.5" FillColor="Aqua" />
+        <EntityTypeShape EntityType="KosakoDBModel.Cliente" Width="1.5" PointX="9.5" PointY="0.5" FillColor="Aqua" />
         <AssociationConnector Association="KosakoDBModel.PedidoCliente" />
         <AssociationConnector Association="KosakoDBModel.VentaCliente" />
-        <EntityTypeShape EntityType="KosakoDBModel.CtaCte" Width="1.5" PointX="11.5" PointY="0.625" FillColor="Cyan" />
+        <EntityTypeShape EntityType="KosakoDBModel.CtaCte" Width="1.5" PointX="11.625" PointY="3.125" FillColor="Cyan" />
         <AssociationConnector Association="KosakoDBModel.ClienteCtaCte" />
         <EntityTypeShape EntityType="KosakoDBModel.Talle" Width="1.5" PointX="2.25" PointY="5" FillColor="Lime" />
         <AssociationConnector Association="KosakoDBModel.TalleProducto_Pedido" />

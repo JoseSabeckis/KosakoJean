@@ -21,6 +21,7 @@ namespace AccesoDatos
         public string Descripcion { get; set; }
         public long ClienteId { get; set; }
         public CtaCteEstado Estado { get; set; }
+        public long PedidoId { get; set; }
     
         public virtual Cliente Cliente { get; set; }
     }

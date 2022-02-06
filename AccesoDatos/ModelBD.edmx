@@ -200,6 +200,7 @@
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ClienteId" Type="bigint" Nullable="false" />
     <Property Name="Estado" Type="bigint" Nullable="false" />
+    <Property Name="PedidoId" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="Talles">
     <Key>
@@ -668,6 +669,7 @@
           <NavigationProperty Name="Cliente" Relationship="KosakoDBModel.ClienteCtaCte" FromRole="CtaCte" ToRole="Cliente" />
           <Property Name="ClienteId" Type="Int64" Nullable="false" />
           <Property Name="Estado" Type="KosakoDBModel.CtaCteEstado" Nullable="false" />
+          <Property Name="PedidoId" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="ClienteCtaCte">
           <End Type="KosakoDBModel.Cliente" Role="Cliente" Multiplicity="1" />
@@ -864,6 +866,7 @@
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
           <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

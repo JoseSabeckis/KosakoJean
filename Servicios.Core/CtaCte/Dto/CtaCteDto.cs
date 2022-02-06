@@ -23,6 +23,8 @@ namespace Servicios.Core.CtaCte.Dto
 
         public long ClienteId { get; set; }
 
+        public long PedidoId { get; set; }
+
 
     }
 }

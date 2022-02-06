@@ -25,7 +25,8 @@ namespace Servicios.Core.Pedido
                     Proceso = pedidoDto.Proceso,
                     ClienteId = pedidoDto.ClienteId,
                     ApyNom = pedidoDto.Apellido,
-                    Descripcion = pedidoDto.Descripcion
+                    Descripcion = pedidoDto.Descripcion,
+
                 };
 
                 context.Pedidos.Add(nuevo);
@@ -55,7 +56,7 @@ namespace Servicios.Core.Pedido
                         Id = x.Id,
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
-                        Descripcion = x.Descripcion
+                        Descripcion = x.Descripcion,
 
                     }).ToList();
 
@@ -79,7 +80,7 @@ namespace Servicios.Core.Pedido
                         Id = x.Id,
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
-                        Descripcion = x.Descripcion
+                        Descripcion = x.Descripcion,
 
                     }).ToList();
 
@@ -116,7 +117,7 @@ namespace Servicios.Core.Pedido
                     Id = x.Id,
                     Proceso = x.Proceso,
                     ClienteId = x.ClienteId,
-                    Descripcion = x.Descripcion
+                    Descripcion = x.Descripcion,
 
                 }).ToList();
 
@@ -142,7 +143,7 @@ namespace Servicios.Core.Pedido
                     Id = x.Id,
                     Proceso = x.Proceso,
                     ClienteId = x.ClienteId,
-                    Descripcion = x.Descripcion
+                    Descripcion = x.Descripcion,
 
                 }).ToList();
 
@@ -167,7 +168,7 @@ namespace Servicios.Core.Pedido
                         Id = aux.Id,
                         Proceso = aux.Proceso,
                         ClienteId = aux.ClienteId,
-                        Descripcion = aux.Descripcion
+                        Descripcion = aux.Descripcion,
 
                     };
                 return aux2;
@@ -190,7 +191,7 @@ namespace Servicios.Core.Pedido
                     Id = x.Id,
                     Proceso = x.Proceso,
                     ClienteId = x.ClienteId,
-                    Descripcion = x.Descripcion
+                    Descripcion = x.Descripcion,
 
                 }).ToList();
 
@@ -214,7 +215,7 @@ namespace Servicios.Core.Pedido
                         Id = x.Id,
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
-                        Descripcion = x.Descripcion
+                        Descripcion = x.Descripcion,
 
                     }).ToList();
 
@@ -238,7 +239,7 @@ namespace Servicios.Core.Pedido
                         Id = x.Id,
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
-                        Descripcion = x.Descripcion
+                        Descripcion = x.Descripcion,
 
                     }).ToList();
 
@@ -262,7 +263,7 @@ namespace Servicios.Core.Pedido
                         Id = x.Id,
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
-                        Descripcion = x.Descripcion
+                        Descripcion = x.Descripcion,
 
                     }).ToList();
 

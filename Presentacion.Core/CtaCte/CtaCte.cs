@@ -6,6 +6,7 @@ using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.Pedido;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,7 @@ namespace Presentacion.Core.CtaCte
         private readonly ICtaCteServicio _ctaCteServicio;
         private readonly IDetalleCajaServicio detalleCajaServicio;
         private readonly ICajaServicio cajaServicio;
+        private readonly IPedidoServicio pedidoServicio;
 
         long _ClienteId = 0;
         long _CtaCteId = 0;
@@ -38,6 +40,7 @@ namespace Presentacion.Core.CtaCte
             _ctaCteServicio = new CtaCteServicio();
             detalleCajaServicio = new DetalleCajaServicio();
             cajaServicio = new CajaServicio();
+            pedidoServicio = new PedidoServicio();
 
             _ClienteId = clienteId;
             _clienteDto = _clienteServicio.ObtenerPorId(clienteId);
@@ -168,6 +171,12 @@ namespace Presentacion.Core.CtaCte
                     if (MessageBox.Show("Esta Seguro de Cobrar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         _ctaCteServicio.Pagar(nudCobro.Value, _ClienteId, _CtaCteId);
+
+                        //Inicio Pedido
+                        var ctacte = _ctaCteServicio.ObtenerPorId(_CtaCteId);
+
+                        pedidoServicio.CambiarRamas(nudCobro.Value, ctacte.PedidoId);
+                        //Fin Pedido
 
                         var mensaje = new Afirmacion("Cobrado", $"Se Le Cobro $ {nudCobro.Value} Exitosamente!");
                         mensaje.ShowDialog();
