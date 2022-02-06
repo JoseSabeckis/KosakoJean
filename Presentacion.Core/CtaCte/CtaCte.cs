@@ -46,7 +46,7 @@ namespace Presentacion.Core.CtaCte
             _clienteDto = _clienteServicio.ObtenerPorId(clienteId);
 
             lblNombre.Text = $"{_clienteDto.Apellido} - {_clienteDto.Nombre}";
-            lblDomicilio.Text = $"{_clienteDto.Direccion}";
+            lblDomicilio.Text = $"Direccion: {_clienteDto.Direccion}";
 
             DebeYTotal(_ctaCteServicio.Lista(_ClienteId));
 
@@ -58,6 +58,17 @@ namespace Presentacion.Core.CtaCte
         public void nudCobroMaximo()
         {
             nudCobro.Maximum = _ctaDto.Debe;
+
+            if (_ctaDto.Debe == 0)
+            {
+                nudCobro.Enabled = false;
+                //btnCobrar.Enabled = false;
+            }
+            else
+            {
+                btnCobrar.Enabled = true;
+                nudCobro.Enabled = true;
+            }
         }
 
         public void Datos()
@@ -74,11 +85,6 @@ namespace Presentacion.Core.CtaCte
         {
             dgvGrilla.DataSource = _ctaCteServicio.Lista(_ClienteId);
             FormatearGrilla(dgvGrilla);
-
-            if (Convert.ToDecimal(txtDebe.Text) == 0)
-            {
-                nudCobro.Enabled = false;
-            }
         }
 
         public void FormatearGrilla(DataGridView grilla)
@@ -210,8 +216,7 @@ namespace Presentacion.Core.CtaCte
 
                         Datos();
 
-                        nudCobro.Value = 0;
-
+                        //nudCobroMaximo();
                     }
                 }
                 
@@ -220,14 +225,7 @@ namespace Presentacion.Core.CtaCte
 
         private void nudCobro_ValueChanged(object sender, EventArgs e)
         {
-            if (nudCobro.Value == 0)
-            {
-                btnCobrar.Enabled = false;
-            }
-            else
-            {
-                btnCobrar.Enabled = true;
-            }
+
         }
 
         private void CtaCte_Load(object sender, EventArgs e)

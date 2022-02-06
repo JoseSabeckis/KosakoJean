@@ -33,7 +33,7 @@ namespace Presentacion.Core.Mensaje
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.txtParrafo = new System.Windows.Forms.TextBox();
+            this.txtParrafo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@ namespace Presentacion.Core.Mensaje
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(182, 12);
+            this.lblTitulo.Location = new System.Drawing.Point(155, 12);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(58, 22);
             this.lblTitulo.TabIndex = 1;
@@ -72,13 +72,13 @@ namespace Presentacion.Core.Mensaje
             // 
             // txtParrafo
             // 
-            this.txtParrafo.BackColor = System.Drawing.Color.Lime;
-            this.txtParrafo.Enabled = false;
-            this.txtParrafo.Location = new System.Drawing.Point(186, 39);
-            this.txtParrafo.Multiline = true;
+            this.txtParrafo.AutoSize = true;
+            this.txtParrafo.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtParrafo.Location = new System.Drawing.Point(154, 44);
             this.txtParrafo.Name = "txtParrafo";
-            this.txtParrafo.Size = new System.Drawing.Size(279, 56);
-            this.txtParrafo.TabIndex = 9;
+            this.txtParrafo.Size = new System.Drawing.Size(70, 22);
+            this.txtParrafo.TabIndex = 4;
+            this.txtParrafo.Text = "Parrafo";
             // 
             // Afirmacion
             // 
@@ -111,6 +111,6 @@ namespace Presentacion.Core.Mensaje
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.TextBox txtParrafo;
+        private System.Windows.Forms.Label txtParrafo;
     }
 }

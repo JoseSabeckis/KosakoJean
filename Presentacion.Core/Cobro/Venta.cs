@@ -377,6 +377,7 @@ namespace Presentacion.Core.Cobro
                         mensaje.ShowDialog();
 
                         btnLimpiar.PerformClick();
+                        PedidoEnabled();
 
                     }
 
@@ -385,8 +386,10 @@ namespace Presentacion.Core.Cobro
                 {
                     if (txtCliente.Text == "Consumidor Final")
                     {
-                        var pedis = new Negativo("Error ...", "No Puede Cobrar a un Consumidor Final");
+                        var pedis = new Negativo("Error ...", "No Puede Hacer un Pedido a un Consumidor Final");
                         pedis.ShowDialog();
+
+                        PedidoEnabled();
 
                         return;
                     }
@@ -398,6 +401,7 @@ namespace Presentacion.Core.Cobro
                     if (pedidos.semaforo)
                     {
                         btnLimpiar.PerformClick();
+                        PedidoEnabled();
                     }
                 }
             }

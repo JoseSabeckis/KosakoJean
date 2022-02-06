@@ -33,7 +33,7 @@ namespace Presentacion.Core.Mensaje
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.txtParrafo = new System.Windows.Forms.TextBox();
+            this.txtParrafo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@ namespace Presentacion.Core.Mensaje
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(181, 14);
+            this.lblTitulo.Location = new System.Drawing.Point(155, 14);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(58, 22);
             this.lblTitulo.TabIndex = 6;
@@ -72,13 +72,12 @@ namespace Presentacion.Core.Mensaje
             // 
             // txtParrafo
             // 
-            this.txtParrafo.BackColor = System.Drawing.Color.Red;
-            this.txtParrafo.Enabled = false;
-            this.txtParrafo.Location = new System.Drawing.Point(185, 39);
-            this.txtParrafo.Multiline = true;
+            this.txtParrafo.AutoSize = true;
+            this.txtParrafo.Location = new System.Drawing.Point(154, 46);
             this.txtParrafo.Name = "txtParrafo";
-            this.txtParrafo.Size = new System.Drawing.Size(279, 56);
-            this.txtParrafo.TabIndex = 8;
+            this.txtParrafo.Size = new System.Drawing.Size(70, 22);
+            this.txtParrafo.TabIndex = 7;
+            this.txtParrafo.Text = "Parrafo";
             // 
             // Negativo
             // 
@@ -111,6 +110,6 @@ namespace Presentacion.Core.Mensaje
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.TextBox txtParrafo;
+        private System.Windows.Forms.Label txtParrafo;
     }
 }
