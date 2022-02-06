@@ -105,7 +105,7 @@
     <Property Name="MontoApertura" Type="decimal" Nullable="false" />
     <Property Name="MontoCierre" Type="decimal" Nullable="false" />
     <Property Name="FechaApertura" Type="datetime" Nullable="false" />
-    <Property Name="FechaCierre" Type="datetime" Nullable="false" />
+    <Property Name="FechaCierre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OpenClose" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="DetalleCajas">
@@ -116,7 +116,7 @@
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Total" Type="decimal" Nullable="false" />
     <Property Name="CajaId" Type="bigint" Nullable="false" />
-    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Fecha" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Pedidos">
     <Key>
@@ -465,7 +465,7 @@
           <Property Name="MontoCierre" Type="Decimal" Nullable="false" />
           <NavigationProperty Name="DetalleCaja" Relationship="KosakoDBModel.CajaDetalleCaja" FromRole="Caja" ToRole="DetalleCaja" />
           <Property Name="FechaApertura" Type="DateTime" Nullable="false" />
-          <Property Name="FechaCierre" Type="DateTime" Nullable="false" />
+          <Property Name="FechaCierre" Type="String" Nullable="false" />
           <Property Name="OpenClose" Type="KosakoDBModel.OpenClose" Nullable="false" />
         </EntityType>
         <EntityType Name="DetalleCaja">
@@ -477,7 +477,7 @@
           <Property Name="Total" Type="Decimal" Nullable="false" />
           <NavigationProperty Name="Caja" Relationship="KosakoDBModel.CajaDetalleCaja" FromRole="DetalleCaja" ToRole="Caja" />
           <Property Name="CajaId" Type="Int64" Nullable="false" />
-          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="Fecha" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="TipoProductoProducto">
           <End Type="KosakoDBModel.TipoProducto" Role="TipoProducto" Multiplicity="1" />

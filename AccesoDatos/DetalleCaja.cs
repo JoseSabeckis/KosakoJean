@@ -18,7 +18,7 @@ namespace AccesoDatos
         public string Descripcion { get; set; }
         public decimal Total { get; set; }
         public long CajaId { get; set; }
-        public System.DateTime Fecha { get; set; }
+        public string Fecha { get; set; }
     
         public virtual Caja Caja { get; set; }
     }

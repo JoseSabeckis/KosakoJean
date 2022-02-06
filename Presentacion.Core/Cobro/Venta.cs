@@ -1,5 +1,6 @@
 ﻿using Presentacion.Clases;
 using Presentacion.Core.Cliente;
+using Presentacion.Core.Factura;
 using Presentacion.Core.Mensaje;
 using Presentacion.Core.Producto;
 using Servicios.Core.Caja;
@@ -172,7 +173,8 @@ namespace Presentacion.Core.Cobro
                         Descripcion = txtProducto.Text,
                         Precio = nudPrecio.Value,
                         Talle = cmbTalle.Text,
-                        Id = _productoId
+                        Id = _productoId,
+                        Fecha = DateTime.Now.Date
 
                     };
 
@@ -361,7 +363,7 @@ namespace Presentacion.Core.Cobro
 
                         var detalle = new DetalleCajaDto
                         {
-                            Fecha = DateTime.Now,
+                            Fecha = DateTime.Now.ToString("dd/MM/yy"),
                             Total = _total,
                             Descripcion = $"Venta {descripcion}",
                             CajaId = detalleCajaServicio.BuscarCajaAbierta()
@@ -376,8 +378,18 @@ namespace Presentacion.Core.Cobro
                         var mensaje = new Afirmacion("Felicidades...", "Cobro Aceptado!");
                         mensaje.ShowDialog();
 
+                        foreach (var item in ListaVenta)
+                        {
+                            item.Precio = item.Cantidad * item.Precio;
+                        }
+
+                        //ticket
+                        var factura = new Comprobante(ListaVenta.ToList());
+                        factura.ShowDialog();
+
+                        //limpiar
                         btnLimpiar.PerformClick();
-                        PedidoEnabled();
+                        PedidoEnabled();                        
 
                     }
 

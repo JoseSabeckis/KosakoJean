@@ -19,16 +19,14 @@ namespace Servicios.Core.Caja
 
         bool BuscarCajaAbiertaBool();
 
-        void CerrarCaja(decimal montoCierre, DateTime fechaCierre);
+        void CerrarCaja(decimal montoCierre, string fechaCierre);
 
         void AbrirCaja(CajaDto cajaDto);
 
-        IEnumerable<CajaDto> BuscarCajasPorCierre(DateTime desde, DateTime hasta);
-
         IEnumerable<CajaDto> BuscarCajasPorApertura(DateTime desde, DateTime hasta);
 
-        IEnumerable<CajaDto> BuscarCajasPorMes();
-
         decimal SumarCaja();
+
+        IEnumerable<CajaDto> BuscarCajasPorMes();
     }
 }

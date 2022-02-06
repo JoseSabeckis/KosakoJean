@@ -19,7 +19,7 @@ namespace Servicios.Core.Caja.Dto
 
         public DateTime FechaApertura { get; set; }
 
-        public DateTime FechaCierre { get; set; }
+        public string FechaCierre { get; set; }
 
         public OpenClose OpenClose { get; set; }
 

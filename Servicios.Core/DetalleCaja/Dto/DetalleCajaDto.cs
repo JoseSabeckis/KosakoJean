@@ -14,7 +14,7 @@ namespace Servicios.Core.DetalleCaja.Dto
 
         public decimal Total { get; set; }
 
-        public DateTime Fecha { get; set; }
+        public string Fecha { get; set; }
 
         public long CajaId { get; set; }
     }

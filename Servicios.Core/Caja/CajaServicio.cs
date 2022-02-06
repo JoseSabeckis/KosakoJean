@@ -31,7 +31,7 @@ namespace Servicios.Core.Caja
             }
         }
 
-        public void CerrarCaja(decimal montoCierre, DateTime fechaCierre)
+        public void CerrarCaja(decimal montoCierre, string fechaCierre)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -162,31 +162,6 @@ namespace Servicios.Core.Caja
                         OpenClose = x.OpenClose,
 
                     }).ToList();
-
-
-
-
-            }
-        }
-
-        public IEnumerable<CajaDto> BuscarCajasPorCierre(DateTime desde, DateTime hasta)
-        {
-            using (var context = new KosakoDBEntities())
-            {
-                var caja = context.Cajas.Where(x => x.FechaCierre >= desde);
-
-                return caja.Where(x => x.FechaCierre <= hasta)
-                    .Select(x => new CajaDto
-                    {
-                        TotalCaja = x.TotalCaja,
-                        FechaApertura = x.FechaApertura,
-                        FechaCierre = x.FechaCierre,
-                        MontoApertura = x.MontoApertura,
-                        MontoCierre = x.MontoCierre,
-                        Id = x.Id,
-                        OpenClose = x.OpenClose,
-
-                    }).ToList();
             }
         }
 
@@ -194,10 +169,9 @@ namespace Servicios.Core.Caja
         {
             using (var context = new KosakoDBEntities())
             {
-                var fecha = DateTime.Now;
-                fecha.AddDays(-30);
+                var fecha = DateTime.Now.AddDays(-30);
 
-                return context.Cajas.AsNoTracking().Where(x => x.FechaCierre >= fecha)
+                return context.Cajas.Where(x => x.FechaApertura >= fecha)
                     .Select(x => new CajaDto
                     {
                         TotalCaja = x.TotalCaja,

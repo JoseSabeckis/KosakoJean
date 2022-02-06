@@ -39,7 +39,7 @@ namespace Presentacion.Core.Caja
                     MontoApertura = nudDinero.Value,
                     OpenClose = OpenClose.Abierto,
                     MontoCierre = 0,
-                    FechaCierre = DateTime.Now.Date,
+                    FechaCierre = "No Esta Cerrada",
                     TotalCaja = nudDinero.Value
                 };
 

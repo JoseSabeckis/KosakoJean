@@ -25,7 +25,7 @@ namespace AccesoDatos
         public decimal MontoApertura { get; set; }
         public decimal MontoCierre { get; set; }
         public System.DateTime FechaApertura { get; set; }
-        public System.DateTime FechaCierre { get; set; }
+        public string FechaCierre { get; set; }
         public OpenClose OpenClose { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

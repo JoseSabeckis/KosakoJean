@@ -22,6 +22,7 @@ namespace Presentacion.Core.Caja
             InitializeComponent();
 
             _cajaServicio = new CajaServicio();
+            ckbApertura.Enabled = false;
 
             VerCaja();
         }
@@ -35,12 +36,6 @@ namespace Presentacion.Core.Caja
         public void VerCajaApertura(DateTime desde, DateTime hasta)
         {
             dgvGrilla.DataSource = _cajaServicio.BuscarCajasPorApertura(desde, hasta);
-            FormatearGrilla(dgvGrilla);
-        }
-
-        public void VerCajaCierre(DateTime desde, DateTime hasta)
-        {
-            dgvGrilla.DataSource = _cajaServicio.BuscarCajasPorCierre(desde, hasta);
             FormatearGrilla(dgvGrilla);
         }
 
@@ -95,26 +90,10 @@ namespace Presentacion.Core.Caja
 
         private void ckbApertura_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckbApertura.Checked == true)
-            {
-                ckbCierre.Checked = false;
-            }
-            else
-            {
-                ckbCierre.Checked = true;
-            }
         }
 
         private void ckbCierre_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckbCierre.Checked == true)
-            {
-                ckbApertura.Checked = false;
-            }
-            else
-            {
-                ckbApertura.Checked = true;
-            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -127,10 +106,6 @@ namespace Presentacion.Core.Caja
             if (ckbApertura.Checked == true)
             {
                 VerCajaApertura(dtpDesde.Value, dtpHasta.Value);
-            }
-            else
-            {
-                VerCajaCierre(dtpDesde.Value, dtpHasta.Value);
             }
         }
 

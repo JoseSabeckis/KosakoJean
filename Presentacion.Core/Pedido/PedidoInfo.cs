@@ -235,7 +235,7 @@ namespace Presentacion.Core.Pedido
                     var detalle = new DetalleCajaDto
                     {
                         Descripcion = $"{lblPersona.Text} - Pedido Terminado",
-                        Fecha = DateTime.Now,
+                        Fecha = DateTime.Now.ToString("dd/MM/yy"),
                         Total = _Debe,
                         CajaId = detalleCajaServicio.BuscarCajaAbierta()
                     };

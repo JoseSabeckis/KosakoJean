@@ -39,7 +39,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.ckbCierre = new System.Windows.Forms.CheckBox();
             this.ckbApertura = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -58,7 +57,6 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.ckbCierre);
             this.panel1.Controls.Add(this.ckbApertura);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -165,17 +163,6 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // ckbCierre
-            // 
-            this.ckbCierre.AutoSize = true;
-            this.ckbCierre.Location = new System.Drawing.Point(324, 38);
-            this.ckbCierre.Name = "ckbCierre";
-            this.ckbCierre.Size = new System.Drawing.Size(85, 29);
-            this.ckbCierre.TabIndex = 7;
-            this.ckbCierre.Text = "Cierre";
-            this.ckbCierre.UseVisualStyleBackColor = true;
-            this.ckbCierre.CheckedChanged += new System.EventHandler(this.ckbCierre_CheckedChanged);
-            // 
             // ckbApertura
             // 
             this.ckbApertura.AutoSize = true;
@@ -266,7 +253,6 @@
         private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox ckbCierre;
         private System.Windows.Forms.CheckBox ckbApertura;
         protected System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.Button btnVer;

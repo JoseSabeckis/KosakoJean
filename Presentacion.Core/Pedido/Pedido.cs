@@ -184,7 +184,7 @@ namespace Presentacion.Core.Pedido
                         var detalle = new DetalleCajaDto
                         {
                             Descripcion = txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
-                            Fecha = DateTime.Now,
+                            Fecha = DateTime.Now.ToString("dd/MM/yy"),
                             Total = nudAdelanto.Value,
                             CajaId = detallCajaServicio.BuscarCajaAbierta()
                         };
@@ -259,7 +259,7 @@ namespace Presentacion.Core.Pedido
                     var detalle = new DetalleCajaDto
                     {
                         Descripcion =  txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
-                        Fecha = DateTime.Now,
+                        Fecha = DateTime.Now.ToString("dd/MM/yy"),
                         Total = nudAdelanto.Value,
                         CajaId = detallCajaServicio.BuscarCajaAbierta()
                     };

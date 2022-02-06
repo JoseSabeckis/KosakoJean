@@ -12,6 +12,8 @@ namespace Servicios.Core.ParteVenta.Dto
 
         public string Descripcion { get; set; }
 
+        public DateTime Fecha { get; set; }
+
         public decimal Cantidad { get; set; }
 
         public decimal Precio { get; set; }
