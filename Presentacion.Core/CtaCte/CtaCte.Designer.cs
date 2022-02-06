@@ -218,6 +218,7 @@ namespace Presentacion.Core.CtaCte
             this.nudCobro.Name = "nudCobro";
             this.nudCobro.Size = new System.Drawing.Size(125, 34);
             this.nudCobro.TabIndex = 7;
+            this.nudCobro.ValueChanged += new System.EventHandler(this.nudCobro_ValueChanged);
             // 
             // txtDebe
             // 
@@ -298,6 +299,8 @@ namespace Presentacion.Core.CtaCte
             this.Name = "CtaCte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cta Cte";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.CtaCte_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();

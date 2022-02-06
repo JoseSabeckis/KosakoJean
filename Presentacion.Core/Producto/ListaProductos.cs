@@ -22,12 +22,12 @@ namespace Presentacion.Core.Producto
 
             productoServicio = new ProductoServicio();
 
-            CrearControles();
+            CrearControles(string.Empty);
         }
 
-        public void CrearControles()
+        public void CrearControles(string busqueda)
         {
-            var cuadros = productoServicio.Buscar(string.Empty);
+            var cuadros = productoServicio.Buscar(busqueda);
 
             var flowPanel = new FlowLayoutPanel
             {
@@ -58,13 +58,19 @@ namespace Presentacion.Core.Producto
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             pnlPrincipal.Controls.Clear();
-            CrearControles();
+            CrearControles(string.Empty);
         }
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
             var nuevo = new Producto_Abm(Clases.TipoOperacion.Nuevo);
             nuevo.ShowDialog();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            pnlPrincipal.Controls.Clear();
+            CrearControles(txtBusqueda.Text);
         }
     }
 }

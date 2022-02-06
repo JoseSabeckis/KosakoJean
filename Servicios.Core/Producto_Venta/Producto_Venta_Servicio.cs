@@ -50,7 +50,8 @@ namespace Servicios.Core.Producto_Venta
                     ProductoId = producto.ProductoId,
                     Descripcion = producto.Descripcion,
                     Precio = producto.Precio,
-                    VentaId = producto.VentaId
+                    VentaId = producto.VentaId,
+                    TalleId = producto.TalleId
                 };
 
                 context.Producto_Ventas.Add(nuevo);
@@ -75,7 +76,8 @@ namespace Servicios.Core.Producto_Venta
                         Talle = x.Talle,
                         VentaId = x.VentaId,
                         Precio = x.Precio,
-                        Id = x.Id
+                        Id = x.Id,
+                        TalleId = x.TalleId
                     }).ToList();
 
             }
@@ -97,7 +99,8 @@ namespace Servicios.Core.Producto_Venta
                     Precio = aux.Precio,
                     ProductoId = aux.ProductoId,
                     Talle = aux.Talle,
-                    VentaId = aux.VentaId
+                    VentaId = aux.VentaId,
+                    TalleId = aux.TalleId
                 };
 
                 return producto;
@@ -121,7 +124,8 @@ namespace Servicios.Core.Producto_Venta
                     Precio = aux.Precio,
                     ProductoId = aux.ProductoId,
                     Talle = aux.Talle,
-                    VentaId = aux.VentaId
+                    VentaId = aux.VentaId,
+                    TalleId = aux.TalleId
                 };
 
                 return producto;
@@ -159,7 +163,8 @@ namespace Servicios.Core.Producto_Venta
                     Precio = producto.Precio,
                     Talle = producto.Talle,
                     ProductoId = producto.ProductoId,
-                    VentaId = producto.VentaId
+                    VentaId = producto.VentaId,
+                    TalleId = producto.TalleId
                 };
 
                 context.Producto_Ventas.Add(ejemplo);

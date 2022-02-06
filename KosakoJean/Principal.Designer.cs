@@ -560,7 +560,7 @@
             this.lblhora.BackColor = System.Drawing.Color.Transparent;
             this.lblhora.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.Color.Black;
-            this.lblhora.Location = new System.Drawing.Point(36, 14);
+            this.lblhora.Location = new System.Drawing.Point(3, 14);
             this.lblhora.Name = "lblhora";
             this.lblhora.Size = new System.Drawing.Size(119, 33);
             this.lblhora.TabIndex = 42;

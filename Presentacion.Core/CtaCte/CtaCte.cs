@@ -201,5 +201,22 @@ namespace Presentacion.Core.CtaCte
                 
             }
         }
+
+        private void nudCobro_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudCobro.Value == 0)
+            {
+                btnCobrar.Enabled = false;
+            }
+            else
+            {
+                btnCobrar.Enabled = true;
+            }
+        }
+
+        private void CtaCte_Load(object sender, EventArgs e)
+        {
+            btnCobrar.Enabled = false;
+        }
     }
 }

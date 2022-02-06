@@ -32,23 +32,23 @@ namespace Presentacion.Core.Cliente
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialClientes));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nudTotal = new System.Windows.Forms.NumericUpDown();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.nudTotal = new System.Windows.Forms.NumericUpDown();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,37 +74,6 @@ namespace Presentacion.Core.Cliente
             this.lblNombre.Size = new System.Drawing.Size(58, 22);
             this.lblNombre.TabIndex = 17;
             this.lblNombre.Text = "====";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(544, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 20);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "$";
-            // 
-            // nudTotal
-            // 
-            this.nudTotal.Enabled = false;
-            this.nudTotal.Location = new System.Drawing.Point(568, 41);
-            this.nudTotal.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.nudTotal.Name = "nudTotal";
-            this.nudTotal.Size = new System.Drawing.Size(120, 26);
-            this.nudTotal.TabIndex = 15;
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(564, 18);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(109, 20);
-            this.lblTotal.TabIndex = 14;
-            this.lblTotal.Text = "Total Cobrado";
             // 
             // dgvGrilla
             // 
@@ -154,6 +123,37 @@ namespace Presentacion.Core.Cliente
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(544, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(18, 20);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "$";
+            // 
+            // nudTotal
+            // 
+            this.nudTotal.Enabled = false;
+            this.nudTotal.Location = new System.Drawing.Point(568, 41);
+            this.nudTotal.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.nudTotal.Name = "nudTotal";
+            this.nudTotal.Size = new System.Drawing.Size(120, 26);
+            this.nudTotal.TabIndex = 15;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(564, 18);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(109, 20);
+            this.lblTotal.TabIndex = 14;
+            this.lblTotal.Text = "Total Cobrado";
+            // 
             // dtpDesde
             // 
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -188,24 +188,6 @@ namespace Presentacion.Core.Cliente
             this.panel2.Size = new System.Drawing.Size(718, 106);
             this.panel2.TabIndex = 20;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 20);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Desde";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(177, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Hasta";
-            // 
             // btnBuscar
             // 
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -216,6 +198,24 @@ namespace Presentacion.Core.Cliente
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(177, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Hasta";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 20);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Desde";
             // 
             // HistorialClientes
             // 
@@ -229,17 +229,17 @@ namespace Presentacion.Core.Cliente
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(759, 590);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(759, 590);
             this.Name = "HistorialClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Historial Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

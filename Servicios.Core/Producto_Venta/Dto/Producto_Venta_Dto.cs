@@ -24,5 +24,7 @@ namespace Servicios.Core.Producto_Venta.Dto
         public long ProductoId { get; set; }
 
         public long? VentaId { get; set; }
+
+        public long TalleId { get; set; }
     }
 }

@@ -22,7 +22,8 @@ namespace Servicios.Core.Producto_Pedido
                     Talle = producto.Talle,
                     PedidoId = producto.PedidoId,
                     ProductoId = producto.ProductoId,            
-                    Descripcion = producto.Descripcion
+                    Descripcion = producto.Descripcion,
+                    TalleId = producto.TalleId
 
                 };
 
@@ -57,7 +58,8 @@ namespace Servicios.Core.Producto_Pedido
                     ProductoId = x.ProductoId,
                     Talle = x.Talle,
                     Descripcion = x.Descripcion,
-                    Id = x.Id
+                    Id = x.Id,
+                    TalleId = x.TalleId
 
                 }).ToList();
 
@@ -77,7 +79,8 @@ namespace Servicios.Core.Producto_Pedido
                     ProductoId = x.ProductoId,
                     Talle = x.Talle,
                     Descripcion = x.Descripcion,
-                    Id = x.Id
+                    Id = x.Id,
+                    TalleId = x.TalleId
 
                 }).ToList();
 
@@ -97,7 +100,8 @@ namespace Servicios.Core.Producto_Pedido
                     ProductoId = x.ProductoId,
                     Talle = x.Talle,
                     Descripcion = x.Descripcion,
-                    Id = x.Id
+                    Id = x.Id,
+                    TalleId = x.TalleId
 
                 }).ToList();
 
@@ -117,7 +121,8 @@ namespace Servicios.Core.Producto_Pedido
                     ProductoId = x.ProductoId,
                     Talle = x.Talle,
                     Descripcion = x.Descripcion,
-                    Id = x.Id
+                    Id = x.Id,
+                    TalleId = x.TalleId
 
                 }).ToList();
 
@@ -139,7 +144,8 @@ namespace Servicios.Core.Producto_Pedido
                     ProductoId = estado.ProductoId,
                     Talle = estado.Talle,
                     Descripcion = estado.Descripcion,
-                    Id = estado.Id
+                    Id = estado.Id,
+                    TalleId = estado.TalleId
 
                 };
 

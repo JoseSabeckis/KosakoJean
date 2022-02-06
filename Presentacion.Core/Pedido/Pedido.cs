@@ -11,6 +11,7 @@ using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
+using Servicios.Core.Talle;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,16 +32,18 @@ namespace Presentacion.Core.Pedido
         private readonly ICajaServicio cajaServicio;
         private readonly IDetalleCajaServicio detallCajaServicio;
         private readonly ICtaCteServicio ctaCteServicio;
+        private readonly ITalleServicio talleServicio;
 
         public bool semaforo = false;
 
         public string _Descripcion;
         decimal _total;
         long ClienteId;
+        long _TalleId;
 
         List<VentaDto2> ListaVentas;
 
-        public Pedido(List<VentaDto2> Lista, decimal total, string nombre, long clienteId, string descripcion)
+        public Pedido(List<VentaDto2> Lista, decimal total, string nombre, long clienteId, string descripcion, long talleId)
         {
             InitializeComponent();
 
@@ -50,6 +53,7 @@ namespace Presentacion.Core.Pedido
             cajaServicio = new CajaServicio();
             detallCajaServicio = new DetalleCajaServicio();
             ctaCteServicio = new CtaCteServicio();
+            talleServicio = new TalleServicio();
 
             if (nombre != null)
             {
@@ -59,6 +63,7 @@ namespace Presentacion.Core.Pedido
             _total = total;
             ListaVentas = Lista;
             _Descripcion = descripcion;
+            _TalleId = talleId;
 
             nudAdelanto.Maximum = _total;
 
@@ -99,6 +104,22 @@ namespace Presentacion.Core.Pedido
                 {
                     if (MessageBox.Show("Esta Seguro de Continuar? Puede ser un Cobro para Despues", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
+                        var pedido = new PedidoDto
+                        {
+                            Adelanto = nudAdelanto.Value,
+                            Apellido = txtApellido.Text,
+                            FechaPedido = DateTime.Now,
+                            Nombre = txtNombre.Text,
+                            Proceso = AccesoDatos.Proceso.InicioPedido,
+                            FechaEntrega = dtpFechaEntrega.Value.Date,
+                            Total = _total,
+                            ClienteId = ClienteId,
+                            Descripcion = _Descripcion
+
+                        };
+
+                        var pedidoId = pedidoServicio.NuevoPedido(pedido);
+
                         string descripcion = string.Empty;
 
                         string segunda = string.Empty;
@@ -108,6 +129,24 @@ namespace Presentacion.Core.Pedido
                             descripcion = productoServicio.ObtenerPorId(item.Id).Descripcion;
 
                             segunda += " " + descripcion + " ";
+
+                        }
+
+                        foreach (var item in ListaVentas)
+                        {
+
+                            var aux = new Producto_Pedido_Dto
+                            {
+                                Cantidad = item.Cantidad,
+                                ProductoId = productoServicio.ObtenerPorId(item.Id).Id,
+                                Estado = AccesoDatos.EstadoPedido.Esperando,
+                                Talle = item.Talle,
+                                PedidoId = pedidoId,
+                                Descripcion = segunda,
+                                TalleId = _TalleId
+                            };
+
+                            producto_Pedido_Servicio.NuevoProductoPedido(aux);
 
                         }
 
@@ -161,7 +200,7 @@ namespace Presentacion.Core.Pedido
                         FechaEntrega = dtpFechaEntrega.Value.Date,
                         Total = _total,
                         ClienteId = ClienteId,
-                        Descripcion = _Descripcion
+                        Descripcion = _Descripcion,
                         
                     };
 
@@ -189,7 +228,8 @@ namespace Presentacion.Core.Pedido
                             Estado = AccesoDatos.EstadoPedido.Esperando,
                             Talle = item.Talle,
                             PedidoId = pedidoId,
-                            Descripcion = segunda
+                            Descripcion = segunda,
+                            TalleId = _TalleId
                             
                         };                    
 

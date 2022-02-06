@@ -15,6 +15,8 @@ namespace Servicios.Core.Producto_Pedido.Dto
 
         public string Talle { get; set; }
 
+        public long TalleId { get; set; }
+
         public EstadoPedido Estado { get; set; }
 
         public string Descripcion { get; set; }

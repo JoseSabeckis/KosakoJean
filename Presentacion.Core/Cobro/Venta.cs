@@ -14,6 +14,7 @@ using Servicios.Core.Producto.Dto;
 using Servicios.Core.Producto_Venta;
 using Servicios.Core.Producto_Venta.Dto;
 using Servicios.Core.Talle;
+using Servicios.Core.Talle.Dto;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
@@ -349,7 +350,8 @@ namespace Presentacion.Core.Cobro
                                 ProductoId = item.Id,
                                 Talle = item.Talle,
                                 Precio = item.Precio * item.Cantidad,
-                                VentaId = ventaId
+                                VentaId = ventaId,
+                                TalleId = ((TalleDto)cmbTalle.SelectedItem).Id
                             };
 
                             descripcion = $"{descripcion} - {producto_venta.Descripcion}";
@@ -389,7 +391,7 @@ namespace Presentacion.Core.Cobro
                         return;
                     }
 
-                    var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId, txtDescripcion.Text);
+                    var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId, txtDescripcion.Text, ((TalleDto)cmbTalle.SelectedItem).Id);
                     pedidos.ShowDialog();
 
 

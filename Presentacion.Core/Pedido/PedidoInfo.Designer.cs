@@ -75,7 +75,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(806, 86);
+            this.panel1.Size = new System.Drawing.Size(961, 86);
             this.panel1.TabIndex = 0;
             // 
             // lblFechaInicio
@@ -84,7 +84,7 @@
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblFechaInicio.Location = new System.Drawing.Point(573, 31);
+            this.lblFechaInicio.Location = new System.Drawing.Point(728, 31);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(46, 16);
             this.lblFechaInicio.TabIndex = 7;
@@ -94,7 +94,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(532, 11);
+            this.label6.Location = new System.Drawing.Point(687, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 13);
             this.label6.TabIndex = 6;
@@ -137,7 +137,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(691, 0);
+            this.btnVolver.Location = new System.Drawing.Point(846, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(111, 82);
             this.btnVolver.TabIndex = 2;
@@ -174,7 +174,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 86);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(806, 375);
+            this.panel2.Size = new System.Drawing.Size(961, 375);
             this.panel2.TabIndex = 1;
             // 
             // dgvGrilla
@@ -206,7 +206,7 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(802, 260);
+            this.dgvGrilla.Size = new System.Drawing.Size(957, 260);
             this.dgvGrilla.TabIndex = 12;
             // 
             // panel3
@@ -226,7 +226,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 260);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(802, 111);
+            this.panel3.Size = new System.Drawing.Size(957, 111);
             this.panel3.TabIndex = 1;
             // 
             // btnEliminar
@@ -234,7 +234,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(346, 76);
+            this.btnEliminar.Location = new System.Drawing.Point(398, 72);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(83, 23);
             this.btnEliminar.TabIndex = 10;
@@ -247,7 +247,7 @@
             this.lblVendido.AutoSize = true;
             this.lblVendido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVendido.ForeColor = System.Drawing.Color.Red;
-            this.lblVendido.Location = new System.Drawing.Point(451, 32);
+            this.lblVendido.Location = new System.Drawing.Point(503, 28);
             this.lblVendido.Name = "lblVendido";
             this.lblVendido.Size = new System.Drawing.Size(120, 26);
             this.lblVendido.TabIndex = 9;
@@ -257,7 +257,7 @@
             // 
             this.btnTerminar.BackColor = System.Drawing.Color.Lime;
             this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminar.Location = new System.Drawing.Point(436, 19);
+            this.btnTerminar.Location = new System.Drawing.Point(488, 15);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(99, 55);
             this.btnTerminar.TabIndex = 8;
@@ -271,7 +271,7 @@
             this.txtDebe.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtDebe.Enabled = false;
             this.txtDebe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDebe.Location = new System.Drawing.Point(707, 73);
+            this.txtDebe.Location = new System.Drawing.Point(862, 73);
             this.txtDebe.Name = "txtDebe";
             this.txtDebe.Size = new System.Drawing.Size(83, 26);
             this.txtDebe.TabIndex = 7;
@@ -281,7 +281,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(631, 76);
+            this.label4.Location = new System.Drawing.Point(786, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 6;
@@ -293,7 +293,7 @@
             this.txtDineroAdelanto.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtDineroAdelanto.Enabled = false;
             this.txtDineroAdelanto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDineroAdelanto.Location = new System.Drawing.Point(707, 44);
+            this.txtDineroAdelanto.Location = new System.Drawing.Point(862, 44);
             this.txtDineroAdelanto.Name = "txtDineroAdelanto";
             this.txtDineroAdelanto.Size = new System.Drawing.Size(83, 26);
             this.txtDineroAdelanto.TabIndex = 5;
@@ -303,7 +303,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(599, 48);
+            this.label3.Location = new System.Drawing.Point(754, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 22);
             this.label3.TabIndex = 4;
@@ -315,13 +315,13 @@
             this.txtNotas.Location = new System.Drawing.Point(4, 4);
             this.txtNotas.Multiline = true;
             this.txtNotas.Name = "txtNotas";
-            this.txtNotas.Size = new System.Drawing.Size(331, 95);
+            this.txtNotas.Size = new System.Drawing.Size(377, 95);
             this.txtNotas.TabIndex = 3;
             // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(346, 19);
+            this.btnGuardar.Location = new System.Drawing.Point(398, 15);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(83, 55);
             this.btnGuardar.TabIndex = 2;
@@ -335,7 +335,7 @@
             this.txtTotal.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(707, 15);
+            this.txtTotal.Location = new System.Drawing.Point(862, 15);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(83, 26);
             this.txtTotal.TabIndex = 1;
@@ -345,7 +345,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(634, 21);
+            this.label2.Location = new System.Drawing.Point(789, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 0;
@@ -356,12 +356,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(806, 461);
+            this.ClientSize = new System.Drawing.Size(961, 461);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(822, 500);
+            this.MinimumSize = new System.Drawing.Size(977, 500);
             this.Name = "PedidoInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedido Info";
