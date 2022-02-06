@@ -96,12 +96,30 @@ namespace Presentacion.Core.Pedido
             Close();
         }
 
+        public void VerificarSiEsTotal()
+        {
+            if (nudAdelanto.Value == _total)
+            {
+                ckbCtaCte.Checked = false;
+                ckbNormal.Checked = true;
+
+                ckbCtaCte.Enabled = false;
+            }
+            else
+            {
+                ckbCtaCte.Enabled = true;
+            }
+        }
+
         private void btnCargar_Click(object sender, EventArgs e)
         {
             if (AsignarControles())
             {
+                VerificarSiEsTotal();
+
                 if (ckbCtaCte.Checked == true)
                 {
+
                     if (MessageBox.Show("Esta Seguro de Continuar? Puede ser un Cobro para Despues", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         var pedido = new PedidoDto
@@ -293,6 +311,11 @@ namespace Presentacion.Core.Pedido
             {
                 ckbNormal.Checked = true;
             }
+        }
+
+        private void nudAdelanto_ValueChanged(object sender, EventArgs e)
+        {
+            VerificarSiEsTotal();
         }
     }
 }

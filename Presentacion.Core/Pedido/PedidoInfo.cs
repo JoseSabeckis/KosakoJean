@@ -220,7 +220,11 @@ namespace Presentacion.Core.Pedido
                     //Total Cta Cte
 
                     var cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
-                    ctaCteServicio.Pagar(_Debe, pedido.ClienteId, cuentaId.Id);
+
+                    if (cuentaId != null)
+                    {
+                        ctaCteServicio.Pagar(_Debe, pedido.ClienteId, cuentaId.Id);
+                    }               
 
                     //Fin Cta Cte
 

@@ -175,7 +175,14 @@ namespace Presentacion.Core.CtaCte
                         //Inicio Pedido
                         var ctacte = _ctaCteServicio.ObtenerPorId(_CtaCteId);
 
+                        var pedido = pedidoServicio.BuscarIDPedidos(ctacte.PedidoId);
+
                         pedidoServicio.CambiarRamas(nudCobro.Value, ctacte.PedidoId);
+
+                        if (pedido.Adelanto == pedido.Total)
+                        {
+                            pedidoServicio.CambiarProcesoTerminado(pedido.Id);
+                        }
                         //Fin Pedido
 
                         var mensaje = new Afirmacion("Cobrado", $"Se Le Cobro $ {nudCobro.Value} Exitosamente!");
