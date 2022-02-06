@@ -186,7 +186,7 @@
             // 
             // nudAdelanto
             // 
-            this.nudAdelanto.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.nudAdelanto.BackColor = System.Drawing.SystemColors.HighlightText;
             this.nudAdelanto.Increment = new decimal(new int[] {
             100,
             0,

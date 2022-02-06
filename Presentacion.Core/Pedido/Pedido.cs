@@ -1,4 +1,5 @@
 ﻿using Presentacion.Core.Cobro;
+using Presentacion.Core.Factura;
 using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
 using Servicios.Core.CtaCte;
@@ -271,6 +272,18 @@ namespace Presentacion.Core.Pedido
 
                     var mensaje = new Afirmacion("Pedido Creado!", "Quedara Bien Gracias!");
                     mensaje.ShowDialog();
+
+                    if (nudAdelanto.Value == _total)
+                    {
+                        foreach (var item in ListaVentas)
+                        {
+                            item.Precio = item.Cantidad * item.Precio;
+                        }
+
+                        //ticket
+                        var factura = new Comprobante(ListaVentas.ToList());
+                        factura.ShowDialog();
+                    }
 
                     //MessageBox.Show("Listo Pedido Creado!", "Terminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -162,6 +162,7 @@
                             <TextRun>
                               <Value>=Sum(Fields!Precio.Value)</Value>
                               <Style>
+                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
@@ -867,6 +868,7 @@
                                       <TextRun>
                                         <Value>Total</Value>
                                         <Style>
+                                          <FontSize>11pt</FontSize>
                                           <FontWeight>Bold</FontWeight>
                                           <Color>#333333</Color>
                                         </Style>
@@ -904,7 +906,7 @@
         <Top>2.30505cm</Top>
         <Left>1.08479cm</Left>
         <Height>2.4cm</Height>
-        <Width>15.33104cm</Width>
+        <Width>15.33105cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -978,6 +980,13 @@
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
       <rd:DataSourceID>1c61a4fb-0325-4062-af0a-fc6257b97a2c</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="ServiciosCoreParteVentaDto">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>3f1ef500-634c-4e19-bb3a-01483f2a4537</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
