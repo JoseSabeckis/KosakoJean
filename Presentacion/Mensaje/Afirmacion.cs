@@ -24,5 +24,10 @@ namespace Presentacion.Core.Mensaje
         {
             Close();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Close();       
+        }
     }
 }

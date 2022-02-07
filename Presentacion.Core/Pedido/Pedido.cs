@@ -271,7 +271,7 @@ namespace Presentacion.Core.Pedido
                     //dinero a caja
                     cajaServicio.SumarDineroACaja(nudAdelanto.Value);
 
-                    var mensaje = new Afirmacion("Pedido Creado!", "Quedara Bien Gracias!");
+                    var mensaje = new Afirmacion("Pedido Creado", "Quedara Bien, Gracias!");
                     mensaje.ShowDialog();
 
                     if (nudAdelanto.Value == _total)

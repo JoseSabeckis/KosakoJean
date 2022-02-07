@@ -437,9 +437,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
         <Top>4.81245cm</Top>
-        <Left>12.58689cm</Left>
+        <Left>13.19543cm</Left>
         <Height>0.6cm</Height>
-        <Width>3.10854cm</Width>
+        <Width>2.5cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -458,7 +458,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Total</Value>
+                <Value>Total:</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>

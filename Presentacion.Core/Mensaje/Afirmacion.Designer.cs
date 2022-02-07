@@ -29,11 +29,13 @@ namespace Presentacion.Core.Mensaje
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Afirmacion));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.txtParrafo = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +82,12 @@ namespace Presentacion.Core.Mensaje
             this.txtParrafo.TabIndex = 4;
             this.txtParrafo.Text = "Parrafo";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Afirmacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -112,5 +120,6 @@ namespace Presentacion.Core.Mensaje
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label txtParrafo;
+        private System.Windows.Forms.Timer timer1;
     }
 }
