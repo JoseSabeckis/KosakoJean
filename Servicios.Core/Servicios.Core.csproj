@@ -68,6 +68,7 @@
     <Compile Include="DetalleCaja\DetalleCajaServicio.cs" />
     <Compile Include="DetalleCaja\Dto\DetalleCajaDto.cs" />
     <Compile Include="DetalleCaja\IDetalleCajaServicio.cs" />
+    <Compile Include="Fecha\FechaDto.cs" />
     <Compile Include="ParteVenta\Dto\VentaDto2.cs" />
     <Compile Include="ParteVenta\IVentaServicio2.cs" />
     <Compile Include="ParteVenta\VentaServicio2.cs" />
@@ -97,6 +98,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Servicios.Core.Fecha.FechaDto.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">

@@ -6,6 +6,7 @@ using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.Fecha;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
@@ -281,7 +282,14 @@ namespace Presentacion.Core.Pedido
                         }
 
                         //ticket
-                        var factura = new Comprobante(ListaVentas.ToList());
+
+                        var fecha = new FechaDto
+                        {
+                            Fecha = DateTime.Now.ToShortDateString(),
+                            Hora = DateTime.Now.ToShortTimeString()
+                        };
+
+                        var factura = new Comprobante(ListaVentas.ToList(), fecha);
                         factura.ShowDialog();
                     }
 

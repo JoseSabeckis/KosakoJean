@@ -19,7 +19,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>0.60537cm</Top>
+        <Top>0.28787cm</Top>
         <Left>1.11689cm</Left>
         <Height>0.75875cm</Height>
         <Width>3.95521cm</Width>
@@ -34,7 +34,7 @@
         </Style>
       </Textbox>
       <Line Name="Line1">
-        <Top>1.50523cm</Top>
+        <Top>2.33009cm</Top>
         <Left>1.11689cm</Left>
         <Height>0cm</Height>
         <Width>14.57854cm</Width>
@@ -222,7 +222,7 @@
                         <Line Name="Line11">
                           <Top>0.05292cm</Top>
                           <Left>14.8784cm</Left>
-                          <Height>0.65292cm</Height>
+                          <Height>0.68819cm</Height>
                           <Width>0cm</Width>
                           <ZIndex>6</ZIndex>
                           <Style>
@@ -270,7 +270,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetComprobante</DataSetName>
-        <Top>2.40453cm</Top>
+        <Top>3.22939cm</Top>
         <Left>0.81703cm</Left>
         <Height>0.90868cm</Height>
         <Width>14.8784cm</Width>
@@ -300,7 +300,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>1.76926cm</Top>
+        <Top>2.59412cm</Top>
         <Left>8.11009cm</Left>
         <Height>0.6cm</Height>
         <Width>1.87097cm</Width>
@@ -334,7 +334,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox20</rd:DefaultName>
-        <Top>1.76926cm</Top>
+        <Top>2.59412cm</Top>
         <Left>1.11689cm</Left>
         <Height>0.6cm</Height>
         <Width>6.88736cm</Width>
@@ -368,7 +368,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox21</rd:DefaultName>
-        <Top>1.76926cm</Top>
+        <Top>2.59412cm</Top>
         <Left>10.12217cm</Left>
         <Height>0.6cm</Height>
         <Width>3.00271cm</Width>
@@ -402,7 +402,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox22</rd:DefaultName>
-        <Top>1.76926cm</Top>
+        <Top>2.59412cm</Top>
         <Left>13.19544cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
@@ -436,7 +436,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>3.98759cm</Top>
+        <Top>4.81245cm</Top>
         <Left>12.58689cm</Left>
         <Height>0.6cm</Height>
         <Width>3.10854cm</Width>
@@ -468,7 +468,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>3.98759cm</Top>
+        <Top>4.81245cm</Top>
         <Left>11.0671cm</Left>
         <Height>0.6cm</Height>
         <Width>1.41396cm</Width>
@@ -484,7 +484,7 @@
         </Style>
       </Textbox>
       <Line Name="Line3">
-        <Top>1.50523cm</Top>
+        <Top>2.33009cm</Top>
         <Left>1.08162cm</Left>
         <Height>1.00514cm</Height>
         <Width>0cm</Width>
@@ -496,7 +496,7 @@
         </Style>
       </Line>
       <Line Name="Line4">
-        <Top>1.50523cm</Top>
+        <Top>2.33009cm</Top>
         <Left>15.69544cm</Left>
         <Height>1.00514cm</Height>
         <Width>0cm</Width>
@@ -508,7 +508,7 @@
         </Style>
       </Line>
       <Line Name="Line6">
-        <Top>3.93912cm</Top>
+        <Top>4.76398cm</Top>
         <Left>11.0671cm</Left>
         <Height>0cm</Height>
         <Width>4.62833cm</Width>
@@ -520,7 +520,7 @@
         </Style>
       </Line>
       <Line Name="Line7">
-        <Top>3.90821cm</Top>
+        <Top>4.73307cm</Top>
         <Left>11.0671cm</Left>
         <Height>0.67938cm</Height>
         <Width>0cm</Width>
@@ -532,7 +532,7 @@
         </Style>
       </Line>
       <Line Name="Line8">
-        <Top>3.93912cm</Top>
+        <Top>4.76398cm</Top>
         <Left>15.69544cm</Left>
         <Height>0.64847cm</Height>
         <Width>0cm</Width>
@@ -544,7 +544,7 @@
         </Style>
       </Line>
       <Line Name="Line9">
-        <Top>4.58759cm</Top>
+        <Top>5.41245cm</Top>
         <Left>11.0671cm</Left>
         <Height>0cm</Height>
         <Width>4.62833cm</Width>
@@ -572,10 +572,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox25</rd:DefaultName>
-        <Top>0.72884cm</Top>
-        <Left>10.12217cm</Left>
+        <Top>0.44662cm</Top>
+        <Left>9.88565cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.30938cm</Width>
+        <Width>1.30939cm</Width>
         <ZIndex>15</ZIndex>
         <Style>
           <Border>
@@ -587,29 +587,27 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox26">
+      <Textbox Name="Fecha">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=DateValue(First(Fields!Fecha.Value, "DataSetComprobante"))</Value>
+                <Value>=First(Fields!Fecha.Value, "DataSetFechas")</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox26</rd:DefaultName>
-        <Top>0.72884cm</Top>
-        <Left>11.43155cm</Left>
+        <rd:DefaultName>Fecha</rd:DefaultName>
+        <Top>0.44662cm</Top>
+        <Left>11.30087cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.88951cm</Width>
+        <Width>1.91667cm</Width>
         <ZIndex>16</ZIndex>
         <Style>
           <Border>
@@ -621,8 +619,210 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Hora">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Hora.Value, "DataSetFechas")</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Hora</rd:DefaultName>
+        <Top>0.44662cm</Top>
+        <Left>14.43935cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.57358cm</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Hora</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>0.44662cm</Top>
+        <Left>13.39393cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.04542cm</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Direccion: Tafi Viejo - Peru Sud 573</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>1.37266cm</Top>
+        <Left>1.11689cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.04542cm</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CONSUMIDOR FINAL</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>1.37266cm</Top>
+        <Left>9.88565cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.5537cm</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>I. V. A. INCLUIDO</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox6</rd:DefaultName>
+        <Top>5.81766cm</Top>
+        <Left>11.7021cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.41125cm</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>GRACIAS  POR  SU  VISITA</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>6.84953cm</Top>
+        <Left>10.67022cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.60729cm</Width>
+        <ZIndex>22</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Line Name="Line12">
+        <Top>1.04662cm</Top>
+        <Left>1.11689cm</Left>
+        <Height>0cm</Height>
+        <Width>14.57854cm</Width>
+        <ZIndex>23</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
     </ReportItems>
-    <Height>3.06076in</Height>
+    <Height>3.23784in</Height>
     <Style />
   </Body>
   <Width>8.1705in</Width>
@@ -644,6 +844,13 @@
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
       <rd:DataSourceID>b644bfb8-e605-4422-9c65-281adedb3a1f</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="ServiciosCoreFecha">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>4566d965-bf5e-4c7f-8b77-cdc95f1d7fcc</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -682,6 +889,27 @@
         <rd:DataSetName>Servicios.Core.ParteVenta.Dto</rd:DataSetName>
         <rd:TableName>VentaDto2</rd:TableName>
         <rd:ObjectDataSourceType>Servicios.Core.ParteVenta.Dto.VentaDto2, Servicios.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSetFechas">
+      <Query>
+        <DataSourceName>ServiciosCoreFecha</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Fecha">
+          <DataField>Fecha</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Hora">
+          <DataField>Hora</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Servicios.Core.Fecha</rd:DataSetName>
+        <rd:TableName>FechaDto</rd:TableName>
+        <rd:ObjectDataSourceType>Servicios.Core.Fecha.FechaDto, Servicios.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
