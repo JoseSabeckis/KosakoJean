@@ -33,9 +33,8 @@ namespace Presentacion.Core.Factura
         {
             reportViewer.LocalReport.DataSources.Clear();
 
-
-            reportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSetDetalleCaja", ListaDetalle));
-
+            reportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSetComprobante", ListaDetalle));
+            
             reportViewer.LocalReport.Refresh();
             reportViewer.Refresh();
 
