@@ -209,7 +209,7 @@ namespace Presentacion.Core.Pedido
                     var mensaje = new Afirmacion("Agregado a la Cuenta!", $"Dinero Cobrado Por Adelanto $ {nudAdelanto.Value}");
                     mensaje.ShowDialog();
 
-                    if (ckbCtaCte.Checked == false)
+                    if (ckbNormal.Checked || ckbTarjeta.Checked)
                     {
                         if (nudAdelanto.Value == _total)
                         {

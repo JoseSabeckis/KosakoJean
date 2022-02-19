@@ -136,7 +136,7 @@ namespace KosakoJean
             {
                 var tipo = new TipoProductoDto
                 {
-                    Descripcion = "Otros"
+                    Descripcion = "Otro"
                 };
 
                 tipoProductoServicio.Nuevo(tipo);

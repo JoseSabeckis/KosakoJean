@@ -74,26 +74,27 @@
             // 
             // btmVolver
             // 
+            this.btmVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btmVolver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btmVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btmVolver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btmVolver.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btmVolver.Location = new System.Drawing.Point(0, 0);
             this.btmVolver.Name = "btmVolver";
             this.btmVolver.Size = new System.Drawing.Size(168, 122);
             this.btmVolver.TabIndex = 1;
             this.btmVolver.Text = "Volver";
-            this.btmVolver.UseVisualStyleBackColor = true;
+            this.btmVolver.UseVisualStyleBackColor = false;
             this.btmVolver.Click += new System.EventHandler(this.btmVolver_Click);
             // 
             // btnCerrarCaja
             // 
             this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarCaja.Location = new System.Drawing.Point(27, 75);
+            this.btnCerrarCaja.Location = new System.Drawing.Point(27, 67);
             this.btnCerrarCaja.Name = "btnCerrarCaja";
             this.btnCerrarCaja.Size = new System.Drawing.Size(147, 47);
             this.btnCerrarCaja.TabIndex = 6;
-            this.btnCerrarCaja.Text = "Cerrar";
+            this.btnCerrarCaja.Text = "Cerrar Caja";
             this.btnCerrarCaja.UseVisualStyleBackColor = false;
             this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
             // 

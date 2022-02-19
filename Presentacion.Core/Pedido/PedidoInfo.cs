@@ -77,6 +77,8 @@ namespace Presentacion.Core.Pedido
             if (_Pedido.Proceso == AccesoDatos.Proceso.InicioPedido)
             {
                 btnTerminar.Visible = false;
+                ckbTarjeta.Visible = false;
+                ckbNormal.Visible = false;
             }
             else
             {
@@ -207,6 +209,11 @@ namespace Presentacion.Core.Pedido
 
                 ckbTarjeta.Visible = false;
                 ckbNormal.Visible = false;
+
+                if (pedido.Proceso == AccesoDatos.Proceso.PedidoTerminado)
+                {
+                    btnTerminar.Visible = false;
+                }
 
                 lblPagado.Visible = true;
 
