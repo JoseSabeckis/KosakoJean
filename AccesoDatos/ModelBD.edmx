@@ -117,6 +117,7 @@
     <Property Name="Total" Type="decimal" Nullable="false" />
     <Property Name="CajaId" Type="bigint" Nullable="false" />
     <Property Name="Fecha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TipoPago" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="Pedidos">
     <Key>
@@ -478,6 +479,7 @@
           <NavigationProperty Name="Caja" Relationship="KosakoDBModel.CajaDetalleCaja" FromRole="DetalleCaja" ToRole="Caja" />
           <Property Name="CajaId" Type="Int64" Nullable="false" />
           <Property Name="Fecha" Type="String" Nullable="false" />
+          <Property Name="TipoPago" Type="KosakoDBModel.TipoPago" Nullable="false" />
         </EntityType>
         <Association Name="TipoProductoProducto">
           <End Type="KosakoDBModel.TipoProducto" Role="TipoProducto" Multiplicity="1" />
@@ -721,6 +723,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EnumType Name="TipoPago" UnderlyingType="Int64">
+          <Member Name="Contado" Value="1" />
+          <Member Name="Tarjeta" Value="2" />
+          <Member Name="CtaCte" Value="3" />
+        </EnumType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -780,6 +787,7 @@
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="CajaId" ColumnName="CajaId" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="TipoPago" ColumnName="TipoPago" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

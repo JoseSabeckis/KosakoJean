@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/06/2022 16:22:46
+-- Date Created: 02/18/2022 21:45:40
 -- Generated from EDMX file: C:\Users\joses\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -146,7 +146,8 @@ CREATE TABLE [dbo].[DetalleCajas] (
     [Descripcion] nvarchar(max)  NOT NULL,
     [Total] decimal(18,0)  NOT NULL,
     [CajaId] bigint  NOT NULL,
-    [Fecha] nvarchar(max)  NOT NULL
+    [Fecha] nvarchar(max)  NOT NULL,
+    [TipoPago] bigint  NOT NULL
 );
 GO
 

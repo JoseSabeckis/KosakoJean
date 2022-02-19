@@ -191,6 +191,8 @@ namespace Presentacion.Core.Pedido
                             CajaId = detallCajaServicio.BuscarCajaAbierta()
                         };
 
+                        TipoPago(detalle);
+
                         detallCajaServicio.AgregarDetalleCaja(detalle);
 
                         //dinero a caja
@@ -266,6 +268,8 @@ namespace Presentacion.Core.Pedido
                         CajaId = detallCajaServicio.BuscarCajaAbierta()
                     };
 
+                    TipoPago(detalle);
+
                     detallCajaServicio.AgregarDetalleCaja(detalle);
 
                     //dinero a caja
@@ -310,15 +314,28 @@ namespace Presentacion.Core.Pedido
             }
         }
 
+        public void TipoPago(DetalleCajaDto detalle)
+        {
+            if (ckbNormal.Checked)
+            {
+                detalle.TipoPago = AccesoDatos.TipoPago.Contado;
+            }
+            if (ckbCtaCte.Checked)
+            {
+                detalle.TipoPago = AccesoDatos.TipoPago.CtaCte;
+            }
+            if (ckbTarjeta.Checked)
+            {
+                detalle.TipoPago = AccesoDatos.TipoPago.Tarjeta;
+            }
+        }
+
         private void ckbNormal_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbNormal.Checked == true)
             {
                 ckbCtaCte.Checked = false;
-            }
-            else
-            {
-                ckbCtaCte.Checked = true;
+                ckbTarjeta.Checked = false;
             }
         }
 
@@ -327,16 +344,22 @@ namespace Presentacion.Core.Pedido
             if (ckbCtaCte.Checked == true)
             {
                 ckbNormal.Checked = false;
-            }
-            else
-            {
-                ckbNormal.Checked = true;
+                ckbTarjeta.Checked = false;
             }
         }
 
         private void nudAdelanto_ValueChanged(object sender, EventArgs e)
         {
             VerificarSiEsTotal();
+        }
+
+        private void ckbTarjeta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbTarjeta.Checked == true)
+            {
+                ckbNormal.Checked = false;
+                ckbCtaCte.Checked = false;
+            }
         }
     }
 }

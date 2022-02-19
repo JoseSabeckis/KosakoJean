@@ -370,6 +370,8 @@ namespace Presentacion.Core.Cobro
                             CajaId = detalleCajaServicio.BuscarCajaAbierta()
                         };
 
+                        TipoPago(detalle);
+
                         detalleCajaServicio.AgregarDetalleCaja(detalle);
 
                         cajaServicio.SumarDineroACaja(_total);
@@ -430,6 +432,18 @@ namespace Presentacion.Core.Cobro
                 MessageBox.Show("Cargue la Grilla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        public void TipoPago(DetalleCajaDto detalle)
+        {
+            if (ckbNormal.Checked)
+            {
+                detalle.TipoPago = AccesoDatos.TipoPago.Contado;
+            }
+            if (ckbTarjeta.Checked)
+            {
+                detalle.TipoPago = AccesoDatos.TipoPago.Tarjeta;
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -565,6 +579,22 @@ namespace Presentacion.Core.Cobro
         private void nudPagaron_ValueChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void ckbContado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbContado.Checked == true)
+            {
+                ckbTarjeta.Checked = false;
+            }
+        }
+
+        private void ckbTarjeta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbTarjeta.Checked == true)
+            {
+                ckbContado.Checked = false;
+            }
         }
     }
 }

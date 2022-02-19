@@ -49,6 +49,7 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -108,17 +109,18 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.ckbTarjeta);
             this.panel5.Controls.Add(this.ckbCtaCte);
             this.panel5.Controls.Add(this.ckbNormal);
-            this.panel5.Location = new System.Drawing.Point(445, 230);
+            this.panel5.Location = new System.Drawing.Point(445, 223);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(111, 91);
+            this.panel5.Size = new System.Drawing.Size(111, 112);
             this.panel5.TabIndex = 12;
             // 
             // ckbCtaCte
             // 
             this.ckbCtaCte.AutoSize = true;
-            this.ckbCtaCte.Location = new System.Drawing.Point(9, 46);
+            this.ckbCtaCte.Location = new System.Drawing.Point(9, 79);
             this.ckbCtaCte.Name = "ckbCtaCte";
             this.ckbCtaCte.Size = new System.Drawing.Size(84, 28);
             this.ckbCtaCte.TabIndex = 11;
@@ -133,9 +135,9 @@
             this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbNormal.Location = new System.Drawing.Point(9, 12);
             this.ckbNormal.Name = "ckbNormal";
-            this.ckbNormal.Size = new System.Drawing.Size(90, 28);
+            this.ckbNormal.Size = new System.Drawing.Size(100, 28);
             this.ckbNormal.TabIndex = 10;
-            this.ckbNormal.Text = "Normal";
+            this.ckbNormal.Text = "Contado";
             this.ckbNormal.UseVisualStyleBackColor = true;
             this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
             // 
@@ -150,7 +152,7 @@
             // dtpFechaEntrega
             // 
             this.dtpFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(288, 292);
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(288, 303);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(139, 29);
             this.dtpFechaEntrega.TabIndex = 8;
@@ -167,7 +169,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(147, 292);
+            this.label5.Location = new System.Drawing.Point(147, 303);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 24);
             this.label5.TabIndex = 5;
@@ -192,7 +194,7 @@
             0,
             0,
             0});
-            this.nudAdelanto.Location = new System.Drawing.Point(288, 230);
+            this.nudAdelanto.Location = new System.Drawing.Point(288, 236);
             this.nudAdelanto.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -206,7 +208,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 235);
+            this.label2.Location = new System.Drawing.Point(109, 241);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 24);
             this.label2.TabIndex = 1;
@@ -281,6 +283,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Cargue mas Informacion";
             // 
+            // ckbTarjeta
+            // 
+            this.ckbTarjeta.AutoSize = true;
+            this.ckbTarjeta.Location = new System.Drawing.Point(9, 45);
+            this.ckbTarjeta.Name = "ckbTarjeta";
+            this.ckbTarjeta.Size = new System.Drawing.Size(86, 28);
+            this.ckbTarjeta.TabIndex = 12;
+            this.ckbTarjeta.Text = "Tarjeta";
+            this.ckbTarjeta.UseVisualStyleBackColor = true;
+            this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
+            // 
             // Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -334,5 +347,6 @@
         private System.Windows.Forms.CheckBox ckbCtaCte;
         private System.Windows.Forms.CheckBox ckbNormal;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.CheckBox ckbTarjeta;
     }
 }

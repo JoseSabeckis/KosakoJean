@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AccesoDatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace Servicios.Core.DetalleCaja.Dto
         public decimal Total { get; set; }
 
         public string Fecha { get; set; }
+
+        public TipoPago TipoPago{ get; set; }
 
         public long CajaId { get; set; }
     }

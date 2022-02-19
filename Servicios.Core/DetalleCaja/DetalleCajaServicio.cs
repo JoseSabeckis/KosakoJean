@@ -19,7 +19,8 @@ namespace Servicios.Core.DetalleCaja
                     Descripcion = detalleCajaDto.Descripcion,
                     Fecha = detalleCajaDto.Fecha,
                     Total = detalleCajaDto.Total,
-                    CajaId = detalleCajaDto.CajaId
+                    CajaId = detalleCajaDto.CajaId,
+                    TipoPago = detalleCajaDto.TipoPago
                 };
 
                 context.DetalleCajas.Add(detalleCaja);
@@ -41,7 +42,8 @@ namespace Servicios.Core.DetalleCaja
                         CajaId = x.CajaId,
                         Descripcion = x.Descripcion,
                         Total = x.Total,
-                        Fecha = x.Fecha
+                        Fecha = x.Fecha,
+                        TipoPago = x.TipoPago
 
                     }).ToList();
 
@@ -72,7 +74,8 @@ namespace Servicios.Core.DetalleCaja
                         Descripcion = x.Descripcion,
                         Fecha = x.Fecha,
                         Total = x.Total,
-                        Id = x.Id
+                        Id = x.Id,
+                        TipoPago = x.TipoPago
 
                     }).ToList();
 

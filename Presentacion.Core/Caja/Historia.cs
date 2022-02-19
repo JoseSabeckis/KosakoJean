@@ -78,6 +78,12 @@ namespace Presentacion.Core.Caja
             grilla.Columns["Fecha"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Fecha"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            grilla.Columns["TipoPago"].Visible = true;
+            grilla.Columns["TipoPago"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["TipoPago"].HeaderText = @"Tipo Pago";
+            grilla.Columns["TipoPago"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Tipopago"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

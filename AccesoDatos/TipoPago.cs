@@ -10,17 +10,11 @@
 namespace AccesoDatos
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class DetalleCaja
+    public enum TipoPago : long
     {
-        public long Id { get; set; }
-        public string Descripcion { get; set; }
-        public decimal Total { get; set; }
-        public long CajaId { get; set; }
-        public string Fecha { get; set; }
-        public TipoPago TipoPago { get; set; }
-    
-        public virtual Caja Caja { get; set; }
+        Contado = 1,
+        Tarjeta = 2,
+        CtaCte = 3
     }
 }
