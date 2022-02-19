@@ -43,6 +43,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ckbNormal = new System.Windows.Forms.CheckBox();
+            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
+            this.lblPagado = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblVendido = new System.Windows.Forms.Label();
             this.btnTerminar = new System.Windows.Forms.Button();
@@ -75,7 +78,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(961, 86);
+            this.panel1.Size = new System.Drawing.Size(1143, 86);
             this.panel1.TabIndex = 0;
             // 
             // lblFechaInicio
@@ -84,7 +87,7 @@
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblFechaInicio.Location = new System.Drawing.Point(728, 31);
+            this.lblFechaInicio.Location = new System.Drawing.Point(910, 31);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(46, 16);
             this.lblFechaInicio.TabIndex = 7;
@@ -94,7 +97,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(687, 11);
+            this.label6.Location = new System.Drawing.Point(869, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 13);
             this.label6.TabIndex = 6;
@@ -137,7 +140,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(846, 0);
+            this.btnVolver.Location = new System.Drawing.Point(1028, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(111, 82);
             this.btnVolver.TabIndex = 2;
@@ -174,7 +177,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 86);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(961, 375);
+            this.panel2.Size = new System.Drawing.Size(1143, 375);
             this.panel2.TabIndex = 1;
             // 
             // dgvGrilla
@@ -206,12 +209,15 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(957, 260);
+            this.dgvGrilla.Size = new System.Drawing.Size(1139, 260);
             this.dgvGrilla.TabIndex = 12;
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.ckbNormal);
+            this.panel3.Controls.Add(this.ckbTarjeta);
+            this.panel3.Controls.Add(this.lblPagado);
             this.panel3.Controls.Add(this.btnEliminar);
             this.panel3.Controls.Add(this.lblVendido);
             this.panel3.Controls.Add(this.btnTerminar);
@@ -226,8 +232,46 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 260);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(957, 111);
+            this.panel3.Size = new System.Drawing.Size(1139, 111);
             this.panel3.TabIndex = 1;
+            // 
+            // ckbNormal
+            // 
+            this.ckbNormal.AutoSize = true;
+            this.ckbNormal.Checked = true;
+            this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbNormal.Location = new System.Drawing.Point(634, 21);
+            this.ckbNormal.Name = "ckbNormal";
+            this.ckbNormal.Size = new System.Drawing.Size(96, 24);
+            this.ckbNormal.TabIndex = 13;
+            this.ckbNormal.Text = "Contado";
+            this.ckbNormal.UseVisualStyleBackColor = true;
+            this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
+            // 
+            // ckbTarjeta
+            // 
+            this.ckbTarjeta.AutoSize = true;
+            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbTarjeta.Location = new System.Drawing.Point(634, 44);
+            this.ckbTarjeta.Name = "ckbTarjeta";
+            this.ckbTarjeta.Size = new System.Drawing.Size(85, 26);
+            this.ckbTarjeta.TabIndex = 14;
+            this.ckbTarjeta.Text = "Tarjeta";
+            this.ckbTarjeta.UseVisualStyleBackColor = true;
+            this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
+            // 
+            // lblPagado
+            // 
+            this.lblPagado.AutoSize = true;
+            this.lblPagado.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagado.ForeColor = System.Drawing.Color.Red;
+            this.lblPagado.Location = new System.Drawing.Point(629, 28);
+            this.lblPagado.Name = "lblPagado";
+            this.lblPagado.Size = new System.Drawing.Size(166, 26);
+            this.lblPagado.TabIndex = 12;
+            this.lblPagado.Text = "Todo Pagado !!!";
+            this.lblPagado.Visible = false;
             // 
             // btnEliminar
             // 
@@ -249,19 +293,19 @@
             this.lblVendido.ForeColor = System.Drawing.Color.Red;
             this.lblVendido.Location = new System.Drawing.Point(503, 28);
             this.lblVendido.Name = "lblVendido";
-            this.lblVendido.Size = new System.Drawing.Size(120, 26);
+            this.lblVendido.Size = new System.Drawing.Size(138, 26);
             this.lblVendido.TabIndex = 9;
-            this.lblVendido.Text = "Vendido !!!";
+            this.lblVendido.Text = "Entregado !!!";
             // 
             // btnTerminar
             // 
             this.btnTerminar.BackColor = System.Drawing.Color.Lime;
             this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminar.Location = new System.Drawing.Point(488, 15);
+            this.btnTerminar.Location = new System.Drawing.Point(487, 15);
             this.btnTerminar.Name = "btnTerminar";
-            this.btnTerminar.Size = new System.Drawing.Size(99, 55);
+            this.btnTerminar.Size = new System.Drawing.Size(136, 55);
             this.btnTerminar.TabIndex = 8;
-            this.btnTerminar.Text = "Terminar";
+            this.btnTerminar.Text = "Cobrar y Entregar";
             this.btnTerminar.UseVisualStyleBackColor = false;
             this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
             // 
@@ -271,7 +315,7 @@
             this.txtDebe.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtDebe.Enabled = false;
             this.txtDebe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDebe.Location = new System.Drawing.Point(862, 73);
+            this.txtDebe.Location = new System.Drawing.Point(1044, 73);
             this.txtDebe.Name = "txtDebe";
             this.txtDebe.Size = new System.Drawing.Size(83, 26);
             this.txtDebe.TabIndex = 7;
@@ -281,7 +325,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(786, 76);
+            this.label4.Location = new System.Drawing.Point(968, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 6;
@@ -293,7 +337,7 @@
             this.txtDineroAdelanto.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtDineroAdelanto.Enabled = false;
             this.txtDineroAdelanto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDineroAdelanto.Location = new System.Drawing.Point(862, 44);
+            this.txtDineroAdelanto.Location = new System.Drawing.Point(1044, 44);
             this.txtDineroAdelanto.Name = "txtDineroAdelanto";
             this.txtDineroAdelanto.Size = new System.Drawing.Size(83, 26);
             this.txtDineroAdelanto.TabIndex = 5;
@@ -303,7 +347,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(754, 48);
+            this.label3.Location = new System.Drawing.Point(936, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 22);
             this.label3.TabIndex = 4;
@@ -335,7 +379,7 @@
             this.txtTotal.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(862, 15);
+            this.txtTotal.Location = new System.Drawing.Point(1044, 15);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(83, 26);
             this.txtTotal.TabIndex = 1;
@@ -345,7 +389,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(789, 21);
+            this.label2.Location = new System.Drawing.Point(971, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 0;
@@ -356,12 +400,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(961, 461);
+            this.ClientSize = new System.Drawing.Size(1143, 461);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(977, 500);
+            this.MinimumSize = new System.Drawing.Size(1159, 500);
             this.Name = "PedidoInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedido Info";
@@ -402,5 +446,8 @@
         private System.Windows.Forms.Button btnTerminar;
         private System.Windows.Forms.Label lblVendido;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label lblPagado;
+        private System.Windows.Forms.CheckBox ckbNormal;
+        private System.Windows.Forms.CheckBox ckbTarjeta;
     }
 }

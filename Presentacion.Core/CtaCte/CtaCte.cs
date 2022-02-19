@@ -168,12 +168,32 @@ namespace Presentacion.Core.CtaCte
 
         }
 
+        public void TipoPago(DetalleCajaDto detalle)
+        {
+            if (ckbNormal.Checked)
+            {
+                detalle.TipoPago = AccesoDatos.TipoPago.Contado;
+            }
+            if (ckbTarjeta.Checked)
+            {
+                detalle.TipoPago = AccesoDatos.TipoPago.Tarjeta;
+            }
+        }
+
         private void btnCobrar_Click(object sender, EventArgs e)
         {
             if (_CtaCteId != 0)
             {
                 if (nudCobro.Value > 0)
                 {
+
+                    if (ckbNormal.Checked == false && ckbTarjeta.Checked == false)
+                    {
+                        MessageBox.Show("Seleccione Tipo de Pago: Contado o Tarjeta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        return;
+                    }
+
                     if (MessageBox.Show("Esta Seguro de Cobrar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         _ctaCteServicio.Pagar(nudCobro.Value, _ClienteId, _CtaCteId);
@@ -204,6 +224,8 @@ namespace Presentacion.Core.CtaCte
                             CajaId = detalleCajaServicio.BuscarCajaAbierta()
                         };
 
+                        TipoPago(detalle);
+
                         detalleCajaServicio.AgregarDetalleCaja(detalle);
 
                         cajaServicio.SumarDineroACaja(nudCobro.Value);
@@ -225,12 +247,36 @@ namespace Presentacion.Core.CtaCte
 
         private void nudCobro_ValueChanged(object sender, EventArgs e)
         {
-
+            nudCobroMaximo();
         }
 
         private void CtaCte_Load(object sender, EventArgs e)
         {
             btnCobrar.Enabled = false;
+        }
+
+        private void ckbNormal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbNormal.Checked == true)
+            {
+                ckbTarjeta.Checked = false;
+            }
+            else
+            {
+                ckbTarjeta.Checked = true;
+            }
+        }
+
+        private void ckbTarjeta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbTarjeta.Checked == true)
+            {
+                ckbNormal.Checked = false;
+            }
+            else
+            {
+                ckbNormal.Checked = true;
+            }
         }
     }
 }

@@ -65,14 +65,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
             this.nudTotal = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.nudPagaron = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
-            this.ckbContado = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -359,10 +358,11 @@
             this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbNormal.Location = new System.Drawing.Point(44, 7);
             this.ckbNormal.Name = "ckbNormal";
-            this.ckbNormal.Size = new System.Drawing.Size(91, 26);
+            this.ckbNormal.Size = new System.Drawing.Size(99, 26);
             this.ckbNormal.TabIndex = 6;
-            this.ckbNormal.Text = "Normal";
+            this.ckbNormal.Text = "Contado";
             this.ckbNormal.UseVisualStyleBackColor = true;
+            this.ckbNormal.AppearanceChanged += new System.EventHandler(this.ckbTarjeta_AppearanceChanged);
             this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
             // 
             // pictureBox1
@@ -526,7 +526,6 @@
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.ckbTarjeta);
-            this.panel5.Controls.Add(this.ckbContado);
             this.panel5.Controls.Add(this.nudTotal);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
@@ -534,6 +533,19 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(236, 145);
             this.panel5.TabIndex = 6;
+            // 
+            // ckbTarjeta
+            // 
+            this.ckbTarjeta.AutoSize = true;
+            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbTarjeta.Location = new System.Drawing.Point(91, 76);
+            this.ckbTarjeta.Name = "ckbTarjeta";
+            this.ckbTarjeta.Size = new System.Drawing.Size(98, 30);
+            this.ckbTarjeta.TabIndex = 9;
+            this.ckbTarjeta.Text = "Tarjeta";
+            this.ckbTarjeta.UseVisualStyleBackColor = true;
+            this.ckbTarjeta.AppearanceChanged += new System.EventHandler(this.ckbTarjeta_AppearanceChanged);
+            this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
             // 
             // nudTotal
             // 
@@ -605,32 +617,6 @@
             this.label5.Size = new System.Drawing.Size(139, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
-            // 
-            // ckbTarjeta
-            // 
-            this.ckbTarjeta.AutoSize = true;
-            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbTarjeta.Location = new System.Drawing.Point(91, 92);
-            this.ckbTarjeta.Name = "ckbTarjeta";
-            this.ckbTarjeta.Size = new System.Drawing.Size(98, 30);
-            this.ckbTarjeta.TabIndex = 9;
-            this.ckbTarjeta.Text = "Tarjeta";
-            this.ckbTarjeta.UseVisualStyleBackColor = true;
-            this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
-            // 
-            // ckbContado
-            // 
-            this.ckbContado.AutoSize = true;
-            this.ckbContado.Checked = true;
-            this.ckbContado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbContado.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbContado.Location = new System.Drawing.Point(91, 60);
-            this.ckbContado.Name = "ckbContado";
-            this.ckbContado.Size = new System.Drawing.Size(112, 30);
-            this.ckbContado.TabIndex = 8;
-            this.ckbContado.Text = "Contado";
-            this.ckbContado.UseVisualStyleBackColor = true;
-            this.ckbContado.CheckedChanged += new System.EventHandler(this.ckbContado_CheckedChanged);
             // 
             // Venta
             // 
@@ -722,6 +708,5 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox ckbTarjeta;
-        private System.Windows.Forms.CheckBox ckbContado;
     }
 }

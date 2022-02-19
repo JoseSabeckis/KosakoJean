@@ -103,9 +103,9 @@ namespace Presentacion.Core.Pedido
             if (nudAdelanto.Value == _total)
             {
                 ckbCtaCte.Checked = false;
-                ckbNormal.Checked = true;
-
                 ckbCtaCte.Enabled = false;
+
+                ckbNormal.Checked = true;
             }
             else
             {
@@ -117,102 +117,17 @@ namespace Presentacion.Core.Pedido
         {
             if (AsignarControles())
             {
-                VerificarSiEsTotal();
+                //VerificarSiEsTotal();
 
-                if (ckbCtaCte.Checked == true)
+                if (ckbNormal.Checked == false && ckbCtaCte.Checked == false && ckbTarjeta.Checked == false)
                 {
+                    MessageBox.Show("Seleccione el Tipo de Pago: Contado, CtaCte, Tarjeta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    if (MessageBox.Show("Esta Seguro de Continuar? Puede ser un Cobro para Despues", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        var pedido = new PedidoDto
-                        {
-                            Adelanto = nudAdelanto.Value,
-                            Apellido = txtApellido.Text,
-                            FechaPedido = DateTime.Now,
-                            Nombre = txtNombre.Text,
-                            Proceso = AccesoDatos.Proceso.InicioPedido,
-                            FechaEntrega = dtpFechaEntrega.Value.Date,
-                            Total = _total,
-                            ClienteId = ClienteId,
-                            Descripcion = _Descripcion
-
-                        };
-
-                        var pedidoId = pedidoServicio.NuevoPedido(pedido);
-
-                        string descripcion = string.Empty;
-
-                        string segunda = string.Empty;
-
-                        foreach (var item in ListaVentas)
-                        {
-                            descripcion = productoServicio.ObtenerPorId(item.Id).Descripcion;
-
-                            segunda += " " + descripcion + " ";
-
-                        }
-
-                        foreach (var item in ListaVentas)
-                        {
-
-                            var aux = new Producto_Pedido_Dto
-                            {
-                                Cantidad = item.Cantidad,
-                                ProductoId = productoServicio.ObtenerPorId(item.Id).Id,
-                                Estado = AccesoDatos.EstadoPedido.Esperando,
-                                Talle = item.Talle,
-                                PedidoId = pedidoId,
-                                Descripcion = segunda,
-                                TalleId = _TalleId
-                            };
-
-                            producto_Pedido_Servicio.NuevoProductoPedido(aux);
-
-                        }
-
-                        var cuenta = new CtaCteDto
-                        {
-                            ClienteId = ClienteId,
-                            Estado = AccesoDatos.CtaCteEstado.EnEspera,
-                            Fecha = dtpFechaEntrega.Value.Date,
-                            Total = _total,
-                            Debe = _total - nudAdelanto.Value,
-                            Descripcion = $"{segunda}",
-                            PedidoId = pedidoId
-                        };
-
-                        ctaCteServicio.Agregar(cuenta);
-
-                        var detalle = new DetalleCajaDto
-                        {
-                            Descripcion = txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
-                            Fecha = DateTime.Now.ToString("dd/MM/yy"),
-                            Total = nudAdelanto.Value,
-                            CajaId = detallCajaServicio.BuscarCajaAbierta()
-                        };
-
-                        TipoPago(detalle);
-
-                        detallCajaServicio.AgregarDetalleCaja(detalle);
-
-                        //dinero a caja
-                        cajaServicio.SumarDineroACaja(nudAdelanto.Value);
-
-                        var mensaje = new Afirmacion("Agregado a la Cuenta!", $"Dinero Cobrado Por Adelanto $ {nudAdelanto.Value}");
-                        mensaje.ShowDialog();
-
-                        semaforo = true;
-
-                        this.Close();
-
-                        return;
-                    }
+                    return;
                 }
-                
 
-                if (MessageBox.Show("Esta Seguro de Continuar?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Esta Seguro de Continuar? Puede ser un Cobro para Despues", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-
                     var pedido = new PedidoDto
                     {
                         Adelanto = nudAdelanto.Value,
@@ -223,8 +138,8 @@ namespace Presentacion.Core.Pedido
                         FechaEntrega = dtpFechaEntrega.Value.Date,
                         Total = _total,
                         ClienteId = ClienteId,
-                        Descripcion = _Descripcion,
-                        
+                        Descripcion = _Descripcion
+
                     };
 
                     var pedidoId = pedidoServicio.NuevoPedido(pedido);
@@ -253,16 +168,32 @@ namespace Presentacion.Core.Pedido
                             PedidoId = pedidoId,
                             Descripcion = segunda,
                             TalleId = _TalleId
-                            
-                        };                    
+                        };
 
                         producto_Pedido_Servicio.NuevoProductoPedido(aux);
 
                     }
 
+                    if (ckbCtaCte.Checked)
+                    {
+                        var cuenta = new CtaCteDto
+                        {
+                            ClienteId = ClienteId,
+                            Estado = AccesoDatos.CtaCteEstado.EnEspera,
+                            Fecha = dtpFechaEntrega.Value.Date,
+                            Total = _total,
+                            Debe = _total - nudAdelanto.Value,
+                            Descripcion = $"{segunda}",
+                            PedidoId = pedidoId
+                        };
+
+                        ctaCteServicio.Agregar(cuenta);
+                    }
+                    
+
                     var detalle = new DetalleCajaDto
                     {
-                        Descripcion =  txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
+                        Descripcion = txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
                         Fecha = DateTime.Now.ToString("dd/MM/yy"),
                         Total = nudAdelanto.Value,
                         CajaId = detallCajaServicio.BuscarCajaAbierta()
@@ -273,38 +204,40 @@ namespace Presentacion.Core.Pedido
                     detallCajaServicio.AgregarDetalleCaja(detalle);
 
                     //dinero a caja
-                    cajaServicio.SumarDineroACaja(nudAdelanto.Value);
+                    cajaServicio.SumarDineroACaja(nudAdelanto.Value);//
 
-                    var mensaje = new Afirmacion("Pedido Creado", "Quedara Bien, Gracias!");
+                    var mensaje = new Afirmacion("Agregado a la Cuenta!", $"Dinero Cobrado Por Adelanto $ {nudAdelanto.Value}");
                     mensaje.ShowDialog();
 
-                    if (nudAdelanto.Value == _total)
+                    if (ckbCtaCte.Checked == false)
                     {
-                        foreach (var item in ListaVentas)
+                        if (nudAdelanto.Value == _total)
                         {
-                            item.Precio = item.Cantidad * item.Precio;
+                            foreach (var item in ListaVentas)
+                            {
+                                item.Precio = item.Cantidad * item.Precio;
+                            }
+
+                            //ticket
+
+                            var fecha = new FechaDto
+                            {
+                                Fecha = DateTime.Now.ToShortDateString(),
+                                Hora = DateTime.Now.ToShortTimeString()
+                            };
+
+                            var factura = new Comprobante(ListaVentas.ToList(), fecha);
+                            factura.ShowDialog();
                         }
-
-                        //ticket
-
-                        var fecha = new FechaDto
-                        {
-                            Fecha = DateTime.Now.ToShortDateString(),
-                            Hora = DateTime.Now.ToShortTimeString()
-                        };
-
-                        var factura = new Comprobante(ListaVentas.ToList(), fecha);
-                        factura.ShowDialog();
                     }
-
-                    //MessageBox.Show("Listo Pedido Creado!", "Terminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     semaforo = true;
 
                     this.Close();
 
+                    return;
                 }
-
+                                                                  
             }
             else
             {

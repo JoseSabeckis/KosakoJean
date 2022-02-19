@@ -323,7 +323,14 @@ namespace Presentacion.Core.Cobro
 
             if (dgvGrilla.RowCount > 0)
             {
-                if (ckbNormal.Checked)
+                if (ckbTarjeta.Checked == false && ckbPedido.Checked == false && ckbNormal.Checked == false)
+                {
+                    MessageBox.Show("Seleccione el Tipo de Pago, Tarjeta, Contado, Pedido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return;
+                }
+
+                if (ckbNormal.Checked || ckbTarjeta.Checked)
                 {
                     if (MessageBox.Show("Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
@@ -367,7 +374,7 @@ namespace Presentacion.Core.Cobro
                             Fecha = DateTime.Now.ToString("dd/MM/yy"),
                             Total = _total,
                             Descripcion = $"Venta {descripcion}",
-                            CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                            CajaId = detalleCajaServicio.BuscarCajaAbierta(),
                         };
 
                         TipoPago(detalle);
@@ -480,10 +487,7 @@ namespace Presentacion.Core.Cobro
             if (ckbNormal.Checked == true)
             {
                 ckbPedido.Checked = false;
-            }
-            else
-            {
-                ckbPedido.Checked = true;
+                ckbTarjeta.Checked = false;
             }
         }
 
@@ -492,10 +496,7 @@ namespace Presentacion.Core.Cobro
             if (ckbPedido.Checked == true)
             {
                 ckbNormal.Checked = false;
-            }
-            else
-            {
-                ckbNormal.Checked = true;
+                ckbTarjeta.Checked = false;
             }
         }
 
@@ -543,7 +544,7 @@ namespace Presentacion.Core.Cobro
 
                 ckbPedido.Enabled = false;
                 ckbPedido.Checked = false;
-
+                ckbNormal.Checked = true;
             }
             else
             {
@@ -583,18 +584,21 @@ namespace Presentacion.Core.Cobro
 
         private void ckbContado_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckbContado.Checked == true)
-            {
-                ckbTarjeta.Checked = false;
-            }
+            
         }
 
         private void ckbTarjeta_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbTarjeta.Checked == true)
             {
-                ckbContado.Checked = false;
+                ckbNormal.Checked = false;
+                ckbPedido.Checked = false;
             }
+        }
+
+        private void ckbTarjeta_AppearanceChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

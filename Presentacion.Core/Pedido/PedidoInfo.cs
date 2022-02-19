@@ -53,7 +53,9 @@ namespace Presentacion.Core.Pedido
 
             list = new List<VentaDto2>();
 
-            if (pedidoServicio.Buscar(pedidoId).Proceso == AccesoDatos.Proceso.PedidoTerminado)
+            var _Pedido = pedidoServicio.Buscar(pedidoId);
+
+            if (_Pedido.Proceso == AccesoDatos.Proceso.PedidoTerminado)
             {
                 btnEliminar.Visible = true;
             }
@@ -72,13 +74,13 @@ namespace Presentacion.Core.Pedido
 
             lblVendido.Visible = false;
 
-            if (pedidoServicio.Buscar(pedidoId).Proceso == AccesoDatos.Proceso.InicioPedido)
+            if (_Pedido.Proceso == AccesoDatos.Proceso.InicioPedido)
             {
                 btnTerminar.Visible = false;
             }
             else
             {
-                if (pedidoServicio.Buscar(pedidoId).Proceso == AccesoDatos.Proceso.EsperandoRetiro)
+                if (_Pedido.Proceso == AccesoDatos.Proceso.EsperandoRetiro)
                 {
                     btnTerminar.Visible = true;
                 }
@@ -199,6 +201,16 @@ namespace Presentacion.Core.Pedido
 
             txtDebe.Text = $"{pedido.Total - pedido.Adelanto}";
             _Debe = pedido.Total - pedido.Adelanto;
+
+            if (_Debe == 0)
+            {
+
+                ckbTarjeta.Visible = false;
+                ckbNormal.Visible = false;
+
+                lblPagado.Visible = true;
+
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -240,6 +252,8 @@ namespace Presentacion.Core.Pedido
                         CajaId = detalleCajaServicio.BuscarCajaAbierta()
                     };
 
+                    TipoPago(detalle);
+
                     detalleCajaServicio.AgregarDetalleCaja(detalle);
 
                     cajaServicio.SumarDineroACaja(_Debe);
@@ -263,6 +277,18 @@ namespace Presentacion.Core.Pedido
 
         }
 
+        public void TipoPago(DetalleCajaDto detalle)
+        {
+            if (ckbNormal.Checked)
+            {
+                detalle.TipoPago = AccesoDatos.TipoPago.Contado;
+            }
+            if (ckbTarjeta.Checked)
+            {
+                detalle.TipoPago = AccesoDatos.TipoPago.Tarjeta;
+            }
+        }
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Este seguro de eliminar este Pedido?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
@@ -278,6 +304,34 @@ namespace Presentacion.Core.Pedido
             pedidoServicio.GuardarDatosString(txtNotas.Text, PedidoId);
 
             MessageBox.Show("Datos Guardados!", "Bien", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnCobrar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void ckbNormal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbNormal.Checked == true)
+            {
+                ckbTarjeta.Checked = false;
+            }
+            else
+            {
+                ckbTarjeta.Checked = true;
+            }
+        }
+
+        private void ckbTarjeta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbTarjeta.Checked == true)
+            {
+                ckbNormal.Checked = false;
+            }
+            else
+            {
+                ckbNormal.Checked = true;
+            }
         }
     }
 }

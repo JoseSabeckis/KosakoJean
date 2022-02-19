@@ -34,11 +34,11 @@ namespace Presentacion.Core.CtaCte
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblDomicilio = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblDomicilio = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,6 +49,8 @@ namespace Presentacion.Core.CtaCte
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
+            this.ckbNormal = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
@@ -111,6 +113,16 @@ namespace Presentacion.Core.CtaCte
             this.panel3.Size = new System.Drawing.Size(1139, 64);
             this.panel3.TabIndex = 1;
             // 
+            // lblDomicilio
+            // 
+            this.lblDomicilio.AutoSize = true;
+            this.lblDomicilio.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDomicilio.Location = new System.Drawing.Point(4, 18);
+            this.lblDomicilio.Name = "lblDomicilio";
+            this.lblDomicilio.Size = new System.Drawing.Size(104, 26);
+            this.lblDomicilio.TabIndex = 10;
+            this.lblDomicilio.Text = "Domicilio";
+            // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -144,6 +156,8 @@ namespace Presentacion.Core.CtaCte
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.ckbTarjeta);
+            this.panel2.Controls.Add(this.ckbNormal);
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.txtDebe);
             this.panel2.Controls.Add(this.label3);
@@ -156,16 +170,6 @@ namespace Presentacion.Core.CtaCte
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1139, 119);
             this.panel2.TabIndex = 0;
-            // 
-            // lblDomicilio
-            // 
-            this.lblDomicilio.AutoSize = true;
-            this.lblDomicilio.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDomicilio.Location = new System.Drawing.Point(4, 18);
-            this.lblDomicilio.Name = "lblDomicilio";
-            this.lblDomicilio.Size = new System.Drawing.Size(104, 26);
-            this.lblDomicilio.TabIndex = 10;
-            this.lblDomicilio.Text = "Domicilio";
             // 
             // panel6
             // 
@@ -285,6 +289,34 @@ namespace Presentacion.Core.CtaCte
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // ckbTarjeta
+            // 
+            this.ckbTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbTarjeta.AutoSize = true;
+            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbTarjeta.Location = new System.Drawing.Point(660, 66);
+            this.ckbTarjeta.Name = "ckbTarjeta";
+            this.ckbTarjeta.Size = new System.Drawing.Size(98, 30);
+            this.ckbTarjeta.TabIndex = 14;
+            this.ckbTarjeta.Text = "Tarjeta";
+            this.ckbTarjeta.UseVisualStyleBackColor = true;
+            this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
+            // 
+            // ckbNormal
+            // 
+            this.ckbNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbNormal.AutoSize = true;
+            this.ckbNormal.Checked = true;
+            this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbNormal.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbNormal.Location = new System.Drawing.Point(660, 33);
+            this.ckbNormal.Name = "ckbNormal";
+            this.ckbNormal.Size = new System.Drawing.Size(112, 30);
+            this.ckbNormal.TabIndex = 13;
+            this.ckbNormal.Text = "Contado";
+            this.ckbNormal.UseVisualStyleBackColor = true;
+            this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
+            // 
             // CtaCte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -340,5 +372,7 @@ namespace Presentacion.Core.CtaCte
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown nudCobro;
         private System.Windows.Forms.Label lblDomicilio;
+        private System.Windows.Forms.CheckBox ckbTarjeta;
+        private System.Windows.Forms.CheckBox ckbNormal;
     }
 }

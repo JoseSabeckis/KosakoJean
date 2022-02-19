@@ -108,7 +108,7 @@ namespace Servicios.Core.CtaCte
                     Total = cuenta.Total,
                     Fecha = cuenta.Fecha,
                     Estado = cuenta.Estado,
-                    PedidoId = cuenta.PedidoId
+                    PedidoId = cuenta.PedidoId                  
 
                 };
 
