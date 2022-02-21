@@ -528,6 +528,7 @@ namespace Presentacion.Core.Cobro
                 ventaDto.ClienteId = _clienteId;
 
                 PedidoEnabled();
+                
             }
 
         }
@@ -599,6 +600,11 @@ namespace Presentacion.Core.Cobro
         private void ckbTarjeta_AppearanceChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSeleccionProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
         }
     }
 }

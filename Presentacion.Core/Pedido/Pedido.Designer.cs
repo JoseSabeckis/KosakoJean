@@ -34,6 +34,7 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
             this.ckbCtaCte = new System.Windows.Forms.CheckBox();
             this.ckbNormal = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -49,7 +50,8 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -63,6 +65,8 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtDescripcion);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel3);
@@ -76,7 +80,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(656, 363);
+            this.panel1.Size = new System.Drawing.Size(656, 505);
             this.panel1.TabIndex = 0;
             // 
             // panel6
@@ -117,6 +121,17 @@
             this.panel5.Size = new System.Drawing.Size(111, 112);
             this.panel5.TabIndex = 12;
             // 
+            // ckbTarjeta
+            // 
+            this.ckbTarjeta.AutoSize = true;
+            this.ckbTarjeta.Location = new System.Drawing.Point(9, 45);
+            this.ckbTarjeta.Name = "ckbTarjeta";
+            this.ckbTarjeta.Size = new System.Drawing.Size(86, 28);
+            this.ckbTarjeta.TabIndex = 12;
+            this.ckbTarjeta.Text = "Tarjeta";
+            this.ckbTarjeta.UseVisualStyleBackColor = true;
+            this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
+            // 
             // ckbCtaCte
             // 
             this.ckbCtaCte.AutoSize = true;
@@ -152,7 +167,7 @@
             // dtpFechaEntrega
             // 
             this.dtpFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(288, 303);
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(288, 278);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(139, 29);
             this.dtpFechaEntrega.TabIndex = 8;
@@ -169,7 +184,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(147, 303);
+            this.label5.Location = new System.Drawing.Point(147, 278);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 24);
             this.label5.TabIndex = 5;
@@ -194,7 +209,7 @@
             0,
             0,
             0});
-            this.nudAdelanto.Location = new System.Drawing.Point(288, 236);
+            this.nudAdelanto.Location = new System.Drawing.Point(288, 232);
             this.nudAdelanto.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -208,7 +223,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(109, 241);
+            this.label2.Location = new System.Drawing.Point(109, 237);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 24);
             this.label2.TabIndex = 1;
@@ -283,30 +298,38 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Cargue mas Informacion";
             // 
-            // ckbTarjeta
+            // txtDescripcion
             // 
-            this.ckbTarjeta.AutoSize = true;
-            this.ckbTarjeta.Location = new System.Drawing.Point(9, 45);
-            this.ckbTarjeta.Name = "ckbTarjeta";
-            this.ckbTarjeta.Size = new System.Drawing.Size(86, 28);
-            this.ckbTarjeta.TabIndex = 12;
-            this.ckbTarjeta.Text = "Tarjeta";
-            this.ckbTarjeta.UseVisualStyleBackColor = true;
-            this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
+            this.txtDescripcion.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(113, 349);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(443, 147);
+            this.txtDescripcion.TabIndex = 15;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(109, 322);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(128, 24);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "| Descripcion |";
             // 
             // Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 363);
+            this.ClientSize = new System.Drawing.Size(656, 505);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(672, 402);
+            this.MaximumSize = new System.Drawing.Size(672, 544);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(672, 402);
+            this.MinimumSize = new System.Drawing.Size(672, 544);
             this.Name = "Pedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedido";
@@ -348,5 +371,7 @@
         private System.Windows.Forms.CheckBox ckbNormal;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.CheckBox ckbTarjeta;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label10;
     }
 }

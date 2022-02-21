@@ -38,7 +38,6 @@ namespace Presentacion.Core.Pedido
 
         public bool semaforo = false;
 
-        public string _Descripcion;
         decimal _total;
         long ClienteId;
         long _TalleId;
@@ -57,6 +56,8 @@ namespace Presentacion.Core.Pedido
             ctaCteServicio = new CtaCteServicio();
             talleServicio = new TalleServicio();
 
+            txtDescripcion.Text = descripcion;
+
             if (nombre != null)
             {
                 txtApellido.Text = nombre;
@@ -64,7 +65,6 @@ namespace Presentacion.Core.Pedido
 
             _total = total;
             ListaVentas = Lista;
-            _Descripcion = descripcion;
             _TalleId = talleId;
 
             nudAdelanto.Maximum = _total;
@@ -138,7 +138,7 @@ namespace Presentacion.Core.Pedido
                         FechaEntrega = dtpFechaEntrega.Value.Date,
                         Total = _total,
                         ClienteId = ClienteId,
-                        Descripcion = _Descripcion
+                        Descripcion = txtDescripcion.Text
 
                     };
 

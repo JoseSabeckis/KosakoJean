@@ -275,6 +275,7 @@
             this.btnSeleccionProducto.Text = "---";
             this.btnSeleccionProducto.UseVisualStyleBackColor = true;
             this.btnSeleccionProducto.Click += new System.EventHandler(this.btnSeleccionProducto_Click);
+            this.btnSeleccionProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnSeleccionProducto_KeyPress);
             // 
             // panel6
             // 
@@ -290,6 +291,7 @@
             // 
             this.btnAgregarAlaGrilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnAgregarAlaGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAgregarAlaGrilla.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarAlaGrilla.Location = new System.Drawing.Point(0, 0);
             this.btnAgregarAlaGrilla.Name = "btnAgregarAlaGrilla";
             this.btnAgregarAlaGrilla.Size = new System.Drawing.Size(141, 77);
@@ -332,6 +334,7 @@
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.ckbTarjeta);
             this.panel9.Controls.Add(this.ckbPedido);
             this.panel9.Controls.Add(this.ckbNormal);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
@@ -343,7 +346,7 @@
             // ckbPedido
             // 
             this.ckbPedido.AutoSize = true;
-            this.ckbPedido.Location = new System.Drawing.Point(44, 39);
+            this.ckbPedido.Location = new System.Drawing.Point(44, 22);
             this.ckbPedido.Name = "ckbPedido";
             this.ckbPedido.Size = new System.Drawing.Size(87, 26);
             this.ckbPedido.TabIndex = 7;
@@ -356,7 +359,7 @@
             this.ckbNormal.AutoSize = true;
             this.ckbNormal.Checked = true;
             this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbNormal.Location = new System.Drawing.Point(44, 7);
+            this.ckbNormal.Location = new System.Drawing.Point(44, 1);
             this.ckbNormal.Name = "ckbNormal";
             this.ckbNormal.Size = new System.Drawing.Size(99, 26);
             this.ckbNormal.TabIndex = 6;
@@ -427,6 +430,7 @@
             // 
             // btnVolver
             // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Location = new System.Drawing.Point(942, 0);
@@ -434,7 +438,7 @@
             this.btnVolver.Size = new System.Drawing.Size(143, 72);
             this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // panel2
@@ -525,7 +529,6 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.ckbTarjeta);
             this.panel5.Controls.Add(this.nudTotal);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
@@ -537,10 +540,10 @@
             // ckbTarjeta
             // 
             this.ckbTarjeta.AutoSize = true;
-            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbTarjeta.Location = new System.Drawing.Point(91, 76);
+            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbTarjeta.Location = new System.Drawing.Point(44, 44);
             this.ckbTarjeta.Name = "ckbTarjeta";
-            this.ckbTarjeta.Size = new System.Drawing.Size(98, 30);
+            this.ckbTarjeta.Size = new System.Drawing.Size(85, 26);
             this.ckbTarjeta.TabIndex = 9;
             this.ckbTarjeta.Text = "Tarjeta";
             this.ckbTarjeta.UseVisualStyleBackColor = true;

@@ -242,7 +242,7 @@
             this.ckbNormal.Checked = true;
             this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbNormal.Location = new System.Drawing.Point(634, 21);
+            this.ckbNormal.Location = new System.Drawing.Point(710, 21);
             this.ckbNormal.Name = "ckbNormal";
             this.ckbNormal.Size = new System.Drawing.Size(96, 24);
             this.ckbNormal.TabIndex = 13;
@@ -254,7 +254,7 @@
             // 
             this.ckbTarjeta.AutoSize = true;
             this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbTarjeta.Location = new System.Drawing.Point(634, 44);
+            this.ckbTarjeta.Location = new System.Drawing.Point(710, 44);
             this.ckbTarjeta.Name = "ckbTarjeta";
             this.ckbTarjeta.Size = new System.Drawing.Size(85, 26);
             this.ckbTarjeta.TabIndex = 14;
@@ -267,7 +267,7 @@
             this.lblPagado.AutoSize = true;
             this.lblPagado.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPagado.ForeColor = System.Drawing.Color.Red;
-            this.lblPagado.Location = new System.Drawing.Point(629, 28);
+            this.lblPagado.Location = new System.Drawing.Point(705, 28);
             this.lblPagado.Name = "lblPagado";
             this.lblPagado.Size = new System.Drawing.Size(166, 26);
             this.lblPagado.TabIndex = 12;
@@ -279,7 +279,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(398, 72);
+            this.btnEliminar.Location = new System.Drawing.Point(454, 72);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(83, 23);
             this.btnEliminar.TabIndex = 10;
@@ -292,7 +292,7 @@
             this.lblVendido.AutoSize = true;
             this.lblVendido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVendido.ForeColor = System.Drawing.Color.Red;
-            this.lblVendido.Location = new System.Drawing.Point(503, 28);
+            this.lblVendido.Location = new System.Drawing.Point(579, 28);
             this.lblVendido.Name = "lblVendido";
             this.lblVendido.Size = new System.Drawing.Size(138, 26);
             this.lblVendido.TabIndex = 9;
@@ -302,7 +302,7 @@
             // 
             this.btnTerminar.BackColor = System.Drawing.Color.Lime;
             this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminar.Location = new System.Drawing.Point(487, 15);
+            this.btnTerminar.Location = new System.Drawing.Point(563, 15);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(136, 55);
             this.btnTerminar.TabIndex = 8;
@@ -360,13 +360,13 @@
             this.txtNotas.Location = new System.Drawing.Point(4, 4);
             this.txtNotas.Multiline = true;
             this.txtNotas.Name = "txtNotas";
-            this.txtNotas.Size = new System.Drawing.Size(377, 95);
+            this.txtNotas.Size = new System.Drawing.Size(444, 95);
             this.txtNotas.TabIndex = 3;
             // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(398, 15);
+            this.btnGuardar.Location = new System.Drawing.Point(454, 15);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(83, 55);
             this.btnGuardar.TabIndex = 2;
