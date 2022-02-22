@@ -30,6 +30,8 @@ namespace Presentacion.Core.Cliente
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtDni = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.ckbPrincipal = new System.Windows.Forms.CheckBox();
             this.pnlFoto = new System.Windows.Forms.Panel();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
@@ -44,8 +46,6 @@ namespace Presentacion.Core.Cliente
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtDni = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel2.SuspendLayout();
@@ -77,6 +77,23 @@ namespace Presentacion.Core.Cliente
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(620, 262);
             this.panel2.TabIndex = 0;
+            // 
+            // txtDni
+            // 
+            this.txtDni.Location = new System.Drawing.Point(127, 114);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(133, 33);
+            this.txtDni.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label5.Location = new System.Drawing.Point(22, 122);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 25);
+            this.label5.TabIndex = 74;
+            this.label5.Text = "Dni:";
             // 
             // ckbPrincipal
             // 
@@ -211,23 +228,6 @@ namespace Presentacion.Core.Cliente
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label5.Location = new System.Drawing.Point(22, 122);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 25);
-            this.label5.TabIndex = 74;
-            this.label5.Text = "Dni:";
-            // 
-            // txtDni
-            // 
-            this.txtDni.Location = new System.Drawing.Point(127, 114);
-            this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(133, 33);
-            this.txtDni.TabIndex = 10;
-            // 
             // Cliente_Abm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -235,6 +235,7 @@ namespace Presentacion.Core.Cliente
             this.ClientSize = new System.Drawing.Size(661, 318);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(677, 357);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(677, 357);
             this.Name = "Cliente_Abm";
             this.Text = "Cliente_Abm";

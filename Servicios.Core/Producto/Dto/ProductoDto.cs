@@ -26,6 +26,8 @@ namespace Servicios.Core.Producto.Dto
 
         public string TipoProducto { get; set; }
 
+        public decimal Stock { get; set; }
+
         public byte[] Foto { get; set; }
     }
 }

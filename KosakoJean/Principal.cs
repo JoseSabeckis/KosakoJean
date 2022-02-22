@@ -136,7 +136,7 @@ namespace KosakoJean
             {
                 var tipo = new TipoProductoDto
                 {
-                    Descripcion = "Otro"
+                    Descripcion = "Prenda"
                 };
 
                 tipoProductoServicio.Nuevo(tipo);
@@ -146,7 +146,7 @@ namespace KosakoJean
             {
                 var colegio = new ColegioDto
                 {
-                    Descripcion = "Otro"
+                    Descripcion = "No Colegial"
                 };
 
                 colegioServicio.Nuevo(colegio);

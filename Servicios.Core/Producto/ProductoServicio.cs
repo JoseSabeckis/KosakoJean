@@ -25,7 +25,8 @@ namespace Servicios.Core.Producto
                     Extras = dto.Extras,
                     TipoProductoId = dto.TipoProductoId,
                     ColegioId = dto.ColegioId,
-                    Foto = dto.Foto
+                    Foto = dto.Foto,
+                    Stock = dto.Stock
                 };
 
                 context.Productos.Add(nuevo);
@@ -50,6 +51,21 @@ namespace Servicios.Core.Producto
 
         }
 
+        public void BajarStock(long id, decimal stock)
+        {
+
+            using (var context = new KosakoDBEntities())
+            {
+                var producto = context.Productos.FirstOrDefault(x => x.Id == id);
+
+                producto.Stock -= stock;
+
+                context.SaveChanges();
+
+            }
+
+        }
+
         public void Modificar(ProductoDto dto)
         {
             using (var context = new KosakoDBEntities())
@@ -63,6 +79,7 @@ namespace Servicios.Core.Producto
                 producto.Precio = dto.Precio;
                 producto.TipoProductoId = dto.TipoProductoId;
                 producto.Foto = dto.Foto;
+                producto.Stock = dto.Stock;
 
                 context.SaveChanges();
 
@@ -87,7 +104,8 @@ namespace Servicios.Core.Producto
                         ColegioId = x.ColegioId,
                         Foto = x.Foto,
                         Colegio = context.Colegios.FirstOrDefault(f=>f.Id == x.ColegioId).Descripcion,
-                        TipoProducto = context.TipoProductos.FirstOrDefault(f=>f.Id == x.TipoProductoId).Descripcion
+                        TipoProducto = context.TipoProductos.FirstOrDefault(f=>f.Id == x.TipoProductoId).Descripcion,
+                        Stock = x.Stock
 
                     }).ToList();
 
@@ -114,7 +132,8 @@ namespace Servicios.Core.Producto
                         ColegioId = x.ColegioId,
                         Foto = x.Foto,
                         Colegio = context.Colegios.FirstOrDefault(f => f.Id == x.ColegioId).Descripcion,
-                        TipoProducto = context.TipoProductos.FirstOrDefault(f => f.Id == x.TipoProductoId).Descripcion
+                        TipoProducto = context.TipoProductos.FirstOrDefault(f => f.Id == x.TipoProductoId).Descripcion,
+                        Stock = x.Stock
 
                     }).FirstOrDefault(x => x.Id == Id && x.EstaEliminado == false);
             }

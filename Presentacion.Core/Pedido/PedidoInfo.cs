@@ -194,8 +194,8 @@ namespace Presentacion.Core.Pedido
             txtDineroAdelanto.Text = string.Empty;
 
             lblPersona.Text = $"{pedido.Apellido}";
-            lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dd/MM/yyyy")}";
-            lblFecha.Text = $"{pedido.FechaEntrega.ToString("dd/MM/yyyy")}";
+            lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dddd dd/MM/yyyy")}";
+            lblFecha.Text = $"{pedido.FechaEntrega.ToString("dddd dd/MM/yyyy")}";
             txtNotas.Text = $"{pedido.Descripcion}";
 
             txtDineroAdelanto.Text = $"{pedido.Adelanto}";

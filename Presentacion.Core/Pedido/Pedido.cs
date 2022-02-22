@@ -11,6 +11,7 @@ using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto;
+using Servicios.Core.Producto.Dto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Talle;
@@ -138,22 +139,25 @@ namespace Presentacion.Core.Pedido
                         FechaEntrega = dtpFechaEntrega.Value.Date,
                         Total = _total,
                         ClienteId = ClienteId,
-                        Descripcion = txtDescripcion.Text
+                        Descripcion = txtDescripcion.Text,
 
                     };
 
                     var pedidoId = pedidoServicio.NuevoPedido(pedido);
 
-                    string descripcion = string.Empty;
+                    ProductoDto producto = new ProductoDto();
 
                     string segunda = string.Empty;
 
                     foreach (var item in ListaVentas)
                     {
-                        descripcion = productoServicio.ObtenerPorId(item.Id).Descripcion;
+                        producto = productoServicio.ObtenerPorId(item.Id);
 
-                        segunda += " " + descripcion + " ";
+                        segunda += " " + producto.Descripcion + " ";
 
+                        //stock
+                        productoServicio.BajarStock(producto.Id, item.Cantidad);
+                        
                     }
 
                     foreach (var item in ListaVentas)
@@ -170,7 +174,7 @@ namespace Presentacion.Core.Pedido
                             TalleId = _TalleId
                         };
 
-                        producto_Pedido_Servicio.NuevoProductoPedido(aux);
+                        producto_Pedido_Servicio.NuevoProductoPedido(aux);                        
 
                     }
 

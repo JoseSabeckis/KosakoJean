@@ -364,6 +364,10 @@ namespace Presentacion.Core.Cobro
                                 TalleId = ((TalleDto)cmbTalle.SelectedItem).Id
                             };
 
+                            // descontar stock
+                            productoServicio.BajarStock(producto.Id, item.Cantidad);                          
+                            //
+
                             descripcion = $"{descripcion} - {producto_venta.Descripcion}";
 
                             producto_vent.NuevoProductoVenta(producto_venta);

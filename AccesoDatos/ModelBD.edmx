@@ -79,6 +79,7 @@
     <Property Name="TipoProductoId" Type="bigint" Nullable="false" />
     <Property Name="ColegioId" Type="bigint" Nullable="false" />
     <Property Name="Foto" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Stock" Type="decimal" Nullable="false" />
   </EntityType>
   <EntityType Name="TipoProductos">
     <Key>
@@ -437,6 +438,7 @@
           <NavigationProperty Name="Producto_Pedido" Relationship="KosakoDBModel.ProductoProducto_Pedido" FromRole="Producto" ToRole="Producto_Pedido" />
           <NavigationProperty Name="Producto_Venta" Relationship="KosakoDBModel.ProductoProducto_Venta" FromRole="Producto" ToRole="Producto_Venta" />
           <Property Name="Foto" Type="Binary" Nullable="false" />
+          <Property Name="Stock" Type="Decimal" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoProducto">
           <Key>
@@ -745,6 +747,7 @@
           <ScalarProperty Name="TipoProductoId" ColumnName="TipoProductoId" />
           <ScalarProperty Name="ColegioId" ColumnName="ColegioId" />
           <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

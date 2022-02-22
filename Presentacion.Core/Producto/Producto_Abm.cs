@@ -87,6 +87,7 @@ namespace Presentacion.Core.Producto
             txtExtras.Text = dto.Extras;
 
             nudPrecio.Value = dto.Precio;
+            nudStock.Value = dto.Stock;
 
             cmbColegio.SelectedValue = dto.ColegioId;
             cmbTipo.SelectedValue = dto.TipoProductoId;
@@ -110,7 +111,8 @@ namespace Presentacion.Core.Producto
                 Precio = nudPrecio.Value,
                 ColegioId = ((ColegioDto)cmbColegio.SelectedItem).Id,
                 TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id,
-                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image)
+                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
+                Stock = nudStock.Value
             };
 
             _Servicio.Nuevo(nueva);
@@ -135,7 +137,8 @@ namespace Presentacion.Core.Producto
                 Precio = nudPrecio.Value,
                 ColegioId = ((ColegioDto)cmbColegio.SelectedItem).Id,
                 TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id,
-                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image)
+                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
+                Stock = nudStock.Value
             };
 
             _Servicio.Modificar(localidadParaModificar);

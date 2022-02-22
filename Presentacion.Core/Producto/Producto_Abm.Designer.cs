@@ -39,6 +39,9 @@
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.nudStock = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnlFoto = new System.Windows.Forms.Panel();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
             this.lblTituloFoto = new System.Windows.Forms.Label();
@@ -48,6 +51,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             this.pnlFoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgFotoEmpleado)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +65,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 46);
+            this.label1.Location = new System.Drawing.Point(70, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 25);
             this.label1.TabIndex = 0;
@@ -68,7 +73,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(198, 43);
+            this.txtDescripcion.Location = new System.Drawing.Point(198, 34);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(254, 33);
             this.txtDescripcion.TabIndex = 1;
@@ -76,15 +81,15 @@
             // 
             // txtExtras
             // 
-            this.txtExtras.Location = new System.Drawing.Point(198, 96);
+            this.txtExtras.Location = new System.Drawing.Point(198, 76);
             this.txtExtras.Name = "txtExtras";
             this.txtExtras.Size = new System.Drawing.Size(254, 33);
-            this.txtExtras.TabIndex = 3;
+            this.txtExtras.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(123, 99);
+            this.label2.Location = new System.Drawing.Point(123, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 25);
             this.label2.TabIndex = 2;
@@ -93,7 +98,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(123, 149);
+            this.label3.Location = new System.Drawing.Point(9, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 25);
             this.label3.TabIndex = 4;
@@ -101,12 +106,13 @@
             // 
             // nudPrecio
             // 
+            this.nudPrecio.BackColor = System.Drawing.SystemColors.Info;
             this.nudPrecio.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.nudPrecio.Location = new System.Drawing.Point(198, 147);
+            this.nudPrecio.Location = new System.Drawing.Point(87, 10);
             this.nudPrecio.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -114,12 +120,12 @@
             0});
             this.nudPrecio.Name = "nudPrecio";
             this.nudPrecio.Size = new System.Drawing.Size(134, 33);
-            this.nudPrecio.TabIndex = 5;
+            this.nudPrecio.TabIndex = 33;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(107, 208);
+            this.label4.Location = new System.Drawing.Point(107, 236);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 25);
             this.label4.TabIndex = 6;
@@ -129,24 +135,24 @@
             // 
             this.cmbColegio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbColegio.FormattingEnabled = true;
-            this.cmbColegio.Location = new System.Drawing.Point(198, 205);
+            this.cmbColegio.Location = new System.Drawing.Point(198, 233);
             this.cmbColegio.Name = "cmbColegio";
             this.cmbColegio.Size = new System.Drawing.Size(254, 33);
-            this.cmbColegio.TabIndex = 7;
+            this.cmbColegio.TabIndex = 55;
             // 
             // cmbTipo
             // 
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(198, 262);
+            this.cmbTipo.Location = new System.Drawing.Point(198, 282);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(254, 33);
-            this.cmbTipo.TabIndex = 8;
+            this.cmbTipo.TabIndex = 66;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(137, 265);
+            this.label5.Location = new System.Drawing.Point(137, 285);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 25);
             this.label5.TabIndex = 9;
@@ -155,6 +161,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.pnlFoto);
             this.panel2.Controls.Add(this.txtDescripcion);
             this.panel2.Controls.Add(this.label5);
@@ -164,12 +171,50 @@
             this.panel2.Controls.Add(this.cmbColegio);
             this.panel2.Controls.Add(this.txtExtras);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.nudPrecio);
             this.panel2.Location = new System.Drawing.Point(24, 22);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(762, 359);
             this.panel2.TabIndex = 10;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.nudStock);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.nudPrecio);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Location = new System.Drawing.Point(112, 124);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(340, 93);
+            this.panel3.TabIndex = 3;
+            // 
+            // nudStock
+            // 
+            this.nudStock.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.nudStock.Location = new System.Drawing.Point(87, 49);
+            this.nudStock.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.nudStock.Minimum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            -2147483648});
+            this.nudStock.Name = "nudStock";
+            this.nudStock.Size = new System.Drawing.Size(66, 33);
+            this.nudStock.TabIndex = 44;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 25);
+            this.label6.TabIndex = 72;
+            this.label6.Text = "Stock";
             // 
             // pnlFoto
             // 
@@ -178,9 +223,9 @@
             this.pnlFoto.Controls.Add(this.btnAgregarImagen);
             this.pnlFoto.Controls.Add(this.lblTituloFoto);
             this.pnlFoto.Controls.Add(this.imgFotoEmpleado);
-            this.pnlFoto.Location = new System.Drawing.Point(527, 46);
+            this.pnlFoto.Location = new System.Drawing.Point(527, 51);
             this.pnlFoto.Name = "pnlFoto";
-            this.pnlFoto.Size = new System.Drawing.Size(193, 250);
+            this.pnlFoto.Size = new System.Drawing.Size(205, 259);
             this.pnlFoto.TabIndex = 71;
             // 
             // btnAgregarImagen
@@ -190,8 +235,8 @@
             this.btnAgregarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarImagen.Location = new System.Drawing.Point(8, 204);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
-            this.btnAgregarImagen.Size = new System.Drawing.Size(176, 38);
-            this.btnAgregarImagen.TabIndex = 0;
+            this.btnAgregarImagen.Size = new System.Drawing.Size(187, 49);
+            this.btnAgregarImagen.TabIndex = 77;
             this.btnAgregarImagen.Text = "Agregar Imagen";
             this.btnAgregarImagen.UseVisualStyleBackColor = false;
             this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
@@ -204,7 +249,7 @@
             this.lblTituloFoto.ForeColor = System.Drawing.Color.Black;
             this.lblTituloFoto.Location = new System.Drawing.Point(0, 0);
             this.lblTituloFoto.Name = "lblTituloFoto";
-            this.lblTituloFoto.Size = new System.Drawing.Size(191, 31);
+            this.lblTituloFoto.Size = new System.Drawing.Size(203, 31);
             this.lblTituloFoto.TabIndex = 57;
             this.lblTituloFoto.Text = "Foto";
             this.lblTituloFoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -216,7 +261,7 @@
             this.imgFotoEmpleado.Image = global::Presentacion.Core.Properties.Resources.iPhoto_photo_picture_camera_2661;
             this.imgFotoEmpleado.Location = new System.Drawing.Point(8, 38);
             this.imgFotoEmpleado.Name = "imgFotoEmpleado";
-            this.imgFotoEmpleado.Size = new System.Drawing.Size(176, 158);
+            this.imgFotoEmpleado.Size = new System.Drawing.Size(187, 158);
             this.imgFotoEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgFotoEmpleado.TabIndex = 0;
             this.imgFotoEmpleado.TabStop = false;
@@ -241,6 +286,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             this.pnlFoto.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgFotoEmpleado)).EndInit();
             this.ResumeLayout(false);
@@ -266,5 +314,8 @@
         private System.Windows.Forms.Label lblTituloFoto;
         private System.Windows.Forms.PictureBox imgFotoEmpleado;
         private System.Windows.Forms.OpenFileDialog archivo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown nudStock;
+        private System.Windows.Forms.Panel panel3;
     }
 }

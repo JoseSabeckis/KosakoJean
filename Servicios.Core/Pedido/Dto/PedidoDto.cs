@@ -27,6 +27,8 @@ namespace Servicios.Core.Pedido.Dto
 
         public string Descripcion { get; set; }
 
+        public DateTime FechaIniciado { get; set; }
+
         public long ClienteId { get; set; }
 
     }
