@@ -139,6 +139,7 @@
             // 
             this.btnVolver.BackColor = System.Drawing.Color.LightGreen;
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Location = new System.Drawing.Point(654, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(113, 104);

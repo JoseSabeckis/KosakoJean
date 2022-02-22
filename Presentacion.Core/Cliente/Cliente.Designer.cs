@@ -37,6 +37,7 @@ namespace Presentacion.Core.Cliente
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 450);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(830, 489);
             this.Name = "Cliente";
             this.Text = "Cliente";

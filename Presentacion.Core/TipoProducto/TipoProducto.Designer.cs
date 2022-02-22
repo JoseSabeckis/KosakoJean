@@ -36,6 +36,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 450);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(918, 489);
             this.Name = "TipoProducto";
             this.Text = "Tipo de Producto";

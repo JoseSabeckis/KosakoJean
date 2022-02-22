@@ -55,7 +55,7 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.btnProductos = new System.Windows.Forms.Button();
+            this.btnPedidos = new System.Windows.Forms.Button();
             this.btnListoParaEntregar = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -70,9 +70,9 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnProductos = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnCobrar2 = new System.Windows.Forms.Button();
-            this.btnPedidos = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -312,21 +312,20 @@
             this.panel9.Size = new System.Drawing.Size(623, 227);
             this.panel9.TabIndex = 8;
             // 
-            // btnProductos
+            // btnPedidos
             // 
-            this.btnProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProductos.BackColor = System.Drawing.Color.Magenta;
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnProductos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.Location = new System.Drawing.Point(23, 225);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(151, 107);
-            this.btnProductos.TabIndex = 6;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.UseVisualStyleBackColor = false;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+            this.btnPedidos.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPedidos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPedidos.Location = new System.Drawing.Point(343, 28);
+            this.btnPedidos.Name = "btnPedidos";
+            this.btnPedidos.Size = new System.Drawing.Size(247, 107);
+            this.btnPedidos.TabIndex = 4;
+            this.btnPedidos.Text = "Ver Pedidos Pendientes";
+            this.btnPedidos.UseVisualStyleBackColor = false;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
             // btnListoParaEntregar
             // 
@@ -492,7 +491,7 @@
             this.pictureBox1.Image = global::KosakoJean.Properties.Resources.analytics_78917;
             this.pictureBox1.Location = new System.Drawing.Point(50, 1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 55);
+            this.pictureBox1.Size = new System.Drawing.Size(69, 55);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -508,6 +507,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(196, 426);
             this.panel2.TabIndex = 89;
+            // 
+            // btnProductos
+            // 
+            this.btnProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProductos.BackColor = System.Drawing.Color.Magenta;
+            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnProductos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.Location = new System.Drawing.Point(23, 225);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Size = new System.Drawing.Size(151, 107);
+            this.btnProductos.TabIndex = 6;
+            this.btnProductos.Text = "Productos";
+            this.btnProductos.UseVisualStyleBackColor = false;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // panel10
             // 
@@ -534,21 +549,6 @@
             this.btnCobrar2.Text = "Cobrar";
             this.btnCobrar2.UseVisualStyleBackColor = false;
             this.btnCobrar2.Click += new System.EventHandler(this.btnCobrar2_Click);
-            // 
-            // btnPedidos
-            // 
-            this.btnPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPedidos.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPedidos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPedidos.Location = new System.Drawing.Point(343, 28);
-            this.btnPedidos.Name = "btnPedidos";
-            this.btnPedidos.Size = new System.Drawing.Size(247, 107);
-            this.btnPedidos.TabIndex = 4;
-            this.btnPedidos.Text = "Ver Pedidos Pendientes";
-            this.btnPedidos.UseVisualStyleBackColor = false;
-            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
             // panel6
             // 

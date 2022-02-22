@@ -36,6 +36,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(896, 450);
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(912, 489);
             this.Name = "Colegio";
             this.Text = "Colegio";

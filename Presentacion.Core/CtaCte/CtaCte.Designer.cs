@@ -39,6 +39,8 @@ namespace Presentacion.Core.CtaCte
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
+            this.ckbNormal = new System.Windows.Forms.CheckBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnCobrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@ namespace Presentacion.Core.CtaCte
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
-            this.ckbNormal = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
@@ -171,6 +171,34 @@ namespace Presentacion.Core.CtaCte
             this.panel2.Size = new System.Drawing.Size(1139, 119);
             this.panel2.TabIndex = 0;
             // 
+            // ckbTarjeta
+            // 
+            this.ckbTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbTarjeta.AutoSize = true;
+            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbTarjeta.Location = new System.Drawing.Point(662, 60);
+            this.ckbTarjeta.Name = "ckbTarjeta";
+            this.ckbTarjeta.Size = new System.Drawing.Size(98, 30);
+            this.ckbTarjeta.TabIndex = 14;
+            this.ckbTarjeta.Text = "Tarjeta";
+            this.ckbTarjeta.UseVisualStyleBackColor = true;
+            this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
+            // 
+            // ckbNormal
+            // 
+            this.ckbNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbNormal.AutoSize = true;
+            this.ckbNormal.Checked = true;
+            this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbNormal.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbNormal.Location = new System.Drawing.Point(662, 27);
+            this.ckbNormal.Name = "ckbNormal";
+            this.ckbNormal.Size = new System.Drawing.Size(112, 30);
+            this.ckbNormal.TabIndex = 13;
+            this.ckbNormal.Text = "Contado";
+            this.ckbNormal.UseVisualStyleBackColor = true;
+            this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
+            // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -186,6 +214,7 @@ namespace Presentacion.Core.CtaCte
             // btnCobrar
             // 
             this.btnCobrar.BackColor = System.Drawing.Color.Lime;
+            this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCobrar.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCobrar.Location = new System.Drawing.Point(146, 58);
             this.btnCobrar.Name = "btnCobrar";
@@ -247,7 +276,7 @@ namespace Presentacion.Core.CtaCte
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.Navy;
             this.lblNombre.Location = new System.Drawing.Point(273, 9);
             this.lblNombre.Name = "lblNombre";
@@ -267,7 +296,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnVolver.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Location = new System.Drawing.Point(1041, 0);
@@ -288,34 +317,6 @@ namespace Presentacion.Core.CtaCte
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // ckbTarjeta
-            // 
-            this.ckbTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ckbTarjeta.AutoSize = true;
-            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbTarjeta.Location = new System.Drawing.Point(660, 66);
-            this.ckbTarjeta.Name = "ckbTarjeta";
-            this.ckbTarjeta.Size = new System.Drawing.Size(98, 30);
-            this.ckbTarjeta.TabIndex = 14;
-            this.ckbTarjeta.Text = "Tarjeta";
-            this.ckbTarjeta.UseVisualStyleBackColor = true;
-            this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
-            // 
-            // ckbNormal
-            // 
-            this.ckbNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ckbNormal.AutoSize = true;
-            this.ckbNormal.Checked = true;
-            this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbNormal.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbNormal.Location = new System.Drawing.Point(660, 33);
-            this.ckbNormal.Name = "ckbNormal";
-            this.ckbNormal.Size = new System.Drawing.Size(112, 30);
-            this.ckbNormal.TabIndex = 13;
-            this.ckbNormal.Text = "Contado";
-            this.ckbNormal.UseVisualStyleBackColor = true;
-            this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
             // 
             // CtaCte
             // 

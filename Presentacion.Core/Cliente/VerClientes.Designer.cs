@@ -86,6 +86,7 @@ namespace Presentacion.Core.Cliente
             // 
             // btnVolver
             // 
+            this.btnVolver.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,7 +95,7 @@ namespace Presentacion.Core.Cliente
             this.btnVolver.Size = new System.Drawing.Size(95, 98);
             this.btnVolver.TabIndex = 4;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnBuscar

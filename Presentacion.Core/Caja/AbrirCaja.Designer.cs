@@ -67,10 +67,10 @@
             // 
             this.btnAbrir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnAbrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbrir.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrir.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbrir.Location = new System.Drawing.Point(193, 185);
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(136, 62);
+            this.btnAbrir.Size = new System.Drawing.Size(172, 62);
             this.btnAbrir.TabIndex = 4;
             this.btnAbrir.Text = "Abrir";
             this.btnAbrir.UseVisualStyleBackColor = false;
@@ -78,29 +78,29 @@
             // 
             // nudDinero
             // 
-            this.nudDinero.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudDinero.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudDinero.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.nudDinero.Location = new System.Drawing.Point(173, 124);
+            this.nudDinero.Location = new System.Drawing.Point(193, 124);
             this.nudDinero.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
             this.nudDinero.Name = "nudDinero";
-            this.nudDinero.Size = new System.Drawing.Size(172, 33);
+            this.nudDinero.Size = new System.Drawing.Size(172, 35);
             this.nudDinero.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(74, 126);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(94, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 25);
+            this.label2.Size = new System.Drawing.Size(90, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "Dinero:";
             // 
@@ -119,10 +119,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 17);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 31);
+            this.label1.Size = new System.Drawing.Size(133, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Abrir Caja";
             // 

@@ -94,10 +94,10 @@ namespace Presentacion.Core.Cliente
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 16);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(109, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 21);
+            this.label1.Size = new System.Drawing.Size(177, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cosas Compradas";
             // 
@@ -114,13 +114,14 @@ namespace Presentacion.Core.Cliente
             // 
             // btnVolver
             // 
+            this.btnVolver.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Location = new System.Drawing.Point(601, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(104, 68);
+            this.btnVolver.Size = new System.Drawing.Size(110, 68);
             this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // label4
