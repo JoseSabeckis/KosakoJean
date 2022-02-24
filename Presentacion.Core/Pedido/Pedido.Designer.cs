@@ -71,9 +71,7 @@
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.dtpFechaEntrega);
-            this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.nudAdelanto);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
@@ -91,7 +89,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(452, 147);
-            this.txtDescripcion.TabIndex = 15;
+            this.txtDescripcion.TabIndex = 13;
             // 
             // label10
             // 
@@ -107,24 +105,28 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.txtApellido);
             this.panel6.Controls.Add(this.label3);
-            this.panel6.Location = new System.Drawing.Point(113, 132);
+            this.panel6.Controls.Add(this.txtNombre);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Location = new System.Drawing.Point(113, 102);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(453, 54);
-            this.panel6.TabIndex = 13;
+            this.panel6.Size = new System.Drawing.Size(453, 84);
+            this.panel6.TabIndex = 0;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(106, 18);
+            this.txtApellido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellido.Location = new System.Drawing.Point(106, 10);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(319, 29);
+            this.txtApellido.Size = new System.Drawing.Size(276, 33);
             this.txtApellido.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 18);
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 24);
+            this.label3.Size = new System.Drawing.Size(87, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Apellido";
             // 
@@ -146,7 +148,7 @@
             this.ckbTarjeta.Location = new System.Drawing.Point(9, 46);
             this.ckbTarjeta.Name = "ckbTarjeta";
             this.ckbTarjeta.Size = new System.Drawing.Size(86, 28);
-            this.ckbTarjeta.TabIndex = 12;
+            this.ckbTarjeta.TabIndex = 11;
             this.ckbTarjeta.Text = "Tarjeta";
             this.ckbTarjeta.UseVisualStyleBackColor = true;
             this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
@@ -157,7 +159,7 @@
             this.ckbCtaCte.Location = new System.Drawing.Point(9, 80);
             this.ckbCtaCte.Name = "ckbCtaCte";
             this.ckbCtaCte.Size = new System.Drawing.Size(84, 28);
-            this.ckbCtaCte.TabIndex = 11;
+            this.ckbCtaCte.TabIndex = 12;
             this.ckbCtaCte.Text = "CtaCte";
             this.ckbCtaCte.UseVisualStyleBackColor = true;
             this.ckbCtaCte.CheckedChanged += new System.EventHandler(this.ckbCtaCte_CheckedChanged);
@@ -181,23 +183,22 @@
             this.panel3.Location = new System.Drawing.Point(113, 192);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(453, 10);
-            this.panel3.TabIndex = 9;
+            this.panel3.TabIndex = 20;
             // 
             // dtpFechaEntrega
             // 
             this.dtpFechaEntrega.Location = new System.Drawing.Point(113, 281);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(336, 29);
-            this.dtpFechaEntrega.TabIndex = 8;
+            this.dtpFechaEntrega.TabIndex = 9;
             // 
             // txtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(298, 106);
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(106, 45);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(167, 21);
+            this.txtNombre.Size = new System.Drawing.Size(276, 33);
             this.txtNombre.TabIndex = 7;
-            this.txtNombre.Visible = false;
             // 
             // label5
             // 
@@ -211,13 +212,12 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(213, 109);
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(21, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 15);
+            this.label4.Size = new System.Drawing.Size(87, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Nombre";
-            this.label4.Visible = false;
             // 
             // nudAdelanto
             // 
@@ -235,7 +235,7 @@
             0});
             this.nudAdelanto.Name = "nudAdelanto";
             this.nudAdelanto.Size = new System.Drawing.Size(139, 29);
-            this.nudAdelanto.TabIndex = 2;
+            this.nudAdelanto.TabIndex = 8;
             this.nudAdelanto.ValueChanged += new System.EventHandler(this.nudAdelanto_ValueChanged);
             // 
             // label2
@@ -257,7 +257,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(652, 100);
-            this.panel2.TabIndex = 0;
+            this.panel2.TabIndex = 21;
             // 
             // panel4
             // 
@@ -278,7 +278,7 @@
             this.btnCargar.Location = new System.Drawing.Point(0, 0);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(191, 92);
-            this.btnCargar.TabIndex = 3;
+            this.btnCargar.TabIndex = 22;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
@@ -291,7 +291,7 @@
             this.btnVolver.Location = new System.Drawing.Point(191, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(109, 92);
-            this.btnVolver.TabIndex = 0;
+            this.btnVolver.TabIndex = 23;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);

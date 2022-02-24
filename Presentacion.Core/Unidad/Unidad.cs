@@ -48,7 +48,7 @@ namespace Presentacion.Core.Unidad
         {
             lblFecha.Text = $"{Pedido.FechaEntrega.ToString("dd/MM/yyyy")}";
 
-            lblNombre.Text = $"{Pedido.Apellido}";
+            lblNombre.Text = $"{Pedido.Apellido} {Pedido.Nombre}";
 
             lblId.Text = $"{Pedido.Id}";
             

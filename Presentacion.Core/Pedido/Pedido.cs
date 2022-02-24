@@ -2,6 +2,8 @@
 using Presentacion.Core.Factura;
 using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
+using Servicios.Core.Cliente;
+using Servicios.Core.Cliente.Dto;
 using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
@@ -15,6 +17,8 @@ using Servicios.Core.Producto.Dto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Talle;
+using Servicios.Core.Venta;
+using Servicios.Core.Venta.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +40,8 @@ namespace Presentacion.Core.Pedido
         private readonly IDetalleCajaServicio detallCajaServicio;
         private readonly ICtaCteServicio ctaCteServicio;
         private readonly ITalleServicio talleServicio;
+        private readonly IClienteServicio clienteServicio;
+        private readonly IVentaServicio ventaServicio;
 
         public bool semaforo = false;
 
@@ -43,6 +49,7 @@ namespace Presentacion.Core.Pedido
         long ClienteId;
         long _TalleId;
 
+        ClienteDto _Cliente;
         List<VentaDto2> ListaVentas;
 
         public Pedido(List<VentaDto2> Lista, decimal total, string nombre, long clienteId, string descripcion, long talleId)
@@ -56,12 +63,19 @@ namespace Presentacion.Core.Pedido
             detallCajaServicio = new DetalleCajaServicio();
             ctaCteServicio = new CtaCteServicio();
             talleServicio = new TalleServicio();
+            clienteServicio = new ClienteServicio();
+            ventaServicio = new VentaServicio();
+
+            _Cliente = new ClienteDto();
+
+            _Cliente = clienteServicio.ObtenerPorId(clienteId);
 
             txtDescripcion.Text = descripcion;
 
             if (nombre != null)
             {
-                txtApellido.Text = nombre;
+                txtApellido.Text = _Cliente.Apellido;
+                txtNombre.Text = _Cliente.Nombre;
             }
 
             _total = total;
@@ -74,22 +88,29 @@ namespace Presentacion.Core.Pedido
 
             if (clienteId != 0)
             {
-                txtApellido.Enabled = false;
+                if (clienteId != 1)
+                {
+                    txtApellido.Enabled = false;
+                    txtNombre.Enabled = false;
+                }
+                else
+                {
+                    txtApellido.Text = string.Empty;
+                    txtNombre.Text = string.Empty;
+
+                    ckbCtaCte.Enabled = false;
+                }
             }
+
         }
 
         public bool AsignarControles()
         {
-            if (txtApellido.Text == string.Empty)
+            if (txtApellido.Text == string.Empty || txtNombre.Text == string.Empty)
             {
                 return false;
             }
-            /*
-            if (txtNombre.Text == string.Empty)
-            {
-                return false;
-            }
-            */
+
             return true;
 
         }
@@ -103,14 +124,21 @@ namespace Presentacion.Core.Pedido
         {
             if (nudAdelanto.Value == _total)
             {
-                ckbCtaCte.Checked = false;
-                ckbCtaCte.Enabled = false;
+                if (ClienteId != 1)
+                {
+                    ckbCtaCte.Checked = false;
+                    ckbCtaCte.Enabled = false;
 
-                ckbNormal.Checked = true;
+                    ckbNormal.Checked = true;
+                }
+                
             }
             else
             {
-                ckbCtaCte.Enabled = true;
+                if (ClienteId != 1)
+                {
+                    ckbCtaCte.Enabled = true;
+                }               
             }
         }
 
@@ -118,7 +146,6 @@ namespace Presentacion.Core.Pedido
         {
             if (AsignarControles())
             {
-                //VerificarSiEsTotal();
 
                 if (ckbNormal.Checked == false && ckbCtaCte.Checked == false && ckbTarjeta.Checked == false)
                 {
@@ -198,7 +225,7 @@ namespace Presentacion.Core.Pedido
                     var detalle = new DetalleCajaDto
                     {
                         Descripcion = txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
-                        Fecha = DateTime.Now.ToString("dd/MM/yy"),
+                        Fecha = DateTime.Now.ToString("dddd dd/MM/yy"),
                         Total = nudAdelanto.Value,
                         CajaId = detallCajaServicio.BuscarCajaAbierta()
                     };
@@ -245,7 +272,7 @@ namespace Presentacion.Core.Pedido
             }
             else
             {
-                var mens = new Negativo("Error", "El Campo Apellido y Nombre no puede estar vacio");
+                var mens = new Negativo("Error", "Apellido y Nombre \nno puede estar vacio");
                 mens.ShowDialog();
                 //MessageBox.Show("El Campo Apellido y Nombre no puede estar vacio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

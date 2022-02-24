@@ -1,6 +1,7 @@
 ﻿using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
 using Servicios.Core.CtaCte;
+using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta.Dto;
@@ -9,6 +10,8 @@ using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Producto_Venta.Dto;
+using Servicios.Core.Venta;
+using Servicios.Core.Venta.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +29,7 @@ namespace Presentacion.Core.Pedido
         private readonly IProducto_Pedido_Servicio producto_Pedido_Servicio;
         private readonly IPedidoServicio pedidoServicio;
         private readonly IProductoServicio productoServicio;
-
+        private readonly IVentaServicio ventaServicio;
         private readonly ICajaServicio cajaServicio;
         private readonly IDetalleCajaServicio detalleCajaServicio;
 
@@ -50,6 +53,7 @@ namespace Presentacion.Core.Pedido
             cajaServicio = new CajaServicio();
             detalleCajaServicio = new DetalleCajaServicio();
             ctaCteServicio = new CtaCteServicio();
+            ventaServicio = new VentaServicio();
 
             list = new List<VentaDto2>();
 
@@ -193,7 +197,8 @@ namespace Presentacion.Core.Pedido
             txtDebe.Text = string.Empty;
             txtDineroAdelanto.Text = string.Empty;
 
-            lblPersona.Text = $"{pedido.Apellido}";
+            lblPersona.Text = $"{pedido.Apellido} {pedido.Nombre}";
+            lblTiempo.Text = "";
             lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dddd dd/MM/yyyy")}";
             lblFecha.Text = $"{pedido.FechaEntrega.ToString("dddd dd/MM/yyyy")}";
             txtNotas.Text = $"{pedido.Descripcion}";
@@ -238,12 +243,14 @@ namespace Presentacion.Core.Pedido
 
                     //Total Cta Cte
 
-                    var cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
+                    var cuentaId = new CtaCteDto();                    
 
-                    if (cuentaId != null)
+                    if (pedido.ClienteId != 1)
                     {
+                        cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
+
                         ctaCteServicio.Pagar(_Debe, pedido.ClienteId, cuentaId.Id);
-                    }               
+                    }
 
                     //Fin Cta Cte
 
@@ -266,6 +273,16 @@ namespace Presentacion.Core.Pedido
                     cajaServicio.SumarDineroACaja(_Debe);
 
                     pedidoServicio.CambiarRamas(_Debe, PedidoId);
+
+                    var venta = new VentaDto
+                    {
+                        ClienteId = pedido.ClienteId,
+                        Descuento = 0,
+                        Fecha = DateTime.Now,
+                        Total = _Debe
+                    };
+
+                    ventaServicio.NuevaVenta(venta);
 
                     var completado = new Afirmacion("Felicidades!", $"Completado se obtuvo de ganancias $ {_Debe}");
                     completado.ShowDialog();

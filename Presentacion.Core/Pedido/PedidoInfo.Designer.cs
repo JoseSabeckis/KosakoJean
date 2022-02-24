@@ -57,6 +57,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblTiempo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,6 +68,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblTiempo);
             this.panel1.Controls.Add(this.lblFechaInicio);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lblFecha);
@@ -397,6 +399,17 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Total  $";
             // 
+            // lblTiempo
+            // 
+            this.lblTiempo.AutoSize = true;
+            this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempo.ForeColor = System.Drawing.Color.Red;
+            this.lblTiempo.Location = new System.Drawing.Point(393, 7);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(81, 24);
+            this.lblTiempo.TabIndex = 8;
+            this.lblTiempo.Text = "Tiempo";
+            // 
             // PedidoInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,5 +464,6 @@
         private System.Windows.Forms.Label lblPagado;
         private System.Windows.Forms.CheckBox ckbNormal;
         private System.Windows.Forms.CheckBox ckbTarjeta;
+        private System.Windows.Forms.Label lblTiempo;
     }
 }

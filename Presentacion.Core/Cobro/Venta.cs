@@ -409,23 +409,13 @@ namespace Presentacion.Core.Cobro
                         factura.ShowDialog();
 
                         //limpiar
-                        btnLimpiar.PerformClick();
-                        PedidoEnabled();                        
+                        btnLimpiar.PerformClick();                      
 
                     }
 
                 }
                 else
                 {
-                    if (txtCliente.Text == "Consumidor Final")
-                    {
-                        var pedis = new Negativo("Error ...", "No Puede Hacer un Pedido a un Consumidor Final");
-                        pedis.ShowDialog();
-
-                        PedidoEnabled();
-
-                        return;
-                    }
 
                     var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId, txtDescripcion.Text, ((TalleDto)cmbTalle.SelectedItem).Id);
                     pedidos.ShowDialog();
@@ -434,7 +424,6 @@ namespace Presentacion.Core.Cobro
                     if (pedidos.semaforo)
                     {
                         btnLimpiar.PerformClick();
-                        PedidoEnabled();
                     }
                 }
             }
@@ -530,8 +519,6 @@ namespace Presentacion.Core.Cobro
                 txtCliente.Text = aux.Apellido + " " + aux.Nombre;
 
                 ventaDto.ClienteId = _clienteId;
-
-                PedidoEnabled();
                 
             }
 
@@ -539,23 +526,7 @@ namespace Presentacion.Core.Cobro
 
         private void Venta_Load(object sender, EventArgs e)
         {
-            PedidoEnabled();
-        }
-
-        public void PedidoEnabled()
-        {
-            if (txtCliente.Text == "Consumidor Final" || _clienteId == 1)
-            {
-
-                ckbPedido.Enabled = false;
-                ckbPedido.Checked = false;
-                ckbNormal.Checked = true;
-            }
-            else
-            {
-                ckbPedido.Enabled = true;
-                ckbPedido.Checked = true;
-            }
+            
         }
 
         public void CargarConsumidorFinal()

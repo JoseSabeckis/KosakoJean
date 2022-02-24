@@ -18,13 +18,13 @@ namespace Servicios.Core.Pedido
                 {
                     Adelanto = pedidoDto.Adelanto,
                     Apellido = pedidoDto.Apellido,
-                    Nombre = pedidoDto.Apellido,
+                    Nombre = pedidoDto.Nombre,
                     FechaEntrega = pedidoDto.FechaEntrega,
                     FechaPedido = pedidoDto.FechaPedido,
                     Total = pedidoDto.Total,
                     Proceso = pedidoDto.Proceso,
                     ClienteId = pedidoDto.ClienteId,
-                    ApyNom = pedidoDto.Apellido,
+                    ApyNom = $"{pedidoDto.Apellido} {pedidoDto.Nombre}",
                     Descripcion = pedidoDto.Descripcion,
 
                 };
@@ -110,7 +110,7 @@ namespace Servicios.Core.Pedido
                 {
                     Adelanto = x.Adelanto,
                     Apellido = x.Apellido,
-                    Nombre = x.Apellido,
+                    Nombre = x.Nombre,
                     FechaEntrega = x.FechaEntrega,
                     FechaPedido = x.FechaPedido,
                     Total = x.Total,
@@ -136,7 +136,7 @@ namespace Servicios.Core.Pedido
                 {
                     Adelanto = x.Adelanto,
                     Apellido = x.Apellido,
-                    Nombre = x.Apellido,
+                    Nombre = x.Nombre,
                     FechaEntrega = x.FechaEntrega,
                     FechaPedido = x.FechaPedido,
                     Total = x.Total,
@@ -161,7 +161,7 @@ namespace Servicios.Core.Pedido
                     {
                         Adelanto = aux.Adelanto,
                         Apellido = aux.Apellido,
-                        Nombre = aux.Apellido,
+                        Nombre = aux.Nombre,
                         FechaEntrega = aux.FechaEntrega,
                         FechaPedido = aux.FechaPedido,
                         Total = aux.Total,

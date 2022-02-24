@@ -101,6 +101,7 @@ namespace Servicios.Core.Producto_Venta
                     Talle = aux.Talle,
                     VentaId = aux.VentaId,
                     TalleId = aux.TalleId
+                   
                 };
 
                 return producto;

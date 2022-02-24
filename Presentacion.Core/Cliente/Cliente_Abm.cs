@@ -91,20 +91,19 @@ namespace Presentacion.Core.Cliente
 
         public override bool EjecutarComandoNuevo()
         {
-
-            if (_Servicio.VerificarDni(txtDni.Text) == false)
-            {
-                MessageBox.Show("Este Dni Ya Existe","Atencion",MessageBoxButtons.OK,MessageBoxIcon.Stop);
-
-                return false;
-            }
-
             if (!VerificarDatosObligatorios())
             {
                 MessageBox.Show(@"Por favor ingrese los campos Obligatorios.", @"Atención", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return false;
             }
+
+            if (_Servicio.VerificarDni(txtDni.Text) == false)
+            {
+                MessageBox.Show("Este Dni Ya Existe","Atencion",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+
+                return false;
+            }           
 
             var nuevaLocalidad = new ClienteDto
             {

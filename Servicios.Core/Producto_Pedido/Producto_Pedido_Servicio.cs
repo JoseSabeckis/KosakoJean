@@ -38,7 +38,7 @@ namespace Servicios.Core.Producto_Pedido
         {
             using (var context = new KosakoDBEntities())
             {
-                var estado = context.Producto_Pedidos.FirstOrDefault(x => x.Id == id);
+                var estado = context.Producto_Pedidos.FirstOrDefault(x => x.PedidoId == id);
 
                 estado.Estado = EstadoPedido.Terminado;
 

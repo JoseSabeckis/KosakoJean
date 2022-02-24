@@ -60,7 +60,9 @@ namespace Presentacion.Core.Cliente
 
         private void CargarGrilla(long idCliente)
         {
-            foreach (var ventas in ventaServicio.VentaPorCliente(idCliente))
+            var lista = ventaServicio.VentaPorCliente(idCliente);
+
+            foreach (var ventas in lista)
             {
 
                 var historial = new HistorialCompras
