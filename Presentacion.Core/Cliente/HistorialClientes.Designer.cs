@@ -47,6 +47,13 @@ namespace Presentacion.Core.Cliente
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaPedidos)).BeginInit();
@@ -54,6 +61,10 @@ namespace Presentacion.Core.Cliente
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,18 +77,18 @@ namespace Presentacion.Core.Cliente
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(718, 422);
+            this.panel1.Size = new System.Drawing.Size(863, 422);
             this.panel1.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.dgvGrillaPedidos);
-            this.panel3.Controls.Add(this.dgvGrillaVentas);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 78);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(714, 340);
+            this.panel3.Size = new System.Drawing.Size(859, 340);
             this.panel3.TabIndex = 19;
             // 
             // dgvGrillaPedidos
@@ -87,13 +98,13 @@ namespace Presentacion.Core.Cliente
             this.dgvGrillaPedidos.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dgvGrillaPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrillaPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvGrillaPedidos.Location = new System.Drawing.Point(357, 0);
+            this.dgvGrillaPedidos.Location = new System.Drawing.Point(0, 0);
             this.dgvGrillaPedidos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGrillaPedidos.MultiSelect = false;
             this.dgvGrillaPedidos.Name = "dgvGrillaPedidos";
             this.dgvGrillaPedidos.ReadOnly = true;
             this.dgvGrillaPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrillaPedidos.Size = new System.Drawing.Size(353, 336);
+            this.dgvGrillaPedidos.Size = new System.Drawing.Size(416, 297);
             this.dgvGrillaPedidos.TabIndex = 18;
             // 
             // dgvGrillaVentas
@@ -102,21 +113,21 @@ namespace Presentacion.Core.Cliente
             this.dgvGrillaVentas.AllowUserToDeleteRows = false;
             this.dgvGrillaVentas.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dgvGrillaVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrillaVentas.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvGrillaVentas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvGrillaVentas.Location = new System.Drawing.Point(0, 0);
             this.dgvGrillaVentas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGrillaVentas.MultiSelect = false;
             this.dgvGrillaVentas.Name = "dgvGrillaVentas";
             this.dgvGrillaVentas.ReadOnly = true;
             this.dgvGrillaVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrillaVentas.Size = new System.Drawing.Size(357, 336);
+            this.dgvGrillaVentas.Size = new System.Drawing.Size(427, 297);
             this.dgvGrillaVentas.TabIndex = 13;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(110, 51);
+            this.lblNombre.Location = new System.Drawing.Point(110, 50);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(58, 22);
             this.lblNombre.TabIndex = 17;
@@ -145,9 +156,10 @@ namespace Presentacion.Core.Cliente
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolver.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVolver.Location = new System.Drawing.Point(601, 4);
+            this.btnVolver.Location = new System.Drawing.Point(746, 4);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(110, 68);
             this.btnVolver.TabIndex = 0;
@@ -157,39 +169,46 @@ namespace Presentacion.Core.Cliente
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(544, 43);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(686, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 20);
+            this.label4.Size = new System.Drawing.Size(21, 24);
             this.label4.TabIndex = 16;
             this.label4.Text = "$";
             // 
             // nudTotal
             // 
+            this.nudTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.nudTotal.BackColor = System.Drawing.SystemColors.Info;
             this.nudTotal.Enabled = false;
-            this.nudTotal.Location = new System.Drawing.Point(568, 41);
+            this.nudTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudTotal.Location = new System.Drawing.Point(713, 41);
             this.nudTotal.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
             this.nudTotal.Name = "nudTotal";
-            this.nudTotal.Size = new System.Drawing.Size(120, 26);
+            this.nudTotal.Size = new System.Drawing.Size(143, 29);
             this.nudTotal.TabIndex = 15;
             // 
             // lblTotal
             // 
+            this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(564, 18);
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(709, 18);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(109, 20);
+            this.lblTotal.Size = new System.Drawing.Size(122, 20);
             this.lblTotal.TabIndex = 14;
             this.lblTotal.Text = "Total Cobrado";
             // 
             // dtpDesde
             // 
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(13, 37);
+            this.dtpDesde.Location = new System.Drawing.Point(12, 37);
             this.dtpDesde.MinDate = new System.DateTime(1839, 11, 29, 0, 0, 0, 0);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(119, 26);
@@ -198,7 +217,7 @@ namespace Presentacion.Core.Cliente
             // dtpHasta
             // 
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(181, 37);
+            this.dtpHasta.Location = new System.Drawing.Point(180, 37);
             this.dtpHasta.MinDate = new System.DateTime(1839, 11, 29, 0, 0, 0, 0);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(119, 26);
@@ -207,6 +226,7 @@ namespace Presentacion.Core.Cliente
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -215,26 +235,28 @@ namespace Presentacion.Core.Cliente
             this.panel2.Controls.Add(this.dtpHasta);
             this.panel2.Controls.Add(this.nudTotal);
             this.panel2.Controls.Add(this.lblTotal);
-            this.panel2.Location = new System.Drawing.Point(13, 440);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 445);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(718, 106);
+            this.panel2.Size = new System.Drawing.Size(888, 106);
             this.panel2.TabIndex = 20;
             // 
             // btnBuscar
             // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscar.Location = new System.Drawing.Point(114, 68);
+            this.btnBuscar.Location = new System.Drawing.Point(320, 30);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(80, 29);
+            this.btnBuscar.Size = new System.Drawing.Size(89, 40);
             this.btnBuscar.TabIndex = 22;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(177, 14);
+            this.label3.Location = new System.Drawing.Point(176, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 20);
             this.label3.TabIndex = 21;
@@ -243,27 +265,99 @@ namespace Presentacion.Core.Cliente
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 14);
+            this.label2.Location = new System.Drawing.Point(8, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 20);
             this.label2.TabIndex = 20;
             this.label2.Text = "Desde";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(0, 87);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(240, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "si es una fecha cargar ambos con la misma fecha";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(605, -2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 25);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Pedidos";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(168, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 25);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Ventas";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(855, 31);
+            this.panel4.TabIndex = 19;
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 31);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(855, 305);
+            this.panel5.TabIndex = 20;
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.dgvGrillaVentas);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(431, 301);
+            this.panel6.TabIndex = 19;
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.dgvGrillaPedidos);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(431, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(420, 301);
+            this.panel7.TabIndex = 20;
             // 
             // HistorialClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(743, 551);
+            this.ClientSize = new System.Drawing.Size(888, 551);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(759, 590);
+            this.MaximumSize = new System.Drawing.Size(904, 590);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(759, 590);
+            this.MinimumSize = new System.Drawing.Size(904, 590);
             this.Name = "HistorialClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial Clientes";
@@ -276,6 +370,11 @@ namespace Presentacion.Core.Cliente
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -299,5 +398,12 @@ namespace Presentacion.Core.Cliente
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         protected System.Windows.Forms.DataGridView dgvGrillaPedidos;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
     }
 }

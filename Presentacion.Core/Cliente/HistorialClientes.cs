@@ -122,6 +122,7 @@ namespace Presentacion.Core.Cliente
         private void CargarGrillaDesdeHasta(long idCliente)
         {
             ListaVentas = new List<HistorialCompras>();
+            ListaPedidos = new List<HistorialCompras>();
             nudTotal.Value = 0;
 
             foreach (var ventas in ventaServicio.VentaPorClienteDesdeHasta(idCliente, dtpDesde.Value, dtpHasta.Value))
@@ -139,8 +140,25 @@ namespace Presentacion.Core.Cliente
                 ListaVentas.Add(historial);
 
             }
-            
-            
+
+            foreach (var ventas in ventaServicio.VentaPorClienteDesdeHastaPedido(idCliente, dtpDesde.Value, dtpHasta.Value))
+            {
+                var producto = producto_Venta_Servicio.ObtenerDescripcionPedido(ventas.Id);
+
+                var historial = new HistorialCompras
+                {
+                    Fecha = ventas.Fecha,
+                    Total = producto.Precio,
+                    Descripcion = producto.Descripcion
+                };
+
+                nudTotal.Value += historial.Total;
+
+                ListaPedidos.Add(historial);
+
+            }
+
+            /*
             foreach (var item in pedidoServicio.BuscandoTerminadosyClientesDesdeHasta(idCliente, dtpDesde.Value, dtpHasta.Value))
             {
 
@@ -156,13 +174,31 @@ namespace Presentacion.Core.Cliente
                 ListaVentas.Add(pedido);
 
             }
-
+            */
         }
 
         private void CargarGrillaFecha(long idCliente)
         {
             ListaVentas = new List<HistorialCompras>();
+            ListaPedidos = new List<HistorialCompras>();
             nudTotal.Value = 0;
+
+            foreach (var ventas in ventaServicio.VentaPorClienteFechaPedido(idCliente, dtpDesde.Value))
+            {
+                var pedido = producto_Venta_Servicio.ObtenerDescripcionPedido(ventas.Id);
+
+                var historial = new HistorialCompras
+                {
+                    Fecha = ventas.Fecha,
+                    Total = pedido.Precio,
+                    Descripcion = pedido.Descripcion
+                };
+
+                nudTotal.Value += historial.Total;
+
+                ListaPedidos.Add(historial);
+
+            }
 
             foreach (var ventas in ventaServicio.VentaPorClienteFecha(idCliente, dtpDesde.Value))
             {
@@ -180,7 +216,7 @@ namespace Presentacion.Core.Cliente
 
             }
 
-
+            /*
             foreach (var item in pedidoServicio.BuscandoTerminadosyClientesFecha(idCliente, dtpDesde.Value))
             {
 
@@ -196,7 +232,7 @@ namespace Presentacion.Core.Cliente
                 ListaVentas.Add(pedido);
 
             }
-
+            */
         }
 
         public void CargarNombre(long idCliente)
