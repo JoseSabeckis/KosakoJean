@@ -26,5 +26,7 @@ namespace Servicios.Core.Producto_Venta.Dto
         public long? VentaId { get; set; }
 
         public long TalleId { get; set; }
+
+        public DateTime Fecha { get; set; }
     }
 }

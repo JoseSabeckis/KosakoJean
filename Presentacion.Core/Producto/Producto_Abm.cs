@@ -117,6 +117,8 @@ namespace Presentacion.Core.Producto
 
             _Servicio.Nuevo(nueva);
 
+            nudStock.Value = 0;
+
             return true;
         }
 

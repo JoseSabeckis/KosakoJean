@@ -23,6 +23,8 @@ namespace Servicios.Core.Producto_Venta
 
         void CambiarEstado(long id);
 
+        Producto_Venta_Dto ObtenerDescripcionPedido(long id);
+
         Producto_Venta_Dto ObtenerId(long id);
 
         IEnumerable<Producto_Venta_Dto> Obtener();

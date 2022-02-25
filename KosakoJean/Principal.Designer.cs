@@ -276,7 +276,7 @@
             this.panel5.Location = new System.Drawing.Point(191, 361);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(627, 65);
-            this.panel5.TabIndex = 3;
+            this.panel5.TabIndex = 10;
             // 
             // lblFecha
             // 
@@ -310,7 +310,7 @@
             this.panel9.Location = new System.Drawing.Point(0, 195);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(623, 227);
-            this.panel9.TabIndex = 8;
+            this.panel9.TabIndex = 10;
             // 
             // btnPedidos
             // 
@@ -322,7 +322,7 @@
             this.btnPedidos.Location = new System.Drawing.Point(343, 28);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(247, 107);
-            this.btnPedidos.TabIndex = 4;
+            this.btnPedidos.TabIndex = 12;
             this.btnPedidos.Text = "Ver Pedidos Pendientes";
             this.btnPedidos.UseVisualStyleBackColor = false;
             this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
@@ -337,7 +337,7 @@
             this.btnListoParaEntregar.Location = new System.Drawing.Point(47, 28);
             this.btnListoParaEntregar.Name = "btnListoParaEntregar";
             this.btnListoParaEntregar.Size = new System.Drawing.Size(253, 107);
-            this.btnListoParaEntregar.TabIndex = 5;
+            this.btnListoParaEntregar.TabIndex = 11;
             this.btnListoParaEntregar.Text = "Pedidos Listos Para Entregar";
             this.btnListoParaEntregar.UseVisualStyleBackColor = false;
             this.btnListoParaEntregar.Click += new System.EventHandler(this.btnListoParaEntregar_Click);
@@ -376,7 +376,7 @@
             this.btnClientes.Location = new System.Drawing.Point(205, 102);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(334, 54);
-            this.btnClientes.TabIndex = 7;
+            this.btnClientes.TabIndex = 9;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
@@ -392,7 +392,7 @@
             this.btnTerminados.Location = new System.Drawing.Point(205, 29);
             this.btnTerminados.Name = "btnTerminados";
             this.btnTerminados.Size = new System.Drawing.Size(334, 54);
-            this.btnTerminados.TabIndex = 6;
+            this.btnTerminados.TabIndex = 8;
             this.btnTerminados.Text = "Pedidos Terminados";
             this.btnTerminados.UseVisualStyleBackColor = false;
             this.btnTerminados.Click += new System.EventHandler(this.btnTerminados_Click);
@@ -408,7 +408,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(191, 426);
-            this.panel3.TabIndex = 1;
+            this.panel3.TabIndex = 3;
             // 
             // panel12
             // 
@@ -418,7 +418,7 @@
             this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(187, 100);
-            this.panel12.TabIndex = 5;
+            this.panel12.TabIndex = 1;
             // 
             // btnAbrirCaja
             // 
@@ -429,7 +429,7 @@
             this.btnAbrirCaja.Location = new System.Drawing.Point(20, 29);
             this.btnAbrirCaja.Name = "btnAbrirCaja";
             this.btnAbrirCaja.Size = new System.Drawing.Size(136, 44);
-            this.btnAbrirCaja.TabIndex = 1;
+            this.btnAbrirCaja.TabIndex = 2;
             this.btnAbrirCaja.Text = "Abrir Caja";
             this.btnAbrirCaja.UseVisualStyleBackColor = false;
             this.btnAbrirCaja.Click += new System.EventHandler(this.btnAbrirCaja_Click);
@@ -446,7 +446,7 @@
             this.btnCajas.Location = new System.Drawing.Point(22, 130);
             this.btnCajas.Name = "btnCajas";
             this.btnCajas.Size = new System.Drawing.Size(136, 97);
-            this.btnCajas.TabIndex = 3;
+            this.btnCajas.TabIndex = 4;
             this.btnCajas.Text = "Ver Cajas";
             this.btnCajas.UseVisualStyleBackColor = false;
             this.btnCajas.Click += new System.EventHandler(this.btnCajas_Click);
@@ -459,7 +459,7 @@
             this.panel11.Location = new System.Drawing.Point(0, 259);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(187, 100);
-            this.panel11.TabIndex = 4;
+            this.panel11.TabIndex = 5;
             // 
             // btnCerrarCaja
             // 
@@ -470,7 +470,7 @@
             this.btnCerrarCaja.Location = new System.Drawing.Point(20, 27);
             this.btnCerrarCaja.Name = "btnCerrarCaja";
             this.btnCerrarCaja.Size = new System.Drawing.Size(136, 44);
-            this.btnCerrarCaja.TabIndex = 2;
+            this.btnCerrarCaja.TabIndex = 6;
             this.btnCerrarCaja.Text = "Cerrar Caja";
             this.btnCerrarCaja.UseVisualStyleBackColor = false;
             this.btnCerrarCaja.Click += new System.EventHandler(this.btnCerrarCaja_Click);
@@ -483,7 +483,7 @@
             this.panel7.Location = new System.Drawing.Point(0, 359);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(187, 63);
-            this.panel7.TabIndex = 0;
+            this.panel7.TabIndex = 11;
             // 
             // pictureBox1
             // 
@@ -506,7 +506,7 @@
             this.panel2.Location = new System.Drawing.Point(818, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(196, 426);
-            this.panel2.TabIndex = 89;
+            this.panel2.TabIndex = 15;
             // 
             // btnProductos
             // 
@@ -519,7 +519,7 @@
             this.btnProductos.Location = new System.Drawing.Point(23, 225);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(151, 107);
-            this.btnProductos.TabIndex = 6;
+            this.btnProductos.TabIndex = 16;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = false;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
@@ -532,7 +532,7 @@
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(192, 195);
-            this.panel10.TabIndex = 5;
+            this.panel10.TabIndex = 13;
             // 
             // btnCobrar2
             // 
@@ -545,7 +545,7 @@
             this.btnCobrar2.Location = new System.Drawing.Point(21, 29);
             this.btnCobrar2.Name = "btnCobrar2";
             this.btnCobrar2.Size = new System.Drawing.Size(151, 127);
-            this.btnCobrar2.TabIndex = 3;
+            this.btnCobrar2.TabIndex = 14;
             this.btnCobrar2.Text = "Cobrar";
             this.btnCobrar2.UseVisualStyleBackColor = false;
             this.btnCobrar2.Click += new System.EventHandler(this.btnCobrar2_Click);
@@ -558,7 +558,7 @@
             this.panel6.Location = new System.Drawing.Point(0, 359);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(192, 63);
-            this.panel6.TabIndex = 0;
+            this.panel6.TabIndex = 9;
             // 
             // lblhora
             // 

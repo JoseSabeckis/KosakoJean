@@ -31,8 +31,10 @@ namespace Presentacion.Core.Cliente
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialClientes));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgvGrillaPedidos = new System.Windows.Forms.DataGridView();
+            this.dgvGrillaVentas = new System.Windows.Forms.DataGridView();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
@@ -46,7 +48,9 @@ namespace Presentacion.Core.Cliente
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaVentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             this.panel2.SuspendLayout();
@@ -55,8 +59,8 @@ namespace Presentacion.Core.Cliente
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lblNombre);
-            this.panel1.Controls.Add(this.dgvGrilla);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnVolver);
@@ -64,6 +68,49 @@ namespace Presentacion.Core.Cliente
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(718, 422);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.dgvGrillaPedidos);
+            this.panel3.Controls.Add(this.dgvGrillaVentas);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 78);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(714, 340);
+            this.panel3.TabIndex = 19;
+            // 
+            // dgvGrillaPedidos
+            // 
+            this.dgvGrillaPedidos.AllowUserToAddRows = false;
+            this.dgvGrillaPedidos.AllowUserToDeleteRows = false;
+            this.dgvGrillaPedidos.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dgvGrillaPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrillaPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvGrillaPedidos.Location = new System.Drawing.Point(357, 0);
+            this.dgvGrillaPedidos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvGrillaPedidos.MultiSelect = false;
+            this.dgvGrillaPedidos.Name = "dgvGrillaPedidos";
+            this.dgvGrillaPedidos.ReadOnly = true;
+            this.dgvGrillaPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGrillaPedidos.Size = new System.Drawing.Size(353, 336);
+            this.dgvGrillaPedidos.TabIndex = 18;
+            // 
+            // dgvGrillaVentas
+            // 
+            this.dgvGrillaVentas.AllowUserToAddRows = false;
+            this.dgvGrillaVentas.AllowUserToDeleteRows = false;
+            this.dgvGrillaVentas.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dgvGrillaVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrillaVentas.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dgvGrillaVentas.Location = new System.Drawing.Point(0, 0);
+            this.dgvGrillaVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvGrillaVentas.MultiSelect = false;
+            this.dgvGrillaVentas.Name = "dgvGrillaVentas";
+            this.dgvGrillaVentas.ReadOnly = true;
+            this.dgvGrillaVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGrillaVentas.Size = new System.Drawing.Size(357, 336);
+            this.dgvGrillaVentas.TabIndex = 13;
             // 
             // lblNombre
             // 
@@ -74,22 +121,6 @@ namespace Presentacion.Core.Cliente
             this.lblNombre.Size = new System.Drawing.Size(58, 22);
             this.lblNombre.TabIndex = 17;
             this.lblNombre.Text = "====";
-            // 
-            // dgvGrilla
-            // 
-            this.dgvGrilla.AllowUserToAddRows = false;
-            this.dgvGrilla.AllowUserToDeleteRows = false;
-            this.dgvGrilla.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrilla.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvGrilla.Location = new System.Drawing.Point(0, 79);
-            this.dgvGrilla.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvGrilla.MultiSelect = false;
-            this.dgvGrilla.Name = "dgvGrilla";
-            this.dgvGrilla.ReadOnly = true;
-            this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(714, 339);
-            this.dgvGrilla.TabIndex = 13;
             // 
             // label1
             // 
@@ -238,7 +269,9 @@ namespace Presentacion.Core.Cliente
             this.Text = "Historial Clientes";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaVentas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -253,7 +286,7 @@ namespace Presentacion.Core.Cliente
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        protected System.Windows.Forms.DataGridView dgvGrilla;
+        protected System.Windows.Forms.DataGridView dgvGrillaVentas;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown nudTotal;
         private System.Windows.Forms.Label lblTotal;
@@ -264,5 +297,7 @@ namespace Presentacion.Core.Cliente
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel3;
+        protected System.Windows.Forms.DataGridView dgvGrillaPedidos;
     }
 }

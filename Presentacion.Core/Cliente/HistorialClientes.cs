@@ -30,7 +30,8 @@ namespace Presentacion.Core.Cliente
             public DateTime Fecha { get; set; }
         }
 
-        List<HistorialCompras> Lista;
+        List<HistorialCompras> ListaVentas;
+        List<HistorialCompras> ListaPedidos;
 
         long IdCliente;
 
@@ -44,7 +45,8 @@ namespace Presentacion.Core.Cliente
             pedidoServicio = new PedidoServicio();
             producto_Pedido_Servicio = new Producto_Pedido_Servicio();
 
-            Lista = new List<HistorialCompras>();
+            ListaVentas = new List<HistorialCompras>();
+            ListaPedidos = new List<HistorialCompras>();
 
             CargarNombre(idCliente);
 
@@ -52,15 +54,18 @@ namespace Presentacion.Core.Cliente
 
             IdCliente = idCliente;
 
-            dgvGrilla.DataSource = Lista.ToList();
+            dgvGrillaVentas.DataSource = ListaVentas.ToList();
+            dgvGrillaPedidos.DataSource = ListaPedidos.ToList();
 
-            FormatearGrilla(dgvGrilla);
+            FormatearGrilla(dgvGrillaVentas);
+            FormatearGrilla(dgvGrillaPedidos);
 
         }
 
         private void CargarGrilla(long idCliente)
         {
             var lista = ventaServicio.VentaPorCliente(idCliente);
+            var listPedidos = ventaServicio.VentaClientePedidos(idCliente);
 
             foreach (var ventas in lista)
             {
@@ -74,11 +79,28 @@ namespace Presentacion.Core.Cliente
 
                 nudTotal.Value += historial.Total;
 
-                Lista.Add(historial);
+                ListaVentas.Add(historial);
 
             }
 
+            foreach (var ventas in listPedidos)
+            {
+                var pedido = producto_Venta_Servicio.ObtenerDescripcionPedido(ventas.Id);
 
+                var historial = new HistorialCompras
+                {
+                    Fecha = ventas.Fecha,
+                    Total = pedido.Precio,
+                    Descripcion = pedido.Descripcion
+                };
+
+                nudTotal.Value += historial.Total;
+
+                ListaPedidos.Add(historial);
+
+            }
+
+            /*
             foreach (var item in pedidoServicio.BuscandoTerminadosyClientes(idCliente))
             {
 
@@ -91,15 +113,15 @@ namespace Presentacion.Core.Cliente
 
                 nudTotal.Value += pedido.Total;
 
-                Lista.Add(pedido);
+                ListaPedidos.Add(pedido);
 
             }
-            
+            */
         }
 
         private void CargarGrillaDesdeHasta(long idCliente)
         {
-            Lista = new List<HistorialCompras>();
+            ListaVentas = new List<HistorialCompras>();
             nudTotal.Value = 0;
 
             foreach (var ventas in ventaServicio.VentaPorClienteDesdeHasta(idCliente, dtpDesde.Value, dtpHasta.Value))
@@ -114,7 +136,7 @@ namespace Presentacion.Core.Cliente
 
                 nudTotal.Value += historial.Total;
 
-                Lista.Add(historial);
+                ListaVentas.Add(historial);
 
             }
             
@@ -131,7 +153,7 @@ namespace Presentacion.Core.Cliente
 
                 nudTotal.Value += pedido.Total;
 
-                Lista.Add(pedido);
+                ListaVentas.Add(pedido);
 
             }
 
@@ -139,7 +161,7 @@ namespace Presentacion.Core.Cliente
 
         private void CargarGrillaFecha(long idCliente)
         {
-            Lista = new List<HistorialCompras>();
+            ListaVentas = new List<HistorialCompras>();
             nudTotal.Value = 0;
 
             foreach (var ventas in ventaServicio.VentaPorClienteFecha(idCliente, dtpDesde.Value))
@@ -154,7 +176,7 @@ namespace Presentacion.Core.Cliente
 
                 nudTotal.Value += historial.Total;
 
-                Lista.Add(historial);
+                ListaVentas.Add(historial);
 
             }
 
@@ -171,7 +193,7 @@ namespace Presentacion.Core.Cliente
 
                 nudTotal.Value += pedido.Total;
 
-                Lista.Add(pedido);
+                ListaVentas.Add(pedido);
 
             }
 
@@ -228,7 +250,8 @@ namespace Presentacion.Core.Cliente
             }
             
 
-            dgvGrilla.DataSource = Lista.ToList();
+            dgvGrillaPedidos.DataSource = ListaPedidos.ToList();
+            dgvGrillaVentas.DataSource = ListaVentas.ToList();
         }
     }
 }

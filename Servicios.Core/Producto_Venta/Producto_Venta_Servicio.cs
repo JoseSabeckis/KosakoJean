@@ -109,6 +109,26 @@ namespace Servicios.Core.Producto_Venta
             }
         }
 
+        public Producto_Venta_Dto ObtenerDescripcionPedido(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var aux = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                var producto = new Producto_Venta_Dto
+                {
+                    Id = aux.Id,
+                    Descripcion = aux.ApyNom,
+                    Precio = aux.Adelanto,
+                    Fecha = aux.FechaPedido
+                };
+
+                return producto;
+
+            }
+        }
+
         public Producto_Venta_Dto ObtenerId(long id)
         {
             using (var context = new KosakoDBEntities())

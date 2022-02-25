@@ -49,6 +49,23 @@ namespace Servicios.Core.Venta
             }
         }
 
+        public IEnumerable<VentaDto> VentaClientePedidos(long idCliente)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.Where(x => x.ClienteId == idCliente).Select(x => new VentaDto
+                {
+                    ClienteId = x.ClienteId,
+                    Id = x.Id,
+                    Total = x.Total,
+                    Fecha = x.FechaPedido
+
+                }).ToList();
+
+            }
+        }
+
         public IEnumerable<VentaDto> VentaPorClienteDesdeHasta(long clienteId, DateTime desde, DateTime hasta)
         {
             using (var context = new KosakoDBEntities())
