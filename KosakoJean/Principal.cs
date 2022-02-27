@@ -12,6 +12,7 @@ using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
 using Servicios.Core.Colegio;
 using Servicios.Core.Talle;
+using Servicios.Core.Talle.Dto;
 using Servicios.Core.TipoProducto;
 using Servicios.Core.TipoProducto.Dto;
 using System;
@@ -152,6 +153,16 @@ namespace KosakoJean
                 colegioServicio.Nuevo(colegio);
             }
 
+            if (talleServicio.ObtenerPorId(1) == null)
+            {
+                var talle = new TalleDto
+                {
+                    Descripcion = "Sin Talle"
+                };
+
+                talleServicio.Nuevo(talle);
+            }
+
         }
 
         public void CargarConsumidorFinal()
@@ -164,8 +175,8 @@ namespace KosakoJean
                     Foto = ImagenDb.Convertir_Imagen_Bytes(Imagen.Usuario),
                     Nombre = "",
                     Dni = "11111111",
-                    Direccion = "",
-                    Telefono = "",
+                    Direccion = "Peru Sud 573",
+                    Telefono = "3813590385",
                     Principal = true
                 };
 

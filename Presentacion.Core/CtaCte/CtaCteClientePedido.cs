@@ -106,7 +106,7 @@ namespace Presentacion.Core.CtaCte
             if (MessageBox.Show("Seguro de Continuar?","Pregunta",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 ventaDto.ClienteId = _Cliente.Id;
-                ventaDto.Fecha = DateTime.Now.ToLongDateString();
+                ventaDto.Fecha = DateTime.Now;
                 ventaDto.Total = nudAdelanto.Value;
 
                 var ventaId = ventaServicio.NuevaVenta(ventaDto);
@@ -114,6 +114,8 @@ namespace Presentacion.Core.CtaCte
                 foreach (var item in ListaVenta)
                 {
                     var producto = productoServicio.ObtenerPorId(item.ProductoId);
+
+                    item.VentaId = ventaId;
 
                     // descontar stock
                     productoServicio.BajarStock(producto.Id, item.Cantidad);
@@ -154,7 +156,7 @@ namespace Presentacion.Core.CtaCte
                 var detalle = new DetalleCajaDto
                 {
                     Descripcion = txtApellido.Text + " " + txtNombre.Text,
-                    Fecha = DateTime.Now.ToString("dddd dd/MM/yy"),
+                    Fecha = DateTime.Now.ToLongDateString(),
                     Total = nudAdelanto.Value,
                     CajaId = detallCajaServicio.BuscarCajaAbierta()
                 };

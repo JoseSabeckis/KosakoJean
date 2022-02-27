@@ -72,7 +72,7 @@ namespace Presentacion.Core.Cliente
 
                 var historial = new HistorialCompras
                 {
-                    Fecha = ventas.Fecha,
+                    Fecha = ventas.FechaString,
                     Total = ventas.Total,
                     Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
                 };
@@ -89,7 +89,7 @@ namespace Presentacion.Core.Cliente
 
                 var historial = new HistorialCompras
                 {
-                    Fecha = ventas.Fecha,
+                    Fecha = ventas.FechaString,
                     Total = pedido.Precio,
                     Descripcion = pedido.Descripcion
                 };
@@ -130,7 +130,7 @@ namespace Presentacion.Core.Cliente
 
                 var historial = new HistorialCompras
                 {
-                    Fecha = ventas.Fecha,
+                    Fecha = ventas.FechaString,
                     Total = ventas.Total,
                     Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
                 };
@@ -147,7 +147,7 @@ namespace Presentacion.Core.Cliente
 
                 var historial = new HistorialCompras
                 {
-                    Fecha = ventas.Fecha,
+                    Fecha = ventas.FechaString,
                     Total = producto.Precio,
                     Descripcion = producto.Descripcion
                 };
@@ -189,7 +189,7 @@ namespace Presentacion.Core.Cliente
 
                 var historial = new HistorialCompras
                 {
-                    Fecha = ventas.Fecha,
+                    Fecha = ventas.FechaString,
                     Total = pedido.Precio,
                     Descripcion = pedido.Descripcion
                 };
@@ -205,7 +205,7 @@ namespace Presentacion.Core.Cliente
 
                 var historial = new HistorialCompras
                 {
-                    Fecha = ventas.Fecha,
+                    Fecha = ventas.FechaString,
                     Total = ventas.Total,
                     Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
                 };

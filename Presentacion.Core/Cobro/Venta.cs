@@ -4,6 +4,7 @@ using Presentacion.Core.CtaCte;
 using Presentacion.Core.Factura;
 using Presentacion.Core.Mensaje;
 using Presentacion.Core.Producto;
+using Presentacion.Core.Talle;
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
@@ -67,7 +68,7 @@ namespace Presentacion.Core.Cobro
             clienteServicio = new ClienteServicio();
             talleServicio = new TalleServicio();
 
-            CargarComboBox(cmbTalle, talleServicio.Buscar(string.Empty), "Descripcion", "Id");
+            CargarTalle();
 
             ListaVenta = new List<VentaDto2>();
             ListaCtaCte = new List<Producto_Venta_Dto>();
@@ -78,6 +79,11 @@ namespace Presentacion.Core.Cobro
             CargarGrilla(ListaVenta);
 
             
+        }
+
+        public void CargarTalle()
+        {
+            CargarComboBox(cmbTalle, talleServicio.Buscar(string.Empty), "Descripcion", "Id");
         }
 
         public void CargarComboBox(ComboBox cmb, object datos, string propiedadMostrar,
@@ -228,6 +234,7 @@ namespace Presentacion.Core.Cobro
             _total = precio;
 
             nudTotal.Value = total;
+            nudTotalVenta.Value = total;
         }
 
         public void Limpiar()
@@ -240,6 +247,7 @@ namespace Presentacion.Core.Cobro
 
             txtVuelto.Text = string.Empty;
             nudPagaron.Value = 0;
+            nudTotalVenta.Value = 0;
 
         }
 
@@ -308,20 +316,30 @@ namespace Presentacion.Core.Cobro
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            if (nudPagaron.Value > 0)
-            {
-                if (nudTotal.Value != 0)
-                {                   
+            if (nudPagaron.Value > 0 && nudTotalVenta.Value > 0)
+            {                   
+                 var pago = nudPagaron.Value - nudTotalVenta.Value;
 
-                    var pago = nudPagaron.Value - _total;
-
-                    txtVuelto.Text = $" $ {pago}";
-                }
+                 txtVuelto.Text = $" $ {pago}";
             }
             else
             {
                 MessageBox.Show("Cargue el Dinero", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public void VerTicket(List<VentaDto2> Lista)
+        {
+            //ticket
+
+            var fecha = new FechaDto
+            {
+                Fecha = DateTime.Now.ToShortDateString(),
+                Hora = DateTime.Now.ToShortTimeString()
+            };
+
+            var factura = new Comprobante(ListaVenta.ToList(), fecha);
+            factura.ShowDialog();
         }
 
         private void btnCobrar_Click(object sender, EventArgs e)
@@ -346,7 +364,7 @@ namespace Presentacion.Core.Cobro
                             ventaDto.ClienteId = 0;
                         }
 
-                        ventaDto.Fecha = DateTime.Now.ToLongDateString();
+                        ventaDto.Fecha = DateTime.Now;
                         ventaDto.Total = _total;                           
                         
 
@@ -381,7 +399,7 @@ namespace Presentacion.Core.Cobro
 
                         var detalle = new DetalleCajaDto
                         {
-                            Fecha = DateTime.Now.ToString("dd/MM/yy"),
+                            Fecha = DateTime.Now.ToLongDateString(),
                             Total = _total,
                             Descripcion = $"Venta {descripcion}",
                             CajaId = detalleCajaServicio.BuscarCajaAbierta(),
@@ -403,16 +421,11 @@ namespace Presentacion.Core.Cobro
                             item.Precio = item.Cantidad * item.Precio;
                         }
 
-                        //ticket
 
-                        var fecha = new FechaDto
+                        if (ckbTicket.Checked)
                         {
-                            Fecha = DateTime.Now.ToShortDateString(),
-                            Hora = DateTime.Now.ToShortTimeString()
-                        };
-
-                        var factura = new Comprobante(ListaVenta.ToList(), fecha);
-                        factura.ShowDialog();
+                            VerTicket(ListaVenta.ToList());
+                        }                                              
 
                         //limpiar
                         btnLimpiar.PerformClick();                      
@@ -429,6 +442,11 @@ namespace Presentacion.Core.Cobro
 
                         if (pedidos.semaforo)
                         {
+                            if (ckbTicket.Checked)
+                            {
+                                VerTicket(ListaVenta.ToList());
+                            }
+
                             btnLimpiar.PerformClick();
                         }
 
@@ -437,15 +455,6 @@ namespace Presentacion.Core.Cobro
 
                     if (ckbCtaCte.Checked)
                     {
-                        if (ventaDto.ClienteId == 0)
-                        {
-                            ventaDto.ClienteId = 0;
-                        }
-
-                        ventaDto.Fecha = DateTime.Now.ToLongDateString();
-                        ventaDto.Total = _total;
-
-                        var ventaId = ventaServicio.NuevaVenta(ventaDto);
 
                         foreach (var item in ListaVenta)
                         {
@@ -459,7 +468,7 @@ namespace Presentacion.Core.Cobro
                                 ProductoId = item.Id,
                                 Talle = item.Talle,
                                 Precio = item.Precio * item.Cantidad,
-                                VentaId = ventaId,
+                                VentaId = 0,
                                 TalleId = ((TalleDto)cmbTalle.SelectedItem).Id
                             };
 
@@ -471,11 +480,12 @@ namespace Presentacion.Core.Cobro
 
                         if (cuenta.semaforo)
                         {
+                            if (ckbTicket.Checked)
+                            {
+                                VerTicket(ListaVenta.ToList());
+                            }
+
                             btnLimpiar.PerformClick();
-                        }
-                        else
-                        {
-                            //eliminar venta
                         }
 
                         return;
@@ -538,6 +548,9 @@ namespace Presentacion.Core.Cobro
                 ckbPedido.Checked = false;
                 ckbTarjeta.Checked = false;
                 ckbCtaCte.Checked = false;
+
+                ckbTicket.Checked = true;
+                ckbTicket.Enabled = true;
             }
         }
 
@@ -548,6 +561,9 @@ namespace Presentacion.Core.Cobro
                 ckbNormal.Checked = false;
                 ckbTarjeta.Checked = false;
                 ckbCtaCte.Checked = false;
+
+                ckbTicket.Checked = false;
+                ckbTicket.Enabled = false;
             }
         }
 
@@ -621,7 +637,6 @@ namespace Presentacion.Core.Cobro
         {
             var cliente = new Cliente_Abm(TipoOperacion.Nuevo);
             cliente.ShowDialog();
-
         }
 
         private void nudPagaron_ValueChanged(object sender, EventArgs e)
@@ -641,6 +656,9 @@ namespace Presentacion.Core.Cobro
                 ckbNormal.Checked = false;
                 ckbPedido.Checked = false;
                 ckbCtaCte.Checked = false;
+
+                ckbTicket.Checked = true;
+                ckbTicket.Enabled = true;
             }
         }
 
@@ -661,7 +679,18 @@ namespace Presentacion.Core.Cobro
                 ckbNormal.Checked = false;
                 ckbPedido.Checked = false;
                 ckbTarjeta.Checked = false;
+
+                ckbTicket.Checked = false;
+                ckbTicket.Enabled = false;
             }
+        }
+
+        private void btnNuevoTalle_Click(object sender, EventArgs e)
+        {
+            var verTalle = new Talle_Abm(TipoOperacion.Nuevo);
+            verTalle.ShowDialog();
+
+            CargarTalle();
         }
     }
 }

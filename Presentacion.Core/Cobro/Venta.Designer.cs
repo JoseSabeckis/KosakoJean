@@ -47,6 +47,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnAgregarAlaGrilla = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.ckbCtaCte = new System.Windows.Forms.CheckBox();
             this.btnNewCliente = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.ckbTarjeta = new System.Windows.Forms.CheckBox();
@@ -61,18 +62,21 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.nudTotalVenta = new System.Windows.Forms.NumericUpDown();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.ckbTicket = new System.Windows.Forms.CheckBox();
+            this.btnNuevoTalle = new System.Windows.Forms.Button();
             this.nudTotal = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.nudPagaron = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.ckbCtaCte = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -85,6 +89,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotalVenta)).BeginInit();
             this.panel10.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
@@ -320,6 +325,20 @@
             this.panel3.Size = new System.Drawing.Size(1171, 76);
             this.panel3.TabIndex = 2;
             // 
+            // ckbCtaCte
+            // 
+            this.ckbCtaCte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbCtaCte.AutoSize = true;
+            this.ckbCtaCte.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ckbCtaCte.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbCtaCte.Location = new System.Drawing.Point(741, 20);
+            this.ckbCtaCte.Name = "ckbCtaCte";
+            this.ckbCtaCte.Size = new System.Drawing.Size(101, 30);
+            this.ckbCtaCte.TabIndex = 10;
+            this.ckbCtaCte.Text = "Cta Cte";
+            this.ckbCtaCte.UseVisualStyleBackColor = false;
+            this.ckbCtaCte.CheckedChanged += new System.EventHandler(this.ckbCtaCte_CheckedChanged_1);
+            // 
             // btnNewCliente
             // 
             this.btnNewCliente.BackColor = System.Drawing.Color.Aqua;
@@ -490,6 +509,8 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.nudTotalVenta);
             this.panel4.Controls.Add(this.panel10);
             this.panel4.Controls.Add(this.btnCalcular);
             this.panel4.Controls.Add(this.panel5);
@@ -502,6 +523,34 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1171, 149);
             this.panel4.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(29, 7);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(120, 20);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Total Vendido";
+            // 
+            // nudTotalVenta
+            // 
+            this.nudTotalVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudTotalVenta.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudTotalVenta.Location = new System.Drawing.Point(152, 5);
+            this.nudTotalVenta.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.nudTotalVenta.Name = "nudTotalVenta";
+            this.nudTotalVenta.Size = new System.Drawing.Size(121, 26);
+            this.nudTotalVenta.TabIndex = 10;
             // 
             // panel10
             // 
@@ -535,7 +584,8 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnCalcular.BackColor = System.Drawing.Color.Chocolate;
+            this.btnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCalcular.Location = new System.Drawing.Point(169, 105);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(83, 32);
@@ -547,6 +597,8 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.ckbTicket);
+            this.panel5.Controls.Add(this.btnNuevoTalle);
             this.panel5.Controls.Add(this.nudTotal);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
@@ -554,6 +606,30 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(236, 145);
             this.panel5.TabIndex = 6;
+            // 
+            // ckbTicket
+            // 
+            this.ckbTicket.AutoSize = true;
+            this.ckbTicket.Checked = true;
+            this.ckbTicket.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbTicket.Location = new System.Drawing.Point(48, 64);
+            this.ckbTicket.Name = "ckbTicket";
+            this.ckbTicket.Size = new System.Drawing.Size(148, 26);
+            this.ckbTicket.TabIndex = 8;
+            this.ckbTicket.Text = "Mostrar Ticket";
+            this.ckbTicket.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevoTalle
+            // 
+            this.btnNuevoTalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnNuevoTalle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevoTalle.Location = new System.Drawing.Point(11, 103);
+            this.btnNuevoTalle.Name = "btnNuevoTalle";
+            this.btnNuevoTalle.Size = new System.Drawing.Size(215, 32);
+            this.btnNuevoTalle.TabIndex = 7;
+            this.btnNuevoTalle.Text = "Nuevo Talle";
+            this.btnNuevoTalle.UseVisualStyleBackColor = false;
+            this.btnNuevoTalle.Click += new System.EventHandler(this.btnNuevoTalle_Click);
             // 
             // nudTotal
             // 
@@ -586,7 +662,7 @@
             0,
             0,
             0});
-            this.nudPagaron.Location = new System.Drawing.Point(152, 16);
+            this.nudPagaron.Location = new System.Drawing.Point(152, 37);
             this.nudPagaron.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -601,7 +677,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(85, 61);
+            this.label6.Location = new System.Drawing.Point(85, 72);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 20);
             this.label6.TabIndex = 2;
@@ -611,7 +687,7 @@
             // 
             this.txtVuelto.Enabled = false;
             this.txtVuelto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVuelto.Location = new System.Drawing.Point(152, 58);
+            this.txtVuelto.Location = new System.Drawing.Point(152, 69);
             this.txtVuelto.Name = "txtVuelto";
             this.txtVuelto.Size = new System.Drawing.Size(121, 26);
             this.txtVuelto.TabIndex = 1;
@@ -620,25 +696,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 18);
+            this.label5.Location = new System.Drawing.Point(10, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
-            // 
-            // ckbCtaCte
-            // 
-            this.ckbCtaCte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ckbCtaCte.AutoSize = true;
-            this.ckbCtaCte.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ckbCtaCte.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbCtaCte.Location = new System.Drawing.Point(741, 20);
-            this.ckbCtaCte.Name = "ckbCtaCte";
-            this.ckbCtaCte.Size = new System.Drawing.Size(101, 30);
-            this.ckbCtaCte.TabIndex = 10;
-            this.ckbCtaCte.Text = "Cta Cte";
-            this.ckbCtaCte.UseVisualStyleBackColor = false;
-            this.ckbCtaCte.CheckedChanged += new System.EventHandler(this.ckbCtaCte_CheckedChanged_1);
             // 
             // Venta
             // 
@@ -675,6 +737,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTotalVenta)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -731,5 +794,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox ckbTarjeta;
         private System.Windows.Forms.CheckBox ckbCtaCte;
+        private System.Windows.Forms.Button btnNuevoTalle;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown nudTotalVenta;
+        private System.Windows.Forms.CheckBox ckbTicket;
     }
 }

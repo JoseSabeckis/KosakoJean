@@ -156,7 +156,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Fecha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
     <Property Name="Total" Type="decimal" Nullable="false" />
     <Property Name="Descuento" Type="decimal" Nullable="false" />
     <Property Name="ClienteId" Type="bigint" Nullable="false" />
@@ -588,7 +588,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fecha" Type="String" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
           <Property Name="Total" Type="Decimal" Nullable="false" />
           <Property Name="Descuento" Type="Decimal" Nullable="false" />
           <NavigationProperty Name="Producto_Venta" Relationship="KosakoDBModel.Producto_VentaVenta" FromRole="Venta" ToRole="Producto_Venta" />

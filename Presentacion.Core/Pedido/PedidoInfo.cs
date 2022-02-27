@@ -278,7 +278,7 @@ namespace Presentacion.Core.Pedido
                     {
                         ClienteId = pedido.ClienteId,
                         Descuento = 0,
-                        Fecha = DateTime.Now.ToLongDateString(),
+                        Fecha = DateTime.Now,
                         Total = _Debe
                     };
 
