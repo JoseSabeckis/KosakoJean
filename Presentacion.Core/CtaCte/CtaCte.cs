@@ -238,6 +238,8 @@ namespace Presentacion.Core.CtaCte
 
                         Datos();
 
+                        nudCobro.Value = 0;
+
                         //nudCobroMaximo();
                     }
                 }
@@ -252,7 +254,10 @@ namespace Presentacion.Core.CtaCte
 
         private void CtaCte_Load(object sender, EventArgs e)
         {
-            btnCobrar.Enabled = false;
+            if (_CtaCteId == 0)
+            {
+                btnCobrar.Enabled = false;
+            }           
         }
 
         private void ckbNormal_CheckedChanged(object sender, EventArgs e)

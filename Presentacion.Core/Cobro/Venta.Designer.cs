@@ -49,6 +49,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnNewCliente = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
             this.ckbPedido = new System.Windows.Forms.CheckBox();
             this.ckbNormal = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,13 +66,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
             this.nudTotal = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.nudPagaron = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.ckbCtaCte = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -100,7 +101,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1093, 161);
+            this.panel1.Size = new System.Drawing.Size(1175, 161);
             this.panel1.TabIndex = 0;
             // 
             // panel8
@@ -113,7 +114,7 @@
             this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.nudPrecio);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(527, 76);
+            this.panel8.Location = new System.Drawing.Point(609, 76);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(417, 81);
             this.panel8.TabIndex = 16;
@@ -211,7 +212,7 @@
             this.panel7.Controls.Add(this.btnSeleccionProducto);
             this.panel7.Location = new System.Drawing.Point(0, 76);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(529, 81);
+            this.panel7.Size = new System.Drawing.Size(611, 81);
             this.panel7.TabIndex = 15;
             // 
             // txtCliente
@@ -222,13 +223,13 @@
             this.txtCliente.Enabled = false;
             this.txtCliente.Location = new System.Drawing.Point(95, 8);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(372, 29);
+            this.txtCliente.Size = new System.Drawing.Size(454, 29);
             this.txtCliente.TabIndex = 9;
             // 
             // btnCliente
             // 
             this.btnCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCliente.Location = new System.Drawing.Point(473, 6);
+            this.btnCliente.Location = new System.Drawing.Point(555, 6);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(46, 32);
             this.btnCliente.TabIndex = 10;
@@ -253,7 +254,7 @@
             this.txtProducto.Enabled = false;
             this.txtProducto.Location = new System.Drawing.Point(95, 43);
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(347, 29);
+            this.txtProducto.Size = new System.Drawing.Size(429, 29);
             this.txtProducto.TabIndex = 6;
             // 
             // label2
@@ -268,7 +269,7 @@
             // btnSeleccionProducto
             // 
             this.btnSeleccionProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeleccionProducto.Location = new System.Drawing.Point(448, 42);
+            this.btnSeleccionProducto.Location = new System.Drawing.Point(530, 42);
             this.btnSeleccionProducto.Name = "btnSeleccionProducto";
             this.btnSeleccionProducto.Size = new System.Drawing.Size(71, 32);
             this.btnSeleccionProducto.TabIndex = 7;
@@ -282,7 +283,7 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.btnAgregarAlaGrilla);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(944, 76);
+            this.panel6.Location = new System.Drawing.Point(1026, 76);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(145, 81);
             this.panel6.TabIndex = 14;
@@ -304,6 +305,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.ckbCtaCte);
             this.panel3.Controls.Add(this.btnNewCliente);
             this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.pictureBox1);
@@ -315,7 +317,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1089, 76);
+            this.panel3.Size = new System.Drawing.Size(1171, 76);
             this.panel3.TabIndex = 2;
             // 
             // btnNewCliente
@@ -338,25 +340,41 @@
             this.panel9.Controls.Add(this.ckbPedido);
             this.panel9.Controls.Add(this.ckbNormal);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(766, 0);
+            this.panel9.Location = new System.Drawing.Point(848, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(176, 72);
             this.panel9.TabIndex = 8;
             // 
+            // ckbTarjeta
+            // 
+            this.ckbTarjeta.AutoSize = true;
+            this.ckbTarjeta.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbTarjeta.Location = new System.Drawing.Point(44, 44);
+            this.ckbTarjeta.Name = "ckbTarjeta";
+            this.ckbTarjeta.Size = new System.Drawing.Size(85, 26);
+            this.ckbTarjeta.TabIndex = 9;
+            this.ckbTarjeta.Text = "Tarjeta";
+            this.ckbTarjeta.UseVisualStyleBackColor = false;
+            this.ckbTarjeta.AppearanceChanged += new System.EventHandler(this.ckbTarjeta_AppearanceChanged);
+            this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
+            // 
             // ckbPedido
             // 
             this.ckbPedido.AutoSize = true;
+            this.ckbPedido.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ckbPedido.Location = new System.Drawing.Point(44, 22);
             this.ckbPedido.Name = "ckbPedido";
             this.ckbPedido.Size = new System.Drawing.Size(87, 26);
             this.ckbPedido.TabIndex = 7;
             this.ckbPedido.Text = "Pedido";
-            this.ckbPedido.UseVisualStyleBackColor = true;
+            this.ckbPedido.UseVisualStyleBackColor = false;
             this.ckbPedido.CheckedChanged += new System.EventHandler(this.ckbPedido_CheckedChanged);
             // 
             // ckbNormal
             // 
             this.ckbNormal.AutoSize = true;
+            this.ckbNormal.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ckbNormal.Checked = true;
             this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbNormal.Location = new System.Drawing.Point(44, 1);
@@ -364,7 +382,7 @@
             this.ckbNormal.Size = new System.Drawing.Size(99, 26);
             this.ckbNormal.TabIndex = 6;
             this.ckbNormal.Text = "Contado";
-            this.ckbNormal.UseVisualStyleBackColor = true;
+            this.ckbNormal.UseVisualStyleBackColor = false;
             this.ckbNormal.AppearanceChanged += new System.EventHandler(this.ckbTarjeta_AppearanceChanged);
             this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
             // 
@@ -433,7 +451,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Location = new System.Drawing.Point(942, 0);
+            this.btnVolver.Location = new System.Drawing.Point(1024, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(143, 72);
             this.btnVolver.TabIndex = 0;
@@ -449,7 +467,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 161);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1093, 440);
+            this.panel2.Size = new System.Drawing.Size(1175, 440);
             this.panel2.TabIndex = 1;
             // 
             // dgvGrilla
@@ -465,7 +483,7 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(1089, 287);
+            this.dgvGrilla.Size = new System.Drawing.Size(1171, 287);
             this.dgvGrilla.TabIndex = 11;
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             // 
@@ -482,7 +500,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 287);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1089, 149);
+            this.panel4.Size = new System.Drawing.Size(1171, 149);
             this.panel4.TabIndex = 0;
             // 
             // panel10
@@ -491,7 +509,7 @@
             this.panel10.Controls.Add(this.txtDescripcion);
             this.panel10.Controls.Add(this.label10);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(279, 0);
+            this.panel10.Location = new System.Drawing.Point(361, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(570, 145);
             this.panel10.TabIndex = 9;
@@ -532,23 +550,10 @@
             this.panel5.Controls.Add(this.nudTotal);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(849, 0);
+            this.panel5.Location = new System.Drawing.Point(931, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(236, 145);
             this.panel5.TabIndex = 6;
-            // 
-            // ckbTarjeta
-            // 
-            this.ckbTarjeta.AutoSize = true;
-            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbTarjeta.Location = new System.Drawing.Point(44, 44);
-            this.ckbTarjeta.Name = "ckbTarjeta";
-            this.ckbTarjeta.Size = new System.Drawing.Size(85, 26);
-            this.ckbTarjeta.TabIndex = 9;
-            this.ckbTarjeta.Text = "Tarjeta";
-            this.ckbTarjeta.UseVisualStyleBackColor = true;
-            this.ckbTarjeta.AppearanceChanged += new System.EventHandler(this.ckbTarjeta_AppearanceChanged);
-            this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
             // 
             // nudTotal
             // 
@@ -621,19 +626,33 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
             // 
+            // ckbCtaCte
+            // 
+            this.ckbCtaCte.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ckbCtaCte.AutoSize = true;
+            this.ckbCtaCte.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ckbCtaCte.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbCtaCte.Location = new System.Drawing.Point(741, 20);
+            this.ckbCtaCte.Name = "ckbCtaCte";
+            this.ckbCtaCte.Size = new System.Drawing.Size(101, 30);
+            this.ckbCtaCte.TabIndex = 10;
+            this.ckbCtaCte.Text = "Cta Cte";
+            this.ckbCtaCte.UseVisualStyleBackColor = false;
+            this.ckbCtaCte.CheckedChanged += new System.EventHandler(this.ckbCtaCte_CheckedChanged_1);
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1093, 601);
+            this.ClientSize = new System.Drawing.Size(1175, 601);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1033, 621);
+            this.MinimumSize = new System.Drawing.Size(1191, 640);
             this.Name = "Venta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Aplicacion de Venta";
@@ -711,5 +730,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox ckbTarjeta;
+        private System.Windows.Forms.CheckBox ckbCtaCte;
     }
 }

@@ -49,6 +49,18 @@ namespace Servicios.Core.Venta
             }
         }
 
+        public void EliminarVenta(long idVenta)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var venta = context.Ventas.FirstOrDefault(x => x.Id == idVenta);
+
+                //pendiente
+
+            }
+        }
+
         public IEnumerable<VentaDto> VentaClientePedidos(long idCliente)
         {
             using (var context = new KosakoDBEntities())
@@ -59,7 +71,7 @@ namespace Servicios.Core.Venta
                     ClienteId = x.ClienteId,
                     Id = x.Id,
                     Total = x.Total,
-                    Fecha = x.FechaPedido
+                    Fecha = $"{x.FechaPedido}"
 
                 }).ToList();
 
@@ -70,7 +82,7 @@ namespace Servicios.Core.Venta
         {
             using (var context = new KosakoDBEntities())
             {
-
+                /*
                 return context.Ventas.Where(x => x.Fecha.Day >= desde.Day && x.Fecha.Month >= desde.Month && x.Fecha.Year >= desde.Year && x.Fecha.Year <= hasta.Year && x.Fecha.Month <= hasta.Month && x.Fecha.Day <= hasta.Day
                 && x.ClienteId == clienteId).Select(x => new VentaDto
                 {
@@ -81,7 +93,8 @@ namespace Servicios.Core.Venta
                     Total = x.Total
 
                 }).ToList();
-
+                */
+                return null;
             }
         }
 
@@ -94,7 +107,7 @@ namespace Servicios.Core.Venta
                 && x.ClienteId == clienteId).Select(x => new VentaDto
                 {
                     ClienteId = x.ClienteId,
-                    Fecha = x.FechaPedido,
+                    Fecha = $"{x.FechaPedido}",
                     Id = x.Id,
                     Total = x.Total
 
@@ -107,7 +120,7 @@ namespace Servicios.Core.Venta
         {
             using (var context = new KosakoDBEntities())
             {
-
+                /*
                 return context.Ventas.Where(x => x.Fecha.Day == date.Day && x.Fecha.Month == date.Month && x.Fecha.Year == date.Year && x.ClienteId == clienteId).Select(x => new VentaDto
                 {
                     ClienteId = x.ClienteId,
@@ -117,7 +130,8 @@ namespace Servicios.Core.Venta
                     Total = x.Total
 
                 }).ToList();
-
+                */
+                return null;
             }
         }
 
@@ -129,7 +143,7 @@ namespace Servicios.Core.Venta
                 return context.Pedidos.Where(x => x.FechaPedido.Day == date.Day && x.FechaPedido.Month == date.Month && x.FechaPedido.Year == date.Year && x.ClienteId == clienteId).Select(x => new VentaDto
                 {
                     ClienteId = x.ClienteId,
-                    Fecha = x.FechaPedido,
+                    Fecha = $"{x.FechaPedido}",
                     Id = x.Id,
                     Total = x.Total
 
@@ -174,7 +188,7 @@ namespace Servicios.Core.Venta
             {
                 var fecha = DateTime.Now;
                 fecha.AddDays(-30);
-
+                /*
                 return context.Ventas.AsNoTracking().Where(x => x.Fecha >= fecha)
                     .Select(x => new VentaDto
                     {
@@ -183,7 +197,8 @@ namespace Servicios.Core.Venta
                         Fecha = x.Fecha,
                         Total = x.Total
 
-                    }).ToList();
+                    }).ToList();*/
+                return null;
             }
         }
     }

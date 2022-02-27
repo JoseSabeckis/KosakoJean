@@ -14,7 +14,7 @@ namespace Servicios.Core.Venta.Dto
 
         public decimal Descuento { get; set; }
 
-        public DateTime Fecha { get; set; }
+        public string Fecha { get; set; }
 
         public long ClienteId { get; set; }
 

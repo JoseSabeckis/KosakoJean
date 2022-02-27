@@ -159,6 +159,12 @@
     <Compile Include="CtaCte\CtaCte.Designer.cs">
       <DependentUpon>CtaCte.cs</DependentUpon>
     </Compile>
+    <Compile Include="CtaCte\CtaCteClientePedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CtaCte\CtaCteClientePedido.Designer.cs">
+      <DependentUpon>CtaCteClientePedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Factura\Comprobante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CtaCte\CtaCte.resx">
       <DependentUpon>CtaCte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CtaCte\CtaCteClientePedido.resx">
+      <DependentUpon>CtaCteClientePedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Factura\Comprobante.resx">
       <DependentUpon>Comprobante.cs</DependentUpon>

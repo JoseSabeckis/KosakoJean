@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 02/25/2022 16:37:46
+-- Date Created: 02/27/2022 01:46:51
 -- Generated from EDMX file: C:\Users\joses\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -186,7 +186,7 @@ GO
 -- Creating table 'Ventas'
 CREATE TABLE [dbo].[Ventas] (
     [Id] bigint IDENTITY(1,1) NOT NULL,
-    [Fecha] datetime  NOT NULL,
+    [Fecha] nvarchar(max)  NOT NULL,
     [Total] decimal(18,0)  NOT NULL,
     [Descuento] decimal(18,0)  NOT NULL,
     [ClienteId] bigint  NOT NULL,

@@ -27,7 +27,7 @@ namespace Presentacion.Core.Cliente
 
             public decimal Total { get; set; }
 
-            public DateTime Fecha { get; set; }
+            public string Fecha { get; set; }
         }
 
         List<HistorialCompras> ListaVentas;

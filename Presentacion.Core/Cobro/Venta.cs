@@ -1,5 +1,6 @@
 ﻿using Presentacion.Clases;
 using Presentacion.Core.Cliente;
+using Presentacion.Core.CtaCte;
 using Presentacion.Core.Factura;
 using Presentacion.Core.Mensaje;
 using Presentacion.Core.Producto;
@@ -48,6 +49,7 @@ namespace Presentacion.Core.Cobro
         string _descripcionProducto;
 
         List<VentaDto2> ListaVenta;
+        List<Producto_Venta_Dto> ListaCtaCte;
         VentaDto ventaDto;
 
         decimal _total;
@@ -68,6 +70,7 @@ namespace Presentacion.Core.Cobro
             CargarComboBox(cmbTalle, talleServicio.Buscar(string.Empty), "Descripcion", "Id");
 
             ListaVenta = new List<VentaDto2>();
+            ListaCtaCte = new List<Producto_Venta_Dto>();
             ventaDto = new VentaDto();
 
             ConsumidorFinall();
@@ -95,6 +98,8 @@ namespace Presentacion.Core.Cobro
             ventaDto.ClienteId = consumer.Id;
 
             ckbNormal.Checked = true;
+
+            VerificarSiEsValidoCtaCte(_clienteId);
 
         }
 
@@ -293,6 +298,7 @@ namespace Presentacion.Core.Cobro
             _clienteId = 0;
 
             ListaVenta = new List<VentaDto2>();
+            ListaCtaCte = new List<Producto_Venta_Dto>();
             ventaDto = new VentaDto();
 
             ConsumidorFinall();
@@ -323,7 +329,7 @@ namespace Presentacion.Core.Cobro
 
             if (dgvGrilla.RowCount > 0)
             {
-                if (ckbTarjeta.Checked == false && ckbPedido.Checked == false && ckbNormal.Checked == false)
+                if (ckbTarjeta.Checked == false && ckbPedido.Checked == false && ckbNormal.Checked == false && ckbCtaCte.Checked == false)
                 {
                     MessageBox.Show("Seleccione el Tipo de Pago, Tarjeta, Contado, Pedido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -340,7 +346,7 @@ namespace Presentacion.Core.Cobro
                             ventaDto.ClienteId = 0;
                         }
 
-                        ventaDto.Fecha = DateTime.Now;
+                        ventaDto.Fecha = DateTime.Now.ToLongDateString();
                         ventaDto.Total = _total;                           
                         
 
@@ -416,15 +422,65 @@ namespace Presentacion.Core.Cobro
                 }
                 else
                 {
-
-                    var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId, txtDescripcion.Text, ((TalleDto)cmbTalle.SelectedItem).Id);
-                    pedidos.ShowDialog();
-
-
-                    if (pedidos.semaforo)
+                    if (ckbPedido.Checked)
                     {
-                        btnLimpiar.PerformClick();
+                        var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId, txtDescripcion.Text, ((TalleDto)cmbTalle.SelectedItem).Id);
+                        pedidos.ShowDialog();
+
+                        if (pedidos.semaforo)
+                        {
+                            btnLimpiar.PerformClick();
+                        }
+
+                        return;
                     }
+
+                    if (ckbCtaCte.Checked)
+                    {
+                        if (ventaDto.ClienteId == 0)
+                        {
+                            ventaDto.ClienteId = 0;
+                        }
+
+                        ventaDto.Fecha = DateTime.Now.ToLongDateString();
+                        ventaDto.Total = _total;
+
+                        var ventaId = ventaServicio.NuevaVenta(ventaDto);
+
+                        foreach (var item in ListaVenta)
+                        {
+                            var producto = productoServicio.ObtenerPorId(item.Id);
+
+                            var producto_venta = new Producto_Venta_Dto
+                            {
+                                Cantidad = item.Cantidad,
+                                Descripcion = item.Descripcion,
+                                Estado = AccesoDatos.EstadoPedido.Terminado,
+                                ProductoId = item.Id,
+                                Talle = item.Talle,
+                                Precio = item.Precio * item.Cantidad,
+                                VentaId = ventaId,
+                                TalleId = ((TalleDto)cmbTalle.SelectedItem).Id
+                            };
+
+                            ListaCtaCte.Add(producto_venta);
+                        }
+
+                        var cuenta = new CtaCteClientePedido(_clienteId, _total, ListaCtaCte);
+                        cuenta.ShowDialog();
+
+                        if (cuenta.semaforo)
+                        {
+                            btnLimpiar.PerformClick();
+                        }
+                        else
+                        {
+                            //eliminar venta
+                        }
+
+                        return;
+                    }
+                   
                 }
             }
             else
@@ -481,6 +537,7 @@ namespace Presentacion.Core.Cobro
             {
                 ckbPedido.Checked = false;
                 ckbTarjeta.Checked = false;
+                ckbCtaCte.Checked = false;
             }
         }
 
@@ -490,6 +547,7 @@ namespace Presentacion.Core.Cobro
             {
                 ckbNormal.Checked = false;
                 ckbTarjeta.Checked = false;
+                ckbCtaCte.Checked = false;
             }
         }
 
@@ -519,9 +577,22 @@ namespace Presentacion.Core.Cobro
                 txtCliente.Text = aux.Apellido + " " + aux.Nombre;
 
                 ventaDto.ClienteId = _clienteId;
-                
+
+                VerificarSiEsValidoCtaCte(_clienteId);
             }
 
+        }
+
+        public void VerificarSiEsValidoCtaCte(long clienteId)
+        {
+            if (clienteId == 1)
+            {
+                ckbCtaCte.Visible = false;
+            }
+            else
+            {
+                ckbCtaCte.Visible = true;
+            }
         }
 
         private void Venta_Load(object sender, EventArgs e)
@@ -569,6 +640,7 @@ namespace Presentacion.Core.Cobro
             {
                 ckbNormal.Checked = false;
                 ckbPedido.Checked = false;
+                ckbCtaCte.Checked = false;
             }
         }
 
@@ -580,6 +652,16 @@ namespace Presentacion.Core.Cobro
         private void btnSeleccionProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
           
+        }
+
+        private void ckbCtaCte_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (ckbCtaCte.Checked == true)
+            {
+                ckbNormal.Checked = false;
+                ckbPedido.Checked = false;
+                ckbTarjeta.Checked = false;
+            }
         }
     }
 }
