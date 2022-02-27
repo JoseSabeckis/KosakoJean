@@ -129,7 +129,7 @@ namespace Presentacion.Core.CtaCte
                     Apellido = txtApellido.Text,
                     FechaPedido = DateTime.Now,
                     Nombre = txtNombre.Text,
-                    Proceso = AccesoDatos.Proceso.PedidoTerminado,
+                    Proceso = AccesoDatos.Proceso.CtaCte,
                     FechaEntrega = DateTime.Now,
                     Total = _Total,
                     ClienteId = _Cliente.Id,

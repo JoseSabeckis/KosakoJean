@@ -582,6 +582,7 @@
           <Member Name="InicioPedido" Value="0" />
           <Member Name="EsperandoRetiro" Value="1" />
           <Member Name="PedidoTerminado" Value="2" />
+          <Member Name="CtaCte" Value="3" />
         </EnumType>
         <EntityType Name="Venta">
           <Key>
