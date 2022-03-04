@@ -57,6 +57,7 @@ namespace Servicios.Core.Pedido
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
                         Descripcion = x.Descripcion,
+                        FechaRetiro = x.FechaRetirado
 
                     }).ToList();
 
@@ -81,6 +82,7 @@ namespace Servicios.Core.Pedido
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
                         Descripcion = x.Descripcion,
+                        FechaRetiro = x.FechaRetirado
 
                     }).ToList();
 
@@ -118,6 +120,7 @@ namespace Servicios.Core.Pedido
                     Proceso = x.Proceso,
                     ClienteId = x.ClienteId,
                     Descripcion = x.Descripcion,
+                    FechaRetiro = x.FechaRetirado
 
                 }).ToList();
 
@@ -144,6 +147,7 @@ namespace Servicios.Core.Pedido
                     Proceso = x.Proceso,
                     ClienteId = x.ClienteId,
                     Descripcion = x.Descripcion,
+                    FechaRetiro = x.FechaRetirado
 
                 }).ToList();
 
@@ -169,6 +173,7 @@ namespace Servicios.Core.Pedido
                         Proceso = aux.Proceso,
                         ClienteId = aux.ClienteId,
                         Descripcion = aux.Descripcion,
+                        FechaRetiro = aux.FechaRetirado
 
                     };
                 return aux2;
@@ -192,6 +197,7 @@ namespace Servicios.Core.Pedido
                     Proceso = x.Proceso,
                     ClienteId = x.ClienteId,
                     Descripcion = x.Descripcion,
+                    FechaRetiro = x.FechaRetirado
 
                 }).ToList();
 
@@ -216,6 +222,7 @@ namespace Servicios.Core.Pedido
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
                         Descripcion = x.Descripcion,
+                        FechaRetiro = x.FechaRetirado
 
                     }).ToList();
 
@@ -240,6 +247,7 @@ namespace Servicios.Core.Pedido
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
                         Descripcion = x.Descripcion,
+                        FechaRetiro = x.FechaRetirado
 
                     }).ToList();
 
@@ -264,6 +272,7 @@ namespace Servicios.Core.Pedido
                         Proceso = x.Proceso,
                         ClienteId = x.ClienteId,
                         Descripcion = x.Descripcion,
+                        FechaRetiro = x.FechaRetirado
 
                     }).ToList();
 
@@ -286,6 +295,20 @@ namespace Servicios.Core.Pedido
                 var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
 
                 pedido.Proceso = Proceso.EsperandoRetiro;
+
+                context.SaveChanges();
+
+            }
+        }
+
+        public void CambiarFechaRetirado(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.FechaRetirado = DateTime.Now.ToLongDateString();
 
                 context.SaveChanges();
 

@@ -369,7 +369,7 @@
             this.ckbTarjeta.AutoSize = true;
             this.ckbTarjeta.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbTarjeta.Location = new System.Drawing.Point(44, 44);
+            this.ckbTarjeta.Location = new System.Drawing.Point(16, 20);
             this.ckbTarjeta.Name = "ckbTarjeta";
             this.ckbTarjeta.Size = new System.Drawing.Size(85, 26);
             this.ckbTarjeta.TabIndex = 9;
@@ -382,11 +382,11 @@
             // 
             this.ckbPedido.AutoSize = true;
             this.ckbPedido.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ckbPedido.Location = new System.Drawing.Point(44, 22);
+            this.ckbPedido.Location = new System.Drawing.Point(16, 41);
             this.ckbPedido.Name = "ckbPedido";
-            this.ckbPedido.Size = new System.Drawing.Size(87, 26);
+            this.ckbPedido.Size = new System.Drawing.Size(152, 26);
             this.ckbPedido.TabIndex = 7;
-            this.ckbPedido.Text = "Pedido";
+            this.ckbPedido.Text = "Pedido a Hacer";
             this.ckbPedido.UseVisualStyleBackColor = false;
             this.ckbPedido.CheckedChanged += new System.EventHandler(this.ckbPedido_CheckedChanged);
             // 
@@ -396,7 +396,7 @@
             this.ckbNormal.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ckbNormal.Checked = true;
             this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbNormal.Location = new System.Drawing.Point(44, 1);
+            this.ckbNormal.Location = new System.Drawing.Point(16, 1);
             this.ckbNormal.Name = "ckbNormal";
             this.ckbNormal.Size = new System.Drawing.Size(99, 26);
             this.ckbNormal.TabIndex = 6;

@@ -220,6 +220,7 @@ namespace Presentacion.Core.Pedido
                     btnTerminar.Visible = false;
                 }
 
+                lblPagado.Text = $"Todo Pagado y Retirado El Dia \n{pedido.FechaRetirado}";
                 lblPagado.Visible = true;
 
             }
@@ -240,6 +241,8 @@ namespace Presentacion.Core.Pedido
                     var pedido = pedidoServicio.Buscar(PedidoId);
 
                     pedidoServicio.CambiarProcesoTerminado(pedido.Id);
+
+                    pedidoServicio.CambiarFechaRetirado(pedido.Id);
 
                     //Total Cta Cte
 
@@ -284,14 +287,13 @@ namespace Presentacion.Core.Pedido
 
                     ventaServicio.NuevaVenta(venta);
 
-                    var completado = new Afirmacion("Felicidades!", $"Completado se obtuvo de ganancias $ {_Debe}");
+                    var completado = new Afirmacion("Felicidades!", $"Completado \nse obtuvo de ganancias $ {_Debe}");
                     completado.ShowDialog();
 
                     Datos(PedidoId);
 
                     lblVendido.Visible = true;                    
 
-                    //MessageBox.Show("---- Felicidades! ----", "Felicidades", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

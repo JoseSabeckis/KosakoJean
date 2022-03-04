@@ -136,6 +136,7 @@
     <Property Name="ApyNom" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaRetirado" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Cliente_Id" Type="bigint" Nullable="true" />
   </EntityType>
   <EntityType Name="Producto_Pedidos">
@@ -537,6 +538,7 @@
           <Property Name="ApyNom" Type="String" Nullable="false" />
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
           <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="FechaRetirado" Type="String" Nullable="true" />
         </EntityType>
         <EntityType Name="Producto_Pedido">
           <Key>
@@ -810,6 +812,7 @@
           <ScalarProperty Name="ApyNom" ColumnName="ApyNom" />
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="FechaRetirado" ColumnName="FechaRetirado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -40,7 +40,7 @@ namespace Presentacion.Core.Unidad
 
         private void VerDatos()
         {
-            lblFecha.Text = $"{Pedido.FechaEntrega.ToString("dd/MM/yyyy")}";
+            lblFecha.Text = $"{Pedido.FechaEntrega.ToString("dddd dd/MM/yyyy")}";
 
             lblNombre.Text = $"{Pedido.Apellido} {Pedido.Nombre}";
 

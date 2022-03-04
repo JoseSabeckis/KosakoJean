@@ -29,6 +29,8 @@ namespace Servicios.Core.Pedido.Dto
 
         public DateTime FechaIniciado { get; set; }
 
+        public string FechaRetiro { get; set; }
+
         public long ClienteId { get; set; }
 
     }

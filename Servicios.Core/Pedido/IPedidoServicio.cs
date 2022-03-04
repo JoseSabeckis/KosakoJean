@@ -25,6 +25,8 @@ namespace Servicios.Core.Pedido
 
         IEnumerable<PedidoDto> BuscandoTerminados();
 
+        void CambiarFechaRetirado(long id);
+
         void CambiarRamas(decimal total, long id);
 
         AccesoDatos.Pedido Buscar(long id);

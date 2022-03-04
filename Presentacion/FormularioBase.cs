@@ -143,7 +143,7 @@ namespace Presentacion
 
                     if (ctrolForm is NumericUpDown)
                     {
-                        ((NumericUpDown)ctrolForm).Value = ((NumericUpDown)ctrolForm).Minimum;
+                        ((NumericUpDown)ctrolForm).Value = 0;
                     }
 
                     if (ctrolForm is DateTimePicker)
@@ -155,6 +155,7 @@ namespace Presentacion
                     {
                         Limpiar(ctrolForm);
                     }
+
                 }
             }
             else if (obj is Panel)
@@ -176,7 +177,7 @@ namespace Presentacion
 
                     if (ctrolPanel is NumericUpDown)
                     {
-                        ((NumericUpDown)ctrolPanel).Value = ((NumericUpDown)ctrolPanel).Minimum;
+                        ((NumericUpDown)ctrolPanel).Value = 0;
                     }
 
                     if (ctrolPanel is DateTimePicker)
@@ -320,7 +321,7 @@ namespace Presentacion
         public virtual bool VerificarDatosObligatorios()
         {
             foreach (var objeto in _listaControlesObligatorios)
-            {/*
+            {
                 switch (objeto.Control)
                 {
                     case TextBox _:
@@ -335,7 +336,7 @@ namespace Presentacion
                     case ComboBox _:
                         if (((ComboBox)objeto.Control).Items.Count <= 0) return false;
                         break;
-                }*/
+                }
             }
 
             return true;

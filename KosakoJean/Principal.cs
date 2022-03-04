@@ -157,10 +157,109 @@ namespace KosakoJean
             {
                 var talle = new TalleDto
                 {
-                    Descripcion = "Sin Talle"
+                    Descripcion = "0"
                 };
 
                 talleServicio.Nuevo(talle);
+
+                var talle1 = new TalleDto
+                {
+                    Descripcion = "1"
+                };
+
+                talleServicio.Nuevo(talle1);
+
+                var talle2 = new TalleDto
+                {
+                    Descripcion = "2"
+                };
+
+                talleServicio.Nuevo(talle2);
+
+                var talle3 = new TalleDto
+                {
+                    Descripcion = "3"
+                };
+
+                talleServicio.Nuevo(talle3);
+
+                var talle4 = new TalleDto
+                {
+                    Descripcion = "4"
+                };
+
+                talleServicio.Nuevo(talle4);
+
+                var talle6 = new TalleDto
+                {
+                    Descripcion = "6"
+                };
+
+                talleServicio.Nuevo(talle6);
+
+                var talle8 = new TalleDto
+                {
+                    Descripcion = "8"
+                };
+
+                talleServicio.Nuevo(talle8);
+
+                var talle10 = new TalleDto
+                {
+                    Descripcion = "10"
+                };
+
+                talleServicio.Nuevo(talle10);
+
+                var talle12 = new TalleDto
+                {
+                    Descripcion = "12"
+                };
+
+                talleServicio.Nuevo(talle12);
+
+                var talle14 = new TalleDto
+                {
+                    Descripcion = "14"
+                };
+
+                talleServicio.Nuevo(talle14);
+
+                var talleS = new TalleDto
+                {
+                    Descripcion = "S"
+                };
+
+                talleServicio.Nuevo(talleS);
+
+                var talleM = new TalleDto
+                {
+                    Descripcion = "M"
+                };
+
+                talleServicio.Nuevo(talleM);
+
+                var talleL = new TalleDto
+                {
+                    Descripcion = "L"
+                };
+
+                talleServicio.Nuevo(talleL);
+
+                var talleXL = new TalleDto
+                {
+                    Descripcion = "XL"
+                };
+
+                talleServicio.Nuevo(talleXL);
+
+                var talleXXL = new TalleDto
+                {
+                    Descripcion = "XXL"
+                };
+
+                talleServicio.Nuevo(talleXXL);
+
             }
 
         }
