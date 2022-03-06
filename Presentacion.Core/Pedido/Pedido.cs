@@ -70,6 +70,8 @@ namespace Presentacion.Core.Pedido
 
             _Cliente = clienteServicio.ObtenerPorId(clienteId);
 
+            cmbHorario.SelectedIndex = 0;
+
             txtDescripcion.Text = descripcion;
 
             if (nombre != null)
@@ -167,7 +169,7 @@ namespace Presentacion.Core.Pedido
                         Total = _total,
                         ClienteId = ClienteId,
                         Descripcion = txtDescripcion.Text,
-
+                        Horario = cmbHorario.Text
                     };
 
                     var pedidoId = pedidoServicio.NuevoPedido(pedido);

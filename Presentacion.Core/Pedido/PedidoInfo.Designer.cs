@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidoInfo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTiempo = new System.Windows.Forms.Label();
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -57,7 +58,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblTiempo = new System.Windows.Forms.Label();
+            this.lblHorario = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -68,6 +69,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblHorario);
             this.panel1.Controls.Add(this.lblTiempo);
             this.panel1.Controls.Add(this.lblFechaInicio);
             this.panel1.Controls.Add(this.label6);
@@ -82,6 +84,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1143, 86);
             this.panel1.TabIndex = 0;
+            // 
+            // lblTiempo
+            // 
+            this.lblTiempo.AutoSize = true;
+            this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTiempo.ForeColor = System.Drawing.Color.Red;
+            this.lblTiempo.Location = new System.Drawing.Point(393, 7);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(81, 24);
+            this.lblTiempo.TabIndex = 8;
+            this.lblTiempo.Text = "Tiempo";
             // 
             // lblFechaInicio
             // 
@@ -399,16 +412,17 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Total  $";
             // 
-            // lblTiempo
+            // lblHorario
             // 
-            this.lblTiempo.AutoSize = true;
-            this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTiempo.ForeColor = System.Drawing.Color.Red;
-            this.lblTiempo.Location = new System.Drawing.Point(393, 7);
-            this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(81, 24);
-            this.lblTiempo.TabIndex = 8;
-            this.lblTiempo.Text = "Tiempo";
+            this.lblHorario.AutoSize = true;
+            this.lblHorario.BackColor = System.Drawing.Color.Red;
+            this.lblHorario.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorario.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblHorario.Location = new System.Drawing.Point(560, 5);
+            this.lblHorario.Name = "lblHorario";
+            this.lblHorario.Size = new System.Drawing.Size(85, 26);
+            this.lblHorario.TabIndex = 9;
+            this.lblHorario.Text = "Horario";
             // 
             // PedidoInfo
             // 
@@ -465,5 +479,6 @@
         private System.Windows.Forms.CheckBox ckbNormal;
         private System.Windows.Forms.CheckBox ckbTarjeta;
         private System.Windows.Forms.Label lblTiempo;
+        private System.Windows.Forms.Label lblHorario;
     }
 }

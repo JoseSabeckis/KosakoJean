@@ -30,20 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedido));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbHorario = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.ckbTarjeta = new System.Windows.Forms.CheckBox();
             this.ckbCtaCte = new System.Windows.Forms.CheckBox();
             this.ckbNormal = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.nudAdelanto = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -65,6 +67,8 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.cmbHorario);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtDescripcion);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.panel6);
@@ -78,23 +82,48 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(656, 505);
+            this.panel1.Size = new System.Drawing.Size(656, 593);
             this.panel1.TabIndex = 0;
+            // 
+            // cmbHorario
+            // 
+            this.cmbHorario.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cmbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbHorario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbHorario.FormattingEnabled = true;
+            this.cmbHorario.Items.AddRange(new object[] {
+            "Tarde",
+            "Mañana",
+            "Siesta",
+            "Ultima Hora"});
+            this.cmbHorario.Location = new System.Drawing.Point(113, 349);
+            this.cmbHorario.Name = "cmbHorario";
+            this.cmbHorario.Size = new System.Drawing.Size(187, 32);
+            this.cmbHorario.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(109, 322);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(93, 24);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Retiro a la";
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.MenuBar;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(113, 349);
+            this.txtDescripcion.Location = new System.Drawing.Point(113, 417);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(452, 147);
+            this.txtDescripcion.Size = new System.Drawing.Size(452, 162);
             this.txtDescripcion.TabIndex = 13;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(109, 322);
+            this.label10.Location = new System.Drawing.Point(109, 390);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(128, 24);
             this.label10.TabIndex = 14;
@@ -129,6 +158,24 @@
             this.label3.Size = new System.Drawing.Size(87, 25);
             this.label3.TabIndex = 3;
             this.label3.Text = "Apellido";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(106, 45);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(276, 33);
+            this.txtNombre.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(21, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 25);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Nombre";
             // 
             // panel5
             // 
@@ -192,14 +239,6 @@
             this.dtpFechaEntrega.Size = new System.Drawing.Size(336, 29);
             this.dtpFechaEntrega.TabIndex = 9;
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(106, 45);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(276, 33);
-            this.txtNombre.TabIndex = 7;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -208,16 +247,6 @@
             this.label5.Size = new System.Drawing.Size(135, 24);
             this.label5.TabIndex = 5;
             this.label5.Text = "Fecha Entrega";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(21, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 25);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Nombre";
             // 
             // nudAdelanto
             // 
@@ -320,13 +349,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 505);
+            this.ClientSize = new System.Drawing.Size(656, 593);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(672, 544);
+            this.MaximumSize = new System.Drawing.Size(672, 632);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(672, 544);
             this.Name = "Pedido";
@@ -372,5 +401,7 @@
         private System.Windows.Forms.CheckBox ckbTarjeta;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cmbHorario;
+        private System.Windows.Forms.Label label6;
     }
 }

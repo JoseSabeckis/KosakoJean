@@ -201,6 +201,9 @@ namespace Presentacion.Core.Pedido
             lblTiempo.Text = "";
             lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dddd dd/MM/yyyy")}";
             lblFecha.Text = $"{pedido.FechaEntrega.ToString("dddd dd/MM/yyyy")}";
+
+            lblHorario.Text = $"Se Retira a la: {pedido.Horario}";
+
             txtNotas.Text = $"{pedido.Descripcion}";
 
             txtDineroAdelanto.Text = $"{pedido.Adelanto}";
