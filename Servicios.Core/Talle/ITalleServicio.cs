@@ -14,5 +14,6 @@ namespace Servicios.Core.Talle
         void Modificar(TalleDto talleDto);
         IEnumerable<TalleDto> Buscar(string cadenaBuscar);
         TalleDto ObtenerPorId(long talleId);
+        long BuscarNombreDevuelveId(string cadenaBuscar);
     }
 }

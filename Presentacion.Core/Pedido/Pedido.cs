@@ -207,7 +207,7 @@ namespace Presentacion.Core.Pedido
 
                     }
 
-                    if (ckbCtaCte.Checked)
+                    if (ClienteId != 1)
                     {
                         var cuenta = new CtaCteDto
                         {

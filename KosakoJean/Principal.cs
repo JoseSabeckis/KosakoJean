@@ -1,8 +1,10 @@
-﻿using Presentacion.Clases;
+﻿using AccesoDatos;
+using Presentacion.Clases;
 using Presentacion.Core.Caja;
 using Presentacion.Core.Cliente;
 using Presentacion.Core.Cobro;
 using Presentacion.Core.Colegio;
+using Presentacion.Core.CtaCte;
 using Presentacion.Core.Pedido;
 using Presentacion.Core.Producto;
 using Presentacion.Core.Talle;
@@ -54,7 +56,7 @@ namespace KosakoJean
 
         private void verTiposToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var tipo = new TipoProducto();
+            var tipo = new Presentacion.Core.TipoProducto.TipoProducto();
             tipo.ShowDialog();
         }
 
@@ -66,7 +68,7 @@ namespace KosakoJean
 
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var productos = new Producto();
+            var productos = new Presentacion.Core.Producto.Producto();
             productos.ShowDialog();
         }
 
@@ -78,13 +80,13 @@ namespace KosakoJean
 
         private void btnCajas_Click(object sender, EventArgs e)
         {
-            var caja = new Caja();
+            var caja = new Presentacion.Core.Caja.Caja();
             caja.ShowDialog();
         }
 
         private void verCajasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var caja = new Caja();
+            var caja = new Presentacion.Core.Caja.Caja();
             caja.ShowDialog();
         }
 
@@ -299,7 +301,7 @@ namespace KosakoJean
 
             if (_cajaServicio.BuscarCajaAbiertaBool())
             {
-                var cobro = new Venta();
+                var cobro = new Presentacion.Core.Cobro.Venta();
                 cobro.ShowDialog();
             }
             else
@@ -336,7 +338,7 @@ namespace KosakoJean
 
         private void nuevoColegioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var colegio = new Colegio();
+            var colegio = new Presentacion.Core.Colegio.Colegio();
             colegio.ShowDialog();
         }
 
@@ -348,7 +350,7 @@ namespace KosakoJean
 
         private void verTiposToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var tipo = new TipoProducto();
+            var tipo = new Presentacion.Core.TipoProducto.TipoProducto();
             tipo.ShowDialog();
         }
 
@@ -366,7 +368,7 @@ namespace KosakoJean
 
         private void verClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var cliente = new Cliente();
+            var cliente = new Presentacion.Core.Cliente.Cliente();
             cliente.ShowDialog();
         }
 
@@ -384,7 +386,7 @@ namespace KosakoJean
 
         private void verTallesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var talle = new Talle();
+            var talle = new Presentacion.Core.Talle.Talle();
             talle.ShowDialog();
         }
 
@@ -392,6 +394,18 @@ namespace KosakoJean
         {
             var lista = new ListaProductos();
             lista.ShowDialog();
+        }
+
+        private void btnPrendasEntregadas_Click(object sender, EventArgs e)
+        {
+            var prenda = new GuardadoConsumidorFinal(Proceso.Retirado);
+            prenda.ShowDialog();
+        }
+
+        private void btnPrendaGuardadas_Click(object sender, EventArgs e)
+        {
+            var prenda = new GuardadoConsumidorFinal(Proceso.Guardado);
+            prenda.ShowDialog();
         }
     }
 }

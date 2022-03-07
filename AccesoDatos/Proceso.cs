@@ -16,6 +16,8 @@ namespace AccesoDatos
         InicioPedido = 0,
         EsperandoRetiro = 1,
         PedidoTerminado = 2,
-        CtaCte = 3
+        CtaCte = 3,
+        Guardado = 4,
+        Retirado = 5
     }
 }

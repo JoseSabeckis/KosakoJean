@@ -50,6 +50,7 @@
             this.ckbCtaCte = new System.Windows.Forms.CheckBox();
             this.btnNewCliente = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.ckbGuardar = new System.Windows.Forms.CheckBox();
             this.ckbTarjeta = new System.Windows.Forms.CheckBox();
             this.ckbPedido = new System.Windows.Forms.CheckBox();
             this.ckbNormal = new System.Windows.Forms.CheckBox();
@@ -355,6 +356,7 @@
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.ckbGuardar);
             this.panel9.Controls.Add(this.ckbTarjeta);
             this.panel9.Controls.Add(this.ckbPedido);
             this.panel9.Controls.Add(this.ckbNormal);
@@ -363,6 +365,18 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(290, 72);
             this.panel9.TabIndex = 8;
+            // 
+            // ckbGuardar
+            // 
+            this.ckbGuardar.AutoSize = true;
+            this.ckbGuardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ckbGuardar.Location = new System.Drawing.Point(121, 33);
+            this.ckbGuardar.Name = "ckbGuardar";
+            this.ckbGuardar.Size = new System.Drawing.Size(156, 26);
+            this.ckbGuardar.TabIndex = 10;
+            this.ckbGuardar.Text = "Guardar Prenda";
+            this.ckbGuardar.UseVisualStyleBackColor = false;
+            this.ckbGuardar.CheckedChanged += new System.EventHandler(this.ckbGuardar_CheckedChanged);
             // 
             // ckbTarjeta
             // 
@@ -384,9 +398,9 @@
             this.ckbPedido.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ckbPedido.Location = new System.Drawing.Point(121, 6);
             this.ckbPedido.Name = "ckbPedido";
-            this.ckbPedido.Size = new System.Drawing.Size(152, 26);
+            this.ckbPedido.Size = new System.Drawing.Size(138, 26);
             this.ckbPedido.TabIndex = 7;
-            this.ckbPedido.Text = "Pedido a Hacer";
+            this.ckbPedido.Text = "Hacer Pedido";
             this.ckbPedido.UseVisualStyleBackColor = false;
             this.ckbPedido.CheckedChanged += new System.EventHandler(this.ckbPedido_CheckedChanged);
             // 
@@ -714,7 +728,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1191, 640);
+            this.MinimumSize = new System.Drawing.Size(1345, 640);
             this.Name = "Venta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Aplicacion de Venta";
@@ -798,5 +812,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown nudTotalVenta;
         private System.Windows.Forms.CheckBox ckbTicket;
+        private System.Windows.Forms.CheckBox ckbGuardar;
     }
 }

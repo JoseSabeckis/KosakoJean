@@ -109,6 +109,48 @@ namespace Servicios.Core.Producto_Pedido
             }
         }
 
+        public List<Producto_Pedido_Dto> BuscarPedidoGuardado(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == id && x.Estado == EstadoPedido.Guardado).Select(x => new Producto_Pedido_Dto
+                {
+                    Cantidad = x.Cantidad,
+                    Estado = x.Estado,
+                    PedidoId = x.PedidoId,
+                    ProductoId = x.ProductoId,
+                    Talle = x.Talle,
+                    Descripcion = x.Descripcion,
+                    Id = x.Id,
+                    TalleId = x.TalleId
+
+                }).ToList();
+
+                return estado;
+            }
+        }
+
+        public List<Producto_Pedido_Dto> BuscarPedidoRetirado(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == id && x.Estado == EstadoPedido.Retirado).Select(x => new Producto_Pedido_Dto
+                {
+                    Cantidad = x.Cantidad,
+                    Estado = x.Estado,
+                    PedidoId = x.PedidoId,
+                    ProductoId = x.ProductoId,
+                    Talle = x.Talle,
+                    Descripcion = x.Descripcion,
+                    Id = x.Id,
+                    TalleId = x.TalleId
+
+                }).ToList();
+
+                return estado;
+            }
+        }
+
         public List<Producto_Pedido_Dto> Buscar()
         {
             using (var context = new KosakoDBEntities())

@@ -347,7 +347,7 @@ namespace Presentacion.Core.Cobro
 
             if (dgvGrilla.RowCount > 0)
             {
-                if (ckbTarjeta.Checked == false && ckbPedido.Checked == false && ckbNormal.Checked == false && ckbCtaCte.Checked == false)
+                if (ckbTarjeta.Checked == false && ckbPedido.Checked == false && ckbNormal.Checked == false && ckbCtaCte.Checked == false && ckbGuardar.Checked == false)
                 {
                     MessageBox.Show("Seleccione el Tipo de Pago, Tarjeta, Contado, Pedido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -453,7 +453,7 @@ namespace Presentacion.Core.Cobro
                         return;
                     }
 
-                    if (ckbCtaCte.Checked)
+                    if (ckbCtaCte.Checked || ckbGuardar.Checked)
                     {
 
                         foreach (var item in ListaVenta)
@@ -475,7 +475,7 @@ namespace Presentacion.Core.Cobro
                             ListaCtaCte.Add(producto_venta);
                         }
 
-                        var cuenta = new CtaCteClientePedido(_clienteId, _total, ListaCtaCte);
+                        var cuenta = new CtaCteClientePedido(_clienteId, _total, ListaCtaCte, ListaVenta);
                         cuenta.ShowDialog();
 
                         if (cuenta.semaforo)
@@ -543,11 +543,12 @@ namespace Presentacion.Core.Cobro
 
         private void ckbNormal_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckbNormal.Checked == true)
+            if (ckbNormal.Checked)
             {
                 ckbPedido.Checked = false;
                 ckbTarjeta.Checked = false;
                 ckbCtaCte.Checked = false;
+                ckbGuardar.Checked = false;
 
                 ckbTicket.Checked = true;
                 ckbTicket.Enabled = true;
@@ -556,11 +557,12 @@ namespace Presentacion.Core.Cobro
 
         private void ckbPedido_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckbPedido.Checked == true)
+            if (ckbPedido.Checked)
             {
                 ckbNormal.Checked = false;
                 ckbTarjeta.Checked = false;
                 ckbCtaCte.Checked = false;
+                ckbGuardar.Checked = false;
 
                 ckbTicket.Checked = false;
                 ckbTicket.Enabled = false;
@@ -651,11 +653,12 @@ namespace Presentacion.Core.Cobro
 
         private void ckbTarjeta_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckbTarjeta.Checked == true)
+            if (ckbTarjeta.Checked)
             {
                 ckbNormal.Checked = false;
                 ckbPedido.Checked = false;
                 ckbCtaCte.Checked = false;
+                ckbGuardar.Checked = false;
 
                 ckbTicket.Checked = true;
                 ckbTicket.Enabled = true;
@@ -674,11 +677,12 @@ namespace Presentacion.Core.Cobro
 
         private void ckbCtaCte_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (ckbCtaCte.Checked == true)
+            if (ckbCtaCte.Checked)
             {
                 ckbNormal.Checked = false;
                 ckbPedido.Checked = false;
                 ckbTarjeta.Checked = false;
+                ckbGuardar.Checked = false;
 
                 ckbTicket.Checked = false;
                 ckbTicket.Enabled = false;
@@ -691,6 +695,20 @@ namespace Presentacion.Core.Cobro
             verTalle.ShowDialog();
 
             CargarTalle();
+        }
+
+        private void ckbGuardar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbGuardar.Checked)
+            {
+                ckbNormal.Checked = false;
+                ckbPedido.Checked = false;
+                ckbTarjeta.Checked = false;
+                ckbCtaCte.Checked = false;
+
+                ckbTicket.Checked = false;
+                ckbTicket.Enabled = false;
+            }
         }
     }
 }

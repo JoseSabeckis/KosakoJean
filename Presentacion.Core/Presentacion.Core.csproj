@@ -165,6 +165,12 @@
     <Compile Include="CtaCte\CtaCteClientePedido.Designer.cs">
       <DependentUpon>CtaCteClientePedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="CtaCte\GuardadoConsumidorFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CtaCte\GuardadoConsumidorFinal.Designer.cs">
+      <DependentUpon>GuardadoConsumidorFinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Factura\Comprobante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,12 @@
     <Compile Include="Unidad\Unidad.Designer.cs">
       <DependentUpon>Unidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Unidad\UnidadEspera.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Unidad\UnidadEspera.Designer.cs">
+      <DependentUpon>UnidadEspera.cs</DependentUpon>
+    </Compile>
     <Compile Include="Unidad\UnidadRetiro.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -347,6 +359,9 @@
     <EmbeddedResource Include="CtaCte\CtaCteClientePedido.resx">
       <DependentUpon>CtaCteClientePedido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CtaCte\GuardadoConsumidorFinal.resx">
+      <DependentUpon>GuardadoConsumidorFinal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Factura\Comprobante.resx">
       <DependentUpon>Comprobante.cs</DependentUpon>
     </EmbeddedResource>
@@ -406,6 +421,9 @@
     <EmbeddedResource Include="Unidad\Unidad.resx">
       <DependentUpon>Unidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Unidad\UnidadEspera.resx">
+      <DependentUpon>UnidadEspera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Unidad\UnidadRetiro.resx">
       <DependentUpon>UnidadRetiro.cs</DependentUpon>
     </EmbeddedResource>
@@ -462,6 +480,7 @@
     <None Include="Resources\EliminarDos.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\5efdb7b632508_900.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

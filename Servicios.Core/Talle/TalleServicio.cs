@@ -77,6 +77,14 @@ namespace Servicios.Core.Talle
 
         }
 
+        public long BuscarNombreDevuelveId(string cadenaBuscar)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                return context.Talles.AsNoTracking().FirstOrDefault(x => x.Descripcion == cadenaBuscar && x.EstaEliminado == false).Id;
+            }
+        }
+
         public TalleDto ObtenerPorId(long talleId)
         {
             using (var context = new KosakoDBEntities())

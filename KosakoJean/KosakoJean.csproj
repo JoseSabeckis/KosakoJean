@@ -113,6 +113,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AccesoDatos\AccesoDatos.csproj">
+      <Project>{AD486CBC-66ED-4487-8E0D-EA84FAE7CDC1}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Presentacion.Core\Presentacion.Core.csproj">
       <Project>{fb7881d2-d038-4452-bd64-b5d49a131bf3}</Project>
       <Name>Presentacion.Core</Name>

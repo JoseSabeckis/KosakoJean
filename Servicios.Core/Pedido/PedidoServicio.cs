@@ -158,6 +158,62 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public IEnumerable<PedidoDto> BuscarGuardados()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.Guardado);
+
+
+                return lista.OrderBy(x => x.FechaEntrega).Select(x => new PedidoDto
+                {
+                    Adelanto = x.Adelanto,
+                    Apellido = x.Apellido,
+                    Nombre = x.Nombre,
+                    FechaEntrega = x.FechaEntrega,
+                    FechaPedido = x.FechaPedido,
+                    Total = x.Total,
+                    Id = x.Id,
+                    Proceso = x.Proceso,
+                    ClienteId = x.ClienteId,
+                    Descripcion = x.Descripcion,
+                    FechaRetiro = x.FechaRetirado,
+                    Horario = x.Horario
+
+                }).ToList();
+
+            }
+        }
+
+        public IEnumerable<PedidoDto> BuscarRetirado()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.Retirado);
+
+
+                return lista.OrderBy(x => x.FechaEntrega).Select(x => new PedidoDto
+                {
+                    Adelanto = x.Adelanto,
+                    Apellido = x.Apellido,
+                    Nombre = x.Nombre,
+                    FechaEntrega = x.FechaEntrega,
+                    FechaPedido = x.FechaPedido,
+                    Total = x.Total,
+                    Id = x.Id,
+                    Proceso = x.Proceso,
+                    ClienteId = x.ClienteId,
+                    Descripcion = x.Descripcion,
+                    FechaRetiro = x.FechaRetirado,
+                    Horario = x.Horario
+
+                }).ToList();
+
+            }
+        }
+
         public PedidoDto BuscarIDPedidos(long id)
         {
             using (var context = new KosakoDBEntities())
