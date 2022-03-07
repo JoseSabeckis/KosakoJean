@@ -250,7 +250,7 @@ namespace Servicios.Core.Pedido
                 {
                     Adelanto = x.Adelanto,
                     Apellido = x.Apellido,
-                    Nombre = x.Apellido,
+                    Nombre = x.Nombre,
                     FechaEntrega = x.FechaEntrega,
                     FechaPedido = x.FechaPedido,
                     Total = x.Total,

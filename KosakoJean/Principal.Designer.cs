@@ -55,6 +55,7 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.btnProductos = new System.Windows.Forms.Button();
             this.btnPedidos = new System.Windows.Forms.Button();
             this.btnListoParaEntregar = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -70,16 +71,18 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnProductos = new System.Windows.Forms.Button();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.btnPrendaGuardadas = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.btnPrendasEntregadas = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnCobrar2 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnPrendaGuardadas = new System.Windows.Forms.Button();
-            this.btnPrendasEntregadas = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.btn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -93,10 +96,12 @@
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -310,14 +315,30 @@
             // panel9
             // 
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.btn);
+            this.panel9.Controls.Add(this.panel16);
+            this.panel9.Controls.Add(this.panel15);
             this.panel9.Controls.Add(this.btnProductos);
-            this.panel9.Controls.Add(this.btnPedidos);
-            this.panel9.Controls.Add(this.btnListoParaEntregar);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 195);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(623, 227);
             this.panel9.TabIndex = 10;
+            // 
+            // btnProductos
+            // 
+            this.btnProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProductos.BackColor = System.Drawing.Color.Magenta;
+            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnProductos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.Location = new System.Drawing.Point(276, 4);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Size = new System.Drawing.Size(123, 74);
+            this.btnProductos.TabIndex = 16;
+            this.btnProductos.Text = "Productos";
+            this.btnProductos.UseVisualStyleBackColor = false;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // btnPedidos
             // 
@@ -326,9 +347,9 @@
             this.btnPedidos.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPedidos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPedidos.Location = new System.Drawing.Point(395, 28);
+            this.btnPedidos.Location = new System.Drawing.Point(3, 3);
             this.btnPedidos.Name = "btnPedidos";
-            this.btnPedidos.Size = new System.Drawing.Size(221, 107);
+            this.btnPedidos.Size = new System.Drawing.Size(204, 151);
             this.btnPedidos.TabIndex = 12;
             this.btnPedidos.Text = "1- Hacer Prendas Pendientes";
             this.btnPedidos.UseVisualStyleBackColor = false;
@@ -341,9 +362,9 @@
             this.btnListoParaEntregar.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btnListoParaEntregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnListoParaEntregar.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListoParaEntregar.Location = new System.Drawing.Point(3, 28);
+            this.btnListoParaEntregar.Location = new System.Drawing.Point(3, 3);
             this.btnListoParaEntregar.Name = "btnListoParaEntregar";
-            this.btnListoParaEntregar.Size = new System.Drawing.Size(222, 107);
+            this.btnListoParaEntregar.Size = new System.Drawing.Size(260, 151);
             this.btnListoParaEntregar.TabIndex = 11;
             this.btnListoParaEntregar.Text = "2- Prendas Listas Para Entregar";
             this.btnListoParaEntregar.UseVisualStyleBackColor = false;
@@ -516,19 +537,57 @@
             this.panel2.Size = new System.Drawing.Size(196, 426);
             this.panel2.TabIndex = 15;
             // 
-            // btnProductos
+            // panel14
             // 
-            this.btnProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnProductos.BackColor = System.Drawing.Color.Magenta;
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnProductos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.Location = new System.Drawing.Point(231, 28);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(158, 107);
-            this.btnProductos.TabIndex = 16;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.UseVisualStyleBackColor = false;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel14.Controls.Add(this.btnPrendaGuardadas);
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel14.Location = new System.Drawing.Point(0, 195);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(192, 80);
+            this.panel14.TabIndex = 16;
+            // 
+            // btnPrendaGuardadas
+            // 
+            this.btnPrendaGuardadas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrendaGuardadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnPrendaGuardadas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPrendaGuardadas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrendaGuardadas.Location = new System.Drawing.Point(21, 17);
+            this.btnPrendaGuardadas.Name = "btnPrendaGuardadas";
+            this.btnPrendaGuardadas.Size = new System.Drawing.Size(151, 42);
+            this.btnPrendaGuardadas.TabIndex = 14;
+            this.btnPrendaGuardadas.Text = "Prendas Guardadas";
+            this.btnPrendaGuardadas.UseVisualStyleBackColor = false;
+            this.btnPrendaGuardadas.Click += new System.EventHandler(this.btnPrendaGuardadas_Click);
+            // 
+            // panel13
+            // 
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel13.Controls.Add(this.btnPrendasEntregadas);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel13.Location = new System.Drawing.Point(0, 275);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(192, 84);
+            this.panel13.TabIndex = 15;
+            // 
+            // btnPrendasEntregadas
+            // 
+            this.btnPrendasEntregadas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrendasEntregadas.BackColor = System.Drawing.Color.Gray;
+            this.btnPrendasEntregadas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPrendasEntregadas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrendasEntregadas.Location = new System.Drawing.Point(21, 11);
+            this.btnPrendasEntregadas.Name = "btnPrendasEntregadas";
+            this.btnPrendasEntregadas.Size = new System.Drawing.Size(151, 55);
+            this.btnPrendasEntregadas.TabIndex = 15;
+            this.btnPrendasEntregadas.Text = "Prendas Entregadas";
+            this.btnPrendasEntregadas.UseVisualStyleBackColor = false;
+            this.btnPrendasEntregadas.Click += new System.EventHandler(this.btnPrendasEntregadas_Click);
             // 
             // panel10
             // 
@@ -583,57 +642,39 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnPrendaGuardadas
+            // panel15
             // 
-            this.btnPrendaGuardadas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel15.Controls.Add(this.btnListoParaEntregar);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(270, 223);
+            this.panel15.TabIndex = 17;
+            // 
+            // panel16
+            // 
+            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel16.Controls.Add(this.btnPedidos);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel16.Location = new System.Drawing.Point(405, 0);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(214, 223);
+            this.panel16.TabIndex = 18;
+            // 
+            // btn
+            // 
+            this.btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrendaGuardadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnPrendaGuardadas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPrendaGuardadas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrendaGuardadas.Location = new System.Drawing.Point(21, 17);
-            this.btnPrendaGuardadas.Name = "btnPrendaGuardadas";
-            this.btnPrendaGuardadas.Size = new System.Drawing.Size(151, 42);
-            this.btnPrendaGuardadas.TabIndex = 14;
-            this.btnPrendaGuardadas.Text = "Prendas Guardadas";
-            this.btnPrendaGuardadas.UseVisualStyleBackColor = false;
-            this.btnPrendaGuardadas.Click += new System.EventHandler(this.btnPrendaGuardadas_Click);
-            // 
-            // btnPrendasEntregadas
-            // 
-            this.btnPrendasEntregadas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrendasEntregadas.BackColor = System.Drawing.Color.Gray;
-            this.btnPrendasEntregadas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPrendasEntregadas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrendasEntregadas.Location = new System.Drawing.Point(21, 11);
-            this.btnPrendasEntregadas.Name = "btnPrendasEntregadas";
-            this.btnPrendasEntregadas.Size = new System.Drawing.Size(151, 55);
-            this.btnPrendasEntregadas.TabIndex = 15;
-            this.btnPrendasEntregadas.Text = "Prendas Entregadas";
-            this.btnPrendasEntregadas.UseVisualStyleBackColor = false;
-            this.btnPrendasEntregadas.Click += new System.EventHandler(this.btnPrendasEntregadas_Click);
-            // 
-            // panel13
-            // 
-            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel13.Controls.Add(this.btnPrendasEntregadas);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel13.Location = new System.Drawing.Point(0, 275);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(192, 84);
-            this.panel13.TabIndex = 15;
-            // 
-            // panel14
-            // 
-            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel14.Controls.Add(this.btnPrendaGuardadas);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel14.Location = new System.Drawing.Point(0, 195);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(192, 80);
-            this.panel14.TabIndex = 16;
+            this.btn.BackColor = System.Drawing.Color.Olive;
+            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn.Location = new System.Drawing.Point(276, 84);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(123, 74);
+            this.btn.TabIndex = 19;
+            this.btn.Text = "-----";
+            this.btn.UseVisualStyleBackColor = false;
             // 
             // Principal
             // 
@@ -667,11 +708,13 @@
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel14.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.panel14.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -729,6 +772,9 @@
         private System.Windows.Forms.Button btnPrendaGuardadas;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Button btn;
     }
 }
 

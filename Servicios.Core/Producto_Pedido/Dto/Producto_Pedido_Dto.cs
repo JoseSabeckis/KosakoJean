@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using Servicios.Core.Producto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace Servicios.Core.Producto_Pedido.Dto
 {
     public class Producto_Pedido_Dto
     {
+        IProductoServicio productoServicio = new ProductoServicio();
+
         public long Id { get; set; }
 
         public decimal Cantidad { get; set; }
@@ -24,6 +27,8 @@ namespace Servicios.Core.Producto_Pedido.Dto
         public long PedidoId { get; set; }
 
         public long ProductoId { get; set; }
+
+        public string ProductoDescripcion => productoServicio.ObtenerPorId(ProductoId).Descripcion;
 
     }
 }

@@ -33,8 +33,8 @@
             this.btnVista = new System.Windows.Forms.Button();
             this.lblIdPedido = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.lblProducto = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtProductos = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             this.lblNombre.BackColor = System.Drawing.SystemColors.GrayText;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(3, 65);
+            this.lblNombre.Location = new System.Drawing.Point(3, 47);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(93, 25);
             this.lblNombre.TabIndex = 3;
@@ -95,16 +95,6 @@
             this.lblId.Text = ".";
             this.lblId.Visible = false;
             // 
-            // lblProducto
-            // 
-            this.lblProducto.AutoSize = true;
-            this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducto.Location = new System.Drawing.Point(0, 119);
-            this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(20, 20);
-            this.lblProducto.TabIndex = 6;
-            this.lblProducto.Text = "| ";
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -112,8 +102,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(229, 35);
+            this.panel1.Size = new System.Drawing.Size(233, 35);
             this.panel1.TabIndex = 10;
+            // 
+            // txtProductos
+            // 
+            this.txtProductos.BackColor = System.Drawing.SystemColors.Info;
+            this.txtProductos.Enabled = false;
+            this.txtProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductos.Location = new System.Drawing.Point(3, 96);
+            this.txtProductos.Multiline = true;
+            this.txtProductos.Name = "txtProductos";
+            this.txtProductos.Size = new System.Drawing.Size(223, 42);
+            this.txtProductos.TabIndex = 11;
             // 
             // UnidadRetiro
             // 
@@ -121,14 +122,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.txtProductos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnVista);
             this.Controls.Add(this.lblIdPedido);
             this.Controls.Add(this.lblId);
-            this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.lblNombre);
             this.Name = "UnidadRetiro";
-            this.Size = new System.Drawing.Size(229, 204);
+            this.Size = new System.Drawing.Size(233, 204);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -143,7 +144,7 @@
         private System.Windows.Forms.Button btnVista;
         private System.Windows.Forms.Label lblIdPedido;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtProductos;
     }
 }

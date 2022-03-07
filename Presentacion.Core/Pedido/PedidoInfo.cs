@@ -198,7 +198,6 @@ namespace Presentacion.Core.Pedido
             txtDineroAdelanto.Text = string.Empty;
 
             lblPersona.Text = $"{pedido.Apellido} {pedido.Nombre}";
-            lblTiempo.Text = "";
             lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dddd dd/MM/yyyy")}";
             lblFecha.Text = $"{pedido.FechaEntrega.ToString("dddd dd/MM/yyyy")}";
 
@@ -223,7 +222,7 @@ namespace Presentacion.Core.Pedido
                     btnTerminar.Visible = false;
                 }
 
-                lblPagado.Text = $"Todo Pagado y Retirado El Dia \n{pedido.FechaRetirado}";
+                lblPagado.Text = $"Pagado y Retirado El Dia \n{pedido.FechaRetirado}";
                 lblPagado.Visible = true;
 
             }

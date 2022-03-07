@@ -31,9 +31,9 @@ namespace Presentacion.Core.CtaCte
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuardadoConsumidorFinal));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.ptbImagen = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelGrilla = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
@@ -51,18 +51,6 @@ namespace Presentacion.Core.CtaCte
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(863, 92);
             this.panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(741, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 88);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Volver";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblTitulo
             // 
@@ -86,10 +74,23 @@ namespace Presentacion.Core.CtaCte
             this.ptbImagen.TabIndex = 1;
             this.ptbImagen.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(741, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 88);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Volver";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // panelGrilla
             // 
             this.panelGrilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGrilla.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelGrilla.Location = new System.Drawing.Point(0, 92);
             this.panelGrilla.Name = "panelGrilla";
             this.panelGrilla.Size = new System.Drawing.Size(863, 358);

@@ -33,7 +33,7 @@
             this.pasarAEsperaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblProducto2 = new System.Windows.Forms.Label();
+            this.txtProductos = new System.Windows.Forms.TextBox();
             this.btnVer = new System.Windows.Forms.Button();
             this.lblIdPedido = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
@@ -76,32 +76,33 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.lblProducto2);
+            this.panel3.Controls.Add(this.txtProductos);
             this.panel3.Controls.Add(this.btnVer);
             this.panel3.Controls.Add(this.lblIdPedido);
             this.panel3.Controls.Add(this.lblId);
             this.panel3.Controls.Add(this.lblProducto);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 76);
+            this.panel3.Location = new System.Drawing.Point(0, 65);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(256, 72);
+            this.panel3.Size = new System.Drawing.Size(256, 83);
             this.panel3.TabIndex = 3;
             // 
-            // lblProducto2
+            // txtProductos
             // 
-            this.lblProducto2.AutoSize = true;
-            this.lblProducto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducto2.Location = new System.Drawing.Point(1, 0);
-            this.lblProducto2.Name = "lblProducto2";
-            this.lblProducto2.Size = new System.Drawing.Size(20, 20);
-            this.lblProducto2.TabIndex = 7;
-            this.lblProducto2.Text = "| ";
+            this.txtProductos.BackColor = System.Drawing.SystemColors.Info;
+            this.txtProductos.Enabled = false;
+            this.txtProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductos.Location = new System.Drawing.Point(1, 3);
+            this.txtProductos.Multiline = true;
+            this.txtProductos.Name = "txtProductos";
+            this.txtProductos.Size = new System.Drawing.Size(237, 40);
+            this.txtProductos.TabIndex = 8;
             // 
             // btnVer
             // 
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(62, 36);
+            this.btnVer.Location = new System.Drawing.Point(61, 49);
             this.btnVer.Name = "btnVer";
             this.btnVer.Size = new System.Drawing.Size(63, 28);
             this.btnVer.TabIndex = 5;
@@ -113,7 +114,7 @@
             // 
             this.lblIdPedido.AutoSize = true;
             this.lblIdPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdPedido.Location = new System.Drawing.Point(180, 36);
+            this.lblIdPedido.Location = new System.Drawing.Point(183, 53);
             this.lblIdPedido.Name = "lblIdPedido";
             this.lblIdPedido.Size = new System.Drawing.Size(16, 24);
             this.lblIdPedido.TabIndex = 5;
@@ -124,7 +125,7 @@
             // 
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.Location = new System.Drawing.Point(3, 37);
+            this.lblId.Location = new System.Drawing.Point(3, 53);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(16, 24);
             this.lblId.TabIndex = 4;
@@ -220,6 +221,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnRealizado;
-        private System.Windows.Forms.Label lblProducto2;
+        private System.Windows.Forms.TextBox txtProductos;
     }
 }

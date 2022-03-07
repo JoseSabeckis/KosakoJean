@@ -49,8 +49,8 @@ namespace Presentacion.Core.Unidad
             var respuesta = pedido_Producto_Servicio.BuscarPedidoTerminado(Pedido.Id);
 
             foreach (var item in respuesta)
-            {
-                lblProducto.Text = $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} | ";
+            {   
+                txtProductos.Text += $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} |";
                 lblIdPedido.Text = $"{item.PedidoId}";
                 estado = item.Estado;
             }

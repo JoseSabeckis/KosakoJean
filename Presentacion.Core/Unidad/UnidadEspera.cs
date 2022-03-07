@@ -60,7 +60,7 @@ namespace Presentacion.Core.Unidad
 
             foreach (var item in Lista)
             {
-                lblProducto.Text = $"{Lista.FirstOrDefault(x => x.Id == item.Id).Descripcion} | ";
+                txtProductos.Text += $"{item.ProductoDescripcion} | ";
                 lblIdPedido.Text = $"{item.PedidoId}";
             }
 
