@@ -8,8 +8,6 @@ using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido;
-using Servicios.Core.Producto_Pedido.Dto;
-using Servicios.Core.Producto_Venta.Dto;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
@@ -24,7 +22,7 @@ using System.Windows.Forms;
 
 namespace Presentacion.Core.Pedido
 {
-    public partial class PedidoInfo : Form
+    public partial class PedidoGuardado : FormularioBase
     {
         private readonly IProducto_Pedido_Servicio producto_Pedido_Servicio;
         private readonly IPedidoServicio pedidoServicio;
@@ -35,7 +33,7 @@ namespace Presentacion.Core.Pedido
 
         private readonly ICtaCteServicio ctaCteServicio;
 
-        AccesoDatos.EstadoPedido Estado;
+        AccesoDatos.Proceso Estado;
 
         long PedidoId;
 
@@ -43,7 +41,7 @@ namespace Presentacion.Core.Pedido
 
         List<VentaDto2> list;
 
-        public PedidoInfo(long pedidoId, AccesoDatos.EstadoPedido estado)
+        public PedidoGuardado(long pedidoId, AccesoDatos.Proceso estado)
         {
             InitializeComponent();
 
@@ -57,9 +55,11 @@ namespace Presentacion.Core.Pedido
 
             list = new List<VentaDto2>();
 
+            Estado = estado;
+
             var _Pedido = pedidoServicio.Buscar(pedidoId);
 
-            if (_Pedido.Proceso == AccesoDatos.Proceso.PedidoTerminado)
+            if (_Pedido.Proceso == AccesoDatos.Proceso.Retirado)
             {
                 btnEliminar.Visible = true;
             }
@@ -68,35 +68,87 @@ namespace Presentacion.Core.Pedido
                 btnEliminar.Visible = false;
             }
 
-            Estado = estado;
-
             PedidoId = pedidoId;
 
             Datos(pedidoId);
 
             Esquema(pedidoId);
 
-            lblVendido.Visible = false;
 
-            if (_Pedido.Proceso == AccesoDatos.Proceso.InicioPedido)
+            if (_Pedido.Proceso == AccesoDatos.Proceso.Retirado)
             {
                 btnTerminar.Visible = false;
                 ckbTarjeta.Visible = false;
                 ckbNormal.Visible = false;
+                lblVendido.Visible = true;
             }
-            else
+            
+        }
+
+        public void TipoPago(DetalleCajaDto detalle)
+        {
+            if (ckbNormal.Checked)
             {
-                if (_Pedido.Proceso == AccesoDatos.Proceso.EsperandoRetiro)
-                {
-                    btnTerminar.Visible = true;
-                }
-                else
+                detalle.TipoPago = AccesoDatos.TipoPago.Contado;
+            }
+            if (ckbTarjeta.Checked)
+            {
+                detalle.TipoPago = AccesoDatos.TipoPago.Tarjeta;
+            }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Este seguro de eliminar este Pedido?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                pedidoServicio.Eliminar(PedidoId);
+
+                MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+        }
+
+        public void Datos(long pedidoId)
+        {
+            var pedido = pedidoServicio.Buscar(pedidoId);
+
+            txtTotal.Text = string.Empty;
+            txtDebe.Text = string.Empty;
+            txtDineroAdelanto.Text = string.Empty;
+
+            lblPersona.Text = $"{pedido.Apellido} {pedido.Nombre}";
+            lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dddd dd/MM/yyyy")}";
+            lblFecha.Text = $"{pedido.FechaEntrega.ToString("dddd dd/MM/yyyy")}";
+
+            lblHorario.Text = $"{pedido.Horario}";
+
+            txtNotas.Text = $"{pedido.Descripcion}";
+
+            txtDineroAdelanto.Text = $"{pedido.Adelanto}";
+            txtTotal.Text = $"{pedido.Total}";
+
+            txtDebe.Text = $"{pedido.Total - pedido.Adelanto}";
+            _Debe = pedido.Total - pedido.Adelanto;
+
+            if (_Debe == 0)
+            {
+
+                ckbTarjeta.Visible = false;
+                ckbNormal.Visible = false;
+
+                if (pedido.Proceso == AccesoDatos.Proceso.PedidoTerminado)
                 {
                     btnTerminar.Visible = false;
-                    lblVendido.Visible = true;
                 }
-            }
 
+                lblPagado.Text = $"Pagado y Retirado El Dia \n{pedido.FechaRetirado}";
+                lblPagado.Visible = true;
+
+            }
         }
 
         public void CargarGrilla()
@@ -140,7 +192,7 @@ namespace Presentacion.Core.Pedido
 
         private void Esquema(long pedidoId)
         {
-            if (Estado == AccesoDatos.EstadoPedido.Esperando)
+            if (Estado == AccesoDatos.Proceso.Guardado)
             {
                 var esquema = producto_Pedido_Servicio.BuscarPedidoId(pedidoId);
 
@@ -161,12 +213,12 @@ namespace Presentacion.Core.Pedido
 
                     CargarGrilla();
 
-                }                
+                }
 
             }
             else
             {
-                var esquema = producto_Pedido_Servicio.BuscarPedidoTerminado(pedidoId);
+                var esquema = producto_Pedido_Servicio.BuscarPedidoRetirado(pedidoId);
 
                 foreach (var item in esquema)
                 {
@@ -185,72 +237,58 @@ namespace Presentacion.Core.Pedido
                     CargarGrilla();
 
                 }
-                
+
             }
         }
 
-        public void Datos(long pedidoId)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            var pedido = pedidoServicio.Buscar(pedidoId);
+            pedidoServicio.GuardarDatosString(txtNotas.Text, PedidoId);
 
-            txtTotal.Text = string.Empty;
-            txtDebe.Text = string.Empty;
-            txtDineroAdelanto.Text = string.Empty;
+            MessageBox.Show("Datos Guardados!", "Bien", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
-            lblPersona.Text = $"{pedido.Apellido} {pedido.Nombre}";
-            lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dddd dd/MM/yyyy")}";
-            lblFecha.Text = $"{pedido.FechaEntrega.ToString("dddd dd/MM/yyyy")}";
-
-            lblHorario.Text = $"Se Retira a la: {pedido.Horario}";
-
-            txtNotas.Text = $"{pedido.Descripcion}";
-
-            txtDineroAdelanto.Text = $"{pedido.Adelanto}";
-            txtTotal.Text = $"{pedido.Total}";
-
-            txtDebe.Text = $"{pedido.Total - pedido.Adelanto}";
-            _Debe = pedido.Total - pedido.Adelanto;
-
-            if (_Debe == 0)
+        private void ckbNormal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbNormal.Checked == true)
             {
-
-                ckbTarjeta.Visible = false;
-                ckbNormal.Visible = false;
-
-                if (pedido.Proceso == AccesoDatos.Proceso.PedidoTerminado)
-                {
-                    btnTerminar.Visible = false;
-                }
-
-                lblPagado.Text = $"Pagado y Retirado El Dia \n{pedido.FechaRetirado}";
-                lblPagado.Visible = true;
-
+                ckbTarjeta.Checked = false;
+            }
+            else
+            {
+                ckbTarjeta.Checked = true;
             }
         }
 
-        private void btnVolver_Click(object sender, EventArgs e)
+        private void ckbTarjeta_CheckedChanged(object sender, EventArgs e)
         {
-            Close();
+            if (ckbTarjeta.Checked == true)
+            {
+                ckbNormal.Checked = false;
+            }
+            else
+            {
+                ckbNormal.Checked = true;
+            }
         }
 
         private void btnTerminar_Click(object sender, EventArgs e)
         {
-
             if (cajaServicio.BuscarCajaAbierta() != null)
             {
                 if (MessageBox.Show("Esta por Terminar el Pedido, Esta Seguro?", "Preguntar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     var pedido = pedidoServicio.Buscar(PedidoId);
 
-                    pedidoServicio.CambiarProcesoTerminado(pedido.Id);
+                    pedidoServicio.CambiarProcesoRetirado(pedido.Id);
 
                     pedidoServicio.CambiarFechaRetirado(pedido.Id);
 
                     producto_Pedido_Servicio.CambiarEstado(pedido.Id);
-
+                    
                     //Total Cta Cte
 
-                    var cuentaId = new CtaCteDto();                    
+                    var cuentaId = new CtaCteDto();
 
                     if (pedido.ClienteId != 1)
                     {
@@ -296,71 +334,13 @@ namespace Presentacion.Core.Pedido
 
                     Datos(PedidoId);
 
-                    lblVendido.Visible = true;                    
+                    lblVendido.Visible = true;
 
                 }
             }
             else
             {
                 MessageBox.Show("la Caja se encuentra cerrada", "Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-        }
-
-        public void TipoPago(DetalleCajaDto detalle)
-        {
-            if (ckbNormal.Checked)
-            {
-                detalle.TipoPago = AccesoDatos.TipoPago.Contado;
-            }
-            if (ckbTarjeta.Checked)
-            {
-                detalle.TipoPago = AccesoDatos.TipoPago.Tarjeta;
-            }
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Este seguro de eliminar este Pedido?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                pedidoServicio.Eliminar(PedidoId);
-
-                MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            }
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            pedidoServicio.GuardarDatosString(txtNotas.Text, PedidoId);
-
-            MessageBox.Show("Datos Guardados!", "Bien", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void btnCobrar_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ckbNormal_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckbNormal.Checked == true)
-            {
-                ckbTarjeta.Checked = false;
-            }
-            else
-            {
-                ckbTarjeta.Checked = true;
-            }
-        }
-
-        private void ckbTarjeta_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckbTarjeta.Checked == true)
-            {
-                ckbNormal.Checked = false;
-            }
-            else
-            {
-                ckbNormal.Checked = true;
             }
         }
     }

@@ -634,8 +634,6 @@
         <EnumType Name="EstadoPedido" UnderlyingType="Int64">
           <Member Name="Esperando" Value="0" />
           <Member Name="Terminado" Value="1" />
-          <Member Name="Guardado" Value="2" />
-          <Member Name="Retirado" Value="3" />
         </EnumType>
         <EnumType Name="OpenClose" UnderlyingType="Int64">
           <Member Name="Abierto" Value="0" />

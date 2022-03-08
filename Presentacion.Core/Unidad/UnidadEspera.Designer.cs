@@ -104,6 +104,7 @@ namespace Presentacion.Core.Unidad
             this.btnVista.TabIndex = 16;
             this.btnVista.Text = "Vista";
             this.btnVista.UseVisualStyleBackColor = true;
+            this.btnVista.Click += new System.EventHandler(this.btnVista_Click);
             // 
             // txtProductos
             // 

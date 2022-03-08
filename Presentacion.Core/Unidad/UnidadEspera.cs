@@ -1,4 +1,5 @@
-﻿using Servicios.Core.Pedido;
+﻿using Presentacion.Core.Pedido;
+using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido;
@@ -23,9 +24,9 @@ namespace Presentacion.Core.Unidad
 
         PedidoDto Pedido;
 
-        AccesoDatos.EstadoPedido _estado;
+        AccesoDatos.Proceso _estado;
 
-        public UnidadEspera(PedidoDto pedidoDto, AccesoDatos.EstadoPedido estado)
+        public UnidadEspera(PedidoDto pedidoDto, AccesoDatos.Proceso estado)
         {
             InitializeComponent();
 
@@ -49,7 +50,7 @@ namespace Presentacion.Core.Unidad
 
             List<Producto_Pedido_Dto> Lista = new List<Producto_Pedido_Dto>();
 
-            if (_estado == AccesoDatos.EstadoPedido.Guardado)
+            if (_estado == AccesoDatos.Proceso.Guardado)
             {
                 Lista = pedido_Producto_Servicio.BuscarPedidoGuardado(Pedido.Id);
             }
@@ -66,5 +67,10 @@ namespace Presentacion.Core.Unidad
 
         }
 
+        private void btnVista_Click(object sender, EventArgs e)
+        {
+            var guardado = new PedidoGuardado(Pedido.Id, Pedido.Proceso);
+            guardado.ShowDialog();
+        }
     }
 }

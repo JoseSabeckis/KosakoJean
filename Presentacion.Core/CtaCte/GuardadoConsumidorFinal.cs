@@ -31,19 +31,19 @@ namespace Presentacion.Core.CtaCte
 
                 var cuentas = pedidoServicio.BuscarRetirado();
 
-                CrearControles(cuentas, AccesoDatos.EstadoPedido.Retirado);
+                CrearControles(cuentas, AccesoDatos.Proceso.Retirado);
             }
             else
             {
                 var cuentas = pedidoServicio.BuscarGuardados();
 
-                CrearControles(cuentas, AccesoDatos.EstadoPedido.Guardado);
+                CrearControles(cuentas, AccesoDatos.Proceso.Guardado);
             }
 
             
         }
 
-        private void CrearControles(IEnumerable<PedidoDto> cuentas, AccesoDatos.EstadoPedido pedido)
+        private void CrearControles(IEnumerable<PedidoDto> cuentas, AccesoDatos.Proceso pedido)
         {
 
             var flowPanel = new FlowLayoutPanel
@@ -59,6 +59,11 @@ namespace Presentacion.Core.CtaCte
                 var cuenta = item;
 
                 var control = new Unidad.UnidadEspera(cuenta, pedido);
+
+                if (item.Proceso == AccesoDatos.Proceso.Retirado)
+                {
+                    control.BackColor = Color.Orange;
+                }
 
                 flowPanel.Controls.Add(control);
 

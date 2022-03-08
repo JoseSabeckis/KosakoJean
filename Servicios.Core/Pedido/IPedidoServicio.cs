@@ -13,6 +13,8 @@ namespace Servicios.Core.Pedido
 
         IEnumerable<PedidoDto> Buscar(string busqueda);
 
+        void CambiarProcesoRetirado(long id);
+
         void Eliminar(long id);
 
         PedidoDto BuscarIDPedidos(long id);

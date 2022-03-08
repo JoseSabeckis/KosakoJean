@@ -133,6 +133,9 @@
   <data name="barcode_shop_online_ecommerce_shopping_1_icon_icons_com_61653" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barcode_shop_online_ecommerce_shopping-1_icon-icons.com_61653.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="5efdb7b632508_900" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5efdb7b632508_900.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EliminarDos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EliminarDos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,8 +145,8 @@
   <data name="analytics_78917" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\analytics_78917.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="volver" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\volver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_shop_online_ecommerce_shopping_9_icon_icons_com_61652" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_shop_online_ecommerce_shopping-9_icon-icons.com_61652.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImprimirMio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImprimirMio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,10 +160,10 @@
   <data name="bag1_114871" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bag1_114871.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_shop_online_ecommerce_shopping_9_icon_icons_com_61652" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_shop_online_ecommerce_shopping-9_icon-icons.com_61652.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="volver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="5efdb7b632508_900" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5efdb7b632508_900.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tranquila-mueca-yo-te-guardo-tu-encargo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tranquila-mueca-yo-te-guardo-tu-encargo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

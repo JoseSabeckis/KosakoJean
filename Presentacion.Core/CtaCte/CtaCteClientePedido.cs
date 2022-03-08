@@ -182,17 +182,6 @@ namespace Presentacion.Core.CtaCte
 
                 var pedidoId = pedidoServicio.NuevoPedido(pedido);
 
-                AccesoDatos.EstadoPedido EstadoPedido;
-
-                if (_Cliente.Id == 1)
-                {
-                    EstadoPedido = AccesoDatos.EstadoPedido.Guardado;
-                }
-                else
-                {
-                    EstadoPedido = AccesoDatos.EstadoPedido.Esperando;
-                }
-
                 foreach (var item in ListaVentasDto2)
                 {
 
@@ -200,7 +189,7 @@ namespace Presentacion.Core.CtaCte
                     {
                         Cantidad = item.Cantidad,
                         ProductoId = productoServicio.ObtenerPorId(item.Id).Id,
-                        Estado = EstadoPedido,
+                        Estado = AccesoDatos.EstadoPedido.Esperando,
                         Talle = item.Talle,
                         PedidoId = pedidoId,
                         Descripcion = descripcion,

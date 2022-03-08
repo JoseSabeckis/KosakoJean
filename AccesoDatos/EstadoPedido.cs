@@ -14,8 +14,6 @@ namespace AccesoDatos
     public enum EstadoPedido : long
     {
         Esperando = 0,
-        Terminado = 1,
-        Guardado = 2,
-        Retirado = 3
+        Terminado = 1
     }
 }

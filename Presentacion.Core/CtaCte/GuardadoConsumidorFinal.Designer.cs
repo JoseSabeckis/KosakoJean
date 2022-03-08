@@ -49,7 +49,7 @@ namespace Presentacion.Core.CtaCte
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(863, 92);
+            this.panel1.Size = new System.Drawing.Size(985, 92);
             this.panel1.TabIndex = 0;
             // 
             // lblTitulo
@@ -78,7 +78,7 @@ namespace Presentacion.Core.CtaCte
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(741, 0);
+            this.button1.Location = new System.Drawing.Point(863, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 88);
             this.button1.TabIndex = 0;
@@ -93,7 +93,7 @@ namespace Presentacion.Core.CtaCte
             this.panelGrilla.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelGrilla.Location = new System.Drawing.Point(0, 92);
             this.panelGrilla.Name = "panelGrilla";
-            this.panelGrilla.Size = new System.Drawing.Size(863, 358);
+            this.panelGrilla.Size = new System.Drawing.Size(985, 397);
             this.panelGrilla.TabIndex = 1;
             // 
             // GuardadoConsumidorFinal
@@ -101,7 +101,7 @@ namespace Presentacion.Core.CtaCte
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(863, 450);
+            this.ClientSize = new System.Drawing.Size(985, 489);
             this.Controls.Add(this.panelGrilla);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

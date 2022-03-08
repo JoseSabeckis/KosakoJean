@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto_Pedido.Dto;
 using System;
 using System.Collections.Generic;
@@ -38,9 +39,12 @@ namespace Servicios.Core.Producto_Pedido
         {
             using (var context = new KosakoDBEntities())
             {
-                var estado = context.Producto_Pedidos.FirstOrDefault(x => x.PedidoId == id);
+                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == id).ToList();
 
-                estado.Estado = EstadoPedido.Terminado;
+                foreach (var item in estado)
+                {
+                    item.Estado = EstadoPedido.Terminado;
+                }              
 
                 context.SaveChanges();
             }
@@ -113,7 +117,7 @@ namespace Servicios.Core.Producto_Pedido
         {
             using (var context = new KosakoDBEntities())
             {
-                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == id && x.Estado == EstadoPedido.Guardado).Select(x => new Producto_Pedido_Dto
+                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == id).Select(x => new Producto_Pedido_Dto
                 {
                     Cantidad = x.Cantidad,
                     Estado = x.Estado,
@@ -134,7 +138,7 @@ namespace Servicios.Core.Producto_Pedido
         {
             using (var context = new KosakoDBEntities())
             {
-                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == id && x.Estado == EstadoPedido.Retirado).Select(x => new Producto_Pedido_Dto
+                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == id).Select(x => new Producto_Pedido_Dto
                 {
                     Cantidad = x.Cantidad,
                     Estado = x.Estado,
