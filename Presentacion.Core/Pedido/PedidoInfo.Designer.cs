@@ -44,25 +44,33 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnCobro = new System.Windows.Forms.Button();
+            this.lblCobrar = new System.Windows.Forms.Label();
             this.ckbNormal = new System.Windows.Forms.CheckBox();
             this.ckbTarjeta = new System.Windows.Forms.CheckBox();
+            this.nudCobro = new System.Windows.Forms.NumericUpDown();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txtDebe = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDineroAdelanto = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblPagado = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.lblVendido = new System.Windows.Forms.Label();
             this.btnTerminar = new System.Windows.Forms.Button();
-            this.txtDebe = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtDineroAdelanto = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCobro)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,7 +88,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1143, 86);
+            this.panel1.Size = new System.Drawing.Size(1306, 86);
             this.panel1.TabIndex = 0;
             // 
             // lblHorario
@@ -101,7 +109,7 @@
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblFechaInicio.Location = new System.Drawing.Point(800, 39);
+            this.lblFechaInicio.Location = new System.Drawing.Point(963, 39);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(59, 20);
             this.lblFechaInicio.TabIndex = 7;
@@ -112,7 +120,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(800, 11);
+            this.label6.Location = new System.Drawing.Point(963, 11);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(185, 20);
             this.label6.TabIndex = 6;
@@ -158,7 +166,7 @@
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(1028, 0);
+            this.btnVolver.Location = new System.Drawing.Point(1191, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(111, 82);
             this.btnVolver.TabIndex = 2;
@@ -195,7 +203,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 86);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1143, 375);
+            this.panel2.Size = new System.Drawing.Size(1306, 382);
             this.panel2.TabIndex = 1;
             // 
             // dgvGrilla
@@ -227,31 +235,62 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(1139, 260);
+            this.dgvGrilla.Size = new System.Drawing.Size(1302, 261);
             this.dgvGrilla.TabIndex = 12;
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.ckbNormal);
-            this.panel3.Controls.Add(this.ckbTarjeta);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.lblPagado);
             this.panel3.Controls.Add(this.btnEliminar);
             this.panel3.Controls.Add(this.lblVendido);
             this.panel3.Controls.Add(this.btnTerminar);
-            this.panel3.Controls.Add(this.txtDebe);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.txtDineroAdelanto);
-            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.txtNotas);
             this.panel3.Controls.Add(this.btnGuardar);
-            this.panel3.Controls.Add(this.txtTotal);
-            this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 260);
+            this.panel3.Location = new System.Drawing.Point(0, 261);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1139, 111);
+            this.panel3.Size = new System.Drawing.Size(1302, 117);
             this.panel3.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.btnCobro);
+            this.panel5.Controls.Add(this.lblCobrar);
+            this.panel5.Controls.Add(this.ckbNormal);
+            this.panel5.Controls.Add(this.ckbTarjeta);
+            this.panel5.Controls.Add(this.nudCobro);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(808, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(277, 113);
+            this.panel5.TabIndex = 19;
+            // 
+            // btnCobro
+            // 
+            this.btnCobro.BackColor = System.Drawing.Color.Lime;
+            this.btnCobro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCobro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobro.Location = new System.Drawing.Point(145, 51);
+            this.btnCobro.Name = "btnCobro";
+            this.btnCobro.Size = new System.Drawing.Size(120, 45);
+            this.btnCobro.TabIndex = 17;
+            this.btnCobro.Text = "Cobrar";
+            this.btnCobro.UseVisualStyleBackColor = false;
+            this.btnCobro.Click += new System.EventHandler(this.btnCobro_Click);
+            // 
+            // lblCobrar
+            // 
+            this.lblCobrar.AutoSize = true;
+            this.lblCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCobrar.Location = new System.Drawing.Point(16, 12);
+            this.lblCobrar.Name = "lblCobrar";
+            this.lblCobrar.Size = new System.Drawing.Size(123, 24);
+            this.lblCobrar.TabIndex = 15;
+            this.lblCobrar.Text = "Adelanto de";
             // 
             // ckbNormal
             // 
@@ -259,7 +298,7 @@
             this.ckbNormal.Checked = true;
             this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbNormal.Location = new System.Drawing.Point(710, 21);
+            this.ckbNormal.Location = new System.Drawing.Point(20, 51);
             this.ckbNormal.Name = "ckbNormal";
             this.ckbNormal.Size = new System.Drawing.Size(96, 24);
             this.ckbNormal.TabIndex = 13;
@@ -271,7 +310,7 @@
             // 
             this.ckbTarjeta.AutoSize = true;
             this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbTarjeta.Location = new System.Drawing.Point(710, 44);
+            this.ckbTarjeta.Location = new System.Drawing.Point(20, 74);
             this.ckbTarjeta.Name = "ckbTarjeta";
             this.ckbTarjeta.Size = new System.Drawing.Size(85, 26);
             this.ckbTarjeta.TabIndex = 14;
@@ -279,13 +318,113 @@
             this.ckbTarjeta.UseVisualStyleBackColor = true;
             this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
             // 
+            // nudCobro
+            // 
+            this.nudCobro.BackColor = System.Drawing.SystemColors.Info;
+            this.nudCobro.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudCobro.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudCobro.Location = new System.Drawing.Point(145, 9);
+            this.nudCobro.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.nudCobro.Name = "nudCobro";
+            this.nudCobro.Size = new System.Drawing.Size(120, 33);
+            this.nudCobro.TabIndex = 16;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.txtDebe);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.txtTotal);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.txtDineroAdelanto);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(1085, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(213, 113);
+            this.panel4.TabIndex = 18;
+            // 
+            // txtDebe
+            // 
+            this.txtDebe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDebe.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtDebe.Enabled = false;
+            this.txtDebe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDebe.Location = new System.Drawing.Point(111, 70);
+            this.txtDebe.Name = "txtDebe";
+            this.txtDebe.Size = new System.Drawing.Size(83, 26);
+            this.txtDebe.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(38, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Total  $";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotal.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(111, 7);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(83, 26);
+            this.txtTotal.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 22);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Adelanto  $";
+            // 
+            // txtDineroAdelanto
+            // 
+            this.txtDineroAdelanto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDineroAdelanto.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtDineroAdelanto.Enabled = false;
+            this.txtDineroAdelanto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDineroAdelanto.Location = new System.Drawing.Point(111, 39);
+            this.txtDineroAdelanto.Name = "txtDineroAdelanto";
+            this.txtDineroAdelanto.Size = new System.Drawing.Size(83, 26);
+            this.txtDineroAdelanto.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(35, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Debe  $";
+            // 
             // lblPagado
             // 
             this.lblPagado.AutoSize = true;
             this.lblPagado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblPagado.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPagado.ForeColor = System.Drawing.Color.Red;
-            this.lblPagado.Location = new System.Drawing.Point(705, 28);
+            this.lblPagado.Location = new System.Drawing.Point(567, 69);
             this.lblPagado.Name = "lblPagado";
             this.lblPagado.Size = new System.Drawing.Size(166, 26);
             this.lblPagado.TabIndex = 12;
@@ -311,7 +450,7 @@
             this.lblVendido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblVendido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVendido.ForeColor = System.Drawing.Color.Red;
-            this.lblVendido.Location = new System.Drawing.Point(579, 28);
+            this.lblVendido.Location = new System.Drawing.Point(567, 18);
             this.lblVendido.Name = "lblVendido";
             this.lblVendido.Size = new System.Drawing.Size(138, 26);
             this.lblVendido.TabIndex = 9;
@@ -323,55 +462,11 @@
             this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTerminar.Location = new System.Drawing.Point(563, 15);
             this.btnTerminar.Name = "btnTerminar";
-            this.btnTerminar.Size = new System.Drawing.Size(136, 55);
+            this.btnTerminar.Size = new System.Drawing.Size(170, 55);
             this.btnTerminar.TabIndex = 8;
-            this.btnTerminar.Text = "Cobrar y Entregar";
+            this.btnTerminar.Text = "Cobrar lo que Debe y Entregar";
             this.btnTerminar.UseVisualStyleBackColor = false;
             this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
-            // 
-            // txtDebe
-            // 
-            this.txtDebe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDebe.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtDebe.Enabled = false;
-            this.txtDebe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDebe.Location = new System.Drawing.Point(1044, 73);
-            this.txtDebe.Name = "txtDebe";
-            this.txtDebe.Size = new System.Drawing.Size(83, 26);
-            this.txtDebe.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(968, 76);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Debe  $";
-            // 
-            // txtDineroAdelanto
-            // 
-            this.txtDineroAdelanto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDineroAdelanto.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtDineroAdelanto.Enabled = false;
-            this.txtDineroAdelanto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDineroAdelanto.Location = new System.Drawing.Point(1044, 44);
-            this.txtDineroAdelanto.Name = "txtDineroAdelanto";
-            this.txtDineroAdelanto.Size = new System.Drawing.Size(83, 26);
-            this.txtDineroAdelanto.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(936, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 22);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Adelanto  $";
             // 
             // txtNotas
             // 
@@ -379,7 +474,7 @@
             this.txtNotas.Location = new System.Drawing.Point(4, 4);
             this.txtNotas.Multiline = true;
             this.txtNotas.Name = "txtNotas";
-            this.txtNotas.Size = new System.Drawing.Size(444, 95);
+            this.txtNotas.Size = new System.Drawing.Size(444, 101);
             this.txtNotas.TabIndex = 3;
             // 
             // btnGuardar
@@ -393,39 +488,17 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtTotal
-            // 
-            this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtTotal.Enabled = false;
-            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(1044, 15);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(83, 26);
-            this.txtTotal.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(971, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Total  $";
-            // 
             // PedidoInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1143, 461);
+            this.ClientSize = new System.Drawing.Size(1306, 468);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1159, 500);
+            this.MinimumSize = new System.Drawing.Size(1322, 507);
             this.Name = "PedidoInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedido Info";
@@ -437,6 +510,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCobro)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -470,5 +548,10 @@
         private System.Windows.Forms.CheckBox ckbNormal;
         private System.Windows.Forms.CheckBox ckbTarjeta;
         private System.Windows.Forms.Label lblHorario;
+        private System.Windows.Forms.Label lblCobrar;
+        private System.Windows.Forms.NumericUpDown nudCobro;
+        private System.Windows.Forms.Button btnCobro;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
     }
 }

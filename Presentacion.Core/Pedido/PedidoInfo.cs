@@ -81,8 +81,6 @@ namespace Presentacion.Core.Pedido
             if (_Pedido.Proceso == AccesoDatos.Proceso.InicioPedido)
             {
                 btnTerminar.Visible = false;
-                ckbTarjeta.Visible = false;
-                ckbNormal.Visible = false;
             }
             else
             {
@@ -95,7 +93,7 @@ namespace Presentacion.Core.Pedido
                     btnTerminar.Visible = false;
                     lblVendido.Visible = true;
                 }
-            }
+            }           
 
         }
 
@@ -211,19 +209,26 @@ namespace Presentacion.Core.Pedido
             txtDebe.Text = $"{pedido.Total - pedido.Adelanto}";
             _Debe = pedido.Total - pedido.Adelanto;
 
+            nudCobro.Maximum = _Debe;
+
             if (_Debe == 0)
             {
 
                 ckbTarjeta.Visible = false;
                 ckbNormal.Visible = false;
 
+                nudCobro.Visible = false;
+                lblCobrar.Visible = false;
+                btnCobro.Visible = false;
+
                 if (pedido.Proceso == AccesoDatos.Proceso.PedidoTerminado)
                 {
                     btnTerminar.Visible = false;
+                    lblVendido.Text = $"Entregado el \n{pedido.FechaRetirado}";
                 }
 
-                lblPagado.Text = $"Pagado y Retirado El Dia \n{pedido.FechaRetirado}";
-                lblPagado.Visible = true;
+                lblPagado.Text = $"| Pagado |";
+                lblPagado.Visible = true;               
 
             }
         }
@@ -252,12 +257,9 @@ namespace Presentacion.Core.Pedido
 
                     var cuentaId = new CtaCteDto();                    
 
-                    if (pedido.ClienteId != 1)
-                    {
-                        cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
+                    cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
 
-                        ctaCteServicio.Pagar(_Debe, pedido.ClienteId, cuentaId.Id);
-                    }
+                    ctaCteServicio.Pagar(_Debe, pedido.ClienteId, cuentaId.Id);
 
                     //Fin Cta Cte
 
@@ -268,7 +270,7 @@ namespace Presentacion.Core.Pedido
                     var detalle = new DetalleCajaDto
                     {
                         Descripcion = $"{lblPersona.Text} - Pedido Terminado",
-                        Fecha = DateTime.Now.ToString("dd/MM/yy"),
+                        Fecha = DateTime.Now.ToLongDateString(),
                         Total = _Debe,
                         CajaId = detalleCajaServicio.BuscarCajaAbierta()
                     };
@@ -291,7 +293,7 @@ namespace Presentacion.Core.Pedido
 
                     ventaServicio.NuevaVenta(venta);
 
-                    var completado = new Afirmacion("Felicidades!", $"Completado \nse obtuvo de ganancias $ {_Debe}");
+                    var completado = new Afirmacion("Felicidades!", $"Completado \nSe obtuvo de ganancias $ {_Debe}");
                     completado.ShowDialog();
 
                     Datos(PedidoId);
@@ -361,6 +363,61 @@ namespace Presentacion.Core.Pedido
             else
             {
                 ckbNormal.Checked = true;
+            }
+        }
+
+        private void btnCobro_Click(object sender, EventArgs e)
+        {
+            if (nudCobro.Value > 0)
+            {
+                if (MessageBox.Show("Esta Por Cobrar Un Adelanto, Desea Continuar?","Adelanto",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var pedido = pedidoServicio.Buscar(PedidoId);
+
+                    //Total Cta Cte
+
+                    var cuentaId = new CtaCteDto();
+
+                    cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
+
+                    ctaCteServicio.Pagar(nudCobro.Value, pedido.ClienteId, cuentaId.Id);
+
+                    //caja
+
+                    var detalle = new DetalleCajaDto
+                    {
+                        Descripcion = $"{lblPersona.Text} - Adelanto de Pedido",
+                        Fecha = DateTime.Now.ToLongDateString(),
+                        Total = nudCobro.Value,
+                        CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                    };
+
+                    TipoPago(detalle);
+
+                    detalleCajaServicio.AgregarDetalleCaja(detalle);
+
+                    cajaServicio.SumarDineroACaja(nudCobro.Value);
+
+                    pedidoServicio.CambiarRamas(nudCobro.Value, PedidoId);
+
+                    var venta = new VentaDto
+                    {
+                        ClienteId = pedido.ClienteId,
+                        Descuento = 0,
+                        Fecha = DateTime.Now,
+                        Total = nudCobro.Value
+                    };
+
+                    ventaServicio.NuevaVenta(venta);
+
+                    var completado = new Afirmacion("Felicidades!", $"Completado \nSe obtuvo de ganancias $ {nudCobro.Value}");
+                    completado.ShowDialog();
+
+                    nudCobro.Value = 0;
+
+                    Datos(PedidoId);
+
+                }
             }
         }
     }

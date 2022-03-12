@@ -133,5 +133,10 @@ namespace Presentacion.Core.Producto
                 _codigo = 0;
             }
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -207,21 +207,18 @@ namespace Presentacion.Core.Pedido
 
                     }
 
-                    if (ClienteId != 1)
+                    var cuenta = new CtaCteDto
                     {
-                        var cuenta = new CtaCteDto
-                        {
-                            ClienteId = ClienteId,
-                            Estado = AccesoDatos.CtaCteEstado.EnEspera,
-                            Fecha = dtpFechaEntrega.Value.Date,
-                            Total = _total,
-                            Debe = _total - nudAdelanto.Value,
-                            Descripcion = $"{segunda}",
-                            PedidoId = pedidoId
-                        };
+                        ClienteId = ClienteId,
+                        Estado = AccesoDatos.CtaCteEstado.EnEspera,
+                        Fecha = dtpFechaEntrega.Value.Date,
+                        Total = _total,
+                        Debe = _total - nudAdelanto.Value,
+                        Descripcion = $"{segunda}",
+                        PedidoId = pedidoId
+                    };
 
-                        ctaCteServicio.Agregar(cuenta);
-                    }
+                     ctaCteServicio.Agregar(cuenta);
                     
 
                     var detalle = new DetalleCajaDto

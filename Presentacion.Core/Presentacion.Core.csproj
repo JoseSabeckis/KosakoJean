@@ -491,6 +491,7 @@
   <ItemGroup>
     <None Include="Resources\5efdb7b632508_900.jpg" />
     <None Include="Resources\tranquila-mueca-yo-te-guardo-tu-encargo.jpg" />
+    <None Include="Resources\4_tipos_clientes.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
