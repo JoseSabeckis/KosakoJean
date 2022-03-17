@@ -102,5 +102,10 @@ namespace Presentacion.Core.Caja
                 this.Close();
             }
         }
+
+        private void CerrarCaja_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace Servicios.Core.Producto_Dato.Dto
     public class Producto_Dato_Dto
     {
         private readonly IProducto_Pedido_Servicio producto_Pedido_Servicio = new Producto_Pedido_Servicio();
+        private readonly IProductoServicio producto_Servicio = new ProductoServicio();
 
         public long Id { get; set; }
 
@@ -18,7 +20,7 @@ namespace Servicios.Core.Producto_Dato.Dto
 
         public long Producto_PedidoId { get; set; }
 
-        public string ProductoDescripcion => producto_Pedido_Servicio.ObtenerPorId(Producto_PedidoId).Descripcion;
+        public string ProductoDescripcion => producto_Servicio.ObtenerPorId(producto_Pedido_Servicio.ObtenerPorId(Producto_PedidoId).ProductoId).Descripcion;
 
         public string ProductoTalle => producto_Pedido_Servicio.ObtenerPorId(Producto_PedidoId).Talle;
 

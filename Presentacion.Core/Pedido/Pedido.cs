@@ -14,6 +14,8 @@ using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto.Dto;
+using Servicios.Core.Producto_Dato;
+using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Talle;
@@ -42,6 +44,7 @@ namespace Presentacion.Core.Pedido
         private readonly ITalleServicio talleServicio;
         private readonly IClienteServicio clienteServicio;
         private readonly IVentaServicio ventaServicio;
+        private readonly IProducto_Dato_Servicio producto_Dato_Servicio;
 
         public bool semaforo = false;
 
@@ -65,6 +68,7 @@ namespace Presentacion.Core.Pedido
             talleServicio = new TalleServicio();
             clienteServicio = new ClienteServicio();
             ventaServicio = new VentaServicio();
+            producto_Dato_Servicio = new Producto_Dato_Servicio();
 
             _Cliente = new ClienteDto();
 
@@ -202,8 +206,22 @@ namespace Presentacion.Core.Pedido
                             Descripcion = segunda,
                             TalleId = _TalleId
                         };
+                        
+                        var _Id_Pedido = producto_Pedido_Servicio.NuevoProductoPedido(aux);
 
-                        producto_Pedido_Servicio.NuevoProductoPedido(aux);                        
+                        //datos
+
+                        for (int i = 0; i < item.Cantidad; i++)
+                        {
+                            var dato = new Producto_Dato_Dto
+                            {
+                                EstadoPorPedido = AccesoDatos.EstadoPorPedido.EnEspera,
+                                Producto_PedidoId = _Id_Pedido
+                            };
+
+                            producto_Dato_Servicio.Insertar(dato);
+                        }
+                        
 
                     }
 
@@ -231,7 +249,7 @@ namespace Presentacion.Core.Pedido
 
                     TipoPago(detalle);
 
-                    detallCajaServicio.AgregarDetalleCaja(detalle);
+                    detallCajaServicio.AgregarDetalleCaja(detalle);                   
 
                     //dinero a caja
                     cajaServicio.SumarDineroACaja(nudAdelanto.Value);//

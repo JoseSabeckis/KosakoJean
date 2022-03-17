@@ -1,4 +1,5 @@
 ﻿using Presentacion.Core.Mensaje;
+using Presentacion.Core.Producto_Dato;
 using Servicios.Core.Caja;
 using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
@@ -37,6 +38,7 @@ namespace Presentacion.Core.Pedido
 
         AccesoDatos.EstadoPedido Estado;
 
+        protected long EntidadId;
         long PedidoId;
 
         decimal _Debe;
@@ -149,6 +151,7 @@ namespace Presentacion.Core.Pedido
 
                     var lista = new VentaDto2
                     {
+                        Id = item.Id,
                         Cantidad = item.Cantidad,
                         Talle = item.Talle,
                         Descripcion = producto.Descripcion,
@@ -419,6 +422,26 @@ namespace Presentacion.Core.Pedido
 
                 }
             }
+        }
+
+        private void dgvGrilla_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvGrilla.RowCount > 0)
+            {
+                EntidadId = (long)dgvGrilla["Id", e.RowIndex].Value;
+            }
+            else
+            {
+                EntidadId = 0;
+            }
+        }
+
+        private void dgvGrilla_DoubleClick(object sender, EventArgs e)
+        {
+            var datos = new EstadoProducto(EntidadId);
+            datos.ShowDialog();
+
+            //CargarGrilla();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Servicios.Core.Producto_Pedido
 {
     public class Producto_Pedido_Servicio : IProducto_Pedido_Servicio
     {
-        public void NuevoProductoPedido(Producto_Pedido_Dto producto)
+        public long NuevoProductoPedido(Producto_Pedido_Dto producto)
         {
             using(var context = new KosakoDBEntities())
             {
@@ -32,6 +32,7 @@ namespace Servicios.Core.Producto_Pedido
 
                 context.SaveChanges();
 
+                return nuevo.Id;
             }
         }
 

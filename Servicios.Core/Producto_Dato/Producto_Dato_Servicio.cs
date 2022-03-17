@@ -1,5 +1,6 @@
 ﻿using AccesoDatos;
 using Servicios.Core.Producto_Dato.Dto;
+using Servicios.Core.Producto_Pedido.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace Servicios.Core.Producto_Dato
         {
             using(var context = new KosakoDBEntities())
             {
-                var dato = context.Producto_Datos.FirstOrDefault(x => x.Producto_PedidoId == id);
+                var dato = context.Producto_Datos.FirstOrDefault(x => x.Id == id);
 
                 dato.EstadoPorPedido = EstadoPorPedido.Terminado;
 
@@ -42,7 +43,7 @@ namespace Servicios.Core.Producto_Dato
         {
             using (var context = new KosakoDBEntities())
             {
-                var dato = context.Producto_Datos.FirstOrDefault(x => x.Producto_PedidoId == id);
+                var dato = context.Producto_Datos.FirstOrDefault(x => x.Id == id);
 
                 dato.EstadoPorPedido = EstadoPorPedido.EnEspera;
 
@@ -54,11 +55,64 @@ namespace Servicios.Core.Producto_Dato
         {
             using (var context = new KosakoDBEntities())
             {
-                var dato = context.Producto_Datos.FirstOrDefault(x => x.Producto_PedidoId == id);
+                var dato = context.Producto_Datos.FirstOrDefault(x => x.Id == id);
 
                 dato.EstadoPorPedido = EstadoPorPedido.Cancelado;
 
                 context.SaveChanges();
+            }
+        }
+
+        public Producto_Dato_Dto ObtenerPorId(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var dato = context.Producto_Datos.FirstOrDefault(x => x.Id == id);
+
+                var dato2 = new Producto_Dato_Dto
+                {
+                    Id = dato.Id,
+                    EstadoPorPedido = dato.EstadoPorPedido,
+                    Producto_PedidoId = dato.Producto_PedidoId
+                };
+
+                return dato2;
+            }
+        }
+
+        public Producto_Pedido_Dto ObtenerProductoPedidoPorId(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var dato = context.Producto_Pedidos.FirstOrDefault(x => x.Id == id);
+
+                var dato2 = new Producto_Pedido_Dto
+                {
+                    Id = dato.Id,
+                    Talle = dato.Talle,
+                    Descripcion = dato.Descripcion,
+                    Cantidad = dato.Cantidad,
+                    Estado = dato.Estado,
+                    PedidoId = dato.PedidoId,
+                    TalleId = dato.TalleId,
+                    ProductoId = dato.ProductoId
+                };
+
+                return dato2;
+            }
+        }
+
+        public List<Producto_Dato_Dto> ObtenerProductosPorPedidoId(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                return context.Producto_Datos.Where(x => x.Producto_PedidoId == id).Select(x => new Producto_Dato_Dto
+                {
+                    Id = x.Id,
+                    EstadoPorPedido = x.EstadoPorPedido,
+                    Producto_PedidoId = x.Producto_PedidoId
+
+                }).ToList();
             }
         }
 
