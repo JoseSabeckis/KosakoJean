@@ -21,6 +21,8 @@ namespace Servicios.Core.Producto_Pedido
 
         List<Producto_Pedido_Dto> BuscarPedidoRetirado(long id);
 
+        Producto_Pedido_Dto ObtenerPorId(long id);
+
         void CambiarEstado(long id);
 
         List<Producto_Pedido_Dto> Buscar();

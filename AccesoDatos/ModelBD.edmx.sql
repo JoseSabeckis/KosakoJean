@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/07/2022 23:05:18
+-- Date Created: 03/17/2022 14:46:35
 -- Generated from EDMX file: C:\Users\joses\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -53,6 +53,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_TalleProducto_Venta]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Producto_Ventas] DROP CONSTRAINT [FK_TalleProducto_Venta];
 GO
+IF OBJECT_ID(N'[dbo].[FK_Producto_PedidoProducto_Dato]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Producto_Datos] DROP CONSTRAINT [FK_Producto_PedidoProducto_Dato];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -93,6 +96,9 @@ IF OBJECT_ID(N'[dbo].[CtasCtes]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Talles]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Talles];
+GO
+IF OBJECT_ID(N'[dbo].[Producto_Datos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Producto_Datos];
 GO
 
 -- --------------------------------------------------
@@ -246,6 +252,14 @@ CREATE TABLE [dbo].[Talles] (
 );
 GO
 
+-- Creating table 'Producto_Datos'
+CREATE TABLE [dbo].[Producto_Datos] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [EstadoPorPedido] bigint  NOT NULL,
+    [Producto_PedidoId] bigint  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -319,6 +333,12 @@ GO
 -- Creating primary key on [Id] in table 'Talles'
 ALTER TABLE [dbo].[Talles]
 ADD CONSTRAINT [PK_Talles]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Producto_Datos'
+ALTER TABLE [dbo].[Producto_Datos]
+ADD CONSTRAINT [PK_Producto_Datos]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -504,6 +524,21 @@ GO
 CREATE INDEX [IX_FK_TalleProducto_Venta]
 ON [dbo].[Producto_Ventas]
     ([TalleId]);
+GO
+
+-- Creating foreign key on [Producto_PedidoId] in table 'Producto_Datos'
+ALTER TABLE [dbo].[Producto_Datos]
+ADD CONSTRAINT [FK_Producto_PedidoProducto_Dato]
+    FOREIGN KEY ([Producto_PedidoId])
+    REFERENCES [dbo].[Producto_Pedidos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Producto_PedidoProducto_Dato'
+CREATE INDEX [IX_FK_Producto_PedidoProducto_Dato]
+ON [dbo].[Producto_Datos]
+    ([Producto_PedidoId]);
 GO
 
 -- --------------------------------------------------

@@ -14,6 +14,12 @@ namespace AccesoDatos
     
     public partial class Producto_Pedido
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Producto_Pedido()
+        {
+            this.Producto_Dato = new HashSet<Producto_Dato>();
+        }
+    
         public long Id { get; set; }
         public long ProductoId { get; set; }
         public long PedidoId { get; set; }
@@ -26,5 +32,7 @@ namespace AccesoDatos
         public virtual Producto Producto { get; set; }
         public virtual Pedido Pedido { get; set; }
         public virtual Talle TalleEntidad { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Producto_Dato> Producto_Dato { get; set; }
     }
 }

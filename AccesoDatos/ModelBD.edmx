@@ -18,6 +18,7 @@
     <EntitySet Name="Clientes" EntityType="KosakoDBModel.Store.Clientes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CtasCtes" EntityType="KosakoDBModel.Store.CtasCtes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Talles" EntityType="KosakoDBModel.Store.Talles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Producto_Datos" EntityType="KosakoDBModel.Store.Producto_Datos" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="TipoProductoProducto" Association="KosakoDBModel.Store.TipoProductoProducto">
       <End Role="TipoProducto" EntitySet="TipoProductos" />
       <End Role="Producto" EntitySet="Productos" />
@@ -65,6 +66,10 @@
     <AssociationSet Name="TalleProducto_Venta" Association="KosakoDBModel.Store.TalleProducto_Venta">
       <End Role="Talle" EntitySet="Talles" />
       <End Role="Producto_Venta" EntitySet="Producto_Ventas" />
+    </AssociationSet>
+    <AssociationSet Name="Producto_PedidoProducto_Dato" Association="KosakoDBModel.Store.Producto_PedidoProducto_Dato">
+      <End Role="Producto_Pedido" EntitySet="Producto_Pedidos" />
+      <End Role="Producto_Dato" EntitySet="Producto_Datos" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Productos">
@@ -214,6 +219,14 @@
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
   </EntityType>
+  <EntityType Name="Producto_Datos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EstadoPorPedido" Type="bigint" Nullable="false" />
+    <Property Name="Producto_PedidoId" Type="bigint" Nullable="false" />
+  </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
     <End Role="Producto" Type="KosakoDBModel.Store.Productos" Multiplicity="*" />
@@ -358,6 +371,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="Producto_PedidoProducto_Dato">
+    <End Role="Producto_Pedido" Type="KosakoDBModel.Store.Producto_Pedidos" Multiplicity="1" />
+    <End Role="Producto_Dato" Type="KosakoDBModel.Store.Producto_Datos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto_Pedido">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Producto_Dato">
+        <PropertyRef Name="Producto_PedidoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -422,6 +447,11 @@
           <AssociationSet Name="TalleProducto_Venta" Association="KosakoDBModel.TalleProducto_Venta">
             <End Role="Talle" EntitySet="Talles" />
             <End Role="Producto_Venta" EntitySet="Producto_Ventas" />
+          </AssociationSet>
+          <EntitySet Name="Producto_Datos" EntityType="KosakoDBModel.Producto_Dato" />
+          <AssociationSet Name="Producto_PedidoProducto_Dato" Association="KosakoDBModel.Producto_PedidoProducto_Dato">
+            <End Role="Producto_Pedido" EntitySet="Producto_Pedidos" />
+            <End Role="Producto_Dato" EntitySet="Producto_Datos" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Producto">
@@ -557,6 +587,7 @@
           <Property Name="Descripcion" Type="String" Nullable="false" />
           <NavigationProperty Name="TalleEntidad" Relationship="KosakoDBModel.TalleProducto_Pedido" FromRole="Producto_Pedido" ToRole="Talle" />
           <Property Name="TalleId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Producto_Dato" Relationship="KosakoDBModel.Producto_PedidoProducto_Dato" FromRole="Producto_Pedido" ToRole="Producto_Dato" />
         </EntityType>
         <Association Name="ProductoProducto_Pedido">
           <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="1" />
@@ -737,6 +768,36 @@
           <Member Name="Tarjeta" Value="2" />
           <Member Name="CtaCte" Value="3" />
         </EnumType>
+        <EntityType Name="Producto_Dato">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EstadoPorPedido" Type="KosakoDBModel.EstadoPorPedido" Nullable="false" />
+          <NavigationProperty Name="Producto_Pedido" Relationship="KosakoDBModel.Producto_PedidoProducto_Dato" FromRole="Producto_Dato" ToRole="Producto_Pedido" />
+          <Property Name="Producto_PedidoId" Type="Int64" Nullable="false" />
+        </EntityType>
+        <Association Name="Producto_PedidoProducto_Dato">
+          <End Type="KosakoDBModel.Producto_Pedido" Role="Producto_Pedido" Multiplicity="1" />
+          <End Type="KosakoDBModel.Producto_Dato" Role="Producto_Dato" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto_Pedido">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producto_Dato">
+              <PropertyRef Name="Producto_PedidoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="EstadoUltimo" UnderlyingType="Int64">
+          <Member Name="Inicio" Value="1" />
+          <Member Name="Terminado" Value="2" />
+        </EnumType>
+        <EnumType Name="EstadoPorPedido" UnderlyingType="Int64">
+          <Member Name="EnEspera" Value="1" />
+          <Member Name="Terminado" Value="2" />
+          <Member Name="Cancelado" Value="3" />
+        </EnumType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -896,6 +957,15 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producto_Datos">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Producto_Dato)">
+        <MappingFragment StoreEntitySet="Producto_Datos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EstadoPorPedido" ColumnName="EstadoPorPedido" />
+          <ScalarProperty Name="Producto_PedidoId" ColumnName="Producto_PedidoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

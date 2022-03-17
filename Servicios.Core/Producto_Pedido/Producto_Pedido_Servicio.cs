@@ -71,6 +71,29 @@ namespace Servicios.Core.Producto_Pedido
             }
         }
 
+        public Producto_Pedido_Dto ObtenerPorId(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var estado = context.Producto_Pedidos.FirstOrDefault(x => x.Id == id);
+
+                var estado2 = new Producto_Pedido_Dto
+                {
+                    Cantidad = estado.Cantidad,
+                    Estado = estado.Estado,
+                    PedidoId = estado.PedidoId,
+                    ProductoId = estado.ProductoId,
+                    Talle = estado.Talle,
+                    Descripcion = estado.Descripcion,
+                    Id = estado.Id,
+                    TalleId = estado.TalleId
+
+                };
+
+                return estado2;
+            }
+        }
+
         public List<Producto_Pedido_Dto> BuscarPedidoId(long id)
         {
             using (var context = new KosakoDBEntities())
