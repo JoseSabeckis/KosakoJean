@@ -45,7 +45,6 @@ namespace Presentacion.Core.Producto_Dato
 
         public void CargarGrilla(long id)
         {
-            ListaDatos.Clear();
             ListaDatos = producto_Dato_Servicio.ObtenerProductosPorPedidoId(id);
 
             dgvGrilla.DataSource = ListaDatos.ToList();
@@ -93,7 +92,6 @@ namespace Presentacion.Core.Producto_Dato
             if (dgvGrilla.RowCount > 0)
             {
                 EntidadId = (long)dgvGrilla["Id", e.RowIndex].Value;
-                VerEstado(EntidadId);
             }
             else
             {
@@ -133,32 +131,41 @@ namespace Presentacion.Core.Producto_Dato
 
         private void btnEnEspera_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Por Cambiar El Estado Del Producto, Desea Continuar?","Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (producto_Dato_Servicio.ObtenerPorId(EntidadId).EstadoPorPedido != AccesoDatos.EstadoPorPedido.EnEspera)
             {
-                producto_Dato_Servicio.CambiarEstadoEnEspera(EntidadId);
+                if (MessageBox.Show("Esta Por Cambiar El Estado Del Producto, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    producto_Dato_Servicio.CambiarEstadoEnEspera(EntidadId);
 
-                CargarGrilla(EntidadId);
-            }
+                    CargarGrilla(_Producto_Pedido_Id);
+                }
+            }           
         }
 
         private void btnTerminado_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Por Cambiar El Estado Del Producto, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (producto_Dato_Servicio.ObtenerPorId(EntidadId).EstadoPorPedido != AccesoDatos.EstadoPorPedido.Terminado)
             {
-                producto_Dato_Servicio.CambiarEstadoTerminado(EntidadId);
+                if (MessageBox.Show("Esta Por Cambiar El Estado Del Producto, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    producto_Dato_Servicio.CambiarEstadoTerminado(EntidadId);
 
-                CargarGrilla(EntidadId);
-            }
+                    CargarGrilla(_Producto_Pedido_Id);
+                }
+            }           
         }
 
         private void btnCancelado_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Por Cambiar El Estado Del Producto, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (producto_Dato_Servicio.ObtenerPorId(EntidadId).EstadoPorPedido != AccesoDatos.EstadoPorPedido.Cancelado)
             {
-                producto_Dato_Servicio.CambiarEstadoCancelado(EntidadId);
+                if (MessageBox.Show("Esta Por Cambiar El Estado Del Producto, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    producto_Dato_Servicio.CambiarEstadoCancelado(EntidadId);
 
-                CargarGrilla(EntidadId);
-            }
+                    CargarGrilla(_Producto_Pedido_Id);
+                }
+            }         
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Servicios.Core.Producto_Dato.Dto
     {
         void Insertar(Producto_Dato_Dto _Dto);
 
-        Producto_Pedido_Dto ObtenerProductoPedidoPorId(long id);
+        Producto_Pedido_Dto ObtenerProductoPedidoPorId(long producto_pedido_id);
 
         void CambiarEstadoTerminado(long id);
 

@@ -80,11 +80,12 @@ namespace Servicios.Core.Producto_Dato
             }
         }
 
-        public Producto_Pedido_Dto ObtenerProductoPedidoPorId(long id)
+        public Producto_Pedido_Dto ObtenerProductoPedidoPorId(long producto_pedido_id)
         {
             using (var context = new KosakoDBEntities())
             {
-                var dato = context.Producto_Pedidos.FirstOrDefault(x => x.Id == id);
+                //ProductoPedidoId
+                var dato = context.Producto_Pedidos.FirstOrDefault(x => x.Id == producto_pedido_id);
 
                 var dato2 = new Producto_Pedido_Dto
                 {

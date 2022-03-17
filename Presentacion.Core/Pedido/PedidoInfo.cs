@@ -158,12 +158,9 @@ namespace Presentacion.Core.Pedido
                         Precio = producto.Precio
                     };
 
-                    list.Add(lista);
+                    list.Add(lista);                    
 
-                    CargarGrilla();
-
-                }                
-
+                }
             }
             else
             {
@@ -175,6 +172,7 @@ namespace Presentacion.Core.Pedido
 
                     var lista = new VentaDto2
                     {
+                        Id = item.Id,
                         Cantidad = item.Cantidad,
                         Talle = item.Talle,
                         Descripcion = producto.Descripcion,
@@ -183,11 +181,10 @@ namespace Presentacion.Core.Pedido
 
                     list.Add(lista);
 
-                    CargarGrilla();
-
                 }
-                
             }
+
+            CargarGrilla();
         }
 
         public void Datos(long pedidoId)
@@ -438,10 +435,13 @@ namespace Presentacion.Core.Pedido
 
         private void dgvGrilla_DoubleClick(object sender, EventArgs e)
         {
-            var datos = new EstadoProducto(EntidadId);
-            datos.ShowDialog();
+            if (EntidadId != 0)
+            {
+                var datos = new EstadoProducto(EntidadId);
+                datos.ShowDialog();
 
-            //CargarGrilla();
+                //CargarGrilla();
+            }
         }
     }
 }
