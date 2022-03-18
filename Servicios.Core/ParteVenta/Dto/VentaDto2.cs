@@ -19,5 +19,7 @@ namespace Servicios.Core.ParteVenta.Dto
         public decimal Precio { get; set; }
 
         public string Talle { get; set; }
+
+        public string Estilo { get; set; }
     }
 }

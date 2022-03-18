@@ -155,7 +155,7 @@ namespace Presentacion.Core.Pedido
                         Cantidad = item.Cantidad,
                         Talle = item.Talle,
                         Descripcion = producto.Descripcion,
-                        Precio = producto.Precio
+                        Precio = producto.Precio * item.Cantidad
                     };
 
                     list.Add(lista);                    

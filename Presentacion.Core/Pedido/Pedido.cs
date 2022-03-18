@@ -112,7 +112,7 @@ namespace Presentacion.Core.Pedido
 
         public bool AsignarControles()
         {
-            if (txtApellido.Text == string.Empty || txtNombre.Text == string.Empty)
+            if (txtApellido.Text == string.Empty)
             {
                 return false;
             }

@@ -566,7 +566,7 @@ namespace Presentacion.Core.Cobro
                 ckbGuardar.Checked = false;
 
                 ckbTicket.Checked = false;
-                ckbTicket.Enabled = false;
+                //ckbTicket.Enabled = false;
             }
         }
 
@@ -686,7 +686,7 @@ namespace Presentacion.Core.Cobro
                 ckbGuardar.Checked = false;
 
                 ckbTicket.Checked = false;
-                ckbTicket.Enabled = false;
+                //ckbTicket.Enabled = false;
             }
         }
 
@@ -708,7 +708,7 @@ namespace Presentacion.Core.Cobro
                 ckbCtaCte.Checked = false;
 
                 ckbTicket.Checked = false;
-                ckbTicket.Enabled = false;
+                //ckbTicket.Enabled = false;
             }
         }
     }

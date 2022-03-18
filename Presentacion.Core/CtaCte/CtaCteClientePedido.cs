@@ -117,7 +117,7 @@ namespace Presentacion.Core.CtaCte
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtApellido.Text == string.Empty || txtNombre.Text == string.Empty)
+            if (txtApellido.Text == string.Empty)
             {
                 MessageBox.Show("Coloque El Nombre o el Apellido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
