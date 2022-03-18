@@ -20,6 +20,6 @@ namespace Servicios.Core.ParteVenta.Dto
 
         public string Talle { get; set; }
 
-        public string Estilo { get; set; }
+        public string Estado { get; set; }
     }
 }

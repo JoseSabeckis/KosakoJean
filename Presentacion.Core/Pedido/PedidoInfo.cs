@@ -8,6 +8,8 @@ using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Producto;
+using Servicios.Core.Producto_Dato;
+using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Producto_Venta.Dto;
@@ -33,7 +35,7 @@ namespace Presentacion.Core.Pedido
         private readonly IVentaServicio ventaServicio;
         private readonly ICajaServicio cajaServicio;
         private readonly IDetalleCajaServicio detalleCajaServicio;
-
+        private readonly IProducto_Dato_Servicio producto_Dato_Servicio;
         private readonly ICtaCteServicio ctaCteServicio;
 
         AccesoDatos.EstadoPedido Estado;
@@ -56,19 +58,11 @@ namespace Presentacion.Core.Pedido
             detalleCajaServicio = new DetalleCajaServicio();
             ctaCteServicio = new CtaCteServicio();
             ventaServicio = new VentaServicio();
+            producto_Dato_Servicio = new Producto_Dato_Servicio();
 
             list = new List<VentaDto2>();
 
             var _Pedido = pedidoServicio.Buscar(pedidoId);
-
-            if (_Pedido.Proceso == AccesoDatos.Proceso.PedidoTerminado)
-            {
-                btnEliminar.Visible = true;
-            }
-            else
-            {
-                btnEliminar.Visible = false;
-            }
 
             Estado = estado;
 
@@ -136,53 +130,77 @@ namespace Presentacion.Core.Pedido
             grilla.Columns["Cantidad"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            grilla.Columns["Estado"].Visible = true;
+            grilla.Columns["Estado"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["Estado"].HeaderText = @"Estado";
+            grilla.Columns["Estado"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Estado"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+        }
+
+        public void CrearGrilla(long pedidoId)
+        {
+            List<Producto_Pedido_Dto> esquema = new List<Producto_Pedido_Dto>();
+
+            if (Estado == AccesoDatos.EstadoPedido.Esperando)
+            {
+                esquema = producto_Pedido_Servicio.BuscarPedidoId(pedidoId);
+            }
+            else
+            {
+                esquema = producto_Pedido_Servicio.BuscarPedidoTerminado(pedidoId);
+            }
+
+            foreach (var item in esquema)
+            {
+                var producto = productoServicio.ObtenerPorId(item.ProductoId);
+
+                var lista = new VentaDto2
+                {
+                    Id = item.Id,
+                    Cantidad = item.Cantidad,
+                    Talle = item.Talle,
+                    Descripcion = producto.Descripcion,
+                    Precio = producto.Precio * item.Cantidad
+                };
+
+                var listaDatos = producto_Dato_Servicio.ObtenerProductosPorPedidoId(item.Id);
+
+                int CantEnEspera = 0;
+                int CantTerminado = 0;
+                int CantCancelado = 0;
+
+                foreach (var dato in listaDatos)
+                {
+
+                    if (dato.EstadoPorPedido == AccesoDatos.EstadoPorPedido.EnEspera)
+                    {
+                        CantEnEspera += 1;
+                    }
+
+                    if (dato.EstadoPorPedido == AccesoDatos.EstadoPorPedido.Terminado)
+                    {
+                        CantTerminado += 1;
+                    }
+
+                    if (dato.EstadoPorPedido == AccesoDatos.EstadoPorPedido.Cancelado)
+                    {
+                        CantCancelado += 1;
+                    }
+
+                }
+
+                lista.Estado = $"EnEspera: {CantEnEspera}, Terminado: {CantTerminado}, Cancelado: {CantCancelado}";
+
+                list.Add(lista);
+
+            }
+
         }
 
         private void Esquema(long pedidoId)
         {
-            if (Estado == AccesoDatos.EstadoPedido.Esperando)
-            {
-                var esquema = producto_Pedido_Servicio.BuscarPedidoId(pedidoId);
-
-                foreach (var item in esquema)
-                {
-
-                    var producto = productoServicio.ObtenerPorId(item.ProductoId);
-
-                    var lista = new VentaDto2
-                    {
-                        Id = item.Id,
-                        Cantidad = item.Cantidad,
-                        Talle = item.Talle,
-                        Descripcion = producto.Descripcion,
-                        Precio = producto.Precio * item.Cantidad
-                    };
-
-                    list.Add(lista);                    
-
-                }
-            }
-            else
-            {
-                var esquema = producto_Pedido_Servicio.BuscarPedidoTerminado(pedidoId);
-
-                foreach (var item in esquema)
-                {
-                    var producto = productoServicio.ObtenerPorId(item.ProductoId);
-
-                    var lista = new VentaDto2
-                    {
-                        Id = item.Id,
-                        Cantidad = item.Cantidad,
-                        Talle = item.Talle,
-                        Descripcion = producto.Descripcion,
-                        Precio = producto.Precio * item.Cantidad
-                    };
-
-                    list.Add(lista);
-
-                }
-            }
+            CrearGrilla(pedidoId);
 
             CargarGrilla();
         }
@@ -323,7 +341,7 @@ namespace Presentacion.Core.Pedido
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Este seguro de eliminar este Pedido?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Este Seguro De Eliminar Este Pedido, Perdera Todos Los Datos...?", "Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 pedidoServicio.Eliminar(PedidoId);
 
@@ -440,7 +458,9 @@ namespace Presentacion.Core.Pedido
                 var datos = new EstadoProducto(EntidadId);
                 datos.ShowDialog();
 
-                //CargarGrilla();
+                list = new List<VentaDto2>();
+                CrearGrilla(PedidoId);
+                CargarGrilla();
             }
         }
     }

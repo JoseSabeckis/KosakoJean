@@ -35,6 +35,7 @@ namespace Presentacion.Core.CtaCte
             this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelGrilla = new System.Windows.Forms.Panel();
+            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
@@ -43,6 +44,7 @@ namespace Presentacion.Core.CtaCte
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.lblTitulo);
             this.panel1.Controls.Add(this.ptbImagen);
             this.panel1.Controls.Add(this.button1);
@@ -55,10 +57,10 @@ namespace Presentacion.Core.CtaCte
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(147, 32);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(191, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(197, 26);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Prendas Guardadas";
             // 
@@ -76,6 +78,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(863, 0);
@@ -83,7 +86,7 @@ namespace Presentacion.Core.CtaCte
             this.button1.Size = new System.Drawing.Size(118, 88);
             this.button1.TabIndex = 0;
             this.button1.Text = "Volver";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panelGrilla
@@ -95,6 +98,19 @@ namespace Presentacion.Core.CtaCte
             this.panelGrilla.Name = "panelGrilla";
             this.panelGrilla.Size = new System.Drawing.Size(985, 397);
             this.panelGrilla.TabIndex = 1;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.Aqua;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Location = new System.Drawing.Point(409, 20);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(202, 50);
+            this.btnActualizar.TabIndex = 7;
+            this.btnActualizar.Text = "Actualizar Datos";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // GuardadoConsumidorFinal
             // 
@@ -126,5 +142,6 @@ namespace Presentacion.Core.CtaCte
         private System.Windows.Forms.PictureBox ptbImagen;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelGrilla;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

@@ -18,6 +18,8 @@ namespace Presentacion.Core.CtaCte
         private readonly IPedidoServicio pedidoServicio;
         private readonly IProducto_Pedido_Servicio producto_Pedido_Servicio;
 
+        AccesoDatos.Proceso _Pedido;
+
         public GuardadoConsumidorFinal(AccesoDatos.Proceso pedido)
         {
             InitializeComponent();
@@ -25,6 +27,19 @@ namespace Presentacion.Core.CtaCte
             pedidoServicio = new PedidoServicio();
             producto_Pedido_Servicio = new Producto_Pedido_Servicio();
 
+            if (pedido == AccesoDatos.Proceso.Retirado)
+            {
+                btnActualizar.Visible = false;
+            }
+
+            _Pedido = pedido;
+
+            LlenarGrilla(pedido);
+            
+        }
+
+        public void LlenarGrilla(AccesoDatos.Proceso pedido)
+        {
             if (pedido == AccesoDatos.Proceso.Retirado)
             {
                 lblTitulo.Text = "Prendas Retiradas";
@@ -39,8 +54,6 @@ namespace Presentacion.Core.CtaCte
 
                 CrearControles(cuentas, AccesoDatos.Proceso.Guardado);
             }
-
-            
         }
 
         private void CrearControles(IEnumerable<PedidoDto> cuentas, AccesoDatos.Proceso pedido)
@@ -75,6 +88,12 @@ namespace Presentacion.Core.CtaCte
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            panelGrilla.Controls.Clear();
+            LlenarGrilla(_Pedido);
         }
     }
 }

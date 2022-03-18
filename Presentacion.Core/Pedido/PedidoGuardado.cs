@@ -8,6 +8,7 @@ using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido;
+using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
@@ -59,15 +60,6 @@ namespace Presentacion.Core.Pedido
 
             var _Pedido = pedidoServicio.Buscar(pedidoId);
 
-            if (_Pedido.Proceso == AccesoDatos.Proceso.Retirado)
-            {
-                btnEliminar.Visible = true;
-            }
-            else
-            {
-                btnEliminar.Visible = false;
-            }
-
             PedidoId = pedidoId;
 
             Datos(pedidoId);
@@ -104,7 +96,7 @@ namespace Presentacion.Core.Pedido
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Este seguro de eliminar este Pedido?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Este Seguro De Eliminar Este Pedido, Perdera Todos Los Datos...?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 pedidoServicio.Eliminar(PedidoId);
 
@@ -197,55 +189,42 @@ namespace Presentacion.Core.Pedido
 
         }
 
-        private void Esquema(long pedidoId)
+        public void CrearGrilla(long pedidoId)
         {
+            List<Producto_Pedido_Dto> esquema = new List<Producto_Pedido_Dto>();
+
             if (Estado == AccesoDatos.Proceso.Guardado)
             {
-                var esquema = producto_Pedido_Servicio.BuscarPedidoId(pedidoId);
-
-                foreach (var item in esquema)
-                {
-
-                    var producto = productoServicio.ObtenerPorId(item.ProductoId);
-
-                    var lista = new VentaDto2
-                    {
-                        Cantidad = item.Cantidad,
-                        Talle = item.Talle,
-                        Descripcion = producto.Descripcion,
-                        Precio = producto.Precio
-                    };
-
-                    list.Add(lista);
-
-                    CargarGrilla();
-
-                }
-
+                esquema = producto_Pedido_Servicio.BuscarPedidoId(pedidoId);
             }
             else
             {
-                var esquema = producto_Pedido_Servicio.BuscarPedidoRetirado(pedidoId);
+                esquema = producto_Pedido_Servicio.BuscarPedidoRetirado(pedidoId);
+            }
 
-                foreach (var item in esquema)
+            foreach (var item in esquema)
+            {
+                var producto = productoServicio.ObtenerPorId(item.ProductoId);
+
+                var lista = new VentaDto2
                 {
-                    var producto = productoServicio.ObtenerPorId(item.ProductoId);
+                    Id = item.Id,
+                    Cantidad = item.Cantidad,
+                    Talle = item.Talle,
+                    Descripcion = producto.Descripcion,
+                    Precio = producto.Precio * item.Cantidad
+                };
 
-                    var lista = new VentaDto2
-                    {
-                        Cantidad = item.Cantidad,
-                        Talle = item.Talle,
-                        Descripcion = producto.Descripcion,
-                        Precio = producto.Precio * item.Cantidad
-                    };
-
-                    list.Add(lista);
-
-                    CargarGrilla();
-
-                }
+                list.Add(lista);
 
             }
+
+        }
+
+        private void Esquema(long pedidoId)
+        {
+            CrearGrilla(pedidoId);
+            CargarGrilla();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

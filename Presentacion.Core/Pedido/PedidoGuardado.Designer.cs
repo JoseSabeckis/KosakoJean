@@ -40,16 +40,17 @@ namespace Presentacion.Core.Pedido
             this.label5 = new System.Windows.Forms.Label();
             this.lblPersona = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblPagado = new System.Windows.Forms.Label();
-            this.lblVendido = new System.Windows.Forms.Label();
-            this.btnTerminar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.txtNotas = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnCobro = new System.Windows.Forms.Button();
+            this.lblCobrar = new System.Windows.Forms.Label();
+            this.ckbNormal = new System.Windows.Forms.CheckBox();
+            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
+            this.nudCobro = new System.Windows.Forms.NumericUpDown();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtDebe = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,22 +58,21 @@ namespace Presentacion.Core.Pedido
             this.label3 = new System.Windows.Forms.Label();
             this.txtDineroAdelanto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnCobro = new System.Windows.Forms.Button();
-            this.lblCobrar = new System.Windows.Forms.Label();
-            this.ckbNormal = new System.Windows.Forms.CheckBox();
-            this.ckbTarjeta = new System.Windows.Forms.CheckBox();
-            this.nudCobro = new System.Windows.Forms.NumericUpDown();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblPagado = new System.Windows.Forms.Label();
+            this.lblVendido = new System.Windows.Forms.Label();
+            this.btnTerminar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtNotas = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCobro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -118,12 +118,11 @@ namespace Presentacion.Core.Pedido
             // 
             // lblHorario
             // 
-            this.lblHorario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHorario.AutoSize = true;
             this.lblHorario.BackColor = System.Drawing.Color.Red;
             this.lblHorario.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHorario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblHorario.Location = new System.Drawing.Point(536, 7);
+            this.lblHorario.Location = new System.Drawing.Point(564, 5);
             this.lblHorario.Name = "lblHorario";
             this.lblHorario.Size = new System.Drawing.Size(73, 22);
             this.lblHorario.TabIndex = 14;
@@ -172,6 +171,18 @@ namespace Presentacion.Core.Pedido
             this.label1.Size = new System.Drawing.Size(179, 24);
             this.label1.TabIndex = 10;
             this.label1.Text = "Total del Pedido de ";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources._4_tipos_clientes;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 96);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // btnVolver
             // 
@@ -246,76 +257,85 @@ namespace Presentacion.Core.Pedido
             this.panel3.Size = new System.Drawing.Size(1172, 110);
             this.panel3.TabIndex = 0;
             // 
-            // lblPagado
+            // panel5
             // 
-            this.lblPagado.AutoSize = true;
-            this.lblPagado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblPagado.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPagado.ForeColor = System.Drawing.Color.Red;
-            this.lblPagado.Location = new System.Drawing.Point(470, 68);
-            this.lblPagado.Name = "lblPagado";
-            this.lblPagado.Size = new System.Drawing.Size(166, 26);
-            this.lblPagado.TabIndex = 24;
-            this.lblPagado.Text = "Todo Pagado !!!";
-            this.lblPagado.Visible = false;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.btnCobro);
+            this.panel5.Controls.Add(this.lblCobrar);
+            this.panel5.Controls.Add(this.ckbNormal);
+            this.panel5.Controls.Add(this.ckbTarjeta);
+            this.panel5.Controls.Add(this.nudCobro);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(686, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(277, 108);
+            this.panel5.TabIndex = 26;
             // 
-            // lblVendido
+            // btnCobro
             // 
-            this.lblVendido.AutoSize = true;
-            this.lblVendido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblVendido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVendido.ForeColor = System.Drawing.Color.Red;
-            this.lblVendido.Location = new System.Drawing.Point(470, 18);
-            this.lblVendido.Name = "lblVendido";
-            this.lblVendido.Size = new System.Drawing.Size(138, 26);
-            this.lblVendido.TabIndex = 23;
-            this.lblVendido.Text = "Entregado !!!";
-            this.lblVendido.Visible = false;
+            this.btnCobro.BackColor = System.Drawing.Color.Lime;
+            this.btnCobro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCobro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCobro.Location = new System.Drawing.Point(145, 51);
+            this.btnCobro.Name = "btnCobro";
+            this.btnCobro.Size = new System.Drawing.Size(120, 45);
+            this.btnCobro.TabIndex = 17;
+            this.btnCobro.Text = "Cobrar";
+            this.btnCobro.UseVisualStyleBackColor = false;
+            this.btnCobro.Click += new System.EventHandler(this.btnCobro_Click);
             // 
-            // btnTerminar
+            // lblCobrar
             // 
-            this.btnTerminar.BackColor = System.Drawing.Color.Lime;
-            this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminar.Location = new System.Drawing.Point(475, 14);
-            this.btnTerminar.Name = "btnTerminar";
-            this.btnTerminar.Size = new System.Drawing.Size(178, 55);
-            this.btnTerminar.TabIndex = 20;
-            this.btnTerminar.Text = "Cobrar lo que Debe y Entregar";
-            this.btnTerminar.UseVisualStyleBackColor = false;
-            this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
+            this.lblCobrar.AutoSize = true;
+            this.lblCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCobrar.Location = new System.Drawing.Point(16, 12);
+            this.lblCobrar.Name = "lblCobrar";
+            this.lblCobrar.Size = new System.Drawing.Size(123, 24);
+            this.lblCobrar.TabIndex = 15;
+            this.lblCobrar.Text = "Adelanto de";
             // 
-            // btnEliminar
+            // ckbNormal
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(369, 71);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(83, 23);
-            this.btnEliminar.TabIndex = 13;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.ckbNormal.AutoSize = true;
+            this.ckbNormal.Checked = true;
+            this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbNormal.Location = new System.Drawing.Point(20, 51);
+            this.ckbNormal.Name = "ckbNormal";
+            this.ckbNormal.Size = new System.Drawing.Size(96, 24);
+            this.ckbNormal.TabIndex = 13;
+            this.ckbNormal.Text = "Contado";
+            this.ckbNormal.UseVisualStyleBackColor = true;
             // 
-            // txtNotas
+            // ckbTarjeta
             // 
-            this.txtNotas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotas.Location = new System.Drawing.Point(3, 6);
-            this.txtNotas.Multiline = true;
-            this.txtNotas.Name = "txtNotas";
-            this.txtNotas.Size = new System.Drawing.Size(360, 95);
-            this.txtNotas.TabIndex = 12;
+            this.ckbTarjeta.AutoSize = true;
+            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbTarjeta.Location = new System.Drawing.Point(20, 74);
+            this.ckbTarjeta.Name = "ckbTarjeta";
+            this.ckbTarjeta.Size = new System.Drawing.Size(85, 26);
+            this.ckbTarjeta.TabIndex = 14;
+            this.ckbTarjeta.Text = "Tarjeta";
+            this.ckbTarjeta.UseVisualStyleBackColor = true;
             // 
-            // btnGuardar
+            // nudCobro
             // 
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(369, 14);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(83, 55);
-            this.btnGuardar.TabIndex = 11;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.nudCobro.BackColor = System.Drawing.SystemColors.Info;
+            this.nudCobro.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudCobro.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.nudCobro.Location = new System.Drawing.Point(145, 9);
+            this.nudCobro.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.nudCobro.Name = "nudCobro";
+            this.nudCobro.Size = new System.Drawing.Size(120, 33);
+            this.nudCobro.TabIndex = 16;
             // 
             // panel4
             // 
@@ -398,97 +418,79 @@ namespace Presentacion.Core.Pedido
             this.label4.TabIndex = 6;
             this.label4.Text = "Debe  $";
             // 
-            // panel5
+            // lblPagado
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.btnCobro);
-            this.panel5.Controls.Add(this.lblCobrar);
-            this.panel5.Controls.Add(this.ckbNormal);
-            this.panel5.Controls.Add(this.ckbTarjeta);
-            this.panel5.Controls.Add(this.nudCobro);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(686, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(277, 108);
-            this.panel5.TabIndex = 26;
+            this.lblPagado.AutoSize = true;
+            this.lblPagado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblPagado.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagado.ForeColor = System.Drawing.Color.Red;
+            this.lblPagado.Location = new System.Drawing.Point(480, 67);
+            this.lblPagado.Name = "lblPagado";
+            this.lblPagado.Size = new System.Drawing.Size(166, 26);
+            this.lblPagado.TabIndex = 24;
+            this.lblPagado.Text = "Todo Pagado !!!";
+            this.lblPagado.Visible = false;
             // 
-            // btnCobro
+            // lblVendido
             // 
-            this.btnCobro.BackColor = System.Drawing.Color.Lime;
-            this.btnCobro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCobro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobro.Location = new System.Drawing.Point(145, 51);
-            this.btnCobro.Name = "btnCobro";
-            this.btnCobro.Size = new System.Drawing.Size(120, 45);
-            this.btnCobro.TabIndex = 17;
-            this.btnCobro.Text = "Cobrar";
-            this.btnCobro.UseVisualStyleBackColor = false;
-            this.btnCobro.Click += new System.EventHandler(this.btnCobro_Click);
+            this.lblVendido.AutoSize = true;
+            this.lblVendido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblVendido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVendido.ForeColor = System.Drawing.Color.Red;
+            this.lblVendido.Location = new System.Drawing.Point(480, 17);
+            this.lblVendido.Name = "lblVendido";
+            this.lblVendido.Size = new System.Drawing.Size(138, 26);
+            this.lblVendido.TabIndex = 23;
+            this.lblVendido.Text = "Entregado !!!";
+            this.lblVendido.Visible = false;
             // 
-            // lblCobrar
+            // btnTerminar
             // 
-            this.lblCobrar.AutoSize = true;
-            this.lblCobrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCobrar.Location = new System.Drawing.Point(16, 12);
-            this.lblCobrar.Name = "lblCobrar";
-            this.lblCobrar.Size = new System.Drawing.Size(123, 24);
-            this.lblCobrar.TabIndex = 15;
-            this.lblCobrar.Text = "Adelanto de";
+            this.btnTerminar.BackColor = System.Drawing.Color.Lime;
+            this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTerminar.Location = new System.Drawing.Point(485, 13);
+            this.btnTerminar.Name = "btnTerminar";
+            this.btnTerminar.Size = new System.Drawing.Size(178, 55);
+            this.btnTerminar.TabIndex = 20;
+            this.btnTerminar.Text = "Cobrar lo que Debe y Entregar";
+            this.btnTerminar.UseVisualStyleBackColor = false;
+            this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
             // 
-            // ckbNormal
+            // btnEliminar
             // 
-            this.ckbNormal.AutoSize = true;
-            this.ckbNormal.Checked = true;
-            this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbNormal.Location = new System.Drawing.Point(20, 51);
-            this.ckbNormal.Name = "ckbNormal";
-            this.ckbNormal.Size = new System.Drawing.Size(96, 24);
-            this.ckbNormal.TabIndex = 13;
-            this.ckbNormal.Text = "Contado";
-            this.ckbNormal.UseVisualStyleBackColor = true;
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.Black;
+            this.btnEliminar.Location = new System.Drawing.Point(369, 67);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(83, 34);
+            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.Text = "Eliminar Pedido";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // ckbTarjeta
+            // txtNotas
             // 
-            this.ckbTarjeta.AutoSize = true;
-            this.ckbTarjeta.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbTarjeta.Location = new System.Drawing.Point(20, 74);
-            this.ckbTarjeta.Name = "ckbTarjeta";
-            this.ckbTarjeta.Size = new System.Drawing.Size(85, 26);
-            this.ckbTarjeta.TabIndex = 14;
-            this.ckbTarjeta.Text = "Tarjeta";
-            this.ckbTarjeta.UseVisualStyleBackColor = true;
+            this.txtNotas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNotas.Location = new System.Drawing.Point(3, 6);
+            this.txtNotas.Multiline = true;
+            this.txtNotas.Name = "txtNotas";
+            this.txtNotas.Size = new System.Drawing.Size(360, 95);
+            this.txtNotas.TabIndex = 12;
             // 
-            // nudCobro
+            // btnGuardar
             // 
-            this.nudCobro.BackColor = System.Drawing.SystemColors.Info;
-            this.nudCobro.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudCobro.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.nudCobro.Location = new System.Drawing.Point(145, 9);
-            this.nudCobro.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.nudCobro.Name = "nudCobro";
-            this.nudCobro.Size = new System.Drawing.Size(120, 33);
-            this.nudCobro.TabIndex = 16;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources._4_tipos_clientes;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(369, 6);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(83, 55);
+            this.btnGuardar.TabIndex = 11;
+            this.btnGuardar.Text = "Guardar Extras";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // PedidoGuardado
             // 
@@ -508,16 +510,16 @@ namespace Presentacion.Core.Pedido
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCobro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
