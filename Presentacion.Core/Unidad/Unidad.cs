@@ -50,6 +50,12 @@ namespace Presentacion.Core.Unidad
 
             lblNombre.Text = $"{Pedido.Apellido} {Pedido.Nombre}";
 
+            var dia = Pedido.FechaIniciado.Day.CompareTo(DateTime.Now.Day);
+
+            if (dia < 0) dia = 0;
+
+            lblFechaHastaRetiro.Text = $"Dias Esperando al Cliente: {dia}";
+
             lblId.Text = $"{Pedido.Id}";
             
             var respuesta = pedido_Producto_Servicio.BuscarId(Pedido.Id);

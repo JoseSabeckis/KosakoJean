@@ -269,6 +269,8 @@ namespace Presentacion.Core.Pedido
 
                     pedidoServicio.CambiarFechaRetirado(pedido.Id);
 
+                    pedidoServicio.CambiarFechaDatoRetiro(pedido.Id);
+
                     producto_Pedido_Servicio.CambiarEstado(pedido.Id);
 
                     //Total Cta Cte

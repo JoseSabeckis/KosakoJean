@@ -329,14 +329,14 @@
             // 
             this.btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn.BackColor = System.Drawing.Color.Gold;
+            this.btn.BackColor = System.Drawing.Color.Orange;
             this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn.Location = new System.Drawing.Point(276, 84);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(123, 74);
             this.btn.TabIndex = 19;
-            this.btn.Text = "-----";
+            this.btn.Text = "Prendas a Hacer";
             this.btn.UseVisualStyleBackColor = false;
             // 
             // panel16

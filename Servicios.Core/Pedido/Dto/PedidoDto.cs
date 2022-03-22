@@ -33,6 +33,8 @@ namespace Servicios.Core.Pedido.Dto
 
         public string Horario { get; set; }
 
+        public string DiasHastaRetiro { get; set; }
+
         public long ClienteId { get; set; }
 
     }

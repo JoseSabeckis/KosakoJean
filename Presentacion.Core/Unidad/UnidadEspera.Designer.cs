@@ -36,6 +36,7 @@ namespace Presentacion.Core.Unidad
             this.lblId = new System.Windows.Forms.Label();
             this.btnVista = new System.Windows.Forms.Button();
             this.txtProductos = new System.Windows.Forms.TextBox();
+            this.lblFechaHastaRetiro = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,9 +99,9 @@ namespace Presentacion.Core.Unidad
             // 
             this.btnVista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVista.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVista.Location = new System.Drawing.Point(41, 90);
+            this.btnVista.Location = new System.Drawing.Point(28, 101);
             this.btnVista.Name = "btnVista";
-            this.btnVista.Size = new System.Drawing.Size(85, 38);
+            this.btnVista.Size = new System.Drawing.Size(99, 29);
             this.btnVista.TabIndex = 16;
             this.btnVista.Text = "Vista";
             this.btnVista.UseVisualStyleBackColor = true;
@@ -116,11 +117,23 @@ namespace Presentacion.Core.Unidad
             this.txtProductos.Size = new System.Drawing.Size(157, 30);
             this.txtProductos.TabIndex = 17;
             // 
+            // lblFechaHastaRetiro
+            // 
+            this.lblFechaHastaRetiro.AutoSize = true;
+            this.lblFechaHastaRetiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHastaRetiro.ForeColor = System.Drawing.Color.Black;
+            this.lblFechaHastaRetiro.Location = new System.Drawing.Point(0, 87);
+            this.lblFechaHastaRetiro.Name = "lblFechaHastaRetiro";
+            this.lblFechaHastaRetiro.Size = new System.Drawing.Size(11, 13);
+            this.lblFechaHastaRetiro.TabIndex = 18;
+            this.lblFechaHastaRetiro.Text = "-";
+            // 
             // UnidadEspera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.Controls.Add(this.lblFechaHastaRetiro);
             this.Controls.Add(this.txtProductos);
             this.Controls.Add(this.btnVista);
             this.Controls.Add(this.lblIdPedido);
@@ -145,5 +158,6 @@ namespace Presentacion.Core.Unidad
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnVista;
         private System.Windows.Forms.TextBox txtProductos;
+        private System.Windows.Forms.Label lblFechaHastaRetiro;
     }
 }

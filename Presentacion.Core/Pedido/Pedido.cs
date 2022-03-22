@@ -173,7 +173,8 @@ namespace Presentacion.Core.Pedido
                         Total = _total,
                         ClienteId = ClienteId,
                         Descripcion = txtDescripcion.Text,
-                        Horario = cmbHorario.Text
+                        Horario = cmbHorario.Text,
+                        DiasHastaRetiro = null
                     };
 
                     var pedidoId = pedidoServicio.NuevoPedido(pedido);

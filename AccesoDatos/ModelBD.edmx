@@ -143,6 +143,7 @@
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="FechaRetirado" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Horario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DiasHastaRetiro" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Cliente_Id" Type="bigint" Nullable="true" />
   </EntityType>
   <EntityType Name="Producto_Pedidos">
@@ -571,6 +572,7 @@
           <Property Name="Descripcion" Type="String" Nullable="false" />
           <Property Name="FechaRetirado" Type="String" Nullable="true" />
           <Property Name="Horario" Type="String" Nullable="false" />
+          <Property Name="DiasHastaRetiro" Type="String" Nullable="true" />
         </EntityType>
         <EntityType Name="Producto_Pedido">
           <Key>
@@ -879,6 +881,7 @@
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="FechaRetirado" ColumnName="FechaRetirado" />
           <ScalarProperty Name="Horario" ColumnName="Horario" />
+          <ScalarProperty Name="DiasHastaRetiro" ColumnName="DiasHastaRetiro" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

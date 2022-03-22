@@ -33,6 +33,7 @@
             this.pasarAEsperaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblFechaHastaRetiro = new System.Windows.Forms.Label();
             this.txtProductos = new System.Windows.Forms.TextBox();
             this.btnVer = new System.Windows.Forms.Button();
             this.lblIdPedido = new System.Windows.Forms.Label();
@@ -70,12 +71,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(260, 152);
+            this.panel2.Size = new System.Drawing.Size(267, 152);
             this.panel2.TabIndex = 3;
             // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.lblFechaHastaRetiro);
             this.panel3.Controls.Add(this.txtProductos);
             this.panel3.Controls.Add(this.btnVer);
             this.panel3.Controls.Add(this.lblIdPedido);
@@ -84,27 +86,39 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 65);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(256, 83);
+            this.panel3.Size = new System.Drawing.Size(263, 83);
             this.panel3.TabIndex = 3;
+            // 
+            // lblFechaHastaRetiro
+            // 
+            this.lblFechaHastaRetiro.AutoSize = true;
+            this.lblFechaHastaRetiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHastaRetiro.ForeColor = System.Drawing.Color.Red;
+            this.lblFechaHastaRetiro.Location = new System.Drawing.Point(1, 40);
+            this.lblFechaHastaRetiro.Name = "lblFechaHastaRetiro";
+            this.lblFechaHastaRetiro.Size = new System.Drawing.Size(11, 13);
+            this.lblFechaHastaRetiro.TabIndex = 4;
+            this.lblFechaHastaRetiro.Text = "-";
             // 
             // txtProductos
             // 
             this.txtProductos.BackColor = System.Drawing.SystemColors.Info;
+            this.txtProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtProductos.Enabled = false;
             this.txtProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductos.Location = new System.Drawing.Point(1, 3);
+            this.txtProductos.Location = new System.Drawing.Point(0, 0);
             this.txtProductos.Multiline = true;
             this.txtProductos.Name = "txtProductos";
-            this.txtProductos.Size = new System.Drawing.Size(237, 40);
+            this.txtProductos.Size = new System.Drawing.Size(259, 40);
             this.txtProductos.TabIndex = 8;
             // 
             // btnVer
             // 
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVer.Location = new System.Drawing.Point(61, 49);
+            this.btnVer.Location = new System.Drawing.Point(18, 53);
             this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(63, 28);
+            this.btnVer.Size = new System.Drawing.Size(159, 25);
             this.btnVer.TabIndex = 5;
             this.btnVer.Text = "Ver";
             this.btnVer.UseVisualStyleBackColor = true;
@@ -125,7 +139,7 @@
             // 
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.Location = new System.Drawing.Point(3, 53);
+            this.lblId.Location = new System.Drawing.Point(205, 53);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(16, 24);
             this.lblId.TabIndex = 4;
@@ -172,7 +186,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 48);
+            this.panel1.Size = new System.Drawing.Size(267, 48);
             this.panel1.TabIndex = 2;
             // 
             // btnRealizado
@@ -195,7 +209,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Unidad";
-            this.Size = new System.Drawing.Size(260, 200);
+            this.Size = new System.Drawing.Size(267, 200);
             this.contextMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -222,5 +236,6 @@
         private System.Windows.Forms.Button btnVer;
         private System.Windows.Forms.Button btnRealizado;
         private System.Windows.Forms.TextBox txtProductos;
+        private System.Windows.Forms.Label lblFechaHastaRetiro;
     }
 }

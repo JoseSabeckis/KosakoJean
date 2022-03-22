@@ -26,7 +26,8 @@ namespace Servicios.Core.Pedido
                     ClienteId = pedidoDto.ClienteId,
                     ApyNom = $"{pedidoDto.Apellido} {pedidoDto.Nombre}",
                     Descripcion = pedidoDto.Descripcion,
-                    Horario = pedidoDto.Horario
+                    Horario = pedidoDto.Horario,
+                    DiasHastaRetiro = pedidoDto.DiasHastaRetiro
                 };
 
                 context.Pedidos.Add(nuevo);
@@ -58,7 +59,8 @@ namespace Servicios.Core.Pedido
                         ClienteId = x.ClienteId,
                         Descripcion = x.Descripcion,
                         FechaRetiro = x.FechaRetirado,
-                        Horario = x.Horario
+                        Horario = x.Horario,
+                        DiasHastaRetiro = x.DiasHastaRetiro,
 
                     }).ToList();
 
@@ -84,7 +86,8 @@ namespace Servicios.Core.Pedido
                         ClienteId = x.ClienteId,
                         Descripcion = x.Descripcion,
                         FechaRetiro = x.FechaRetirado,
-                        Horario = x.Horario
+                        Horario = x.Horario,
+                        DiasHastaRetiro = x.DiasHastaRetiro
 
                     }).ToList();
 
@@ -123,7 +126,8 @@ namespace Servicios.Core.Pedido
                     ClienteId = x.ClienteId,
                     Descripcion = x.Descripcion,
                     FechaRetiro = x.FechaRetirado,
-                    Horario = x.Horario
+                    Horario = x.Horario,
+                    DiasHastaRetiro = x.DiasHastaRetiro
 
                 }).ToList();
 
@@ -151,7 +155,8 @@ namespace Servicios.Core.Pedido
                     ClienteId = x.ClienteId,
                     Descripcion = x.Descripcion,
                     FechaRetiro = x.FechaRetirado,
-                    Horario = x.Horario
+                    Horario = x.Horario,
+                    DiasHastaRetiro = x.DiasHastaRetiro
 
                 }).ToList();
 
@@ -179,7 +184,8 @@ namespace Servicios.Core.Pedido
                     ClienteId = x.ClienteId,
                     Descripcion = x.Descripcion,
                     FechaRetiro = x.FechaRetirado,
-                    Horario = x.Horario
+                    Horario = x.Horario,
+                    DiasHastaRetiro = x.DiasHastaRetiro
 
                 }).ToList();
 
@@ -207,7 +213,8 @@ namespace Servicios.Core.Pedido
                     ClienteId = x.ClienteId,
                     Descripcion = x.Descripcion,
                     FechaRetiro = x.FechaRetirado,
-                    Horario = x.Horario
+                    Horario = x.Horario,
+                    DiasHastaRetiro = x.DiasHastaRetiro
 
                 }).ToList();
 
@@ -234,7 +241,8 @@ namespace Servicios.Core.Pedido
                         ClienteId = aux.ClienteId,
                         Descripcion = aux.Descripcion,
                         FechaRetiro = aux.FechaRetirado,
-                        Horario = aux.Horario
+                        Horario = aux.Horario,
+                        DiasHastaRetiro = aux.DiasHastaRetiro
 
                     };
                 return aux2;
@@ -259,7 +267,8 @@ namespace Servicios.Core.Pedido
                     ClienteId = x.ClienteId,
                     Descripcion = x.Descripcion,
                     FechaRetiro = x.FechaRetirado,
-                    Horario = x.Horario
+                    Horario = x.Horario,
+                    DiasHastaRetiro = x.DiasHastaRetiro
 
                 }).ToList();
 
@@ -285,7 +294,8 @@ namespace Servicios.Core.Pedido
                         ClienteId = x.ClienteId,
                         Descripcion = x.Descripcion,
                         FechaRetiro = x.FechaRetirado,
-                        Horario = x.Horario
+                        Horario = x.Horario,
+                        DiasHastaRetiro = x.DiasHastaRetiro
 
                     }).ToList();
 
@@ -311,7 +321,8 @@ namespace Servicios.Core.Pedido
                         ClienteId = x.ClienteId,
                         Descripcion = x.Descripcion,
                         FechaRetiro = x.FechaRetirado,
-                        Horario = x.Horario
+                        Horario = x.Horario,
+                        DiasHastaRetiro = x.DiasHastaRetiro
 
                     }).ToList();
 
@@ -337,7 +348,8 @@ namespace Servicios.Core.Pedido
                         ClienteId = x.ClienteId,
                         Descripcion = x.Descripcion,
                         FechaRetiro = x.FechaRetirado,
-                        Horario = x.Horario
+                        Horario = x.Horario,
+                        DiasHastaRetiro = x.DiasHastaRetiro
 
                     }).ToList();
 
@@ -374,6 +386,20 @@ namespace Servicios.Core.Pedido
                 var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
 
                 pedido.FechaRetirado = DateTime.Now.ToLongDateString();
+
+                context.SaveChanges();
+
+            }
+        }
+
+        public void CambiarFechaDatoRetiro(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.DiasHastaRetiro = $"Retirado: {DateTime.Now.ToLongDateString()}";
 
                 context.SaveChanges();
 
