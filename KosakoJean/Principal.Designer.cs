@@ -336,8 +336,9 @@
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(123, 74);
             this.btn.TabIndex = 19;
-            this.btn.Text = "Prendas a Hacer";
+            this.btn.Text = "Prendas Para Hacer";
             this.btn.UseVisualStyleBackColor = false;
+            this.btn.Click += new System.EventHandler(this.btn_Click);
             // 
             // panel16
             // 

@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using Servicios.Core.Pedido;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido;
 using System;
@@ -13,6 +14,7 @@ namespace Servicios.Core.Producto_Dato.Dto
     {
         private readonly IProducto_Pedido_Servicio producto_Pedido_Servicio = new Producto_Pedido_Servicio();
         private readonly IProductoServicio producto_Servicio = new ProductoServicio();
+        private readonly IPedidoServicio pedidoServicio = new PedidoServicio();
 
         public long Id { get; set; }
 
@@ -23,6 +25,8 @@ namespace Servicios.Core.Producto_Dato.Dto
         public string ProductoDescripcion => producto_Servicio.ObtenerPorId(producto_Pedido_Servicio.ObtenerPorId(Producto_PedidoId).ProductoId).Descripcion;
 
         public string ProductoTalle => producto_Pedido_Servicio.ObtenerPorId(Producto_PedidoId).Talle;
+
+        public string Cliente => pedidoServicio.BuscarIDPedidos(Producto_PedidoId).Apellido + " " + pedidoServicio.BuscarIDPedidos(Producto_PedidoId).Nombre;
 
     }
 }

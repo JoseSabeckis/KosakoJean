@@ -117,5 +117,19 @@ namespace Servicios.Core.Producto_Dato
             }
         }
 
+        public List<Producto_Dato_Dto> ObtenerProductosParaHacer()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                return context.Producto_Datos.Where(x => x.EstadoPorPedido == EstadoPorPedido.EnEspera).Select(x => new Producto_Dato_Dto
+                {
+                    Id = x.Id,
+                    EstadoPorPedido = x.EstadoPorPedido,
+                    Producto_PedidoId = x.Producto_PedidoId
+
+                }).ToList();
+            }
+        }
+
     }
 }

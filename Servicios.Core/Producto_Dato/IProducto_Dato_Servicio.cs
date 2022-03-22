@@ -22,5 +22,7 @@ namespace Servicios.Core.Producto_Dato.Dto
         Producto_Dato_Dto ObtenerPorId(long id);
 
         List<Producto_Dato_Dto> ObtenerProductosPorPedidoId(long id);
+
+        List<Producto_Dato_Dto> ObtenerProductosParaHacer();
     }
 }

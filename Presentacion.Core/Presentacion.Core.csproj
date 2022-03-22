@@ -225,6 +225,12 @@
     <Compile Include="Pedido\PedidosTerminados.Designer.cs">
       <DependentUpon>PedidosTerminados.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pedido\PrendaFabricar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedido\PrendaFabricar.Designer.cs">
+      <DependentUpon>PrendaFabricar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\Ctrl\ProductoCtrol.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -401,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pedido\PedidosTerminados.resx">
       <DependentUpon>PedidosTerminados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido\PrendaFabricar.resx">
+      <DependentUpon>PrendaFabricar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Producto\Ctrl\ProductoCtrol.resx">
       <DependentUpon>ProductoCtrol.cs</DependentUpon>

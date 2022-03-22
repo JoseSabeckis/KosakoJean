@@ -407,5 +407,11 @@ namespace KosakoJean
             var prenda = new GuardadoConsumidorFinal(Proceso.Guardado);
             prenda.ShowDialog();
         }
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            var fabricar = new PrendaFabricar();
+            fabricar.ShowDialog();
+        }
     }
 }
