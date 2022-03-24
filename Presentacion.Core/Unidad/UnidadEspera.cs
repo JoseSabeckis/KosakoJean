@@ -46,13 +46,11 @@ namespace Presentacion.Core.Unidad
 
             lblNombre.Text = $"{Pedido.Apellido} {Pedido.Nombre}";
 
-            var dia = Pedido.FechaIniciado.Day.CompareTo(DateTime.Now.Day);
-
-            if (dia < 0) dia = 0;
+            var dia = DateTime.Now - Pedido.FechaIniciado;
 
             if (Pedido.DiasHastaRetiro == null)
             {
-                lblFechaHastaRetiro.Text = $"Dias Esperando al Cliente: {dia}";
+                lblFechaHastaRetiro.Text = $"Dias Esperando al Cliente: {dia.Days}";
             }
             else
             {
