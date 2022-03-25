@@ -29,11 +29,6 @@ namespace Presentacion.Core.Cliente.Ctrol
 
             Id = idCliente;
 
-            if (idCliente == 1)
-            {
-                btnCuenta.Visible = false;
-            }
-
         }
 
         public void Datos(ClienteDto cliente)

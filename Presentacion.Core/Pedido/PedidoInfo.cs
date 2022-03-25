@@ -170,9 +170,10 @@ namespace Presentacion.Core.Pedido
                 int CantTerminado = 0;
                 int CantCancelado = 0;
 
+                bool bandera = false;
+
                 foreach (var dato in listaDatos)
                 {
-
                     if (dato.EstadoPorPedido == AccesoDatos.EstadoPorPedido.EnEspera)
                     {
                         CantEnEspera += 1;
@@ -187,13 +188,18 @@ namespace Presentacion.Core.Pedido
                     {
                         CantCancelado += 1;
                     }
-
                 }
 
-                lista.Estado = $"EnEspera: {CantEnEspera}, Terminado: {CantTerminado}, Cancelado: {CantCancelado}";
+                if (producto.Creacion)
+                {
+                    lista.Estado = $"EnEspera: {CantEnEspera}, Terminado: {CantTerminado}, Cancelado: {CantCancelado}";                   
+                }
+                else
+                {
+                    lista.Estado = "Realizado";
+                }
 
                 list.Add(lista);
-
             }
 
         }
@@ -446,6 +452,12 @@ namespace Presentacion.Core.Pedido
             if (dgvGrilla.RowCount > 0)
             {
                 EntidadId = (long)dgvGrilla["Id", e.RowIndex].Value;
+
+                if (!productoServicio.ObtenerPorId(EntidadId).Creacion)
+                {
+                    EntidadId = 0;
+                }
+                
             }
             else
             {

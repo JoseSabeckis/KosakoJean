@@ -156,6 +156,11 @@ namespace Presentacion
                         Limpiar(ctrolForm);
                     }
 
+                    if (ctrolForm is CheckBox)
+                    {
+                        ((CheckBox)ctrolForm).Checked = false;
+                    }
+
                 }
             }
             else if (obj is Panel)

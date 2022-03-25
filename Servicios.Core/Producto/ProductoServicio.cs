@@ -26,7 +26,8 @@ namespace Servicios.Core.Producto
                     TipoProductoId = dto.TipoProductoId,
                     ColegioId = dto.ColegioId,
                     Foto = dto.Foto,
-                    Stock = dto.Stock
+                    Stock = dto.Stock,
+                    Creacion = dto.Creacion
                 };
 
                 context.Productos.Add(nuevo);
@@ -80,6 +81,7 @@ namespace Servicios.Core.Producto
                 producto.TipoProductoId = dto.TipoProductoId;
                 producto.Foto = dto.Foto;
                 producto.Stock = dto.Stock;
+                producto.Creacion = dto.Creacion;
 
                 context.SaveChanges();
 
@@ -105,7 +107,8 @@ namespace Servicios.Core.Producto
                         Foto = x.Foto,
                         Colegio = context.Colegios.FirstOrDefault(f=>f.Id == x.ColegioId).Descripcion,
                         TipoProducto = context.TipoProductos.FirstOrDefault(f=>f.Id == x.TipoProductoId).Descripcion,
-                        Stock = x.Stock
+                        Stock = x.Stock,
+                        Creacion = x.Creacion
 
                     }).ToList();
 
@@ -133,7 +136,8 @@ namespace Servicios.Core.Producto
                         Foto = x.Foto,
                         Colegio = context.Colegios.FirstOrDefault(f => f.Id == x.ColegioId).Descripcion,
                         TipoProducto = context.TipoProductos.FirstOrDefault(f => f.Id == x.TipoProductoId).Descripcion,
-                        Stock = x.Stock
+                        Stock = x.Stock,
+                        Creacion = x.Creacion
 
                     }).FirstOrDefault(x => x.Id == Id && x.EstaEliminado == false);
             }

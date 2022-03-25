@@ -30,6 +30,7 @@ namespace AccesoDatos
         public long ColegioId { get; set; }
         public byte[] Foto { get; set; }
         public decimal Stock { get; set; }
+        public bool Creacion { get; set; }
     
         public virtual TipoProducto TipoProducto { get; set; }
         public virtual Colegio Colegio { get; set; }

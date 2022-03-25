@@ -92,6 +92,8 @@ namespace Presentacion.Core.CtaCte
 
             _Cliente = cliente;
 
+            txtApellido.Focus();
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

@@ -92,6 +92,8 @@ namespace Presentacion.Core.Producto
             cmbColegio.SelectedValue = dto.ColegioId;
             cmbTipo.SelectedValue = dto.TipoProductoId;
 
+            ckbFabricacion.Checked = dto.Creacion;
+
             imgFotoEmpleado.Image = ImagenDb.Convertir_Bytes_Imagen(dto.Foto);
         }
 
@@ -112,7 +114,8 @@ namespace Presentacion.Core.Producto
                 ColegioId = ((ColegioDto)cmbColegio.SelectedItem).Id,
                 TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id,
                 Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
-                Stock = nudStock.Value
+                Stock = nudStock.Value,
+                Creacion = ckbFabricacion.Checked
             };
 
             _Servicio.Nuevo(nueva);
@@ -138,7 +141,8 @@ namespace Presentacion.Core.Producto
                 ColegioId = ((ColegioDto)cmbColegio.SelectedItem).Id,
                 TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id,
                 Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
-                Stock = nudStock.Value
+                Stock = nudStock.Value,
+                Creacion = ckbFabricacion.Checked
             };
 
             _Servicio.Modificar(localidadParaModificar);

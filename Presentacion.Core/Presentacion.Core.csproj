@@ -510,6 +510,11 @@
     <None Include="Resources\5efdb7b632508_900.jpg" />
     <None Include="Resources\tranquila-mueca-yo-te-guardo-tu-encargo.jpg" />
     <None Include="Resources\4_tipos_clientes.jpg" />
+    <None Include="Resources\categorias_de_producto.png" />
+    <None Include="Resources\produto-vs-servico-1024x538.png" />
+    <None Include="Resources\trazabilidad-productos-1200x776.jpg" />
+    <None Include="Resources\hacer-descripcion-producto.jpg" />
+    <None Include="Resources\buscar-trabajo-2449151.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

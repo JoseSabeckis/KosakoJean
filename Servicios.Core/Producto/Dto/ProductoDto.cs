@@ -28,6 +28,8 @@ namespace Servicios.Core.Producto.Dto
 
         public decimal Stock { get; set; }
 
+        public bool Creacion { get; set; }
+
         public byte[] Foto { get; set; }
     }
 }

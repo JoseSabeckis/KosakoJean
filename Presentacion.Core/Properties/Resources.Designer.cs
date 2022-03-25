@@ -133,9 +133,29 @@ namespace Presentacion.Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buscar_trabajo_2449151 {
+            get {
+                object obj = ResourceManager.GetObject("buscar-trabajo-2449151", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BuscarDos {
             get {
                 object obj = ResourceManager.GetObject("BuscarDos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap categorias_de_producto {
+            get {
+                object obj = ResourceManager.GetObject("categorias_de_producto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +176,16 @@ namespace Presentacion.Core.Properties {
         internal static System.Drawing.Bitmap guardarMio {
             get {
                 object obj = ResourceManager.GetObject("guardarMio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hacer_descripcion_producto {
+            get {
+                object obj = ResourceManager.GetObject("hacer-descripcion-producto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +243,29 @@ namespace Presentacion.Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap produto_vs_servico_1024x538 {
+            get {
+                object obj = ResourceManager.GetObject("produto-vs-servico-1024x538", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tranquila_mueca_yo_te_guardo_tu_encargo {
             get {
                 object obj = ResourceManager.GetObject("tranquila-mueca-yo-te-guardo-tu-encargo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trazabilidad_productos_1200x776 {
+            get {
+                object obj = ResourceManager.GetObject("trazabilidad-productos-1200x776", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

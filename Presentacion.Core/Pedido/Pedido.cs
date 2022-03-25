@@ -230,7 +230,7 @@ namespace Presentacion.Core.Pedido
                     {
                         ClienteId = ClienteId,
                         Estado = AccesoDatos.CtaCteEstado.EnEspera,
-                        Fecha = dtpFechaEntrega.Value.Date,
+                        Fecha = dtpFechaEntrega.Value,
                         Total = _total,
                         Debe = _total - nudAdelanto.Value,
                         Descripcion = $"{segunda}",
