@@ -243,6 +243,16 @@ namespace Presentacion.Core.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap prendas_armario_look_crop1608776690890_jpg_242310155 {
+            get {
+                object obj = ResourceManager.GetObject("prendas-armario-look_crop1608776690890.jpg_242310155", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap produto_vs_servico_1024x538 {
             get {
                 object obj = ResourceManager.GetObject("produto-vs-servico-1024x538", resourceCulture);

@@ -515,6 +515,7 @@
     <None Include="Resources\trazabilidad-productos-1200x776.jpg" />
     <None Include="Resources\hacer-descripcion-producto.jpg" />
     <None Include="Resources\buscar-trabajo-2449151.jpg" />
+    <None Include="Resources\prendas-armario-look_crop1608776690890.jpg_242310155.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

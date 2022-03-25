@@ -43,6 +43,7 @@ namespace Presentacion.Core.CtaCte
             if (pedido == AccesoDatos.Proceso.Retirado)
             {
                 lblTitulo.Text = "Prendas Retiradas";
+                panelGrilla.BackColor = Color.OrangeRed;
 
                 var cuentas = pedidoServicio.BuscarRetirado();
 

@@ -31,11 +31,11 @@ namespace Presentacion.Core.CtaCte
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuardadoConsumidorFinal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelGrilla = new System.Windows.Forms.Panel();
-            this.btnActualizar = new System.Windows.Forms.Button();
+            this.ptbImagen = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
@@ -54,27 +54,28 @@ namespace Presentacion.Core.CtaCte
             this.panel1.Size = new System.Drawing.Size(985, 92);
             this.panel1.TabIndex = 0;
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.Aqua;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Location = new System.Drawing.Point(279, 20);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(202, 50);
+            this.btnActualizar.TabIndex = 7;
+            this.btnActualizar.Text = "Actualizar Datos";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(147, 32);
+            this.lblTitulo.Location = new System.Drawing.Point(40, 32);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(197, 26);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Prendas Guardadas";
-            // 
-            // ptbImagen
-            // 
-            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbImagen.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ptbImagen.Image = global::Presentacion.Core.Properties.Resources._5efdb7b632508_900;
-            this.ptbImagen.Location = new System.Drawing.Point(0, 0);
-            this.ptbImagen.Name = "ptbImagen";
-            this.ptbImagen.Size = new System.Drawing.Size(141, 88);
-            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbImagen.TabIndex = 1;
-            this.ptbImagen.TabStop = false;
             // 
             // button1
             // 
@@ -99,18 +100,17 @@ namespace Presentacion.Core.CtaCte
             this.panelGrilla.Size = new System.Drawing.Size(985, 397);
             this.panelGrilla.TabIndex = 1;
             // 
-            // btnActualizar
+            // ptbImagen
             // 
-            this.btnActualizar.BackColor = System.Drawing.Color.Aqua;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(409, 20);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(202, 50);
-            this.btnActualizar.TabIndex = 7;
-            this.btnActualizar.Text = "Actualizar Datos";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImagen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbImagen.Image = global::Presentacion.Core.Properties.Resources.prendas_armario_look_crop1608776690890_jpg_242310155;
+            this.ptbImagen.Location = new System.Drawing.Point(0, 0);
+            this.ptbImagen.Name = "ptbImagen";
+            this.ptbImagen.Size = new System.Drawing.Size(863, 88);
+            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ptbImagen.TabIndex = 1;
+            this.ptbImagen.TabStop = false;
             // 
             // GuardadoConsumidorFinal
             // 

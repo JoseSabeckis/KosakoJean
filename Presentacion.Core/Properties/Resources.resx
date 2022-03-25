@@ -154,14 +154,14 @@
   <data name="analytics_78917" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\analytics_78917.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_shop_online_ecommerce_shopping_9_icon_icons_com_61652" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_shop_online_ecommerce_shopping-9_icon-icons.com_61652.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="4_tipos_clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4_tipos_clientes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="produto-vs-servico-1024x538" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\produto-vs-servico-1024x538.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="volver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\volver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ImprimirMio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ImprimirMio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,13 +175,16 @@
   <data name="bag1_114871" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bag1_114871.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="buscar-trabajo-2449151" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buscar-trabajo-2449151.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="hacer-descripcion-producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hacer-descripcion-producto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="volver" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\volver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_shop_online_ecommerce_shopping_9_icon_icons_com_61652" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_shop_online_ecommerce_shopping-9_icon-icons.com_61652.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buscar-trabajo-2449151" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buscar-trabajo-2449151.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="prendas-armario-look_crop1608776690890.jpg_242310155" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\prendas-armario-look_crop1608776690890.jpg_242310155.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
