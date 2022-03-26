@@ -74,7 +74,7 @@ namespace KosakoJean
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblhora.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblhora.Text = DateTime.Now.ToString("HH:mm:ss tt");
             lblFecha.Text = DateTime.Now.ToLongDateString();
         }
 

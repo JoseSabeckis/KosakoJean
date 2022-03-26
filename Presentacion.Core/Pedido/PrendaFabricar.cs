@@ -71,13 +71,13 @@ namespace Presentacion.Core.Pedido
             grilla.Columns["EstadoPorPedido"].HeaderText = @"Estado";
             grilla.Columns["EstadoPorPedido"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["EstadoPorPedido"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            
             grilla.Columns["Cliente"].Visible = true;
             grilla.Columns["Cliente"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["Cliente"].HeaderText = @"Cliente";
             grilla.Columns["Cliente"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Cliente"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

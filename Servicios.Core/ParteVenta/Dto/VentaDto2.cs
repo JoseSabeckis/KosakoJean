@@ -21,5 +21,7 @@ namespace Servicios.Core.ParteVenta.Dto
         public string Talle { get; set; }
 
         public string Estado { get; set; }
+
+        public long ProductoId { get; set; }
     }
 }

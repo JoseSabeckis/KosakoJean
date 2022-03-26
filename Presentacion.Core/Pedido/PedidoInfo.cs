@@ -41,6 +41,7 @@ namespace Presentacion.Core.Pedido
         AccesoDatos.EstadoPedido Estado;
 
         protected long EntidadId;
+        protected long ProductoId;
         long PedidoId;
 
         decimal _Debe;
@@ -161,7 +162,8 @@ namespace Presentacion.Core.Pedido
                     Cantidad = item.Cantidad,
                     Talle = item.Talle,
                     Descripcion = producto.Descripcion,
-                    Precio = producto.Precio * item.Cantidad
+                    Precio = producto.Precio * item.Cantidad,
+                    ProductoId = producto.Id
                 };
 
                 var listaDatos = producto_Dato_Servicio.ObtenerProductosPorPedidoId(item.Id);
@@ -452,8 +454,9 @@ namespace Presentacion.Core.Pedido
             if (dgvGrilla.RowCount > 0)
             {
                 EntidadId = (long)dgvGrilla["Id", e.RowIndex].Value;
+                ProductoId = (long)dgvGrilla["ProductoId", e.RowIndex].Value;
 
-                if (!productoServicio.ObtenerPorId(EntidadId).Creacion)
+                if (!productoServicio.ObtenerPorId(ProductoId).Creacion)
                 {
                     EntidadId = 0;
                 }

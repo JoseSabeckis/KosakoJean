@@ -211,18 +211,19 @@ namespace Presentacion.Core.Pedido
                         var _Id_Pedido = producto_Pedido_Servicio.NuevoProductoPedido(aux);
 
                         //datos
-
-                        for (int i = 0; i < item.Cantidad; i++)
+                        if (productoServicio.ObtenerPorId(item.Id).Creacion)
                         {
-                            var dato = new Producto_Dato_Dto
+                            for (int i = 0; i < item.Cantidad; i++)
                             {
-                                EstadoPorPedido = AccesoDatos.EstadoPorPedido.EnEspera,
-                                Producto_PedidoId = _Id_Pedido
-                            };
+                                var dato = new Producto_Dato_Dto
+                                {
+                                    EstadoPorPedido = AccesoDatos.EstadoPorPedido.EnEspera,
+                                    Producto_PedidoId = _Id_Pedido
+                                };
 
-                            producto_Dato_Servicio.Insertar(dato);
-                        }
-                        
+                                producto_Dato_Servicio.Insertar(dato);
+                            }
+                        }                                               
 
                     }
 

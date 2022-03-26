@@ -42,7 +42,7 @@ namespace Presentacion
                 case TipoOperacion.Nuevo:
                     if (EjecutarComandoNuevo())
                     {
-                        var nuevo = new Afirmacion("Atencion","Datos Guardados Correctamente");
+                        var nuevo = new Afirmacion("Atencion","Datos Guardados \nCorrectamente");
                         nuevo.ShowDialog();
                         Limpiar(this);
                         RealizoAlgunaOperacion = true;
@@ -51,7 +51,7 @@ namespace Presentacion
                 case TipoOperacion.Eliminar:
                     if (EjecutarComandoEliminar())
                     {
-                        var eliminar = new Negativo("Atencion","Datos Eliminados Correctamente");
+                        var eliminar = new Negativo("Atencion","Datos Eliminados \nCorrectamente");
                         eliminar.ShowDialog();
                         RealizoAlgunaOperacion = true;
                         this.Close();
@@ -60,7 +60,7 @@ namespace Presentacion
                 case TipoOperacion.Modificar:
                     if (EjecutarComandoModificar())
                     {
-                        var nuevo = new Afirmacion("Atencion", "Los Datos Se Modificaron Correctamente");
+                        var nuevo = new Afirmacion("Atencion", "Los Datos Se Modificaron \nCorrectamente");
                         nuevo.ShowDialog();
                         RealizoAlgunaOperacion = true;
                         this.Close();

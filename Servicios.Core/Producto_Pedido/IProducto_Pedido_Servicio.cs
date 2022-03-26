@@ -23,6 +23,8 @@ namespace Servicios.Core.Producto_Pedido
 
         Producto_Pedido_Dto ObtenerPorId(long id);
 
+        Producto_Pedido_Dto BuscarId_Producto_Pedido(long producto_pedido_id);
+
         void CambiarEstado(long id);
 
         List<Producto_Pedido_Dto> Buscar();
