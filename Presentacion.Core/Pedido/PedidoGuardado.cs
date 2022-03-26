@@ -169,23 +169,29 @@ namespace Presentacion.Core.Pedido
             grilla.Columns["Descripcion"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Descripcion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            grilla.Columns["Colegio"].Visible = true;
+            grilla.Columns["Colegio"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["Colegio"].HeaderText = @"Colegio";
+            grilla.Columns["Colegio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Colegio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             grilla.Columns["Talle"].Visible = true;
             grilla.Columns["Talle"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["Talle"].HeaderText = @"Talle";
             grilla.Columns["Talle"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Talle"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["Precio"].Visible = true;
-            grilla.Columns["Precio"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["Precio"].HeaderText = @"Precio";
-            grilla.Columns["Precio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
             grilla.Columns["Cantidad"].Visible = true;
             grilla.Columns["Cantidad"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["Cantidad"].HeaderText = @"Cantidad";
             grilla.Columns["Cantidad"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            grilla.Columns["Precio"].Visible = true;
+            grilla.Columns["Precio"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["Precio"].HeaderText = @"Precio";
+            grilla.Columns["Precio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;           
 
         }
 
@@ -212,7 +218,8 @@ namespace Presentacion.Core.Pedido
                     Cantidad = item.Cantidad,
                     Talle = item.Talle,
                     Descripcion = producto.Descripcion,
-                    Precio = producto.Precio * item.Cantidad
+                    Precio = producto.Precio * item.Cantidad,
+                    ProductoId = producto.Id
                 };
 
                 list.Add(lista);

@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using Servicios.Core.Colegio;
 using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto;
@@ -16,6 +17,7 @@ namespace Servicios.Core.Producto_Dato.Dto
         private readonly IProducto_Pedido_Servicio producto_Pedido_Servicio = new Producto_Pedido_Servicio();
         private readonly IProductoServicio producto_Servicio = new ProductoServicio();
         private readonly IPedidoServicio pedidoServicio = new PedidoServicio();
+        private readonly IColegioServicio colegioServicio = new ColegioServicio();
 
         public long Id { get; set; }
 
@@ -24,6 +26,8 @@ namespace Servicios.Core.Producto_Dato.Dto
         public long Producto_PedidoId { get; set; } 
 
         public string ProductoDescripcion => producto_Servicio.ObtenerPorId(producto_Pedido_Servicio.ObtenerPorId(Producto_PedidoId).ProductoId).Descripcion;
+
+        public string Colegio => colegioServicio.ObtenerPorId(producto_Servicio.ObtenerPorId(producto_Pedido_Servicio.ObtenerPorId(Producto_PedidoId).ProductoId).ColegioId).Descripcion;
 
         public string ProductoTalle => producto_Pedido_Servicio.ObtenerPorId(Producto_PedidoId).Talle;
 

@@ -113,6 +113,12 @@ namespace Presentacion.Core.Pedido
             grilla.Columns["Descripcion"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Descripcion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            grilla.Columns["Colegio"].Visible = true;
+            grilla.Columns["Colegio"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["Colegio"].HeaderText = @"Colegio";
+            grilla.Columns["Colegio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Colegio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             grilla.Columns["Talle"].Visible = true;
             grilla.Columns["Talle"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["Talle"].HeaderText = @"Talle";

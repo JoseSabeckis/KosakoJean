@@ -1,4 +1,5 @@
-﻿using Servicios.Core.Producto;
+﻿using Servicios.Core.Colegio;
+using Servicios.Core.Producto;
 using Servicios.Core.Producto_Dato;
 using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
@@ -19,6 +20,7 @@ namespace Presentacion.Core.Producto_Dato
         private readonly IProducto_Dato_Servicio producto_Dato_Servicio;
         private readonly IProducto_Pedido_Servicio producto_Pedido_Servicio;
         private readonly IProductoServicio productoServicio;
+        private readonly IColegioServicio colegioServicio;
 
         List<Producto_Dato_Dto> ListaDatos;
 
@@ -33,6 +35,7 @@ namespace Presentacion.Core.Producto_Dato
             producto_Dato_Servicio = new Producto_Dato_Servicio();
             producto_Pedido_Servicio = new Producto_Pedido_Servicio();
             productoServicio = new ProductoServicio();
+            colegioServicio = new ColegioServicio();
 
             ListaDatos = new List<Producto_Dato_Dto>();
 
@@ -56,7 +59,7 @@ namespace Presentacion.Core.Producto_Dato
             var Datos = producto_Dato_Servicio.ObtenerProductoPedidoPorId(producto_pedido_Id);
 
             lblNombre.Text = $"{Datos.ProductoDescripcion}";
-
+            lblColegio.Text = colegioServicio.ObtenerPorId(productoServicio.ObtenerPorId(Datos.ProductoId).ColegioId).Descripcion;
             lblTalle.Text = $"Talle: {Datos.Talle}";
 
         }

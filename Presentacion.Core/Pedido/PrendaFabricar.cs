@@ -60,6 +60,12 @@ namespace Presentacion.Core.Pedido
             grilla.Columns["ProductoDescripcion"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["ProductoDescripcion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            grilla.Columns["Colegio"].Visible = true;
+            grilla.Columns["Colegio"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["Colegio"].HeaderText = @"Colegio";
+            grilla.Columns["Colegio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Colegio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             grilla.Columns["ProductoTalle"].Visible = true;
             grilla.Columns["ProductoTalle"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["ProductoTalle"].HeaderText = @"Talle";

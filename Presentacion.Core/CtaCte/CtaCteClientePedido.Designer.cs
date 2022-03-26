@@ -32,6 +32,8 @@ namespace Presentacion.Core.CtaCte
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CtaCteClientePedido));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.cmbHorario = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -47,8 +49,6 @@ namespace Presentacion.Core.CtaCte
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -85,6 +85,25 @@ namespace Presentacion.Core.CtaCte
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(453, 330);
             this.panel6.TabIndex = 1;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // dtpFechaEntrega
+            // 
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(43, 235);
+            this.dtpFechaEntrega.Name = "dtpFechaEntrega";
+            this.dtpFechaEntrega.Size = new System.Drawing.Size(369, 33);
+            this.dtpFechaEntrega.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Location = new System.Drawing.Point(43, 205);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(144, 27);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Fecha Entrega";
             // 
             // cmbHorario
             // 
@@ -259,24 +278,6 @@ namespace Presentacion.Core.CtaCte
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // dtpFechaEntrega
-            // 
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(43, 235);
-            this.dtpFechaEntrega.Name = "dtpFechaEntrega";
-            this.dtpFechaEntrega.Size = new System.Drawing.Size(369, 33);
-            this.dtpFechaEntrega.TabIndex = 17;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Location = new System.Drawing.Point(43, 205);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 27);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Fecha Entrega";
             // 
             // CtaCteClientePedido
             // 

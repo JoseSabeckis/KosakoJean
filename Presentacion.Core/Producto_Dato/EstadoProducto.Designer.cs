@@ -41,6 +41,7 @@ namespace Presentacion.Core.Producto_Dato
             this.lblTalle = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblColegio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -141,6 +142,7 @@ namespace Presentacion.Core.Producto_Dato
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblColegio);
             this.panel2.Controls.Add(this.lblTalle);
             this.panel2.Controls.Add(this.lblNombre);
             this.panel2.Controls.Add(this.button1);
@@ -154,7 +156,8 @@ namespace Presentacion.Core.Producto_Dato
             // 
             this.lblTalle.AutoSize = true;
             this.lblTalle.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTalle.Location = new System.Drawing.Point(3, 34);
+            this.lblTalle.ForeColor = System.Drawing.Color.Blue;
+            this.lblTalle.Location = new System.Drawing.Point(2, 23);
             this.lblTalle.Name = "lblTalle";
             this.lblTalle.Size = new System.Drawing.Size(63, 26);
             this.lblTalle.TabIndex = 2;
@@ -164,7 +167,7 @@ namespace Presentacion.Core.Producto_Dato
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(3, 9);
+            this.lblNombre.Location = new System.Drawing.Point(2, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(91, 26);
             this.lblNombre.TabIndex = 1;
@@ -182,6 +185,17 @@ namespace Presentacion.Core.Producto_Dato
             this.button1.Text = "Volver";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblColegio
+            // 
+            this.lblColegio.AutoSize = true;
+            this.lblColegio.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColegio.ForeColor = System.Drawing.Color.Red;
+            this.lblColegio.Location = new System.Drawing.Point(2, 45);
+            this.lblColegio.Name = "lblColegio";
+            this.lblColegio.Size = new System.Drawing.Size(85, 26);
+            this.lblColegio.TabIndex = 3;
+            this.lblColegio.Text = "Colegio";
             // 
             // EstadoProducto
             // 
@@ -224,5 +238,6 @@ namespace Presentacion.Core.Producto_Dato
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         protected System.Windows.Forms.DataGridView dgvGrilla;
+        private System.Windows.Forms.Label lblColegio;
     }
 }
