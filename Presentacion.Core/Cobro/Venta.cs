@@ -78,7 +78,7 @@ namespace Presentacion.Core.Cobro
 
             CargarGrilla(ListaVenta);
 
-            
+            btnSeleccionProducto.Select();
         }
 
         public void CargarTalle()
@@ -131,7 +131,7 @@ namespace Presentacion.Core.Cobro
 
                 nudPrecio.Value = product.Precio;
 
-
+                btnAgregarAlaGrilla.Select();
             }
 
         }
@@ -197,12 +197,14 @@ namespace Presentacion.Core.Cobro
                     Total();
                 }
 
-                Limpiar();
+                Limpiar();                
             }
             else
             {
                 MessageBox.Show("Cargue un Producto Antes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            btnSeleccionProducto.Select();
         }
 
         public void Total()
@@ -710,6 +712,11 @@ namespace Presentacion.Core.Cobro
                 ckbTicket.Checked = false;
                 //ckbTicket.Enabled = false;
             }
+        }
+
+        private void Venta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
         }
     }
 }

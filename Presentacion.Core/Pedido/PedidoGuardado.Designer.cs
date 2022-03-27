@@ -64,6 +64,7 @@ namespace Presentacion.Core.Pedido
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnVolverPedidoNoRetirado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,6 +79,7 @@ namespace Presentacion.Core.Pedido
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnVolverPedidoNoRetirado);
             this.panel1.Controls.Add(this.lblFechaInicio);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lblHorario);
@@ -99,7 +101,7 @@ namespace Presentacion.Core.Pedido
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblFechaInicio.Location = new System.Drawing.Point(805, 35);
+            this.lblFechaInicio.Location = new System.Drawing.Point(787, 34);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(59, 20);
             this.lblFechaInicio.TabIndex = 16;
@@ -110,7 +112,7 @@ namespace Presentacion.Core.Pedido
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(805, 7);
+            this.label6.Location = new System.Drawing.Point(787, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(185, 20);
             this.label6.TabIndex = 15;
@@ -448,9 +450,9 @@ namespace Presentacion.Core.Pedido
             // 
             this.btnTerminar.BackColor = System.Drawing.Color.Lime;
             this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminar.Location = new System.Drawing.Point(485, 13);
+            this.btnTerminar.Location = new System.Drawing.Point(478, 11);
             this.btnTerminar.Name = "btnTerminar";
-            this.btnTerminar.Size = new System.Drawing.Size(178, 55);
+            this.btnTerminar.Size = new System.Drawing.Size(185, 55);
             this.btnTerminar.TabIndex = 20;
             this.btnTerminar.Text = "Cobrar lo que Debe y Entregar";
             this.btnTerminar.UseVisualStyleBackColor = false;
@@ -458,7 +460,7 @@ namespace Presentacion.Core.Pedido
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
@@ -491,6 +493,21 @@ namespace Presentacion.Core.Pedido
             this.btnGuardar.Text = "Guardar Extras";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnVolverPedidoNoRetirado
+            // 
+            this.btnVolverPedidoNoRetirado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolverPedidoNoRetirado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVolverPedidoNoRetirado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVolverPedidoNoRetirado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolverPedidoNoRetirado.Location = new System.Drawing.Point(791, 57);
+            this.btnVolverPedidoNoRetirado.Name = "btnVolverPedidoNoRetirado";
+            this.btnVolverPedidoNoRetirado.Size = new System.Drawing.Size(244, 35);
+            this.btnVolverPedidoNoRetirado.TabIndex = 17;
+            this.btnVolverPedidoNoRetirado.Text = "Volver a Proceso No Retirado";
+            this.btnVolverPedidoNoRetirado.UseVisualStyleBackColor = false;
+            this.btnVolverPedidoNoRetirado.Visible = false;
+            this.btnVolverPedidoNoRetirado.Click += new System.EventHandler(this.btnVolverPedidoNoRetirado_Click);
             // 
             // PedidoGuardado
             // 
@@ -558,5 +575,6 @@ namespace Presentacion.Core.Pedido
         private System.Windows.Forms.CheckBox ckbNormal;
         private System.Windows.Forms.CheckBox ckbTarjeta;
         private System.Windows.Forms.NumericUpDown nudCobro;
+        private System.Windows.Forms.Button btnVolverPedidoNoRetirado;
     }
 }

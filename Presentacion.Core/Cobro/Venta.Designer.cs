@@ -734,6 +734,7 @@
             this.Text = "Aplicacion de Venta";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Venta_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Venta_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();

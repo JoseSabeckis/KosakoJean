@@ -73,6 +73,7 @@ namespace Presentacion.Core.Pedido
                 ckbTarjeta.Visible = false;
                 ckbNormal.Visible = false;
                 lblVendido.Visible = true;
+                btnVolverPedidoNoRetirado.Visible = true;
             }
             
         }
@@ -389,6 +390,23 @@ namespace Presentacion.Core.Pedido
                     Datos(PedidoId);
 
                 }
+            }
+        }
+
+        private void btnVolverPedidoNoRetirado_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta Seguro De Poner Este Pedido a no Retirado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                pedidoServicio.CambiarProcesoGuardado(PedidoId);
+
+                Datos(PedidoId);
+
+                var mensaje = new Afirmacion("Pedido Cambiado a Espera de Retiro", "Completado");
+                mensaje.ShowDialog();
+
+                btnVolverPedidoNoRetirado.Visible = false;
+                lblVendido.Visible = false;
+                btnTerminar.Visible = true;
             }
         }
     }

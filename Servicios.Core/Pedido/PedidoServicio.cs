@@ -435,6 +435,20 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public void CambiarProcesoGuardado(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.Proceso = Proceso.Guardado;
+
+                context.SaveChanges();
+
+            }
+        }
+
         public void CambiarProcesoRetirado(long id)
         {
             using (var context = new KosakoDBEntities())

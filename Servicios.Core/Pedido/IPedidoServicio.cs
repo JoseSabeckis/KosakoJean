@@ -21,6 +21,8 @@ namespace Servicios.Core.Pedido
 
         void CambiarFechaDatoRetiro(long id);
 
+        void CambiarProcesoGuardado(long id);
+
         IEnumerable<PedidoDto> BuscarRetirado();
 
         IEnumerable<PedidoDto> BuscarGuardados();

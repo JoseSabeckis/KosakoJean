@@ -63,6 +63,7 @@
             this.btnTerminar = new System.Windows.Forms.Button();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnVolverPedidoNoRetirado = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -76,6 +77,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnVolverPedidoNoRetirado);
             this.panel1.Controls.Add(this.lblHorario);
             this.panel1.Controls.Add(this.lblFechaInicio);
             this.panel1.Controls.Add(this.label6);
@@ -88,7 +90,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1306, 86);
+            this.panel1.Size = new System.Drawing.Size(1306, 92);
             this.panel1.TabIndex = 0;
             // 
             // lblHorario
@@ -109,7 +111,7 @@
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblFechaInicio.Location = new System.Drawing.Point(963, 39);
+            this.lblFechaInicio.Location = new System.Drawing.Point(933, 30);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(59, 20);
             this.lblFechaInicio.TabIndex = 7;
@@ -120,7 +122,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(963, 11);
+            this.label6.Location = new System.Drawing.Point(933, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(185, 20);
             this.label6.TabIndex = 6;
@@ -132,7 +134,7 @@
             this.lblFecha.BackColor = System.Drawing.Color.Silver;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.Red;
-            this.lblFecha.Location = new System.Drawing.Point(278, 7);
+            this.lblFecha.Location = new System.Drawing.Point(288, 7);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(69, 24);
             this.lblFecha.TabIndex = 5;
@@ -142,7 +144,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(93, 7);
+            this.label5.Location = new System.Drawing.Point(103, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(162, 24);
             this.label5.TabIndex = 4;
@@ -154,7 +156,7 @@
             this.lblPersona.BackColor = System.Drawing.Color.Red;
             this.lblPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersona.ForeColor = System.Drawing.Color.Black;
-            this.lblPersona.Location = new System.Drawing.Point(278, 39);
+            this.lblPersona.Location = new System.Drawing.Point(288, 48);
             this.lblPersona.Name = "lblPersona";
             this.lblPersona.Size = new System.Drawing.Size(184, 24);
             this.lblPersona.TabIndex = 3;
@@ -162,13 +164,13 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.Location = new System.Drawing.Point(1191, 0);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(111, 82);
+            this.btnVolver.Size = new System.Drawing.Size(111, 88);
             this.btnVolver.TabIndex = 2;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -178,7 +180,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(93, 39);
+            this.label1.Location = new System.Drawing.Point(103, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 24);
             this.label1.TabIndex = 1;
@@ -190,7 +192,7 @@
             this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.BuscarDos;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 75);
+            this.pictureBox1.Size = new System.Drawing.Size(93, 81);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -201,9 +203,9 @@
             this.panel2.Controls.Add(this.dgvGrilla);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 86);
+            this.panel2.Location = new System.Drawing.Point(0, 92);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1306, 382);
+            this.panel2.Size = new System.Drawing.Size(1306, 376);
             this.panel2.TabIndex = 1;
             // 
             // dgvGrilla
@@ -235,7 +237,7 @@
             this.dgvGrilla.Name = "dgvGrilla";
             this.dgvGrilla.ReadOnly = true;
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(1302, 261);
+            this.dgvGrilla.Size = new System.Drawing.Size(1302, 255);
             this.dgvGrilla.TabIndex = 12;
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick);
@@ -252,7 +254,7 @@
             this.panel3.Controls.Add(this.txtNotas);
             this.panel3.Controls.Add(this.btnGuardar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 261);
+            this.panel3.Location = new System.Drawing.Point(0, 255);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1302, 117);
             this.panel3.TabIndex = 1;
@@ -426,7 +428,7 @@
             this.lblPagado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblPagado.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPagado.ForeColor = System.Drawing.Color.Red;
-            this.lblPagado.Location = new System.Drawing.Point(567, 69);
+            this.lblPagado.Location = new System.Drawing.Point(558, 68);
             this.lblPagado.Name = "lblPagado";
             this.lblPagado.Size = new System.Drawing.Size(166, 26);
             this.lblPagado.TabIndex = 12;
@@ -435,11 +437,11 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminar.BackColor = System.Drawing.Color.Red;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
-            this.btnEliminar.Location = new System.Drawing.Point(454, 69);
+            this.btnEliminar.Location = new System.Drawing.Point(441, 68);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(83, 36);
             this.btnEliminar.TabIndex = 10;
@@ -453,7 +455,7 @@
             this.lblVendido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblVendido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVendido.ForeColor = System.Drawing.Color.Red;
-            this.lblVendido.Location = new System.Drawing.Point(567, 18);
+            this.lblVendido.Location = new System.Drawing.Point(558, 17);
             this.lblVendido.Name = "lblVendido";
             this.lblVendido.Size = new System.Drawing.Size(138, 26);
             this.lblVendido.TabIndex = 9;
@@ -463,7 +465,7 @@
             // 
             this.btnTerminar.BackColor = System.Drawing.Color.Lime;
             this.btnTerminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminar.Location = new System.Drawing.Point(563, 15);
+            this.btnTerminar.Location = new System.Drawing.Point(554, 14);
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(170, 55);
             this.btnTerminar.TabIndex = 8;
@@ -477,7 +479,7 @@
             this.txtNotas.Location = new System.Drawing.Point(4, 4);
             this.txtNotas.Multiline = true;
             this.txtNotas.Name = "txtNotas";
-            this.txtNotas.Size = new System.Drawing.Size(444, 101);
+            this.txtNotas.Size = new System.Drawing.Size(431, 101);
             this.txtNotas.TabIndex = 3;
             // 
             // btnGuardar
@@ -485,13 +487,28 @@
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(454, 5);
+            this.btnGuardar.Location = new System.Drawing.Point(441, 4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(83, 58);
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar Extras";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnVolverPedidoNoRetirado
+            // 
+            this.btnVolverPedidoNoRetirado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolverPedidoNoRetirado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVolverPedidoNoRetirado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVolverPedidoNoRetirado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolverPedidoNoRetirado.Location = new System.Drawing.Point(937, 53);
+            this.btnVolverPedidoNoRetirado.Name = "btnVolverPedidoNoRetirado";
+            this.btnVolverPedidoNoRetirado.Size = new System.Drawing.Size(213, 31);
+            this.btnVolverPedidoNoRetirado.TabIndex = 10;
+            this.btnVolverPedidoNoRetirado.Text = "Volver a Proceso No Retirado";
+            this.btnVolverPedidoNoRetirado.UseVisualStyleBackColor = false;
+            this.btnVolverPedidoNoRetirado.Visible = false;
+            this.btnVolverPedidoNoRetirado.Click += new System.EventHandler(this.btnVolverPedidoNoRetirado_Click);
             // 
             // PedidoInfo
             // 
@@ -558,5 +575,6 @@
         private System.Windows.Forms.Button btnCobro;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnVolverPedidoNoRetirado;
     }
 }

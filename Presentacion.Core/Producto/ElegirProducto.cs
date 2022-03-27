@@ -138,5 +138,15 @@ namespace Presentacion.Core.Producto
         {
             Close();
         }
+
+        private void ElegirProducto_Load(object sender, EventArgs e)
+        {
+            btnAgregar.Select();
+        }
+
+        private void dgvGrilla_Enter(object sender, EventArgs e)
+        {
+            btnAgregar.Select();
+        }
     }
 }

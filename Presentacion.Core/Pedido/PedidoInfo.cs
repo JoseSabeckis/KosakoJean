@@ -89,6 +89,7 @@ namespace Presentacion.Core.Pedido
                 {
                     btnTerminar.Visible = false;
                     lblVendido.Visible = true;
+                    btnVolverPedidoNoRetirado.Visible = true;
                 }
             }           
 
@@ -484,6 +485,23 @@ namespace Presentacion.Core.Pedido
                 list = new List<VentaDto2>();
                 CrearGrilla(PedidoId);
                 CargarGrilla();
+            }
+        }
+
+        private void btnVolverPedidoNoRetirado_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta Seguro De Poner Este Pedido a no Retirado?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                pedidoServicio.CambiarProcesoRetiro(PedidoId);
+
+                Datos(PedidoId);
+
+                var mensaje = new Afirmacion("Pedido Cambiado a Espera de Retiro", "Completado");
+                mensaje.ShowDialog();
+
+                btnVolverPedidoNoRetirado.Visible = false;
+                lblVendido.Visible = false;
+                btnTerminar.Visible = true;
             }
         }
     }
