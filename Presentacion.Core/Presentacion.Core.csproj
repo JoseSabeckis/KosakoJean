@@ -135,6 +135,12 @@
     <Compile Include="Cliente\VerClientes.Designer.cs">
       <DependentUpon>VerClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cobro\AgregarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cobro\AgregarProductos.Designer.cs">
+      <DependentUpon>AgregarProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cobro\Venta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cliente\VerClientes.resx">
       <DependentUpon>VerClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cobro\AgregarProductos.resx">
+      <DependentUpon>AgregarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cobro\Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
