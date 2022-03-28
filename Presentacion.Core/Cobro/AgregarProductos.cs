@@ -52,6 +52,8 @@ namespace Presentacion.Core.Cobro
         decimal _total;
         string _descripcionProducto;
 
+        public bool Bandera;
+
         public AgregarProductos(long pedidoId)
         {
             InitializeComponent();
@@ -73,6 +75,7 @@ namespace Presentacion.Core.Cobro
 
             _PedidoId = pedidoId;
             _Pedido = pedidoServicio.BuscarIDPedidos(pedidoId);
+            Bandera = false;
 
             CargarTalle();
             CargarDatos();
@@ -304,6 +307,8 @@ namespace Presentacion.Core.Cobro
                 }
 
                 Limpiar();
+
+                btnSeleccionProducto.Select();
             }
             else
             {
@@ -352,21 +357,27 @@ namespace Presentacion.Core.Cobro
 
                         var _Id_Pedido = producto_Pedido_Servicio.NuevoProductoPedido(aux);
 
-                        //datos
-                        if (productoServicio.ObtenerPorId(item.Id).Creacion)
+                        if (_Pedido.Proceso != AccesoDatos.Proceso.Guardado || _Pedido.Proceso != AccesoDatos.Proceso.Retirado)
                         {
-                            for (int i = 0; i < item.Cantidad; i++)
+                            //datos
+                            if (productoServicio.ObtenerPorId(item.Id).Creacion)
                             {
-                                var dato = new Producto_Dato_Dto
+                                for (int i = 0; i < item.Cantidad; i++)
                                 {
-                                    EstadoPorPedido = AccesoDatos.EstadoPorPedido.EnEspera,
-                                    Producto_PedidoId = _Id_Pedido
-                                };
+                                    var dato = new Producto_Dato_Dto
+                                    {
+                                        EstadoPorPedido = AccesoDatos.EstadoPorPedido.EnEspera,
+                                        Producto_PedidoId = _Id_Pedido
+                                    };
 
-                                producto_Dato_Servicio.Insertar(dato);
+                                    producto_Dato_Servicio.Insertar(dato);
+                                }
                             }
                         }
+                        
                     }
+
+                    Bandera = true;
 
                     var mensaje = new Afirmacion("Guardado", "Se Agregaron Productos");
                     mensaje.ShowDialog();
@@ -374,6 +385,11 @@ namespace Presentacion.Core.Cobro
                     btnVolver.PerformClick();
                 }
             }           
+        }
+
+        private void AgregarProductos_Load(object sender, EventArgs e)
+        {
+            btnSeleccionProducto.Select();
         }
     }
 }

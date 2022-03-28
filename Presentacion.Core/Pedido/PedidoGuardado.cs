@@ -1,4 +1,5 @@
-﻿using Presentacion.Core.Mensaje;
+﻿using Presentacion.Core.Cobro;
+using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
 using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
@@ -74,6 +75,11 @@ namespace Presentacion.Core.Pedido
                 ckbNormal.Visible = false;
                 lblVendido.Visible = true;
                 btnVolverPedidoNoRetirado.Visible = true;
+                btnAgregarProductos.Visible = false;
+            }
+            else
+            {
+                btnAgregarProductos.Visible = true;
             }
             
         }
@@ -148,6 +154,17 @@ namespace Presentacion.Core.Pedido
                 lblPagado.Text = $"| Pagado |";
                 lblPagado.Visible = true;
 
+            }
+            else
+            {
+                ckbTarjeta.Visible = true;
+                ckbNormal.Visible = true;
+
+                nudCobro.Visible = true;
+                lblCobrar.Visible = true;
+                btnCobro.Visible = true;
+
+                lblPagado.Visible = false;
             }
         }
 
@@ -329,7 +346,7 @@ namespace Presentacion.Core.Pedido
                     Datos(PedidoId);
 
                     lblVendido.Visible = true;
-
+                    btnAgregarProductos.Visible = false;
                 }
             }
             else
@@ -407,6 +424,22 @@ namespace Presentacion.Core.Pedido
                 btnVolverPedidoNoRetirado.Visible = false;
                 lblVendido.Visible = false;
                 btnTerminar.Visible = true;
+                btnAgregarProductos.Visible = true;
+            }
+        }
+
+        private void btnAgregarProductos_Click(object sender, EventArgs e)
+        {
+            var pedido = new AgregarProductos(PedidoId);
+            pedido.ShowDialog();
+
+            if (pedido.Bandera)
+            {
+                list = new List<VentaDto2>();
+                CrearGrilla(PedidoId);
+                CargarGrilla();
+
+                Datos(PedidoId);
             }
         }
     }

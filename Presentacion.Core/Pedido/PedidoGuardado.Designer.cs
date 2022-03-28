@@ -33,6 +33,7 @@ namespace Presentacion.Core.Pedido
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidoGuardado));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVolverPedidoNoRetirado = new System.Windows.Forms.Button();
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblHorario = new System.Windows.Forms.Label();
@@ -64,7 +65,7 @@ namespace Presentacion.Core.Pedido
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnVolverPedidoNoRetirado = new System.Windows.Forms.Button();
+            this.btnAgregarProductos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,6 +80,7 @@ namespace Presentacion.Core.Pedido
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnAgregarProductos);
             this.panel1.Controls.Add(this.btnVolverPedidoNoRetirado);
             this.panel1.Controls.Add(this.lblFechaInicio);
             this.panel1.Controls.Add(this.label6);
@@ -94,6 +96,21 @@ namespace Presentacion.Core.Pedido
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1176, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // btnVolverPedidoNoRetirado
+            // 
+            this.btnVolverPedidoNoRetirado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVolverPedidoNoRetirado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnVolverPedidoNoRetirado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVolverPedidoNoRetirado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolverPedidoNoRetirado.Location = new System.Drawing.Point(791, 57);
+            this.btnVolverPedidoNoRetirado.Name = "btnVolverPedidoNoRetirado";
+            this.btnVolverPedidoNoRetirado.Size = new System.Drawing.Size(244, 35);
+            this.btnVolverPedidoNoRetirado.TabIndex = 17;
+            this.btnVolverPedidoNoRetirado.Text = "Volver a Proceso No Retirado";
+            this.btnVolverPedidoNoRetirado.UseVisualStyleBackColor = false;
+            this.btnVolverPedidoNoRetirado.Visible = false;
+            this.btnVolverPedidoNoRetirado.Click += new System.EventHandler(this.btnVolverPedidoNoRetirado_Click);
             // 
             // lblFechaInicio
             // 
@@ -494,20 +511,19 @@ namespace Presentacion.Core.Pedido
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnVolverPedidoNoRetirado
+            // btnAgregarProductos
             // 
-            this.btnVolverPedidoNoRetirado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVolverPedidoNoRetirado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnVolverPedidoNoRetirado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVolverPedidoNoRetirado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolverPedidoNoRetirado.Location = new System.Drawing.Point(791, 57);
-            this.btnVolverPedidoNoRetirado.Name = "btnVolverPedidoNoRetirado";
-            this.btnVolverPedidoNoRetirado.Size = new System.Drawing.Size(244, 35);
-            this.btnVolverPedidoNoRetirado.TabIndex = 17;
-            this.btnVolverPedidoNoRetirado.Text = "Volver a Proceso No Retirado";
-            this.btnVolverPedidoNoRetirado.UseVisualStyleBackColor = false;
-            this.btnVolverPedidoNoRetirado.Visible = false;
-            this.btnVolverPedidoNoRetirado.Click += new System.EventHandler(this.btnVolverPedidoNoRetirado_Click);
+            this.btnAgregarProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAgregarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProductos.Location = new System.Drawing.Point(572, 57);
+            this.btnAgregarProductos.Name = "btnAgregarProductos";
+            this.btnAgregarProductos.Size = new System.Drawing.Size(213, 36);
+            this.btnAgregarProductos.TabIndex = 18;
+            this.btnAgregarProductos.Text = "Agregar Productos";
+            this.btnAgregarProductos.UseVisualStyleBackColor = false;
+            this.btnAgregarProductos.Click += new System.EventHandler(this.btnAgregarProductos_Click);
             // 
             // PedidoGuardado
             // 
@@ -576,5 +592,6 @@ namespace Presentacion.Core.Pedido
         private System.Windows.Forms.CheckBox ckbTarjeta;
         private System.Windows.Forms.NumericUpDown nudCobro;
         private System.Windows.Forms.Button btnVolverPedidoNoRetirado;
+        private System.Windows.Forms.Button btnAgregarProductos;
     }
 }

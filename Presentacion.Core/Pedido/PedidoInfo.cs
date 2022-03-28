@@ -85,6 +85,7 @@ namespace Presentacion.Core.Pedido
                 if (_Pedido.Proceso == AccesoDatos.Proceso.EsperandoRetiro)
                 {
                     btnTerminar.Visible = true;
+                    btnAgregarProductos.Visible = true;
                 }
                 else
                 {
@@ -266,6 +267,17 @@ namespace Presentacion.Core.Pedido
                 lblPagado.Visible = true;               
 
             }
+            else
+            {
+                ckbTarjeta.Visible = true;
+                ckbNormal.Visible = true;
+
+                nudCobro.Visible = true;
+                lblCobrar.Visible = true;
+                btnCobro.Visible = true;
+
+                lblPagado.Visible = false;
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -335,8 +347,8 @@ namespace Presentacion.Core.Pedido
 
                     Datos(PedidoId);
 
-                    lblVendido.Visible = true;                    
-
+                    lblVendido.Visible = true;
+                    btnAgregarProductos.Visible = false;
                 }
             }
             else
@@ -504,6 +516,7 @@ namespace Presentacion.Core.Pedido
                 btnVolverPedidoNoRetirado.Visible = false;
                 lblVendido.Visible = false;
                 btnTerminar.Visible = true;
+                btnAgregarProductos.Visible = true;
             }
         }
 
@@ -512,7 +525,15 @@ namespace Presentacion.Core.Pedido
             var pedido = new AgregarProductos(PedidoId);
             pedido.ShowDialog();
 
-            //Esquema(PedidoId);
+            if (pedido.Bandera)
+            {
+                list = new List<VentaDto2>();
+                CrearGrilla(PedidoId);
+                CargarGrilla();
+
+                Datos(PedidoId);
+            }
+            
         }
     }
 }
