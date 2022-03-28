@@ -50,12 +50,11 @@ namespace Presentacion.Core.Pedido
 
         decimal _total;
         long ClienteId;
-        long _TalleId;
 
         ClienteDto _Cliente;
         List<VentaDto2> ListaVentas;
 
-        public Pedido(List<VentaDto2> Lista, decimal total, string nombre, long clienteId, string descripcion, long talleId)
+        public Pedido(List<VentaDto2> Lista, decimal total, string nombre, long clienteId, string descripcion)
         {
             InitializeComponent();
 
@@ -86,7 +85,6 @@ namespace Presentacion.Core.Pedido
 
             _total = total;
             ListaVentas = Lista;
-            _TalleId = talleId;
 
             nudAdelanto.Maximum = _total;
 
@@ -205,7 +203,7 @@ namespace Presentacion.Core.Pedido
                             Talle = item.Talle,
                             PedidoId = pedidoId,
                             Descripcion = segunda,
-                            TalleId = _TalleId
+                            TalleId = talleServicio.BuscarNombreDevuelveId(item.Talle)
                         };
                         
                         var _Id_Pedido = producto_Pedido_Servicio.NuevoProductoPedido(aux);

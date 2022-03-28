@@ -186,8 +186,8 @@ namespace Presentacion.Core.Cobro
                         Precio = nudPrecio.Value,
                         Talle = cmbTalle.Text,
                         Id = _productoId,
-                        Fecha = DateTime.Now.Date
-
+                        Fecha = DateTime.Now.Date,
+                        ProductoId = _productoId
                     };
 
                     ListaVenta.Add(nuevo);
@@ -266,6 +266,12 @@ namespace Presentacion.Core.Cobro
             grilla.Columns["Descripcion"].HeaderText = @"Descripcion";
             grilla.Columns["Descripcion"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Descripcion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            grilla.Columns["Colegio"].Visible = true;
+            grilla.Columns["Colegio"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["Colegio"].HeaderText = @"Colegio";
+            grilla.Columns["Colegio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Colegio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             grilla.Columns["Talle"].Visible = true;
             grilla.Columns["Talle"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -440,7 +446,7 @@ namespace Presentacion.Core.Cobro
                 {
                     if (ckbPedido.Checked)
                     {
-                        var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId, txtDescripcion.Text, ((TalleDto)cmbTalle.SelectedItem).Id);
+                        var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId, txtDescripcion.Text);
                         pedidos.ShowDialog();
 
                         if (pedidos.semaforo)

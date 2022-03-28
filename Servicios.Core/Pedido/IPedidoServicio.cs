@@ -23,6 +23,10 @@ namespace Servicios.Core.Pedido
 
         void CambiarProcesoGuardado(long id);
 
+        void SumarTotal(long id, decimal suma);
+
+        void RestarTotal(long id, decimal resta);
+
         IEnumerable<PedidoDto> BuscarRetirado();
 
         IEnumerable<PedidoDto> BuscarGuardados();

@@ -1,4 +1,5 @@
-﻿using Presentacion.Core.Mensaje;
+﻿using Presentacion.Core.Cobro;
+using Presentacion.Core.Mensaje;
 using Presentacion.Core.Producto_Dato;
 using Servicios.Core.Caja;
 using Servicios.Core.CtaCte;
@@ -90,6 +91,7 @@ namespace Presentacion.Core.Pedido
                     btnTerminar.Visible = false;
                     lblVendido.Visible = true;
                     btnVolverPedidoNoRetirado.Visible = true;
+                    btnAgregarProductos.Visible = false;
                 }
             }           
 
@@ -503,6 +505,14 @@ namespace Presentacion.Core.Pedido
                 lblVendido.Visible = false;
                 btnTerminar.Visible = true;
             }
+        }
+
+        private void btnAgregarProductos_Click(object sender, EventArgs e)
+        {
+            var pedido = new AgregarProductos(PedidoId);
+            pedido.ShowDialog();
+
+            //Esquema(PedidoId);
         }
     }
 }

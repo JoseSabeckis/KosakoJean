@@ -250,6 +250,30 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public void SumarTotal(long id, decimal suma)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.Total += suma;
+
+                context.SaveChanges();
+            }
+        }
+
+        public void RestarTotal(long id, decimal resta)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.Total -= resta;
+
+                context.SaveChanges();
+            }
+        }
+
         public IEnumerable<PedidoDto> BuscandoTerminados()
         {
             using (var context = new KosakoDBEntities())
