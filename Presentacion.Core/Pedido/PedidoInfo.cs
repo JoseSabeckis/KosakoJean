@@ -342,13 +342,14 @@ namespace Presentacion.Core.Pedido
 
                     ventaServicio.NuevaVenta(venta);
 
-                    var completado = new Afirmacion("Felicidades!", $"Completado \nSe obtuvo de ganancias $ {_Debe}");
+                    var completado = new Afirmacion("Felicidades!", $"Completado \nSe obtuvo de ganancias $ {_Debe}\nTipo de Pago: {detalle.TipoPago}");
                     completado.ShowDialog();
 
                     Datos(PedidoId);
 
                     lblVendido.Visible = true;
                     btnAgregarProductos.Visible = false;
+                    btnVolverPedidoNoRetirado.Visible = true;
                 }
             }
             else
@@ -459,7 +460,7 @@ namespace Presentacion.Core.Pedido
 
                     ventaServicio.NuevaVenta(venta);
 
-                    var completado = new Afirmacion("Felicidades!", $"Completado \nSe obtuvo de ganancias $ {nudCobro.Value}");
+                    var completado = new Afirmacion("Felicidades!", $"Completado \nSe obtuvo de ganancias $ {nudCobro.Value}\nTipo de Pago: {detalle.TipoPago}");
                     completado.ShowDialog();
 
                     nudCobro.Value = 0;

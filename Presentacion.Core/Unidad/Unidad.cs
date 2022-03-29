@@ -85,9 +85,6 @@ namespace Presentacion.Core.Unidad
 
                     VerDatos();
 
-                    btnVer.Enabled = false;
-
-                    //MessageBox.Show("Listo!, Vamos Paula!", "Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     var completado = new Afirmacion("Listo !!!", "Ahora hay que esperar Paula");
                     completado.ShowDialog();
 

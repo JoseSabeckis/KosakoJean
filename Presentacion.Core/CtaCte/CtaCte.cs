@@ -209,10 +209,6 @@ namespace Presentacion.Core.CtaCte
                         {
                             pedidoServicio.CambiarProcesoTerminado(pedido.Id);
                         }
-                        //Fin Pedido
-
-                        var mensaje = new Afirmacion("Cobrado", $"Se Le Cobro $ {nudCobro.Value} Exitosamente!");
-                        mensaje.ShowDialog();
 
                         //caja
 
@@ -233,6 +229,11 @@ namespace Presentacion.Core.CtaCte
                         //---//
 
                         DebeYTotal(_ctaCteServicio.Lista(_ClienteId));
+
+                        //Fin Pedido
+
+                        var mensaje = new Afirmacion("Cobrado", $"Se Le Cobro $ {nudCobro.Value} Exitosamente!\nTipo de Pago: {detalle.TipoPago}");
+                        mensaje.ShowDialog();             
 
                         Grilla();
 

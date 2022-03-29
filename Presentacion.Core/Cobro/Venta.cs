@@ -422,7 +422,7 @@ namespace Presentacion.Core.Cobro
 
                         //MessageBox.Show("Felicidades, Cobro Aceptado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        var mensaje = new Afirmacion("Genial", "Cobro Aceptado!");
+                        var mensaje = new Afirmacion("Genial", $"Cobro Aceptado!\n\nGanancia: $ {_total}\n{detalle.TipoPago}");
                         mensaje.ShowDialog();
 
                         foreach (var item in ListaVenta)

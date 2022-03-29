@@ -67,7 +67,7 @@ namespace Presentacion.Core.Mensaje
             this.btnCerrar.Location = new System.Drawing.Point(384, 101);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(80, 32);
-            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -76,10 +76,10 @@ namespace Presentacion.Core.Mensaje
             // 
             this.txtParrafo.AutoSize = true;
             this.txtParrafo.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParrafo.Location = new System.Drawing.Point(154, 43);
+            this.txtParrafo.Location = new System.Drawing.Point(154, 34);
             this.txtParrafo.Name = "txtParrafo";
             this.txtParrafo.Size = new System.Drawing.Size(79, 25);
-            this.txtParrafo.TabIndex = 4;
+            this.txtParrafo.TabIndex = 2;
             this.txtParrafo.Text = "Parrafo";
             // 
             // timer1

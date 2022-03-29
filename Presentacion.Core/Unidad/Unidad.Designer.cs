@@ -71,7 +71,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 48);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 152);
+            this.panel2.Size = new System.Drawing.Size(255, 152);
             this.panel2.TabIndex = 3;
             // 
             // panel3
@@ -86,7 +86,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 65);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(263, 83);
+            this.panel3.Size = new System.Drawing.Size(251, 83);
             this.panel3.TabIndex = 3;
             // 
             // lblFechaHastaRetiro
@@ -109,11 +109,12 @@
             this.txtProductos.Location = new System.Drawing.Point(0, 0);
             this.txtProductos.Multiline = true;
             this.txtProductos.Name = "txtProductos";
-            this.txtProductos.Size = new System.Drawing.Size(259, 40);
+            this.txtProductos.Size = new System.Drawing.Size(247, 40);
             this.txtProductos.TabIndex = 8;
             // 
             // btnVer
             // 
+            this.btnVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.Location = new System.Drawing.Point(18, 53);
@@ -121,7 +122,7 @@
             this.btnVer.Size = new System.Drawing.Size(159, 25);
             this.btnVer.TabIndex = 5;
             this.btnVer.Text = "Ver";
-            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // lblIdPedido
@@ -186,11 +187,12 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 48);
+            this.panel1.Size = new System.Drawing.Size(255, 48);
             this.panel1.TabIndex = 2;
             // 
             // btnRealizado
             // 
+            this.btnRealizado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnRealizado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRealizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRealizado.Location = new System.Drawing.Point(100, 3);
@@ -198,7 +200,7 @@
             this.btnRealizado.Size = new System.Drawing.Size(81, 28);
             this.btnRealizado.TabIndex = 6;
             this.btnRealizado.Text = "Terminado";
-            this.btnRealizado.UseVisualStyleBackColor = true;
+            this.btnRealizado.UseVisualStyleBackColor = false;
             this.btnRealizado.Click += new System.EventHandler(this.btnRealizado_Click);
             // 
             // Unidad
@@ -209,7 +211,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Unidad";
-            this.Size = new System.Drawing.Size(267, 200);
+            this.Size = new System.Drawing.Size(255, 200);
             this.contextMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

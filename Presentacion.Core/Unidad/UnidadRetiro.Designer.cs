@@ -103,7 +103,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(233, 35);
+            this.panel1.Size = new System.Drawing.Size(229, 35);
             this.panel1.TabIndex = 10;
             // 
             // txtProductos
@@ -111,10 +111,10 @@
             this.txtProductos.BackColor = System.Drawing.SystemColors.Info;
             this.txtProductos.Enabled = false;
             this.txtProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductos.Location = new System.Drawing.Point(3, 87);
+            this.txtProductos.Location = new System.Drawing.Point(-2, 87);
             this.txtProductos.Multiline = true;
             this.txtProductos.Name = "txtProductos";
-            this.txtProductos.Size = new System.Drawing.Size(223, 42);
+            this.txtProductos.Size = new System.Drawing.Size(228, 42);
             this.txtProductos.TabIndex = 11;
             // 
             // lblFechaHastaRetiro
@@ -142,7 +142,7 @@
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblNombre);
             this.Name = "UnidadRetiro";
-            this.Size = new System.Drawing.Size(233, 204);
+            this.Size = new System.Drawing.Size(229, 204);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

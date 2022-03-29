@@ -29,13 +29,12 @@ namespace Presentacion.Core.Mensaje
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Afirmacion));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.txtParrafo = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +66,7 @@ namespace Presentacion.Core.Mensaje
             this.btnCerrar.Location = new System.Drawing.Point(384, 101);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(80, 32);
-            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.TabIndex = 4;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -79,7 +78,7 @@ namespace Presentacion.Core.Mensaje
             this.txtParrafo.Location = new System.Drawing.Point(154, 44);
             this.txtParrafo.Name = "txtParrafo";
             this.txtParrafo.Size = new System.Drawing.Size(70, 22);
-            this.txtParrafo.TabIndex = 4;
+            this.txtParrafo.TabIndex = 2;
             this.txtParrafo.Text = "Parrafo";
             // 
             // timer1

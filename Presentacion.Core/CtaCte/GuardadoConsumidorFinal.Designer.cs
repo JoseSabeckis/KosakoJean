@@ -33,9 +33,9 @@ namespace Presentacion.Core.CtaCte
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelGrilla = new System.Windows.Forms.Panel();
-            this.ptbImagen = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
@@ -77,6 +77,18 @@ namespace Presentacion.Core.CtaCte
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Prendas Guardadas";
             // 
+            // ptbImagen
+            // 
+            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ptbImagen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ptbImagen.Image = global::Presentacion.Core.Properties.Resources.prendas_armario_look_crop1608776690890_jpg_242310155;
+            this.ptbImagen.Location = new System.Drawing.Point(0, 0);
+            this.ptbImagen.Name = "ptbImagen";
+            this.ptbImagen.Size = new System.Drawing.Size(863, 88);
+            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ptbImagen.TabIndex = 1;
+            this.ptbImagen.TabStop = false;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -92,6 +104,8 @@ namespace Presentacion.Core.CtaCte
             // 
             // panelGrilla
             // 
+            this.panelGrilla.AutoScroll = true;
+            this.panelGrilla.AutoSize = true;
             this.panelGrilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGrilla.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -99,18 +113,6 @@ namespace Presentacion.Core.CtaCte
             this.panelGrilla.Name = "panelGrilla";
             this.panelGrilla.Size = new System.Drawing.Size(985, 397);
             this.panelGrilla.TabIndex = 1;
-            // 
-            // ptbImagen
-            // 
-            this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ptbImagen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ptbImagen.Image = global::Presentacion.Core.Properties.Resources.prendas_armario_look_crop1608776690890_jpg_242310155;
-            this.ptbImagen.Location = new System.Drawing.Point(0, 0);
-            this.ptbImagen.Name = "ptbImagen";
-            this.ptbImagen.Size = new System.Drawing.Size(863, 88);
-            this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ptbImagen.TabIndex = 1;
-            this.ptbImagen.TabStop = false;
             // 
             // GuardadoConsumidorFinal
             // 
@@ -123,15 +125,17 @@ namespace Presentacion.Core.CtaCte
             this.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(879, 489);
+            this.MinimumSize = new System.Drawing.Size(1001, 528);
             this.Name = "GuardadoConsumidorFinal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Prendas";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

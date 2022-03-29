@@ -231,7 +231,7 @@ namespace Presentacion.Core.CtaCte
                 //dinero a caja
                 cajaServicio.SumarDineroACaja(nudAdelanto.Value);//
 
-                var NewPrenda = new Afirmacion("Prenda Guardada", $"A Esperar...\nAdelanto de Cobro: {nudAdelanto.Value}");
+                var NewPrenda = new Afirmacion("Prenda Guardada", $"A Esperar...\nAdelanto de Cobro: $ {nudAdelanto.Value}\n\nTipo de Pago: {detalle.TipoPago}");
                 NewPrenda.ShowDialog();
 
                 semaforo = true;

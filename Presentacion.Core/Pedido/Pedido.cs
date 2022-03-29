@@ -254,7 +254,7 @@ namespace Presentacion.Core.Pedido
                     //dinero a caja
                     cajaServicio.SumarDineroACaja(nudAdelanto.Value);//
 
-                    var mensaje = new Afirmacion("Agregado a la Cuenta!", $"Dinero Cobrado Por Adelanto $ {nudAdelanto.Value}");
+                    var mensaje = new Afirmacion("Agregado a la Cuenta!", $"Dinero Cobrado Por Adelanto $ {nudAdelanto.Value}\nTipo de Pago: {detalle.TipoPago}");
                     mensaje.ShowDialog();
 
                     if (ckbNormal.Checked || ckbTarjeta.Checked)
