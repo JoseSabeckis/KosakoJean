@@ -83,7 +83,32 @@ namespace Presentacion.Core.Pedido
             {
                 btnAgregarProductos.Visible = true;
             }
-            
+
+            VerificarSiEstaEliminadoElPedido();
+        }
+
+        public void VerificarSiEstaEliminadoElPedido()
+        {
+            if (pedidoServicio.BuscarIDPedidos(PedidoId).EstaEliminado)
+            {
+                btnGuardar.Visible = false;
+                btnEliminar.Visible = false;
+
+                btnTerminar.Visible = false;
+
+                lblCobrar.Visible = false;
+                nudCobro.Visible = false;
+                btnCobro.Visible = false;
+
+                ckbNormal.Visible = false;
+                ckbTarjeta.Visible = false;
+
+                btnAgregarProductos.Visible = false;
+                btnVolverPedidoNoRetirado.Visible = false;
+
+                txtNotas.Enabled = false;
+                lblEliminado.Visible = true;
+            }
         }
 
         public void TipoPago(DetalleCajaDto detalle)
@@ -111,7 +136,9 @@ namespace Presentacion.Core.Pedido
 
                 var ListaSoloIdProductoPedido = producto_Pedido_Servicio.Eliminar(PedidoId);
 
-                MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                VerificarSiEstaEliminadoElPedido();
             }
         }
 

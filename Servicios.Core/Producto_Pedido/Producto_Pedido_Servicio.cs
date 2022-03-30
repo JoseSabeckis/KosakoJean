@@ -1,5 +1,6 @@
 ﻿using AccesoDatos;
 using Servicios.Core.Pedido.Dto;
+using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido.Dto;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,8 @@ namespace Servicios.Core.Producto_Pedido
 {
     public class Producto_Pedido_Servicio : IProducto_Pedido_Servicio
     {
+        IProductoServicio _ProductoServicio = new ProductoServicio();
+
         public long NuevoProductoPedido(Producto_Pedido_Dto producto)
         {
             using(var context = new KosakoDBEntities())
@@ -63,12 +66,15 @@ namespace Servicios.Core.Producto_Pedido
                 {
                     item.EstaEliminado = true;
 
-                    var listaSoloId = new Producto_Pedido_Dto
-                    {
-                        Id = item.Id
-                    };
+                    if (_ProductoServicio.ObtenerPorId(item.ProductoId).Creacion)
+                    {                       
+                        var listaSoloId = new Producto_Pedido_Dto
+                        {
+                            Id = item.Id
+                        };
 
-                    Lista.Add(listaSoloId);
+                        Lista.Add(listaSoloId);
+                    }                    
                 }
 
                 context.SaveChanges();

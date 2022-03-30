@@ -37,5 +37,7 @@ namespace Servicios.Core.Pedido.Dto
 
         public long ClienteId { get; set; }
 
+        public bool EstaEliminado { get; set; }
+
     }
 }

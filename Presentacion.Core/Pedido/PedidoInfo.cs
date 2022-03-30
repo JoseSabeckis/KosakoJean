@@ -41,6 +41,7 @@ namespace Presentacion.Core.Pedido
 
         AccesoDatos.EstadoPedido Estado;
 
+        public bool Eliminado = false;
         protected long EntidadId;
         protected long ProductoId;
         long PedidoId;
@@ -94,8 +95,9 @@ namespace Presentacion.Core.Pedido
                     btnVolverPedidoNoRetirado.Visible = true;
                     btnAgregarProductos.Visible = false;
                 }
-            }           
+            }
 
+            VerificarSiEstaEliminadoElPedido();
         }
 
         public void CargarGrilla()
@@ -384,8 +386,36 @@ namespace Presentacion.Core.Pedido
                     producto_Dato_Servicio.Eliminar(ListaSoloIdProductoPedido);
                 }               
 
-                MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                VerificarSiEstaEliminadoElPedido();
+
+                Eliminado = true;
             }
+        }
+
+        public void VerificarSiEstaEliminadoElPedido()
+        {
+            if (pedidoServicio.BuscarIDPedidos(PedidoId).EstaEliminado)
+            {
+                btnGuardar.Visible = false;
+                btnEliminar.Visible = false;
+
+                btnTerminar.Visible = false;
+
+                lblCobrar.Visible = false;
+                nudCobro.Visible = false;
+                btnCobro.Visible = false;
+
+                ckbNormal.Visible = false;
+                ckbTarjeta.Visible = false;
+
+                btnAgregarProductos.Visible = false;
+                btnVolverPedidoNoRetirado.Visible = false;
+
+                txtNotas.Enabled = false;
+                lblEliminado.Visible = true;
+            }           
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -501,12 +531,15 @@ namespace Presentacion.Core.Pedido
         {
             if (EntidadId != 0)
             {
-                var datos = new EstadoProducto(EntidadId);
-                datos.ShowDialog();
+                if (!pedidoServicio.BuscarIDPedidos(PedidoId).EstaEliminado)
+                {
+                    var datos = new EstadoProducto(EntidadId);
+                    datos.ShowDialog();
 
-                list = new List<VentaDto2>();
-                CrearGrilla(PedidoId);
-                CargarGrilla();
+                    list = new List<VentaDto2>();
+                    CrearGrilla(PedidoId);
+                    CargarGrilla();
+                }              
             }
         }
 

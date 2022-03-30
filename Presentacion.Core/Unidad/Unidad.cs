@@ -100,6 +100,11 @@ namespace Presentacion.Core.Unidad
         {
             var pedido = new PedidoInfo(Pedido.Id, estado);
             pedido.ShowDialog();
+
+            if (pedido.Eliminado)
+            {
+                btnRealizado.Visible = false;
+            }
         }
     }
 }

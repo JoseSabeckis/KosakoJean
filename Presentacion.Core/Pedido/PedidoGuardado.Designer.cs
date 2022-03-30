@@ -33,6 +33,7 @@ namespace Presentacion.Core.Pedido
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidoGuardado));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAgregarProductos = new System.Windows.Forms.Button();
             this.btnVolverPedidoNoRetirado = new System.Windows.Forms.Button();
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -65,7 +66,7 @@ namespace Presentacion.Core.Pedido
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnAgregarProductos = new System.Windows.Forms.Button();
+            this.lblEliminado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,6 +81,7 @@ namespace Presentacion.Core.Pedido
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblEliminado);
             this.panel1.Controls.Add(this.btnAgregarProductos);
             this.panel1.Controls.Add(this.btnVolverPedidoNoRetirado);
             this.panel1.Controls.Add(this.lblFechaInicio);
@@ -96,6 +98,20 @@ namespace Presentacion.Core.Pedido
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1176, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // btnAgregarProductos
+            // 
+            this.btnAgregarProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAgregarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAgregarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProductos.Location = new System.Drawing.Point(572, 57);
+            this.btnAgregarProductos.Name = "btnAgregarProductos";
+            this.btnAgregarProductos.Size = new System.Drawing.Size(213, 36);
+            this.btnAgregarProductos.TabIndex = 18;
+            this.btnAgregarProductos.Text = "Agregar Productos";
+            this.btnAgregarProductos.UseVisualStyleBackColor = false;
+            this.btnAgregarProductos.Click += new System.EventHandler(this.btnAgregarProductos_Click);
             // 
             // btnVolverPedidoNoRetirado
             // 
@@ -511,19 +527,18 @@ namespace Presentacion.Core.Pedido
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnAgregarProductos
+            // lblEliminado
             // 
-            this.btnAgregarProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAgregarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAgregarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarProductos.Location = new System.Drawing.Point(572, 57);
-            this.btnAgregarProductos.Name = "btnAgregarProductos";
-            this.btnAgregarProductos.Size = new System.Drawing.Size(213, 36);
-            this.btnAgregarProductos.TabIndex = 18;
-            this.btnAgregarProductos.Text = "Agregar Productos";
-            this.btnAgregarProductos.UseVisualStyleBackColor = false;
-            this.btnAgregarProductos.Click += new System.EventHandler(this.btnAgregarProductos_Click);
+            this.lblEliminado.AutoSize = true;
+            this.lblEliminado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblEliminado.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEliminado.ForeColor = System.Drawing.Color.Red;
+            this.lblEliminado.Location = new System.Drawing.Point(563, 52);
+            this.lblEliminado.Name = "lblEliminado";
+            this.lblEliminado.Size = new System.Drawing.Size(205, 26);
+            this.lblEliminado.TabIndex = 19;
+            this.lblEliminado.Text = "| Pedido Eliminado |";
+            this.lblEliminado.Visible = false;
             // 
             // PedidoGuardado
             // 
@@ -593,5 +608,6 @@ namespace Presentacion.Core.Pedido
         private System.Windows.Forms.NumericUpDown nudCobro;
         private System.Windows.Forms.Button btnVolverPedidoNoRetirado;
         private System.Windows.Forms.Button btnAgregarProductos;
+        private System.Windows.Forms.Label lblEliminado;
     }
 }

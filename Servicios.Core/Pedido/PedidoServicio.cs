@@ -61,7 +61,8 @@ namespace Servicios.Core.Pedido
                         FechaRetiro = x.FechaRetirado,
                         Horario = x.Horario,
                         DiasHastaRetiro = x.DiasHastaRetiro,
-                        FechaIniciado = x.FechaPedido
+                        FechaIniciado = x.FechaPedido,
+                        EstaEliminado = x.EstaEliminado
                     }).ToList();
 
             }
@@ -88,8 +89,8 @@ namespace Servicios.Core.Pedido
                         FechaRetiro = x.FechaRetirado,
                         Horario = x.Horario,
                         DiasHastaRetiro = x.DiasHastaRetiro,
-                        FechaIniciado = x.FechaPedido
-
+                        FechaIniciado = x.FechaPedido,
+                        EstaEliminado = x.EstaEliminado
                     }).ToList();
 
             }
@@ -103,6 +104,7 @@ namespace Servicios.Core.Pedido
 
                 eliminado.EstaEliminado = true;
 
+                context.SaveChanges();
             }
         }
 
@@ -129,7 +131,8 @@ namespace Servicios.Core.Pedido
                     FechaRetiro = x.FechaRetirado,
                     Horario = x.Horario,
                     DiasHastaRetiro = x.DiasHastaRetiro,
-                    FechaIniciado = x.FechaPedido
+                    FechaIniciado = x.FechaPedido,
+                    EstaEliminado = x.EstaEliminado
                 }).ToList();
 
             }
@@ -158,7 +161,8 @@ namespace Servicios.Core.Pedido
                     FechaRetiro = x.FechaRetirado,
                     Horario = x.Horario,
                     DiasHastaRetiro = x.DiasHastaRetiro,
-                    FechaIniciado = x.FechaPedido
+                    FechaIniciado = x.FechaPedido,
+                    EstaEliminado = x.EstaEliminado
                 }).ToList();
 
             }
@@ -187,7 +191,8 @@ namespace Servicios.Core.Pedido
                     FechaRetiro = x.FechaRetirado,
                     Horario = x.Horario,
                     DiasHastaRetiro = x.DiasHastaRetiro,
-                    FechaIniciado = x.FechaPedido
+                    FechaIniciado = x.FechaPedido,
+                    EstaEliminado = x.EstaEliminado
                 }).ToList();
 
             }
@@ -216,7 +221,8 @@ namespace Servicios.Core.Pedido
                     FechaRetiro = x.FechaRetirado,
                     Horario = x.Horario,
                     DiasHastaRetiro = x.DiasHastaRetiro,
-                    FechaIniciado = x.FechaPedido
+                    FechaIniciado = x.FechaPedido,
+                    EstaEliminado = x.EstaEliminado
                 }).ToList();
 
             }
@@ -244,7 +250,8 @@ namespace Servicios.Core.Pedido
                         FechaRetiro = aux.FechaRetirado,
                         Horario = aux.Horario,
                         DiasHastaRetiro = aux.DiasHastaRetiro,
-                        FechaIniciado = aux.FechaPedido
+                        FechaIniciado = aux.FechaPedido,
+                        EstaEliminado = aux.EstaEliminado
                     };
                 return aux2;
             }
@@ -294,7 +301,8 @@ namespace Servicios.Core.Pedido
                     FechaRetiro = x.FechaRetirado,
                     Horario = x.Horario,
                     DiasHastaRetiro = x.DiasHastaRetiro,
-                    FechaIniciado = x.FechaPedido
+                    FechaIniciado = x.FechaPedido,
+                    EstaEliminado = x.EstaEliminado
                 }).ToList();
 
             }
@@ -321,7 +329,8 @@ namespace Servicios.Core.Pedido
                         FechaRetiro = x.FechaRetirado,
                         Horario = x.Horario,
                         DiasHastaRetiro = x.DiasHastaRetiro,
-                        FechaIniciado = x.FechaPedido
+                        FechaIniciado = x.FechaPedido,
+                        EstaEliminado = x.EstaEliminado
                     }).ToList();
 
             }
@@ -348,7 +357,8 @@ namespace Servicios.Core.Pedido
                         FechaRetiro = x.FechaRetirado,
                         Horario = x.Horario,
                         DiasHastaRetiro = x.DiasHastaRetiro,
-                        FechaIniciado = x.FechaPedido
+                        FechaIniciado = x.FechaPedido,
+                        EstaEliminado = x.EstaEliminado
                     }).ToList();
 
             }
@@ -375,7 +385,8 @@ namespace Servicios.Core.Pedido
                         FechaRetiro = x.FechaRetirado,
                         Horario = x.Horario,
                         DiasHastaRetiro = x.DiasHastaRetiro,
-                        FechaIniciado = x.FechaPedido
+                        FechaIniciado = x.FechaPedido,
+                        EstaEliminado = x.EstaEliminado
                     }).ToList();
 
             }
