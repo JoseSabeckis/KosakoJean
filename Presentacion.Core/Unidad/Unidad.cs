@@ -85,7 +85,7 @@ namespace Presentacion.Core.Unidad
 
                     VerDatos();
 
-                    var completado = new Afirmacion("Listo !!!", "Ahora hay que esperar Paula");
+                    var completado = new Afirmacion(" |- Listo -|", "Pedido Fabricado.");
                     completado.ShowDialog();
 
                 }

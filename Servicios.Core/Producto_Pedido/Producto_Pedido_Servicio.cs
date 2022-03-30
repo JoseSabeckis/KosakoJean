@@ -176,7 +176,7 @@ namespace Servicios.Core.Producto_Pedido
         {
             using (var context = new KosakoDBEntities())
             {
-                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == id && x.Estado == EstadoPedido.Terminado).Select(x => new Producto_Pedido_Dto
+                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == id).Select(x => new Producto_Pedido_Dto
                 {
                     Cantidad = x.Cantidad,
                     Estado = x.Estado,
