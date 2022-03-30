@@ -73,7 +73,7 @@ namespace Servicios.Core.Producto_Pedido
 
                 context.SaveChanges();
 
-                return Lista;
+                return Lista.ToList();
             }
         }
 

@@ -74,7 +74,7 @@ namespace Servicios.Core.Producto_Dato
                     Datos = context.Producto_Datos.Where(x => x.Producto_PedidoId == item.Id).ToList();
                 }
 
-                foreach (var item2 in Datos)
+                foreach (var item2 in Datos.ToList())
                 {
                     item2.EstaEliminado = true;
                 }
