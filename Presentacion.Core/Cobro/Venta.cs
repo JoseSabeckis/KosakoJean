@@ -458,8 +458,6 @@ namespace Presentacion.Core.Cobro
 
                             btnLimpiar.PerformClick();
                         }
-
-                        return;
                     }
 
                     if (ckbCtaCte.Checked || ckbGuardar.Checked)
@@ -497,7 +495,6 @@ namespace Presentacion.Core.Cobro
                             btnLimpiar.PerformClick();
                         }
 
-                        return;
                     }
                    
                 }
@@ -507,6 +504,7 @@ namespace Presentacion.Core.Cobro
                 MessageBox.Show("Cargue la Grilla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            btnSeleccionProducto.Select();
         }
 
         public void TipoPago(DetalleCajaDto detalle)
@@ -681,7 +679,10 @@ namespace Presentacion.Core.Cobro
 
         private void btnSeleccionProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
-          
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                btnCobrar.PerformClick();
+            }
         }
 
         private void ckbCtaCte_CheckedChanged_1(object sender, EventArgs e)

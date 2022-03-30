@@ -24,8 +24,8 @@ namespace Servicios.Core.Producto_Pedido
                     PedidoId = producto.PedidoId,
                     ProductoId = producto.ProductoId,            
                     Descripcion = producto.Descripcion,
-                    TalleId = producto.TalleId
-
+                    TalleId = producto.TalleId,
+                    
                 };
 
                 context.Producto_Pedidos.Add(nuevo);
@@ -51,6 +51,32 @@ namespace Servicios.Core.Producto_Pedido
             }
         }
 
+        public List<Producto_Pedido_Dto> Eliminar(long pedidoid)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var estado = context.Producto_Pedidos.Where(x => x.PedidoId == pedidoid).ToList();
+
+                List<Producto_Pedido_Dto> Lista = new List<Producto_Pedido_Dto>();
+
+                foreach (var item in estado)
+                {
+                    item.EstaEliminado = true;
+
+                    var listaSoloId = new Producto_Pedido_Dto
+                    {
+                        Id = item.Id
+                    };
+
+                    Lista.Add(listaSoloId);
+                }
+
+                context.SaveChanges();
+
+                return Lista;
+            }
+        }
+
         public List<Producto_Pedido_Dto> BuscarId(long id)
         {
             using (var context = new KosakoDBEntities())
@@ -64,8 +90,8 @@ namespace Servicios.Core.Producto_Pedido
                     Talle = x.Talle,
                     Descripcion = x.Descripcion,
                     Id = x.Id,
-                    TalleId = x.TalleId
-
+                    TalleId = x.TalleId,
+                    EstaEliminado = x.EstaEliminado
                 }).ToList();
 
                 return estado;
@@ -87,8 +113,8 @@ namespace Servicios.Core.Producto_Pedido
                     Talle = estado.Talle,
                     Descripcion = estado.Descripcion,
                     Id = estado.Id,
-                    TalleId = estado.TalleId
-
+                    TalleId = estado.TalleId,
+                    EstaEliminado = estado.EstaEliminado
                 };
 
                 return estado2;
@@ -108,7 +134,8 @@ namespace Servicios.Core.Producto_Pedido
                     Talle = x.Talle,
                     Descripcion = x.Descripcion,
                     Id = x.Id,
-                    TalleId = x.TalleId
+                    TalleId = x.TalleId,
+                    EstaEliminado = x.EstaEliminado
 
                 }).ToList();
 
@@ -131,8 +158,8 @@ namespace Servicios.Core.Producto_Pedido
                     Talle = estado.Talle,
                     Descripcion = estado.Descripcion,
                     Id = estado.Id,
-                    TalleId = estado.TalleId
-
+                    TalleId = estado.TalleId,
+                    EstaEliminado = estado.EstaEliminado
                 };
 
                 return aux;
@@ -152,7 +179,8 @@ namespace Servicios.Core.Producto_Pedido
                     Talle = x.Talle,
                     Descripcion = x.Descripcion,
                     Id = x.Id,
-                    TalleId = x.TalleId
+                    TalleId = x.TalleId,
+                    EstaEliminado = x.EstaEliminado
 
                 }).ToList();
 
@@ -173,7 +201,8 @@ namespace Servicios.Core.Producto_Pedido
                     Talle = x.Talle,
                     Descripcion = x.Descripcion,
                     Id = x.Id,
-                    TalleId = x.TalleId
+                    TalleId = x.TalleId,
+                    EstaEliminado = x.EstaEliminado
 
                 }).ToList();
 
@@ -194,7 +223,8 @@ namespace Servicios.Core.Producto_Pedido
                     Talle = x.Talle,
                     Descripcion = x.Descripcion,
                     Id = x.Id,
-                    TalleId = x.TalleId
+                    TalleId = x.TalleId,
+                    EstaEliminado = x.EstaEliminado
 
                 }).ToList();
 
@@ -206,7 +236,7 @@ namespace Servicios.Core.Producto_Pedido
         {
             using (var context = new KosakoDBEntities())
             {
-                var estado = context.Producto_Pedidos.Where(x => x.Estado == EstadoPedido.Esperando).Select(x => new Producto_Pedido_Dto
+                var estado = context.Producto_Pedidos.Where(x => x.Estado == EstadoPedido.Esperando && x.EstaEliminado == false).Select(x => new Producto_Pedido_Dto
                 {
                     Cantidad = x.Cantidad,
                     Estado = x.Estado,
@@ -215,7 +245,8 @@ namespace Servicios.Core.Producto_Pedido
                     Talle = x.Talle,
                     Descripcion = x.Descripcion,
                     Id = x.Id,
-                    TalleId = x.TalleId
+                    TalleId = x.TalleId,
+                    EstaEliminado = x.EstaEliminado
 
                 }).ToList();
 
@@ -238,8 +269,8 @@ namespace Servicios.Core.Producto_Pedido
                     Talle = estado.Talle,
                     Descripcion = estado.Descripcion,
                     Id = estado.Id,
-                    TalleId = estado.TalleId
-
+                    TalleId = estado.TalleId,
+                    EstaEliminado = estado.EstaEliminado
                 };
 
                 return aux;

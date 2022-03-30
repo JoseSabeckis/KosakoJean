@@ -28,6 +28,7 @@ namespace AccesoDatos
         public string Talle { get; set; }
         public string Descripcion { get; set; }
         public long TalleId { get; set; }
+        public bool EstaEliminado { get; set; }
     
         public virtual Producto Producto { get; set; }
         public virtual Pedido Pedido { get; set; }

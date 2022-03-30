@@ -11,6 +11,8 @@ namespace Servicios.Core.Producto_Pedido
     {
         long NuevoProductoPedido(Producto_Pedido_Dto producto);
 
+        List<Producto_Pedido_Dto> Eliminar(long pedidoid);
+
         Producto_Pedido_Dto BuscarPedidoId2(long id);
 
         List<Producto_Pedido_Dto> BuscarPedidoId(long id);

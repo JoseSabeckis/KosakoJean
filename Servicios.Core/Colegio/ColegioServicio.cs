@@ -90,7 +90,7 @@ namespace Servicios.Core.Colegio
                         Descripcion = x.Descripcion,
                         EstaEliminado = x.EstaEliminado
 
-                    }).FirstOrDefault(x => x.Id == colegioId && x.EstaEliminado == false);
+                    }).FirstOrDefault(x => x.Id == colegioId);
             }
         }
 

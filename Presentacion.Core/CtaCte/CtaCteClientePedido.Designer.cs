@@ -138,7 +138,7 @@ namespace Presentacion.Core.CtaCte
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.ckbTarjeta);
             this.panel5.Controls.Add(this.ckbNormal);
-            this.panel5.Location = new System.Drawing.Point(159, 285);
+            this.panel5.Location = new System.Drawing.Point(132, 283);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(214, 33);
             this.panel5.TabIndex = 13;
@@ -196,12 +196,13 @@ namespace Presentacion.Core.CtaCte
             // 
             // txtApellido
             // 
+            this.txtApellido.BackColor = System.Drawing.SystemColors.Info;
             this.txtApellido.Enabled = false;
             this.txtApellido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.Location = new System.Drawing.Point(123, 16);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(289, 33);
-            this.txtApellido.TabIndex = 6;
+            this.txtApellido.TabIndex = 0;
             // 
             // label3
             // 
@@ -215,6 +216,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.SystemColors.Info;
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(123, 55);
@@ -274,7 +276,7 @@ namespace Presentacion.Core.CtaCte
             this.btnGuardar.Location = new System.Drawing.Point(0, 0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(146, 70);
-            this.btnGuardar.TabIndex = 0;
+            this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -296,6 +298,7 @@ namespace Presentacion.Core.CtaCte
             this.Name = "CtaCteClientePedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedido Por Agregar a Cta Cte";
+            this.Load += new System.EventHandler(this.CtaCteClientePedido_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();

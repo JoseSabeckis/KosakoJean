@@ -30,5 +30,6 @@ namespace Servicios.Core.Producto_Pedido.Dto
 
         public string ProductoDescripcion => productoServicio.ObtenerPorId(ProductoId).Descripcion;
 
+        public bool EstaEliminado { get; set; }
     }
 }

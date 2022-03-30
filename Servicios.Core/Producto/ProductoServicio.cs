@@ -139,7 +139,7 @@ namespace Servicios.Core.Producto
                         Stock = x.Stock,
                         Creacion = x.Creacion
 
-                    }).FirstOrDefault(x => x.Id == Id && x.EstaEliminado == false);
+                    }).FirstOrDefault(x => x.Id == Id);
             }
         }
 

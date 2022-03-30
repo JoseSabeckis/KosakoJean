@@ -92,8 +92,6 @@ namespace Presentacion.Core.CtaCte
 
             _Cliente = cliente;
 
-            txtApellido.Focus();
-
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -255,6 +253,11 @@ namespace Presentacion.Core.CtaCte
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void CtaCteClientePedido_Load(object sender, EventArgs e)
+        {
+            txtApellido.Focus();
         }
     }
 }

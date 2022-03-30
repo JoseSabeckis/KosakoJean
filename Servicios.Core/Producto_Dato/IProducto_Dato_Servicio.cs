@@ -13,6 +13,8 @@ namespace Servicios.Core.Producto_Dato.Dto
 
         Producto_Pedido_Dto ObtenerProductoPedidoPorId(long producto_pedido_id);
 
+        void Eliminar(List<Producto_Pedido_Dto> ListaSoloIdProductoPedido);
+
         void CambiarEstadoTerminado(long id);
 
         void CambiarEstadoEnEspera(long id);

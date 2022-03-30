@@ -63,6 +63,26 @@ namespace Servicios.Core.Producto_Dato
             }
         }
 
+        public void Eliminar(List<Producto_Pedido_Dto> ListaSoloIdProductoPedido)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                List<AccesoDatos.Producto_Dato> Datos = new List<AccesoDatos.Producto_Dato>();
+
+                foreach (var item in ListaSoloIdProductoPedido)
+                {
+                    Datos = context.Producto_Datos.Where(x => x.Producto_PedidoId == item.Id).ToList();
+                }
+
+                foreach (var item2 in Datos)
+                {
+                    item2.EstaEliminado = true;
+                }
+
+                context.SaveChanges();
+            }
+        }
+
         public Producto_Dato_Dto ObtenerPorId(long id)
         {
             using (var context = new KosakoDBEntities())
@@ -73,7 +93,8 @@ namespace Servicios.Core.Producto_Dato
                 {
                     Id = dato.Id,
                     EstadoPorPedido = dato.EstadoPorPedido,
-                    Producto_PedidoId = dato.Producto_PedidoId
+                    Producto_PedidoId = dato.Producto_PedidoId,
+                    EstaEliminado = dato.EstaEliminado
                 };
 
                 return dato2;
@@ -96,7 +117,8 @@ namespace Servicios.Core.Producto_Dato
                     Estado = dato.Estado,
                     PedidoId = dato.PedidoId,
                     TalleId = dato.TalleId,
-                    ProductoId = dato.ProductoId
+                    ProductoId = dato.ProductoId,
+                    EstaEliminado = dato.EstaEliminado
                 };
 
                 return dato2;
@@ -111,8 +133,8 @@ namespace Servicios.Core.Producto_Dato
                 {
                     Id = x.Id,
                     EstadoPorPedido = x.EstadoPorPedido,
-                    Producto_PedidoId = x.Producto_PedidoId
-
+                    Producto_PedidoId = x.Producto_PedidoId,
+                    EstaEliminado = x.EstaEliminado
                 }).ToList();
             }
         }
@@ -121,11 +143,12 @@ namespace Servicios.Core.Producto_Dato
         {
             using (var context = new KosakoDBEntities())
             {
-                return context.Producto_Datos.Where(x => x.EstadoPorPedido == EstadoPorPedido.EnEspera).Select(x => new Producto_Dato_Dto
+                return context.Producto_Datos.Where(x => x.EstadoPorPedido == EstadoPorPedido.EnEspera && x.EstaEliminado == false).Select(x => new Producto_Dato_Dto
                 {
                     Id = x.Id,
                     EstadoPorPedido = x.EstadoPorPedido,
-                    Producto_PedidoId = x.Producto_PedidoId
+                    Producto_PedidoId = x.Producto_PedidoId,
+                    EstaEliminado = x.EstaEliminado
 
                 }).ToList();
             }

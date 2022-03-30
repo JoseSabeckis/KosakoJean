@@ -45,7 +45,7 @@ namespace Servicios.Core.Pedido
                 var fecha = DateTime.Now;
                 fecha.AddDays(-30);
 
-                return context.Pedidos.AsNoTracking().Where(x => x.FechaPedido >= fecha)
+                return context.Pedidos.AsNoTracking().Where(x => x.FechaPedido >= fecha && x.EstaEliminado == false)
                     .Select(x => new PedidoDto
                     {
                         Adelanto = x.Adelanto,
@@ -111,7 +111,7 @@ namespace Servicios.Core.Pedido
             using (var context = new KosakoDBEntities())
             {
 
-                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.InicioPedido);
+                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.InicioPedido && x.EstaEliminado == false);
                     
 
                 return lista.OrderBy(x=>x.FechaEntrega).Select(x => new PedidoDto
@@ -140,7 +140,7 @@ namespace Servicios.Core.Pedido
             using (var context = new KosakoDBEntities())
             {
 
-                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.EsperandoRetiro);
+                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.EsperandoRetiro && x.EstaEliminado == false);
                     
 
                 return lista.OrderBy(x=>x.FechaEntrega).Select(x => new PedidoDto
@@ -169,7 +169,7 @@ namespace Servicios.Core.Pedido
             using (var context = new KosakoDBEntities())
             {
 
-                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.Guardado);
+                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.Guardado && x.EstaEliminado == false);
 
 
                 return lista.OrderBy(x => x.FechaEntrega).Select(x => new PedidoDto
@@ -198,7 +198,7 @@ namespace Servicios.Core.Pedido
             using (var context = new KosakoDBEntities())
             {
 
-                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.Retirado);
+                var lista = context.Pedidos.Where(x => x.Proceso == Proceso.Retirado && x.EstaEliminado == false);
 
 
                 return lista.OrderBy(x => x.FechaEntrega).Select(x => new PedidoDto
@@ -305,7 +305,7 @@ namespace Servicios.Core.Pedido
             using (var context = new KosakoDBEntities())
             {
 
-                return context.Pedidos.Where(x => x.ClienteId == id && x.Proceso == Proceso.PedidoTerminado)
+                return context.Pedidos.Where(x => x.ClienteId == id && x.Proceso == Proceso.PedidoTerminado && x.EstaEliminado == false)
                     .Select(x => new PedidoDto
                     {
                         Adelanto = x.Adelanto,
@@ -332,7 +332,7 @@ namespace Servicios.Core.Pedido
             using (var context = new KosakoDBEntities())
             {
 
-                return context.Pedidos.Where(x => x.FechaEntrega.Day >= desde.Day && x.FechaEntrega.Month >= desde.Month && x.FechaEntrega.Year >= desde.Year && x.FechaEntrega.Year <= hasta.Year && x.FechaEntrega.Month <= hasta.Month && x.FechaEntrega.Day <= hasta.Day && x.ClienteId == id && x.Proceso == Proceso.PedidoTerminado)
+                return context.Pedidos.Where(x => x.FechaEntrega.Day >= desde.Day && x.FechaEntrega.Month >= desde.Month && x.FechaEntrega.Year >= desde.Year && x.FechaEntrega.Year <= hasta.Year && x.FechaEntrega.Month <= hasta.Month && x.FechaEntrega.Day <= hasta.Day && x.ClienteId == id && x.Proceso == Proceso.PedidoTerminado && x.EstaEliminado == false)
                     .Select(x => new PedidoDto
                     {
                         Adelanto = x.Adelanto,
@@ -359,7 +359,7 @@ namespace Servicios.Core.Pedido
             using (var context = new KosakoDBEntities())
             {
 
-                return context.Pedidos.Where(x => x.FechaEntrega.Day == date.Day && x.FechaEntrega.Month == date.Month && x.FechaEntrega.Year == date.Year && x.ClienteId == id && x.Proceso == Proceso.PedidoTerminado)
+                return context.Pedidos.Where(x => x.FechaEntrega.Day == date.Day && x.FechaEntrega.Month == date.Month && x.FechaEntrega.Year == date.Year && x.ClienteId == id && x.Proceso == Proceso.PedidoTerminado && x.EstaEliminado == false)
                     .Select(x => new PedidoDto
                     {
                         Adelanto = x.Adelanto,

@@ -377,6 +377,10 @@ namespace Presentacion.Core.Pedido
             {
                 pedidoServicio.Eliminar(PedidoId);
 
+                var ListaSoloIdProductoPedido = producto_Pedido_Servicio.Eliminar(PedidoId);
+
+                producto_Dato_Servicio.Eliminar(ListaSoloIdProductoPedido);
+
                 MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }

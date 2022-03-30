@@ -8,6 +8,8 @@ using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Producto;
+using Servicios.Core.Producto_Dato;
+using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Venta;
@@ -32,6 +34,7 @@ namespace Presentacion.Core.Pedido
         private readonly IVentaServicio ventaServicio;
         private readonly ICajaServicio cajaServicio;
         private readonly IDetalleCajaServicio detalleCajaServicio;
+        private readonly IProducto_Dato_Servicio producto_Dato_Servicio;
 
         private readonly ICtaCteServicio ctaCteServicio;
 
@@ -54,6 +57,7 @@ namespace Presentacion.Core.Pedido
             detalleCajaServicio = new DetalleCajaServicio();
             ctaCteServicio = new CtaCteServicio();
             ventaServicio = new VentaServicio();
+            producto_Dato_Servicio = new Producto_Dato_Servicio();
 
             list = new List<VentaDto2>();
 
@@ -106,6 +110,10 @@ namespace Presentacion.Core.Pedido
             if (MessageBox.Show("Este Seguro De Eliminar Este Pedido, Perdera Todos Los Datos...?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 pedidoServicio.Eliminar(PedidoId);
+
+                var ListaSoloIdProductoPedido = producto_Pedido_Servicio.Eliminar(PedidoId);
+
+                producto_Dato_Servicio.Eliminar(ListaSoloIdProductoPedido);
 
                 MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }

@@ -33,5 +33,7 @@ namespace Servicios.Core.Producto_Dato.Dto
 
         public string Cliente => pedidoServicio.BuscarIDPedidos(producto_Pedido_Servicio.BuscarId_Producto_Pedido(Producto_PedidoId).PedidoId).Apellido + " " + pedidoServicio.BuscarIDPedidos(producto_Pedido_Servicio.BuscarId_Producto_Pedido(Producto_PedidoId).PedidoId).Nombre;
 
+        public bool EstaEliminado { get; set; }
+
     }
 }

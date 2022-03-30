@@ -125,7 +125,7 @@ namespace Servicios.Core.Cliente
                         Foto = x.Foto,
                         Principal = x.Principal
 
-                    }).FirstOrDefault(x => x.Id == colegioId && x.EstaEliminado == false);
+                    }).FirstOrDefault(x => x.Id == colegioId);
             }
         }
 

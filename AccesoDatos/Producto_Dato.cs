@@ -17,6 +17,7 @@ namespace AccesoDatos
         public long Id { get; set; }
         public EstadoPorPedido EstadoPorPedido { get; set; }
         public long Producto_PedidoId { get; set; }
+        public bool EstaEliminado { get; set; }
     
         public virtual Producto_Pedido Producto_Pedido { get; set; }
     }

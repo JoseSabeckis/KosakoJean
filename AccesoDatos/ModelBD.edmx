@@ -159,6 +159,7 @@
     <Property Name="Talle" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TalleId" Type="bigint" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Ventas">
     <Key>
@@ -228,6 +229,7 @@
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="EstadoPorPedido" Type="bigint" Nullable="false" />
     <Property Name="Producto_PedidoId" Type="bigint" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
@@ -592,6 +594,7 @@
           <NavigationProperty Name="TalleEntidad" Relationship="KosakoDBModel.TalleProducto_Pedido" FromRole="Producto_Pedido" ToRole="Talle" />
           <Property Name="TalleId" Type="Int64" Nullable="false" />
           <NavigationProperty Name="Producto_Dato" Relationship="KosakoDBModel.Producto_PedidoProducto_Dato" FromRole="Producto_Pedido" ToRole="Producto_Dato" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="ProductoProducto_Pedido">
           <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="1" />
@@ -780,6 +783,7 @@
           <Property Name="EstadoPorPedido" Type="KosakoDBModel.EstadoPorPedido" Nullable="false" />
           <NavigationProperty Name="Producto_Pedido" Relationship="KosakoDBModel.Producto_PedidoProducto_Dato" FromRole="Producto_Dato" ToRole="Producto_Pedido" />
           <Property Name="Producto_PedidoId" Type="Int64" Nullable="false" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="Producto_PedidoProducto_Dato">
           <End Type="KosakoDBModel.Producto_Pedido" Role="Producto_Pedido" Multiplicity="1" />
@@ -899,6 +903,7 @@
           <ScalarProperty Name="Talle" ColumnName="Talle" />
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="TalleId" ColumnName="TalleId" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -972,6 +977,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="EstadoPorPedido" ColumnName="EstadoPorPedido" />
           <ScalarProperty Name="Producto_PedidoId" ColumnName="Producto_PedidoId" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
