@@ -99,8 +99,7 @@ namespace Presentacion.Core.Pedido
                 }
             }
 
-            VerificarSiEstaEliminadoElPedido();
-            VerSiHayProductos();
+            SiNoHayProductos();
         }
 
         public void CargarGrilla()
@@ -268,8 +267,11 @@ namespace Presentacion.Core.Pedido
                     lblVendido.Text = $"Entregado el \n{pedido.FechaRetirado}";
                 }
 
-                lblPagado.Text = $"| Pagado |";
-                lblPagado.Visible = true;               
+                if (!pedido.EstaEliminado)
+                {
+                    lblPagado.Text = $"| Pagado |";
+                    lblPagado.Visible = true;
+                }                        
 
             }
             else
@@ -410,7 +412,7 @@ namespace Presentacion.Core.Pedido
                 btnGuardar.Visible = false;
                 btnEliminar.Visible = false;
 
-                btnEliminarPedidoSeleccionado.Enabled = false;
+                btnEliminarPedidoSeleccionado.Visible = false;
                 btnTerminar.Visible = false;
 
                 lblCobrar.Visible = false;
@@ -543,7 +545,11 @@ namespace Presentacion.Core.Pedido
         {
             if (dgvGrilla.RowCount == 0)
             {
-                btnEliminarPedidoSeleccionado.Enabled = false;
+                btnEliminarPedidoSeleccionado.Visible = false;
+            }
+            else
+            {
+                btnEliminarPedidoSeleccionado.Visible = true;
             }
         }
 
@@ -595,6 +601,8 @@ namespace Presentacion.Core.Pedido
                 CargarGrilla();
 
                 Datos(PedidoId);
+
+                VerSiHayProductos();
             }
             
         }
@@ -602,7 +610,7 @@ namespace Presentacion.Core.Pedido
         private void btnEliminarPedidoSeleccionado_Click(object sender, EventArgs e)
         {
             if (dgvGrilla.RowCount > 0)
-            {
+            {             
                 if (EntidadParaBorrar != 0)
                 {
                     if (MessageBox.Show("Esta Seguro de Borrar Este Producto?\nSi Hay Mas de un Producto Se Eliminara Uno","Pregunta",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -655,6 +663,7 @@ namespace Presentacion.Core.Pedido
 
                         //cargar datos de nuevo
                         CargaDeNuevo();
+                        VerSiHayProductos();
                         VerSiHayProductosDespuesDeBorrar();
 
                         if (Bandera == 1)
@@ -681,8 +690,19 @@ namespace Presentacion.Core.Pedido
             if (dgvGrilla.RowCount == 0)
             {
                 EstaPorEliminar = true;
+                SiNoHayProductos();
                 btnEliminarPedidoSeleccionado.PerformClick();
             }
+        }
+
+        public void SiNoHayProductos()
+        {
+            if (dgvGrilla.RowCount == 0)
+            {
+                btnAgregarProductos.Visible = false;
+                btnEliminarPedidoSeleccionado.Visible = false;
+            }
+            
         }
 
         public void CargaDeNuevo()

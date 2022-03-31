@@ -65,7 +65,7 @@ namespace Presentacion.Core.CtaCte
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(582, 436);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 2;
             // 
             // panel6
             // 
@@ -84,7 +84,7 @@ namespace Presentacion.Core.CtaCte
             this.panel6.Location = new System.Drawing.Point(67, 93);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(453, 330);
-            this.panel6.TabIndex = 1;
+            this.panel6.TabIndex = 0;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // dtpFechaEntrega
@@ -92,7 +92,7 @@ namespace Presentacion.Core.CtaCte
             this.dtpFechaEntrega.Location = new System.Drawing.Point(43, 235);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(369, 33);
-            this.dtpFechaEntrega.TabIndex = 17;
+            this.dtpFechaEntrega.TabIndex = 5;
             // 
             // label6
             // 
@@ -119,7 +119,7 @@ namespace Presentacion.Core.CtaCte
             this.cmbHorario.Location = new System.Drawing.Point(241, 101);
             this.cmbHorario.Name = "cmbHorario";
             this.cmbHorario.Size = new System.Drawing.Size(171, 33);
-            this.cmbHorario.TabIndex = 15;
+            this.cmbHorario.TabIndex = 3;
             // 
             // label5
             // 
@@ -149,7 +149,7 @@ namespace Presentacion.Core.CtaCte
             this.ckbTarjeta.Location = new System.Drawing.Point(119, 3);
             this.ckbTarjeta.Name = "ckbTarjeta";
             this.ckbTarjeta.Size = new System.Drawing.Size(94, 29);
-            this.ckbTarjeta.TabIndex = 11;
+            this.ckbTarjeta.TabIndex = 7;
             this.ckbTarjeta.Text = "Tarjeta";
             this.ckbTarjeta.UseVisualStyleBackColor = true;
             this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
@@ -162,7 +162,7 @@ namespace Presentacion.Core.CtaCte
             this.ckbNormal.Location = new System.Drawing.Point(3, 3);
             this.ckbNormal.Name = "ckbNormal";
             this.ckbNormal.Size = new System.Drawing.Size(110, 29);
-            this.ckbNormal.TabIndex = 10;
+            this.ckbNormal.TabIndex = 6;
             this.ckbNormal.Text = "Contado";
             this.ckbNormal.UseVisualStyleBackColor = true;
             this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
@@ -183,7 +183,7 @@ namespace Presentacion.Core.CtaCte
             0});
             this.nudAdelanto.Name = "nudAdelanto";
             this.nudAdelanto.Size = new System.Drawing.Size(119, 33);
-            this.nudAdelanto.TabIndex = 10;
+            this.nudAdelanto.TabIndex = 4;
             // 
             // label2
             // 
@@ -202,7 +202,7 @@ namespace Presentacion.Core.CtaCte
             this.txtApellido.Location = new System.Drawing.Point(123, 16);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(289, 33);
-            this.txtApellido.TabIndex = 0;
+            this.txtApellido.TabIndex = 1;
             // 
             // label3
             // 
@@ -222,7 +222,7 @@ namespace Presentacion.Core.CtaCte
             this.txtNombre.Location = new System.Drawing.Point(123, 55);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(289, 33);
-            this.txtNombre.TabIndex = 7;
+            this.txtNombre.TabIndex = 2;
             // 
             // label4
             // 
@@ -244,7 +244,7 @@ namespace Presentacion.Core.CtaCte
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(578, 74);
-            this.panel2.TabIndex = 0;
+            this.panel2.TabIndex = 55;
             // 
             // label1
             // 
@@ -263,7 +263,7 @@ namespace Presentacion.Core.CtaCte
             this.btnVolver.Location = new System.Drawing.Point(467, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(107, 70);
-            this.btnVolver.TabIndex = 1;
+            this.btnVolver.TabIndex = 9;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -276,7 +276,7 @@ namespace Presentacion.Core.CtaCte
             this.btnGuardar.Location = new System.Drawing.Point(0, 0);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(146, 70);
-            this.btnGuardar.TabIndex = 6;
+            this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);

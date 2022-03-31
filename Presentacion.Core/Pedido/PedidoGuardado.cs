@@ -85,7 +85,7 @@ namespace Presentacion.Core.Pedido
                 btnAgregarProductos.Visible = true;
             }
 
-            VerificarSiEstaEliminadoElPedido();
+            //VerificarSiEstaEliminadoElPedido();
         }
 
         public void VerificarSiEstaEliminadoElPedido()
@@ -95,7 +95,7 @@ namespace Presentacion.Core.Pedido
                 btnGuardar.Visible = false;
                 btnEliminar.Visible = false;
 
-                btnEliminarPedidoSeleccionado.Enabled = false;
+                btnEliminarPedidoSeleccionado.Visible = false;
                 btnTerminar.Visible = false;
 
                 lblCobrar.Visible = false;
@@ -111,15 +111,19 @@ namespace Presentacion.Core.Pedido
                 txtNotas.Enabled = false;
                 lblEliminado.Visible = true;
             }
-
-            VerSiHayProductos();
         }
 
         public void VerSiHayProductos()
         {
             if (dgvGrilla.RowCount == 0)
             {
-                btnEliminarPedidoSeleccionado.Enabled = false;
+                btnEliminarPedidoSeleccionado.Visible = false;
+                btnAgregarProductos.Visible = false;
+                btnTerminar.Visible = false;
+            }
+            else
+            {
+                btnEliminarPedidoSeleccionado.Visible = true;
             }
         }
 
@@ -501,6 +505,9 @@ namespace Presentacion.Core.Pedido
                 CargarGrilla();
 
                 Datos(PedidoId);
+
+                VerSiHayProductos();
+
             }
         }
 
@@ -548,6 +555,7 @@ namespace Presentacion.Core.Pedido
 
                         //cargar datos de nuevo
                         CargaDeNuevo();
+                        VerSiHayProductos();
                         VerSiHayProductosDespuesDeBorrar();
 
                         if (Bandera == 1)

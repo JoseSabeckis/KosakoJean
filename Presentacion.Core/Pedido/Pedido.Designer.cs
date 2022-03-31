@@ -41,6 +41,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.ckbTarjeta = new System.Windows.Forms.CheckBox();
+            this.ckbCtaCte = new System.Windows.Forms.CheckBox();
             this.ckbNormal = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
@@ -53,7 +54,6 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ckbCtaCte = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -99,7 +99,7 @@
             this.cmbHorario.Location = new System.Drawing.Point(113, 349);
             this.cmbHorario.Name = "cmbHorario";
             this.cmbHorario.Size = new System.Drawing.Size(187, 32);
-            this.cmbHorario.TabIndex = 23;
+            this.cmbHorario.TabIndex = 10;
             // 
             // label6
             // 
@@ -118,7 +118,7 @@
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(452, 162);
-            this.txtDescripcion.TabIndex = 13;
+            this.txtDescripcion.TabIndex = 11;
             // 
             // label10
             // 
@@ -195,10 +195,21 @@
             this.ckbTarjeta.Location = new System.Drawing.Point(9, 46);
             this.ckbTarjeta.Name = "ckbTarjeta";
             this.ckbTarjeta.Size = new System.Drawing.Size(86, 28);
-            this.ckbTarjeta.TabIndex = 11;
+            this.ckbTarjeta.TabIndex = 13;
             this.ckbTarjeta.Text = "Tarjeta";
             this.ckbTarjeta.UseVisualStyleBackColor = true;
             this.ckbTarjeta.CheckedChanged += new System.EventHandler(this.ckbTarjeta_CheckedChanged);
+            // 
+            // ckbCtaCte
+            // 
+            this.ckbCtaCte.AutoSize = true;
+            this.ckbCtaCte.Location = new System.Drawing.Point(9, 80);
+            this.ckbCtaCte.Name = "ckbCtaCte";
+            this.ckbCtaCte.Size = new System.Drawing.Size(84, 28);
+            this.ckbCtaCte.TabIndex = 14;
+            this.ckbCtaCte.Text = "CtaCte";
+            this.ckbCtaCte.UseVisualStyleBackColor = true;
+            this.ckbCtaCte.CheckedChanged += new System.EventHandler(this.ckbCtaCte_CheckedChanged);
             // 
             // ckbNormal
             // 
@@ -208,7 +219,7 @@
             this.ckbNormal.Location = new System.Drawing.Point(9, 12);
             this.ckbNormal.Name = "ckbNormal";
             this.ckbNormal.Size = new System.Drawing.Size(100, 28);
-            this.ckbNormal.TabIndex = 10;
+            this.ckbNormal.TabIndex = 12;
             this.ckbNormal.Text = "Contado";
             this.ckbNormal.UseVisualStyleBackColor = true;
             this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
@@ -296,7 +307,7 @@
             this.btnCargar.Location = new System.Drawing.Point(0, 0);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(191, 92);
-            this.btnCargar.TabIndex = 22;
+            this.btnCargar.TabIndex = 15;
             this.btnCargar.Text = "Cargar";
             this.btnCargar.UseVisualStyleBackColor = false;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
@@ -309,7 +320,7 @@
             this.btnVolver.Location = new System.Drawing.Point(191, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(109, 92);
-            this.btnVolver.TabIndex = 23;
+            this.btnVolver.TabIndex = 16;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -333,17 +344,6 @@
             this.label1.Size = new System.Drawing.Size(215, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cargue mas Informacion";
-            // 
-            // ckbCtaCte
-            // 
-            this.ckbCtaCte.AutoSize = true;
-            this.ckbCtaCte.Location = new System.Drawing.Point(9, 80);
-            this.ckbCtaCte.Name = "ckbCtaCte";
-            this.ckbCtaCte.Size = new System.Drawing.Size(84, 28);
-            this.ckbCtaCte.TabIndex = 12;
-            this.ckbCtaCte.Text = "CtaCte";
-            this.ckbCtaCte.UseVisualStyleBackColor = true;
-            this.ckbCtaCte.CheckedChanged += new System.EventHandler(this.ckbCtaCte_CheckedChanged);
             // 
             // Pedido
             // 
