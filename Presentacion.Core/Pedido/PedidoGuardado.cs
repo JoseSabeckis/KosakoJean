@@ -40,8 +40,9 @@ namespace Presentacion.Core.Pedido
         AccesoDatos.Proceso Estado;
 
         long PedidoId;
-
+        long EntidadId;
         decimal _Debe;
+        bool EstaPorEliminar = false;
 
         List<VentaDto2> list;
 
@@ -94,6 +95,7 @@ namespace Presentacion.Core.Pedido
                 btnGuardar.Visible = false;
                 btnEliminar.Visible = false;
 
+                btnEliminarPedidoSeleccionado.Enabled = false;
                 btnTerminar.Visible = false;
 
                 lblCobrar.Visible = false;
@@ -108,6 +110,16 @@ namespace Presentacion.Core.Pedido
 
                 txtNotas.Enabled = false;
                 lblEliminado.Visible = true;
+            }
+
+            VerSiHayProductos();
+        }
+
+        public void VerSiHayProductos()
+        {
+            if (dgvGrilla.RowCount == 0)
+            {
+                btnEliminarPedidoSeleccionado.Enabled = false;
             }
         }
 
@@ -130,15 +142,30 @@ namespace Presentacion.Core.Pedido
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Este Seguro De Eliminar Este Pedido, Perdera Todos Los Datos...?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (!EstaPorEliminar)
             {
-                pedidoServicio.Eliminar(PedidoId);
+                if (MessageBox.Show("Este Seguro De Eliminar Este Pedido, Perdera Todos Los Datos...?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    return;
+                }
+            }
 
-                var ListaSoloIdProductoPedido = producto_Pedido_Servicio.Eliminar(PedidoId);
+            pedidoServicio.Eliminar(PedidoId);
 
-                MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var ListaSoloIdProductoPedido = producto_Pedido_Servicio.Eliminar(PedidoId);
 
-                VerificarSiEstaEliminadoElPedido();
+            MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            VerificarSiEstaEliminadoElPedido();
+
+        }
+
+        public void VerSiHayProductosDespuesDeBorrar()
+        {
+            if (dgvGrilla.RowCount == 0)
+            {
+                EstaPorEliminar = true;
+                btnEliminarPedidoSeleccionado.PerformClick();
             }
         }
 
@@ -457,6 +484,8 @@ namespace Presentacion.Core.Pedido
                 lblVendido.Visible = false;
                 btnTerminar.Visible = true;
                 btnAgregarProductos.Visible = true;
+
+                VerSiHayProductos();
             }
         }
 
@@ -472,6 +501,92 @@ namespace Presentacion.Core.Pedido
                 CargarGrilla();
 
                 Datos(PedidoId);
+            }
+        }
+
+        private void btnEliminarPedidoSeleccionado_Click(object sender, EventArgs e)
+        {
+            if (dgvGrilla.RowCount > 0)
+            {
+                if (EntidadId != 0)
+                {
+                    if (MessageBox.Show("Esta Seguro de Borrar Este Producto?\nSi Hay Mas de un Producto Se Eliminara Uno", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        var pedido = producto_Pedido_Servicio.ObtenerPorId(EntidadId);
+
+                        decimal CantRestar = 0;
+                        int Bandera = 0;
+
+                        if (pedido.Cantidad > 1)
+                        {
+                            producto_Pedido_Servicio.RestarCantidad1(EntidadId);
+
+                            CantRestar = productoServicio.ObtenerPorId(pedido.ProductoId).Precio;
+
+                            Bandera = 1;
+                        }
+                        else
+                        {
+                            producto_Pedido_Servicio.EliminacionDefinitiva(EntidadId);
+
+                            CantRestar = productoServicio.ObtenerPorId(pedido.ProductoId).Precio * pedido.Cantidad;
+
+                            Bandera = 2;
+                        }
+
+                        pedidoServicio.RestarTotal(pedido.PedidoId, CantRestar);
+
+                        var pedidoPrincipal = pedidoServicio.BuscarIDPedidos(pedido.PedidoId);
+
+                        if (pedidoPrincipal.Adelanto != 0)
+                        {
+                            if (pedidoPrincipal.Adelanto > pedidoPrincipal.Total)
+                            {
+                                pedidoServicio.RestarAdelanto(pedidoPrincipal.Id, CantRestar);
+                            }
+                        }                        
+
+                        //cargar datos de nuevo
+                        CargaDeNuevo();
+                        VerSiHayProductosDespuesDeBorrar();
+
+                        if (Bandera == 1)
+                        {
+                            MessageBox.Show("- Eliminacion Realizada -\nVerifique El Esta Del Producto Restante...", "Revision", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        if (Bandera == 2)
+                        {
+                            MessageBox.Show("- Producto Borrado -\nContinue Controlando los Datos", "Bien", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        if (Bandera == 0)
+                        {
+                            MessageBox.Show("Contaxte al Programador Tel: 3813590385", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void CargaDeNuevo()
+        {
+            list = new List<VentaDto2>();
+            CrearGrilla(PedidoId);
+            CargarGrilla();
+
+            Datos(PedidoId);
+        }
+
+        private void dgvGrilla_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvGrilla.RowCount > 0)
+            {
+                EntidadId = (long)dgvGrilla["Id", e.RowIndex].Value;
+            }
+            else
+            {
+                EntidadId = 0;
             }
         }
     }

@@ -33,6 +33,7 @@ namespace Presentacion.Core.Pedido
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidoGuardado));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblEliminado = new System.Windows.Forms.Label();
             this.btnAgregarProductos = new System.Windows.Forms.Button();
             this.btnVolverPedidoNoRetirado = new System.Windows.Forms.Button();
             this.lblFechaInicio = new System.Windows.Forms.Label();
@@ -66,7 +67,7 @@ namespace Presentacion.Core.Pedido
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.lblEliminado = new System.Windows.Forms.Label();
+            this.btnEliminarPedidoSeleccionado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,6 +82,7 @@ namespace Presentacion.Core.Pedido
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnEliminarPedidoSeleccionado);
             this.panel1.Controls.Add(this.lblEliminado);
             this.panel1.Controls.Add(this.btnAgregarProductos);
             this.panel1.Controls.Add(this.btnVolverPedidoNoRetirado);
@@ -96,18 +98,30 @@ namespace Presentacion.Core.Pedido
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1176, 100);
+            this.panel1.Size = new System.Drawing.Size(1172, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // lblEliminado
+            // 
+            this.lblEliminado.AutoSize = true;
+            this.lblEliminado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblEliminado.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEliminado.ForeColor = System.Drawing.Color.Red;
+            this.lblEliminado.Location = new System.Drawing.Point(563, 52);
+            this.lblEliminado.Name = "lblEliminado";
+            this.lblEliminado.Size = new System.Drawing.Size(205, 26);
+            this.lblEliminado.TabIndex = 19;
+            this.lblEliminado.Text = "| Pedido Eliminado |";
+            this.lblEliminado.Visible = false;
             // 
             // btnAgregarProductos
             // 
-            this.btnAgregarProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnAgregarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAgregarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarProductos.Location = new System.Drawing.Point(572, 57);
+            this.btnAgregarProductos.Location = new System.Drawing.Point(143, 63);
             this.btnAgregarProductos.Name = "btnAgregarProductos";
-            this.btnAgregarProductos.Size = new System.Drawing.Size(213, 36);
+            this.btnAgregarProductos.Size = new System.Drawing.Size(233, 29);
             this.btnAgregarProductos.TabIndex = 18;
             this.btnAgregarProductos.Text = "Agregar Productos";
             this.btnAgregarProductos.UseVisualStyleBackColor = false;
@@ -119,7 +133,7 @@ namespace Presentacion.Core.Pedido
             this.btnVolverPedidoNoRetirado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnVolverPedidoNoRetirado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolverPedidoNoRetirado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolverPedidoNoRetirado.Location = new System.Drawing.Point(791, 57);
+            this.btnVolverPedidoNoRetirado.Location = new System.Drawing.Point(787, 57);
             this.btnVolverPedidoNoRetirado.Name = "btnVolverPedidoNoRetirado";
             this.btnVolverPedidoNoRetirado.Size = new System.Drawing.Size(244, 35);
             this.btnVolverPedidoNoRetirado.TabIndex = 17;
@@ -134,7 +148,7 @@ namespace Presentacion.Core.Pedido
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblFechaInicio.Location = new System.Drawing.Point(787, 34);
+            this.lblFechaInicio.Location = new System.Drawing.Point(783, 34);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(59, 20);
             this.lblFechaInicio.TabIndex = 16;
@@ -145,7 +159,7 @@ namespace Presentacion.Core.Pedido
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(787, 6);
+            this.label6.Location = new System.Drawing.Point(783, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(185, 20);
             this.label6.TabIndex = 15;
@@ -191,7 +205,7 @@ namespace Presentacion.Core.Pedido
             this.lblPersona.BackColor = System.Drawing.Color.Red;
             this.lblPersona.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersona.ForeColor = System.Drawing.Color.Black;
-            this.lblPersona.Location = new System.Drawing.Point(324, 54);
+            this.lblPersona.Location = new System.Drawing.Point(324, 36);
             this.lblPersona.Name = "lblPersona";
             this.lblPersona.Size = new System.Drawing.Size(184, 24);
             this.lblPersona.TabIndex = 11;
@@ -201,7 +215,7 @@ namespace Presentacion.Core.Pedido
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(139, 54);
+            this.label1.Location = new System.Drawing.Point(139, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 24);
             this.label1.TabIndex = 10;
@@ -224,7 +238,7 @@ namespace Presentacion.Core.Pedido
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(1059, 0);
+            this.btnVolver.Location = new System.Drawing.Point(1055, 0);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(113, 96);
             this.btnVolver.TabIndex = 0;
@@ -236,11 +250,12 @@ namespace Presentacion.Core.Pedido
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.dgvGrilla);
+            this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 100);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1176, 359);
+            this.panel2.Size = new System.Drawing.Size(1176, 459);
             this.panel2.TabIndex = 1;
             // 
             // dgvGrilla
@@ -266,7 +281,7 @@ namespace Presentacion.Core.Pedido
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvGrilla.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvGrilla.Location = new System.Drawing.Point(0, 0);
+            this.dgvGrilla.Location = new System.Drawing.Point(0, 100);
             this.dgvGrilla.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGrilla.MultiSelect = false;
             this.dgvGrilla.Name = "dgvGrilla";
@@ -274,6 +289,7 @@ namespace Presentacion.Core.Pedido
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGrilla.Size = new System.Drawing.Size(1172, 245);
             this.dgvGrilla.TabIndex = 13;
+            this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             // 
             // panel3
             // 
@@ -287,7 +303,7 @@ namespace Presentacion.Core.Pedido
             this.panel3.Controls.Add(this.txtNotas);
             this.panel3.Controls.Add(this.btnGuardar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 245);
+            this.panel3.Location = new System.Drawing.Point(0, 345);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1172, 110);
             this.panel3.TabIndex = 0;
@@ -527,18 +543,19 @@ namespace Presentacion.Core.Pedido
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // lblEliminado
+            // btnEliminarPedidoSeleccionado
             // 
-            this.lblEliminado.AutoSize = true;
-            this.lblEliminado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblEliminado.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEliminado.ForeColor = System.Drawing.Color.Red;
-            this.lblEliminado.Location = new System.Drawing.Point(563, 52);
-            this.lblEliminado.Name = "lblEliminado";
-            this.lblEliminado.Size = new System.Drawing.Size(205, 26);
-            this.lblEliminado.TabIndex = 19;
-            this.lblEliminado.Text = "| Pedido Eliminado |";
-            this.lblEliminado.Visible = false;
+            this.btnEliminarPedidoSeleccionado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarPedidoSeleccionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminarPedidoSeleccionado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarPedidoSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarPedidoSeleccionado.Location = new System.Drawing.Point(564, 56);
+            this.btnEliminarPedidoSeleccionado.Name = "btnEliminarPedidoSeleccionado";
+            this.btnEliminarPedidoSeleccionado.Size = new System.Drawing.Size(213, 36);
+            this.btnEliminarPedidoSeleccionado.TabIndex = 20;
+            this.btnEliminarPedidoSeleccionado.Text = "Eliminar Producto Seleccionado";
+            this.btnEliminarPedidoSeleccionado.UseVisualStyleBackColor = false;
+            this.btnEliminarPedidoSeleccionado.Click += new System.EventHandler(this.btnEliminarPedidoSeleccionado_Click);
             // 
             // PedidoGuardado
             // 
@@ -547,7 +564,6 @@ namespace Presentacion.Core.Pedido
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1176, 459);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1192, 498);
@@ -609,5 +625,6 @@ namespace Presentacion.Core.Pedido
         private System.Windows.Forms.Button btnVolverPedidoNoRetirado;
         private System.Windows.Forms.Button btnAgregarProductos;
         private System.Windows.Forms.Label lblEliminado;
+        private System.Windows.Forms.Button btnEliminarPedidoSeleccionado;
     }
 }

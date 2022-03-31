@@ -54,6 +54,23 @@ namespace Servicios.Core.Producto_Pedido
             }
         }
 
+        public List<long> BuscarProductoEnPedidos(long productoId)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var pedidos = context.Producto_Pedidos.Where(x => x.ProductoId == productoId && x.Estado == EstadoPedido.Esperando).ToList();
+
+                List<long> Datos = new List<long>();
+
+                foreach (var item in pedidos)
+                {
+                    Datos.Add(item.Id);
+                }
+
+                return Datos;
+            }
+        }
+
         public List<Producto_Pedido_Dto> Eliminar(long pedidoid)
         {
             using (var context = new KosakoDBEntities())
@@ -80,6 +97,33 @@ namespace Servicios.Core.Producto_Pedido
                 context.SaveChanges();
 
                 return Lista.ToList();
+            }
+        }
+
+        public void EliminacionDefinitiva(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var dato = context.Producto_Pedidos.FirstOrDefault(x => x.Id == id);
+
+                context.Producto_Pedidos.Remove(dato);
+
+                context.SaveChanges();
+            }
+        }
+
+        public void EliminacionDefinitivaLista()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var datos = context.Producto_Pedidos.Where(x => x.EstaEliminado == true).ToList();
+
+                foreach (var item in datos)
+                {
+                    context.Producto_Pedidos.Remove(item);
+                }
+
+                context.SaveChanges();
             }
         }
 
@@ -124,6 +168,18 @@ namespace Servicios.Core.Producto_Pedido
                 };
 
                 return estado2;
+            }
+        }
+
+        public void RestarCantidad1(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var estado = context.Producto_Pedidos.FirstOrDefault(x => x.Id == id);
+
+                estado.Cantidad -= 1;
+
+                context.SaveChanges();
             }
         }
 

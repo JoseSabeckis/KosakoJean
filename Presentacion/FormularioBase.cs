@@ -78,6 +78,11 @@ namespace Presentacion
                     {
                         DesactivarControles(ctrolForm);
                     }
+
+                    if (ctrolForm is CheckBox)
+                    {
+                        ((CheckBox)ctrolForm).Enabled = false;
+                    }
                 }
             }
             else if (obj is Panel)

@@ -108,6 +108,33 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public void EliminacionDefinitiva(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var dato = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                context.Pedidos.Remove(dato);
+
+                context.SaveChanges();
+            }
+        }
+
+        public void EliminacionDefinitivaLista()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var datos = context.Pedidos.Where(x => x.EstaEliminado == true).ToList();
+
+                foreach (var item in datos)
+                {
+                    context.Pedidos.Remove(item);
+                }               
+
+                context.SaveChanges();
+            }
+        }
+
         public IEnumerable<PedidoDto> BuscarPedidosNuevos()
         {
             using (var context = new KosakoDBEntities())
@@ -276,6 +303,18 @@ namespace Servicios.Core.Pedido
                 var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
 
                 pedido.Total -= resta;
+
+                context.SaveChanges();
+            }
+        }
+
+        public void RestarAdelanto(long id, decimal resta)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.Adelanto -= resta;         
 
                 context.SaveChanges();
             }

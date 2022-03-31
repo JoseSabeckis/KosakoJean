@@ -112,6 +112,11 @@ namespace Presentacion.Core.Colegio
         {
             if (EntidadId == null) return false;
 
+            if (MessageBox.Show("Esta Seguro De Eliminar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return false;
+            }
+
             _Servicio.Eliminar(EntidadId.Value);
 
             return true;

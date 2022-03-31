@@ -63,6 +63,48 @@ namespace Servicios.Core.Producto_Dato
             }
         }
 
+        public void EliminacionDefinitiva(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var dato = context.Producto_Datos.FirstOrDefault(x => x.Producto_PedidoId == id);
+
+                context.Producto_Datos.Remove(dato);
+
+                context.SaveChanges();
+            }
+        }
+
+        public void EliminacionDefinitivaPorPedido(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var datos = context.Producto_Datos.Where(x => x.Producto_PedidoId == id).ToList();
+
+                foreach (var item in datos)
+                {
+                    context.Producto_Datos.Remove(item);
+                }               
+
+                context.SaveChanges();
+            }
+        }
+
+        public void EliminacionDefinitivaLista()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var datos = context.Producto_Datos.Where(x => x.EstaEliminado == true).ToList();
+
+                foreach (var item in datos)
+                {
+                    context.Producto_Datos.Remove(item);
+                }
+
+                context.SaveChanges();
+            }
+        }
+
         public void Eliminar(List<Producto_Pedido_Dto> ListaSoloIdProductoPedido)
         {
             using (var context = new KosakoDBEntities())

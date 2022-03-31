@@ -11,6 +11,12 @@ namespace Servicios.Core.Producto_Dato.Dto
     {
         void Insertar(Producto_Dato_Dto _Dto);
 
+        void EliminacionDefinitiva(long id);
+
+        void EliminacionDefinitivaLista();
+
+        void EliminacionDefinitivaPorPedido(long id);
+
         Producto_Pedido_Dto ObtenerProductoPedidoPorId(long producto_pedido_id);
 
         void Eliminar(List<Producto_Pedido_Dto> ListaSoloIdProductoPedido);

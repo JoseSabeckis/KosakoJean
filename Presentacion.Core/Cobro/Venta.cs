@@ -162,10 +162,11 @@ namespace Presentacion.Core.Cobro
 
                 if (nudPrecio.Value == 0)
                 {
-                    MessageBox.Show("El Precio No Puede Ser Cero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    return;
-                }
+                    if (MessageBox.Show("El Precio Sera Cero Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        return;
+                    }
+                }                
 
                 if (prueba != null)
                 {
