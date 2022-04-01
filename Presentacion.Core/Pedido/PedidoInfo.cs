@@ -96,7 +96,15 @@ namespace Presentacion.Core.Pedido
                     lblVendido.Visible = true;
                     btnVolverPedidoNoRetirado.Visible = true;
                     btnAgregarProductos.Visible = false;
+                    btnEliminarPedidoSeleccionado.Visible = false;
                 }
+            }
+
+            if (_Pedido.EstaEliminado)
+            {
+                lblEliminado.Visible = true;
+                btnGuardar.Visible = false;
+                btnEliminar.Visible = false;
             }
 
             SiNoHayProductos();
@@ -285,6 +293,7 @@ namespace Presentacion.Core.Pedido
 
                 lblPagado.Visible = false;
             }
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -357,6 +366,7 @@ namespace Presentacion.Core.Pedido
                     lblVendido.Visible = true;
                     btnAgregarProductos.Visible = false;
                     btnVolverPedidoNoRetirado.Visible = true;
+                    btnEliminarPedidoSeleccionado.Visible = false;
                 }
             }
             else
@@ -584,6 +594,7 @@ namespace Presentacion.Core.Pedido
                 lblVendido.Visible = false;
                 btnTerminar.Visible = true;
                 btnAgregarProductos.Visible = true;
+                btnEliminarPedidoSeleccionado.Visible = true;
 
                 VerSiHayProductos();
             }

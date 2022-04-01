@@ -157,6 +157,13 @@ namespace KosakoJean
 
             if (talleServicio.ObtenerPorId(1) == null)
             {
+                var talle0 = new TalleDto
+                {
+                    Descripcion = "Sin Talle"
+                };
+
+                talleServicio.Nuevo(talle0);
+
                 var talle = new TalleDto
                 {
                     Descripcion = "0"

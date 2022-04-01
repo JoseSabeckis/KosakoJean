@@ -79,13 +79,42 @@ namespace Presentacion.Core.Pedido
                 lblVendido.Visible = true;
                 btnVolverPedidoNoRetirado.Visible = true;
                 btnAgregarProductos.Visible = false;
+                btnEliminarPedidoSeleccionado.Visible = false;
             }
             else
             {
                 btnAgregarProductos.Visible = true;
             }
 
-            //VerificarSiEstaEliminadoElPedido();
+            if (_Pedido.EstaEliminado)
+            {
+                lblEliminado.Visible = true;
+                btnGuardar.Visible = false;
+                btnEliminar.Visible = false;
+
+                txtNotas.Enabled = false;
+
+                btnCobro.Visible = false;
+                lblCobrar.Visible = false;
+                ckbNormal.Visible = false;
+                ckbTarjeta.Visible = false;
+                nudCobro.Visible = false;
+
+                btnTerminar.Visible = false;
+
+                btnAgregarProductos.Visible = false;
+                btnEliminarPedidoSeleccionado.Visible = false;
+                btnVolverPedidoNoRetirado.Visible = false;
+
+            }
+
+            if (dgvGrilla.RowCount == 0)
+            {
+                btnEliminarPedidoSeleccionado.Visible = false;
+                btnAgregarProductos.Visible = false;
+                btnTerminar.Enabled = false;
+            }
+
         }
 
         public void VerificarSiEstaEliminadoElPedido()
@@ -410,6 +439,7 @@ namespace Presentacion.Core.Pedido
                     lblVendido.Visible = true;
                     btnAgregarProductos.Visible = false;
                     btnVolverPedidoNoRetirado.Visible = true;
+                    btnEliminarPedidoSeleccionado.Visible = false;
                 }
             }
             else
@@ -488,6 +518,7 @@ namespace Presentacion.Core.Pedido
                 lblVendido.Visible = false;
                 btnTerminar.Visible = true;
                 btnAgregarProductos.Visible = true;
+                btnEliminarPedidoSeleccionado.Visible = true;
 
                 VerSiHayProductos();
             }

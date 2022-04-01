@@ -164,6 +164,7 @@ namespace Presentacion.Core.Cobro
                 {
                     if (MessageBox.Show("El Precio Sera Cero Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                     {
+                        btnAgregarAlaGrilla.Select();
                         return;
                     }
                 }                
