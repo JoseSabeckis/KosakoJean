@@ -69,6 +69,9 @@
     <Compile Include="DetalleCaja\Dto\DetalleCajaDto.cs" />
     <Compile Include="DetalleCaja\IDetalleCajaServicio.cs" />
     <Compile Include="Fecha\FechaDto.cs" />
+    <Compile Include="Negocio\Dto\NegocioDto.cs" />
+    <Compile Include="Negocio\INegocioServicio.cs" />
+    <Compile Include="Negocio\NegocioServicio.cs" />
     <Compile Include="ParteVenta\Dto\VentaDto2.cs" />
     <Compile Include="ParteVenta\IVentaServicio2.cs" />
     <Compile Include="ParteVenta\VentaServicio2.cs" />
@@ -94,6 +97,10 @@
     <Compile Include="TipoProducto\Dto\TipoProductoDto.cs" />
     <Compile Include="TipoProducto\ITipoProducto.cs" />
     <Compile Include="TipoProducto\TipoProductoServicio.cs" />
+    <Compile Include="Usuario\Dto\UsuarioDto.cs" />
+    <Compile Include="Usuario\Dto\UsuarioLogeado.cs" />
+    <Compile Include="Usuario\IUsuarioServicio.cs" />
+    <Compile Include="Usuario\UsuarioServicio.cs" />
     <Compile Include="Venta\Dto\VentaDto.cs" />
     <Compile Include="Venta\IVentaServicio.cs" />
     <Compile Include="Venta\VentaServicio.cs" />

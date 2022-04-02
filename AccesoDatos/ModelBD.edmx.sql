@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/01/2022 16:31:19
+-- Date Created: 04/01/2022 22:40:51
 -- Generated from EDMX file: C:\Users\joses\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -99,6 +99,12 @@ IF OBJECT_ID(N'[dbo].[Talles]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Producto_Datos]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Producto_Datos];
+GO
+IF OBJECT_ID(N'[dbo].[Usuarios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Usuarios];
+GO
+IF OBJECT_ID(N'[dbo].[Negocios]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Negocios];
 GO
 
 -- --------------------------------------------------
@@ -264,6 +270,28 @@ CREATE TABLE [dbo].[Producto_Datos] (
 );
 GO
 
+-- Creating table 'Usuarios'
+CREATE TABLE [dbo].[Usuarios] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [User] nvarchar(max)  NOT NULL,
+    [Password] nvarchar(max)  NOT NULL,
+    [Bloqueado] bit  NOT NULL,
+    [EstaEliminado] bit  NOT NULL
+);
+GO
+
+-- Creating table 'Negocios'
+CREATE TABLE [dbo].[Negocios] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [RazonSocial] nvarchar(max)  NOT NULL,
+    [Cuit] nvarchar(max)  NOT NULL,
+    [Direccion] nvarchar(max)  NOT NULL,
+    [Celular] nvarchar(max)  NOT NULL,
+    [Email] nvarchar(max)  NOT NULL,
+    [Imagen] varbinary(max)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -343,6 +371,18 @@ GO
 -- Creating primary key on [Id] in table 'Producto_Datos'
 ALTER TABLE [dbo].[Producto_Datos]
 ADD CONSTRAINT [PK_Producto_Datos]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Usuarios'
+ALTER TABLE [dbo].[Usuarios]
+ADD CONSTRAINT [PK_Usuarios]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Negocios'
+ALTER TABLE [dbo].[Negocios]
+ADD CONSTRAINT [PK_Negocios]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

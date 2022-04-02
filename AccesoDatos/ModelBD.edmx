@@ -19,6 +19,8 @@
     <EntitySet Name="CtasCtes" EntityType="KosakoDBModel.Store.CtasCtes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Talles" EntityType="KosakoDBModel.Store.Talles" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Producto_Datos" EntityType="KosakoDBModel.Store.Producto_Datos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="KosakoDBModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Negocios" EntityType="KosakoDBModel.Store.Negocios" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="TipoProductoProducto" Association="KosakoDBModel.Store.TipoProductoProducto">
       <End Role="TipoProducto" EntitySet="TipoProductos" />
       <End Role="Producto" EntitySet="Productos" />
@@ -230,6 +232,28 @@
     <Property Name="EstadoPorPedido" Type="bigint" Nullable="false" />
     <Property Name="Producto_PedidoId" Type="bigint" Nullable="false" />
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Bloqueado" Type="bit" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Negocios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RazonSocial" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cuit" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Celular" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Imagen" Type="varbinary(max)" Nullable="false" />
   </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
@@ -457,6 +481,8 @@
             <End Role="Producto_Pedido" EntitySet="Producto_Pedidos" />
             <End Role="Producto_Dato" EntitySet="Producto_Datos" />
           </AssociationSet>
+          <EntitySet Name="Usuarios" EntityType="KosakoDBModel.Usuario" />
+          <EntitySet Name="Negocios" EntityType="KosakoDBModel.Negocio" />
         </EntityContainer>
         <EntityType Name="Producto">
           <Key>
@@ -806,6 +832,28 @@
           <Member Name="Terminado" Value="2" />
           <Member Name="Cancelado" Value="3" />
         </EnumType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="Bloqueado" Type="Boolean" Nullable="false" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Negocio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RazonSocial" Type="String" Nullable="false" />
+          <Property Name="Cuit" Type="String" Nullable="false" />
+          <Property Name="Direccion" Type="String" Nullable="false" />
+          <Property Name="Celular" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Imagen" Type="Binary" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -978,6 +1026,30 @@
           <ScalarProperty Name="EstadoPorPedido" ColumnName="EstadoPorPedido" />
           <ScalarProperty Name="Producto_PedidoId" ColumnName="Producto_PedidoId" />
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Usuario)">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Bloqueado" ColumnName="Bloqueado" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Negocios">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Negocio)">
+        <MappingFragment StoreEntitySet="Negocios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="Cuit" ColumnName="Cuit" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -92,6 +92,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelBD.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Negocio.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="OpenClose.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
@@ -121,6 +124,9 @@
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="TipoProducto.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="Venta.cs">

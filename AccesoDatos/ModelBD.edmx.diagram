@@ -31,6 +31,8 @@
         <AssociationConnector Association="KosakoDBModel.TalleProducto_Venta" />
         <EntityTypeShape EntityType="KosakoDBModel.Producto_Dato" Width="1.5" PointX="4.875" PointY="7.875" FillColor="0, 0, 192" />
         <AssociationConnector Association="KosakoDBModel.Producto_PedidoProducto_Dato" />
+        <EntityTypeShape EntityType="KosakoDBModel.Usuario" Width="1.5" PointX="11.625" PointY="0.5" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="KosakoDBModel.Negocio" Width="1.5" PointX="13.75" PointY="0.5" FillColor="Yellow" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
