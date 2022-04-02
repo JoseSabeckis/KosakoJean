@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Presentacion.Core.Negocio;
+using Servicios.Core.Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,10 +16,30 @@ namespace KosakoJean
         [STAThread]
         static void Main()
         {
+            INegocioServicio negocioServicio = new NegocioServicio();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new Principal());
+            bool Bandera = false;
+
+            if (negocioServicio.ObtenerPorId(1) == null)
+            {
+                var negocio = new Negocio_Abm(Presentacion.Clases.TipoOperacion.Nuevo);
+                negocio.ShowDialog();
+
+                Bandera = negocio.EjecutarComandoNuevo();
+            }
+            else
+            {
+                Bandera = true;
+            }
+
+            if (Bandera)
+            {
+                Application.Run(new Principal());
+            }
+            
         }
     }
 }

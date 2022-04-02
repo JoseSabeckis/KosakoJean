@@ -5,6 +5,7 @@ using Presentacion.Core.Cliente;
 using Presentacion.Core.Cobro;
 using Presentacion.Core.Colegio;
 using Presentacion.Core.CtaCte;
+using Presentacion.Core.Negocio;
 using Presentacion.Core.Pedido;
 using Presentacion.Core.Producto;
 using Presentacion.Core.Talle;
@@ -13,6 +14,8 @@ using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
 using Servicios.Core.Colegio;
+using Servicios.Core.Negocio;
+using Servicios.Core.Negocio.Dto;
 using Servicios.Core.Talle;
 using Servicios.Core.Talle.Dto;
 using Servicios.Core.TipoProducto;
@@ -36,6 +39,7 @@ namespace KosakoJean
         private readonly ITalleServicio talleServicio;
         private readonly ITipoProducto tipoProductoServicio;
         private readonly IColegioServicio colegioServicio;
+        private readonly INegocioServicio negocioServicio;
 
         public Principal()
         {
@@ -46,6 +50,26 @@ namespace KosakoJean
             talleServicio = new TalleServicio();
             tipoProductoServicio = new TipoProductoServicio();
             colegioServicio = new ColegioServicio();
+            negocioServicio = new NegocioServicio();
+
+            DatosComercio();
+        }
+
+        public void DatosComercio()
+        {
+            var comercio = negocioServicio.ObtenerPorId(1);
+
+            NegocioLogeado.Id = comercio.Id;
+            NegocioLogeado.RazonSocial = comercio.RazonSocial;
+            NegocioLogeado.Email = comercio.Email;
+            NegocioLogeado.Cuit = comercio.Cuit;
+            NegocioLogeado.Direccion = comercio.Direccion;
+            NegocioLogeado.Celular = comercio.Celular;
+            NegocioLogeado.Imagen = comercio.Imagen;
+
+            imagePrincipal.Image = ImagenDb.Convertir_Bytes_Imagen(comercio.Imagen);
+
+            lblRazonSocial.Text = NegocioLogeado.RazonSocial;
         }
 
         private void verColegiosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -419,6 +443,14 @@ namespace KosakoJean
         {
             var fabricar = new PrendaFabricar();
             fabricar.ShowDialog();
+        }
+
+        private void verNegocioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var negocio = new NegocioDatos();
+            negocio.ShowDialog();
+
+            DatosComercio();
         }
     }
 }

@@ -70,6 +70,7 @@
     <Compile Include="DetalleCaja\IDetalleCajaServicio.cs" />
     <Compile Include="Fecha\FechaDto.cs" />
     <Compile Include="Negocio\Dto\NegocioDto.cs" />
+    <Compile Include="Negocio\Dto\NegocioLogeado.cs" />
     <Compile Include="Negocio\INegocioServicio.cs" />
     <Compile Include="Negocio\NegocioServicio.cs" />
     <Compile Include="ParteVenta\Dto\VentaDto2.cs" />

@@ -170,7 +170,7 @@ namespace Presentacion.Core.Cliente
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
 
-                // Pregunta si Selecciono un Archivo
+                // Pregunta si se Selecciono un Archivo
                 if (!string.IsNullOrEmpty(openFileDialog.FileName))
                 {
                     imgFotoEmpleado.Image = Image.FromFile(openFileDialog.FileName);

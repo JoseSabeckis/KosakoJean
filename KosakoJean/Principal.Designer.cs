@@ -62,7 +62,6 @@
             this.btnListoParaEntregar = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnTerminados = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -72,7 +71,6 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
             this.btnPrendaGuardadas = new System.Windows.Forms.Button();
@@ -83,6 +81,11 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblRazonSocial = new System.Windows.Forms.Label();
+            this.negocioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verNegocioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imagePrincipal = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -91,17 +94,17 @@
             this.panel16.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imagePrincipal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -113,7 +116,8 @@
             this.salirToolStripMenuItem,
             this.tiposToolStripMenuItem1,
             this.clienteToolStripMenuItem,
-            this.talleToolStripMenuItem});
+            this.talleToolStripMenuItem,
+            this.negocioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1018, 24);
@@ -408,7 +412,8 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel8.Controls.Add(this.pictureBox2);
+            this.panel8.Controls.Add(this.lblRazonSocial);
+            this.panel8.Controls.Add(this.imagePrincipal);
             this.panel8.Controls.Add(this.btnClientes);
             this.panel8.Controls.Add(this.btnTerminados);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -416,17 +421,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(623, 195);
             this.panel8.TabIndex = 7;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::KosakoJean.Properties.Resources.kosako;
-            this.pictureBox2.Location = new System.Drawing.Point(47, 29);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(134, 127);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
             // 
             // btnClientes
             // 
@@ -436,9 +430,9 @@
             this.btnClientes.BackColor = System.Drawing.Color.Silver;
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClientes.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientes.Location = new System.Drawing.Point(205, 102);
+            this.btnClientes.Location = new System.Drawing.Point(205, 119);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(334, 54);
+            this.btnClientes.Size = new System.Drawing.Size(385, 37);
             this.btnClientes.TabIndex = 9;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
@@ -452,9 +446,9 @@
             this.btnTerminados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnTerminados.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTerminados.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTerminados.Location = new System.Drawing.Point(205, 29);
+            this.btnTerminados.Location = new System.Drawing.Point(205, 75);
             this.btnTerminados.Name = "btnTerminados";
-            this.btnTerminados.Size = new System.Drawing.Size(334, 54);
+            this.btnTerminados.Size = new System.Drawing.Size(385, 34);
             this.btnTerminados.TabIndex = 8;
             this.btnTerminados.Text = "3- Pedidos Terminados";
             this.btnTerminados.UseVisualStyleBackColor = false;
@@ -547,17 +541,6 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(187, 63);
             this.panel7.TabIndex = 11;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::KosakoJean.Properties.Resources.analytics_78917;
-            this.pictureBox1.Location = new System.Drawing.Point(50, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(69, 55);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -677,6 +660,53 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblRazonSocial
+            // 
+            this.lblRazonSocial.AutoSize = true;
+            this.lblRazonSocial.Font = new System.Drawing.Font("Microsoft YaHei", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRazonSocial.Location = new System.Drawing.Point(199, 29);
+            this.lblRazonSocial.Name = "lblRazonSocial";
+            this.lblRazonSocial.Size = new System.Drawing.Size(86, 31);
+            this.lblRazonSocial.TabIndex = 10;
+            this.lblRazonSocial.Text = "Name";
+            // 
+            // negocioToolStripMenuItem
+            // 
+            this.negocioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verNegocioToolStripMenuItem});
+            this.negocioToolStripMenuItem.Name = "negocioToolStripMenuItem";
+            this.negocioToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.negocioToolStripMenuItem.Text = "Negocio";
+            // 
+            // verNegocioToolStripMenuItem
+            // 
+            this.verNegocioToolStripMenuItem.Name = "verNegocioToolStripMenuItem";
+            this.verNegocioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verNegocioToolStripMenuItem.Text = "Ver Negocio";
+            this.verNegocioToolStripMenuItem.Click += new System.EventHandler(this.verNegocioToolStripMenuItem_Click);
+            // 
+            // imagePrincipal
+            // 
+            this.imagePrincipal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imagePrincipal.Image = global::KosakoJean.Properties.Resources.kosako;
+            this.imagePrincipal.Location = new System.Drawing.Point(47, 29);
+            this.imagePrincipal.Name = "imagePrincipal";
+            this.imagePrincipal.Size = new System.Drawing.Size(134, 127);
+            this.imagePrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imagePrincipal.TabIndex = 6;
+            this.imagePrincipal.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::KosakoJean.Properties.Resources.analytics_78917;
+            this.pictureBox1.Location = new System.Drawing.Point(50, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(69, 55);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -704,18 +734,19 @@
             this.panel16.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel8.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imagePrincipal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -764,7 +795,7 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verClientesToolStripMenuItem;
         private System.Windows.Forms.Button btnClientes;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox imagePrincipal;
         private System.Windows.Forms.ToolStripMenuItem talleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoTalleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verTallesToolStripMenuItem;
@@ -776,6 +807,9 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Button btn;
+        private System.Windows.Forms.Label lblRazonSocial;
+        private System.Windows.Forms.ToolStripMenuItem negocioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verNegocioToolStripMenuItem;
     }
 }
 

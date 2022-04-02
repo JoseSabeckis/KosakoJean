@@ -195,6 +195,18 @@
     <Compile Include="Mensaje\Negativo.Designer.cs">
       <DependentUpon>Negativo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Negocio\NegocioDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Negocio\NegocioDatos.Designer.cs">
+      <DependentUpon>NegocioDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Negocio\Negocio_Abm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Negocio\Negocio_Abm.Designer.cs">
+      <DependentUpon>Negocio_Abm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pedido\Lista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,6 +410,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mensaje\Negativo.resx">
       <DependentUpon>Negativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Negocio\NegocioDatos.resx">
+      <DependentUpon>NegocioDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Negocio\Negocio_Abm.resx">
+      <DependentUpon>Negocio_Abm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedido\Lista.resx">
       <DependentUpon>Lista.cs</DependentUpon>

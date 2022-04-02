@@ -55,18 +55,23 @@ namespace Servicios.Core.Negocio
 
                 var negocio = context.Negocios.FirstOrDefault(x => x.Id == id);
 
-                var NEGOCIO = new NegocioDto
+                if (negocio != null)
                 {
-                    Celular = negocio.Celular,
-                    Cuit = negocio.Cuit,
-                    Direccion = negocio.Direccion,
-                    Email = negocio.Email,
-                    Id = negocio.Id,
-                    Imagen = negocio.Imagen,
-                    RazonSocial = negocio.RazonSocial
-                };
+                    var NEGOCIO = new NegocioDto
+                    {
+                        Celular = negocio.Celular,
+                        Cuit = negocio.Cuit,
+                        Direccion = negocio.Direccion,
+                        Email = negocio.Email,
+                        Id = negocio.Id,
+                        Imagen = negocio.Imagen,
+                        RazonSocial = negocio.RazonSocial
+                    };
 
-                return NEGOCIO;
+                    return NEGOCIO;
+                }
+
+                return null;               
 
             }
         }

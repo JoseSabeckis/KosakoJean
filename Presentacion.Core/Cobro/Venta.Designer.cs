@@ -128,27 +128,28 @@
             // cmbTalle
             // 
             this.cmbTalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTalle.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTalle.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTalle.FormattingEnabled = true;
-            this.cmbTalle.Location = new System.Drawing.Point(355, 26);
+            this.cmbTalle.Location = new System.Drawing.Point(326, 26);
             this.cmbTalle.Name = "cmbTalle";
-            this.cmbTalle.Size = new System.Drawing.Size(54, 27);
+            this.cmbTalle.Size = new System.Drawing.Size(83, 27);
             this.cmbTalle.TabIndex = 13;
             this.cmbTalle.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 29);
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 22);
+            this.label3.Size = new System.Drawing.Size(48, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Cant.";
             // 
             // nudCantidad
             // 
             this.nudCantidad.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.nudCantidad.Location = new System.Drawing.Point(64, 26);
+            this.nudCantidad.Location = new System.Drawing.Point(57, 27);
             this.nudCantidad.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -172,18 +173,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(121, 29);
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(109, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 22);
+            this.label4.Size = new System.Drawing.Size(56, 19);
             this.label4.TabIndex = 8;
             this.label4.Text = "Precio";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(301, 28);
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(281, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 22);
+            this.label8.Size = new System.Drawing.Size(44, 19);
             this.label8.TabIndex = 12;
             this.label8.Text = "Talle";
             // 
@@ -195,7 +198,7 @@
             0,
             0,
             0});
-            this.nudPrecio.Location = new System.Drawing.Point(188, 26);
+            this.nudPrecio.Location = new System.Drawing.Point(169, 27);
             this.nudPrecio.Maximum = new decimal(new int[] {
             100000000,
             0,
