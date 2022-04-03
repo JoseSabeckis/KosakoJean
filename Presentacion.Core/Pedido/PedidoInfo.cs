@@ -1,4 +1,5 @@
-﻿using Presentacion.Core.Cobro;
+﻿using Presentacion.Clases;
+using Presentacion.Core.Cobro;
 using Presentacion.Core.Mensaje;
 using Presentacion.Core.Producto_Dato;
 using Servicios.Core.Caja;
@@ -6,6 +7,7 @@ using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.Image.Dto;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Producto;
@@ -108,6 +110,13 @@ namespace Presentacion.Core.Pedido
             }
 
             SiNoHayProductos();
+
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgLogo.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Caja);
         }
 
         public void CargarGrilla()

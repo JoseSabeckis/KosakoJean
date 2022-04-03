@@ -1,4 +1,6 @@
-﻿using Servicios.Core.Producto;
+﻿using Presentacion.Clases;
+using Servicios.Core.Image.Dto;
+using Servicios.Core.Producto;
 using Servicios.Core.Producto_Dato;
 using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
@@ -39,6 +41,12 @@ namespace Presentacion.Core.Pedido
 
             CargarGrilla();
 
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgFabricar.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Pedidos_Pendientes);
         }
 
         public void CargarGrilla()

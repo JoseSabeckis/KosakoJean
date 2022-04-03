@@ -1,4 +1,6 @@
-﻿using Servicios.Core.Cliente;
+﻿using Presentacion.Clases;
+using Servicios.Core.Cliente;
+using Servicios.Core.Image.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +25,12 @@ namespace Presentacion.Core.Cliente
 
             CrearControles();
 
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgCliente.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Clientes);
         }
 
         public void CrearControles()

@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using KosakoJean.Properties;
 using Presentacion.Clases;
 using Presentacion.Core.Caja;
 using Presentacion.Core.Cliente;
@@ -14,6 +15,8 @@ using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
 using Servicios.Core.Colegio;
+using Servicios.Core.Image;
+using Servicios.Core.Image.Dto;
 using Servicios.Core.Negocio;
 using Servicios.Core.Negocio.Dto;
 using Servicios.Core.Talle;
@@ -40,6 +43,7 @@ namespace KosakoJean
         private readonly ITipoProducto tipoProductoServicio;
         private readonly IColegioServicio colegioServicio;
         private readonly INegocioServicio negocioServicio;
+        private readonly I_ImageServicio imageServicio;
 
         public Principal()
         {
@@ -51,8 +55,17 @@ namespace KosakoJean
             tipoProductoServicio = new TipoProductoServicio();
             colegioServicio = new ColegioServicio();
             negocioServicio = new NegocioServicio();
+            imageServicio = new ImageServicio();
 
             DatosComercio();
+            CargarImagenes();
+            imageServicio.CargarImagenes();
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imageLogo.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Logo_Principal);
         }
 
         public void DatosComercio()
@@ -155,6 +168,31 @@ namespace KosakoJean
             CargarConsumidorFinal();
 
             VerificarPrimeraVez();
+
+        }
+
+        public void CargarImagenes()
+        {
+            if (imageServicio.ObtenerPorId(1) == null)
+            {
+                var image = new ImageDto
+                {
+                    Image_Caja = ImagenDb.Convertir_Imagen_Bytes(Resources.caja),
+                    Image_Clientes = ImagenDb.Convertir_Imagen_Bytes(Resources.clientes),
+                    Image_Cobrar = ImagenDb.Convertir_Imagen_Bytes(Resources.clientes),
+                    Image_CtaCte = ImagenDb.Convertir_Imagen_Bytes(Resources.ctacte),
+                    Image_Logo_Principal = ImagenDb.Convertir_Imagen_Bytes(Resources.analytics_78917),
+                    Image_Para_Hacer = ImagenDb.Convertir_Imagen_Bytes(Resources.ctacte),
+                    Image_Pedidos_Listos = ImagenDb.Convertir_Imagen_Bytes(Resources.listos),
+                    Image_Pedidos_Pendientes = ImagenDb.Convertir_Imagen_Bytes(Resources.pendiente),
+                    Image_Pedidos_Terminados = ImagenDb.Convertir_Imagen_Bytes(Resources.listos),
+                    Image_Pedido_Entregado = ImagenDb.Convertir_Imagen_Bytes(Resources.ropa),
+                    Image_Pedido_Guardado = ImagenDb.Convertir_Imagen_Bytes(Resources.guardado),
+                    Image_Productos = ImagenDb.Convertir_Imagen_Bytes(Resources.producto)
+                };
+
+                imageServicio.Insertar(image);
+            }
         }
 
         public void VerificarPrimeraVez()

@@ -1,4 +1,6 @@
-﻿using Servicios.Core.Pedido;
+﻿using Presentacion.Clases;
+using Servicios.Core.Image.Dto;
+using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto_Pedido;
 using System;
@@ -29,6 +31,13 @@ namespace Presentacion.Core.Pedido
             var cuentas = pedidoServicio.BuscarPedidosNuevos();
 
             CrearControles(cuentas);
+
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgLista.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Pedidos_Listos);
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

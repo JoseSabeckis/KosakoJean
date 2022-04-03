@@ -1,8 +1,10 @@
-﻿using Presentacion.Core.Mensaje;
+﻿using Presentacion.Clases;
+using Presentacion.Core.Mensaje;
 using Presentacion.Core.Producto;
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.DetalleCaja;
+using Servicios.Core.Image.Dto;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
@@ -80,6 +82,13 @@ namespace Presentacion.Core.Cobro
             CargarTalle();
             CargarDatos();
             CargarGrilla(ListaVenta);
+
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgProductos.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Productos);
         }
 
         public void CargarTalle()

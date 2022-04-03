@@ -35,12 +35,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgTerminado = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panelGrilla = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTerminado)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -48,7 +48,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.imgTerminado);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -113,17 +113,17 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Pedidos Completados";
             // 
-            // pictureBox1
+            // imgTerminado
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.buscar_trabajo_2449151;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(114, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.imgTerminado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imgTerminado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.imgTerminado.Image = global::Presentacion.Core.Properties.Resources.buscar_trabajo_2449151;
+            this.imgTerminado.Location = new System.Drawing.Point(0, 0);
+            this.imgTerminado.Name = "imgTerminado";
+            this.imgTerminado.Size = new System.Drawing.Size(114, 90);
+            this.imgTerminado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgTerminado.TabIndex = 1;
+            this.imgTerminado.TabStop = false;
             // 
             // btnVolver
             // 
@@ -168,7 +168,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgTerminado)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,7 +177,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelGrilla;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgTerminado;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;

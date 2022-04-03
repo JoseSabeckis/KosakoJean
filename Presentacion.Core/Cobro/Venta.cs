@@ -11,6 +11,7 @@ using Servicios.Core.Cliente.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.Fecha;
+using Servicios.Core.Image.Dto;
 using Servicios.Core.ParteVenta;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Producto;
@@ -79,6 +80,13 @@ namespace Presentacion.Core.Cobro
             CargarGrilla(ListaVenta);
 
             btnSeleccionProducto.Select();
+
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgCobro.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Cobrar);
         }
 
         public void CargarTalle()

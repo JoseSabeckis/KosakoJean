@@ -40,5 +40,7 @@ namespace AccesoDatos
         public virtual DbSet<Producto_Dato> Producto_Datos { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<Negocio> Negocios { get; set; }
+        public virtual DbSet<Image> Images { get; set; }
+        public virtual DbSet<Arreglo> Arreglos { get; set; }
     }
 }

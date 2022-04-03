@@ -36,7 +36,7 @@
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgCaja = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
             this.ckbApertura = new System.Windows.Forms.CheckBox();
@@ -45,7 +45,7 @@
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCaja)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
@@ -55,7 +55,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.imgCaja);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.ckbApertura);
             this.panel1.Controls.Add(this.label1);
@@ -129,16 +129,16 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Hasta";
             // 
-            // pictureBox1
+            // imgCaja
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.add_shop_online_ecommerce_shopping_9_icon_icons_com_61652;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 76);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
+            this.imgCaja.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imgCaja.Image = global::Presentacion.Core.Properties.Resources.add_shop_online_ecommerce_shopping_9_icon_icons_com_61652;
+            this.imgCaja.Location = new System.Drawing.Point(10, 10);
+            this.imgCaja.Name = "imgCaja";
+            this.imgCaja.Size = new System.Drawing.Size(91, 76);
+            this.imgCaja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCaja.TabIndex = 10;
+            this.imgCaja.TabStop = false;
             // 
             // panel3
             // 
@@ -237,7 +237,7 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCaja)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
@@ -258,7 +258,7 @@
         private System.Windows.Forms.CheckBox ckbApertura;
         protected System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.Button btnVer;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgCaja;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
     }

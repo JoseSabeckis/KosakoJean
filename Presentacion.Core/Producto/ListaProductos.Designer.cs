@@ -37,11 +37,11 @@ namespace Presentacion.Core.Producto
             this.btnNuevoProducto = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgProducto = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,7 +53,7 @@ namespace Presentacion.Core.Producto
             this.panel1.Controls.Add(this.btnNuevoProducto);
             this.panel1.Controls.Add(this.btnActualizar);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.imgProducto);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -135,18 +135,18 @@ namespace Presentacion.Core.Producto
             this.label1.TabIndex = 2;
             this.label1.Text = "Lista Productos";
             // 
-            // pictureBox1
+            // imgProducto
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.produto_vs_servico_1024x538;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(231, 136);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.imgProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgProducto.Dock = System.Windows.Forms.DockStyle.Left;
+            this.imgProducto.Image = global::Presentacion.Core.Properties.Resources.produto_vs_servico_1024x538;
+            this.imgProducto.Location = new System.Drawing.Point(0, 0);
+            this.imgProducto.Margin = new System.Windows.Forms.Padding(2);
+            this.imgProducto.Name = "imgProducto";
+            this.imgProducto.Size = new System.Drawing.Size(231, 136);
+            this.imgProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgProducto.TabIndex = 1;
+            this.imgProducto.TabStop = false;
             // 
             // btnVolver
             // 
@@ -193,7 +193,7 @@ namespace Presentacion.Core.Producto
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgProducto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,7 +201,7 @@ namespace Presentacion.Core.Producto
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgProducto;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Panel pnlPrincipal;
         private System.Windows.Forms.Label label1;

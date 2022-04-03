@@ -33,6 +33,7 @@ namespace Presentacion.Core.Pedido
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidoGuardado));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminarPedidoSeleccionado = new System.Windows.Forms.Button();
             this.lblEliminado = new System.Windows.Forms.Label();
             this.btnAgregarProductos = new System.Windows.Forms.Button();
             this.btnVolverPedidoNoRetirado = new System.Windows.Forms.Button();
@@ -43,7 +44,7 @@ namespace Presentacion.Core.Pedido
             this.label5 = new System.Windows.Forms.Label();
             this.lblPersona = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgGuardado = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
@@ -67,10 +68,9 @@ namespace Presentacion.Core.Pedido
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEliminarPedidoSeleccionado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgGuardado)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel3.SuspendLayout();
@@ -93,13 +93,27 @@ namespace Presentacion.Core.Pedido
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblPersona);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.imgGuardado);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1172, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // btnEliminarPedidoSeleccionado
+            // 
+            this.btnEliminarPedidoSeleccionado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminarPedidoSeleccionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminarPedidoSeleccionado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarPedidoSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarPedidoSeleccionado.Location = new System.Drawing.Point(564, 56);
+            this.btnEliminarPedidoSeleccionado.Name = "btnEliminarPedidoSeleccionado";
+            this.btnEliminarPedidoSeleccionado.Size = new System.Drawing.Size(213, 36);
+            this.btnEliminarPedidoSeleccionado.TabIndex = 20;
+            this.btnEliminarPedidoSeleccionado.Text = "Eliminar Producto Seleccionado";
+            this.btnEliminarPedidoSeleccionado.UseVisualStyleBackColor = false;
+            this.btnEliminarPedidoSeleccionado.Click += new System.EventHandler(this.btnEliminarPedidoSeleccionado_Click);
             // 
             // lblEliminado
             // 
@@ -221,17 +235,17 @@ namespace Presentacion.Core.Pedido
             this.label1.TabIndex = 10;
             this.label1.Text = "Total del Pedido de ";
             // 
-            // pictureBox1
+            // imgGuardado
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources._4_tipos_clientes;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.imgGuardado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgGuardado.Dock = System.Windows.Forms.DockStyle.Left;
+            this.imgGuardado.Image = global::Presentacion.Core.Properties.Resources._4_tipos_clientes;
+            this.imgGuardado.Location = new System.Drawing.Point(0, 0);
+            this.imgGuardado.Name = "imgGuardado";
+            this.imgGuardado.Size = new System.Drawing.Size(133, 96);
+            this.imgGuardado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgGuardado.TabIndex = 1;
+            this.imgGuardado.TabStop = false;
             // 
             // btnVolver
             // 
@@ -543,20 +557,6 @@ namespace Presentacion.Core.Pedido
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnEliminarPedidoSeleccionado
-            // 
-            this.btnEliminarPedidoSeleccionado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminarPedidoSeleccionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEliminarPedidoSeleccionado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminarPedidoSeleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarPedidoSeleccionado.Location = new System.Drawing.Point(564, 56);
-            this.btnEliminarPedidoSeleccionado.Name = "btnEliminarPedidoSeleccionado";
-            this.btnEliminarPedidoSeleccionado.Size = new System.Drawing.Size(213, 36);
-            this.btnEliminarPedidoSeleccionado.TabIndex = 20;
-            this.btnEliminarPedidoSeleccionado.Text = "Eliminar Producto Seleccionado";
-            this.btnEliminarPedidoSeleccionado.UseVisualStyleBackColor = false;
-            this.btnEliminarPedidoSeleccionado.Click += new System.EventHandler(this.btnEliminarPedidoSeleccionado_Click);
-            // 
             // PedidoGuardado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,7 +574,7 @@ namespace Presentacion.Core.Pedido
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgGuardado)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -591,7 +591,7 @@ namespace Presentacion.Core.Pedido
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgGuardado;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

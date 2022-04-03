@@ -32,33 +32,33 @@ namespace Presentacion.Core.Pedido
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrendaFabricar));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgFabricar = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvGrillaRealizados = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnTerminado = new System.Windows.Forms.Button();
             this.btnCancelado = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dgvGrillaRealizados = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFabricar)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaRealizados)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.imgFabricar);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -77,17 +77,17 @@ namespace Presentacion.Core.Pedido
             this.label1.TabIndex = 2;
             this.label1.Text = "Prendas Para Hacer";
             // 
-            // pictureBox1
+            // imgFabricar
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.barcode_shop_online_ecommerce_shopping_1_icon_icons_com_61653;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.imgFabricar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgFabricar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.imgFabricar.Image = global::Presentacion.Core.Properties.Resources.barcode_shop_online_ecommerce_shopping_1_icon_icons_com_61653;
+            this.imgFabricar.Location = new System.Drawing.Point(0, 0);
+            this.imgFabricar.Name = "imgFabricar";
+            this.imgFabricar.Size = new System.Drawing.Size(120, 96);
+            this.imgFabricar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgFabricar.TabIndex = 1;
+            this.imgFabricar.TabStop = false;
             // 
             // button1
             // 
@@ -131,6 +131,64 @@ namespace Presentacion.Core.Pedido
             this.dgvGrilla.TabIndex = 13;
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.dgvGrillaRealizados);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 330);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(810, 171);
+            this.panel4.TabIndex = 14;
+            // 
+            // dgvGrillaRealizados
+            // 
+            this.dgvGrillaRealizados.AllowUserToAddRows = false;
+            this.dgvGrillaRealizados.AllowUserToDeleteRows = false;
+            this.dgvGrillaRealizados.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dgvGrillaRealizados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrillaRealizados.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvGrillaRealizados.Location = new System.Drawing.Point(0, 32);
+            this.dgvGrillaRealizados.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvGrillaRealizados.MultiSelect = false;
+            this.dgvGrillaRealizados.Name = "dgvGrillaRealizados";
+            this.dgvGrillaRealizados.ReadOnly = true;
+            this.dgvGrillaRealizados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGrillaRealizados.Size = new System.Drawing.Size(806, 135);
+            this.dgvGrillaRealizados.TabIndex = 14;
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(806, 32);
+            this.panel5.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.label3.Location = new System.Drawing.Point(590, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(218, 25);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Seleccione la Prenda...";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(262, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Recien Cambios Realizados";
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -169,64 +227,6 @@ namespace Presentacion.Core.Pedido
             this.btnCancelado.UseVisualStyleBackColor = false;
             this.btnCancelado.Click += new System.EventHandler(this.btnCancelado_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.dgvGrillaRealizados);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 330);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(810, 171);
-            this.panel4.TabIndex = 14;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(806, 32);
-            this.panel5.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(262, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Recien Cambios Realizados";
-            // 
-            // dgvGrillaRealizados
-            // 
-            this.dgvGrillaRealizados.AllowUserToAddRows = false;
-            this.dgvGrillaRealizados.AllowUserToDeleteRows = false;
-            this.dgvGrillaRealizados.BackgroundColor = System.Drawing.SystemColors.Info;
-            this.dgvGrillaRealizados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrillaRealizados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvGrillaRealizados.Location = new System.Drawing.Point(0, 32);
-            this.dgvGrillaRealizados.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvGrillaRealizados.MultiSelect = false;
-            this.dgvGrillaRealizados.Name = "dgvGrillaRealizados";
-            this.dgvGrillaRealizados.ReadOnly = true;
-            this.dgvGrillaRealizados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrillaRealizados.Size = new System.Drawing.Size(806, 135);
-            this.dgvGrillaRealizados.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label3.Location = new System.Drawing.Point(590, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(218, 25);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Seleccione la Prenda...";
-            // 
             // PrendaFabricar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -245,14 +245,14 @@ namespace Presentacion.Core.Pedido
             this.Text = "PrendaFabricar";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFabricar)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
-            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaRealizados)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaRealizados)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -260,7 +260,7 @@ namespace Presentacion.Core.Pedido
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgFabricar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;

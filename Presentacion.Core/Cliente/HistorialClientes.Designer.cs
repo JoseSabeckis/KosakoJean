@@ -32,11 +32,17 @@ namespace Presentacion.Core.Cliente
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HistorialClientes));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.dgvGrillaPedidos = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.dgvGrillaVentas = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgClientes = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.nudTotal = new System.Windows.Forms.NumericUpDown();
@@ -44,27 +50,21 @@ namespace Presentacion.Core.Cliente
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaPedidos)).BeginInit();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaVentas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,7 +73,7 @@ namespace Presentacion.Core.Cliente
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lblNombre);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.imgClientes);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
@@ -91,6 +91,27 @@ namespace Presentacion.Core.Cliente
             this.panel3.Size = new System.Drawing.Size(859, 340);
             this.panel3.TabIndex = 19;
             // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 31);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(855, 305);
+            this.panel5.TabIndex = 20;
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.dgvGrillaPedidos);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(431, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(420, 301);
+            this.panel7.TabIndex = 20;
+            // 
             // dgvGrillaPedidos
             // 
             this.dgvGrillaPedidos.AllowUserToAddRows = false;
@@ -107,6 +128,16 @@ namespace Presentacion.Core.Cliente
             this.dgvGrillaPedidos.Size = new System.Drawing.Size(416, 297);
             this.dgvGrillaPedidos.TabIndex = 18;
             // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.dgvGrillaVentas);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(431, 301);
+            this.panel6.TabIndex = 19;
+            // 
             // dgvGrillaVentas
             // 
             this.dgvGrillaVentas.AllowUserToAddRows = false;
@@ -122,6 +153,37 @@ namespace Presentacion.Core.Cliente
             this.dgvGrillaVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGrillaVentas.Size = new System.Drawing.Size(427, 297);
             this.dgvGrillaVentas.TabIndex = 13;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(855, 31);
+            this.panel4.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(605, -2);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 25);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Pedidos";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(168, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 25);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Ventas";
             // 
             // lblNombre
             // 
@@ -143,16 +205,16 @@ namespace Presentacion.Core.Cliente
             this.label1.TabIndex = 2;
             this.label1.Text = "Cosas Compradas";
             // 
-            // pictureBox1
+            // imgClientes
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.laptop_1_102326;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(88, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.imgClientes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgClientes.Image = global::Presentacion.Core.Properties.Resources.laptop_1_102326;
+            this.imgClientes.Location = new System.Drawing.Point(3, 3);
+            this.imgClientes.Name = "imgClientes";
+            this.imgClientes.Size = new System.Drawing.Size(88, 69);
+            this.imgClientes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgClientes.TabIndex = 1;
+            this.imgClientes.TabStop = false;
             // 
             // btnVolver
             // 
@@ -241,6 +303,16 @@ namespace Presentacion.Core.Cliente
             this.panel2.Size = new System.Drawing.Size(888, 106);
             this.panel2.TabIndex = 20;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(0, 87);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(240, 13);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "si es una fecha cargar ambos con la misma fecha";
+            // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -271,78 +343,6 @@ namespace Presentacion.Core.Cliente
             this.label2.TabIndex = 20;
             this.label2.Text = "Desde";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 87);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(240, 13);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "si es una fecha cargar ambos con la misma fecha";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(605, -2);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 25);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Pedidos";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(168, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 25);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Ventas";
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(855, 31);
-            this.panel4.TabIndex = 19;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.panel7);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 31);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(855, 305);
-            this.panel5.TabIndex = 20;
-            // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.dgvGrillaVentas);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(431, 301);
-            this.panel6.TabIndex = 19;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.dgvGrillaPedidos);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(431, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(420, 301);
-            this.panel7.TabIndex = 20;
-            // 
             // HistorialClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -364,17 +364,17 @@ namespace Presentacion.Core.Cliente
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaPedidos)).EndInit();
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrillaVentas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -383,7 +383,7 @@ namespace Presentacion.Core.Cliente
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgClientes;
         private System.Windows.Forms.Label label1;
         protected System.Windows.Forms.DataGridView dgvGrillaVentas;
         private System.Windows.Forms.Label label4;

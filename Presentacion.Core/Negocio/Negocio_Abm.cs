@@ -105,7 +105,6 @@ namespace Presentacion.Core.Negocio
 
             negocioServicio.Insertar(nuevaLocalidad);
 
-            this.Close();
             return true;
         }
 

@@ -42,7 +42,7 @@ namespace Presentacion.Core.Cobro
             this.nudPrecio = new System.Windows.Forms.NumericUpDown();
             this.btnAgregarAlaGrilla = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgProductos = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -61,7 +61,7 @@ namespace Presentacion.Core.Cobro
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgProductos)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -84,7 +84,7 @@ namespace Presentacion.Core.Cobro
             this.panel1.Controls.Add(this.nudPrecio);
             this.panel1.Controls.Add(this.btnAgregarAlaGrilla);
             this.panel1.Controls.Add(this.btnVolver);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.imgProductos);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -234,16 +234,16 @@ namespace Presentacion.Core.Cobro
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // pictureBox1
+            // imgProductos
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.add_shop_online_ecommerce_shopping_9_icon_icons_com_61652;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(113, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.imgProductos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.imgProductos.Image = global::Presentacion.Core.Properties.Resources.add_shop_online_ecommerce_shopping_9_icon_icons_com_61652;
+            this.imgProductos.Location = new System.Drawing.Point(0, 0);
+            this.imgProductos.Name = "imgProductos";
+            this.imgProductos.Size = new System.Drawing.Size(113, 96);
+            this.imgProductos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgProductos.TabIndex = 0;
+            this.imgProductos.TabStop = false;
             // 
             // panel2
             // 
@@ -433,7 +433,7 @@ namespace Presentacion.Core.Cobro
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgProductos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -449,7 +449,7 @@ namespace Presentacion.Core.Cobro
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgProductos;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Panel panel3;

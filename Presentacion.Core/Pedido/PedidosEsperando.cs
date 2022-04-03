@@ -1,4 +1,6 @@
-﻿using Servicios.Core.Pedido;
+﻿using Presentacion.Clases;
+using Servicios.Core.Image.Dto;
+using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto_Pedido;
 using System;
@@ -28,6 +30,13 @@ namespace Presentacion.Core.Pedido
             var cuentas = pedidoServicio.BuscarRetiros();
 
             CrearControles(cuentas);
+
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgEsperando.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Pedidos_Listos);
         }
 
         private void CrearControles(IEnumerable<PedidoDto> cuentas)

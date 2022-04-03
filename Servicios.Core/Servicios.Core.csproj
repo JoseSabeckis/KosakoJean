@@ -69,6 +69,10 @@
     <Compile Include="DetalleCaja\Dto\DetalleCajaDto.cs" />
     <Compile Include="DetalleCaja\IDetalleCajaServicio.cs" />
     <Compile Include="Fecha\FechaDto.cs" />
+    <Compile Include="Image\Dto\ImageDto.cs" />
+    <Compile Include="Image\Dto\ImageLogueado.cs" />
+    <Compile Include="Image\ImageServicio.cs" />
+    <Compile Include="Image\I_ImageServicio.cs" />
     <Compile Include="Negocio\Dto\NegocioDto.cs" />
     <Compile Include="Negocio\Dto\NegocioLogeado.cs" />
     <Compile Include="Negocio\INegocioServicio.cs" />

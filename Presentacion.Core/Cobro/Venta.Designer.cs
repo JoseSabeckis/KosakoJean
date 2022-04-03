@@ -54,7 +54,7 @@
             this.ckbTarjeta = new System.Windows.Forms.CheckBox();
             this.ckbPedido = new System.Windows.Forms.CheckBox();
             this.ckbNormal = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgCobro = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCobrar = new System.Windows.Forms.Button();
@@ -86,7 +86,7 @@
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCobro)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel4.SuspendLayout();
@@ -317,7 +317,7 @@
             this.panel3.Controls.Add(this.ckbCtaCte);
             this.panel3.Controls.Add(this.btnNewCliente);
             this.panel3.Controls.Add(this.panel9);
-            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Controls.Add(this.imgCobro);
             this.panel3.Controls.Add(this.btnEliminar);
             this.panel3.Controls.Add(this.btnLimpiar);
             this.panel3.Controls.Add(this.btnCobrar);
@@ -422,16 +422,16 @@
             this.ckbNormal.AppearanceChanged += new System.EventHandler(this.ckbTarjeta_AppearanceChanged);
             this.ckbNormal.CheckedChanged += new System.EventHandler(this.ckbNormal_CheckedChanged);
             // 
-            // pictureBox1
+            // imgCobro
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.laptop_1_102326;
-            this.pictureBox1.Location = new System.Drawing.Point(525, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.imgCobro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imgCobro.Image = global::Presentacion.Core.Properties.Resources.laptop_1_102326;
+            this.imgCobro.Location = new System.Drawing.Point(525, 3);
+            this.imgCobro.Name = "imgCobro";
+            this.imgCobro.Size = new System.Drawing.Size(86, 65);
+            this.imgCobro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCobro.TabIndex = 5;
+            this.imgCobro.TabStop = false;
             // 
             // btnEliminar
             // 
@@ -750,7 +750,7 @@
             this.panel3.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCobro)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -798,7 +798,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgCobro;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.CheckBox ckbPedido;
         private System.Windows.Forms.CheckBox ckbNormal;

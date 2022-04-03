@@ -35,12 +35,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgEsperando = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelGrilla = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgEsperando)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -49,7 +49,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.imgEsperando);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -114,16 +114,16 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Esperando Retiro";
             // 
-            // pictureBox1
+            // imgEsperando
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.actualizarMIO;
-            this.pictureBox1.Location = new System.Drawing.Point(10, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(95, 79);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.imgEsperando.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imgEsperando.Image = global::Presentacion.Core.Properties.Resources.actualizarMIO;
+            this.imgEsperando.Location = new System.Drawing.Point(10, 0);
+            this.imgEsperando.Name = "imgEsperando";
+            this.imgEsperando.Size = new System.Drawing.Size(95, 79);
+            this.imgEsperando.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgEsperando.TabIndex = 1;
+            this.imgEsperando.TabStop = false;
             // 
             // button1
             // 
@@ -170,7 +170,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgEsperando)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,7 +178,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgEsperando;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelGrilla;

@@ -1,4 +1,6 @@
-﻿using Servicios.Core.Pedido;
+﻿using Presentacion.Clases;
+using Servicios.Core.Image.Dto;
+using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto_Pedido;
 using System;
@@ -35,7 +37,13 @@ namespace Presentacion.Core.CtaCte
             _Pedido = pedido;
 
             LlenarGrilla(pedido);
-            
+
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            ptbImagen.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Pedido_Entregado);
         }
 
         public void LlenarGrilla(AccesoDatos.Proceso pedido)
@@ -43,7 +51,7 @@ namespace Presentacion.Core.CtaCte
             if (pedido == AccesoDatos.Proceso.Retirado)
             {
                 lblTitulo.Text = "Prendas Retiradas";
-                panelGrilla.BackColor = Color.OrangeRed;
+                panelGrilla.BackColor = System.Drawing.Color.OrangeRed;
 
                 var cuentas = pedidoServicio.BuscarRetirado();
 
@@ -76,7 +84,7 @@ namespace Presentacion.Core.CtaCte
 
                 if (item.Proceso == AccesoDatos.Proceso.Retirado)
                 {
-                    control.BackColor = Color.Orange;
+                    control.BackColor = System.Drawing.Color.Orange;
                 }
 
                 flowPanel.Controls.Add(control);

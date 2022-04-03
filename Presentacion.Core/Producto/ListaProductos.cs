@@ -1,4 +1,6 @@
-﻿using Presentacion.Core.Producto.Ctrl;
+﻿using Presentacion.Clases;
+using Presentacion.Core.Producto.Ctrl;
+using Servicios.Core.Image.Dto;
 using Servicios.Core.Producto;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,13 @@ namespace Presentacion.Core.Producto
             productoServicio = new ProductoServicio();
 
             CrearControles(string.Empty);
+
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgProducto.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Productos);
         }
 
         public void CrearControles(string busqueda)

@@ -1,4 +1,6 @@
-﻿using Servicios.Core.Pedido;
+﻿using Presentacion.Clases;
+using Servicios.Core.Image.Dto;
+using Servicios.Core.Pedido;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Venta;
 using Servicios.Core.Venta;
@@ -60,6 +62,13 @@ namespace Presentacion.Core.Cliente
             FormatearGrilla(dgvGrillaVentas);
             FormatearGrilla(dgvGrillaPedidos);
 
+            CargarImageEnGeneral();
+
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgClientes.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Clientes);
         }
 
         private void CargarGrilla(long idCliente)

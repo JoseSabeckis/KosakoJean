@@ -1,4 +1,6 @@
-﻿using Servicios.Core.Caja;
+﻿using Presentacion.Clases;
+using Servicios.Core.Caja;
+using Servicios.Core.Image.Dto;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +27,13 @@ namespace Presentacion.Core.Caja
             ckbApertura.Enabled = false;
 
             VerCaja();
+
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgCaja.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Caja);
         }
 
         public void VerCaja()

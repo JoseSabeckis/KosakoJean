@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/01/2022 22:40:51
+-- Date Created: 04/02/2022 22:51:56
 -- Generated from EDMX file: C:\Users\joses\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -292,6 +292,41 @@ CREATE TABLE [dbo].[Negocios] (
 );
 GO
 
+-- Creating table 'Images'
+CREATE TABLE [dbo].[Images] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Image_Pedidos_Terminados] varbinary(max)  NOT NULL,
+    [Image_Pedidos_Pendientes] varbinary(max)  NOT NULL,
+    [Image_Pedidos_Listos] varbinary(max)  NOT NULL,
+    [Image_Pedido_Guardado] varbinary(max)  NOT NULL,
+    [Image_Pedido_Entregado] varbinary(max)  NOT NULL,
+    [Image_Para_Hacer] varbinary(max)  NOT NULL,
+    [Image_Productos] varbinary(max)  NOT NULL,
+    [Image_Clientes] varbinary(max)  NOT NULL,
+    [Image_Cobrar] varbinary(max)  NOT NULL,
+    [Image_CtaCte] varbinary(max)  NOT NULL,
+    [Image_Caja] varbinary(max)  NOT NULL,
+    [Image_Logo_Principal] varbinary(max)  NOT NULL
+);
+GO
+
+-- Creating table 'Arreglos'
+CREATE TABLE [dbo].[Arreglos] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Apellido] nvarchar(max)  NOT NULL,
+    [Nombre] nvarchar(max)  NOT NULL,
+    [FechaPedido] datetime  NOT NULL,
+    [FechaEntrega] datetime  NULL,
+    [Estado] bigint  NOT NULL,
+    [Horario] nvarchar(max)  NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [ClienteId] bigint  NOT NULL,
+    [EstaEliminado] bit  NOT NULL,
+    [Total] decimal(18,0)  NOT NULL,
+    [Adelanto] decimal(18,0)  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -383,6 +418,18 @@ GO
 -- Creating primary key on [Id] in table 'Negocios'
 ALTER TABLE [dbo].[Negocios]
 ADD CONSTRAINT [PK_Negocios]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Images'
+ALTER TABLE [dbo].[Images]
+ADD CONSTRAINT [PK_Images]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Arreglos'
+ALTER TABLE [dbo].[Arreglos]
+ADD CONSTRAINT [PK_Arreglos]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -583,6 +630,21 @@ GO
 CREATE INDEX [IX_FK_Producto_PedidoProducto_Dato]
 ON [dbo].[Producto_Datos]
     ([Producto_PedidoId]);
+GO
+
+-- Creating foreign key on [ClienteId] in table 'Arreglos'
+ALTER TABLE [dbo].[Arreglos]
+ADD CONSTRAINT [FK_ClienteArreglo]
+    FOREIGN KEY ([ClienteId])
+    REFERENCES [dbo].[Clientes]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ClienteArreglo'
+CREATE INDEX [IX_FK_ClienteArreglo]
+ON [dbo].[Arreglos]
+    ([ClienteId]);
 GO
 
 -- --------------------------------------------------

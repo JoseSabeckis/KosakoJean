@@ -140,6 +140,14 @@
     <None Include="Resources\kosako.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\add_shop_online_ecommerce_shopping-9_icon-icons.com_61652.png" />
+    <None Include="Resources\laptop-1_102326.png" />
+    <None Include="Resources\barcode_shop_online_ecommerce_shopping-1_icon-icons.com_61653.png" />
+    <None Include="Resources\buscar-trabajo-2449151.jpg" />
+    <None Include="Resources\trazabilidad-productos-1200x776.jpg" />
+    <None Include="Resources\produto-vs-servico-1024x538.png" />
+    <None Include="Resources\4_tipos_clientes.jpg" />
+    <None Include="Resources\prendas-armario-look_crop1608776690890.jpg_242310155.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

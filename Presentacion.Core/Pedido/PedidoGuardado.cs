@@ -1,10 +1,12 @@
-﻿using Presentacion.Core.Cobro;
+﻿using Presentacion.Clases;
+using Presentacion.Core.Cobro;
 using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
 using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.Image.Dto;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Producto;
@@ -115,6 +117,12 @@ namespace Presentacion.Core.Pedido
                 btnTerminar.Enabled = false;
             }
 
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgGuardado.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Pedido_Guardado);
         }
 
         public void VerificarSiEstaEliminadoElPedido()

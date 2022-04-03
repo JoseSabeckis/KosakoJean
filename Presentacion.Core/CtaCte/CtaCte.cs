@@ -1,4 +1,5 @@
-﻿using Presentacion.Core.Mensaje;
+﻿using Presentacion.Clases;
+using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
@@ -6,6 +7,7 @@ using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.Image.Dto;
 using Servicios.Core.Pedido;
 using System;
 using System.Collections.Generic;
@@ -53,6 +55,12 @@ namespace Presentacion.Core.CtaCte
             Grilla();
             Datos();
 
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgCtaCte.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_CtaCte);
         }
 
         public void nudCobroMaximo()

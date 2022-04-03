@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arreglo.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Caja.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
@@ -68,6 +71,9 @@
     <Compile Include="DetalleCaja.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="EstadoArreglo.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="EstadoPedido.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
@@ -75,6 +81,9 @@
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="EstadoUltimo.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Image.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelBD.Context.cs">

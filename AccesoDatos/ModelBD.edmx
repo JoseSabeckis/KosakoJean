@@ -21,6 +21,8 @@
     <EntitySet Name="Producto_Datos" EntityType="KosakoDBModel.Store.Producto_Datos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Usuarios" EntityType="KosakoDBModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Negocios" EntityType="KosakoDBModel.Store.Negocios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Images" EntityType="KosakoDBModel.Store.Images" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Arreglos" EntityType="KosakoDBModel.Store.Arreglos" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="TipoProductoProducto" Association="KosakoDBModel.Store.TipoProductoProducto">
       <End Role="TipoProducto" EntitySet="TipoProductos" />
       <End Role="Producto" EntitySet="Productos" />
@@ -72,6 +74,10 @@
     <AssociationSet Name="Producto_PedidoProducto_Dato" Association="KosakoDBModel.Store.Producto_PedidoProducto_Dato">
       <End Role="Producto_Pedido" EntitySet="Producto_Pedidos" />
       <End Role="Producto_Dato" EntitySet="Producto_Datos" />
+    </AssociationSet>
+    <AssociationSet Name="ClienteArreglo" Association="KosakoDBModel.Store.ClienteArreglo">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Arreglo" EntitySet="Arreglos" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Productos">
@@ -255,6 +261,41 @@
     <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Imagen" Type="varbinary(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image_Pedidos_Terminados" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Pedidos_Pendientes" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Pedidos_Listos" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Pedido_Guardado" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Pedido_Entregado" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Para_Hacer" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Productos" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Clientes" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Cobrar" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_CtaCte" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Caja" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Logo_Principal" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Arreglos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaPedido" Type="datetime" Nullable="false" />
+    <Property Name="FechaEntrega" Type="datetime" Nullable="true" />
+    <Property Name="Estado" Type="bigint" Nullable="false" />
+    <Property Name="Horario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ClienteId" Type="bigint" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+    <Property Name="Total" Type="decimal" Nullable="false" />
+    <Property Name="Adelanto" Type="decimal" Nullable="false" />
+  </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
     <End Role="Producto" Type="KosakoDBModel.Store.Productos" Multiplicity="*" />
@@ -411,6 +452,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ClienteArreglo">
+    <End Role="Cliente" Type="KosakoDBModel.Store.Clientes" Multiplicity="1" />
+    <End Role="Arreglo" Type="KosakoDBModel.Store.Arreglos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Arreglo">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -483,6 +536,12 @@
           </AssociationSet>
           <EntitySet Name="Usuarios" EntityType="KosakoDBModel.Usuario" />
           <EntitySet Name="Negocios" EntityType="KosakoDBModel.Negocio" />
+          <EntitySet Name="Images" EntityType="KosakoDBModel.Image" />
+          <EntitySet Name="Arreglos" EntityType="KosakoDBModel.Arreglo" />
+          <AssociationSet Name="ClienteArreglo" Association="KosakoDBModel.ClienteArreglo">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Arreglo" EntitySet="Arreglos" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Producto">
           <Key>
@@ -723,6 +782,7 @@
           <NavigationProperty Name="CtaCte" Relationship="KosakoDBModel.ClienteCtaCte" FromRole="Cliente" ToRole="CtaCte" />
           <Property Name="Principal" Type="Boolean" Nullable="false" />
           <Property Name="Dni" Type="String" Nullable="false" />
+          <NavigationProperty Name="Arreglo" Relationship="KosakoDBModel.ClienteArreglo" FromRole="Cliente" ToRole="Arreglo" />
         </EntityType>
         <Association Name="PedidoCliente">
           <End Type="KosakoDBModel.Pedido" Role="Pedido" Multiplicity="*" />
@@ -854,6 +914,58 @@
           <Property Name="Email" Type="String" Nullable="false" />
           <Property Name="Imagen" Type="Binary" Nullable="false" />
         </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Image_Pedidos_Terminados" Type="Binary" Nullable="false" />
+          <Property Name="Image_Pedidos_Pendientes" Type="Binary" Nullable="false" />
+          <Property Name="Image_Pedidos_Listos" Type="Binary" Nullable="false" />
+          <Property Name="Image_Pedido_Guardado" Type="Binary" Nullable="false" />
+          <Property Name="Image_Pedido_Entregado" Type="Binary" Nullable="false" />
+          <Property Name="Image_Para_Hacer" Type="Binary" Nullable="false" />
+          <Property Name="Image_Productos" Type="Binary" Nullable="false" />
+          <Property Name="Image_Clientes" Type="Binary" Nullable="false" />
+          <Property Name="Image_Cobrar" Type="Binary" Nullable="false" />
+          <Property Name="Image_CtaCte" Type="Binary" Nullable="false" />
+          <Property Name="Image_Caja" Type="Binary" Nullable="false" />
+          <Property Name="Image_Logo_Principal" Type="Binary" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Arreglo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Apellido" Type="String" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" />
+          <Property Name="FechaPedido" Type="DateTime" Nullable="false" />
+          <Property Name="FechaEntrega" Type="DateTime" Nullable="true" />
+          <Property Name="Estado" Type="KosakoDBModel.EstadoArreglo" Nullable="false" />
+          <Property Name="Horario" Type="String" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="KosakoDBModel.ClienteArreglo" FromRole="Arreglo" ToRole="Cliente" />
+          <Property Name="ClienteId" Type="Int64" Nullable="false" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <Property Name="Total" Type="Decimal" Nullable="false" />
+          <Property Name="Adelanto" Type="Decimal" Nullable="false" />
+        </EntityType>
+        <EnumType Name="EstadoArreglo" UnderlyingType="Int64">
+          <Member Name="EnEspera" Value="0" />
+          <Member Name="Retirado" Value="1" />
+        </EnumType>
+        <Association Name="ClienteArreglo">
+          <End Type="KosakoDBModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="KosakoDBModel.Arreglo" Role="Arreglo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Arreglo">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1050,6 +1162,43 @@
           <ScalarProperty Name="Celular" ColumnName="Celular" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Image)">
+        <MappingFragment StoreEntitySet="Images">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Image_Pedidos_Terminados" ColumnName="Image_Pedidos_Terminados" />
+          <ScalarProperty Name="Image_Pedidos_Pendientes" ColumnName="Image_Pedidos_Pendientes" />
+          <ScalarProperty Name="Image_Pedidos_Listos" ColumnName="Image_Pedidos_Listos" />
+          <ScalarProperty Name="Image_Pedido_Guardado" ColumnName="Image_Pedido_Guardado" />
+          <ScalarProperty Name="Image_Pedido_Entregado" ColumnName="Image_Pedido_Entregado" />
+          <ScalarProperty Name="Image_Para_Hacer" ColumnName="Image_Para_Hacer" />
+          <ScalarProperty Name="Image_Productos" ColumnName="Image_Productos" />
+          <ScalarProperty Name="Image_Clientes" ColumnName="Image_Clientes" />
+          <ScalarProperty Name="Image_Cobrar" ColumnName="Image_Cobrar" />
+          <ScalarProperty Name="Image_CtaCte" ColumnName="Image_CtaCte" />
+          <ScalarProperty Name="Image_Caja" ColumnName="Image_Caja" />
+          <ScalarProperty Name="Image_Logo_Principal" ColumnName="Image_Logo_Principal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Arreglos">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Arreglo)">
+        <MappingFragment StoreEntitySet="Arreglos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="FechaPedido" ColumnName="FechaPedido" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Horario" ColumnName="Horario" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Adelanto" ColumnName="Adelanto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
