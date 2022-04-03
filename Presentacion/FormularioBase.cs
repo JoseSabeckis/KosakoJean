@@ -298,7 +298,7 @@ namespace Presentacion
             //            : $"El campo es Obligatorio.");
             //    return;
             //}
-
+            
             if (sender is RichTextBox)
             {
                 error.SetError(((RichTextBox)sender),

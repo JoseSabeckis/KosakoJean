@@ -25,7 +25,6 @@ namespace Servicios.Core.Arreglo
                     FechaPedido = arregloDto.FechaPedido,
                     Horario = arregloDto.Horario,
                     Nombre = arregloDto.Nombre,
-                    Titulo = arregloDto.Titulo,
                     Total = arregloDto.Total
                 };
 
@@ -92,7 +91,56 @@ namespace Servicios.Core.Arreglo
                         FechaRetirado = x.FechaRetirado,
                         Horario = x.Horario,
                         Nombre = x.Nombre,
-                        Titulo = x.Titulo,
+                        Total = x.Total,
+                        Id = x.Id,
+                        EstaEliminado = x.EstaEliminado
+
+                    }).ToList();
+            }
+        }
+
+        public IEnumerable<ArregloDto> ListaArreglosEnEspera()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                return context.Arreglos.Where(x => x.Estado == EstadoArreglo.EnEspera)
+                    .Select(x => new ArregloDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        ClienteId = x.ClienteId,
+                        Descripcion = x.Descripcion,
+                        Estado = x.Estado,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        FechaRetirado = x.FechaRetirado,
+                        Horario = x.Horario,
+                        Nombre = x.Nombre,
+                        Total = x.Total,
+                        Id = x.Id,
+                        EstaEliminado = x.EstaEliminado
+
+                    }).ToList();
+            }
+        }
+
+        public IEnumerable<ArregloDto> ListaArreglosRetirados()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                return context.Arreglos.Where(x => x.Estado == EstadoArreglo.Retirado)
+                    .Select(x => new ArregloDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        ClienteId = x.ClienteId,
+                        Descripcion = x.Descripcion,
+                        Estado = x.Estado,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        FechaRetirado = x.FechaRetirado,
+                        Horario = x.Horario,
+                        Nombre = x.Nombre,
                         Total = x.Total,
                         Id = x.Id,
                         EstaEliminado = x.EstaEliminado
@@ -120,7 +168,6 @@ namespace Servicios.Core.Arreglo
                     FechaRetirado = arreglo.FechaRetirado,
                     Horario = arreglo.Horario,
                     Nombre = arreglo.Nombre,
-                    Titulo = arreglo.Titulo,
                     Total = arreglo.Total,
                     Id = arreglo.Id
                 };

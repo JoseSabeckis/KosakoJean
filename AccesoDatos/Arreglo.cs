@@ -26,7 +26,6 @@ namespace AccesoDatos
         public bool EstaEliminado { get; set; }
         public decimal Total { get; set; }
         public decimal Adelanto { get; set; }
-        public string Titulo { get; set; }
         public Nullable<System.DateTime> FechaRetirado { get; set; }
     
         public virtual Cliente Cliente { get; set; }

@@ -1,6 +1,7 @@
 ﻿using AccesoDatos;
 using KosakoJean.Properties;
 using Presentacion.Clases;
+using Presentacion.Core.Arreglo;
 using Presentacion.Core.Caja;
 using Presentacion.Core.Cliente;
 using Presentacion.Core.Cobro;
@@ -489,6 +490,19 @@ namespace KosakoJean
             negocio.ShowDialog();
 
             DatosComercio();
+        }
+
+        private void btnArreglos_Click(object sender, EventArgs e)
+        {
+            if (_cajaServicio.BuscarCajaAbiertaBool())
+            {
+                var arreglos = new ListaArreglos();
+                arreglos.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }           
         }
     }
 }

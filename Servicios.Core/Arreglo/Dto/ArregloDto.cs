@@ -29,6 +29,8 @@ namespace Servicios.Core.Arreglo.Dto
 
         public string Descripcion { get; set; }
 
+        public string ApyNom => Apellido + " " + Nombre;
+
         public decimal Total { get; set; }
 
         public decimal Adelanto { get; set; }

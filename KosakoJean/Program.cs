@@ -28,7 +28,7 @@ namespace KosakoJean
                 var negocio = new Negocio_Abm(Presentacion.Clases.TipoOperacion.Nuevo);
                 negocio.ShowDialog();
 
-                Bandera = negocio.EjecutarComandoNuevo();
+                Bandera = negocio.RealizoAlgunaOperacion;
             }
             else
             {
@@ -38,6 +38,10 @@ namespace KosakoJean
             if (Bandera)
             {
                 Application.Run(new Principal());
+            }
+            else
+            {
+                Application.Exit();
             }
             
         }

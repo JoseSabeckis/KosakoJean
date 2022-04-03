@@ -295,7 +295,6 @@
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
     <Property Name="Total" Type="decimal" Nullable="false" />
     <Property Name="Adelanto" Type="decimal" Nullable="false" />
-    <Property Name="Titulo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="FechaRetirado" Type="datetime" Nullable="true" />
   </EntityType>
   <Association Name="TipoProductoProducto">
@@ -951,7 +950,6 @@
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
           <Property Name="Total" Type="Decimal" Nullable="false" />
           <Property Name="Adelanto" Type="Decimal" Nullable="false" />
-          <Property Name="Titulo" Type="String" Nullable="false" />
           <Property Name="FechaRetirado" Type="DateTime" Nullable="true" />
         </EntityType>
         <EnumType Name="EstadoArreglo" UnderlyingType="Int64">
@@ -1203,7 +1201,6 @@
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Adelanto" ColumnName="Adelanto" />
-          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
           <ScalarProperty Name="FechaRetirado" ColumnName="FechaRetirado" />
         </MappingFragment>
       </EntityTypeMapping>

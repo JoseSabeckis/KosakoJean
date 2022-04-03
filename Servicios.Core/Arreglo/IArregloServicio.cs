@@ -12,6 +12,8 @@ namespace Servicios.Core.Arreglo
         void Insertar(ArregloDto arregloDto);
         ArregloDto ObtenerPorId(long id);
         IEnumerable<ArregloDto> ListaArreglos();
+        IEnumerable<ArregloDto> ListaArreglosRetirados();
+        IEnumerable<ArregloDto> ListaArreglosEnEspera();
         void ModificarDescripcion(long id, string descripcion);
         void CambiarARetiradoYFechaDeRetiro(long id, DateTime date);
         void Cobrar(long id, decimal dinero);

@@ -53,7 +53,7 @@ namespace Presentacion.Core.Negocio
             txtCuit.KeyPress += Validacion.NoSimbolos;
             txtCuit.KeyPress += Validacion.NoLetras;
 
-            Validacion.ValidarEmail(txtEmail.Text, error, txtEmail);
+            //Validacion.ValidarEmail(txtEmail.Text, error, txtEmail);
 
             txtRazonSocial.Focus();
         }
@@ -93,7 +93,7 @@ namespace Presentacion.Core.Negocio
                 return false;
             }
 
-            var nuevaLocalidad = new NegocioDto
+            var nueva = new NegocioDto
             {
                 RazonSocial = txtRazonSocial.Text,
                 Cuit = txtCuit.Text,
@@ -103,7 +103,7 @@ namespace Presentacion.Core.Negocio
                 Imagen = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
             };
 
-            negocioServicio.Insertar(nuevaLocalidad);
+            negocioServicio.Insertar(nueva);
 
             return true;
         }
