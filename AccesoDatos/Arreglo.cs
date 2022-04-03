@@ -18,7 +18,7 @@ namespace AccesoDatos
         public string Apellido { get; set; }
         public string Nombre { get; set; }
         public System.DateTime FechaPedido { get; set; }
-        public Nullable<System.DateTime> FechaEntrega { get; set; }
+        public System.DateTime FechaEntrega { get; set; }
         public EstadoArreglo Estado { get; set; }
         public string Horario { get; set; }
         public string Descripcion { get; set; }
@@ -26,6 +26,8 @@ namespace AccesoDatos
         public bool EstaEliminado { get; set; }
         public decimal Total { get; set; }
         public decimal Adelanto { get; set; }
+        public string Titulo { get; set; }
+        public Nullable<System.DateTime> FechaRetirado { get; set; }
     
         public virtual Cliente Cliente { get; set; }
     }

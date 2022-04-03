@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/02/2022 22:51:56
+-- Date Created: 04/03/2022 14:26:39
 -- Generated from EDMX file: C:\Users\joses\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -56,6 +56,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_Producto_PedidoProducto_Dato]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Producto_Datos] DROP CONSTRAINT [FK_Producto_PedidoProducto_Dato];
 GO
+IF OBJECT_ID(N'[dbo].[FK_ClienteArreglo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Arreglos] DROP CONSTRAINT [FK_ClienteArreglo];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -105,6 +108,12 @@ IF OBJECT_ID(N'[dbo].[Usuarios]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Negocios]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Negocios];
+GO
+IF OBJECT_ID(N'[dbo].[Images]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Images];
+GO
+IF OBJECT_ID(N'[dbo].[Arreglos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Arreglos];
 GO
 
 -- --------------------------------------------------
@@ -316,14 +325,16 @@ CREATE TABLE [dbo].[Arreglos] (
     [Apellido] nvarchar(max)  NOT NULL,
     [Nombre] nvarchar(max)  NOT NULL,
     [FechaPedido] datetime  NOT NULL,
-    [FechaEntrega] datetime  NULL,
+    [FechaEntrega] datetime  NOT NULL,
     [Estado] bigint  NOT NULL,
     [Horario] nvarchar(max)  NOT NULL,
     [Descripcion] nvarchar(max)  NOT NULL,
     [ClienteId] bigint  NOT NULL,
     [EstaEliminado] bit  NOT NULL,
     [Total] decimal(18,0)  NOT NULL,
-    [Adelanto] decimal(18,0)  NOT NULL
+    [Adelanto] decimal(18,0)  NOT NULL,
+    [Titulo] nvarchar(max)  NOT NULL,
+    [FechaRetirado] datetime  NULL
 );
 GO
 

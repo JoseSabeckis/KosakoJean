@@ -287,7 +287,7 @@
     <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="FechaPedido" Type="datetime" Nullable="false" />
-    <Property Name="FechaEntrega" Type="datetime" Nullable="true" />
+    <Property Name="FechaEntrega" Type="datetime" Nullable="false" />
     <Property Name="Estado" Type="bigint" Nullable="false" />
     <Property Name="Horario" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
@@ -295,6 +295,8 @@
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
     <Property Name="Total" Type="decimal" Nullable="false" />
     <Property Name="Adelanto" Type="decimal" Nullable="false" />
+    <Property Name="Titulo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaRetirado" Type="datetime" Nullable="true" />
   </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
@@ -940,7 +942,7 @@
           <Property Name="Apellido" Type="String" Nullable="false" />
           <Property Name="Nombre" Type="String" Nullable="false" />
           <Property Name="FechaPedido" Type="DateTime" Nullable="false" />
-          <Property Name="FechaEntrega" Type="DateTime" Nullable="true" />
+          <Property Name="FechaEntrega" Type="DateTime" Nullable="false" />
           <Property Name="Estado" Type="KosakoDBModel.EstadoArreglo" Nullable="false" />
           <Property Name="Horario" Type="String" Nullable="false" />
           <Property Name="Descripcion" Type="String" Nullable="false" />
@@ -949,6 +951,8 @@
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
           <Property Name="Total" Type="Decimal" Nullable="false" />
           <Property Name="Adelanto" Type="Decimal" Nullable="false" />
+          <Property Name="Titulo" Type="String" Nullable="false" />
+          <Property Name="FechaRetirado" Type="DateTime" Nullable="true" />
         </EntityType>
         <EnumType Name="EstadoArreglo" UnderlyingType="Int64">
           <Member Name="EnEspera" Value="0" />
@@ -1199,6 +1203,8 @@
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Adelanto" ColumnName="Adelanto" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="FechaRetirado" ColumnName="FechaRetirado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
