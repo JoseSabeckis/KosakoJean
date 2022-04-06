@@ -734,5 +734,9 @@ namespace Presentacion.Core.Pedido
             Datos(PedidoId);
         }
 
+        private void lblPagado_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

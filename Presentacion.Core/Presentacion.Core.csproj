@@ -75,6 +75,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arreglo\DatosArreglo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arreglo\DatosArreglo.Designer.cs">
+      <DependentUpon>DatosArreglo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Arreglo\InsertarArreglo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,6 +368,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Arreglo\DatosArreglo.resx">
+      <DependentUpon>DatosArreglo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Arreglo\InsertarArreglo.resx">
       <DependentUpon>InsertarArreglo.cs</DependentUpon>
     </EmbeddedResource>

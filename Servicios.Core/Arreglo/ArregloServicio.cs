@@ -61,6 +61,19 @@ namespace Servicios.Core.Arreglo
             }
         }
 
+        public void CambiarAEnEsperaYFechaDeRetiro(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var arreglo = context.Arreglos.FirstOrDefault(x => x.Id == id);
+
+                arreglo.Estado = EstadoArreglo.EnEspera;
+
+                context.SaveChanges();
+
+            }
+        }
+
         public void Cobrar(long id, decimal dinero)
         {
             using (var context = new KosakoDBEntities())
@@ -68,6 +81,19 @@ namespace Servicios.Core.Arreglo
                 var arreglo = context.Arreglos.FirstOrDefault(x => x.Id == id);
 
                 arreglo.Adelanto += dinero;
+
+                context.SaveChanges();
+
+            }
+        }
+
+        public void GuardarDescripcion(long id, string descripcion)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var arreglo = context.Arreglos.FirstOrDefault(x => x.Id == id);
+
+                arreglo.Descripcion = descripcion;
 
                 context.SaveChanges();
 

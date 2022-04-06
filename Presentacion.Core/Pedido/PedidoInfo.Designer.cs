@@ -496,6 +496,7 @@
             this.lblPagado.TabIndex = 12;
             this.lblPagado.Text = "Todo Pagado !!!";
             this.lblPagado.Visible = false;
+            this.lblPagado.Click += new System.EventHandler(this.lblPagado_Click);
             // 
             // btnEliminar
             // 
