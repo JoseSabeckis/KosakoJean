@@ -31,17 +31,17 @@ namespace Presentacion.Core.Arreglo
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaArreglos));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.imgArreglos = new System.Windows.Forms.Panel();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ckbEnEspera = new System.Windows.Forms.CheckBox();
-            this.ckbRetirados = new System.Windows.Forms.CheckBox();
+            this.imgArreglos = new System.Windows.Forms.Panel();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.ckbRetirados = new System.Windows.Forms.CheckBox();
+            this.ckbEnEspera = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel2.SuspendLayout();
-            this.imgArreglos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
+            this.imgArreglos.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -53,6 +53,22 @@ namespace Presentacion.Core.Arreglo
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(862, 354);
             this.panel2.TabIndex = 1;
+            // 
+            // dgvGrilla
+            // 
+            this.dgvGrilla.AllowUserToAddRows = false;
+            this.dgvGrilla.AllowUserToDeleteRows = false;
+            this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvGrilla.Location = new System.Drawing.Point(0, 0);
+            this.dgvGrilla.MultiSelect = false;
+            this.dgvGrilla.Name = "dgvGrilla";
+            this.dgvGrilla.ReadOnly = true;
+            this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGrilla.Size = new System.Drawing.Size(858, 350);
+            this.dgvGrilla.TabIndex = 0;
+            this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
+            this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick);
             // 
             // imgArreglos
             // 
@@ -69,6 +85,19 @@ namespace Presentacion.Core.Arreglo
             this.imgArreglos.Size = new System.Drawing.Size(862, 125);
             this.imgArreglos.TabIndex = 0;
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAgregar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Location = new System.Drawing.Point(599, 0);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(144, 121);
+            this.btnAgregar.TabIndex = 4;
+            this.btnAgregar.Text = "Nuevo Arreglo";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -82,28 +111,17 @@ namespace Presentacion.Core.Arreglo
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // dgvGrilla
+            // ckbRetirados
             // 
-            this.dgvGrilla.AllowUserToAddRows = false;
-            this.dgvGrilla.AllowUserToDeleteRows = false;
-            this.dgvGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvGrilla.Location = new System.Drawing.Point(0, 0);
-            this.dgvGrilla.MultiSelect = false;
-            this.dgvGrilla.Name = "dgvGrilla";
-            this.dgvGrilla.ReadOnly = true;
-            this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGrilla.Size = new System.Drawing.Size(858, 350);
-            this.dgvGrilla.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Lista de Arreglos";
+            this.ckbRetirados.AutoSize = true;
+            this.ckbRetirados.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ckbRetirados.Location = new System.Drawing.Point(10, 80);
+            this.ckbRetirados.Name = "ckbRetirados";
+            this.ckbRetirados.Size = new System.Drawing.Size(145, 30);
+            this.ckbRetirados.TabIndex = 3;
+            this.ckbRetirados.Text = "Terminados";
+            this.ckbRetirados.UseVisualStyleBackColor = true;
+            this.ckbRetirados.CheckedChanged += new System.EventHandler(this.ckbRetirados_CheckedChanged);
             // 
             // ckbEnEspera
             // 
@@ -119,30 +137,14 @@ namespace Presentacion.Core.Arreglo
             this.ckbEnEspera.UseVisualStyleBackColor = true;
             this.ckbEnEspera.CheckedChanged += new System.EventHandler(this.ckbEnEspera_CheckedChanged);
             // 
-            // ckbRetirados
+            // label1
             // 
-            this.ckbRetirados.AutoSize = true;
-            this.ckbRetirados.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.ckbRetirados.Location = new System.Drawing.Point(10, 80);
-            this.ckbRetirados.Name = "ckbRetirados";
-            this.ckbRetirados.Size = new System.Drawing.Size(145, 30);
-            this.ckbRetirados.TabIndex = 3;
-            this.ckbRetirados.Text = "Terminados";
-            this.ckbRetirados.UseVisualStyleBackColor = true;
-            this.ckbRetirados.CheckedChanged += new System.EventHandler(this.ckbRetirados_CheckedChanged);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnAgregar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Location = new System.Drawing.Point(599, 0);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(144, 121);
-            this.btnAgregar.TabIndex = 4;
-            this.btnAgregar.Text = "Nuevo Arreglo";
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Lista de Arreglos";
             // 
             // ListaArreglos
             // 
@@ -161,9 +163,9 @@ namespace Presentacion.Core.Arreglo
             this.Text = "Lista Arreglos";
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.imgArreglos.ResumeLayout(false);
             this.imgArreglos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.ResumeLayout(false);
 
         }

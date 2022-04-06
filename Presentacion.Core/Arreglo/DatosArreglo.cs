@@ -58,10 +58,10 @@ namespace Presentacion.Core.Arreglo
 
             _ClienteDto = clienteServicio.ObtenerPorId(_ArregloDto.ClienteId);
 
-            lblCliente.Text = $"|-- {_ClienteDto.Apellido} {_ClienteDto.Nombre} --|";
+            lblCliente.Text = $"{_ClienteDto.Apellido} {_ClienteDto.Nombre}";
 
-            lblFechaDejado.Text = $"{_ArregloDto.FechaPedido}";
-            lblFechaEntrega.Text = $"{_ArregloDto.FechaEntrega}";
+            lblFechaDejado.Text = $"{_ArregloDto.FechaPedido.ToLongDateString()}";
+            lblFechaEntrega.Text = $"{_ArregloDto.FechaEntrega.ToLongDateString()}";
 
             lblEstado.Text = $"{_ArregloDto.Estado}";
 
@@ -75,6 +75,7 @@ namespace Presentacion.Core.Arreglo
             txtDebe.Text = $"$ {_ArregloDto.Total - _ArregloDto.Adelanto}";
 
             _Debe = _ArregloDto.Total - _ArregloDto.Adelanto;
+            nudCobro.Maximum = _Debe;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -212,6 +213,7 @@ namespace Presentacion.Core.Arreglo
 
                     Datos();
 
+                    VerificarSiEstaPagado();
                     VerificarSiEstaTerminado();
 
                     var mensaje = new Afirmacion("Felicidades", "Arreglo Terminado");
@@ -231,17 +233,19 @@ namespace Presentacion.Core.Arreglo
             {
                 btnRestaurar.Visible = false;
                 btnTerminar.Visible = true;
+                lblEstado.BackColor = Color.LightYellow;
             }
             else
             {
                 btnTerminar.Visible = false;
                 btnRestaurar.Visible = true;
+                lblEstado.BackColor = Color.OrangeRed;
             }
         }
 
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Seguro De Restaurar Este Arreglo?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes
+            if (MessageBox.Show("Esta Seguro De Restaurar Este Arreglo?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
                 arregloServicio.CambiarAEnEsperaYFechaDeRetiro(_ArregloId);

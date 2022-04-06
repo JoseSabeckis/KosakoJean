@@ -36,6 +36,7 @@ namespace Presentacion.Core.Arreglo
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnDatos = new System.Windows.Forms.Button();
             this.btnTerminar = new System.Windows.Forms.Button();
             this.txtDebe = new System.Windows.Forms.TextBox();
@@ -63,7 +64,7 @@ namespace Presentacion.Core.Arreglo
             this.label3 = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnRestaurar = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,12 +73,13 @@ namespace Presentacion.Core.Arreglo
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCobro)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.lblEstado);
+            this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnVolver);
@@ -91,10 +93,10 @@ namespace Presentacion.Core.Arreglo
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblEstado.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(375, 34);
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(13, 34);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(83, 28);
+            this.lblEstado.Size = new System.Drawing.Size(96, 31);
             this.lblEstado.TabIndex = 3;
             this.lblEstado.Text = "Estado";
             // 
@@ -113,10 +115,11 @@ namespace Presentacion.Core.Arreglo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(121, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 25);
+            this.label1.Size = new System.Drawing.Size(181, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "Datos del Arreglo";
             // 
@@ -155,6 +158,19 @@ namespace Presentacion.Core.Arreglo
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(852, 396);
             this.panel2.TabIndex = 1;
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.BackColor = System.Drawing.Color.Red;
+            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRestaurar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurar.Location = new System.Drawing.Point(32, 261);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(136, 50);
+            this.btnRestaurar.TabIndex = 45;
+            this.btnRestaurar.Text = "Volver a Estado En Espera";
+            this.btnRestaurar.UseVisualStyleBackColor = false;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
             // 
             // btnDatos
             // 
@@ -377,7 +393,7 @@ namespace Presentacion.Core.Arreglo
             // 
             this.lblHorarioRetiro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHorarioRetiro.AutoSize = true;
-            this.lblHorarioRetiro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lblHorarioRetiro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lblHorarioRetiro.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHorarioRetiro.Location = new System.Drawing.Point(141, 30);
             this.lblHorarioRetiro.Name = "lblHorarioRetiro";
@@ -415,7 +431,7 @@ namespace Presentacion.Core.Arreglo
             // 
             this.lblFechaDejado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFechaDejado.AutoSize = true;
-            this.lblFechaDejado.Location = new System.Drawing.Point(622, 14);
+            this.lblFechaDejado.Location = new System.Drawing.Point(526, 13);
             this.lblFechaDejado.Name = "lblFechaDejado";
             this.lblFechaDejado.Size = new System.Drawing.Size(36, 25);
             this.lblFechaDejado.TabIndex = 5;
@@ -427,7 +443,7 @@ namespace Presentacion.Core.Arreglo
             this.lblFechaEntrega.AutoSize = true;
             this.lblFechaEntrega.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lblFechaEntrega.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaEntrega.Location = new System.Drawing.Point(622, 50);
+            this.lblFechaEntrega.Location = new System.Drawing.Point(526, 52);
             this.lblFechaEntrega.Name = "lblFechaEntrega";
             this.lblFechaEntrega.Size = new System.Drawing.Size(36, 26);
             this.lblFechaEntrega.TabIndex = 4;
@@ -437,7 +453,7 @@ namespace Presentacion.Core.Arreglo
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(474, 16);
+            this.label4.Location = new System.Drawing.Point(378, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 25);
             this.label4.TabIndex = 3;
@@ -448,7 +464,7 @@ namespace Presentacion.Core.Arreglo
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(464, 50);
+            this.label3.Location = new System.Drawing.Point(368, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(152, 26);
             this.label3.TabIndex = 2;
@@ -459,7 +475,7 @@ namespace Presentacion.Core.Arreglo
             this.lblCliente.AutoSize = true;
             this.lblCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lblCliente.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(119, 38);
+            this.lblCliente.Location = new System.Drawing.Point(119, 16);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(36, 26);
             this.lblCliente.TabIndex = 1;
@@ -469,24 +485,21 @@ namespace Presentacion.Core.Arreglo
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 35);
+            this.label2.Location = new System.Drawing.Point(25, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 28);
             this.label2.TabIndex = 0;
             this.label2.Text = "Cliente:";
             // 
-            // btnRestaurar
+            // panel7
             // 
-            this.btnRestaurar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRestaurar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurar.Location = new System.Drawing.Point(32, 261);
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(136, 50);
-            this.btnRestaurar.TabIndex = 45;
-            this.btnRestaurar.Text = "Volver a Estado En Espera";
-            this.btnRestaurar.UseVisualStyleBackColor = false;
-            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.lblEstado);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(350, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(387, 96);
+            this.panel7.TabIndex = 3;
             // 
             // DatosArreglo
             // 
@@ -518,6 +531,8 @@ namespace Presentacion.Core.Arreglo
             ((System.ComponentModel.ISupportInitialize)(this.nudCobro)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -558,5 +573,6 @@ namespace Presentacion.Core.Arreglo
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button btnDatos;
         private System.Windows.Forms.Button btnRestaurar;
+        private System.Windows.Forms.Panel panel7;
     }
 }

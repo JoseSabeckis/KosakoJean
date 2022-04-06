@@ -14,6 +14,7 @@ namespace Presentacion.Core.Arreglo
     public partial class ListaArreglos : FormularioBase
     {
         private readonly IArregloServicio arregloServicio;
+        long _ArregloId;
 
         public ListaArreglos()
         {
@@ -102,6 +103,29 @@ namespace Presentacion.Core.Arreglo
             nuevo.ShowDialog();
 
             CargarGrilla();
+        }
+
+        private void dgvGrilla_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvGrilla.RowCount > 0)
+            {
+                _ArregloId = (long)dgvGrilla["Id", e.RowIndex].Value;
+            }
+            else
+            {
+                _ArregloId = 0;
+            }
+        }
+
+        private void dgvGrilla_DoubleClick(object sender, EventArgs e)
+        {
+            if (_ArregloId != 0)
+            {
+                var arreglo = new DatosArreglo(_ArregloId);
+                arreglo.ShowDialog();
+
+                CargarGrilla();
+            }
         }
     }
 }
