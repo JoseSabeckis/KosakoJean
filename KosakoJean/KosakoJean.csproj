@@ -148,6 +148,10 @@
     <None Include="Resources\produto-vs-servico-1024x538.png" />
     <None Include="Resources\4_tipos_clientes.jpg" />
     <None Include="Resources\prendas-armario-look_crop1608776690890.jpg_242310155.jpg" />
+    <None Include="Resources\venta.png" />
+    <None Include="Resources\arreglo.jpg" />
+    <None Include="Resources\info.jpg" />
+    <None Include="Resources\espera.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

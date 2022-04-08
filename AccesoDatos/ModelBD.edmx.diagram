@@ -8,8 +8,8 @@
         <EntityTypeShape EntityType="KosakoDBModel.Producto" Width="1.5" PointX="2.5" PointY="1" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="KosakoDBModel.TipoProducto" Width="1.5" PointX="0.5" PointY="0.5" FillColor="Yellow" />
         <EntityTypeShape EntityType="KosakoDBModel.Colegio" Width="1.5" PointX="0.5" PointY="2.5" FillColor="192, 192, 0" />
-        <EntityTypeShape EntityType="KosakoDBModel.Caja" Width="1.5" PointX="11.75" PointY="7.25" FillColor="255, 128, 0" />
-        <EntityTypeShape EntityType="KosakoDBModel.DetalleCaja" Width="1.5" PointX="14" PointY="7.25" FillColor="Yellow" />
+        <EntityTypeShape EntityType="KosakoDBModel.Caja" Width="1.5" PointX="11.5" PointY="8.125" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="KosakoDBModel.DetalleCaja" Width="1.5" PointX="13.625" PointY="8.25" FillColor="Yellow" />
         <AssociationConnector Association="KosakoDBModel.TipoProductoProducto" />
         <AssociationConnector Association="KosakoDBModel.ColegioProducto" />
         <AssociationConnector Association="KosakoDBModel.CajaDetalleCaja" />

@@ -22,5 +22,9 @@ namespace Servicios.Core.Image.Dto
         public static byte[] Image_CtaCte { get; set; }
         public static byte[] Image_Caja { get; set; }
         public static byte[] Image_Logo_Principal { get; set; }
+        public static byte[] Image_Arreglos { get; set; }
+        public static byte[] Image_Pedido_Venta { get; set; }
+        public static byte[] Image_Esperando { get; set; }
+        public static byte[] Image_Info { get; set; }
     }
 }

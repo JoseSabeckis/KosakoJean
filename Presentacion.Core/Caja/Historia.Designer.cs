@@ -38,7 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgCaja = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.nudComienzoCaja = new System.Windows.Forms.NumericUpDown();
@@ -53,7 +53,7 @@
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCaja)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudComienzoCaja)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSinMonto)).BeginInit();
@@ -68,7 +68,7 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.imgCaja);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -157,16 +157,16 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Caja de Fechas:";
             // 
-            // pictureBox1
+            // imgCaja
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.analytics_78917;
-            this.pictureBox1.Location = new System.Drawing.Point(11, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 81);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.imgCaja.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imgCaja.Image = global::Presentacion.Core.Properties.Resources.analytics_78917;
+            this.imgCaja.Location = new System.Drawing.Point(11, 11);
+            this.imgCaja.Name = "imgCaja";
+            this.imgCaja.Size = new System.Drawing.Size(100, 81);
+            this.imgCaja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCaja.TabIndex = 0;
+            this.imgCaja.TabStop = false;
             // 
             // panel2
             // 
@@ -327,7 +327,7 @@
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCaja)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudComienzoCaja)).EndInit();
@@ -343,7 +343,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgCaja;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label label3;

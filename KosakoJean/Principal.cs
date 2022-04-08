@@ -189,7 +189,10 @@ namespace KosakoJean
                     Image_Pedidos_Terminados = ImagenDb.Convertir_Imagen_Bytes(Resources.listos),
                     Image_Pedido_Entregado = ImagenDb.Convertir_Imagen_Bytes(Resources.ropa),
                     Image_Pedido_Guardado = ImagenDb.Convertir_Imagen_Bytes(Resources.guardado),
-                    Image_Productos = ImagenDb.Convertir_Imagen_Bytes(Resources.producto)
+                    Image_Productos = ImagenDb.Convertir_Imagen_Bytes(Resources.producto),
+                    Image_Pedido_Venta = ImagenDb.Convertir_Imagen_Bytes(Resources.venta),
+                    Image_Arreglos = ImagenDb.Convertir_Imagen_Bytes(Resources.arreglo),
+                    Image_Esperando = ImagenDb.Convertir_Imagen_Bytes(Resources.espera)
                 };
 
                 imageServicio.Insertar(image);

@@ -116,7 +116,7 @@ namespace Presentacion.Core.Pedido
 
         private void CargarImageEnGeneral()
         {
-            imgLogo.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Caja);
+            imgLogo.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Info);
         }
 
         public void CargarGrilla()

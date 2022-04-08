@@ -31,8 +31,9 @@ namespace Presentacion.Core.Arreglo
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DatosArreglo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgArreglo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -64,23 +65,22 @@ namespace Presentacion.Core.Arreglo
             this.label3 = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgArreglo)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCobro)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.imgArreglo);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -88,6 +88,16 @@ namespace Presentacion.Core.Arreglo
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(852, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.lblEstado);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(350, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(387, 96);
+            this.panel7.TabIndex = 3;
             // 
             // lblEstado
             // 
@@ -100,17 +110,17 @@ namespace Presentacion.Core.Arreglo
             this.lblEstado.TabIndex = 3;
             this.lblEstado.Text = "Estado";
             // 
-            // pictureBox1
+            // imgArreglo
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.buscar_trabajo_2449151;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 96);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.imgArreglo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgArreglo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.imgArreglo.Image = global::Presentacion.Core.Properties.Resources.buscar_trabajo_2449151;
+            this.imgArreglo.Location = new System.Drawing.Point(0, 0);
+            this.imgArreglo.Name = "imgArreglo";
+            this.imgArreglo.Size = new System.Drawing.Size(115, 96);
+            this.imgArreglo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgArreglo.TabIndex = 2;
+            this.imgArreglo.TabStop = false;
             // 
             // label1
             // 
@@ -491,16 +501,6 @@ namespace Presentacion.Core.Arreglo
             this.label2.TabIndex = 0;
             this.label2.Text = "Cliente:";
             // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel7.Controls.Add(this.lblEstado);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(350, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(387, 96);
-            this.panel7.TabIndex = 3;
-            // 
             // DatosArreglo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -521,7 +521,9 @@ namespace Presentacion.Core.Arreglo
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgArreglo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -531,8 +533,6 @@ namespace Presentacion.Core.Arreglo
             ((System.ComponentModel.ISupportInitialize)(this.nudCobro)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -540,7 +540,7 @@ namespace Presentacion.Core.Arreglo
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgArreglo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Panel panel2;

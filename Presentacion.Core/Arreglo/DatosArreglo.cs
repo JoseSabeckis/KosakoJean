@@ -1,4 +1,5 @@
-﻿using Presentacion.Core.Mensaje;
+﻿using Presentacion.Clases;
+using Presentacion.Core.Mensaje;
 using Servicios.Core.Arreglo;
 using Servicios.Core.Arreglo.Dto;
 using Servicios.Core.Caja;
@@ -6,6 +7,7 @@ using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.Image.Dto;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
@@ -50,6 +52,13 @@ namespace Presentacion.Core.Arreglo
 
             VerificarSiEstaPagado();
             VerificarSiEstaTerminado();
+
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgArreglo.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Arreglos);
         }
 
         private void Datos()
@@ -233,13 +242,13 @@ namespace Presentacion.Core.Arreglo
             {
                 btnRestaurar.Visible = false;
                 btnTerminar.Visible = true;
-                lblEstado.BackColor = Color.LightYellow;
+                lblEstado.BackColor = System.Drawing.Color.LightYellow;
             }
             else
             {
                 btnTerminar.Visible = false;
                 btnRestaurar.Visible = true;
-                lblEstado.BackColor = Color.OrangeRed;
+                lblEstado.BackColor = System.Drawing.Color.OrangeRed;
             }
         }
 

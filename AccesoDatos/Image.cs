@@ -27,5 +27,9 @@ namespace AccesoDatos
         public byte[] Image_CtaCte { get; set; }
         public byte[] Image_Caja { get; set; }
         public byte[] Image_Logo_Principal { get; set; }
+        public byte[] Image_Arreglos { get; set; }
+        public byte[] Image_Pedido_Venta { get; set; }
+        public byte[] Image_Info { get; set; }
+        public byte[] Image_Esperando { get; set; }
     }
 }

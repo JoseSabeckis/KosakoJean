@@ -236,6 +236,7 @@ namespace Presentacion.Core.Cobro
             // 
             // imgProductos
             // 
+            this.imgProductos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgProductos.Dock = System.Windows.Forms.DockStyle.Left;
             this.imgProductos.Image = global::Presentacion.Core.Properties.Resources.add_shop_online_ecommerce_shopping_9_icon_icons_com_61652;
             this.imgProductos.Location = new System.Drawing.Point(0, 0);

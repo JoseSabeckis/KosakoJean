@@ -36,7 +36,7 @@ namespace Presentacion.Core.Pedido
 
         private void CargarImageEnGeneral()
         {
-            imgEsperando.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Pedidos_Listos);
+            imgEsperando.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Esperando);
         }
 
         private void CrearControles(IEnumerable<PedidoDto> cuentas)

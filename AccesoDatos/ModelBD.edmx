@@ -278,6 +278,10 @@
     <Property Name="Image_CtaCte" Type="varbinary(max)" Nullable="false" />
     <Property Name="Image_Caja" Type="varbinary(max)" Nullable="false" />
     <Property Name="Image_Logo_Principal" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Arreglos" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Pedido_Venta" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Info" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Esperando" Type="varbinary(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Arreglos">
     <Key>
@@ -932,6 +936,10 @@
           <Property Name="Image_CtaCte" Type="Binary" Nullable="false" />
           <Property Name="Image_Caja" Type="Binary" Nullable="false" />
           <Property Name="Image_Logo_Principal" Type="Binary" Nullable="false" />
+          <Property Name="Image_Arreglos" Type="Binary" Nullable="false" />
+          <Property Name="Image_Pedido_Venta" Type="Binary" Nullable="false" />
+          <Property Name="Image_Info" Type="Binary" Nullable="false" />
+          <Property Name="Image_Esperando" Type="Binary" Nullable="false" />
         </EntityType>
         <EntityType Name="Arreglo">
           <Key>
@@ -1183,6 +1191,10 @@
           <ScalarProperty Name="Image_CtaCte" ColumnName="Image_CtaCte" />
           <ScalarProperty Name="Image_Caja" ColumnName="Image_Caja" />
           <ScalarProperty Name="Image_Logo_Principal" ColumnName="Image_Logo_Principal" />
+          <ScalarProperty Name="Image_Arreglos" ColumnName="Image_Arreglos" />
+          <ScalarProperty Name="Image_Pedido_Venta" ColumnName="Image_Pedido_Venta" />
+          <ScalarProperty Name="Image_Info" ColumnName="Image_Info" />
+          <ScalarProperty Name="Image_Esperando" ColumnName="Image_Esperando" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

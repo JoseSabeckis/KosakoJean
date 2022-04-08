@@ -27,7 +27,9 @@ namespace Servicios.Core.Image
                     Image_Pedido_Entregado = imageDto.Image_Pedido_Entregado,
                     Image_Pedido_Guardado = imageDto.Image_Pedido_Guardado,
                     Image_Productos = imageDto.Image_Productos,
-                    Image_Logo_Principal = imageDto.Image_Logo_Principal
+                    Image_Logo_Principal = imageDto.Image_Logo_Principal,
+                    Image_Arreglos = imageDto.Image_Arreglos,
+                    Image_Info = imageDto.Image_Info
                 };
 
                 context.Images.Add(image);
@@ -61,6 +63,8 @@ namespace Servicios.Core.Image
             ImageLogueado.Image_Pedido_Entregado = img.Image_Pedido_Entregado;
             ImageLogueado.Image_Pedido_Guardado = img.Image_Pedido_Guardado;
             ImageLogueado.Image_Productos = img.Image_Productos;
+            ImageLogueado.Image_Arreglos = img.Image_Arreglos;
+            ImageLogueado.Image_Info = img.Image_Info;
 
         }
 
@@ -82,6 +86,8 @@ namespace Servicios.Core.Image
                 img.Image_Pedido_Guardado = imageDto.Image_Pedido_Guardado;
                 img.Image_Productos = imageDto.Image_Productos;
                 img.Image_Logo_Principal = imageDto.Image_Logo_Principal;
+                img.Image_Arreglos = imageDto.Image_Arreglos;
+                img.Image_Info = imageDto.Image_Info;
 
                 context.SaveChanges();
             }

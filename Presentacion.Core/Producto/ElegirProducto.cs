@@ -1,4 +1,6 @@
-﻿using Servicios.Core.Colegio;
+﻿using Presentacion.Clases;
+using Servicios.Core.Colegio;
+using Servicios.Core.Image.Dto;
 using Servicios.Core.Producto;
 using Servicios.Core.TipoProducto;
 using System;
@@ -31,6 +33,13 @@ namespace Presentacion.Core.Producto
             tipoDeProducto = new TipoProductoServicio();
 
             CargarGrilla();
+
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgProducto.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Productos);
         }
 
         public void CargarGrilla()

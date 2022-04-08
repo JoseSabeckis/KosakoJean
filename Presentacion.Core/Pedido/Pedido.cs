@@ -1,4 +1,5 @@
-﻿using Presentacion.Core.Cobro;
+﻿using Presentacion.Clases;
+using Presentacion.Core.Cobro;
 using Presentacion.Core.Factura;
 using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
@@ -9,6 +10,7 @@ using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.Fecha;
+using Servicios.Core.Image.Dto;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
@@ -106,6 +108,12 @@ namespace Presentacion.Core.Pedido
                 }
             }
 
+            CargarImageEnGeneral();
+        }
+
+        private void CargarImageEnGeneral()
+        {
+            imgPedido.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Pedido_Venta);
         }
 
         public bool AsignarControles()

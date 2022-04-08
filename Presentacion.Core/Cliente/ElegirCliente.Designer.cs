@@ -36,11 +36,11 @@ namespace Presentacion.Core.Cliente
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgCliente = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,7 +77,7 @@ namespace Presentacion.Core.Cliente
             this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Controls.Add(this.txtBusqueda);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.imgCliente);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -117,16 +117,16 @@ namespace Presentacion.Core.Cliente
             this.label1.TabIndex = 3;
             this.label1.Text = "Busqueda";
             // 
-            // pictureBox1
+            // imgCliente
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::Presentacion.Core.Properties.Resources.LoginDos_png;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.imgCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgCliente.Image = global::Presentacion.Core.Properties.Resources.LoginDos_png;
+            this.imgCliente.Location = new System.Drawing.Point(4, 4);
+            this.imgCliente.Name = "imgCliente";
+            this.imgCliente.Size = new System.Drawing.Size(106, 89);
+            this.imgCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCliente.TabIndex = 0;
+            this.imgCliente.TabStop = false;
             // 
             // ElegirCliente
             // 
@@ -150,7 +150,7 @@ namespace Presentacion.Core.Cliente
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -159,7 +159,7 @@ namespace Presentacion.Core.Cliente
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgCliente;
         protected System.Windows.Forms.DataGridView dgvGrilla;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBusqueda;
