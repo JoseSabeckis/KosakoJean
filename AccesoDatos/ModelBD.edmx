@@ -282,6 +282,7 @@
     <Property Name="Image_Pedido_Venta" Type="varbinary(max)" Nullable="false" />
     <Property Name="Image_Info" Type="varbinary(max)" Nullable="false" />
     <Property Name="Image_Esperando" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Image_Fabricar" Type="varbinary(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Arreglos">
     <Key>
@@ -940,6 +941,7 @@
           <Property Name="Image_Pedido_Venta" Type="Binary" Nullable="false" />
           <Property Name="Image_Info" Type="Binary" Nullable="false" />
           <Property Name="Image_Esperando" Type="Binary" Nullable="false" />
+          <Property Name="Image_Fabricar" Type="Binary" Nullable="false" />
         </EntityType>
         <EntityType Name="Arreglo">
           <Key>
@@ -1195,6 +1197,7 @@
           <ScalarProperty Name="Image_Pedido_Venta" ColumnName="Image_Pedido_Venta" />
           <ScalarProperty Name="Image_Info" ColumnName="Image_Info" />
           <ScalarProperty Name="Image_Esperando" ColumnName="Image_Esperando" />
+          <ScalarProperty Name="Image_Fabricar" ColumnName="Image_Fabricar" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

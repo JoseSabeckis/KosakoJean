@@ -31,5 +31,6 @@ namespace AccesoDatos
         public byte[] Image_Pedido_Venta { get; set; }
         public byte[] Image_Info { get; set; }
         public byte[] Image_Esperando { get; set; }
+        public byte[] Image_Fabricar { get; set; }
     }
 }

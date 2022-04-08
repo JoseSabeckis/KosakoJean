@@ -42,5 +42,7 @@ namespace Servicios.Core.Image.Dto
 
         public byte[] Image_Esperando { get; set; }
 
+        public byte[] Image_Fabricar { get; set; }
+
     }
 }

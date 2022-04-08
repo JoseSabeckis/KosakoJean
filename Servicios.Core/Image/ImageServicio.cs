@@ -31,7 +31,8 @@ namespace Servicios.Core.Image
                     Image_Arreglos = imageDto.Image_Arreglos,
                     Image_Info = imageDto.Image_Info,
                     Image_Esperando = imageDto.Image_Esperando,
-                    Image_Pedido_Venta = imageDto.Image_Pedido_Venta
+                    Image_Pedido_Venta = imageDto.Image_Pedido_Venta,
+                    Image_Fabricar = imageDto.Image_Fabricar
                 };
 
                 context.Images.Add(image);
@@ -69,6 +70,7 @@ namespace Servicios.Core.Image
             ImageLogueado.Image_Info = img.Image_Info;
             ImageLogueado.Image_Pedido_Venta = img.Image_Pedido_Venta;
             ImageLogueado.Image_Esperando = img.Image_Esperando;
+            ImageLogueado.Image_Fabricar = img.Image_Fabricar;
 
         }
 
@@ -94,6 +96,7 @@ namespace Servicios.Core.Image
                 img.Image_Info = imageDto.Image_Info;
                 img.Image_Esperando = imageDto.Image_Esperando;
                 img.Image_Pedido_Venta = imageDto.Image_Pedido_Venta;
+                img.Image_Fabricar = imageDto.Image_Fabricar;
 
                 context.SaveChanges();
             }

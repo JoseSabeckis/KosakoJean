@@ -26,5 +26,6 @@ namespace Servicios.Core.Image.Dto
         public static byte[] Image_Pedido_Venta { get; set; }
         public static byte[] Image_Esperando { get; set; }
         public static byte[] Image_Info { get; set; }
+        public static byte[] Image_Fabricar { get; set; }
     }
 }

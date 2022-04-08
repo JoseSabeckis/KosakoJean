@@ -193,7 +193,8 @@ namespace KosakoJean
                     Image_Pedido_Venta = ImagenDb.Convertir_Imagen_Bytes(Resources.venta),
                     Image_Arreglos = ImagenDb.Convertir_Imagen_Bytes(Resources.arreglo),
                     Image_Esperando = ImagenDb.Convertir_Imagen_Bytes(Resources.espera),
-                    Image_Info = ImagenDb.Convertir_Imagen_Bytes(Resources.info)
+                    Image_Info = ImagenDb.Convertir_Imagen_Bytes(Resources.info),
+                    Image_Fabricar = ImagenDb.Convertir_Imagen_Bytes(Resources.fabricar)
                 };
 
                 imageServicio.Insertar(image);

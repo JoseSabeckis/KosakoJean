@@ -123,6 +123,16 @@ namespace KosakoJean.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fabricar {
+            get {
+                object obj = ResourceManager.GetObject("fabricar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap guardado {
             get {
                 object obj = ResourceManager.GetObject("guardado", resourceCulture);
