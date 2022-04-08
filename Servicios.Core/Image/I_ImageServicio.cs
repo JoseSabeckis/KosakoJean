@@ -11,6 +11,7 @@ namespace Servicios.Core.Image
     {
         void Insertar(ImageDto imageDto);//se usa una sola vez
         AccesoDatos.Image ObtenerPorId(long id);
+        ImageDto ObtenerPorIdDto(long id);
         void CargarImagenes();
 
         void Modificar(ImageDto imageDto);

@@ -240,7 +240,7 @@ namespace Presentacion.Core.Producto
                 // Pregunta si Selecciono un Archivo
                 if (!string.IsNullOrEmpty(archivo.FileName))
                 {
-                    imgFotoEmpleado.Image = Image.FromFile(archivo.FileName);
+                    imgFotoEmpleado.Image = System.Drawing.Image.FromFile(archivo.FileName);
                 }
                 else
                 {

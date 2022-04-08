@@ -201,6 +201,12 @@
     <Compile Include="Factura\Comprobante.Designer.cs">
       <DependentUpon>Comprobante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Image\Imagenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Image\Imagenes.Designer.cs">
+      <DependentUpon>Imagenes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mensaje\Afirmacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -432,6 +438,9 @@
       <DependentUpon>Comprobante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Factura\ReportComprobante.rdlc" />
+    <EmbeddedResource Include="Image\Imagenes.resx">
+      <DependentUpon>Imagenes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mensaje\Afirmacion.resx">
       <DependentUpon>Afirmacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -570,6 +579,7 @@
     <None Include="Resources\hacer-descripcion-producto.jpg" />
     <None Include="Resources\buscar-trabajo-2449151.jpg" />
     <None Include="Resources\prendas-armario-look_crop1608776690890.jpg_242310155.jpg" />
+    <None Include="Resources\imagee.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

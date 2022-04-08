@@ -58,12 +58,14 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnArreglos = new System.Windows.Forms.Button();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.btn = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.btnProductos = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.btnPedidos = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.btnListoParaEntregar = new System.Windows.Forms.Button();
-            this.btnProductos = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblRazonSocial = new System.Windows.Forms.Label();
             this.imagePrincipal = new System.Windows.Forms.PictureBox();
@@ -87,13 +89,14 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
+            this.configurarImagenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel17.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel15.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -108,8 +111,6 @@
             this.panel13.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -194,7 +195,8 @@
             // 
             this.salirToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.salirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirDeLaAplicacionToolStripMenuItem});
+            this.salirDeLaAplicacionToolStripMenuItem,
+            this.configurarImagenesToolStripMenuItem});
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.salirToolStripMenuItem.Text = "Sistema";
@@ -202,7 +204,7 @@
             // salirDeLaAplicacionToolStripMenuItem
             // 
             this.salirDeLaAplicacionToolStripMenuItem.Name = "salirDeLaAplicacionToolStripMenuItem";
-            this.salirDeLaAplicacionToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.salirDeLaAplicacionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.salirDeLaAplicacionToolStripMenuItem.Text = "Salir";
             this.salirDeLaAplicacionToolStripMenuItem.Click += new System.EventHandler(this.salirDeLaAplicacionToolStripMenuItem_Click);
             // 
@@ -366,6 +368,16 @@
             this.btnArreglos.UseVisualStyleBackColor = false;
             this.btnArreglos.Click += new System.EventHandler(this.btnArreglos_Click);
             // 
+            // panel18
+            // 
+            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel18.Controls.Add(this.btn);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel18.Location = new System.Drawing.Point(270, 91);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(135, 132);
+            this.panel18.TabIndex = 20;
+            // 
             // btn
             // 
             this.btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -380,6 +392,31 @@
             this.btn.Text = "Prendas Para Hacer";
             this.btn.UseVisualStyleBackColor = false;
             this.btn.Click += new System.EventHandler(this.btn_Click);
+            // 
+            // panel17
+            // 
+            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel17.Controls.Add(this.btnProductos);
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel17.Location = new System.Drawing.Point(270, 0);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(135, 78);
+            this.panel17.TabIndex = 19;
+            // 
+            // btnProductos
+            // 
+            this.btnProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProductos.BackColor = System.Drawing.Color.Magenta;
+            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnProductos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductos.Location = new System.Drawing.Point(4, 4);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Size = new System.Drawing.Size(123, 61);
+            this.btnProductos.TabIndex = 16;
+            this.btnProductos.Text = "Productos";
+            this.btnProductos.UseVisualStyleBackColor = false;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // panel16
             // 
@@ -430,21 +467,6 @@
             this.btnListoParaEntregar.Text = "2- Prendas Listas Para Entregar";
             this.btnListoParaEntregar.UseVisualStyleBackColor = false;
             this.btnListoParaEntregar.Click += new System.EventHandler(this.btnListoParaEntregar_Click);
-            // 
-            // btnProductos
-            // 
-            this.btnProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProductos.BackColor = System.Drawing.Color.Magenta;
-            this.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnProductos.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProductos.Location = new System.Drawing.Point(4, 4);
-            this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(123, 61);
-            this.btnProductos.TabIndex = 16;
-            this.btnProductos.Text = "Productos";
-            this.btnProductos.UseVisualStyleBackColor = false;
-            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // panel8
             // 
@@ -729,25 +751,12 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panel17
+            // configurarImagenesToolStripMenuItem
             // 
-            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel17.Controls.Add(this.btnProductos);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel17.Location = new System.Drawing.Point(270, 0);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(135, 78);
-            this.panel17.TabIndex = 19;
-            // 
-            // panel18
-            // 
-            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel18.Controls.Add(this.btn);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel18.Location = new System.Drawing.Point(270, 91);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(135, 132);
-            this.panel18.TabIndex = 20;
+            this.configurarImagenesToolStripMenuItem.Name = "configurarImagenesToolStripMenuItem";
+            this.configurarImagenesToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.configurarImagenesToolStripMenuItem.Text = "Configurar Imagenes";
+            this.configurarImagenesToolStripMenuItem.Click += new System.EventHandler(this.configurarImagenesToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -773,6 +782,8 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.panel17.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -789,8 +800,6 @@
             this.panel10.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel17.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -857,6 +866,7 @@
         private System.Windows.Forms.Button btnArreglos;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.ToolStripMenuItem configurarImagenesToolStripMenuItem;
     }
 }
 

@@ -151,7 +151,7 @@ namespace Presentacion.Core.Negocio
                 // Pregunta si Selecciono un Archivo
                 if (!string.IsNullOrEmpty(openFileDialog.FileName))
                 {
-                    imgFotoEmpleado.Image = Image.FromFile(openFileDialog.FileName);
+                    imgFotoEmpleado.Image = System.Drawing.Image.FromFile(openFileDialog.FileName);
                 }
                 else
                 {

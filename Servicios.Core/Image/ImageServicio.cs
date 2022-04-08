@@ -49,6 +49,38 @@ namespace Servicios.Core.Image
             }
         }
 
+        public ImageDto ObtenerPorIdDto(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var image = context.Images.FirstOrDefault(x => x.Id == id);
+
+                var imagen = new ImageDto
+                {
+                    Image_Caja = image.Image_Caja,
+                    Image_Clientes = image.Image_Clientes,
+                    Image_Cobrar = image.Image_Cobrar,
+                    Image_CtaCte = image.Image_CtaCte,
+                    Image_Para_Hacer = image.Image_Para_Hacer,
+                    Image_Pedidos_Listos = image.Image_Pedidos_Listos,
+                    Image_Pedidos_Pendientes = image.Image_Pedidos_Pendientes,
+                    Image_Pedidos_Terminados = image.Image_Pedidos_Terminados,
+                    Image_Pedido_Entregado = image.Image_Pedido_Entregado,
+                    Image_Pedido_Guardado = image.Image_Pedido_Guardado,
+                    Image_Productos = image.Image_Productos,
+                    Image_Logo_Principal = image.Image_Logo_Principal,
+                    Image_Arreglos = image.Image_Arreglos,
+                    Image_Info = image.Image_Info,
+                    Image_Esperando = image.Image_Esperando,
+                    Image_Pedido_Venta = image.Image_Pedido_Venta,
+                    Image_Fabricar = image.Image_Fabricar,
+                    Id = image.Id
+                };
+
+                return imagen;
+            }
+        }
+
         public void CargarImagenes()
         {
             var img = ObtenerPorId(1);

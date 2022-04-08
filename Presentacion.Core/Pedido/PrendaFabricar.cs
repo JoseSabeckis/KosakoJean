@@ -46,7 +46,7 @@ namespace Presentacion.Core.Pedido
 
         private void CargarImageEnGeneral()
         {
-            imgFabricar.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Pedidos_Pendientes);
+            imgFabricar.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Fabricar);
         }
 
         public void CargarGrilla()

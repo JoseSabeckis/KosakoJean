@@ -7,6 +7,7 @@ using Presentacion.Core.Cliente;
 using Presentacion.Core.Cobro;
 using Presentacion.Core.Colegio;
 using Presentacion.Core.CtaCte;
+using Presentacion.Core.Image;
 using Presentacion.Core.Negocio;
 using Presentacion.Core.Pedido;
 using Presentacion.Core.Producto;
@@ -60,7 +61,6 @@ namespace KosakoJean
 
             DatosComercio();
             CargarImagenes();
-            imageServicio.CargarImagenes();
             CargarImageEnGeneral();
         }
 
@@ -199,6 +199,8 @@ namespace KosakoJean
 
                 imageServicio.Insertar(image);
             }
+
+            imageServicio.CargarImagenes();
         }
 
         public void VerificarPrimeraVez()
@@ -508,6 +510,14 @@ namespace KosakoJean
             {
                 MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }           
+        }
+
+        private void configurarImagenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var config = new Imagenes();
+            config.ShowDialog();
+
+            imageServicio.CargarImagenes();
         }
     }
 }
