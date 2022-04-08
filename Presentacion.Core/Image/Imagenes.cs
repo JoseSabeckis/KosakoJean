@@ -60,5 +60,141 @@ namespace Presentacion.Core.Image
         {
             Close();
         }
+
+        private void Image_Logo_Principal_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Logo_Principal");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Caja_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Caja");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_CtaCte_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_CtaCte");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Productos_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Productos");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Clientes_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Clientes");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Pedido_Guardado_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Pedido_Guardado");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Para_Hacer_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Para_Hacer");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Pedidos_Pendientes_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Pedidos_Pendientes");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Cobrar_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Cobrar");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Pedido_Venta_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Pedido_Venta");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Info_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Info");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Pedidos_Listos_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Pedidos_Listos");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Esperando_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Esperando");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Pedidos_Terminados_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Pedidos_Terminados");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Fabricar_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Fabricar");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Arreglos_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Arreglos");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
+
+        private void Image_Pedido_Entregado_Click(object sender, EventArgs e)
+        {
+            var img = new ImageDatos("Image_Pedido_Entregado");
+            img.ShowDialog();
+
+            CargarImagenDto();
+        }
     }
 }

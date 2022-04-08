@@ -49,6 +49,7 @@ namespace Presentacion.Core.CtaCte
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.ckbSinNombre = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -70,6 +71,7 @@ namespace Presentacion.Core.CtaCte
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.ckbSinNombre);
             this.panel6.Controls.Add(this.dtpFechaEntrega);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.cmbHorario);
@@ -281,6 +283,17 @@ namespace Presentacion.Core.CtaCte
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // ckbSinNombre
+            // 
+            this.ckbSinNombre.AutoSize = true;
+            this.ckbSinNombre.Location = new System.Drawing.Point(272, 200);
+            this.ckbSinNombre.Name = "ckbSinNombre";
+            this.ckbSinNombre.Size = new System.Drawing.Size(140, 29);
+            this.ckbSinNombre.TabIndex = 24;
+            this.ckbSinNombre.Text = "Sin Nombre";
+            this.ckbSinNombre.UseVisualStyleBackColor = true;
+            this.ckbSinNombre.CheckedChanged += new System.EventHandler(this.ckbSinNombre_CheckedChanged);
+            // 
             // CtaCteClientePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -332,5 +345,6 @@ namespace Presentacion.Core.CtaCte
         private System.Windows.Forms.ComboBox cmbHorario;
         private System.Windows.Forms.DateTimePicker dtpFechaEntrega;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox ckbSinNombre;
     }
 }

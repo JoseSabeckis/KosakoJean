@@ -201,6 +201,12 @@
     <Compile Include="Factura\Comprobante.Designer.cs">
       <DependentUpon>Comprobante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Image\ImageDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Image\ImageDatos.Designer.cs">
+      <DependentUpon>ImageDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Image\Imagenes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -438,6 +444,9 @@
       <DependentUpon>Comprobante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Factura\ReportComprobante.rdlc" />
+    <EmbeddedResource Include="Image\ImageDatos.resx">
+      <DependentUpon>ImageDatos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Image\Imagenes.resx">
       <DependentUpon>Imagenes.cs</DependentUpon>
     </EmbeddedResource>

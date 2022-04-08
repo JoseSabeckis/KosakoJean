@@ -134,5 +134,89 @@ namespace Servicios.Core.Image
             }
         }
 
+        public void ModificarPorUno(string descripcion, ImageDto imageDto)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var img = context.Images.FirstOrDefault(x => x.Id == 1);
+
+                switch (descripcion)
+                {
+                    case "Image_Logo_Principal":
+                        img.Image_Logo_Principal = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Logo_Principal = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Caja":
+                        img.Image_Caja = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Caja = imageDto.Image_Modificada;
+                        break;
+                    case "Image_CtaCte":
+                        img.Image_CtaCte = imageDto.Image_Modificada;
+                        ImageLogueado.Image_CtaCte = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Productos":
+                        img.Image_Productos = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Productos = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Clientes":
+                        img.Image_Clientes = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Clientes = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Pedido_Guardado":
+                        img.Image_Pedido_Guardado = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Pedido_Guardado = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Para_Hacer":
+                        img.Image_Para_Hacer = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Para_Hacer = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Pedidos_Pendientes":
+                        img.Image_Pedidos_Pendientes = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Pedidos_Pendientes = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Cobrar":
+                        img.Image_Cobrar = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Cobrar = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Pedido_Venta":
+                        img.Image_Pedido_Venta = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Pedido_Venta = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Info":
+                        img.Image_Info = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Info = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Pedidos_Listos":
+                        img.Image_Pedidos_Listos = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Pedidos_Listos = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Esperando":
+                        img.Image_Esperando = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Esperando = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Pedidos_Terminados":
+                        img.Image_Pedidos_Terminados = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Pedidos_Terminados = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Fabricar":
+                        img.Image_Fabricar = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Fabricar = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Arreglos":
+                        img.Image_Arreglos = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Arreglos = imageDto.Image_Modificada;
+                        break;
+                    case "Image_Pedido_Entregado":
+                        img.Image_Pedido_Entregado = imageDto.Image_Modificada;
+                        ImageLogueado.Image_Pedido_Entregado = imageDto.Image_Modificada;
+                        break;
+                    default:
+                        break;
+                }
+
+                context.SaveChanges();
+            }
+        }
+
     }
 }

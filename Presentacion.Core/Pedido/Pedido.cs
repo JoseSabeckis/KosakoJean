@@ -350,5 +350,13 @@ namespace Presentacion.Core.Pedido
                 ckbCtaCte.Checked = false;
             }
         }
+
+        private void ckbSinNombre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbSinNombre.Checked)
+            {
+                txtApellido.Text = "Sin Nombre";
+            }
+        }
     }
 }

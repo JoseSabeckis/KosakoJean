@@ -54,6 +54,7 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.imgPedido = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ckbSinNombre = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -67,6 +68,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.ckbSinNombre);
             this.panel1.Controls.Add(this.cmbHorario);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtDescripcion);
@@ -345,6 +347,17 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Cargue mas Informacion";
             // 
+            // ckbSinNombre
+            // 
+            this.ckbSinNombre.AutoSize = true;
+            this.ckbSinNombre.Location = new System.Drawing.Point(435, 353);
+            this.ckbSinNombre.Name = "ckbSinNombre";
+            this.ckbSinNombre.Size = new System.Drawing.Size(130, 28);
+            this.ckbSinNombre.TabIndex = 23;
+            this.ckbSinNombre.Text = "Sin Nombre";
+            this.ckbSinNombre.UseVisualStyleBackColor = true;
+            this.ckbSinNombre.CheckedChanged += new System.EventHandler(this.ckbSinNombre_CheckedChanged);
+            // 
             // Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -403,5 +416,6 @@
         private System.Windows.Forms.ComboBox cmbHorario;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox ckbCtaCte;
+        private System.Windows.Forms.CheckBox ckbSinNombre;
     }
 }

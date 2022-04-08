@@ -396,6 +396,7 @@ namespace Presentacion.Core.Image
             this.Image_Pedido_Entregado.TabIndex = 33;
             this.Image_Pedido_Entregado.Text = "...";
             this.Image_Pedido_Entregado.UseVisualStyleBackColor = false;
+            this.Image_Pedido_Entregado.Click += new System.EventHandler(this.Image_Pedido_Entregado_Click);
             // 
             // Image_Arreglos
             // 
@@ -407,6 +408,7 @@ namespace Presentacion.Core.Image
             this.Image_Arreglos.TabIndex = 32;
             this.Image_Arreglos.Text = "...";
             this.Image_Arreglos.UseVisualStyleBackColor = false;
+            this.Image_Arreglos.Click += new System.EventHandler(this.Image_Arreglos_Click);
             // 
             // Image_Fabricar
             // 
@@ -418,6 +420,7 @@ namespace Presentacion.Core.Image
             this.Image_Fabricar.TabIndex = 31;
             this.Image_Fabricar.Text = "...";
             this.Image_Fabricar.UseVisualStyleBackColor = false;
+            this.Image_Fabricar.Click += new System.EventHandler(this.Image_Fabricar_Click);
             // 
             // Image_Pedidos_Terminados
             // 
@@ -429,6 +432,7 @@ namespace Presentacion.Core.Image
             this.Image_Pedidos_Terminados.TabIndex = 30;
             this.Image_Pedidos_Terminados.Text = "...";
             this.Image_Pedidos_Terminados.UseVisualStyleBackColor = false;
+            this.Image_Pedidos_Terminados.Click += new System.EventHandler(this.Image_Pedidos_Terminados_Click);
             // 
             // Image_Esperando
             // 
@@ -440,6 +444,7 @@ namespace Presentacion.Core.Image
             this.Image_Esperando.TabIndex = 29;
             this.Image_Esperando.Text = "...";
             this.Image_Esperando.UseVisualStyleBackColor = false;
+            this.Image_Esperando.Click += new System.EventHandler(this.Image_Esperando_Click);
             // 
             // Image_Pedidos_Listos
             // 
@@ -451,6 +456,7 @@ namespace Presentacion.Core.Image
             this.Image_Pedidos_Listos.TabIndex = 28;
             this.Image_Pedidos_Listos.Text = "...";
             this.Image_Pedidos_Listos.UseVisualStyleBackColor = false;
+            this.Image_Pedidos_Listos.Click += new System.EventHandler(this.Image_Pedidos_Listos_Click);
             // 
             // Image_Info
             // 
@@ -462,6 +468,7 @@ namespace Presentacion.Core.Image
             this.Image_Info.TabIndex = 27;
             this.Image_Info.Text = "...";
             this.Image_Info.UseVisualStyleBackColor = false;
+            this.Image_Info.Click += new System.EventHandler(this.Image_Info_Click);
             // 
             // Image_Pedido_Venta
             // 
@@ -473,6 +480,7 @@ namespace Presentacion.Core.Image
             this.Image_Pedido_Venta.TabIndex = 26;
             this.Image_Pedido_Venta.Text = "...";
             this.Image_Pedido_Venta.UseVisualStyleBackColor = false;
+            this.Image_Pedido_Venta.Click += new System.EventHandler(this.Image_Pedido_Venta_Click);
             // 
             // Image_Cobrar
             // 
@@ -484,6 +492,7 @@ namespace Presentacion.Core.Image
             this.Image_Cobrar.TabIndex = 25;
             this.Image_Cobrar.Text = "...";
             this.Image_Cobrar.UseVisualStyleBackColor = false;
+            this.Image_Cobrar.Click += new System.EventHandler(this.Image_Cobrar_Click);
             // 
             // Image_Pedidos_Pendientes
             // 
@@ -495,6 +504,7 @@ namespace Presentacion.Core.Image
             this.Image_Pedidos_Pendientes.TabIndex = 24;
             this.Image_Pedidos_Pendientes.Text = "...";
             this.Image_Pedidos_Pendientes.UseVisualStyleBackColor = false;
+            this.Image_Pedidos_Pendientes.Click += new System.EventHandler(this.Image_Pedidos_Pendientes_Click);
             // 
             // Image_Para_Hacer
             // 
@@ -506,6 +516,7 @@ namespace Presentacion.Core.Image
             this.Image_Para_Hacer.TabIndex = 23;
             this.Image_Para_Hacer.Text = "...";
             this.Image_Para_Hacer.UseVisualStyleBackColor = false;
+            this.Image_Para_Hacer.Click += new System.EventHandler(this.Image_Para_Hacer_Click);
             // 
             // Image_Pedido_Guardado
             // 
@@ -517,6 +528,7 @@ namespace Presentacion.Core.Image
             this.Image_Pedido_Guardado.TabIndex = 22;
             this.Image_Pedido_Guardado.Text = "...";
             this.Image_Pedido_Guardado.UseVisualStyleBackColor = false;
+            this.Image_Pedido_Guardado.Click += new System.EventHandler(this.Image_Pedido_Guardado_Click);
             // 
             // Image_Clientes
             // 
@@ -528,6 +540,7 @@ namespace Presentacion.Core.Image
             this.Image_Clientes.TabIndex = 21;
             this.Image_Clientes.Text = "...";
             this.Image_Clientes.UseVisualStyleBackColor = false;
+            this.Image_Clientes.Click += new System.EventHandler(this.Image_Clientes_Click);
             // 
             // Image_Productos
             // 
@@ -539,6 +552,7 @@ namespace Presentacion.Core.Image
             this.Image_Productos.TabIndex = 20;
             this.Image_Productos.Text = "...";
             this.Image_Productos.UseVisualStyleBackColor = false;
+            this.Image_Productos.Click += new System.EventHandler(this.Image_Productos_Click);
             // 
             // Image_CtaCte
             // 
@@ -550,6 +564,7 @@ namespace Presentacion.Core.Image
             this.Image_CtaCte.TabIndex = 19;
             this.Image_CtaCte.Text = "...";
             this.Image_CtaCte.UseVisualStyleBackColor = false;
+            this.Image_CtaCte.Click += new System.EventHandler(this.Image_CtaCte_Click);
             // 
             // Image_Caja
             // 
@@ -561,6 +576,7 @@ namespace Presentacion.Core.Image
             this.Image_Caja.TabIndex = 18;
             this.Image_Caja.Text = "...";
             this.Image_Caja.UseVisualStyleBackColor = false;
+            this.Image_Caja.Click += new System.EventHandler(this.Image_Caja_Click);
             // 
             // Image_Logo_Principal
             // 
@@ -572,6 +588,7 @@ namespace Presentacion.Core.Image
             this.Image_Logo_Principal.TabIndex = 17;
             this.Image_Logo_Principal.Text = "...";
             this.Image_Logo_Principal.UseVisualStyleBackColor = false;
+            this.Image_Logo_Principal.Click += new System.EventHandler(this.Image_Logo_Principal_Click);
             // 
             // label18
             // 

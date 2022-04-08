@@ -259,5 +259,13 @@ namespace Presentacion.Core.CtaCte
         {
             txtApellido.Focus();
         }
+
+        private void ckbSinNombre_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbSinNombre.Checked)
+            {
+                txtApellido.Text = "Sin Nombre";
+            }
+        }
     }
 }
