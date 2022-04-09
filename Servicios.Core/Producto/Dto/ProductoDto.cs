@@ -12,8 +12,6 @@ namespace Servicios.Core.Producto.Dto
 
         public string Descripcion { get; set; }
 
-        public decimal Precio { get; set; }
-
         public bool EstaEliminado { get; set; }
 
         public string Extras { get; set; }
@@ -27,6 +25,8 @@ namespace Servicios.Core.Producto.Dto
         public string TipoProducto { get; set; }
 
         public decimal Stock { get; set; }
+
+        public decimal Precio { get; set; }
 
         public bool Creacion { get; set; }
 

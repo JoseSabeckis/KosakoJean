@@ -23,12 +23,12 @@ namespace Servicios.Core.ParteVenta.Dto
 
         public DateTime Fecha { get; set; }
 
-        public decimal Cantidad { get; set; }
+        public string Estado { get; set; }
 
         public string Talle { get; set; }
 
-        public decimal Precio { get; set; }
+        public decimal Cantidad { get; set; }
 
-        public string Estado { get; set; }
+        public decimal Precio { get; set; }
     }
 }

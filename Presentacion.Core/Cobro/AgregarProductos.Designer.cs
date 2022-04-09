@@ -100,7 +100,7 @@ namespace Presentacion.Core.Cobro
             this.txtProducto.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProducto.Location = new System.Drawing.Point(139, 39);
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(321, 33);
+            this.txtProducto.Size = new System.Drawing.Size(277, 33);
             this.txtProducto.TabIndex = 21;
             // 
             // label2
@@ -115,7 +115,7 @@ namespace Presentacion.Core.Cobro
             // btnSeleccionProducto
             // 
             this.btnSeleccionProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeleccionProducto.Location = new System.Drawing.Point(466, 38);
+            this.btnSeleccionProducto.Location = new System.Drawing.Point(422, 38);
             this.btnSeleccionProducto.Name = "btnSeleccionProducto";
             this.btnSeleccionProducto.Size = new System.Drawing.Size(54, 34);
             this.btnSeleccionProducto.TabIndex = 22;
@@ -129,16 +129,16 @@ namespace Presentacion.Core.Cobro
             this.cmbTalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTalle.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTalle.FormattingEnabled = true;
-            this.cmbTalle.Location = new System.Drawing.Point(875, 38);
+            this.cmbTalle.Location = new System.Drawing.Point(839, 41);
             this.cmbTalle.Name = "cmbTalle";
-            this.cmbTalle.Size = new System.Drawing.Size(54, 27);
+            this.cmbTalle.Size = new System.Drawing.Size(87, 27);
             this.cmbTalle.TabIndex = 19;
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(526, 41);
+            this.label3.Location = new System.Drawing.Point(483, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 25);
             this.label3.TabIndex = 14;
@@ -148,7 +148,7 @@ namespace Presentacion.Core.Cobro
             // 
             this.nudCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudCantidad.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.nudCantidad.Location = new System.Drawing.Point(584, 38);
+            this.nudCantidad.Location = new System.Drawing.Point(541, 38);
             this.nudCantidad.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -173,7 +173,7 @@ namespace Presentacion.Core.Cobro
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(641, 41);
+            this.label4.Location = new System.Drawing.Point(596, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 25);
             this.label4.TabIndex = 16;
@@ -183,7 +183,7 @@ namespace Presentacion.Core.Cobro
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(821, 40);
+            this.label8.Location = new System.Drawing.Point(778, 42);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 25);
             this.label8.TabIndex = 18;
@@ -198,7 +198,7 @@ namespace Presentacion.Core.Cobro
             0,
             0,
             0});
-            this.nudPrecio.Location = new System.Drawing.Point(708, 38);
+            this.nudPrecio.Location = new System.Drawing.Point(663, 37);
             this.nudPrecio.Maximum = new decimal(new int[] {
             100000000,
             0,

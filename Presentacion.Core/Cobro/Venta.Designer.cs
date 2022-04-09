@@ -120,36 +120,37 @@
             this.panel8.Controls.Add(this.label8);
             this.panel8.Controls.Add(this.nudPrecio);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel8.Location = new System.Drawing.Point(763, 76);
+            this.panel8.Location = new System.Drawing.Point(646, 76);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(417, 81);
+            this.panel8.Size = new System.Drawing.Size(534, 81);
             this.panel8.TabIndex = 16;
             // 
             // cmbTalle
             // 
             this.cmbTalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTalle.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTalle.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTalle.FormattingEnabled = true;
-            this.cmbTalle.Location = new System.Drawing.Point(326, 26);
+            this.cmbTalle.Location = new System.Drawing.Point(413, 28);
             this.cmbTalle.Name = "cmbTalle";
-            this.cmbTalle.Size = new System.Drawing.Size(83, 27);
+            this.cmbTalle.Size = new System.Drawing.Size(99, 30);
             this.cmbTalle.TabIndex = 13;
             this.cmbTalle.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 34);
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 19);
+            this.label3.Size = new System.Drawing.Size(61, 26);
             this.label3.TabIndex = 4;
             this.label3.Text = "Cant.";
             // 
             // nudCantidad
             // 
             this.nudCantidad.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.nudCantidad.Location = new System.Drawing.Point(57, 27);
+            this.nudCantidad.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudCantidad.Location = new System.Drawing.Point(70, 26);
             this.nudCantidad.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -161,7 +162,7 @@
             0,
             0});
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(46, 29);
+            this.nudCantidad.Size = new System.Drawing.Size(46, 33);
             this.nudCantidad.TabIndex = 5;
             this.nudCantidad.Value = new decimal(new int[] {
             1,
@@ -173,39 +174,40 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(109, 31);
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(131, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 19);
+            this.label4.Size = new System.Drawing.Size(89, 26);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Precio";
+            this.label4.Text = "Precio $";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(281, 31);
+            this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(349, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 19);
+            this.label8.Size = new System.Drawing.Size(58, 26);
             this.label8.TabIndex = 12;
             this.label8.Text = "Talle";
             // 
             // nudPrecio
             // 
             this.nudPrecio.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.nudPrecio.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPrecio.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.nudPrecio.Location = new System.Drawing.Point(169, 27);
+            this.nudPrecio.Location = new System.Drawing.Point(226, 26);
             this.nudPrecio.Maximum = new decimal(new int[] {
             100000000,
             0,
             0,
             0});
             this.nudPrecio.Name = "nudPrecio";
-            this.nudPrecio.Size = new System.Drawing.Size(109, 29);
+            this.nudPrecio.Size = new System.Drawing.Size(109, 33);
             this.nudPrecio.TabIndex = 11;
             // 
             // panel7
@@ -221,7 +223,7 @@
             this.panel7.Controls.Add(this.btnSeleccionProducto);
             this.panel7.Location = new System.Drawing.Point(0, 76);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(765, 81);
+            this.panel7.Size = new System.Drawing.Size(640, 81);
             this.panel7.TabIndex = 15;
             // 
             // txtCliente
@@ -232,13 +234,13 @@
             this.txtCliente.Enabled = false;
             this.txtCliente.Location = new System.Drawing.Point(95, 8);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(608, 29);
+            this.txtCliente.Size = new System.Drawing.Size(486, 29);
             this.txtCliente.TabIndex = 9;
             // 
             // btnCliente
             // 
             this.btnCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCliente.Location = new System.Drawing.Point(709, 6);
+            this.btnCliente.Location = new System.Drawing.Point(587, 6);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(46, 32);
             this.btnCliente.TabIndex = 10;
@@ -263,7 +265,7 @@
             this.txtProducto.Enabled = false;
             this.txtProducto.Location = new System.Drawing.Point(95, 43);
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(583, 29);
+            this.txtProducto.Size = new System.Drawing.Size(461, 29);
             this.txtProducto.TabIndex = 6;
             // 
             // label2
@@ -278,7 +280,7 @@
             // btnSeleccionProducto
             // 
             this.btnSeleccionProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeleccionProducto.Location = new System.Drawing.Point(684, 42);
+            this.btnSeleccionProducto.Location = new System.Drawing.Point(562, 42);
             this.btnSeleccionProducto.Name = "btnSeleccionProducto";
             this.btnSeleccionProducto.Size = new System.Drawing.Size(71, 32);
             this.btnSeleccionProducto.TabIndex = 7;

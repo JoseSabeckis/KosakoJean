@@ -100,7 +100,6 @@ namespace Servicios.Core.Producto
                         Id = x.Id,
                         Descripcion = x.Descripcion,
                         EstaEliminado = x.EstaEliminado,
-                        Precio = x.Precio,
                         Extras = x.Extras,
                         TipoProductoId = x.TipoProductoId,
                         ColegioId = x.ColegioId,
@@ -108,7 +107,8 @@ namespace Servicios.Core.Producto
                         Colegio = context.Colegios.FirstOrDefault(f=>f.Id == x.ColegioId).Descripcion,
                         TipoProducto = context.TipoProductos.FirstOrDefault(f=>f.Id == x.TipoProductoId).Descripcion,
                         Stock = x.Stock,
-                        Creacion = x.Creacion
+                        Creacion = x.Creacion,
+                        Precio = x.Precio,
 
                     }).ToList();
 
