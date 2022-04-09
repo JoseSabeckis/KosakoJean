@@ -64,6 +64,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.lblApellido);
             this.panel2.Controls.Add(this.lblNombre);
@@ -95,6 +96,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             // lblDni
             // 
             this.lblDni.AutoSize = true;
+            this.lblDni.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDni.Location = new System.Drawing.Point(1, 141);
             this.lblDni.Name = "lblDni";
@@ -106,11 +108,12 @@ namespace Presentacion.Core.Cliente.Ctrol
             // 
             this.ckbPrincipal.AutoSize = true;
             this.ckbPrincipal.Enabled = false;
+            this.ckbPrincipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbPrincipal.Location = new System.Drawing.Point(116, 140);
             this.ckbPrincipal.Name = "ckbPrincipal";
-            this.ckbPrincipal.Size = new System.Drawing.Size(67, 17);
+            this.ckbPrincipal.Size = new System.Drawing.Size(72, 17);
             this.ckbPrincipal.TabIndex = 6;
-            this.ckbPrincipal.Text = "Favortiro";
+            this.ckbPrincipal.Text = "Favorito";
             this.ckbPrincipal.UseVisualStyleBackColor = true;
             // 
             // btnCuenta
@@ -128,6 +131,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             // 
             // btnVer
             // 
+            this.btnVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVer.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.Location = new System.Drawing.Point(104, 3);
@@ -135,7 +139,7 @@ namespace Presentacion.Core.Cliente.Ctrol
             this.btnVer.Size = new System.Drawing.Size(79, 36);
             this.btnVer.TabIndex = 1;
             this.btnVer.Text = "Historial";
-            this.btnVer.UseVisualStyleBackColor = true;
+            this.btnVer.UseVisualStyleBackColor = false;
             this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
             // 
             // nudId

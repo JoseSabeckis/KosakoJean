@@ -533,6 +533,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\DataSources\Servicios.Core.DetalleCaja.Dto.DetalleCajaDto.datasource" />
+    <None Include="Properties\DataSources\Servicios.Core.Fecha.FechaDto.datasource" />
     <None Include="Properties\DataSources\Servicios.Core.ParteVenta.Dto.VentaDto2.datasource" />
     <None Include="Resources\1490129335-rounded14_82192.png" />
   </ItemGroup>
