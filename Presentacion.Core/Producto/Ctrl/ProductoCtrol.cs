@@ -34,7 +34,8 @@ namespace Presentacion.Core.Producto.Ctrl
             var producto = productoServicio.ObtenerPorId(_ProductoId);
 
             lblDescripcion.Text = producto.Descripcion;
-            lblPrecio.Text = $"$ {producto.Precio}"; 
+            lblPrecio.Text = $"${producto.Precio}";
+            lblExtra.Text = producto.Extras;
             ptbImagen.Image = ImagenDb.Convertir_Bytes_Imagen(producto.Foto);
         }
 

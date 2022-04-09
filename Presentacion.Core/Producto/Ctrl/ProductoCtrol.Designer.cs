@@ -34,18 +34,22 @@ namespace Presentacion.Core.Producto.Ctrl
             this.lblPrecio = new System.Windows.Forms.Label();
             this.nudId = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblExtra = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ptbImagen
             // 
             this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptbImagen.Image = global::Presentacion.Core.Properties.Resources.add_shop_online_ecommerce_shopping_9_icon_icons_com_61652;
-            this.ptbImagen.Location = new System.Drawing.Point(28, 1);
+            this.ptbImagen.Location = new System.Drawing.Point(30, 3);
             this.ptbImagen.Name = "ptbImagen";
-            this.ptbImagen.Size = new System.Drawing.Size(100, 85);
+            this.ptbImagen.Size = new System.Drawing.Size(93, 72);
             this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbImagen.TabIndex = 0;
             this.ptbImagen.TabStop = false;
@@ -54,8 +58,9 @@ namespace Presentacion.Core.Producto.Ctrl
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(3, 89);
+            this.lblDescripcion.Location = new System.Drawing.Point(3, 78);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(97, 19);
             this.lblDescripcion.TabIndex = 1;
@@ -64,8 +69,9 @@ namespace Presentacion.Core.Producto.Ctrl
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
+            this.lblPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(59, 108);
+            this.lblPrecio.Location = new System.Drawing.Point(104, 2);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(41, 17);
             this.lblPrecio.TabIndex = 2;
@@ -82,7 +88,8 @@ namespace Presentacion.Core.Producto.Ctrl
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.lblPrecio);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.ptbImagen);
             this.panel1.Controls.Add(this.lblDescripcion);
             this.panel1.Controls.Add(this.nudId);
@@ -91,6 +98,38 @@ namespace Presentacion.Core.Producto.Ctrl
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(179, 151);
             this.panel1.TabIndex = 4;
+            // 
+            // lblExtra
+            // 
+            this.lblExtra.AutoSize = true;
+            this.lblExtra.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExtra.Location = new System.Drawing.Point(2, -2);
+            this.lblExtra.Name = "lblExtra";
+            this.lblExtra.Size = new System.Drawing.Size(23, 16);
+            this.lblExtra.TabIndex = 4;
+            this.lblExtra.Text = "---";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblPrecio);
+            this.panel2.Controls.Add(this.lblExtra);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 124);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(175, 23);
+            this.panel2.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(106, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Precio";
             // 
             // ProductoCtrol
             // 
@@ -104,6 +143,8 @@ namespace Presentacion.Core.Producto.Ctrl
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -115,5 +156,8 @@ namespace Presentacion.Core.Producto.Ctrl
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.NumericUpDown nudId;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblExtra;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
     }
 }
