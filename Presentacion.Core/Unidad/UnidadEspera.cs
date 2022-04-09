@@ -46,7 +46,7 @@ namespace Presentacion.Core.Unidad
 
             lblNombre.Text = $"{Pedido.Apellido} {Pedido.Nombre}";
 
-            var dia = DateTime.Now - Pedido.FechaIniciado;
+            var dia = DateTime.Now.Date - Pedido.FechaIniciado.Date;
 
             if (Pedido.DiasHastaRetiro == null)
             {

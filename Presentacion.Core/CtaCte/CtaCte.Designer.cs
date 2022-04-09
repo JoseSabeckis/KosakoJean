@@ -329,7 +329,7 @@ namespace Presentacion.Core.CtaCte
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(903, 581);
+            this.MinimumSize = new System.Drawing.Size(1157, 581);
             this.Name = "CtaCte";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cta Cte";

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedido));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ckbSinNombre = new System.Windows.Forms.CheckBox();
             this.cmbHorario = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -54,7 +55,6 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.imgPedido = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ckbSinNombre = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -86,6 +86,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(656, 593);
             this.panel1.TabIndex = 0;
+            // 
+            // ckbSinNombre
+            // 
+            this.ckbSinNombre.AutoSize = true;
+            this.ckbSinNombre.Location = new System.Drawing.Point(435, 353);
+            this.ckbSinNombre.Name = "ckbSinNombre";
+            this.ckbSinNombre.Size = new System.Drawing.Size(130, 28);
+            this.ckbSinNombre.TabIndex = 23;
+            this.ckbSinNombre.Text = "Sin Nombre";
+            this.ckbSinNombre.UseVisualStyleBackColor = true;
+            this.ckbSinNombre.CheckedChanged += new System.EventHandler(this.ckbSinNombre_CheckedChanged);
             // 
             // cmbHorario
             // 
@@ -347,17 +358,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Cargue mas Informacion";
             // 
-            // ckbSinNombre
-            // 
-            this.ckbSinNombre.AutoSize = true;
-            this.ckbSinNombre.Location = new System.Drawing.Point(435, 353);
-            this.ckbSinNombre.Name = "ckbSinNombre";
-            this.ckbSinNombre.Size = new System.Drawing.Size(130, 28);
-            this.ckbSinNombre.TabIndex = 23;
-            this.ckbSinNombre.Text = "Sin Nombre";
-            this.ckbSinNombre.UseVisualStyleBackColor = true;
-            this.ckbSinNombre.CheckedChanged += new System.EventHandler(this.ckbSinNombre_CheckedChanged);
-            // 
             // Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -370,7 +370,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(672, 632);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(672, 544);
+            this.MinimumSize = new System.Drawing.Size(672, 632);
             this.Name = "Pedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedido";

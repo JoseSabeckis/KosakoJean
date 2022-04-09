@@ -242,7 +242,7 @@ namespace Presentacion.Core.Pedido
             this.MinimumSize = new System.Drawing.Size(830, 644);
             this.Name = "PrendaFabricar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PrendaFabricar";
+            this.Text = "Prenda para Fabricar";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgFabricar)).EndInit();

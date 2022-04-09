@@ -161,7 +161,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1119, 539);
+            this.MinimumSize = new System.Drawing.Size(1274, 641);
             this.Name = "PedidosEsperando";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedidos Esperando";

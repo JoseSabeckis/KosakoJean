@@ -389,7 +389,9 @@ namespace Presentacion.Core.Arreglo
             this.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(673, 723);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(673, 723);
             this.Name = "InsertarArreglo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nuevo Arreglo";

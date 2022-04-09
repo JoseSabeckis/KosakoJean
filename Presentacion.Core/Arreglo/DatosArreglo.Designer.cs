@@ -517,7 +517,7 @@ namespace Presentacion.Core.Arreglo
             this.MinimumSize = new System.Drawing.Size(868, 535);
             this.Name = "DatosArreglo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "DatosArreglo";
+            this.Text = "Datos del Arreglo";
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

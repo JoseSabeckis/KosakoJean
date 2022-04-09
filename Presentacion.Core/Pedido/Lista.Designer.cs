@@ -167,7 +167,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1119, 539);
+            this.MinimumSize = new System.Drawing.Size(1310, 620);
             this.Name = "Lista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Lista";

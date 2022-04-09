@@ -141,7 +141,7 @@ namespace Presentacion.Core.Cliente
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(826, 441);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(748, 441);
+            this.MinimumSize = new System.Drawing.Size(826, 441);
             this.Name = "ElegirCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Elegir Cliente";
