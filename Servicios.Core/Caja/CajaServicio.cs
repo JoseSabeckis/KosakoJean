@@ -89,6 +89,18 @@ namespace Servicios.Core.Caja
             }
         }
 
+        public void RestarDineroDeCaja(decimal monto)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var caja = context.Cajas.FirstOrDefault(x => x.OpenClose == OpenClose.Abierto);
+
+                caja.TotalCaja -= monto;
+
+                context.SaveChanges();
+            }
+        }
+
         public bool BuscarCajaAbiertaBool()
         {
             using (var context = new KosakoDBEntities())

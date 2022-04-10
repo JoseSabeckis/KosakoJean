@@ -27,6 +27,8 @@ namespace Servicios.Core.Caja
 
         decimal SumarCaja();
 
+        void RestarDineroDeCaja(decimal monto);
+
         IEnumerable<CajaDto> BuscarCajasPorMes();
     }
 }

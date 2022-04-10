@@ -67,6 +67,7 @@
             this.btnTerminar = new System.Windows.Forms.Button();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnRestar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -324,6 +325,7 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.btnRestar);
             this.panel5.Controls.Add(this.btnCobro);
             this.panel5.Controls.Add(this.lblCobrar);
             this.panel5.Controls.Add(this.ckbNormal);
@@ -340,9 +342,9 @@
             this.btnCobro.BackColor = System.Drawing.Color.Lime;
             this.btnCobro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCobro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCobro.Location = new System.Drawing.Point(145, 51);
+            this.btnCobro.Location = new System.Drawing.Point(185, 50);
             this.btnCobro.Name = "btnCobro";
-            this.btnCobro.Size = new System.Drawing.Size(120, 45);
+            this.btnCobro.Size = new System.Drawing.Size(85, 45);
             this.btnCobro.TabIndex = 17;
             this.btnCobro.Text = "Cobrar";
             this.btnCobro.UseVisualStyleBackColor = false;
@@ -558,6 +560,19 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnRestar
+            // 
+            this.btnRestar.BackColor = System.Drawing.Color.Red;
+            this.btnRestar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestar.Location = new System.Drawing.Point(117, 51);
+            this.btnRestar.Name = "btnRestar";
+            this.btnRestar.Size = new System.Drawing.Size(63, 45);
+            this.btnRestar.TabIndex = 18;
+            this.btnRestar.Text = "Restar";
+            this.btnRestar.UseVisualStyleBackColor = false;
+            this.btnRestar.Click += new System.EventHandler(this.btnRestar_Click);
+            // 
             // PedidoInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -627,5 +642,6 @@
         private System.Windows.Forms.Button btnAgregarProductos;
         private System.Windows.Forms.Label lblEliminado;
         private System.Windows.Forms.Button btnEliminarPedidoSeleccionado;
+        private System.Windows.Forms.Button btnRestar;
     }
 }

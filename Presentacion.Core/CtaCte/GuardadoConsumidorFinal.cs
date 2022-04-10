@@ -32,6 +32,7 @@ namespace Presentacion.Core.CtaCte
             if (pedido == AccesoDatos.Proceso.Retirado)
             {
                 btnActualizar.Visible = false;
+                btnEliminar.Visible = true;
             }
 
             _Pedido = pedido;
@@ -103,6 +104,36 @@ namespace Presentacion.Core.CtaCte
         {
             panelGrilla.Controls.Clear();
             LlenarGrilla(_Pedido);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta Seguro De Continuar? Se Perderan Los Pedidos...","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var listaPedidosRetirados = pedidoServicio.BuscandoRetiradosUltima();
+
+                foreach (var item in listaPedidosRetirados)
+                {
+                    var producto_pedido_Lista = producto_Pedido_Servicio.BuscarPedidoId(item.Id);
+
+                    foreach (var pedido in producto_pedido_Lista)
+                    {
+                        producto_Pedido_Servicio.EliminacionDefinitiva(pedido.Id);
+                    }
+
+                    pedidoServicio.EliminacionDefinitiva(item.Id);
+
+                }
+
+                MessageBox.Show("Datos Eliminados Exitosamente!!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                panelGrilla.Controls.Clear();
+
+                var cuentas = pedidoServicio.BuscarRetirado();
+
+                CrearControles(cuentas, AccesoDatos.Proceso.Retirado);
+
+            }
         }
     }
 }

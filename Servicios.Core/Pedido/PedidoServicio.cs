@@ -347,6 +347,60 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public IEnumerable<PedidoDto> BuscandoTerminadosUltima()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.Where(x => x.Proceso == Proceso.PedidoTerminado).Select(x => new PedidoDto
+                {
+                    Adelanto = x.Adelanto,
+                    Apellido = x.Apellido,
+                    Nombre = x.Nombre,
+                    FechaEntrega = x.FechaEntrega,
+                    FechaPedido = x.FechaPedido,
+                    Total = x.Total,
+                    Id = x.Id,
+                    Proceso = x.Proceso,
+                    ClienteId = x.ClienteId,
+                    Descripcion = x.Descripcion,
+                    FechaRetiro = x.FechaRetirado,
+                    Horario = x.Horario,
+                    DiasHastaRetiro = x.DiasHastaRetiro,
+                    FechaIniciado = x.FechaPedido,
+                    EstaEliminado = x.EstaEliminado
+                }).ToList();
+
+            }
+        }
+
+        public IEnumerable<PedidoDto> BuscandoRetiradosUltima()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.Where(x => x.Proceso == Proceso.Retirado).Select(x => new PedidoDto
+                {
+                    Adelanto = x.Adelanto,
+                    Apellido = x.Apellido,
+                    Nombre = x.Nombre,
+                    FechaEntrega = x.FechaEntrega,
+                    FechaPedido = x.FechaPedido,
+                    Total = x.Total,
+                    Id = x.Id,
+                    Proceso = x.Proceso,
+                    ClienteId = x.ClienteId,
+                    Descripcion = x.Descripcion,
+                    FechaRetiro = x.FechaRetirado,
+                    Horario = x.Horario,
+                    DiasHastaRetiro = x.DiasHastaRetiro,
+                    FechaIniciado = x.FechaPedido,
+                    EstaEliminado = x.EstaEliminado
+                }).ToList();
+
+            }
+        }
+
         public IEnumerable<PedidoDto> BuscandoTerminadosyClientes(long id)
         {
             using (var context = new KosakoDBEntities())
@@ -489,6 +543,20 @@ namespace Servicios.Core.Pedido
                 var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
 
                 pedido.Adelanto += total;
+
+                context.SaveChanges();
+
+            }
+        }
+
+        public void RestarAdelanto(decimal total, long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.Adelanto -= total;
 
                 context.SaveChanges();
 

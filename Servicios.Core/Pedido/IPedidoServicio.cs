@@ -15,9 +15,12 @@ namespace Servicios.Core.Pedido
 
         void CambiarProcesoRetirado(long id);
 
+        void RestarAdelanto(decimal total, long id);
+
         void Eliminar(long id);
         void EliminacionDefinitiva(long id);
         void EliminacionDefinitivaLista();
+        IEnumerable<PedidoDto> BuscandoRetiradosUltima();
 
         PedidoDto BuscarIDPedidos(long id);
 
@@ -34,6 +37,8 @@ namespace Servicios.Core.Pedido
         IEnumerable<PedidoDto> BuscarRetirado();
 
         IEnumerable<PedidoDto> BuscarGuardados();
+
+        IEnumerable<PedidoDto> BuscandoTerminadosUltima();
 
         IEnumerable<PedidoDto> BuscandoTerminadosyClientesFecha(long id, DateTime date);
 

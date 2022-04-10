@@ -275,8 +275,10 @@ namespace Presentacion.Core.Pedido
                 ckbNormal.Visible = false;
 
                 nudCobro.Visible = false;
+                
                 lblCobrar.Visible = false;
                 btnCobro.Visible = false;
+                btnRestar.Visible = false;
 
                 if (pedido.Proceso == AccesoDatos.Proceso.PedidoTerminado)
                 {
@@ -299,6 +301,7 @@ namespace Presentacion.Core.Pedido
                 nudCobro.Visible = true;
                 lblCobrar.Visible = true;
                 btnCobro.Visible = true;
+                btnRestar.Visible = true;
 
                 lblPagado.Visible = false;
             }
@@ -437,6 +440,7 @@ namespace Presentacion.Core.Pedido
                 lblCobrar.Visible = false;
                 nudCobro.Visible = false;
                 btnCobro.Visible = false;
+                btnRestar.Visible = false;
 
                 ckbNormal.Visible = false;
                 ckbTarjeta.Visible = false;
@@ -737,6 +741,57 @@ namespace Presentacion.Core.Pedido
         private void lblPagado_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRestar_Click(object sender, EventArgs e)
+        {
+            if (nudCobro.Value > 0)
+            {
+                var pedido = pedidoServicio.Buscar(PedidoId);
+
+                if (nudCobro.Value > pedido.Adelanto)
+                {
+                    MessageBox.Show("No Se Puedo Restar Dinero, Lo Que Quiere Restar Es Mayor Al Adelanto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return;
+                }
+
+                if (MessageBox.Show("Esta Seguro De Restar Dinero A La Cuenta?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    var Resto = nudCobro.Value * -1;
+
+                    //Total Cta Cte
+
+                    var cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
+
+                    ctaCteServicio.SumarLoQueDebe(nudCobro.Value, pedido.ClienteId, cuentaId.Id);
+
+                    //caja
+
+                    var detalle = new DetalleCajaDto
+                    {
+                        Descripcion = $"{lblPersona.Text} - Dinero Devuelto",
+                        Fecha = DateTime.Now.ToLongDateString(),
+                        Total = Resto,
+                        CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                    };
+
+                    TipoPago(detalle);
+
+                    detalleCajaServicio.AgregarDetalleCaja(detalle);
+
+                    cajaServicio.RestarDineroDeCaja(nudCobro.Value);
+
+                    pedidoServicio.RestarAdelanto(nudCobro.Value, PedidoId);
+
+                    MessageBox.Show("Dinero Regresado Al Cliente...", "Devuelto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    nudCobro.Value = 0;
+
+                    Datos(PedidoId);
+
+                }
+            }          
         }
     }
 }

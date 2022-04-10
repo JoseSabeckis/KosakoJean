@@ -44,6 +44,7 @@ namespace Presentacion.Core.Pedido
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnTerminado = new System.Windows.Forms.Button();
             this.btnCancelado = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgFabricar)).BeginInit();
             this.panel2.SuspendLayout();
@@ -57,6 +58,7 @@ namespace Presentacion.Core.Pedido
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.imgFabricar);
             this.panel1.Controls.Add(this.button1);
@@ -227,6 +229,18 @@ namespace Presentacion.Core.Pedido
             this.btnCancelado.UseVisualStyleBackColor = false;
             this.btnCancelado.Click += new System.EventHandler(this.btnCancelado_Click);
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnImprimir.Location = new System.Drawing.Point(563, 0);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(134, 96);
+            this.btnImprimir.TabIndex = 3;
+            this.btnImprimir.Text = "Imprimir Prendas";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            // 
             // PrendaFabricar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -273,5 +287,6 @@ namespace Presentacion.Core.Pedido
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

@@ -18,5 +18,7 @@ namespace Servicios.Core.CtaCte
         CtaCteDto ObtenerPorId(long ctaId);
 
         CtaCteDto ObtenerPorIdDePedidosId(long pedidoId);
+
+        void SumarLoQueDebe(decimal monto, long clienteId, long cuentaId);
     }
 }

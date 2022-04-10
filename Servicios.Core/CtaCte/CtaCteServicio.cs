@@ -50,6 +50,24 @@ namespace Servicios.Core.CtaCte
             }
         }
 
+        public void SumarLoQueDebe(decimal monto, long clienteId, long cuentaId)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var cuenta = context.CtasCtes.FirstOrDefault(x => x.ClienteId == clienteId && x.Id == cuentaId);
+
+                cuenta.Debe += monto;
+
+                if (cuenta.Debe == 0)
+                {
+                    cuenta.Estado = CtaCteEstado.Pagado;
+                }
+
+                context.SaveChanges();
+
+            }
+        }
+
         public IEnumerable<CtaCteDto> Lista(long clienteId)
         {
             using(var context = new KosakoDBEntities())
