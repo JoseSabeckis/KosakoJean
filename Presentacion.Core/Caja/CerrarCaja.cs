@@ -2,13 +2,6 @@
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Caja
@@ -87,7 +80,7 @@ namespace Presentacion.Core.Caja
 
         private void btnCerrarCaja_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Seguro de Cerrar Caja?","Opcion",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Esta Seguro de Cerrar Caja?", "Opcion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 var caja = new DetalleCajaDto
                 {

@@ -89,6 +89,7 @@
     <Compile Include="Producto\Dto\ProductoDto.cs" />
     <Compile Include="Producto\IProductoServicio.cs" />
     <Compile Include="Producto\ProductoServicio.cs" />
+    <Compile Include="Producto_Dato\Dto\Producto_Dato_Impresion.cs" />
     <Compile Include="Producto_Dato\IProducto_Dato_Servicio.cs" />
     <Compile Include="Producto_Dato\Dto\Producto_Dato_Dto.cs" />
     <Compile Include="Producto_Dato\Producto_Dato_Servicio.cs" />

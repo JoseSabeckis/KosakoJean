@@ -1,10 +1,7 @@
 ﻿using AccesoDatos;
 using Servicios.Core.Cliente.Dto;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.Cliente
 {
@@ -12,7 +9,7 @@ namespace Servicios.Core.Cliente
     {
         public void Nuevo(ClienteDto Dto)
         {
-            
+
             using (var context = new KosakoDBEntities())
             {
                 var nuevo = new AccesoDatos.Cliente
@@ -30,7 +27,7 @@ namespace Servicios.Core.Cliente
 
                 context.SaveChanges();
             }
-            
+
         }
 
         public void Eliminar(long id)
@@ -75,21 +72,21 @@ namespace Servicios.Core.Cliente
 
                 var lista = context.Clientes.Where(x => x.EstaEliminado == false);
 
-                   return lista.OrderBy(x => x.Apellido.Contains(cadenaBuscar) && x.Principal == false || x.Nombre.Contains(cadenaBuscar) && x.Principal == false)
-                    .Select(x => new ClienteDto
-                    {
+                return lista.OrderBy(x => x.Apellido.Contains(cadenaBuscar) && x.Principal == false || x.Nombre.Contains(cadenaBuscar) && x.Principal == false)
+                 .Select(x => new ClienteDto
+                 {
 
-                        Id = x.Id,
-                        Apellido = x.Apellido,
-                        Nombre = x.Nombre,
-                        Dni = x.Dni,
-                        Direccion = x.Direccion,
-                        Telefono = x.Telefono,
-                        EstaEliminado = x.EstaEliminado,
-                        Foto = x.Foto,
-                        Principal = x.Principal
+                     Id = x.Id,
+                     Apellido = x.Apellido,
+                     Nombre = x.Nombre,
+                     Dni = x.Dni,
+                     Direccion = x.Direccion,
+                     Telefono = x.Telefono,
+                     EstaEliminado = x.EstaEliminado,
+                     Foto = x.Foto,
+                     Principal = x.Principal
 
-                    }).ToList();
+                 }).ToList();
 
             }
 
@@ -97,7 +94,7 @@ namespace Servicios.Core.Cliente
 
         public bool VerificarDni(string _dni)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 if (context.Clientes.FirstOrDefault(x => x.Dni == _dni) == null)
                 {

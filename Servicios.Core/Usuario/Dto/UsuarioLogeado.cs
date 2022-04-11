@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Servicios.Core.Usuario.Dto
+﻿namespace Servicios.Core.Usuario.Dto
 {
     public static class UsuarioLogeado
     {

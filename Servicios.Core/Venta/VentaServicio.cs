@@ -3,8 +3,6 @@ using Servicios.Core.Venta.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.Venta
 {
@@ -12,7 +10,7 @@ namespace Servicios.Core.Venta
     {
         public long NuevaVenta(VentaDto ventaDto)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
 
                 var nueva = new AccesoDatos.Venta
@@ -82,7 +80,7 @@ namespace Servicios.Core.Venta
         {
             using (var context = new KosakoDBEntities())
             {
-                
+
                 return context.Ventas.Where(x => x.Fecha.Day >= desde.Day && x.Fecha.Month >= desde.Month && x.Fecha.Year >= desde.Year && x.Fecha.Year <= hasta.Year && x.Fecha.Month <= hasta.Month && x.Fecha.Day <= hasta.Day
                 && x.ClienteId == clienteId).Select(x => new VentaDto
                 {
@@ -92,7 +90,7 @@ namespace Servicios.Core.Venta
                     Id = x.Id,
                     Total = x.Total
 
-                }).ToList();                
+                }).ToList();
             }
         }
 
@@ -159,7 +157,7 @@ namespace Servicios.Core.Venta
                 {
                     client = cliente.Apellido + " " + cliente.Nombre;
                 }
-                
+
 
                 if (client == " .")
                 {
@@ -183,7 +181,7 @@ namespace Servicios.Core.Venta
             {
                 var fecha = DateTime.Now;
                 fecha.AddDays(-30);
-                
+
                 return context.Ventas.AsNoTracking().Where(x => x.Fecha >= fecha)
                     .Select(x => new VentaDto
                     {

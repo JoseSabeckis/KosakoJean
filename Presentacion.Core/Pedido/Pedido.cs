@@ -1,5 +1,4 @@
 ﻿using Presentacion.Clases;
-using Presentacion.Core.Cobro;
 using Presentacion.Core.Factura;
 using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
@@ -22,15 +21,9 @@ using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Talle;
 using Servicios.Core.Venta;
-using Servicios.Core.Venta.Dto;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Pedido
@@ -143,14 +136,14 @@ namespace Presentacion.Core.Pedido
 
                     ckbNormal.Checked = true;
                 }
-                
+
             }
             else
             {
                 if (ClienteId != 1)
                 {
                     ckbCtaCte.Enabled = true;
-                }               
+                }
             }
         }
 
@@ -197,7 +190,7 @@ namespace Presentacion.Core.Pedido
 
                         //stock
                         productoServicio.BajarStock(producto.Id, item.Cantidad);
-                        
+
                     }
 
                     foreach (var item in ListaVentas)
@@ -213,7 +206,7 @@ namespace Presentacion.Core.Pedido
                             Descripcion = segunda,
                             TalleId = talleServicio.BuscarNombreDevuelveId(item.Talle)
                         };
-                        
+
                         var _Id_Pedido = producto_Pedido_Servicio.NuevoProductoPedido(aux);
 
                         //datos
@@ -229,7 +222,7 @@ namespace Presentacion.Core.Pedido
 
                                 producto_Dato_Servicio.Insertar(dato);
                             }
-                        }                                               
+                        }
 
                     }
 
@@ -244,8 +237,8 @@ namespace Presentacion.Core.Pedido
                         PedidoId = pedidoId
                     };
 
-                     ctaCteServicio.Agregar(cuenta);
-                    
+                    ctaCteServicio.Agregar(cuenta);
+
 
                     var detalle = new DetalleCajaDto
                     {
@@ -257,7 +250,7 @@ namespace Presentacion.Core.Pedido
 
                     TipoPago(detalle);
 
-                    detallCajaServicio.AgregarDetalleCaja(detalle);                   
+                    detallCajaServicio.AgregarDetalleCaja(detalle);
 
                     //dinero a caja
                     cajaServicio.SumarDineroACaja(nudAdelanto.Value);//
@@ -293,7 +286,7 @@ namespace Presentacion.Core.Pedido
 
                     return;
                 }
-                                                                  
+
             }
             else
             {

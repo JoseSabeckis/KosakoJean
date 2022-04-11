@@ -2,13 +2,6 @@
 using Servicios.Core.Image;
 using Servicios.Core.Image.Dto;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Image
@@ -113,7 +106,7 @@ namespace Presentacion.Core.Image
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Seguro de Guardar?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Esta Seguro de Guardar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
                 var imageDto = new ImageDto

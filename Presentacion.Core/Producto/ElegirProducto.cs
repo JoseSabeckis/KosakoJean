@@ -4,13 +4,6 @@ using Servicios.Core.Image.Dto;
 using Servicios.Core.Producto;
 using Servicios.Core.TipoProducto;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Producto
@@ -52,7 +45,7 @@ namespace Presentacion.Core.Producto
         {
             for (var i = 0; i < grilla.ColumnCount; i++)
             {
-                grilla.Columns[i].Visible = false;                
+                grilla.Columns[i].Visible = false;
 
             }
 
@@ -132,7 +125,7 @@ namespace Presentacion.Core.Producto
 
         private void ElegirProducto_FormClosed(object sender, FormClosedEventArgs e)
         {
-         
+
         }
 
         private void ElegirProducto_FormClosing(object sender, FormClosingEventArgs e)

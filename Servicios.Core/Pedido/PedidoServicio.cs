@@ -3,8 +3,6 @@ using Servicios.Core.Pedido.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.Pedido
 {
@@ -12,7 +10,7 @@ namespace Servicios.Core.Pedido
     {
         public long NuevoPedido(PedidoDto pedidoDto)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var nuevo = new AccesoDatos.Pedido
                 {
@@ -98,7 +96,7 @@ namespace Servicios.Core.Pedido
 
         public void Eliminar(long id)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var eliminado = context.Pedidos.FirstOrDefault(x => x.Id == id);
 
@@ -129,7 +127,7 @@ namespace Servicios.Core.Pedido
                 foreach (var item in datos)
                 {
                     context.Pedidos.Remove(item);
-                }               
+                }
 
                 context.SaveChanges();
             }
@@ -141,9 +139,9 @@ namespace Servicios.Core.Pedido
             {
 
                 var lista = context.Pedidos.Where(x => x.Proceso == Proceso.InicioPedido && x.EstaEliminado == false);
-                    
 
-                return lista.OrderBy(x=>x.FechaEntrega).Select(x => new PedidoDto
+
+                return lista.OrderBy(x => x.FechaEntrega).Select(x => new PedidoDto
                 {
                     Adelanto = x.Adelanto,
                     Apellido = x.Apellido,
@@ -171,9 +169,9 @@ namespace Servicios.Core.Pedido
             {
 
                 var lista = context.Pedidos.Where(x => x.Proceso == Proceso.EsperandoRetiro && x.EstaEliminado == false);
-                    
 
-                return lista.OrderBy(x=>x.FechaEntrega).Select(x => new PedidoDto
+
+                return lista.OrderBy(x => x.FechaEntrega).Select(x => new PedidoDto
                 {
                     Adelanto = x.Adelanto,
                     Apellido = x.Apellido,
@@ -262,24 +260,24 @@ namespace Servicios.Core.Pedido
 
                 var aux = context.Pedidos.FirstOrDefault(x => x.Id == id);
 
-                    var aux2 = new PedidoDto
-                    {
-                        Adelanto = aux.Adelanto,
-                        Apellido = aux.Apellido,
-                        Nombre = aux.Nombre,
-                        FechaEntrega = aux.FechaEntrega,
-                        FechaPedido = aux.FechaPedido,
-                        Total = aux.Total,
-                        Id = aux.Id,
-                        Proceso = aux.Proceso,
-                        ClienteId = aux.ClienteId,
-                        Descripcion = aux.Descripcion,
-                        FechaRetiro = aux.FechaRetirado,
-                        Horario = aux.Horario,
-                        DiasHastaRetiro = aux.DiasHastaRetiro,
-                        FechaIniciado = aux.FechaPedido,
-                        EstaEliminado = aux.EstaEliminado
-                    };
+                var aux2 = new PedidoDto
+                {
+                    Adelanto = aux.Adelanto,
+                    Apellido = aux.Apellido,
+                    Nombre = aux.Nombre,
+                    FechaEntrega = aux.FechaEntrega,
+                    FechaPedido = aux.FechaPedido,
+                    Total = aux.Total,
+                    Id = aux.Id,
+                    Proceso = aux.Proceso,
+                    ClienteId = aux.ClienteId,
+                    Descripcion = aux.Descripcion,
+                    FechaRetiro = aux.FechaRetirado,
+                    Horario = aux.Horario,
+                    DiasHastaRetiro = aux.DiasHastaRetiro,
+                    FechaIniciado = aux.FechaPedido,
+                    EstaEliminado = aux.EstaEliminado
+                };
                 return aux2;
             }
         }
@@ -314,7 +312,7 @@ namespace Servicios.Core.Pedido
             {
                 var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
 
-                pedido.Adelanto -= resta;         
+                pedido.Adelanto -= resta;
 
                 context.SaveChanges();
             }

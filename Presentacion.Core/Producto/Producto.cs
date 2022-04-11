@@ -3,14 +3,7 @@ using Servicios.Core.Colegio;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto.Dto;
 using Servicios.Core.TipoProducto;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Producto
@@ -78,7 +71,7 @@ namespace Presentacion.Core.Producto
 
                 item.Colegio = colegioDescripcion;
                 item.TipoProducto = tipoDescripcion;
-            }          
+            }
 
             grilla.DataSource = lista.ToList();
         }

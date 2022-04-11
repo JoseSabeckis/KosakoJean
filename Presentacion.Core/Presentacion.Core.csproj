@@ -201,6 +201,12 @@
     <Compile Include="Factura\Comprobante.Designer.cs">
       <DependentUpon>Comprobante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Factura\ListaPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura\ListaPedidos.Designer.cs">
+      <DependentUpon>ListaPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Image\ImageDatos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -443,7 +449,11 @@
     <EmbeddedResource Include="Factura\Comprobante.resx">
       <DependentUpon>Comprobante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Factura\ListaPedidos.resx">
+      <DependentUpon>ListaPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Factura\ReportComprobante.rdlc" />
+    <EmbeddedResource Include="Factura\ReportPrendas.rdlc" />
     <EmbeddedResource Include="Image\ImageDatos.resx">
       <DependentUpon>ImageDatos.cs</DependentUpon>
     </EmbeddedResource>
@@ -535,6 +545,8 @@
     <None Include="Properties\DataSources\Servicios.Core.DetalleCaja.Dto.DetalleCajaDto.datasource" />
     <None Include="Properties\DataSources\Servicios.Core.Fecha.FechaDto.datasource" />
     <None Include="Properties\DataSources\Servicios.Core.ParteVenta.Dto.VentaDto2.datasource" />
+    <None Include="Properties\DataSources\Servicios.Core.Producto_Dato.Dto.Producto_Dato_Dto.datasource" />
+    <None Include="Properties\DataSources\Servicios.Core.Producto_Dato.Dto.Producto_Dato_Impresion.datasource" />
     <None Include="Resources\1490129335-rounded14_82192.png" />
   </ItemGroup>
   <ItemGroup>

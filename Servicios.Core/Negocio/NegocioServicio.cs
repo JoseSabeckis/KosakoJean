@@ -1,10 +1,6 @@
 ﻿using AccesoDatos;
 using Servicios.Core.Negocio.Dto;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.Negocio
 {
@@ -12,7 +8,7 @@ namespace Servicios.Core.Negocio
     {
         public void Insertar(NegocioDto negocioDto)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
 
                 var negocio = new AccesoDatos.Negocio
@@ -33,7 +29,7 @@ namespace Servicios.Core.Negocio
 
         public void Modificar(NegocioDto negocioDto)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var negocio = context.Negocios.FirstOrDefault(x => x.Id == negocioDto.Id);
 
@@ -50,7 +46,7 @@ namespace Servicios.Core.Negocio
 
         public NegocioDto ObtenerPorId(long id)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
 
                 var negocio = context.Negocios.FirstOrDefault(x => x.Id == id);
@@ -71,7 +67,7 @@ namespace Servicios.Core.Negocio
                     return NEGOCIO;
                 }
 
-                return null;               
+                return null;
 
             }
         }

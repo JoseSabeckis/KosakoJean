@@ -1,10 +1,7 @@
 ﻿using AccesoDatos;
 using Servicios.Core.Producto_Venta.Dto;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.Producto_Venta
 {
@@ -40,7 +37,7 @@ namespace Servicios.Core.Producto_Venta
 
         public void NuevoProductoVenta(Producto_Venta_Dto producto)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var nuevo = new AccesoDatos.Producto_Venta
                 {
@@ -101,7 +98,7 @@ namespace Servicios.Core.Producto_Venta
                     Talle = aux.Talle,
                     VentaId = aux.VentaId,
                     TalleId = aux.TalleId
-                   
+
                 };
 
                 return producto;

@@ -6,18 +6,10 @@ using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
 using Servicios.Core.CtaCte;
-using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.Venta;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Arreglo
@@ -75,7 +67,7 @@ namespace Presentacion.Core.Arreglo
                     return;
                 }
 
-                if (MessageBox.Show("Esta Seguro de Continuar?","Pregunta",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
                     var arreglo = new ArregloDto
@@ -168,7 +160,7 @@ namespace Presentacion.Core.Arreglo
                 txtApellido.Text = "";
             }
             else
-            {             
+            {
                 txtApellido.Enabled = false;
                 txtNombre.Enabled = false;
             }

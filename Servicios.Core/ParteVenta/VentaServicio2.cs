@@ -1,9 +1,6 @@
 ﻿using Servicios.Core.ParteVenta.Dto;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.ParteVenta
 {
@@ -21,7 +18,7 @@ namespace Servicios.Core.ParteVenta
         }
         public void InsertarProducto(string descripcion, decimal precio, int cantidad)
         {
-            
+
             if (_detalleComprobantes.Any(x => x.Descripcion == descripcion))
             {
                 var detalle = _detalleComprobantes.FirstOrDefault(x => x.Descripcion == descripcion);

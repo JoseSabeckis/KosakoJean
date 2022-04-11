@@ -15,17 +15,10 @@ using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Producto_Venta;
 using Servicios.Core.Producto_Venta.Dto;
 using Servicios.Core.Talle;
-using Servicios.Core.Talle.Dto;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.CtaCte
@@ -131,7 +124,7 @@ namespace Presentacion.Core.CtaCte
                 return;
             }
 
-            if (MessageBox.Show("Seguro de Continuar?","Pregunta",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 ventaDto.ClienteId = _Cliente.Id;
                 ventaDto.Fecha = DateTime.Now;
@@ -148,12 +141,12 @@ namespace Presentacion.Core.CtaCte
                     item.VentaId = ventaId;
 
                     descripcion += " " + item.Descripcion + " ";
-                    
+
                     // descontar stock
                     productoServicio.BajarStock(producto.Id, item.Cantidad);
 
                     producto_vent.NuevoProductoVenta(item);
-                }               
+                }
 
                 AccesoDatos.Proceso _Proceso;
 

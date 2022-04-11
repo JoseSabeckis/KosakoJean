@@ -1,10 +1,7 @@
 ﻿using AccesoDatos;
 using Servicios.Core.DetalleCaja.Dto;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.DetalleCaja
 {
@@ -12,7 +9,7 @@ namespace Servicios.Core.DetalleCaja
     {
         public void AgregarDetalleCaja(DetalleCajaDto detalleCajaDto)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var detalleCaja = new AccesoDatos.DetalleCaja
                 {
@@ -31,7 +28,7 @@ namespace Servicios.Core.DetalleCaja
 
         public IEnumerable<DetalleCajaDto> Lista(long cajaId)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
 
                 return context.DetalleCajas.AsNoTracking().Where(x => x.CajaId == cajaId)
@@ -52,7 +49,7 @@ namespace Servicios.Core.DetalleCaja
 
         public long BuscarCajaAbierta()
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var cajaId = context.Cajas.AsNoTracking().FirstOrDefault(x => x.OpenClose == OpenClose.Abierto).Id;
 
@@ -69,7 +66,7 @@ namespace Servicios.Core.DetalleCaja
                 var lista = context.DetalleCajas.AsNoTracking().Where(x => x.CajaId == id)
                     .Select(x => new DetalleCajaDto
                     {
-                      
+
                         CajaId = x.CajaId,
                         Descripcion = x.Descripcion,
                         Fecha = x.Fecha,
@@ -80,7 +77,7 @@ namespace Servicios.Core.DetalleCaja
                     }).ToList();
 
                 return lista;
-                
+
             }
 
         }

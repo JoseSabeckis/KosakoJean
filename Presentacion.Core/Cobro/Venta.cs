@@ -12,7 +12,6 @@ using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.Fecha;
 using Servicios.Core.Image.Dto;
-using Servicios.Core.ParteVenta;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto.Dto;
@@ -24,12 +23,7 @@ using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Cobro
@@ -175,7 +169,7 @@ namespace Presentacion.Core.Cobro
                         btnAgregarAlaGrilla.Select();
                         return;
                     }
-                }                
+                }
 
                 if (prueba != null)
                 {
@@ -207,7 +201,7 @@ namespace Presentacion.Core.Cobro
                     Total();
                 }
 
-                Limpiar();                
+                Limpiar();
             }
             else
             {
@@ -237,7 +231,7 @@ namespace Presentacion.Core.Cobro
                         {
                             precio += item.Precio;
                         }
-                        
+
                     }
 
                 }
@@ -336,10 +330,10 @@ namespace Presentacion.Core.Cobro
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             if (nudPagaron.Value > 0 && nudTotalVenta.Value > 0)
-            {                   
-                 var pago = nudPagaron.Value - nudTotalVenta.Value;
+            {
+                var pago = nudPagaron.Value - nudTotalVenta.Value;
 
-                 txtVuelto.Text = $" $ {pago}";
+                txtVuelto.Text = $" $ {pago}";
             }
             else
             {
@@ -384,8 +378,8 @@ namespace Presentacion.Core.Cobro
                         }
 
                         ventaDto.Fecha = DateTime.Now;
-                        ventaDto.Total = _total;                           
-                        
+                        ventaDto.Total = _total;
+
 
                         var ventaId = ventaServicio.NuevaVenta(ventaDto);
 
@@ -408,7 +402,7 @@ namespace Presentacion.Core.Cobro
                             };
 
                             // descontar stock
-                            productoServicio.BajarStock(producto.Id, item.Cantidad);                          
+                            productoServicio.BajarStock(producto.Id, item.Cantidad);
                             //
 
                             descripcion = $"{descripcion} - {producto_venta.Descripcion}";
@@ -444,10 +438,10 @@ namespace Presentacion.Core.Cobro
                         if (ckbTicket.Checked)
                         {
                             VerTicket(ListaVenta.ToList());
-                        }                                              
+                        }
 
                         //limpiar
-                        btnLimpiar.PerformClick();                      
+                        btnLimpiar.PerformClick();
 
                     }
 
@@ -506,7 +500,7 @@ namespace Presentacion.Core.Cobro
                         }
 
                     }
-                   
+
                 }
             }
             else
@@ -632,7 +626,7 @@ namespace Presentacion.Core.Cobro
 
         private void Venta_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         public void CargarConsumidorFinal()
@@ -660,12 +654,12 @@ namespace Presentacion.Core.Cobro
 
         private void nudPagaron_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ckbContado_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ckbTarjeta_CheckedChanged(object sender, EventArgs e)
@@ -733,7 +727,7 @@ namespace Presentacion.Core.Cobro
 
         private void Venta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
     }
 }

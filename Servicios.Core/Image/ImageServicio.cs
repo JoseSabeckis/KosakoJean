@@ -1,10 +1,6 @@
 ﻿using AccesoDatos;
 using Servicios.Core.Image.Dto;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.Image
 {
@@ -12,7 +8,7 @@ namespace Servicios.Core.Image
     {
         public void Insertar(ImageDto imageDto)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var image = new AccesoDatos.Image
                 {

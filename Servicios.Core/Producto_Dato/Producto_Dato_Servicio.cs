@@ -1,11 +1,8 @@
 ﻿using AccesoDatos;
 using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido.Dto;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.Producto_Dato
 {
@@ -13,7 +10,7 @@ namespace Servicios.Core.Producto_Dato
     {
         public void Insertar(Producto_Dato_Dto _Dto)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var dato = new AccesoDatos.Producto_Dato
                 {
@@ -29,7 +26,7 @@ namespace Servicios.Core.Producto_Dato
 
         public void CambiarEstadoTerminado(long id)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var dato = context.Producto_Datos.FirstOrDefault(x => x.Id == id);
 
@@ -84,7 +81,7 @@ namespace Servicios.Core.Producto_Dato
                 foreach (var item in datos)
                 {
                     context.Producto_Datos.Remove(item);
-                }               
+                }
 
                 context.SaveChanges();
             }

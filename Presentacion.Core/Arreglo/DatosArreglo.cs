@@ -11,13 +11,6 @@ using Servicios.Core.Image.Dto;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Arreglo
@@ -94,7 +87,7 @@ namespace Presentacion.Core.Arreglo
 
         private void btnDatos_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Seguro de Guardar?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Esta Seguro de Guardar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 arregloServicio.GuardarDescripcion(_ArregloId, txtDescripcion.Text);
 
@@ -170,7 +163,7 @@ namespace Presentacion.Core.Arreglo
             else
             {
                 MessageBox.Show("La Caja Esta Cerrada", "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }   
+            }
         }
 
         public void VerificarSiEstaPagado()
@@ -233,7 +226,7 @@ namespace Presentacion.Core.Arreglo
             else
             {
                 MessageBox.Show("La Caja Esta Cerrada", "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }         
+            }
         }
 
         public void VerificarSiEstaTerminado()
@@ -254,7 +247,7 @@ namespace Presentacion.Core.Arreglo
 
         private void btnRestaurar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Seguro De Restaurar Este Arreglo?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Esta Seguro De Restaurar Este Arreglo?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
                 arregloServicio.CambiarAEnEsperaYFechaDeRetiro(_ArregloId);

@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Servicios.Core.Pedido.Dto;
-using Servicios.Core.Producto_Pedido;
-using Servicios.Core.Producto;
-using Servicios.Core.Producto_Pedido.Dto;
-using Servicios.Core.Pedido;
+﻿using Presentacion.Core.Mensaje;
 using Presentacion.Core.Pedido;
-using Servicios.Core.DetalleCaja;
 using Servicios.Core.Caja;
-using Presentacion.Core.Mensaje;
+using Servicios.Core.Pedido;
+using Servicios.Core.Pedido.Dto;
+using Servicios.Core.Producto;
+using Servicios.Core.Producto_Pedido;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Presentacion.Core.Unidad
 {
@@ -55,21 +47,21 @@ namespace Presentacion.Core.Unidad
             lblFechaHastaRetiro.Text = $"Dias Esperando al Cliente: {dia.Days}";
 
             lblId.Text = $"{Pedido.Id}";
-            
+
             var respuesta = pedido_Producto_Servicio.BuscarId(Pedido.Id);
-            
+
             foreach (var item in respuesta)
             {
                 txtProductos.Text = $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} | ";
                 lblIdPedido.Text = $"{item.PedidoId}";
                 estado = item.Estado;
             }
-            
+
         }
 
         private void pasarAEsperaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnRealizado_Click(object sender, EventArgs e)

@@ -3,8 +3,6 @@ using Servicios.Core.Caja.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.Caja
 {
@@ -43,7 +41,7 @@ namespace Servicios.Core.Caja
                 caja.TotalCaja = SumarCaja();
 
                 context.SaveChanges();
-         
+
             }
         }
 
@@ -70,7 +68,7 @@ namespace Servicios.Core.Caja
 
         public AccesoDatos.Caja BuscarCajaAbierta()
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 return context.Cajas.FirstOrDefault(x => x.OpenClose == OpenClose.Abierto);
 
@@ -116,7 +114,7 @@ namespace Servicios.Core.Caja
 
         public IEnumerable<CajaDto> BuscarCajas()
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 return context.Cajas.AsNoTracking().Where(x => x.OpenClose == OpenClose.Cerrado)
                     .Select(x => new CajaDto
@@ -162,7 +160,7 @@ namespace Servicios.Core.Caja
             {
                 var caja = context.Cajas.Where(x => x.FechaApertura >= desde);
 
-                return caja.Where(x=>x.FechaApertura <= hasta)
+                return caja.Where(x => x.FechaApertura <= hasta)
                     .Select(x => new CajaDto
                     {
                         TotalCaja = x.TotalCaja,

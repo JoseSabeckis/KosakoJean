@@ -2,13 +2,7 @@
 using Servicios.Core.Cliente;
 using Servicios.Core.Image.Dto;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Cliente
@@ -130,11 +124,11 @@ namespace Presentacion.Core.Cliente
         {
             var nuevo = new Cliente_Abm(Clases.TipoOperacion.Nuevo);
             nuevo.ShowDialog();
-          
+
             pnlPrincipal.Controls.Clear();
 
             CrearControles();
-           
+
         }
 
         public void LimpiarPanel()
@@ -144,7 +138,7 @@ namespace Presentacion.Core.Cliente
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

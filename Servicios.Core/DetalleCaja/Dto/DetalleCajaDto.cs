@@ -1,9 +1,4 @@
 ﻿using AccesoDatos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.DetalleCaja.Dto
 {
@@ -17,7 +12,7 @@ namespace Servicios.Core.DetalleCaja.Dto
 
         public string Fecha { get; set; }
 
-        public TipoPago TipoPago{ get; set; }
+        public TipoPago TipoPago { get; set; }
 
         public long CajaId { get; set; }
     }

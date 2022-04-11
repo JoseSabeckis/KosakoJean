@@ -1,13 +1,6 @@
 ﻿using Presentacion.Clases;
 using Presentacion.Core.Mensaje;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion
@@ -42,7 +35,7 @@ namespace Presentacion
                 case TipoOperacion.Nuevo:
                     if (EjecutarComandoNuevo())
                     {
-                        var nuevo = new Afirmacion("Atencion","Datos Guardados \nCorrectamente");
+                        var nuevo = new Afirmacion("Atencion", "Datos Guardados \nCorrectamente");
                         nuevo.ShowDialog();
                         Limpiar(this);
                         RealizoAlgunaOperacion = true;
@@ -51,7 +44,7 @@ namespace Presentacion
                 case TipoOperacion.Eliminar:
                     if (EjecutarComandoEliminar())
                     {
-                        var eliminar = new Negativo("Atencion","Datos Eliminados \nCorrectamente");
+                        var eliminar = new Negativo("Atencion", "Datos Eliminados \nCorrectamente");
                         eliminar.ShowDialog();
                         RealizoAlgunaOperacion = true;
                         this.Close();

@@ -1,10 +1,7 @@
 ﻿using AccesoDatos;
 using Servicios.Core.CtaCte.Dto;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.CtaCte
 {
@@ -34,7 +31,7 @@ namespace Servicios.Core.CtaCte
 
         public void Pagar(decimal monto, long clienteId, long cuentaId)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var cuenta = context.CtasCtes.FirstOrDefault(x => x.ClienteId == clienteId && x.Id == cuentaId);
 
@@ -70,7 +67,7 @@ namespace Servicios.Core.CtaCte
 
         public IEnumerable<CtaCteDto> Lista(long clienteId)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 return context.CtasCtes.Where(x => x.ClienteId == clienteId).Select(x => new CtaCteDto
                 {
@@ -126,7 +123,7 @@ namespace Servicios.Core.CtaCte
                     Total = cuenta.Total,
                     Fecha = cuenta.Fecha,
                     Estado = cuenta.Estado,
-                    PedidoId = cuenta.PedidoId                  
+                    PedidoId = cuenta.PedidoId
 
                 };
 

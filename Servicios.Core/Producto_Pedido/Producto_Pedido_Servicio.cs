@@ -1,12 +1,8 @@
 ﻿using AccesoDatos;
-using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido.Dto;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.Producto_Pedido
 {
@@ -16,7 +12,7 @@ namespace Servicios.Core.Producto_Pedido
 
         public long NuevoProductoPedido(Producto_Pedido_Dto producto)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var nuevo = new AccesoDatos.Producto_Pedido
                 {
@@ -25,10 +21,10 @@ namespace Servicios.Core.Producto_Pedido
                     Estado = producto.Estado,
                     Talle = producto.Talle,
                     PedidoId = producto.PedidoId,
-                    ProductoId = producto.ProductoId,            
+                    ProductoId = producto.ProductoId,
                     Descripcion = producto.Descripcion,
                     TalleId = producto.TalleId,
-                    
+
                 };
 
                 context.Producto_Pedidos.Add(nuevo);
@@ -48,7 +44,7 @@ namespace Servicios.Core.Producto_Pedido
                 foreach (var item in estado)
                 {
                     item.Estado = EstadoPedido.Terminado;
-                }              
+                }
 
                 context.SaveChanges();
             }
@@ -84,14 +80,14 @@ namespace Servicios.Core.Producto_Pedido
                     item.EstaEliminado = true;
 
                     if (_ProductoServicio.ObtenerPorId(item.ProductoId).Creacion)
-                    {                       
+                    {
                         var listaSoloId = new Producto_Pedido_Dto
                         {
                             Id = item.Id
                         };
 
                         Lista.Add(listaSoloId);
-                    }                    
+                    }
                 }
 
                 context.SaveChanges();

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Servicios.Core.Image.Dto
+﻿namespace Servicios.Core.Image.Dto
 {
     public class ImageDto
     {

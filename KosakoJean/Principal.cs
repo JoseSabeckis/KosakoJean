@@ -4,7 +4,6 @@ using Presentacion.Clases;
 using Presentacion.Core.Arreglo;
 using Presentacion.Core.Caja;
 using Presentacion.Core.Cliente;
-using Presentacion.Core.Cobro;
 using Presentacion.Core.Colegio;
 using Presentacion.Core.CtaCte;
 using Presentacion.Core.Image;
@@ -26,13 +25,7 @@ using Servicios.Core.Talle.Dto;
 using Servicios.Core.TipoProducto;
 using Servicios.Core.TipoProducto.Dto;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KosakoJean
@@ -509,7 +502,7 @@ namespace KosakoJean
             else
             {
                 MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }           
+            }
         }
 
         private void configurarImagenesToolStripMenuItem_Click(object sender, EventArgs e)

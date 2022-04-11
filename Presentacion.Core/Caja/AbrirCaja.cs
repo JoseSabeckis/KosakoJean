@@ -2,13 +2,6 @@
 using Servicios.Core.Caja;
 using Servicios.Core.Caja.Dto;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Caja
@@ -31,7 +24,7 @@ namespace Presentacion.Core.Caja
 
         private void btnAbrir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta por abrir la caja, Seguro?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Esta por abrir la caja, Seguro?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 var caja = new CajaDto
                 {

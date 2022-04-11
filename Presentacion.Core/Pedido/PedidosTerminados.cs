@@ -8,12 +8,6 @@ using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Pedido
@@ -95,7 +89,7 @@ namespace Presentacion.Core.Pedido
 
         private void btnEliminarPedidos_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Seguro De Eliminar Los Pedidos? No Se Podran Recuperar","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Esta Seguro De Eliminar Los Pedidos? No Se Podran Recuperar", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 var listaPedidosTerminado = pedidoServicio.BuscandoTerminadosUltima();
 

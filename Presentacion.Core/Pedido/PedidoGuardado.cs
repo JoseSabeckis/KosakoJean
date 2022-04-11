@@ -10,20 +10,13 @@ using Servicios.Core.Image.Dto;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
 using Servicios.Core.Producto;
-using Servicios.Core.Producto_Dato;
-using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Pedido
@@ -312,7 +305,7 @@ namespace Presentacion.Core.Pedido
             grilla.Columns["Precio"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["Precio"].HeaderText = @"Precio";
             grilla.Columns["Precio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;           
+            grilla.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
         }
 
@@ -399,7 +392,7 @@ namespace Presentacion.Core.Pedido
                     pedidoServicio.CambiarFechaRetirado(pedido.Id);
 
                     producto_Pedido_Servicio.CambiarEstado(pedido.Id);
-                    
+
                     //Total Cta Cte
 
                     var cuentaId = new CtaCteDto();
@@ -594,7 +587,7 @@ namespace Presentacion.Core.Pedido
                             {
                                 pedidoServicio.RestarAdelanto(pedidoPrincipal.Id, CantRestar);
                             }
-                        }                        
+                        }
 
                         //cargar datos de nuevo
                         CargaDeNuevo();

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Presentacion.Core.Pedido;
 using Servicios.Core.Pedido;
 using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido;
-using Presentacion.Core.Pedido;
+using System;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace Presentacion.Core.Unidad
 {
@@ -60,7 +54,7 @@ namespace Presentacion.Core.Unidad
             var respuesta = pedido_Producto_Servicio.BuscarPedidoTerminado(Pedido.Id);
 
             foreach (var item in respuesta)
-            {   
+            {
                 txtProductos.Text += $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} |";
                 lblIdPedido.Text = $"{item.PedidoId}";
                 estado = item.Estado;

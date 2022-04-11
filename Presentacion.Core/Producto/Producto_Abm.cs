@@ -4,17 +4,9 @@ using Servicios.Core.Producto;
 using Servicios.Core.Producto.Dto;
 using Servicios.Core.Producto_Dato;
 using Servicios.Core.Producto_Dato.Dto;
-using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.TipoProducto;
 using Servicios.Core.TipoProducto.Dto;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Producto
@@ -125,13 +117,13 @@ namespace Presentacion.Core.Producto
 
             if (ckbFabricacion.Checked)
             {
-                if (MessageBox.Show("Selecciono Que Este Producto Se Tendra Que Fabricar\nNo Podra Desacer Esto Del Producto\nDesea Continuar?","Pregunta",MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBox.Show("Selecciono Que Este Producto Se Tendra Que Fabricar\nNo Podra Desacer Esto Del Producto\nDesea Continuar?", "Pregunta", MessageBoxButtons.YesNo) == DialogResult.No)
                 {
                     return false;
                 }
             }
 
-            var nueva= new ProductoDto
+            var nueva = new ProductoDto
             {
                 Descripcion = $"{txtDescripcion.Text}",
                 Extras = txtExtras.Text,
@@ -195,7 +187,7 @@ namespace Presentacion.Core.Producto
         {
             if (EntidadId == null) return false;
 
-            if (MessageBox.Show("Esta Seguro De Eliminar?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.No)
+            if (MessageBox.Show("Esta Seguro De Eliminar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 return false;
             }

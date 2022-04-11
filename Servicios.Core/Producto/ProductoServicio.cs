@@ -1,12 +1,7 @@
 ﻿using AccesoDatos;
-using Servicios.Core.Colegio;
 using Servicios.Core.Producto.Dto;
-using Servicios.Core.TipoProducto;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.Producto
 {
@@ -104,8 +99,8 @@ namespace Servicios.Core.Producto
                         TipoProductoId = x.TipoProductoId,
                         ColegioId = x.ColegioId,
                         Foto = x.Foto,
-                        Colegio = context.Colegios.FirstOrDefault(f=>f.Id == x.ColegioId).Descripcion,
-                        TipoProducto = context.TipoProductos.FirstOrDefault(f=>f.Id == x.TipoProductoId).Descripcion,
+                        Colegio = context.Colegios.FirstOrDefault(f => f.Id == x.ColegioId).Descripcion,
+                        TipoProducto = context.TipoProductos.FirstOrDefault(f => f.Id == x.TipoProductoId).Descripcion,
                         Stock = x.Stock,
                         Creacion = x.Creacion,
                         Precio = x.Precio,

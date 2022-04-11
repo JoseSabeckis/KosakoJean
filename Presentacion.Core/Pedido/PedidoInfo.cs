@@ -15,17 +15,11 @@ using Servicios.Core.Producto_Dato;
 using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
-using Servicios.Core.Producto_Venta.Dto;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Pedido
@@ -225,7 +219,7 @@ namespace Presentacion.Core.Pedido
 
                 if (producto.Creacion)
                 {
-                    lista.Estado = $"EnEspera: {CantEnEspera}, Terminado: {CantTerminado}, Cancelado: {CantCancelado}";                   
+                    lista.Estado = $"EnEspera: {CantEnEspera}, Terminado: {CantTerminado}, Cancelado: {CantCancelado}";
                 }
                 else
                 {
@@ -275,7 +269,7 @@ namespace Presentacion.Core.Pedido
                 ckbNormal.Visible = false;
 
                 nudCobro.Visible = false;
-                
+
                 lblCobrar.Visible = false;
                 btnCobro.Visible = false;
                 btnRestar.Visible = false;
@@ -290,7 +284,7 @@ namespace Presentacion.Core.Pedido
                 {
                     lblPagado.Text = $"| Pagado |";
                     lblPagado.Visible = true;
-                }                        
+                }
 
             }
             else
@@ -332,7 +326,7 @@ namespace Presentacion.Core.Pedido
 
                     //Total Cta Cte
 
-                    var cuentaId = new CtaCteDto();                    
+                    var cuentaId = new CtaCteDto();
 
                     cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
 
@@ -450,7 +444,7 @@ namespace Presentacion.Core.Pedido
 
                 txtNotas.Enabled = false;
                 lblEliminado.Visible = true;
-            }           
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -492,7 +486,7 @@ namespace Presentacion.Core.Pedido
         {
             if (nudCobro.Value > 0)
             {
-                if (MessageBox.Show("Esta Por Cobrar Un Adelanto, Desea Continuar?","Adelanto",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Esta Por Cobrar Un Adelanto, Desea Continuar?", "Adelanto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     var pedido = pedidoServicio.Buscar(PedidoId);
 
@@ -555,7 +549,7 @@ namespace Presentacion.Core.Pedido
                 {
                     EntidadId = 0;
                 }
-                
+
             }
             else
             {
@@ -588,13 +582,13 @@ namespace Presentacion.Core.Pedido
                     list = new List<VentaDto2>();
                     CrearGrilla(PedidoId);
                     CargarGrilla();
-                }              
+                }
             }
         }
 
         private void btnVolverPedidoNoRetirado_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Seguro De Poner Este Pedido a no Retirado?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Esta Seguro De Poner Este Pedido a no Retirado?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 pedidoServicio.CambiarProcesoRetiro(PedidoId);
 
@@ -628,16 +622,16 @@ namespace Presentacion.Core.Pedido
 
                 VerSiHayProductos();
             }
-            
+
         }
 
         private void btnEliminarPedidoSeleccionado_Click(object sender, EventArgs e)
         {
             if (dgvGrilla.RowCount > 0)
-            {             
+            {
                 if (EntidadParaBorrar != 0)
                 {
-                    if (MessageBox.Show("Esta Seguro de Borrar Este Producto?\nSi Hay Mas de un Producto Se Eliminara Uno","Pregunta",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Esta Seguro de Borrar Este Producto?\nSi Hay Mas de un Producto Se Eliminara Uno", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         var pedido = producto_Pedido_Servicio.ObtenerPorId(EntidadParaBorrar);
                         var producto = productoServicio.ObtenerPorId(pedido.ProductoId);
@@ -651,9 +645,9 @@ namespace Presentacion.Core.Pedido
                             if (producto.Creacion)
                             {
                                 producto_Dato_Servicio.EliminacionDefinitiva(EntidadParaBorrar);
-                            }                           
+                            }
 
-                            producto_Pedido_Servicio.RestarCantidad1(EntidadParaBorrar);                            
+                            producto_Pedido_Servicio.RestarCantidad1(EntidadParaBorrar);
 
                             CantRestar = productoServicio.ObtenerPorId(pedido.ProductoId).Precio;
 
@@ -664,9 +658,9 @@ namespace Presentacion.Core.Pedido
                             if (producto.Creacion)
                             {
                                 producto_Dato_Servicio.EliminacionDefinitiva(EntidadParaBorrar);
-                            }                            
+                            }
 
-                            producto_Pedido_Servicio.EliminacionDefinitiva(EntidadParaBorrar);                            
+                            producto_Pedido_Servicio.EliminacionDefinitiva(EntidadParaBorrar);
 
                             CantRestar = productoServicio.ObtenerPorId(pedido.ProductoId).Precio * pedido.Cantidad;
 
@@ -683,7 +677,7 @@ namespace Presentacion.Core.Pedido
                             {
                                 pedidoServicio.RestarAdelanto(pedidoPrincipal.Id, CantRestar);
                             }
-                        }                       
+                        }
 
                         //cargar datos de nuevo
                         CargaDeNuevo();
@@ -695,7 +689,7 @@ namespace Presentacion.Core.Pedido
                             MessageBox.Show("- Eliminacion Realizada -\nVerifique El Esta Del Producto Restante...", "Revision", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
-                        if(Bandera == 2)
+                        if (Bandera == 2)
                         {
                             MessageBox.Show("- Producto Borrado -\nContinue Controlando los Datos", "Bien", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -706,7 +700,7 @@ namespace Presentacion.Core.Pedido
                         }
                     }
                 }
-            }            
+            }
         }
 
         public void VerSiHayProductosDespuesDeBorrar()
@@ -726,7 +720,7 @@ namespace Presentacion.Core.Pedido
                 btnAgregarProductos.Visible = false;
                 btnEliminarPedidoSeleccionado.Visible = false;
             }
-            
+
         }
 
         public void CargaDeNuevo()
@@ -791,7 +785,7 @@ namespace Presentacion.Core.Pedido
                     Datos(PedidoId);
 
                 }
-            }          
+            }
         }
     }
 }

@@ -1,10 +1,7 @@
 ﻿using AccesoDatos;
 using Servicios.Core.Usuario.Dto;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Servicios.Core.Usuario
 {
@@ -12,7 +9,7 @@ namespace Servicios.Core.Usuario
     {
         public void Insertar(UsuarioDto usuarioDto)
         {
-            using(var context = new KosakoDBEntities())
+            using (var context = new KosakoDBEntities())
             {
                 var usuario = new AccesoDatos.Usuario
                 {

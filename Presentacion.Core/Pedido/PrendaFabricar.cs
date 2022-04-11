@@ -6,12 +6,7 @@ using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Pedido
@@ -85,13 +80,13 @@ namespace Presentacion.Core.Pedido
             grilla.Columns["EstadoPorPedido"].HeaderText = @"Estado";
             grilla.Columns["EstadoPorPedido"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["EstadoPorPedido"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            
+
             grilla.Columns["Cliente"].Visible = true;
             grilla.Columns["Cliente"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["Cliente"].HeaderText = @"Cliente";
             grilla.Columns["Cliente"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Cliente"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -133,7 +128,7 @@ namespace Presentacion.Core.Pedido
                         EntidadId = 0;
                     }
                 }
-            }           
+            }
         }
 
         private void btnCancelado_Click(object sender, EventArgs e)
@@ -154,7 +149,7 @@ namespace Presentacion.Core.Pedido
                         EntidadId = 0;
                     }
                 }
-            }            
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)

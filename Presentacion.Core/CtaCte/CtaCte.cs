@@ -11,12 +11,6 @@ using Servicios.Core.Image.Dto;
 using Servicios.Core.Pedido;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.CtaCte
@@ -241,7 +235,7 @@ namespace Presentacion.Core.CtaCte
                         //Fin Pedido
 
                         var mensaje = new Afirmacion("Cobrado", $"Se Le Cobro $ {nudCobro.Value} Exitosamente!\nTipo de Pago: {detalle.TipoPago}");
-                        mensaje.ShowDialog();             
+                        mensaje.ShowDialog();
 
                         Grilla();
 
@@ -252,7 +246,7 @@ namespace Presentacion.Core.CtaCte
                         //nudCobroMaximo();
                     }
                 }
-                
+
             }
         }
 
@@ -266,7 +260,7 @@ namespace Presentacion.Core.CtaCte
             if (_CtaCteId == 0)
             {
                 btnCobrar.Enabled = false;
-            }           
+            }
         }
 
         private void ckbNormal_CheckedChanged(object sender, EventArgs e)
