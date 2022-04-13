@@ -4,6 +4,7 @@ using Servicios.Core.Producto;
 using Servicios.Core.Producto_Dato;
 using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
+using Presentacion.Core.Factura;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -154,6 +155,13 @@ namespace Presentacion.Core.Pedido
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            var imprimir = new ListaPedidos(producto_Dato_Servicio.ObtenerProductosParaHacer().ToList());
+            imprimir.Show();
+
         }
     }
 }

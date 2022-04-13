@@ -31,6 +31,7 @@ namespace Presentacion.Core.Pedido
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrendaFabricar));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.imgFabricar = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@ namespace Presentacion.Core.Pedido
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnTerminado = new System.Windows.Forms.Button();
             this.btnCancelado = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgFabricar)).BeginInit();
             this.panel2.SuspendLayout();
@@ -67,6 +67,19 @@ namespace Presentacion.Core.Pedido
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(814, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnImprimir.Location = new System.Drawing.Point(563, 0);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(134, 96);
+            this.btnImprimir.TabIndex = 3;
+            this.btnImprimir.Text = "Imprimir Prendas";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // label1
             // 
@@ -228,18 +241,6 @@ namespace Presentacion.Core.Pedido
             this.btnCancelado.Text = "Pedido Cancelado";
             this.btnCancelado.UseVisualStyleBackColor = false;
             this.btnCancelado.Click += new System.EventHandler(this.btnCancelado_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnImprimir.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnImprimir.Location = new System.Drawing.Point(563, 0);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(134, 96);
-            this.btnImprimir.TabIndex = 3;
-            this.btnImprimir.Text = "Imprimir Prendas";
-            this.btnImprimir.UseVisualStyleBackColor = false;
             // 
             // PrendaFabricar
             // 

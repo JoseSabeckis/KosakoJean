@@ -32,7 +32,7 @@ namespace Presentacion.Core.Factura
         {
             reportViewer.LocalReport.DataSources.Clear();
 
-            //reportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSetDato", ListaDato));
+            reportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", ListaDato));
             reportViewer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSetFecha", Fecha));
 
             reportViewer.LocalReport.Refresh();
