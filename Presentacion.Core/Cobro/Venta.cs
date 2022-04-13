@@ -255,7 +255,7 @@ namespace Presentacion.Core.Cobro
             txtVuelto.Text = string.Empty;
             nudPagaron.Value = 0;
             nudTotalVenta.Value = 0;
-
+            cmbTalle.SelectedIndex = 0;
         }
 
         public void FormatearGrilla(DataGridView grilla)
