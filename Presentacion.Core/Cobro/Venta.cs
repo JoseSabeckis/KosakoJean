@@ -44,6 +44,7 @@ namespace Presentacion.Core.Cobro
 
         string _descripcionProducto;
         string _colegio;
+        string _talle;
 
         List<VentaDto2> ListaVenta;
         List<Producto_Venta_Dto> ListaCtaCte;
@@ -516,7 +517,7 @@ namespace Presentacion.Core.Cobro
         {
             if (dgvGrilla.RowCount > 0)
             {
-                var lista = ListaVenta.FirstOrDefault(x => x.Descripcion == _descripcionProducto && x.Colegio == _colegio);
+                var lista = ListaVenta.FirstOrDefault(x => x.Descripcion == _descripcionProducto && x.Colegio == _colegio && x.Talle == _talle);
 
                 ListaVenta.Remove(lista);
 
@@ -540,6 +541,7 @@ namespace Presentacion.Core.Cobro
             {
                 _descripcionProducto = (string)dgvGrilla["Descripcion", e.RowIndex].Value;
                 _colegio = (string)dgvGrilla["Colegio", e.RowIndex].Value;
+                _talle = (string)dgvGrilla["Talle", e.RowIndex].Value;
             }
         }
 
