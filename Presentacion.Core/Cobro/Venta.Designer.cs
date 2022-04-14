@@ -194,6 +194,7 @@
             // nudPrecio
             // 
             this.nudPrecio.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.nudPrecio.Enabled = false;
             this.nudPrecio.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPrecio.Increment = new decimal(new int[] {
             100,

@@ -37,6 +37,7 @@ namespace Presentacion.Core.Cliente
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.imgCliente = new System.Windows.Forms.PictureBox();
+            this.btnSelecccionar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel2.SuspendLayout();
@@ -74,6 +75,7 @@ namespace Presentacion.Core.Cliente
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnSelecccionar);
             this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Controls.Add(this.txtBusqueda);
             this.panel2.Controls.Add(this.label1);
@@ -88,7 +90,8 @@ namespace Presentacion.Core.Cliente
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBuscar.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnBuscar.Location = new System.Drawing.Point(642, 21);
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar.Location = new System.Drawing.Point(517, 21);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(113, 52);
             this.btnBuscar.TabIndex = 5;
@@ -101,9 +104,9 @@ namespace Presentacion.Core.Cliente
             this.txtBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBusqueda.BackColor = System.Drawing.SystemColors.Info;
-            this.txtBusqueda.Location = new System.Drawing.Point(246, 35);
+            this.txtBusqueda.Location = new System.Drawing.Point(237, 34);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(380, 26);
+            this.txtBusqueda.Size = new System.Drawing.Size(265, 26);
             this.txtBusqueda.TabIndex = 4;
             this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
@@ -127,6 +130,20 @@ namespace Presentacion.Core.Cliente
             this.imgCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgCliente.TabIndex = 0;
             this.imgCliente.TabStop = false;
+            // 
+            // btnSelecccionar
+            // 
+            this.btnSelecccionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelecccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnSelecccionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSelecccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecccionar.Location = new System.Drawing.Point(654, 21);
+            this.btnSelecccionar.Name = "btnSelecccionar";
+            this.btnSelecccionar.Size = new System.Drawing.Size(113, 52);
+            this.btnSelecccionar.TabIndex = 6;
+            this.btnSelecccionar.Text = "Seleccionar";
+            this.btnSelecccionar.UseVisualStyleBackColor = false;
+            this.btnSelecccionar.Click += new System.EventHandler(this.btnSelecccionar_Click);
             // 
             // ElegirCliente
             // 
@@ -164,5 +181,6 @@ namespace Presentacion.Core.Cliente
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSelecccionar;
     }
 }

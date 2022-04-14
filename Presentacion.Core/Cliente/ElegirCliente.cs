@@ -129,5 +129,10 @@ namespace Presentacion.Core.Cliente
         {
 
         }
+
+        private void btnSelecccionar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

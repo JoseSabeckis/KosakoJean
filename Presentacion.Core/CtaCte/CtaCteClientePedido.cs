@@ -257,10 +257,7 @@ namespace Presentacion.Core.CtaCte
 
         private void ckbSinNombre_CheckedChanged(object sender, EventArgs e)
         {
-            if (ckbSinNombre.Checked)
-            {
-                txtApellido.Text = "Sin Nombre";
-            }
+            
         }
     }
 }

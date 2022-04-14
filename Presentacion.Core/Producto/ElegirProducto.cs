@@ -120,7 +120,10 @@ namespace Presentacion.Core.Producto
 
         private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
         {
-            btnBuscar.PerformClick();
+            if (txtBusqueda.Text != string.Empty)
+            {
+                btnBuscar.PerformClick();
+            }         
         }
 
         private void ElegirProducto_FormClosed(object sender, FormClosedEventArgs e)

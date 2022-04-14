@@ -84,7 +84,7 @@ namespace Presentacion.Core.Caja
             {
                 var caja = new DetalleCajaDto
                 {
-                    Fecha = DateTime.Now.ToString("dd/MM/yy hh-mm-ss"),
+                    Fecha = DateTime.Now.ToLongDateString(),
                     Total = _Total
                 };
 

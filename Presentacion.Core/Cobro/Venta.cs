@@ -43,6 +43,7 @@ namespace Presentacion.Core.Cobro
         long _clienteId;
 
         string _descripcionProducto;
+        string _colegio;
 
         List<VentaDto2> ListaVenta;
         List<Producto_Venta_Dto> ListaCtaCte;
@@ -184,7 +185,6 @@ namespace Presentacion.Core.Cobro
 
                     var nuevo = new VentaDto2
                     {
-
                         Cantidad = nudCantidad.Value,
                         Descripcion = txtProducto.Text,
                         Precio = nudPrecio.Value,
@@ -213,35 +213,22 @@ namespace Presentacion.Core.Cobro
 
         public void Total()
         {
-            decimal total = 0;
-
             decimal precio = 0;
 
             foreach (var item in ListaVenta)
             {
                 foreach (var producto in productoServicio.Buscar(string.Empty))
                 {
-                    if (item.Descripcion == producto.Descripcion)
+                    if (item.Descripcion == producto.Descripcion && item.Colegio == producto.Colegio)
                     {
                         precio += item.Cantidad * item.Precio;
                     }
-                    else
-                    {
-                        if (producto.Descripcion == item.Descripcion)
-                        {
-                            precio += item.Precio;
-                        }
-
-                    }
-
                 }
             }
 
-            total = precio;
             _total = precio;
 
-            nudTotal.Value = total;
-            nudTotalVenta.Value = total;
+            nudTotal.Value = _total;
         }
 
         public void Limpiar()
@@ -529,7 +516,7 @@ namespace Presentacion.Core.Cobro
         {
             if (dgvGrilla.RowCount > 0)
             {
-                var lista = ListaVenta.FirstOrDefault(x => x.Descripcion == _descripcionProducto);
+                var lista = ListaVenta.FirstOrDefault(x => x.Descripcion == _descripcionProducto && x.Colegio == _colegio);
 
                 ListaVenta.Remove(lista);
 
@@ -552,7 +539,7 @@ namespace Presentacion.Core.Cobro
             if (dgvGrilla.RowCount > 0)
             {
                 _descripcionProducto = (string)dgvGrilla["Descripcion", e.RowIndex].Value;
-
+                _colegio = (string)dgvGrilla["Colegio", e.RowIndex].Value;
             }
         }
 

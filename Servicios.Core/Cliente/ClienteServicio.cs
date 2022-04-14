@@ -72,7 +72,7 @@ namespace Servicios.Core.Cliente
 
                 var lista = context.Clientes.Where(x => x.EstaEliminado == false);
 
-                return lista.OrderBy(x => x.Apellido.Contains(cadenaBuscar) && x.Principal == false || x.Nombre.Contains(cadenaBuscar) && x.Principal == false)
+                return lista.OrderBy(x => x.Apellido.Contains(cadenaBuscar))
                  .Select(x => new ClienteDto
                  {
 
