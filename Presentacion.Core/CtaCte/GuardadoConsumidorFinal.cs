@@ -5,6 +5,7 @@ using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto_Pedido;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.CtaCte
@@ -34,6 +35,18 @@ namespace Presentacion.Core.CtaCte
             LlenarGrilla(pedido);
 
             CargarImageEnGeneral();
+
+            VerSiHayPedidos();
+        }
+
+        public void VerSiHayPedidos()
+        {
+            var listaPedidosRetirados = pedidoServicio.BuscandoRetiradosUltima();
+
+            if (listaPedidosRetirados.Count() == 0)
+            {
+                btnEliminar.Visible = false;
+            }
         }
 
         private void CargarImageEnGeneral()
@@ -127,6 +140,7 @@ namespace Presentacion.Core.CtaCte
 
                 CrearControles(cuentas, AccesoDatos.Proceso.Retirado);
 
+                VerSiHayPedidos();
             }
         }
     }

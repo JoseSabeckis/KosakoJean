@@ -70,7 +70,7 @@ namespace Servicios.Core.Cliente
             using (var context = new KosakoDBEntities())
             {
 
-                var lista = context.Clientes.Where(x => x.EstaEliminado == false);
+                var lista = context.Clientes.Where(x => x.EstaEliminado == false && x.Apellido.Contains(cadenaBuscar) || x.EstaEliminado == false && x.Nombre.Contains(cadenaBuscar));
 
                 return lista.OrderBy(x => x.Apellido.Contains(cadenaBuscar))
                  .Select(x => new ClienteDto

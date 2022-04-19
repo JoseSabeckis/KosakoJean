@@ -161,6 +161,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(276, 33);
             this.txtApellido.TabIndex = 6;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // label3
             // 

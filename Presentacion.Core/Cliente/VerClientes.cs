@@ -1,7 +1,9 @@
 ﻿using Presentacion.Clases;
 using Servicios.Core.Cliente;
+using Servicios.Core.Cliente.Dto;
 using Servicios.Core.Image.Dto;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -17,7 +19,9 @@ namespace Presentacion.Core.Cliente
 
             clienteServicio = new ClienteServicio();
 
-            CrearControles();
+            var cuadros = clienteServicio.Buscar(string.Empty);
+
+            CrearControles(cuadros);
 
             CargarImageEnGeneral();
         }
@@ -27,10 +31,8 @@ namespace Presentacion.Core.Cliente
             imgCliente.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Clientes);
         }
 
-        public void CrearControles()
-        {
-            var cuadros = clienteServicio.Buscar(string.Empty);
-
+        public void CrearControles(IEnumerable<ClienteDto> list)
+        {           
             var flowPanel = new FlowLayoutPanel
             {
                 Name = $"flowPanel Cuenta",
@@ -39,7 +41,7 @@ namespace Presentacion.Core.Cliente
                 AutoScroll = true
             };
 
-            foreach (var item in cuadros)
+            foreach (var item in list)
             {
                 var cuadro = item;
 
@@ -63,29 +65,11 @@ namespace Presentacion.Core.Cliente
             {
                 MessageBox.Show("No Se Encontraron Resultados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                CrearControles();
+                //CrearControles();
                 return;
             }
 
-            var flowPanel = new FlowLayoutPanel
-            {
-                Name = $"flowPanel Cuenta",
-                Dock = DockStyle.Fill,
-                BackgroundImageLayout = ImageLayout.Stretch,
-                AutoScroll = true
-            };
-
-            foreach (var item in cuadros)
-            {
-                var cuadro = item;
-
-                var control = new Ctrol.UserClientes(cuadro.Id);
-
-                flowPanel.Controls.Add(control);
-
-            }
-
-            pnlPrincipal.Controls.Add(flowPanel);
+            CrearControles(cuadros);
 
         }
 
@@ -109,14 +93,7 @@ namespace Presentacion.Core.Cliente
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                if (!string.IsNullOrEmpty(txtBusqueda.Text))
-                {
-                    btnBuscar.PerformClick();
-                }
-                else
-                {
-                    MessageBox.Show("Complete el campo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                }
+                btnBuscar.PerformClick();
             }
         }
 
@@ -127,7 +104,9 @@ namespace Presentacion.Core.Cliente
 
             pnlPrincipal.Controls.Clear();
 
-            CrearControles();
+            var cuadros = clienteServicio.Buscar(string.Empty);
+
+            CrearControles(cuadros);
 
         }
 

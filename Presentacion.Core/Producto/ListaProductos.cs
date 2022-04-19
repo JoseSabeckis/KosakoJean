@@ -74,5 +74,13 @@ namespace Presentacion.Core.Producto
             pnlPrincipal.Controls.Clear();
             CrearControles(txtBusqueda.Text);
         }
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnBuscar.PerformClick();
+            }
+        }
     }
 }

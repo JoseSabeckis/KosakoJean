@@ -120,5 +120,30 @@ namespace Presentacion.Core.Arreglo
                 CargarGrilla();
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (txtBusqueda.Text != string.Empty)
+            {
+                if (ckbEnEspera.Checked)
+                {
+                    dgvGrilla.DataSource = arregloServicio.ListaArreglosEnEsperaBusqueda(txtBusqueda.Text);
+                }
+                if (ckbRetirados.Checked)
+                {
+                    dgvGrilla.DataSource = arregloServicio.ListaArreglosRetiradosBusqueda(txtBusqueda.Text);
+                }
+
+                FormatearGrilla(dgvGrilla);
+            }
+        }
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnBuscar.PerformClick();
+            }
+        }
     }
 }

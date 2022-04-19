@@ -10,6 +10,9 @@ namespace Servicios.Core.Pedido
 
         IEnumerable<PedidoDto> Buscar(string busqueda);
 
+        IEnumerable<PedidoDto> BuscarEnInicio(string busqueda);
+        IEnumerable<PedidoDto> BuscarEsPerandoRetiro(string busqueda);
+
         void CambiarProcesoRetirado(long id);
 
         void RestarAdelanto(decimal total, long id);
@@ -43,7 +46,7 @@ namespace Servicios.Core.Pedido
 
         IEnumerable<PedidoDto> BuscandoTerminadosyClientes(long id);
 
-        IEnumerable<PedidoDto> BuscandoTerminados();
+        IEnumerable<PedidoDto> BuscandoTerminados(string descripcion);
 
         void CambiarFechaRetirado(long id);
 

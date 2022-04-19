@@ -8,6 +8,7 @@ using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Pedido
@@ -28,7 +29,7 @@ namespace Presentacion.Core.Pedido
             productoServicio = new ProductoServicio();
             producto_Dato_Servicio = new Producto_Dato_Servicio();
 
-            var cuentas = pedidoServicio.BuscandoTerminados();
+            var cuentas = pedidoServicio.BuscandoTerminados(string.Empty);
 
             CrearControles(cuentas);
 
@@ -73,18 +74,13 @@ namespace Presentacion.Core.Pedido
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtBusqueda.Text))
-            {
-                panelGrilla.Controls.Clear();
 
-                var cuenta = pedidoServicio.Buscar(txtBusqueda.Text);
+            panelGrilla.Controls.Clear();
 
-                CrearControles(cuenta);
-            }
-            else
-            {
-                MessageBox.Show("El Campo de descripcion esta vacio", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
+            var cuenta = pedidoServicio.BuscandoTerminados(txtBusqueda.Text);
+
+            CrearControles(cuenta);
+
         }
 
         private void btnEliminarPedidos_Click(object sender, EventArgs e)
@@ -115,10 +111,28 @@ namespace Presentacion.Core.Pedido
 
                 panelGrilla.Controls.Clear();
 
-                var cuentas = pedidoServicio.BuscandoTerminados();
+                var cuentas = pedidoServicio.BuscandoTerminados(string.Empty);
 
                 CrearControles(cuentas);
 
+                btnEliminarPedidos.Visible = false;
+
+            }
+        }
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnBuscar.PerformClick();
+            }
+        }
+
+        private void PedidosTerminados_Load(object sender, EventArgs e)
+        {
+            if (pedidoServicio.BuscandoTerminadosUltima().Count() == 0)
+            {
+                btnEliminarPedidos.Visible = false;
             }
         }
     }

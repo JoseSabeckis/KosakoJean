@@ -10,6 +10,8 @@ namespace Servicios.Core.Arreglo
         ArregloDto ObtenerPorId(long id);
         void CambiarAEnEsperaYFechaDeRetiro(long id);
         void GuardarDescripcion(long id, string descripcion);
+        IEnumerable<ArregloDto> ListaArreglosEnEsperaBusqueda(string descripcion);
+        IEnumerable<ArregloDto> ListaArreglosRetiradosBusqueda(string descripcion);
         IEnumerable<ArregloDto> ListaArreglos();
         IEnumerable<ArregloDto> ListaArreglosRetirados();
         IEnumerable<ArregloDto> ListaArreglosEnEspera();

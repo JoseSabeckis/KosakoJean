@@ -48,7 +48,7 @@ namespace Servicios.Core.Pedido
                     {
                         Adelanto = x.Adelanto,
                         Apellido = x.Apellido,
-                        Nombre = x.Apellido,
+                        Nombre = x.Nombre,
                         FechaEntrega = x.FechaEntrega,
                         FechaPedido = x.FechaPedido,
                         Total = x.Total,
@@ -76,7 +76,63 @@ namespace Servicios.Core.Pedido
                     {
                         Adelanto = x.Adelanto,
                         Apellido = x.Apellido,
-                        Nombre = x.Apellido,
+                        Nombre = x.Nombre,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        Total = x.Total,
+                        Id = x.Id,
+                        Proceso = x.Proceso,
+                        ClienteId = x.ClienteId,
+                        Descripcion = x.Descripcion,
+                        FechaRetiro = x.FechaRetirado,
+                        Horario = x.Horario,
+                        DiasHastaRetiro = x.DiasHastaRetiro,
+                        FechaIniciado = x.FechaPedido,
+                        EstaEliminado = x.EstaEliminado
+                    }).ToList();
+
+            }
+        }
+
+        public IEnumerable<PedidoDto> BuscarEnInicio(string busqueda)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.AsNoTracking().Where(x => x.ApyNom.Contains(busqueda) && x.Proceso == Proceso.InicioPedido && x.EstaEliminado == false)
+                    .Select(x => new PedidoDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        Nombre = x.Nombre,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        Total = x.Total,
+                        Id = x.Id,
+                        Proceso = x.Proceso,
+                        ClienteId = x.ClienteId,
+                        Descripcion = x.Descripcion,
+                        FechaRetiro = x.FechaRetirado,
+                        Horario = x.Horario,
+                        DiasHastaRetiro = x.DiasHastaRetiro,
+                        FechaIniciado = x.FechaPedido,
+                        EstaEliminado = x.EstaEliminado
+                    }).ToList();
+
+            }
+        }
+
+        public IEnumerable<PedidoDto> BuscarEsPerandoRetiro(string busqueda)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                return context.Pedidos.AsNoTracking().Where(x => x.ApyNom.Contains(busqueda) && x.Proceso == Proceso.EsperandoRetiro && x.EstaEliminado == false)
+                    .Select(x => new PedidoDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        Nombre = x.Nombre,
                         FechaEntrega = x.FechaEntrega,
                         FechaPedido = x.FechaPedido,
                         Total = x.Total,
@@ -318,12 +374,12 @@ namespace Servicios.Core.Pedido
             }
         }
 
-        public IEnumerable<PedidoDto> BuscandoTerminados()
+        public IEnumerable<PedidoDto> BuscandoTerminados(string descripcion)
         {
             using (var context = new KosakoDBEntities())
             {
 
-                return context.Pedidos.Where(x => x.Proceso == Proceso.PedidoTerminado && x.EstaEliminado == false).Select(x => new PedidoDto
+                return context.Pedidos.Where(x => x.Proceso == Proceso.PedidoTerminado && x.ApyNom.Contains(descripcion) && x.EstaEliminado == false).Select(x => new PedidoDto
                 {
                     Adelanto = x.Adelanto,
                     Apellido = x.Apellido,
@@ -409,7 +465,7 @@ namespace Servicios.Core.Pedido
                     {
                         Adelanto = x.Adelanto,
                         Apellido = x.Apellido,
-                        Nombre = x.Apellido,
+                        Nombre = x.Nombre,
                         FechaEntrega = x.FechaEntrega,
                         FechaPedido = x.FechaPedido,
                         Total = x.Total,
@@ -437,7 +493,7 @@ namespace Servicios.Core.Pedido
                     {
                         Adelanto = x.Adelanto,
                         Apellido = x.Apellido,
-                        Nombre = x.Apellido,
+                        Nombre = x.Nombre,
                         FechaEntrega = x.FechaEntrega,
                         FechaPedido = x.FechaPedido,
                         Total = x.Total,
@@ -465,7 +521,7 @@ namespace Servicios.Core.Pedido
                     {
                         Adelanto = x.Adelanto,
                         Apellido = x.Apellido,
-                        Nombre = x.Apellido,
+                        Nombre = x.Nombre,
                         FechaEntrega = x.FechaEntrega,
                         FechaPedido = x.FechaPedido,
                         Total = x.Total,

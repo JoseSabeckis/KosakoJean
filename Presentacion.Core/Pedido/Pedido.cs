@@ -355,5 +355,13 @@ namespace Presentacion.Core.Pedido
                 txtApellido.Text = "Sin Nombre";
             }
         }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnCargar.PerformClick();
+            }
+        }
     }
 }

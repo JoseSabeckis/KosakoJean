@@ -86,6 +86,7 @@ namespace Presentacion.Core.Producto
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(307, 29);
             this.txtBusqueda.TabIndex = 6;
+            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
             // label2
             // 

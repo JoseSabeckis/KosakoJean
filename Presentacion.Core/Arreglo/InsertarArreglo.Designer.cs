@@ -184,15 +184,15 @@ namespace Presentacion.Core.Arreglo
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.ckbTarjeta);
             this.panel5.Controls.Add(this.ckbNormal);
-            this.panel5.Location = new System.Drawing.Point(435, 286);
+            this.panel5.Location = new System.Drawing.Point(435, 303);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(118, 109);
+            this.panel5.Size = new System.Drawing.Size(118, 92);
             this.panel5.TabIndex = 24;
             // 
             // ckbTarjeta
             // 
             this.ckbTarjeta.AutoSize = true;
-            this.ckbTarjeta.Location = new System.Drawing.Point(9, 55);
+            this.ckbTarjeta.Location = new System.Drawing.Point(8, 56);
             this.ckbTarjeta.Name = "ckbTarjeta";
             this.ckbTarjeta.Size = new System.Drawing.Size(94, 29);
             this.ckbTarjeta.TabIndex = 10;
@@ -205,7 +205,7 @@ namespace Presentacion.Core.Arreglo
             this.ckbNormal.AutoSize = true;
             this.ckbNormal.Checked = true;
             this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbNormal.Location = new System.Drawing.Point(9, 20);
+            this.ckbNormal.Location = new System.Drawing.Point(8, 14);
             this.ckbNormal.Name = "ckbNormal";
             this.ckbNormal.Size = new System.Drawing.Size(110, 29);
             this.ckbNormal.TabIndex = 9;

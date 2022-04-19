@@ -148,6 +148,56 @@ namespace Servicios.Core.Arreglo
             }
         }
 
+        public IEnumerable<ArregloDto> ListaArreglosEnEsperaBusqueda(string descripcion)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                return context.Arreglos.Where(x => x.Estado == EstadoArreglo.EnEspera && x.Apellido.Contains(descripcion) || x.Estado == EstadoArreglo.EnEspera && x.Nombre.Contains(descripcion))
+                    .Select(x => new ArregloDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        ClienteId = x.ClienteId,
+                        Descripcion = x.Descripcion,
+                        Estado = x.Estado,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        FechaRetirado = x.FechaRetirado,
+                        Horario = x.Horario,
+                        Nombre = x.Nombre,
+                        Total = x.Total,
+                        Id = x.Id,
+                        EstaEliminado = x.EstaEliminado
+
+                    }).ToList();
+            }
+        }
+
+        public IEnumerable<ArregloDto> ListaArreglosRetiradosBusqueda(string descripcion)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                return context.Arreglos.Where(x => x.Estado == EstadoArreglo.Retirado && x.Apellido.Contains(descripcion) || x.Estado == EstadoArreglo.Retirado && x.Nombre.Contains(descripcion))
+                    .Select(x => new ArregloDto
+                    {
+                        Adelanto = x.Adelanto,
+                        Apellido = x.Apellido,
+                        ClienteId = x.ClienteId,
+                        Descripcion = x.Descripcion,
+                        Estado = x.Estado,
+                        FechaEntrega = x.FechaEntrega,
+                        FechaPedido = x.FechaPedido,
+                        FechaRetirado = x.FechaRetirado,
+                        Horario = x.Horario,
+                        Nombre = x.Nombre,
+                        Total = x.Total,
+                        Id = x.Id,
+                        EstaEliminado = x.EstaEliminado
+
+                    }).ToList();
+            }
+        }
+
         public IEnumerable<ArregloDto> ListaArreglosRetirados()
         {
             using (var context = new KosakoDBEntities())

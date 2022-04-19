@@ -3,6 +3,7 @@ using Presentacion.Core.Mensaje;
 using Presentacion.Core.Producto;
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
+using Servicios.Core.CtaCte;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.Image.Dto;
 using Servicios.Core.ParteVenta.Dto;
@@ -37,6 +38,7 @@ namespace Presentacion.Core.Cobro
         private readonly ITalleServicio talleServicio;
         private readonly IPedidoServicio pedidoServicio;
         private readonly IProducto_Dato_Servicio producto_Dato_Servicio;
+        private readonly ICtaCteServicio ctaCteServicio;
 
         ProductoDto producto;
         PedidoDto _Pedido;
@@ -67,6 +69,7 @@ namespace Presentacion.Core.Cobro
             pedidoServicio = new PedidoServicio();
             producto_Dato_Servicio = new Producto_Dato_Servicio();
             producto_Pedido_Servicio = new Producto_Pedido_Servicio();
+            ctaCteServicio = new CtaCteServicio();
 
             producto = new ProductoDto();
             ListaVenta = new List<VentaDto2>();
@@ -74,6 +77,7 @@ namespace Presentacion.Core.Cobro
 
             _PedidoId = pedidoId;
             _Pedido = pedidoServicio.BuscarIDPedidos(pedidoId);
+            _clienteId = _Pedido.ClienteId;
             Bandera = false;
 
             CargarTalle();
@@ -382,6 +386,10 @@ namespace Presentacion.Core.Cobro
                                 }
                             }
                         }
+
+                        var ctacte = ctaCteServicio.ObtenerPorIdDePedidosId(_PedidoId);
+
+                        ctaCteServicio.SumarLoQueDebe(total, _clienteId, ctacte.Id);
 
                     }
 

@@ -53,6 +53,7 @@ namespace Presentacion.Core.Arreglo
         {
             if (VerificarDatosObligatorios())
             {
+
                 if (nudTotal.Value <= 0)
                 {
                     MessageBox.Show("El Total No Puede Ser Cero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -191,6 +192,10 @@ namespace Presentacion.Core.Arreglo
             {
                 ckbTarjeta.Checked = false;
             }
+            else
+            {
+                ckbTarjeta.Checked = true;
+            }
         }
 
         private void ckbTarjeta_CheckedChanged(object sender, EventArgs e)
@@ -199,6 +204,15 @@ namespace Presentacion.Core.Arreglo
             {
                 ckbNormal.Checked = false;
             }
+            else
+            {
+                ckbNormal.Checked = true;
+            }
+        }
+
+        private void ckbCtaCte_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

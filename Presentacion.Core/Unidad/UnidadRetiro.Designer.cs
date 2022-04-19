@@ -120,11 +120,12 @@
             // lblFechaHastaRetiro
             // 
             this.lblFechaHastaRetiro.AutoSize = true;
-            this.lblFechaHastaRetiro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHastaRetiro.BackColor = System.Drawing.Color.Red;
+            this.lblFechaHastaRetiro.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaHastaRetiro.ForeColor = System.Drawing.Color.Black;
             this.lblFechaHastaRetiro.Location = new System.Drawing.Point(1, 132);
             this.lblFechaHastaRetiro.Name = "lblFechaHastaRetiro";
-            this.lblFechaHastaRetiro.Size = new System.Drawing.Size(11, 13);
+            this.lblFechaHastaRetiro.Size = new System.Drawing.Size(13, 16);
             this.lblFechaHastaRetiro.TabIndex = 12;
             this.lblFechaHastaRetiro.Text = "-";
             // 

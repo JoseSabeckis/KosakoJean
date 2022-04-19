@@ -259,5 +259,13 @@ namespace Presentacion.Core.CtaCte
         {
             
         }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnGuardar.PerformClick();
+            }
+        }
     }
 }

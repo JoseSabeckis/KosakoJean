@@ -20,7 +20,7 @@ namespace Presentacion.Core.Factura
 
             var fecha = new FechaDto
             {
-                Fecha = DateTime.Now.ToLongTimeString(),
+                Fecha = DateTime.Now.ToLongDateString(),
                 Hora = DateTime.Now.ToShortTimeString()
             };
 

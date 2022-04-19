@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidosTerminados));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminarPedidos = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.imgTerminado = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panelGrilla = new System.Windows.Forms.Panel();
-            this.btnEliminarPedidos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgTerminado)).BeginInit();
@@ -57,6 +57,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1237, 94);
             this.panel1.TabIndex = 0;
+            // 
+            // btnEliminarPedidos
+            // 
+            this.btnEliminarPedidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminarPedidos.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnEliminarPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarPedidos.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarPedidos.Location = new System.Drawing.Point(381, 0);
+            this.btnEliminarPedidos.Name = "btnEliminarPedidos";
+            this.btnEliminarPedidos.Size = new System.Drawing.Size(92, 90);
+            this.btnEliminarPedidos.TabIndex = 8;
+            this.btnEliminarPedidos.Text = "Eliminar Pedidos";
+            this.btnEliminarPedidos.UseVisualStyleBackColor = false;
+            this.btnEliminarPedidos.Click += new System.EventHandler(this.btnEliminarPedidos_Click);
             // 
             // panel2
             // 
@@ -104,6 +118,7 @@
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(262, 29);
             this.txtBusqueda.TabIndex = 5;
+            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 
             // label1
             // 
@@ -151,20 +166,6 @@
             this.panelGrilla.Size = new System.Drawing.Size(1237, 498);
             this.panelGrilla.TabIndex = 1;
             // 
-            // btnEliminarPedidos
-            // 
-            this.btnEliminarPedidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEliminarPedidos.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnEliminarPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminarPedidos.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarPedidos.Location = new System.Drawing.Point(381, 0);
-            this.btnEliminarPedidos.Name = "btnEliminarPedidos";
-            this.btnEliminarPedidos.Size = new System.Drawing.Size(92, 90);
-            this.btnEliminarPedidos.TabIndex = 8;
-            this.btnEliminarPedidos.Text = "Eliminar Pedidos";
-            this.btnEliminarPedidos.UseVisualStyleBackColor = false;
-            this.btnEliminarPedidos.Click += new System.EventHandler(this.btnEliminarPedidos_Click);
-            // 
             // PedidosTerminados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +181,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pedidos Terminados";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.PedidosTerminados_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

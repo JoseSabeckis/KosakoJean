@@ -49,7 +49,9 @@ namespace Presentacion.Core.Pedido
                 AutoScroll = true
             };
 
-            foreach (var item in cuentas)
+            IEnumerable<PedidoDto> Lista = cuentas;
+
+            foreach (var item in Lista)
             {
                 var cuenta = item;
 
@@ -70,17 +72,20 @@ namespace Presentacion.Core.Pedido
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtBusqueda.Text))
-            {
-                panelGrilla.Controls.Clear();
+            
+             panelGrilla.Controls.Clear();
 
-                var cuenta = pedidoServicio.Buscar(txtBusqueda.Text);
+             var cuenta = pedidoServicio.BuscarEnInicio(txtBusqueda.Text);
 
-                CrearControles(cuenta);
-            }
-            else
+             CrearControles(cuenta);
+
+        }
+
+        private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                MessageBox.Show("El Campo de descripcion esta vacio", "Vacio", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                 btnBuscar.PerformClick();
             }
         }
     }
