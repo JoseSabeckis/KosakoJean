@@ -45,6 +45,7 @@ namespace Presentacion.Core.Cobro
         string _descripcionProducto;
         string _colegio;
         string _talle;
+        decimal _precio;
 
         List<VentaDto2> ListaVenta;
         List<Producto_Venta_Dto> ListaCtaCte;
@@ -162,13 +163,12 @@ namespace Presentacion.Core.Cobro
         {
             if (!string.IsNullOrEmpty(txtProducto.Text))
             {
-                var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text);
+                var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text && x.Precio == nudPrecio.Value);
 
                 if (nudPrecio.Value == 0)
                 {
                     if (MessageBox.Show("El Precio Sera Cero Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                     {
-                        btnAgregarAlaGrilla.Select();
                         return;
                     }
                 }
@@ -440,6 +440,24 @@ namespace Presentacion.Core.Cobro
                 {
                     if (ckbPedido.Checked)
                     {
+                        bool Bandera = false;
+
+                        foreach (var item in ListaVenta)
+                        {
+                            if (productoServicio.ObtenerPorId(item.ProductoId).Creacion)
+                            {
+                                Bandera = true;
+                            }
+                        }
+
+                        if (!Bandera)
+                        {
+                            if (MessageBox.Show("Esta Por Crear Un Pedido Sin Ninguna Prenda Para Fabricar, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                            {
+                                return;
+                            }                            
+                        }
+
                         var pedidos = new Pedido.Pedido(ListaVenta, _total, ventaServicio.ObtenerClienteName(ventaDto.ClienteId), _clienteId, txtDescripcion.Text);
                         pedidos.ShowDialog();
 
@@ -517,9 +535,16 @@ namespace Presentacion.Core.Cobro
         {
             if (dgvGrilla.RowCount > 0)
             {
-                var lista = ListaVenta.FirstOrDefault(x => x.Descripcion == _descripcionProducto && x.Colegio == _colegio && x.Talle == _talle);
+                var lista = ListaVenta.FirstOrDefault(x => x.Descripcion == _descripcionProducto && x.Colegio == _colegio && x.Talle == _talle && x.Precio == _precio);
 
-                ListaVenta.Remove(lista);
+                if (lista.Cantidad > 1)
+                {
+                    lista.Cantidad -= 1;
+                }
+                else
+                {
+                    ListaVenta.Remove(lista);
+                }              
 
                 CargarGrilla(ListaVenta);
 
@@ -542,6 +567,7 @@ namespace Presentacion.Core.Cobro
                 _descripcionProducto = (string)dgvGrilla["Descripcion", e.RowIndex].Value;
                 _colegio = (string)dgvGrilla["Colegio", e.RowIndex].Value;
                 _talle = (string)dgvGrilla["Talle", e.RowIndex].Value;
+                _precio = (decimal)dgvGrilla["Precio", e.RowIndex].Value;
             }
         }
 
