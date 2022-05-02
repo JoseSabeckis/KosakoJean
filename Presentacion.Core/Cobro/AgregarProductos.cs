@@ -54,8 +54,9 @@ namespace Presentacion.Core.Cobro
         string _descripcionProducto;
 
         public bool Bandera;
+        bool _Semaforo = false;
 
-        public AgregarProductos(long pedidoId)
+        public AgregarProductos(long pedidoId, bool semaforo)
         {
             InitializeComponent();
 
@@ -74,6 +75,8 @@ namespace Presentacion.Core.Cobro
             producto = new ProductoDto();
             ListaVenta = new List<VentaDto2>();
             ventaDto = new VentaDto();
+
+            _Semaforo = semaforo;
 
             _PedidoId = pedidoId;
             _Pedido = pedidoServicio.BuscarIDPedidos(pedidoId);
@@ -279,7 +282,7 @@ namespace Presentacion.Core.Cobro
         {
             if (!string.IsNullOrEmpty(txtProducto.Text))
             {
-                var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text);
+                var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text && x.Precio == nudPrecio.Value);
 
                 if (nudPrecio.Value == 0)
                 {
@@ -301,7 +304,6 @@ namespace Presentacion.Core.Cobro
 
                     var nuevo = new VentaDto2
                     {
-
                         Cantidad = nudCantidad.Value,
                         Descripcion = txtProducto.Text,
                         Precio = nudPrecio.Value,
@@ -348,7 +350,7 @@ namespace Presentacion.Core.Cobro
                         //stock
                         productoServicio.BajarStock(producto.Id, item.Cantidad);
 
-                        total += producto.Precio * item.Cantidad;
+                        total += item.Precio * item.Cantidad;
                     }
 
                     pedidoServicio.SumarTotal(_PedidoId, total);//sumar el total del pedido
@@ -364,27 +366,32 @@ namespace Presentacion.Core.Cobro
                             Talle = item.Talle,
                             PedidoId = _PedidoId,
                             Descripcion = segunda,
-                            TalleId = talleServicio.BuscarNombreDevuelveId(item.Talle)
+                            TalleId = talleServicio.BuscarNombreDevuelveId(item.Talle),
+                            Precio = item.Precio
                         };
 
                         var _Id_Pedido = producto_Pedido_Servicio.NuevoProductoPedido(aux);
 
                         if (_Pedido.Proceso != AccesoDatos.Proceso.Guardado || _Pedido.Proceso != AccesoDatos.Proceso.Retirado)
                         {
-                            //datos
-                            if (productoServicio.ObtenerPorId(item.Id).Creacion)
+                            if (_Semaforo)
                             {
-                                for (int i = 0; i < item.Cantidad; i++)
+                                //datos
+                                if (productoServicio.ObtenerPorId(item.Id).Creacion)
                                 {
-                                    var dato = new Producto_Dato_Dto
+                                    for (int i = 0; i < item.Cantidad; i++)
                                     {
-                                        EstadoPorPedido = AccesoDatos.EstadoPorPedido.EnEspera,
-                                        Producto_PedidoId = _Id_Pedido
-                                    };
+                                        var dato = new Producto_Dato_Dto
+                                        {
+                                            EstadoPorPedido = AccesoDatos.EstadoPorPedido.EnEspera,
+                                            Producto_PedidoId = _Id_Pedido
+                                        };
 
-                                    producto_Dato_Servicio.Insertar(dato);
+                                        producto_Dato_Servicio.Insertar(dato);
+                                    }
                                 }
                             }
+                            
                         }
 
                         var ctacte = ctaCteServicio.ObtenerPorIdDePedidosId(_PedidoId);

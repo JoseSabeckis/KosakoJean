@@ -24,7 +24,7 @@ namespace Servicios.Core.Producto_Pedido
                     ProductoId = producto.ProductoId,
                     Descripcion = producto.Descripcion,
                     TalleId = producto.TalleId,
-
+                    Precio = producto.Precio
                 };
 
                 context.Producto_Pedidos.Add(nuevo);
@@ -137,6 +137,7 @@ namespace Servicios.Core.Producto_Pedido
                     Descripcion = x.Descripcion,
                     Id = x.Id,
                     TalleId = x.TalleId,
+                    Precio = x.Precio,
                     EstaEliminado = x.EstaEliminado
                 }).ToList();
 
@@ -160,6 +161,7 @@ namespace Servicios.Core.Producto_Pedido
                     Descripcion = estado.Descripcion,
                     Id = estado.Id,
                     TalleId = estado.TalleId,
+                    Precio = estado.Precio,
                     EstaEliminado = estado.EstaEliminado
                 };
 
@@ -193,6 +195,7 @@ namespace Servicios.Core.Producto_Pedido
                     Descripcion = x.Descripcion,
                     Id = x.Id,
                     TalleId = x.TalleId,
+                    Precio = x.Precio,
                     EstaEliminado = x.EstaEliminado
 
                 }).ToList();
@@ -217,6 +220,7 @@ namespace Servicios.Core.Producto_Pedido
                     Descripcion = estado.Descripcion,
                     Id = estado.Id,
                     TalleId = estado.TalleId,
+                    Precio = estado.Precio,
                     EstaEliminado = estado.EstaEliminado
                 };
 
@@ -238,6 +242,7 @@ namespace Servicios.Core.Producto_Pedido
                     Descripcion = x.Descripcion,
                     Id = x.Id,
                     TalleId = x.TalleId,
+                    Precio = x.Precio,
                     EstaEliminado = x.EstaEliminado
 
                 }).ToList();
@@ -260,6 +265,7 @@ namespace Servicios.Core.Producto_Pedido
                     Descripcion = x.Descripcion,
                     Id = x.Id,
                     TalleId = x.TalleId,
+                    Precio = x.Precio,
                     EstaEliminado = x.EstaEliminado
 
                 }).ToList();
@@ -282,6 +288,7 @@ namespace Servicios.Core.Producto_Pedido
                     Descripcion = x.Descripcion,
                     Id = x.Id,
                     TalleId = x.TalleId,
+                    Precio = x.Precio,
                     EstaEliminado = x.EstaEliminado
 
                 }).ToList();
@@ -304,6 +311,7 @@ namespace Servicios.Core.Producto_Pedido
                     Descripcion = x.Descripcion,
                     Id = x.Id,
                     TalleId = x.TalleId,
+                    Precio = x.Precio,
                     EstaEliminado = x.EstaEliminado
 
                 }).ToList();
@@ -328,6 +336,7 @@ namespace Servicios.Core.Producto_Pedido
                     Descripcion = estado.Descripcion,
                     Id = estado.Id,
                     TalleId = estado.TalleId,
+                    Precio = estado.Precio,
                     EstaEliminado = estado.EstaEliminado
                 };
 

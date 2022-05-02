@@ -187,6 +187,7 @@ namespace Presentacion.Core.CtaCte
                         PedidoId = pedidoId,
                         Descripcion = descripcion,
                         TalleId = talleServicio.BuscarNombreDevuelveId(item.Talle),
+                        Precio = item.Precio
                     };
 
                     producto_Pedido_Servicio.NuevoProductoPedido(aux);

@@ -168,6 +168,7 @@
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TalleId" Type="bigint" Nullable="false" />
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Nullable="false" />
   </EntityType>
   <EntityType Name="Ventas">
     <Key>
@@ -686,6 +687,7 @@
           <Property Name="TalleId" Type="Int64" Nullable="false" />
           <NavigationProperty Name="Producto_Dato" Relationship="KosakoDBModel.Producto_PedidoProducto_Dato" FromRole="Producto_Pedido" ToRole="Producto_Dato" />
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" />
         </EntityType>
         <Association Name="ProductoProducto_Pedido">
           <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="1" />
@@ -1076,6 +1078,7 @@
           <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
           <ScalarProperty Name="TalleId" ColumnName="TalleId" />
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

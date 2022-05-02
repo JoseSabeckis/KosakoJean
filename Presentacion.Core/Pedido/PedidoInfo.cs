@@ -187,7 +187,7 @@ namespace Presentacion.Core.Pedido
                     Cantidad = item.Cantidad,
                     Talle = item.Talle,
                     Descripcion = producto.Descripcion,
-                    Precio = producto.Precio * item.Cantidad,
+                    Precio = item.Precio * item.Cantidad,
                     ProductoId = producto.Id
                 };
 
@@ -617,7 +617,7 @@ namespace Presentacion.Core.Pedido
 
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
-            var pedido = new AgregarProductos(PedidoId);
+            var pedido = new AgregarProductos(PedidoId, true);
             pedido.ShowDialog();
 
             if (pedido.Bandera)
@@ -657,7 +657,7 @@ namespace Presentacion.Core.Pedido
 
                             producto_Pedido_Servicio.RestarCantidad1(EntidadParaBorrar);
 
-                            CantRestar = productoServicio.ObtenerPorId(pedido.ProductoId).Precio;
+                            CantRestar = producto_pedido.Precio;
 
                             Bandera = 1;
                         }
@@ -670,7 +670,7 @@ namespace Presentacion.Core.Pedido
 
                             producto_Pedido_Servicio.EliminacionDefinitiva(EntidadParaBorrar);
 
-                            CantRestar = productoServicio.ObtenerPorId(pedido.ProductoId).Precio * pedido.Cantidad;
+                            CantRestar = producto_pedido.Precio;
 
                             Bandera = 2;
                         }

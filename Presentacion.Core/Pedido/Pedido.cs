@@ -204,7 +204,8 @@ namespace Presentacion.Core.Pedido
                             Talle = item.Talle,
                             PedidoId = pedidoId,
                             Descripcion = segunda,
-                            TalleId = talleServicio.BuscarNombreDevuelveId(item.Talle)
+                            TalleId = talleServicio.BuscarNombreDevuelveId(item.Talle),
+                            Precio = item.Precio
                         };
 
                         var _Id_Pedido = producto_Pedido_Servicio.NuevoProductoPedido(aux);
