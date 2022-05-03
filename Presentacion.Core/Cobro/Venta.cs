@@ -132,7 +132,7 @@ namespace Presentacion.Core.Cobro
 
                 _productoId = product.Id;
                 txtProducto.Text = producto.Descripcion;
-
+                txtColegio.Text = producto.Colegio;
 
                 nudPrecio.Value = product.Precio;
 
@@ -143,6 +143,7 @@ namespace Presentacion.Core.Cobro
 
         private void nudCantidad_ValueChanged(object sender, EventArgs e)
         {
+            /*
             if (!string.IsNullOrEmpty(txtProducto.Text))
             {
                 nudPrecio.Value = producto.Precio;
@@ -151,6 +152,7 @@ namespace Presentacion.Core.Cobro
             {
                 producto = null;
             }
+            */
         }
 
         public void CargarGrilla(List<VentaDto2> producto)
@@ -163,7 +165,7 @@ namespace Presentacion.Core.Cobro
         {
             if (!string.IsNullOrEmpty(txtProducto.Text))
             {
-                var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text && x.Precio == nudPrecio.Value);
+                var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text && x.Precio == nudPrecio.Value && x.Colegio == txtColegio.Text);
 
                 if (nudPrecio.Value == 0)
                 {
@@ -235,6 +237,7 @@ namespace Presentacion.Core.Cobro
         public void Limpiar()
         {
             txtProducto.Text = string.Empty;
+            txtColegio.Text = string.Empty;
             nudCantidad.Value = 1;
             nudPrecio.Value = 0;
 
@@ -293,18 +296,23 @@ namespace Presentacion.Core.Cobro
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtProducto.Text = string.Empty;
+            txtColegio.Text = string.Empty;
             nudCantidad.Value = 1;
             nudPrecio.Value = 0;
 
             nudTotal.Value = 0;
             txtVuelto.Text = string.Empty;
             txtDescripcion.Text = string.Empty;
+
             nudPagaron.Value = 0;
+            nudTotalVenta.Value = 0;
 
             _total = 0;
 
             _productoId = 0;
             _clienteId = 0;
+
+            cmbTalle.SelectedIndex = 0;
 
             ListaVenta = new List<VentaDto2>();
             ListaCtaCte = new List<Producto_Venta_Dto>();
@@ -673,7 +681,10 @@ namespace Presentacion.Core.Cobro
 
         private void nudPagaron_ValueChanged(object sender, EventArgs e)
         {
-
+            if (nudTotalVenta.Value != 0 && nudPagaron.Value != 0)
+            {
+                btnCalcular.PerformClick();
+            }
         }
 
         private void ckbContado_CheckedChanged(object sender, EventArgs e)
@@ -747,6 +758,19 @@ namespace Presentacion.Core.Cobro
         private void Venta_KeyPress(object sender, KeyPressEventArgs e)
         {
 
+        }
+
+        private void nudTotalVenta_ValueChanged(object sender, EventArgs e)
+        {
+            if (nudTotalVenta.Value != 0 && nudPagaron.Value != 0)
+            {
+                btnCalcular.PerformClick();
+            }
+        }
+
+        private void nudTotal_ValueChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

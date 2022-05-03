@@ -31,6 +31,7 @@ namespace Presentacion.Core.Cobro
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarProductos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtColegio = new System.Windows.Forms.TextBox();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSeleccionProducto = new System.Windows.Forms.Button();
@@ -73,6 +74,7 @@ namespace Presentacion.Core.Cobro
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtColegio);
             this.panel1.Controls.Add(this.txtProducto);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnSeleccionProducto);
@@ -91,22 +93,33 @@ namespace Presentacion.Core.Cobro
             this.panel1.Size = new System.Drawing.Size(1219, 100);
             this.panel1.TabIndex = 0;
             // 
+            // txtColegio
+            // 
+            this.txtColegio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtColegio.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtColegio.Enabled = false;
+            this.txtColegio.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtColegio.Location = new System.Drawing.Point(290, 41);
+            this.txtColegio.Name = "txtColegio";
+            this.txtColegio.Size = new System.Drawing.Size(150, 29);
+            this.txtColegio.TabIndex = 23;
+            // 
             // txtProducto
             // 
             this.txtProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtProducto.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtProducto.Enabled = false;
-            this.txtProducto.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProducto.Location = new System.Drawing.Point(139, 39);
+            this.txtProducto.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProducto.Location = new System.Drawing.Point(119, 41);
             this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(277, 33);
+            this.txtProducto.Size = new System.Drawing.Size(165, 29);
             this.txtProducto.TabIndex = 21;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(134, 11);
+            this.label2.Location = new System.Drawing.Point(114, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 25);
             this.label2.TabIndex = 20;
@@ -115,7 +128,7 @@ namespace Presentacion.Core.Cobro
             // btnSeleccionProducto
             // 
             this.btnSeleccionProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeleccionProducto.Location = new System.Drawing.Point(422, 38);
+            this.btnSeleccionProducto.Location = new System.Drawing.Point(445, 39);
             this.btnSeleccionProducto.Name = "btnSeleccionProducto";
             this.btnSeleccionProducto.Size = new System.Drawing.Size(54, 34);
             this.btnSeleccionProducto.TabIndex = 22;
@@ -129,7 +142,7 @@ namespace Presentacion.Core.Cobro
             this.cmbTalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTalle.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTalle.FormattingEnabled = true;
-            this.cmbTalle.Location = new System.Drawing.Point(839, 41);
+            this.cmbTalle.Location = new System.Drawing.Point(849, 45);
             this.cmbTalle.Name = "cmbTalle";
             this.cmbTalle.Size = new System.Drawing.Size(87, 27);
             this.cmbTalle.TabIndex = 19;
@@ -138,7 +151,7 @@ namespace Presentacion.Core.Cobro
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(483, 41);
+            this.label3.Location = new System.Drawing.Point(505, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 25);
             this.label3.TabIndex = 14;
@@ -148,7 +161,7 @@ namespace Presentacion.Core.Cobro
             // 
             this.nudCantidad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudCantidad.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.nudCantidad.Location = new System.Drawing.Point(541, 38);
+            this.nudCantidad.Location = new System.Drawing.Point(563, 39);
             this.nudCantidad.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -173,7 +186,7 @@ namespace Presentacion.Core.Cobro
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(596, 40);
+            this.label4.Location = new System.Drawing.Point(615, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 25);
             this.label4.TabIndex = 16;
@@ -183,7 +196,7 @@ namespace Presentacion.Core.Cobro
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(778, 42);
+            this.label8.Location = new System.Drawing.Point(797, 46);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 25);
             this.label8.TabIndex = 18;
@@ -198,7 +211,7 @@ namespace Presentacion.Core.Cobro
             0,
             0,
             0});
-            this.nudPrecio.Location = new System.Drawing.Point(663, 37);
+            this.nudPrecio.Location = new System.Drawing.Point(682, 40);
             this.nudPrecio.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -428,6 +441,7 @@ namespace Presentacion.Core.Cobro
             this.Name = "AgregarProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Agregar Productos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AgregarProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -476,5 +490,6 @@ namespace Presentacion.Core.Cobro
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtPedidoDueno;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtColegio;
     }
 }

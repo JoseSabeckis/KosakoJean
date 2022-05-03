@@ -52,6 +52,9 @@ namespace Presentacion.Core.Cobro
 #pragma warning restore CS0414 // El campo 'AgregarProductos._clienteId' está asignado pero su valor nunca se usa
         decimal _total;
         string _descripcionProducto;
+        string _colegio;
+        string _talle;
+        decimal _precio;
 
         public bool Bandera;
         bool _Semaforo = false;
@@ -123,7 +126,7 @@ namespace Presentacion.Core.Cobro
 
                 _productoId = product.Id;
                 txtProducto.Text = producto.Descripcion;
-
+                txtColegio.Text = product.Colegio;
 
                 nudPrecio.Value = product.Precio;
 
@@ -133,6 +136,7 @@ namespace Presentacion.Core.Cobro
 
         private void nudCantidad_ValueChanged(object sender, EventArgs e)
         {
+            /*
             if (!string.IsNullOrEmpty(txtProducto.Text))
             {
                 nudPrecio.Value = producto.Precio;
@@ -141,16 +145,18 @@ namespace Presentacion.Core.Cobro
             {
                 producto = null;
             }
+            */
         }
 
         public void Limpiar()
         {
             txtProducto.Text = string.Empty;
+            txtColegio.Text = string.Empty;
             nudCantidad.Value = 1;
             nudPrecio.Value = 0;
 
             _productoId = 0;
-
+            cmbTalle.SelectedIndex = 0;
         }
 
         public void FormatearGrilla(DataGridView grilla)
@@ -195,6 +201,7 @@ namespace Presentacion.Core.Cobro
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtProducto.Text = string.Empty;
+            txtColegio.Text = string.Empty;
             nudCantidad.Value = 1;
             nudPrecio.Value = 0;
 
@@ -204,6 +211,8 @@ namespace Presentacion.Core.Cobro
 
             _productoId = 0;
             _clienteId = 0;
+
+            cmbTalle.SelectedIndex = 0;
 
             ListaVenta = new List<VentaDto2>();
             ventaDto = new VentaDto();
@@ -216,6 +225,9 @@ namespace Presentacion.Core.Cobro
             if (dgvGrilla.RowCount > 0)
             {
                 _descripcionProducto = (string)dgvGrilla["Descripcion", e.RowIndex].Value;
+                _colegio = (string)dgvGrilla["Colegio", e.RowIndex].Value;
+                _talle = (string)dgvGrilla["Talle", e.RowIndex].Value;
+                _precio = (decimal)dgvGrilla["Precio", e.RowIndex].Value;
             }
         }
 
@@ -229,9 +241,16 @@ namespace Presentacion.Core.Cobro
         {
             if (dgvGrilla.RowCount > 0)
             {
-                var lista = ListaVenta.FirstOrDefault(x => x.Descripcion == _descripcionProducto);
+                var lista = ListaVenta.FirstOrDefault(x => x.Descripcion == _descripcionProducto && x.Colegio == _colegio && x.Talle == _talle && x.Precio == _precio);
 
-                ListaVenta.Remove(lista);
+                if (lista.Cantidad > 1)
+                {
+                    lista.Cantidad -= 1;
+                }
+                else
+                {
+                    ListaVenta.Remove(lista);
+                }
 
                 CargarGrilla(ListaVenta);
 
@@ -256,19 +275,10 @@ namespace Presentacion.Core.Cobro
             {
                 foreach (var producto in productoServicio.Buscar(string.Empty))
                 {
-                    if (item.Descripcion == producto.Descripcion)
+                    if (item.Descripcion == producto.Descripcion && item.Colegio == producto.Colegio)
                     {
                         precio += item.Cantidad * item.Precio;
                     }
-                    else
-                    {
-                        if (producto.Descripcion == item.Descripcion)
-                        {
-                            precio += item.Precio;
-                        }
-
-                    }
-
                 }
             }
 
@@ -282,7 +292,7 @@ namespace Presentacion.Core.Cobro
         {
             if (!string.IsNullOrEmpty(txtProducto.Text))
             {
-                var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text && x.Precio == nudPrecio.Value);
+                var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text && x.Precio == nudPrecio.Value && x.Colegio == txtColegio.Text);
 
                 if (nudPrecio.Value == 0)
                 {
