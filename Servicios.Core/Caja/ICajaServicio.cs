@@ -16,6 +16,8 @@ namespace Servicios.Core.Caja
 
         bool BuscarCajaAbiertaBool();
 
+        void EliminarCaja(long id);
+
         void CerrarCaja(decimal montoCierre, string fechaCierre);
 
         void AbrirCaja(CajaDto cajaDto);

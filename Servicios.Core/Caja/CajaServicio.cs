@@ -154,6 +154,19 @@ namespace Servicios.Core.Caja
             }
         }
 
+        public void EliminarCaja(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var caja = context.Cajas.FirstOrDefault(x => x.Id == id);
+
+                context.Cajas.Remove(caja);
+
+                context.SaveChanges();
+
+            }
+        }
+
         public IEnumerable<CajaDto> BuscarCajasPorApertura(DateTime desde, DateTime hasta)
         {
             using (var context = new KosakoDBEntities())

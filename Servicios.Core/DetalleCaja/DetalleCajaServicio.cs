@@ -47,6 +47,26 @@ namespace Servicios.Core.DetalleCaja
             }
         }
 
+        public void ListaParaEliminar(IEnumerable<DetalleCajaDto> lista)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                List<AccesoDatos.DetalleCaja> List = new List<AccesoDatos.DetalleCaja>();
+
+                foreach (var item in lista)
+                {
+                    List.Add(context.DetalleCajas.FirstOrDefault(x => x.Id == item.Id));
+                }
+
+                foreach (var item in List)
+                {
+                    context.DetalleCajas.Remove(item);
+                }
+
+                context.SaveChanges();
+            }
+        }
+
         public long BuscarCajaAbierta()
         {
             using (var context = new KosakoDBEntities())

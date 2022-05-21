@@ -1,7 +1,9 @@
 ﻿using Presentacion.Clases;
 using Servicios.Core.Caja;
+using Servicios.Core.DetalleCaja;
 using Servicios.Core.Image.Dto;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Caja
@@ -9,6 +11,7 @@ namespace Presentacion.Core.Caja
     public partial class Caja : Form
     {
         private readonly ICajaServicio _cajaServicio;
+        private readonly IDetalleCajaServicio _detalleCajaServicio;
 
         long _Id;
 
@@ -17,11 +20,24 @@ namespace Presentacion.Core.Caja
             InitializeComponent();
 
             _cajaServicio = new CajaServicio();
+            _detalleCajaServicio = new DetalleCajaServicio();
+
             ckbApertura.Enabled = false;
 
             VerCaja();
 
             CargarImageEnGeneral();
+            VerificarBotonEliminar();
+        }
+
+        private void VerificarBotonEliminar()
+        {
+            var lista = _cajaServicio.BuscarCajasPorMes();
+
+            if (lista.Count() == 0)
+            {
+                btnEliminarCaja.Visible = false;
+            }
         }
 
         private void CargarImageEnGeneral()
@@ -135,6 +151,33 @@ namespace Presentacion.Core.Caja
             {
                 _Id = 0;
             }
+        }
+
+        private void btnEliminarCaja_Click(object sender, EventArgs e)
+        {
+            var caja = _cajaServicio.BuscarCajasId(_Id);
+
+            if (caja.FechaCierre == "No Esta Cerrada")
+            {
+                MessageBox.Show("Cierre La Caja Para Poder Eliminarla.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return;
+            }
+
+            if (MessageBox.Show("Este Seguro De Eliminar Esta Caja Completamente?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
+
+            var listaDetalles = _detalleCajaServicio.Lista(_Id);
+
+            _detalleCajaServicio.ListaParaEliminar(listaDetalles);
+
+            _cajaServicio.EliminarCaja(_Id);
+
+            VerCaja();
+
+            VerificarBotonEliminar();
         }
     }
 }

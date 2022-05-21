@@ -7,6 +7,8 @@ namespace Servicios.Core.DetalleCaja
     {
         IEnumerable<DetalleCajaDto> Lista(long cajaId);
 
+        void ListaParaEliminar(IEnumerable<DetalleCajaDto> lista);
+
         void AgregarDetalleCaja(DetalleCajaDto detalleCajaDto);
 
         IEnumerable<DetalleCajaDto> BuscarDetalles(long id);

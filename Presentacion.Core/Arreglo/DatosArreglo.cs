@@ -58,9 +58,9 @@ namespace Presentacion.Core.Arreglo
         {
             _ArregloDto = arregloServicio.ObtenerPorId(_ArregloId);
 
-            _ClienteDto = clienteServicio.ObtenerPorId(_ArregloDto.ClienteId);
+            //_ClienteDto = clienteServicio.ObtenerPorId(_ArregloDto.ClienteId);
 
-            lblCliente.Text = $"{_ClienteDto.Apellido} {_ClienteDto.Nombre}";
+            lblCliente.Text = $"{_ArregloDto.ApyNom}";
 
             lblFechaDejado.Text = $"{_ArregloDto.FechaPedido.ToLongDateString()}";
             lblFechaEntrega.Text = $"{_ArregloDto.FechaEntrega.ToLongDateString()}";
