@@ -28,7 +28,20 @@ namespace Presentacion.Core.Producto.Ctrl
 
             lblDescripcion.Text = producto.Descripcion;
             lblPrecio.Text = $"${producto.Precio}";
-            lblExtra.Text = producto.Extras;
+            lblExtra.Text = producto.Colegio;
+
+            if (producto.ColegioId == 1)
+            {
+                if (producto.Extras == string.Empty)
+                {
+                    lblExtra.Text = "-------------";
+                }
+                else
+                {
+                    lblExtra.Text = producto.Extras;
+                }
+            }
+
             ptbImagen.Image = ImagenDb.Convertir_Bytes_Imagen(producto.Foto);
         }
 
