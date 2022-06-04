@@ -12,6 +12,8 @@ namespace Servicios.Core.Caja
 
         IEnumerable<CajaDto> BuscarCajas();
 
+        void RestarDineroACaja(long cajaId, decimal dinero);
+
         AccesoDatos.Caja BuscarCajaAbierta();
 
         bool BuscarCajaAbiertaBool();

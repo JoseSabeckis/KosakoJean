@@ -66,6 +66,22 @@ namespace Servicios.Core.Caja
             }
         }
 
+        public void RestarDineroACaja(long cajaId, decimal dinero)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var caja = context.Cajas.FirstOrDefault(x => x.Id == cajaId);
+
+                caja.TotalCaja -= dinero;
+
+                caja.MontoCierre -= dinero;
+
+                context.SaveChanges();
+
+            }
+        }
+
         public AccesoDatos.Caja BuscarCajaAbierta()
         {
             using (var context = new KosakoDBEntities())

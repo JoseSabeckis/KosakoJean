@@ -78,6 +78,23 @@ namespace Servicios.Core.DetalleCaja
 
         }
 
+        public decimal BuscarDetallePorId(long detalleId)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var detalle = context.DetalleCajas.FirstOrDefault(x => x.Id == detalleId);
+
+                var dinero = detalle.Total;
+
+                context.DetalleCajas.Remove(detalle);
+
+                context.SaveChanges();
+
+                return dinero;
+            }
+
+        }
+
         public IEnumerable<DetalleCajaDto> BuscarDetalles(long id)
         {
             using (var context = new KosakoDBEntities())

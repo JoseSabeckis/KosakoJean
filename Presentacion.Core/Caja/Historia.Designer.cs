@@ -51,6 +51,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCaja)).BeginInit();
@@ -65,6 +66,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Controls.Add(this.label1);
@@ -84,9 +86,9 @@
             this.panel4.Controls.Add(this.lblHasta);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(263, 0);
+            this.panel4.Location = new System.Drawing.Point(281, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(391, 104);
+            this.panel4.Size = new System.Drawing.Size(373, 104);
             this.panel4.TabIndex = 7;
             // 
             // panel5
@@ -304,6 +306,20 @@
             this.dgvGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGrilla.Size = new System.Drawing.Size(567, 339);
             this.dgvGrilla.TabIndex = 12;
+            this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(117, 67);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(158, 25);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "Eliminar Seleccionado";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // Historia
             // 
@@ -363,5 +379,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -11,6 +11,8 @@ namespace Servicios.Core.DetalleCaja
 
         void AgregarDetalleCaja(DetalleCajaDto detalleCajaDto);
 
+        decimal BuscarDetallePorId(long detalleId);
+
         IEnumerable<DetalleCajaDto> BuscarDetalles(long id);
 
         long BuscarCajaAbierta();

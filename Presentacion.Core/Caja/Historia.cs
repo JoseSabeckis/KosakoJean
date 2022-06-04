@@ -3,6 +3,7 @@ using Servicios.Core.Caja;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.Image.Dto;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Caja
@@ -13,6 +14,7 @@ namespace Presentacion.Core.Caja
         private readonly ICajaServicio cajaServicio;
 
         long _CajaId;
+        long _DetalleId;
 
         public Historia(long id)
         {
@@ -23,13 +25,28 @@ namespace Presentacion.Core.Caja
 
             _CajaId = id;
 
-            dgvGrilla.DataSource = _detalleCajaServicio.Lista(id);
-
-            FormatearGrilla(dgvGrilla);
+            CargarGrilla();
 
             Calculos();
 
             CargarImageEnGeneral();
+
+            VerificarSiHayCobros();
+        }
+
+        public void CargarGrilla()
+        {
+            dgvGrilla.DataSource = _detalleCajaServicio.Lista(_CajaId);
+
+            FormatearGrilla(dgvGrilla);
+        }
+
+        public void VerificarSiHayCobros()
+        {
+            if (_detalleCajaServicio.Lista(_CajaId).Count() == 0)
+            {
+                btnEliminar.Visible = false;
+            }
         }
 
         private void CargarImageEnGeneral()
@@ -91,6 +108,33 @@ namespace Presentacion.Core.Caja
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Este Seguro De Eliminar Este Cobro?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var dinero = _detalleCajaServicio.BuscarDetallePorId(_DetalleId);
+
+                cajaServicio.RestarDineroACaja(_CajaId, dinero);
+
+                VerificarSiHayCobros();
+
+                CargarGrilla();
+                Calculos();
+            }
+        }
+
+        private void dgvGrilla_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvGrilla.RowCount > 0)
+            {
+                _DetalleId = (long)dgvGrilla["Id", e.RowIndex].Value;
+            }
+            else
+            {
+                _DetalleId = 0;
+            }
         }
     }
 }
