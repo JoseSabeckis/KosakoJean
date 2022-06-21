@@ -8,6 +8,7 @@ using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.DetalleProducto;
 using Servicios.Core.Fecha;
 using Servicios.Core.Image.Dto;
 using Servicios.Core.ParteVenta.Dto;
@@ -40,6 +41,7 @@ namespace Presentacion.Core.Pedido
         private readonly IClienteServicio clienteServicio;
         private readonly IVentaServicio ventaServicio;
         private readonly IProducto_Dato_Servicio producto_Dato_Servicio;
+        private readonly IDetalleProductoServicio detalleProductoServicio;
 
         public bool semaforo = false;
 
@@ -63,6 +65,7 @@ namespace Presentacion.Core.Pedido
             clienteServicio = new ClienteServicio();
             ventaServicio = new VentaServicio();
             producto_Dato_Servicio = new Producto_Dato_Servicio();
+            detalleProductoServicio = new DetalleProductoServicio();
 
             _Cliente = new ClienteDto();
 
@@ -251,7 +254,20 @@ namespace Presentacion.Core.Pedido
 
                     TipoPago(detalle);
 
-                    detallCajaServicio.AgregarDetalleCaja(detalle);
+                    var detalleCajaId = detallCajaServicio.AgregarDetalleCaja(detalle);
+
+                    //detalle producto
+                    foreach (var item in ListaVentas)
+                    {
+                        item.DetalleCajaId = detalleCajaId;
+                    }
+
+                    foreach (var item in ListaVentas)
+                    {
+                        detalleProductoServicio.Insertar(item);
+                    }
+
+                    //
 
                     //dinero a caja
                     cajaServicio.SumarDineroACaja(nudAdelanto.Value);//

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/03/2022 16:21:12
+-- Date Created: 06/21/2022 17:25:38
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -59,6 +59,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ClienteArreglo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Arreglos] DROP CONSTRAINT [FK_ClienteArreglo];
 GO
+IF OBJECT_ID(N'[dbo].[FK_DetalleCajaDetalleProducto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetalleProductos] DROP CONSTRAINT [FK_DetalleCajaDetalleProducto];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -114,6 +117,9 @@ IF OBJECT_ID(N'[dbo].[Images]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Arreglos]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Arreglos];
+GO
+IF OBJECT_ID(N'[dbo].[DetalleProductos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DetalleProductos];
 GO
 
 -- --------------------------------------------------
@@ -343,6 +349,20 @@ CREATE TABLE [dbo].[Arreglos] (
 );
 GO
 
+-- Creating table 'DetalleProductos'
+CREATE TABLE [dbo].[DetalleProductos] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [DetalleCajaId] bigint  NOT NULL,
+    [Descripcion] nvarchar(max)  NOT NULL,
+    [Colegio] nvarchar(max)  NULL,
+    [Talle] nvarchar(max)  NOT NULL,
+    [Cantidad] decimal(18,0)  NOT NULL,
+    [Precio] decimal(18,0)  NOT NULL,
+    [Fecha] datetime  NOT NULL,
+    [ProductoId] bigint  NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -446,6 +466,12 @@ GO
 -- Creating primary key on [Id] in table 'Arreglos'
 ALTER TABLE [dbo].[Arreglos]
 ADD CONSTRAINT [PK_Arreglos]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'DetalleProductos'
+ALTER TABLE [dbo].[DetalleProductos]
+ADD CONSTRAINT [PK_DetalleProductos]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -661,6 +687,21 @@ GO
 CREATE INDEX [IX_FK_ClienteArreglo]
 ON [dbo].[Arreglos]
     ([ClienteId]);
+GO
+
+-- Creating foreign key on [DetalleCajaId] in table 'DetalleProductos'
+ALTER TABLE [dbo].[DetalleProductos]
+ADD CONSTRAINT [FK_DetalleCajaDetalleProducto]
+    FOREIGN KEY ([DetalleCajaId])
+    REFERENCES [dbo].[DetalleCajas]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DetalleCajaDetalleProducto'
+CREATE INDEX [IX_FK_DetalleCajaDetalleProducto]
+ON [dbo].[DetalleProductos]
+    ([DetalleCajaId]);
 GO
 
 -- --------------------------------------------------

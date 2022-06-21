@@ -36,6 +36,8 @@
         <EntityTypeShape EntityType="KosakoDBModel.Image" Width="1.5" PointX="13.75" PointY="3.375" FillColor="Fuchsia" />
         <EntityTypeShape EntityType="KosakoDBModel.Arreglo" Width="1.5" PointX="9.5" PointY="4.625" FillColor="192, 64, 0" />
         <AssociationConnector Association="KosakoDBModel.ClienteArreglo" />
+        <EntityTypeShape EntityType="KosakoDBModel.DetalleProducto" Width="1.75" PointX="15.625" PointY="8" FillColor="255, 128, 0" />
+        <AssociationConnector Association="KosakoDBModel.DetalleCajaDetalleProducto" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

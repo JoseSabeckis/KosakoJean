@@ -98,6 +98,8 @@ namespace Presentacion.Core.Negocio
 
             negocioServicio.Insertar(nueva);
 
+            Close();
+
             return true;
         }
 

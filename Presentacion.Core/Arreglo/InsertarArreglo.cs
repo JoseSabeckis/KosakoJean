@@ -8,6 +8,8 @@ using Servicios.Core.Cliente.Dto;
 using Servicios.Core.CtaCte;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.DetalleProducto;
+using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Venta;
 using System;
 using System.Windows.Forms;
@@ -22,6 +24,7 @@ namespace Presentacion.Core.Arreglo
         private readonly IClienteServicio clienteServicio;
         private readonly IVentaServicio ventaServicio;
         private readonly IArregloServicio arregloServicio;
+        private readonly IDetalleProductoServicio detalleProductoServicio;
 
         long _ClienteId;
         ClienteDto _Cliente;
@@ -36,6 +39,7 @@ namespace Presentacion.Core.Arreglo
             clienteServicio = new ClienteServicio();
             ventaServicio = new VentaServicio();
             arregloServicio = new ArregloServicio();
+            detalleProductoServicio = new DetalleProductoServicio();
 
             _ClienteId = 1;
 

@@ -71,6 +71,9 @@
     <Compile Include="DetalleCaja\DetalleCajaServicio.cs" />
     <Compile Include="DetalleCaja\Dto\DetalleCajaDto.cs" />
     <Compile Include="DetalleCaja\IDetalleCajaServicio.cs" />
+    <Compile Include="DetalleProducto\DetalleProductoServicio.cs" />
+    <Compile Include="DetalleProducto\Dto\DetalleProductoDto.cs" />
+    <Compile Include="DetalleProducto\IDetalleProductoServicio.cs" />
     <Compile Include="Fecha\FechaDto.cs" />
     <Compile Include="Image\Dto\ImageDto.cs" />
     <Compile Include="Image\Dto\ImageLogueado.cs" />

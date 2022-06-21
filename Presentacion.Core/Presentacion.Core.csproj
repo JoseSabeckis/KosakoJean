@@ -111,6 +111,12 @@
     <Compile Include="Caja\CerrarCaja.Designer.cs">
       <DependentUpon>CerrarCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Caja\DetalleCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\DetalleCaja.Designer.cs">
+      <DependentUpon>DetalleCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Caja\Historia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -403,6 +409,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\CerrarCaja.resx">
       <DependentUpon>CerrarCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\DetalleCaja.resx">
+      <DependentUpon>DetalleCaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\Historia.resx">
       <DependentUpon>Historia.cs</DependentUpon>

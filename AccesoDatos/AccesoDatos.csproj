@@ -71,6 +71,9 @@
     <Compile Include="DetalleCaja.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="DetalleProducto.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="EstadoArreglo.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>

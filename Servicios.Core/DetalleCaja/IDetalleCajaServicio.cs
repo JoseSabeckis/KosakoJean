@@ -9,7 +9,7 @@ namespace Servicios.Core.DetalleCaja
 
         void ListaParaEliminar(IEnumerable<DetalleCajaDto> lista);
 
-        void AgregarDetalleCaja(DetalleCajaDto detalleCajaDto);
+        long AgregarDetalleCaja(DetalleCajaDto detalleCajaDto);
 
         decimal BuscarDetallePorId(long detalleId);
 

@@ -14,6 +14,12 @@ namespace AccesoDatos
     
     public partial class DetalleCaja
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DetalleCaja()
+        {
+            this.DetalleProducto = new HashSet<DetalleProducto>();
+        }
+    
         public long Id { get; set; }
         public string Descripcion { get; set; }
         public decimal Total { get; set; }
@@ -22,5 +28,7 @@ namespace AccesoDatos
         public TipoPago TipoPago { get; set; }
     
         public virtual Caja Caja { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DetalleProducto> DetalleProducto { get; set; }
     }
 }

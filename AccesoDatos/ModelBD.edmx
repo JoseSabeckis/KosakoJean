@@ -23,6 +23,7 @@
     <EntitySet Name="Negocios" EntityType="KosakoDBModel.Store.Negocios" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Images" EntityType="KosakoDBModel.Store.Images" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Arreglos" EntityType="KosakoDBModel.Store.Arreglos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DetalleProductos" EntityType="KosakoDBModel.Store.DetalleProductos" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="TipoProductoProducto" Association="KosakoDBModel.Store.TipoProductoProducto">
       <End Role="TipoProducto" EntitySet="TipoProductos" />
       <End Role="Producto" EntitySet="Productos" />
@@ -78,6 +79,10 @@
     <AssociationSet Name="ClienteArreglo" Association="KosakoDBModel.Store.ClienteArreglo">
       <End Role="Cliente" EntitySet="Clientes" />
       <End Role="Arreglo" EntitySet="Arreglos" />
+    </AssociationSet>
+    <AssociationSet Name="DetalleCajaDetalleProducto" Association="KosakoDBModel.Store.DetalleCajaDetalleProducto">
+      <End Role="DetalleCaja" EntitySet="DetalleCajas" />
+      <End Role="DetalleProducto" EntitySet="DetalleProductos" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Productos">
@@ -303,6 +308,20 @@
     <Property Name="Adelanto" Type="decimal" Nullable="false" />
     <Property Name="FechaRetirado" Type="datetime" Nullable="true" />
   </EntityType>
+  <EntityType Name="DetalleProductos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DetalleCajaId" Type="bigint" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Colegio" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Talle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cantidad" Type="decimal" Nullable="false" />
+    <Property Name="Precio" Type="decimal" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="ProductoId" Type="bigint" Nullable="true" />
+  </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
     <End Role="Producto" Type="KosakoDBModel.Store.Productos" Multiplicity="*" />
@@ -471,6 +490,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="DetalleCajaDetalleProducto">
+    <End Role="DetalleCaja" Type="KosakoDBModel.Store.DetalleCajas" Multiplicity="1" />
+    <End Role="DetalleProducto" Type="KosakoDBModel.Store.DetalleProductos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DetalleCaja">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetalleProducto">
+        <PropertyRef Name="DetalleCajaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -549,6 +580,11 @@
             <End Role="Cliente" EntitySet="Clientes" />
             <End Role="Arreglo" EntitySet="Arreglos" />
           </AssociationSet>
+          <EntitySet Name="DetalleProductos" EntityType="KosakoDBModel.DetalleProducto" />
+          <AssociationSet Name="DetalleCajaDetalleProducto" Association="KosakoDBModel.DetalleCajaDetalleProducto">
+            <End Role="DetalleCaja" EntitySet="DetalleCajas" />
+            <End Role="DetalleProducto" EntitySet="DetalleProductos" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Producto">
           <Key>
@@ -611,6 +647,7 @@
           <Property Name="CajaId" Type="Int64" Nullable="false" />
           <Property Name="Fecha" Type="String" Nullable="false" />
           <Property Name="TipoPago" Type="KosakoDBModel.TipoPago" Nullable="false" />
+          <NavigationProperty Name="DetalleProducto" Relationship="KosakoDBModel.DetalleCajaDetalleProducto" FromRole="DetalleCaja" ToRole="DetalleProducto" />
         </EntityType>
         <Association Name="TipoProductoProducto">
           <End Type="KosakoDBModel.TipoProducto" Role="TipoProducto" Multiplicity="1" />
@@ -980,6 +1017,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="DetalleProducto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="DetalleCaja" Relationship="KosakoDBModel.DetalleCajaDetalleProducto" FromRole="DetalleProducto" ToRole="DetalleCaja" />
+          <Property Name="DetalleCajaId" Type="Int64" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" />
+          <Property Name="Colegio" Type="String" Nullable="true" />
+          <Property Name="Talle" Type="String" Nullable="false" />
+          <Property Name="Cantidad" Type="Decimal" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="ProductoId" Type="Int64" Nullable="true" />
+        </EntityType>
+        <Association Name="DetalleCajaDetalleProducto">
+          <End Type="KosakoDBModel.DetalleCaja" Role="DetalleCaja" Multiplicity="1" />
+          <End Type="KosakoDBModel.DetalleProducto" Role="DetalleProducto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DetalleCaja">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleProducto">
+              <PropertyRef Name="DetalleCajaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1220,6 +1284,21 @@
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Adelanto" ColumnName="Adelanto" />
           <ScalarProperty Name="FechaRetirado" ColumnName="FechaRetirado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleProductos">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.DetalleProducto)">
+        <MappingFragment StoreEntitySet="DetalleProductos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DetalleCajaId" ColumnName="DetalleCajaId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Colegio" ColumnName="Colegio" />
+          <ScalarProperty Name="Talle" ColumnName="Talle" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

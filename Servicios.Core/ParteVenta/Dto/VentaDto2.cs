@@ -26,5 +26,8 @@ namespace Servicios.Core.ParteVenta.Dto
         public decimal Cantidad { get; set; }
 
         public decimal Precio { get; set; }
+
+        //para imprimir
+        public long DetalleCajaId { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Presentacion.Clases;
 using Servicios.Core.Caja;
 using Servicios.Core.DetalleCaja;
+using Servicios.Core.DetalleProducto;
 using Servicios.Core.Image.Dto;
 using System;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Presentacion.Core.Caja
     {
         private readonly IDetalleCajaServicio _detalleCajaServicio;
         private readonly ICajaServicio cajaServicio;
+        private readonly IDetalleProductoServicio detalleProductoServicio;
 
         long _CajaId;
         long _DetalleId;
@@ -22,6 +24,7 @@ namespace Presentacion.Core.Caja
 
             _detalleCajaServicio = new DetalleCajaServicio();
             cajaServicio = new CajaServicio();
+            detalleProductoServicio = new DetalleProductoServicio();
 
             _CajaId = id;
 
@@ -114,6 +117,8 @@ namespace Presentacion.Core.Caja
         {
             if (MessageBox.Show("Este Seguro De Eliminar Este Cobro?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                detalleProductoServicio.EliminarTodoPorDetalleCajaId(_DetalleId);
+
                 var dinero = _detalleCajaServicio.BuscarDetallePorId(_DetalleId);
 
                 cajaServicio.RestarDineroACaja(_CajaId, dinero);
@@ -134,6 +139,21 @@ namespace Presentacion.Core.Caja
             else
             {
                 _DetalleId = 0;
+            }
+        }
+
+        private void dgvGrilla_DoubleClick(object sender, EventArgs e)
+        {
+            if (_DetalleId != 0)
+            {
+                if (detalleProductoServicio.ObtenerListaPorDetalleId(_DetalleId).Count() == 0)
+                {
+                    MessageBox.Show("Solo Ventas y Pedidos Se Veran.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var formDetalle = new DetalleCaja(_DetalleId);
+                formDetalle.ShowDialog();
             }
         }
     }

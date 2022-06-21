@@ -1,6 +1,7 @@
 ﻿using Presentacion.Clases;
 using Servicios.Core.Caja;
 using Servicios.Core.DetalleCaja;
+using Servicios.Core.DetalleProducto;
 using Servicios.Core.Image.Dto;
 using System;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace Presentacion.Core.Caja
     {
         private readonly ICajaServicio _cajaServicio;
         private readonly IDetalleCajaServicio _detalleCajaServicio;
+        private readonly IDetalleProductoServicio detalleProductoServicio;
 
         long _Id;
 
@@ -21,6 +23,7 @@ namespace Presentacion.Core.Caja
 
             _cajaServicio = new CajaServicio();
             _detalleCajaServicio = new DetalleCajaServicio();
+            detalleProductoServicio = new DetalleProductoServicio();
 
             ckbApertura.Enabled = false;
 
@@ -170,6 +173,11 @@ namespace Presentacion.Core.Caja
             }
 
             var listaDetalles = _detalleCajaServicio.Lista(_Id);
+
+            foreach (var item in listaDetalles)
+            {
+                detalleProductoServicio.EliminarTodoPorDetalleCajaId(item.Id);
+            }
 
             _detalleCajaServicio.ListaParaEliminar(listaDetalles);
 

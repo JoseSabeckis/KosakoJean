@@ -10,6 +10,7 @@ using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.DetalleProducto;
 using Servicios.Core.Fecha;
 using Servicios.Core.Image.Dto;
 using Servicios.Core.ParteVenta.Dto;
@@ -37,6 +38,7 @@ namespace Presentacion.Core.Cobro
         private readonly ICajaServicio cajaServicio;
         private readonly IClienteServicio clienteServicio;
         private readonly ITalleServicio talleServicio;
+        private readonly IDetalleProductoServicio detalleProductoServicio;
 
         ProductoDto producto;
         long _productoId;
@@ -65,6 +67,7 @@ namespace Presentacion.Core.Cobro
             cajaServicio = new CajaServicio();
             clienteServicio = new ClienteServicio();
             talleServicio = new TalleServicio();
+            detalleProductoServicio = new DetalleProductoServicio();
 
             CargarTalle();
 
@@ -376,7 +379,6 @@ namespace Presentacion.Core.Cobro
                         ventaDto.Fecha = DateTime.Now;
                         ventaDto.Total = _total;
 
-
                         var ventaId = ventaServicio.NuevaVenta(ventaDto);
 
                         string descripcion = string.Empty;
@@ -405,7 +407,7 @@ namespace Presentacion.Core.Cobro
 
                             producto_vent.NuevoProductoVenta(producto_venta);
                         }
-
+                        ///////////////////////////////////////////////////////////////////////////////////////
                         var detalle = new DetalleCajaDto
                         {
                             Fecha = DateTime.Now.ToLongDateString(),
@@ -416,7 +418,21 @@ namespace Presentacion.Core.Cobro
 
                         TipoPago(detalle);
 
-                        detalleCajaServicio.AgregarDetalleCaja(detalle);
+                        var detalleCajaId = detalleCajaServicio.AgregarDetalleCaja(detalle);
+
+
+                        //detalle producto
+                        foreach (var item in ListaVenta)
+                        {
+                            item.DetalleCajaId = detalleCajaId;
+                        }
+
+                        foreach (var item in ListaVenta)
+                        {
+                            detalleProductoServicio.Insertar(item);
+                        }
+
+                        //
 
                         cajaServicio.SumarDineroACaja(_total);
 

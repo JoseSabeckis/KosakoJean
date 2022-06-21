@@ -7,7 +7,7 @@ namespace Servicios.Core.DetalleCaja
 {
     public class DetalleCajaServicio : IDetalleCajaServicio
     {
-        public void AgregarDetalleCaja(DetalleCajaDto detalleCajaDto)
+        public long AgregarDetalleCaja(DetalleCajaDto detalleCajaDto)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -23,6 +23,8 @@ namespace Servicios.Core.DetalleCaja
                 context.DetalleCajas.Add(detalleCaja);
 
                 context.SaveChanges();
+
+                return detalleCaja.Id;
             }
         }
 
