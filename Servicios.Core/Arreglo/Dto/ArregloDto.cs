@@ -13,13 +13,23 @@ namespace Servicios.Core.Arreglo.Dto
 
         public DateTime FechaPedido { get; set; }
 
+        public string FechaPedidoString => FechaPedido.ToLongDateString();
+
         public DateTime FechaEntrega { get; set; }
 
+        public string FechaEntregaString => FechaEntrega.ToLongDateString();
+
         public DateTime? FechaRetirado { get; set; }
+
+        //DateTime FechaRetiradoNotNull => (DateTime)FechaRetirado;
+
+        public string FechaRetiradoString { get; set; }
 
         public EstadoArreglo Estado { get; set; }
 
         public string Horario { get; set; }
+
+        public decimal Cantidad { get; set; }
 
         public string Descripcion { get; set; }
 

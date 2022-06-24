@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/21/2022 17:25:38
+-- Date Created: 06/24/2022 17:43:31
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -345,7 +345,8 @@ CREATE TABLE [dbo].[Arreglos] (
     [EstaEliminado] bit  NOT NULL,
     [Total] decimal(18,0)  NOT NULL,
     [Adelanto] decimal(18,0)  NOT NULL,
-    [FechaRetirado] datetime  NULL
+    [FechaRetirado] datetime  NULL,
+    [Cantidad] int  NOT NULL
 );
 GO
 

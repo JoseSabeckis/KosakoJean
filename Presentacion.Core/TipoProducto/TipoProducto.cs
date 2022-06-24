@@ -72,7 +72,7 @@ namespace Presentacion.Core.TipoProducto
                 }
                 else
                 {
-                    MessageBox.Show(@"El empleado se encuetra Elimnado", @"Atención", MessageBoxButtons.OK,
+                    MessageBox.Show(@"El Tipo se encuentra Eliminado", @"Atención", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }
@@ -86,6 +86,12 @@ namespace Presentacion.Core.TipoProducto
             }
             else
             {
+                if (EntidadId == 1)
+                {
+                    MessageBox.Show("No Se Puede Borrar El Tipo Principal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); ;
+
+                    return;
+                }
 
                 if (!((TipoProductoDto)EntidadSeleccionada).EstaEliminado)
                 {
@@ -101,7 +107,7 @@ namespace Presentacion.Core.TipoProducto
                 }
                 else
                 {
-                    MessageBox.Show(@"El empleado se encuetra Elimnado", @"Atención", MessageBoxButtons.OK,
+                    MessageBox.Show(@"El Tipo se encuentra Eliminado", @"Atención", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }

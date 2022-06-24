@@ -1,5 +1,7 @@
 ﻿using Servicios.Core.Arreglo;
+using Servicios.Core.Arreglo.Dto;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Arreglo
@@ -18,15 +20,29 @@ namespace Presentacion.Core.Arreglo
             CargarGrilla();
         }
 
+        public IEnumerable<ArregloDto> PonerFecha(IEnumerable<ArregloDto> list)
+        {
+            foreach (var item in list)
+            {
+                if (item.FechaRetirado != null)
+                {
+                    var fecha = (DateTime)item.FechaRetirado;
+                    item.FechaRetiradoString = fecha.ToLongDateString();
+                }
+            }
+
+            return list;
+        }
+
         private void CargarGrilla()
         {
             if (ckbEnEspera.Checked)
             {
-                dgvGrilla.DataSource = arregloServicio.ListaArreglosEnEspera();
+                dgvGrilla.DataSource = PonerFecha(arregloServicio.ListaArreglosEnEspera());
             }
             if (ckbRetirados.Checked)
             {
-                dgvGrilla.DataSource = arregloServicio.ListaArreglosRetirados();
+                dgvGrilla.DataSource = PonerFecha(arregloServicio.ListaArreglosRetirados());
             }
 
             FormatearGrilla(dgvGrilla);
@@ -45,11 +61,11 @@ namespace Presentacion.Core.Arreglo
             grilla.Columns["ApyNom"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["ApyNom"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["FechaEntrega"].Visible = true;
-            grilla.Columns["FechaEntrega"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["FechaEntrega"].HeaderText = @"Entrega";
-            grilla.Columns["FechaEntrega"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["FechaEntrega"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["FechaEntregaString"].Visible = true;
+            grilla.Columns["FechaEntregaString"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["FechaEntregaString"].HeaderText = @"Entrega";
+            grilla.Columns["FechaEntregaString"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["FechaEntregaString"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             grilla.Columns["Horario"].Visible = true;
             grilla.Columns["Horario"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -62,6 +78,33 @@ namespace Presentacion.Core.Arreglo
             grilla.Columns["Total"].HeaderText = @"Total";
             grilla.Columns["Total"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            if (ckbEnEspera.Checked)
+            {
+                grilla.Columns["FechaEntregaString"].Visible = true;
+                grilla.Columns["FechaEntregaString"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                grilla.Columns["FechaEntregaString"].HeaderText = @"Entrega";
+                grilla.Columns["FechaEntregaString"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grilla.Columns["FechaEntregaString"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            else
+            {
+                grilla.Columns["FechaEntregaString"].Visible = false;
+            }
+
+            if (ckbRetirados.Checked)
+            {
+                grilla.Columns["FechaRetiradoString"].Visible = true;
+                grilla.Columns["FechaRetiradoString"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                grilla.Columns["FechaRetiradoString"].HeaderText = @"Retirado";
+                grilla.Columns["FechaRetiradoString"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                grilla.Columns["FechaRetiradoString"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            else
+            {
+                grilla.Columns["FechaRetiradoString"].Visible = false;
+            }
+
 
         }
 
@@ -127,11 +170,11 @@ namespace Presentacion.Core.Arreglo
             {
                 if (ckbEnEspera.Checked)
                 {
-                    dgvGrilla.DataSource = arregloServicio.ListaArreglosEnEsperaBusqueda(txtBusqueda.Text);
+                    dgvGrilla.DataSource = PonerFecha(arregloServicio.ListaArreglosEnEsperaBusqueda(txtBusqueda.Text));
                 }
                 if (ckbRetirados.Checked)
                 {
-                    dgvGrilla.DataSource = arregloServicio.ListaArreglosRetiradosBusqueda(txtBusqueda.Text);
+                    dgvGrilla.DataSource = PonerFecha(arregloServicio.ListaArreglosRetiradosBusqueda(txtBusqueda.Text));
                 }
 
                 FormatearGrilla(dgvGrilla);

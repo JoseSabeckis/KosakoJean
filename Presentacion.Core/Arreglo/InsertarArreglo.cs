@@ -87,7 +87,8 @@ namespace Presentacion.Core.Arreglo
                         FechaPedido = DateTime.Now,
                         Horario = cmbHorario.Text,
                         FechaRetirado = null,
-                        FechaEntrega = dtpFechaEntrega.Value.Date
+                        FechaEntrega = dtpFechaEntrega.Value.Date,
+                        Cantidad = nudCantidad.Value
                     };
 
                     arregloServicio.Insertar(arreglo);
@@ -102,7 +103,21 @@ namespace Presentacion.Core.Arreglo
 
                     TipoPago(detalle);
 
-                    detallCajaServicio.AgregarDetalleCaja(detalle);
+                    var detallleId = detallCajaServicio.AgregarDetalleCaja(detalle);
+
+                    //para ticket
+                    VentaDto2 ventaDto2 = new VentaDto2
+                    {
+                        Cantidad = 1,
+                        Descripcion = arreglo.Descripcion,
+                        DetalleCajaId = detallleId,
+                        Fecha = DateTime.Now,
+                        Talle = "---",
+                        Precio = arreglo.Total,
+                        ProductoId = 1,
+                    };
+
+                    detalleProductoServicio.Insertar(ventaDto2);
 
                     //dinero a caja
                     cajaServicio.SumarDineroACaja(nudAdelanto.Value);
@@ -130,6 +145,7 @@ namespace Presentacion.Core.Arreglo
             ckbNormal.Checked = true;
             txtDescripcion.Text = "";
 
+            nudCantidad.Value = 1;
             _ClienteId = 1;
             ControlDeCliente();
         }

@@ -57,6 +57,8 @@ namespace Presentacion.Core.Arreglo
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
@@ -64,11 +66,14 @@ namespace Presentacion.Core.Arreglo
             ((System.ComponentModel.ISupportInitialize)(this.nudAdelanto)).BeginInit();
             this.panel6.SuspendLayout();
             this.imgArreglo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.nudCantidad);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.nudTotal);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtDescripcion);
@@ -378,6 +383,34 @@ namespace Presentacion.Core.Arreglo
             this.label1.TabIndex = 0;
             this.label1.Text = "Pedido de Arreglo";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(370, 401);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(135, 25);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Cant Prendas";
+            // 
+            // nudCantidad
+            // 
+            this.nudCantidad.BackColor = System.Drawing.SystemColors.Info;
+            this.nudCantidad.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudCantidad.Location = new System.Drawing.Point(511, 401);
+            this.nudCantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(43, 27);
+            this.nudCantidad.TabIndex = 33;
+            this.nudCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // InsertarArreglo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -407,6 +440,7 @@ namespace Presentacion.Core.Arreglo
             this.panel6.PerformLayout();
             this.imgArreglo.ResumeLayout(false);
             this.imgArreglo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -440,5 +474,7 @@ namespace Presentacion.Core.Arreglo
         private System.Windows.Forms.Button btnSeleccionarCliente;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown nudCantidad;
+        private System.Windows.Forms.Label label7;
     }
 }

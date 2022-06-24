@@ -72,7 +72,7 @@ namespace Presentacion.Core.Talle
                 }
                 else
                 {
-                    MessageBox.Show(@"El empleado se encuetra Elimnado", @"Atención", MessageBoxButtons.OK,
+                    MessageBox.Show(@"El Talle se encuentra Eliminado", @"Atención", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }
@@ -86,6 +86,12 @@ namespace Presentacion.Core.Talle
             }
             else
             {
+                if (EntidadId == 1)
+                {
+                    MessageBox.Show("No Se Puede Borrar El Talle Principal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    return;
+                }
 
                 if (!((TalleDto)EntidadSeleccionada).EstaEliminado)
                 {
@@ -101,7 +107,7 @@ namespace Presentacion.Core.Talle
                 }
                 else
                 {
-                    MessageBox.Show(@"El empleado se encuetra Elimnado", @"Atención", MessageBoxButtons.OK,
+                    MessageBox.Show(@"El Talle se encuentra Eliminado", @"Atención", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }

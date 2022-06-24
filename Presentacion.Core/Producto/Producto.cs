@@ -92,6 +92,13 @@ namespace Presentacion.Core.Producto
             }
             else
             {
+                if (EntidadId == 1)
+                {
+                    MessageBox.Show("No Se Ver Este Producto General", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    return;
+                }
+
                 if (!((ProductoDto)EntidadSeleccionada).EstaEliminado)
                 {
                     base.EjecutarModificar();
@@ -105,7 +112,7 @@ namespace Presentacion.Core.Producto
                 }
                 else
                 {
-                    MessageBox.Show(@"El empleado se encuetra Elimnado", @"Atención", MessageBoxButtons.OK,
+                    MessageBox.Show(@"El Producto se encuentra Eliminado", @"Atención", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }
@@ -119,6 +126,12 @@ namespace Presentacion.Core.Producto
             }
             else
             {
+                if (EntidadId == 1)
+                {
+                    MessageBox.Show("No Se Puede Eliminar Este Producto General", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    return;
+                }
 
                 if (!((ProductoDto)EntidadSeleccionada).EstaEliminado)
                 {
@@ -134,7 +147,7 @@ namespace Presentacion.Core.Producto
                 }
                 else
                 {
-                    MessageBox.Show(@"El empleado se encuetra Elimnado", @"Atención", MessageBoxButtons.OK,
+                    MessageBox.Show(@"El Producto se encuentra Eliminado", @"Atención", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }

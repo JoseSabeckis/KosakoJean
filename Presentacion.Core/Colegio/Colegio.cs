@@ -71,7 +71,7 @@ namespace Presentacion.Core.Colegio
                 }
                 else
                 {
-                    MessageBox.Show(@"El empleado se encuetra Elimnado", @"Atención", MessageBoxButtons.OK,
+                    MessageBox.Show(@"El Colegio se encuentra Eliminado", @"Atención", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }
@@ -85,6 +85,12 @@ namespace Presentacion.Core.Colegio
             }
             else
             {
+                if (EntidadId == 1)
+                {
+                    MessageBox.Show("No Se Puede Eliminar Este Colegio Principal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
+                }
 
                 if (!((ColegioDto)EntidadSeleccionada).EstaEliminado)
                 {
@@ -100,7 +106,7 @@ namespace Presentacion.Core.Colegio
                 }
                 else
                 {
-                    MessageBox.Show(@"El empleado se encuetra Elimnado", @"Atención", MessageBoxButtons.OK,
+                    MessageBox.Show(@"El colegio se encuentra Eliminado", @"Atención", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }

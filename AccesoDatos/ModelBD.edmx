@@ -307,6 +307,7 @@
     <Property Name="Total" Type="decimal" Nullable="false" />
     <Property Name="Adelanto" Type="decimal" Nullable="false" />
     <Property Name="FechaRetirado" Type="datetime" Nullable="true" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="DetalleProductos">
     <Key>
@@ -1000,6 +1001,7 @@
           <Property Name="Total" Type="Decimal" Nullable="false" />
           <Property Name="Adelanto" Type="Decimal" Nullable="false" />
           <Property Name="FechaRetirado" Type="DateTime" Nullable="true" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
         </EntityType>
         <EnumType Name="EstadoArreglo" UnderlyingType="Int64">
           <Member Name="EnEspera" Value="0" />
@@ -1284,6 +1286,7 @@
           <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="Adelanto" ColumnName="Adelanto" />
           <ScalarProperty Name="FechaRetirado" ColumnName="FechaRetirado" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

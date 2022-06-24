@@ -20,6 +20,8 @@ using Servicios.Core.Image;
 using Servicios.Core.Image.Dto;
 using Servicios.Core.Negocio;
 using Servicios.Core.Negocio.Dto;
+using Servicios.Core.Producto;
+using Servicios.Core.Producto.Dto;
 using Servicios.Core.Talle;
 using Servicios.Core.Talle.Dto;
 using Servicios.Core.TipoProducto;
@@ -39,6 +41,7 @@ namespace KosakoJean
         private readonly IColegioServicio colegioServicio;
         private readonly INegocioServicio negocioServicio;
         private readonly I_ImageServicio imageServicio;
+        private readonly IProductoServicio productoServicio;
 
         public Principal()
         {
@@ -51,6 +54,7 @@ namespace KosakoJean
             colegioServicio = new ColegioServicio();
             negocioServicio = new NegocioServicio();
             imageServicio = new ImageServicio();
+            productoServicio = new ProductoServicio();
 
             DatosComercio();
             CargarImagenes();
@@ -212,10 +216,26 @@ namespace KosakoJean
             {
                 var colegio = new ColegioDto
                 {
-                    Descripcion = "No Colegial"
+                    Descripcion = "-----"
                 };
 
                 colegioServicio.Nuevo(colegio);
+            }
+
+            if (productoServicio.ObtenerPorId(1) == null)
+            {
+                var producto = new ProductoDto
+                {
+                    Descripcion = "Arreglo de Prendas",
+                    ColegioId = 1,
+                    TipoProductoId = 1,
+                    Extras = "",
+                    Precio = 0,
+                    Stock = 0,
+                    Foto = ImagenDb.Convertir_Imagen_Bytes(imagePrincipal.Image)
+                };
+
+                productoServicio.Nuevo(producto);
             }
 
             if (talleServicio.ObtenerPorId(1) == null)

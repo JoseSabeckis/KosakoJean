@@ -65,6 +65,7 @@ namespace Presentacion.Core.Arreglo
             this.label3 = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lblPrendas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -425,6 +426,7 @@ namespace Presentacion.Core.Arreglo
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.lblPrendas);
             this.panel3.Controls.Add(this.lblFechaDejado);
             this.panel3.Controls.Add(this.lblFechaEntrega);
             this.panel3.Controls.Add(this.label4);
@@ -501,6 +503,16 @@ namespace Presentacion.Core.Arreglo
             this.label2.TabIndex = 0;
             this.label2.Text = "Cliente:";
             // 
+            // lblPrendas
+            // 
+            this.lblPrendas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPrendas.AutoSize = true;
+            this.lblPrendas.Location = new System.Drawing.Point(25, 53);
+            this.lblPrendas.Name = "lblPrendas";
+            this.lblPrendas.Size = new System.Drawing.Size(97, 25);
+            this.lblPrendas.TabIndex = 6;
+            this.lblPrendas.Text = "Prendas: ";
+            // 
             // DatosArreglo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -574,5 +586,6 @@ namespace Presentacion.Core.Arreglo
         private System.Windows.Forms.Button btnDatos;
         private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label lblPrendas;
     }
 }

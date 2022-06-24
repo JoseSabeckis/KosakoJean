@@ -7,7 +7,9 @@ using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.DetalleProducto;
 using Servicios.Core.Image.Dto;
+using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
@@ -22,12 +24,14 @@ namespace Presentacion.Core.Arreglo
         private readonly IClienteServicio clienteServicio;
         private readonly IVentaServicio ventaServicio;
         private readonly IArregloServicio arregloServicio;
+        private readonly IDetalleProductoServicio DetalleServicio;
 
         ArregloDto _ArregloDto;
         ClienteDto _ClienteDto;
 
         long _ArregloId;
         decimal _Debe = 0;
+        decimal _Total = 0;
 
         public DatosArreglo(long arregloId)
         {
@@ -38,6 +42,7 @@ namespace Presentacion.Core.Arreglo
             clienteServicio = new ClienteServicio();
             ventaServicio = new VentaServicio();
             arregloServicio = new ArregloServicio();
+            DetalleServicio = new DetalleProductoServicio();
 
             _ArregloId = arregloId;
 
@@ -59,6 +64,9 @@ namespace Presentacion.Core.Arreglo
             _ArregloDto = arregloServicio.ObtenerPorId(_ArregloId);
 
             //_ClienteDto = clienteServicio.ObtenerPorId(_ArregloDto.ClienteId);
+            _Total = _ArregloDto.Total;
+
+            lblPrendas.Text = $"Prendas: {_ArregloDto.Cantidad}";
 
             lblCliente.Text = $"{_ArregloDto.ApyNom}";
 
@@ -123,25 +131,29 @@ namespace Presentacion.Core.Arreglo
                         {
                             Descripcion = $"{lblCliente.Text} - Cobro Adelanto",
                             Fecha = DateTime.Now.ToLongDateString(),
-                            Total = _Debe,
+                            Total = nudCobro.Value,
                             CajaId = detalleCajaServicio.BuscarCajaAbierta()
                         };
 
                         TipoPago(detalle);
 
-                        detalleCajaServicio.AgregarDetalleCaja(detalle);
+                        long detalleId = detalleCajaServicio.AgregarDetalleCaja(detalle);
 
                         cajaServicio.SumarDineroACaja(nudCobro.Value);
+
                         var venta = new VentaDto
                         {
                             ClienteId = _ArregloDto.ClienteId,
                             Descuento = 0,
                             Fecha = DateTime.Now,
-                            Total = nudCobro.Value
+                            Total = nudCobro.Value,
                         };
 
                         ventaServicio.NuevaVenta(venta);
 
+                        //para ticket
+                        Detalle(detalleId);
+                        //
                         Datos();
 
                         //limpieza
@@ -213,6 +225,22 @@ namespace Presentacion.Core.Arreglo
 
                     arregloServicio.CambiarARetiradoYFechaDeRetiro(_ArregloId, DateTime.Now);
 
+                    //caja
+                    var detalle = new DetalleCajaDto
+                    {
+                        Descripcion = $"{lblCliente.Text} - Cobro",
+                        Fecha = DateTime.Now.ToLongDateString(),
+                        Total = _Debe,
+                        CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                    };
+
+                    TipoPago(detalle);
+
+                    long detalleId = detalleCajaServicio.AgregarDetalleCaja(detalle);
+
+                    //para ticket
+                    Detalle(detalleId);
+                    //
                     Datos();
 
                     VerificarSiEstaPagado();
@@ -227,6 +255,22 @@ namespace Presentacion.Core.Arreglo
             {
                 MessageBox.Show("La Caja Esta Cerrada", "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        public void Detalle(long detalleId)
+        {
+            VentaDto2 ventaDto2 = new VentaDto2
+            {
+                Cantidad = _ArregloDto.Cantidad,
+                Descripcion = txtDescripcion.Text,
+                DetalleCajaId = detalleId,
+                Fecha = DateTime.Now,
+                Talle = "---",
+                Precio = _Total,
+                ProductoId = 1,
+            };
+
+            DetalleServicio.Insertar(ventaDto2);
         }
 
         public void VerificarSiEstaTerminado()

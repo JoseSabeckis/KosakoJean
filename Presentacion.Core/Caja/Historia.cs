@@ -151,13 +151,13 @@ namespace Presentacion.Core.Caja
         private void dgvGrilla_DoubleClick(object sender, EventArgs e)
         {
             if (_DetalleId != 0)
-            {
+            {/*
                 if (detalleProductoServicio.ObtenerListaPorDetalleId(_DetalleId).Count() == 0)
                 {
                     MessageBox.Show("Solo Ventas y Pedidos Se Veran.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
+             */
                 var formDetalle = new DetalleCaja(_DetalleId);
                 formDetalle.ShowDialog();
             }

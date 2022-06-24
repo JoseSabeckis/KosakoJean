@@ -96,7 +96,7 @@ namespace Presentacion.Core.Cliente
                 }
                 else
                 {
-                    MessageBox.Show(@"El empleado se encuetra Elimnado", @"Atención", MessageBoxButtons.OK,
+                    MessageBox.Show(@"El Cliente se encuentra Eliminado", @"Atención", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }
@@ -132,7 +132,7 @@ namespace Presentacion.Core.Cliente
                 }
                 else
                 {
-                    MessageBox.Show(@"El empleado se encuetra Eliminado", @"Atención", MessageBoxButtons.OK,
+                    MessageBox.Show(@"El Cliente se encuentra Eliminado", @"Atención", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
             }

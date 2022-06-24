@@ -23,7 +23,8 @@ namespace Servicios.Core.Arreglo
                     FechaPedido = arregloDto.FechaPedido,
                     Horario = arregloDto.Horario,
                     Nombre = arregloDto.Nombre,
-                    Total = arregloDto.Total
+                    Total = arregloDto.Total,
+                    Cantidad = (int)arregloDto.Cantidad
                 };
 
                 context.Arreglos.Add(arreglo);
@@ -117,7 +118,8 @@ namespace Servicios.Core.Arreglo
                         Nombre = x.Nombre,
                         Total = x.Total,
                         Id = x.Id,
-                        EstaEliminado = x.EstaEliminado
+                        EstaEliminado = x.EstaEliminado,
+                        Cantidad = x.Cantidad
 
                     }).ToList();
             }
@@ -142,7 +144,8 @@ namespace Servicios.Core.Arreglo
                         Nombre = x.Nombre,
                         Total = x.Total,
                         Id = x.Id,
-                        EstaEliminado = x.EstaEliminado
+                        EstaEliminado = x.EstaEliminado,
+                        Cantidad = x.Cantidad
 
                     }).ToList();
             }
@@ -167,7 +170,8 @@ namespace Servicios.Core.Arreglo
                         Nombre = x.Nombre,
                         Total = x.Total,
                         Id = x.Id,
-                        EstaEliminado = x.EstaEliminado
+                        EstaEliminado = x.EstaEliminado,
+                        Cantidad = x.Cantidad
 
                     }).ToList();
             }
@@ -192,7 +196,8 @@ namespace Servicios.Core.Arreglo
                         Nombre = x.Nombre,
                         Total = x.Total,
                         Id = x.Id,
-                        EstaEliminado = x.EstaEliminado
+                        EstaEliminado = x.EstaEliminado,
+                        Cantidad = x.Cantidad
 
                     }).ToList();
             }
@@ -217,7 +222,8 @@ namespace Servicios.Core.Arreglo
                         Nombre = x.Nombre,
                         Total = x.Total,
                         Id = x.Id,
-                        EstaEliminado = x.EstaEliminado
+                        EstaEliminado = x.EstaEliminado,
+                        Cantidad = x.Cantidad
 
                     }).ToList();
             }
@@ -243,7 +249,8 @@ namespace Servicios.Core.Arreglo
                     Horario = arreglo.Horario,
                     Nombre = arreglo.Nombre,
                     Total = arreglo.Total,
-                    Id = arreglo.Id
+                    Id = arreglo.Id,
+                    Cantidad = arreglo.Cantidad
                 };
 
                 return listo;
