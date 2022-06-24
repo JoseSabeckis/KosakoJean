@@ -1,9 +1,13 @@
 ﻿using Presentacion.Clases;
+using Presentacion.Core.Factura;
 using Servicios.Core.Caja;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleProducto;
+using Servicios.Core.Fecha;
 using Servicios.Core.Image.Dto;
+using Servicios.Core.ParteVenta.Dto;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -127,6 +131,8 @@ namespace Presentacion.Core.Caja
 
                 CargarGrilla();
                 Calculos();
+
+                VerificarBotonTicket();
             }
         }
 
@@ -155,6 +161,40 @@ namespace Presentacion.Core.Caja
                 var formDetalle = new DetalleCaja(_DetalleId);
                 formDetalle.ShowDialog();
             }
+        }
+
+        public void VerificarBotonTicket()
+        {           
+            if (_detalleCajaServicio.Lista(_CajaId).Count() == 0)
+            {
+                btnTicket.Visible = false;
+            }
+        }
+
+        private void btnTicket_Click(object sender, EventArgs e)
+        {
+            if (_DetalleId != 0)
+            {
+                //ticket
+
+                var fecha = new FechaDto
+                {
+                    Fecha = DateTime.Now.ToShortDateString(),
+                    Hora = DateTime.Now.ToShortTimeString()
+                };
+
+                List<VentaDto2> ListaVenta = new List<VentaDto2>();
+
+                ListaVenta = detalleProductoServicio.ObtenerListaPorDetalleId(_DetalleId);
+
+                var factura = new Comprobante(ListaVenta, fecha);
+                factura.ShowDialog();
+            }
+        }
+
+        private void Historia_Load(object sender, EventArgs e)
+        {
+            VerificarBotonTicket();
         }
     }
 }

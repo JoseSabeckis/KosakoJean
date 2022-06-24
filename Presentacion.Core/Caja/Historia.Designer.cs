@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.imgCaja = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTicket = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.nudComienzoCaja = new System.Windows.Forms.NumericUpDown();
@@ -187,6 +188,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnTicket);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.nudComienzoCaja);
@@ -202,6 +204,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 343);
             this.panel2.TabIndex = 1;
+            // 
+            // btnTicket
+            // 
+            this.btnTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTicket.Location = new System.Drawing.Point(19, 274);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(159, 28);
+            this.btnTicket.TabIndex = 7;
+            this.btnTicket.Text = "Ver Ticket";
+            this.btnTicket.UseVisualStyleBackColor = false;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
             // label9
             // 
@@ -353,6 +368,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Historia";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Historia_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -395,5 +411,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnTicket;
     }
 }
