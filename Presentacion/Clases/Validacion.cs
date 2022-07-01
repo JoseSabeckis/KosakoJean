@@ -74,5 +74,10 @@ namespace Presentacion.Clases
 
             return Estado;
         }
+
+        public static void NoSimbolos(string text, string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

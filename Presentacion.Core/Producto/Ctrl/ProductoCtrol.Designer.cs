@@ -34,9 +34,9 @@ namespace Presentacion.Core.Producto.Ctrl
             this.lblPrecio = new System.Windows.Forms.Label();
             this.nudId = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblExtra = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblExtra = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             this.panel1.SuspendLayout();
@@ -47,9 +47,9 @@ namespace Presentacion.Core.Producto.Ctrl
             // 
             this.ptbImagen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptbImagen.Image = global::Presentacion.Core.Properties.Resources.add_shop_online_ecommerce_shopping_9_icon_icons_com_61652;
-            this.ptbImagen.Location = new System.Drawing.Point(30, 3);
+            this.ptbImagen.Location = new System.Drawing.Point(31, 1);
             this.ptbImagen.Name = "ptbImagen";
-            this.ptbImagen.Size = new System.Drawing.Size(93, 72);
+            this.ptbImagen.Size = new System.Drawing.Size(105, 72);
             this.ptbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbImagen.TabIndex = 0;
             this.ptbImagen.TabStop = false;
@@ -71,7 +71,7 @@ namespace Presentacion.Core.Producto.Ctrl
             this.lblPrecio.AutoSize = true;
             this.lblPrecio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lblPrecio.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecio.Location = new System.Drawing.Point(104, 2);
+            this.lblPrecio.Location = new System.Drawing.Point(139, 2);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(41, 17);
             this.lblPrecio.TabIndex = 2;
@@ -96,8 +96,30 @@ namespace Presentacion.Core.Producto.Ctrl
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(179, 151);
+            this.panel1.Size = new System.Drawing.Size(211, 151);
             this.panel1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(141, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Precio";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblPrecio);
+            this.panel2.Controls.Add(this.lblExtra);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 124);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(207, 23);
+            this.panel2.TabIndex = 5;
             // 
             // lblExtra
             // 
@@ -109,28 +131,6 @@ namespace Presentacion.Core.Producto.Ctrl
             this.lblExtra.TabIndex = 4;
             this.lblExtra.Text = "---";
             // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.lblPrecio);
-            this.panel2.Controls.Add(this.lblExtra);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 124);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(175, 23);
-            this.panel2.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(106, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Precio";
-            // 
             // ProductoCtrol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,7 +138,7 @@ namespace Presentacion.Core.Producto.Ctrl
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.Controls.Add(this.panel1);
             this.Name = "ProductoCtrol";
-            this.Size = new System.Drawing.Size(179, 151);
+            this.Size = new System.Drawing.Size(211, 151);
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudId)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -4,6 +4,8 @@
     {
         public long Id { get; set; }
 
+        public long CodigoBarra { get; set; }
+
         public string Descripcion { get; set; }
 
         public bool EstaEliminado { get; set; }

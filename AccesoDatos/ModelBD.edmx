@@ -99,6 +99,7 @@
     <Property Name="Foto" Type="varbinary(max)" Nullable="false" />
     <Property Name="Stock" Type="decimal" Nullable="false" />
     <Property Name="Creacion" Type="bit" Nullable="false" />
+    <Property Name="CodigoBarra" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="TipoProductos">
     <Key>
@@ -605,6 +606,7 @@
           <Property Name="Foto" Type="Binary" Nullable="false" />
           <Property Name="Stock" Type="Decimal" Nullable="false" />
           <Property Name="Creacion" Type="Boolean" Nullable="false" />
+          <Property Name="CodigoBarra" Type="Int64" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoProducto">
           <Key>
@@ -1065,6 +1067,7 @@
           <ScalarProperty Name="Foto" ColumnName="Foto" />
           <ScalarProperty Name="Stock" ColumnName="Stock" />
           <ScalarProperty Name="Creacion" ColumnName="Creacion" />
+          <ScalarProperty Name="CodigoBarra" ColumnName="CodigoBarra" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

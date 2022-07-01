@@ -16,5 +16,9 @@ namespace Servicios.Core.Producto
         IEnumerable<ProductoDto> Buscar(string cadenaBuscar);
 
         ProductoDto ObtenerPorId(long Id);
+
+        bool VerificarCodigoDeBarra(long cod, long id);
+
+        long TraerNuevoCodBarra();
     }
 }

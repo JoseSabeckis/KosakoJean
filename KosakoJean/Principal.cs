@@ -232,6 +232,7 @@ namespace KosakoJean
                     Extras = "",
                     Precio = 0,
                     Stock = 0,
+                    CodigoBarra = 957395410000,
                     Foto = ImagenDb.Convertir_Imagen_Bytes(imagePrincipal.Image)
                 };
 

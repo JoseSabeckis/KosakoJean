@@ -148,7 +148,7 @@ namespace Presentacion
 
                     if (ctrolForm is NumericUpDown)
                     {
-                        ((NumericUpDown)ctrolForm).Value = 0;
+                        ((NumericUpDown)ctrolForm).Value = ((NumericUpDown)ctrolForm).Minimum;
                     }
 
                     if (ctrolForm is DateTimePicker)
@@ -187,7 +187,7 @@ namespace Presentacion
 
                     if (ctrolPanel is NumericUpDown)
                     {
-                        ((NumericUpDown)ctrolPanel).Value = 0;
+                        ((NumericUpDown)ctrolPanel).Value = ((NumericUpDown)ctrolPanel).Minimum;
                     }
 
                     if (ctrolPanel is DateTimePicker)

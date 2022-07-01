@@ -22,7 +22,8 @@ namespace Servicios.Core.Producto
                     ColegioId = dto.ColegioId,
                     Foto = dto.Foto,
                     Stock = dto.Stock,
-                    Creacion = dto.Creacion
+                    Creacion = dto.Creacion,
+                    CodigoBarra = dto.CodigoBarra
                 };
 
                 context.Productos.Add(nuevo);
@@ -77,6 +78,7 @@ namespace Servicios.Core.Producto
                 producto.Foto = dto.Foto;
                 producto.Stock = dto.Stock;
                 producto.Creacion = dto.Creacion;
+                producto.CodigoBarra = dto.CodigoBarra;
 
                 context.SaveChanges();
 
@@ -104,12 +106,44 @@ namespace Servicios.Core.Producto
                         Stock = x.Stock,
                         Creacion = x.Creacion,
                         Precio = x.Precio,
+                        CodigoBarra = x.CodigoBarra
 
                     }).ToList();
 
                 return productos;
             }
 
+        }
+
+        public bool VerificarCodigoDeBarra(long cod, long id)
+        {
+            using(var context = new KosakoDBEntities())
+            {
+
+                var bandera = context.Productos.FirstOrDefault(x => x.CodigoBarra == cod && x.Id != id);
+
+                if (bandera != null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+            }
+        }
+
+        public long TraerNuevoCodBarra()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var bandera = context.Productos.Max(x => x.CodigoBarra);
+
+                return bandera + 1;
+
+            }
         }
 
         public ProductoDto ObtenerPorId(long Id)
@@ -131,7 +165,8 @@ namespace Servicios.Core.Producto
                         Colegio = context.Colegios.FirstOrDefault(f => f.Id == x.ColegioId).Descripcion,
                         TipoProducto = context.TipoProductos.FirstOrDefault(f => f.Id == x.TipoProductoId).Descripcion,
                         Stock = x.Stock,
-                        Creacion = x.Creacion
+                        Creacion = x.Creacion,
+                        CodigoBarra = x.CodigoBarra
 
                     }).FirstOrDefault(x => x.Id == Id);
             }
