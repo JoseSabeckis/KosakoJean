@@ -82,6 +82,16 @@ namespace Presentacion.Core.Cobro
             btnSeleccionProducto.Select();
 
             CargarImageEnGeneral();
+
+            Inicializador();
+
+        }
+
+        public void Inicializador()
+        {
+            txtCodigoBarra.KeyPress += Validacion.NoSimbolos;
+            txtCodigoBarra.KeyPress += Validacion.NoInyeccion;
+            txtCodigoBarra.KeyPress += Validacion.NoLetras;
         }
 
         private void CargarImageEnGeneral()
@@ -214,7 +224,8 @@ namespace Presentacion.Core.Cobro
                 MessageBox.Show("Cargue un Producto Antes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            btnSeleccionProducto.Select();
+            //btnSeleccionProducto.Select();
+            txtCodigoBarra.Focus();
         }
 
         public void Total()
@@ -324,6 +335,8 @@ namespace Presentacion.Core.Cobro
             ConsumidorFinall();
 
             CargarGrilla(ListaVenta);
+
+            txtCodigoBarra.Focus();
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -540,7 +553,8 @@ namespace Presentacion.Core.Cobro
                 MessageBox.Show("Cargue la Grilla", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            btnSeleccionProducto.Select();
+            //btnSeleccionProducto.Select();
+            txtCodigoBarra.Focus();
         }
 
         public void TipoPago(DetalleCajaDto detalle)
@@ -582,6 +596,8 @@ namespace Presentacion.Core.Cobro
                 error.ShowDialog();
                 //MessageBox.Show("No Hay Nada Para Eliminar...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            txtCodigoBarra.Focus();
         }
 
         private void dgvGrilla_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -607,6 +623,7 @@ namespace Presentacion.Core.Cobro
                 ckbTicket.Checked = true;
                 ckbTicket.Enabled = true;
             }
+            txtCodigoBarra.Focus();
         }
 
         private void ckbPedido_CheckedChanged(object sender, EventArgs e)
@@ -621,6 +638,7 @@ namespace Presentacion.Core.Cobro
                 ckbTicket.Checked = false;
                 //ckbTicket.Enabled = false;
             }
+            txtCodigoBarra.Focus();
         }
 
         private void ckbCtaCte_CheckedChanged(object sender, EventArgs e)
@@ -653,6 +671,7 @@ namespace Presentacion.Core.Cobro
                 VerificarSiEsValidoCtaCte(_clienteId);
             }
 
+            txtCodigoBarra.Focus();
         }
 
         public void VerificarSiEsValidoCtaCte(long clienteId)
@@ -669,7 +688,7 @@ namespace Presentacion.Core.Cobro
 
         private void Venta_Load(object sender, EventArgs e)
         {
-
+            txtCodigoBarra.Focus();
         }
 
         public void CargarConsumidorFinal()
@@ -693,6 +712,8 @@ namespace Presentacion.Core.Cobro
         {
             var cliente = new Cliente_Abm(TipoOperacion.Nuevo);
             cliente.ShowDialog();
+
+            txtCodigoBarra.Focus();
         }
 
         private void nudPagaron_ValueChanged(object sender, EventArgs e)
@@ -720,6 +741,7 @@ namespace Presentacion.Core.Cobro
                 ckbTicket.Checked = true;
                 ckbTicket.Enabled = true;
             }
+            txtCodigoBarra.Focus();
         }
 
         private void ckbTarjeta_AppearanceChanged(object sender, EventArgs e)
@@ -747,6 +769,7 @@ namespace Presentacion.Core.Cobro
                 ckbTicket.Checked = false;
                 //ckbTicket.Enabled = false;
             }
+            txtCodigoBarra.Focus();
         }
 
         private void btnNuevoTalle_Click(object sender, EventArgs e)
@@ -755,6 +778,7 @@ namespace Presentacion.Core.Cobro
             verTalle.ShowDialog();
 
             CargarTalle();
+            txtCodigoBarra.Focus();
         }
 
         private void ckbGuardar_CheckedChanged(object sender, EventArgs e)
@@ -769,6 +793,7 @@ namespace Presentacion.Core.Cobro
                 ckbTicket.Checked = false;
                 //ckbTicket.Enabled = false;
             }
+            txtCodigoBarra.Focus();
         }
 
         private void Venta_KeyPress(object sender, KeyPressEventArgs e)
@@ -787,6 +812,46 @@ namespace Presentacion.Core.Cobro
         private void nudTotal_ValueChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void txtCodigoBarra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (txtCodigoBarra.Text == string.Empty)
+                {
+                    txtCodigoBarra.Focus();
+                    return;
+                }
+
+                if (productoServicio.ObtenerPorCodigoBarra(Convert.ToInt64(txtCodigoBarra.Text)) == null)
+                {
+                    MessageBox.Show($"Ningun Producto Tiene Este Codigo {txtCodigoBarra.Text}", "Verifique El Codigo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                    txtCodigoBarra.Focus();
+                    return;
+                }
+
+                var product = productoServicio.ObtenerPorCodigoBarra(Convert.ToInt64(txtCodigoBarra.Text));
+
+                producto = product;
+
+                _productoId = product.Id;
+                txtProducto.Text = producto.Descripcion;
+                txtColegio.Text = producto.Colegio;
+
+                nudPrecio.Value = product.Precio;
+
+                btnAgregarAlaGrilla.PerformClick();
+
+                txtCodigoBarra.Focus();
+            }
+
+        }
+
+        private void ckbTicket_CheckedChanged(object sender, EventArgs e)
+        {
+            txtCodigoBarra.Focus();
         }
     }
 }

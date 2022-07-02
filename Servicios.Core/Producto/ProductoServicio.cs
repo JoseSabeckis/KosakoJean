@@ -176,5 +176,32 @@ namespace Servicios.Core.Producto
             }
         }
 
+        public ProductoDto ObtenerPorCodigoBarra(long codigo)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                return context.Productos
+                    .AsNoTracking()
+                    .Select(x => new ProductoDto
+                    {
+                        Id = x.Id,
+                        Descripcion = x.Descripcion,
+                        EstaEliminado = x.EstaEliminado,
+                        Precio = x.Precio,
+                        Extras = x.Extras,
+                        TipoProductoId = x.TipoProductoId,
+                        ColegioId = x.ColegioId,
+                        Foto = x.Foto,
+                        Colegio = context.Colegios.FirstOrDefault(f => f.Id == x.ColegioId).Descripcion,
+                        TipoProducto = context.TipoProductos.FirstOrDefault(f => f.Id == x.TipoProductoId).Descripcion,
+                        Stock = x.Stock,
+                        Creacion = x.Creacion,
+                        CodigoBarra = x.CodigoBarra,
+                        ImagenCodBarra = x.ImagenCodBarra
+
+                    }).FirstOrDefault(x => x.CodigoBarra == codigo);
+            }
+        }
+
     }
 }

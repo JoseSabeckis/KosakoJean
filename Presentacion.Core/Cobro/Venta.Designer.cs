@@ -79,6 +79,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.txtCodigoBarra = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -216,6 +219,9 @@
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.label13);
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Controls.Add(this.txtCodigoBarra);
             this.panel7.Controls.Add(this.txtColegio);
             this.panel7.Controls.Add(this.txtCliente);
             this.panel7.Controls.Add(this.btnCliente);
@@ -225,7 +231,7 @@
             this.panel7.Controls.Add(this.btnSeleccionProducto);
             this.panel7.Location = new System.Drawing.Point(0, 76);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(640, 81);
+            this.panel7.Size = new System.Drawing.Size(645, 81);
             this.panel7.TabIndex = 15;
             // 
             // txtColegio
@@ -236,24 +242,21 @@
             this.txtColegio.Enabled = false;
             this.txtColegio.Location = new System.Drawing.Point(365, 43);
             this.txtColegio.Name = "txtColegio";
-            this.txtColegio.Size = new System.Drawing.Size(191, 29);
+            this.txtColegio.Size = new System.Drawing.Size(196, 29);
             this.txtColegio.TabIndex = 11;
             // 
             // txtCliente
             // 
-            this.txtCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCliente.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtCliente.Enabled = false;
-            this.txtCliente.Location = new System.Drawing.Point(95, 8);
+            this.txtCliente.Location = new System.Drawing.Point(75, 8);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(486, 29);
+            this.txtCliente.Size = new System.Drawing.Size(256, 29);
             this.txtCliente.TabIndex = 9;
             // 
             // btnCliente
             // 
-            this.btnCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCliente.Location = new System.Drawing.Point(587, 6);
+            this.btnCliente.Location = new System.Drawing.Point(337, 6);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(46, 32);
             this.btnCliente.TabIndex = 10;
@@ -264,7 +267,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(23, 11);
+            this.label9.Location = new System.Drawing.Point(3, 13);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 22);
             this.label9.TabIndex = 8;
@@ -291,7 +294,7 @@
             // btnSeleccionProducto
             // 
             this.btnSeleccionProducto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSeleccionProducto.Location = new System.Drawing.Point(562, 42);
+            this.btnSeleccionProducto.Location = new System.Drawing.Point(567, 42);
             this.btnSeleccionProducto.Name = "btnSeleccionProducto";
             this.btnSeleccionProducto.Size = new System.Drawing.Size(71, 32);
             this.btnSeleccionProducto.TabIndex = 7;
@@ -650,6 +653,7 @@
             this.ckbTicket.TabIndex = 8;
             this.ckbTicket.Text = "Mostrar Ticket";
             this.ckbTicket.UseVisualStyleBackColor = true;
+            this.ckbTicket.CheckedChanged += new System.EventHandler(this.ckbTicket_CheckedChanged);
             // 
             // btnNuevoTalle
             // 
@@ -735,6 +739,37 @@
             this.label5.Size = new System.Drawing.Size(139, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
+            // 
+            // txtCodigoBarra
+            // 
+            this.txtCodigoBarra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCodigoBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.txtCodigoBarra.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoBarra.Location = new System.Drawing.Point(501, 7);
+            this.txtCodigoBarra.Name = "txtCodigoBarra";
+            this.txtCodigoBarra.Size = new System.Drawing.Size(137, 29);
+            this.txtCodigoBarra.TabIndex = 12;
+            this.txtCodigoBarra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoBarra_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(391, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(91, 22);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Cod Barra";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(406, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 16);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "(Press Enter)";
             // 
             // Venta
             // 
@@ -835,5 +870,8 @@
         private System.Windows.Forms.CheckBox ckbTicket;
         private System.Windows.Forms.CheckBox ckbGuardar;
         private System.Windows.Forms.TextBox txtColegio;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtCodigoBarra;
     }
 }
