@@ -166,7 +166,7 @@ namespace KosakoJean
 
             CargarConsumidorFinal();
 
-            VerificarPrimeraVez();
+            //VerificarPrimeraVez();
 
         }
 
