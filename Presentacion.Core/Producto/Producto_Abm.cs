@@ -10,6 +10,7 @@ using Servicios.Core.TipoProducto.Dto;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using BarcodeLib;
 
 namespace Presentacion.Core.Producto
 {
@@ -113,7 +114,7 @@ namespace Presentacion.Core.Producto
 
         public void ActualizarImgCodeBarras(decimal codigo)
         {
-            BarcodeLib.Barcode Codigo = new BarcodeLib.Barcode();
+            Barcode Codigo = new BarcodeLib.Barcode();
             Codigo.IncludeLabel = true;
             imgCodigoBarras.Image = Codigo.Encode(BarcodeLib.TYPE.EAN13, $"{codigo}");
 
