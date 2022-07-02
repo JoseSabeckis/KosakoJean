@@ -23,7 +23,8 @@ namespace Servicios.Core.Producto
                     Foto = dto.Foto,
                     Stock = dto.Stock,
                     Creacion = dto.Creacion,
-                    CodigoBarra = dto.CodigoBarra
+                    CodigoBarra = dto.CodigoBarra,
+                    ImagenCodBarra = dto.ImagenCodBarra
                 };
 
                 context.Productos.Add(nuevo);
@@ -79,6 +80,7 @@ namespace Servicios.Core.Producto
                 producto.Stock = dto.Stock;
                 producto.Creacion = dto.Creacion;
                 producto.CodigoBarra = dto.CodigoBarra;
+                producto.ImagenCodBarra = dto.ImagenCodBarra;
 
                 context.SaveChanges();
 
@@ -106,7 +108,8 @@ namespace Servicios.Core.Producto
                         Stock = x.Stock,
                         Creacion = x.Creacion,
                         Precio = x.Precio,
-                        CodigoBarra = x.CodigoBarra
+                        CodigoBarra = x.CodigoBarra,
+                        ImagenCodBarra = x.ImagenCodBarra
 
                     }).ToList();
 
@@ -166,7 +169,8 @@ namespace Servicios.Core.Producto
                         TipoProducto = context.TipoProductos.FirstOrDefault(f => f.Id == x.TipoProductoId).Descripcion,
                         Stock = x.Stock,
                         Creacion = x.Creacion,
-                        CodigoBarra = x.CodigoBarra
+                        CodigoBarra = x.CodigoBarra,
+                        ImagenCodBarra = x.ImagenCodBarra
 
                     }).FirstOrDefault(x => x.Id == Id);
             }

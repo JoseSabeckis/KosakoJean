@@ -40,5 +40,10 @@ namespace Presentacion.Core.Factura
 
             this.reportViewer.RefreshReport();
         }
+
+        private void reportViewer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

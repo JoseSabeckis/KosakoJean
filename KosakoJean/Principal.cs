@@ -224,6 +224,9 @@ namespace KosakoJean
 
             if (productoServicio.ObtenerPorId(1) == null)
             {
+                BarcodeLib.Barcode Codigo = new BarcodeLib.Barcode();
+                Codigo.IncludeLabel = true;
+
                 var producto = new ProductoDto
                 {
                     Descripcion = "Arreglo de Prendas",
@@ -232,8 +235,9 @@ namespace KosakoJean
                     Extras = "",
                     Precio = 0,
                     Stock = 0,
-                    CodigoBarra = 957395410000,
-                    Foto = ImagenDb.Convertir_Imagen_Bytes(imagePrincipal.Image)
+                    CodigoBarra = 900000000000,
+                    Foto = ImagenDb.Convertir_Imagen_Bytes(imagePrincipal.Image),
+                    ImagenCodBarra = ImagenDb.Convertir_Imagen_Bytes(Codigo.Encode(BarcodeLib.TYPE.EAN13, "900000000000"))
                 };
 
                 productoServicio.Nuevo(producto);

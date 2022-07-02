@@ -27,5 +27,7 @@
         public bool Creacion { get; set; }
 
         public byte[] Foto { get; set; }
+
+        public byte[] ImagenCodBarra { get; set; }
     }
 }

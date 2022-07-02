@@ -40,6 +40,7 @@ namespace Presentacion.Core.Producto
             this.imgProducto = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.btnCodBarra = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgProducto)).BeginInit();
             this.SuspendLayout();
@@ -47,6 +48,7 @@ namespace Presentacion.Core.Producto
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnCodBarra);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.txtBusqueda);
             this.panel1.Controls.Add(this.label2);
@@ -175,6 +177,19 @@ namespace Presentacion.Core.Producto
             this.pnlPrincipal.Size = new System.Drawing.Size(1171, 300);
             this.pnlPrincipal.TabIndex = 1;
             // 
+            // btnCodBarra
+            // 
+            this.btnCodBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCodBarra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCodBarra.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCodBarra.Location = new System.Drawing.Point(586, 3);
+            this.btnCodBarra.Name = "btnCodBarra";
+            this.btnCodBarra.Size = new System.Drawing.Size(307, 31);
+            this.btnCodBarra.TabIndex = 8;
+            this.btnCodBarra.Text = "Ver Codigos de Barra";
+            this.btnCodBarra.UseVisualStyleBackColor = false;
+            this.btnCodBarra.Click += new System.EventHandler(this.btnCodBarra_Click);
+            // 
             // ListaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -211,5 +226,6 @@ namespace Presentacion.Core.Producto
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCodBarra;
     }
 }

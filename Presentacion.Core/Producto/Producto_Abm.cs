@@ -1,4 +1,5 @@
 ﻿using Presentacion.Clases;
+using Presentacion.Core.CodBarra;
 using Servicios.Core.Colegio;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto.Dto;
@@ -7,6 +8,7 @@ using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.TipoProducto;
 using Servicios.Core.TipoProducto.Dto;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Producto
@@ -44,6 +46,7 @@ namespace Presentacion.Core.Producto
             if (tipoOperacion == TipoOperacion.Nuevo)
             {
                 nudCodigoBarra.Value = _Servicio.TraerNuevoCodBarra();
+                btnVerCodBarra.Visible = false;
             }
 
             AsignarEventoEnterLeave(this);
@@ -110,11 +113,6 @@ namespace Presentacion.Core.Producto
 
         public void ActualizarImgCodeBarras(decimal codigo)
         {
-            /*
-            Zen.Barcode.CodeEan13BarcodeDraw CodigoDelProducto = Zen.Barcode.BarcodeDrawFactory.CodeEan13WithChecksum;
-
-            imgCodigoBarras.Image = CodigoDelProducto.Draw($"{codigo}", 50);
-            */
             BarcodeLib.Barcode Codigo = new BarcodeLib.Barcode();
             Codigo.IncludeLabel = true;
             imgCodigoBarras.Image = Codigo.Encode(BarcodeLib.TYPE.EAN13, $"{codigo}");
@@ -153,6 +151,8 @@ namespace Presentacion.Core.Producto
                 }
             }
 
+            ActualizarImgCodeBarras(nudCodigoBarra.Value);
+
             var nueva = new ProductoDto
             {
                 Descripcion = $"{txtDescripcion.Text}",
@@ -163,7 +163,8 @@ namespace Presentacion.Core.Producto
                 Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
                 Stock = nudStock.Value,
                 Creacion = ckbFabricacion.Checked,
-                CodigoBarra = (long)nudCodigoBarra.Value
+                CodigoBarra = (long)nudCodigoBarra.Value,
+                ImagenCodBarra = ImagenDb.Convertir_Imagen_Bytes(imgCodigoBarras.Image),
             };
 
             _Servicio.Nuevo(nueva);
@@ -197,6 +198,8 @@ namespace Presentacion.Core.Producto
                 }
             }
 
+            ActualizarImgCodeBarras(nudCodigoBarra.Value);
+
             var localidadParaModificar = new ProductoDto
             {
                 Id = EntidadId.Value,
@@ -208,7 +211,8 @@ namespace Presentacion.Core.Producto
                 Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
                 Stock = nudStock.Value,
                 Creacion = ckbFabricacion.Checked,
-                CodigoBarra = (long)nudCodigoBarra.Value
+                CodigoBarra = (long)nudCodigoBarra.Value,
+                ImagenCodBarra = ImagenDb.Convertir_Imagen_Bytes(imgCodigoBarras.Image)
             };
 
             _Servicio.Modificar(localidadParaModificar);
@@ -290,6 +294,33 @@ namespace Presentacion.Core.Producto
             if (e.KeyChar == (char)Keys.Enter)
             {
                 ActualizarImgCodeBarras(nudCodigoBarra.Value);
+            }
+        }
+
+        private void btnVerCodBarra_Click(object sender, EventArgs e)
+        {
+            if (EntidadId != null)
+            {
+                var producto = _Servicio.ObtenerPorId(EntidadId.Value);
+
+                List<CodBarraDto> Lista = new List<CodBarraDto>();
+
+                var objeto = new CodBarraDto
+                {
+                    Id = EntidadId.Value,
+                    Descripcion = producto.Descripcion,
+                    Extra = producto.Extras,
+                    Precio = producto.Precio,
+                    CodigoBarra = producto.CodigoBarra,
+                    Imagen = producto.ImagenCodBarra,
+                    Colegio = producto.Colegio
+                };
+
+                Lista.Add(objeto);
+
+                var form = new FormularioCodigoBarra(Lista);
+                form.Show();
+
             }
         }
     }

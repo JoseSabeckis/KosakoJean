@@ -39,6 +39,8 @@
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnVerCodBarra = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.nudCodigoBarra = new System.Windows.Forms.NumericUpDown();
             this.imgCodigoBarras = new System.Windows.Forms.PictureBox();
@@ -52,7 +54,6 @@
             this.lblTituloFoto = new System.Windows.Forms.Label();
             this.imgFotoEmpleado = new System.Windows.Forms.PictureBox();
             this.archivo = new System.Windows.Forms.OpenFileDialog();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
@@ -172,6 +173,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.btnVerCodBarra);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.nudCodigoBarra);
@@ -192,6 +194,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(994, 379);
             this.panel2.TabIndex = 10;
+            // 
+            // btnVerCodBarra
+            // 
+            this.btnVerCodBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnVerCodBarra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerCodBarra.Location = new System.Drawing.Point(731, 215);
+            this.btnVerCodBarra.Name = "btnVerCodBarra";
+            this.btnVerCodBarra.Size = new System.Drawing.Size(242, 42);
+            this.btnVerCodBarra.TabIndex = 78;
+            this.btnVerCodBarra.Text = "Ver Codigo Barra";
+            this.btnVerCodBarra.UseVisualStyleBackColor = false;
+            this.btnVerCodBarra.Click += new System.EventHandler(this.btnVerCodBarra_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(67, 12);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(349, 16);
+            this.label9.TabIndex = 77;
+            this.label9.Text = "Seleccionando El Codigo Presionar Enter Para Ver El Codigo Barra";
             // 
             // label8
             // 
@@ -214,16 +238,16 @@
             0,
             0});
             this.nudCodigoBarra.Minimum = new decimal(new int[] {
-            -382297008,
-            222,
+            -1943132160,
+            209,
             0,
             0});
             this.nudCodigoBarra.Name = "nudCodigoBarra";
             this.nudCodigoBarra.Size = new System.Drawing.Size(159, 33);
             this.nudCodigoBarra.TabIndex = 75;
             this.nudCodigoBarra.Value = new decimal(new int[] {
-            -382297008,
-            222,
+            -1943132160,
+            209,
             0,
             0});
             this.nudCodigoBarra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudCodigoBarra_KeyPress);
@@ -356,16 +380,6 @@
             // 
             this.archivo.FileName = "archivo";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(67, 12);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(349, 16);
-            this.label9.TabIndex = 77;
-            this.label9.Text = "Seleccionando El Codigo Presionar Enter Para Ver El Codigo Barra";
-            // 
             // Producto_Abm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -421,5 +435,6 @@
         private System.Windows.Forms.NumericUpDown nudCodigoBarra;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnVerCodBarra;
     }
 }

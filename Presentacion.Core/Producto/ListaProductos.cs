@@ -1,8 +1,12 @@
 ﻿using Presentacion.Clases;
+using Presentacion.Core.CodBarra;
 using Presentacion.Core.Producto.Ctrl;
 using Servicios.Core.Image.Dto;
 using Servicios.Core.Producto;
+using Servicios.Core.Producto.Dto;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Producto
@@ -80,6 +84,36 @@ namespace Presentacion.Core.Producto
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnBuscar.PerformClick();
+            }
+        }
+
+        private void btnCodBarra_Click(object sender, EventArgs e)
+        {
+            if (productoServicio.Buscar(string.Empty).Count() != 0)
+            {
+                var productos = productoServicio.Buscar(string.Empty);
+
+                List<CodBarraDto> Lista = new List<CodBarraDto>();
+
+                foreach (var item in productos)
+                {
+                    var objeto = new CodBarraDto
+                    {
+                        Id = item.Id,
+                        Descripcion = item.Descripcion,
+                        Extra = item.Extras,
+                        Precio = item.Precio,
+                        CodigoBarra = item.CodigoBarra,
+                        Imagen = item.ImagenCodBarra,
+                        Colegio = item.Colegio
+                    };
+
+                    Lista.Add(objeto);
+                }                
+
+                var form = new FormularioCodigoBarra(Lista);
+                form.Show();
+
             }
         }
     }

@@ -89,6 +89,7 @@
     <Compile Include="Pedido\Dto\PedidoDto.cs" />
     <Compile Include="Pedido\IPedidoServicio.cs" />
     <Compile Include="Pedido\PedidoServicio.cs" />
+    <Compile Include="Producto\Dto\CodBarraDto.cs" />
     <Compile Include="Producto\Dto\ProductoDto.cs" />
     <Compile Include="Producto\IProductoServicio.cs" />
     <Compile Include="Producto\ProductoServicio.cs" />

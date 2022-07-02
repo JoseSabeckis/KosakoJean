@@ -208,6 +208,12 @@
     <Compile Include="Cobro\Venta.Designer.cs">
       <DependentUpon>Venta.cs</DependentUpon>
     </Compile>
+    <Compile Include="CodBarra\FormularioCodigoBarra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodBarra\FormularioCodigoBarra.Designer.cs">
+      <DependentUpon>FormularioCodigoBarra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Colegio\Colegio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -477,6 +483,10 @@
     <EmbeddedResource Include="Cobro\Venta.resx">
       <DependentUpon>Venta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CodBarra\FormularioCodigoBarra.resx">
+      <DependentUpon>FormularioCodigoBarra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodBarra\ReportCodBarra.rdlc" />
     <EmbeddedResource Include="Colegio\Colegio.resx">
       <DependentUpon>Colegio.cs</DependentUpon>
     </EmbeddedResource>
@@ -591,6 +601,7 @@
     <None Include="Properties\DataSources\Servicios.Core.DetalleCaja.Dto.DetalleCajaDto.datasource" />
     <None Include="Properties\DataSources\Servicios.Core.Fecha.FechaDto.datasource" />
     <None Include="Properties\DataSources\Servicios.Core.ParteVenta.Dto.VentaDto2.datasource" />
+    <None Include="Properties\DataSources\Servicios.Core.Producto.Dto.CodBarraDto.datasource" />
     <None Include="Properties\DataSources\Servicios.Core.Producto_Dato.Dto.Producto_Dato_Dto.datasource" />
     <None Include="Properties\DataSources\Servicios.Core.Producto_Dato.Dto.Producto_Dato_Impresion.datasource" />
     <None Include="Resources\1490129335-rounded14_82192.png" />

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/01/2022 18:12:25
+-- Date Created: 07/02/2022 17:34:49
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -138,7 +138,8 @@ CREATE TABLE [dbo].[Productos] (
     [Foto] varbinary(max)  NOT NULL,
     [Stock] decimal(18,0)  NOT NULL,
     [Creacion] bit  NOT NULL,
-    [CodigoBarra] bigint  NOT NULL
+    [CodigoBarra] bigint  NOT NULL,
+    [ImagenCodBarra] varbinary(max)  NOT NULL
 );
 GO
 
