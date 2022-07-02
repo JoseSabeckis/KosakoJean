@@ -847,6 +847,11 @@ namespace Presentacion.Core.Cobro
                 txtCodigoBarra.Focus();
             }
 
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                btnCobrar.PerformClick();
+            }
+
         }
 
         private void ckbTicket_CheckedChanged(object sender, EventArgs e)
