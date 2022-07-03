@@ -844,6 +844,7 @@ namespace Presentacion.Core.Cobro
 
                 btnAgregarAlaGrilla.PerformClick();
 
+                txtCodigoBarra.Clear();
                 txtCodigoBarra.Focus();
             }
 
