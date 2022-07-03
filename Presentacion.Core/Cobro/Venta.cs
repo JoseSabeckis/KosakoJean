@@ -830,7 +830,9 @@ namespace Presentacion.Core.Cobro
                 {
                     MessageBox.Show($"Ningun Producto Tiene Este Codigo {txtCodigoBarra.Text}", "Verifique El Codigo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
+                    txtCodigoBarra.Clear();
                     txtCodigoBarra.Focus();
+
                     return;
                 }
 
