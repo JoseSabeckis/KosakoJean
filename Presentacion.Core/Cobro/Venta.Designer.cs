@@ -139,6 +139,7 @@
             this.cmbTalle.Size = new System.Drawing.Size(99, 30);
             this.cmbTalle.TabIndex = 13;
             this.cmbTalle.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbTalle.RightToLeftChanged += new System.EventHandler(this.cmbTalle_RightToLeftChanged);
             // 
             // label3
             // 

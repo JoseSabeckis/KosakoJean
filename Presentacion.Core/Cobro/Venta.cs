@@ -304,7 +304,7 @@ namespace Presentacion.Core.Cobro
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            btnAgregarAlaGrilla.Select();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -351,6 +351,8 @@ namespace Presentacion.Core.Cobro
             {
                 MessageBox.Show("Cargue el Dinero", "Stop", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            txtCodigoBarra.Focus();
         }
 
         public void VerTicket(List<VentaDto2> Lista)
@@ -858,6 +860,11 @@ namespace Presentacion.Core.Cobro
         private void ckbTicket_CheckedChanged(object sender, EventArgs e)
         {
             txtCodigoBarra.Focus();
+        }
+
+        private void cmbTalle_RightToLeftChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
