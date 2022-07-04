@@ -114,9 +114,9 @@ namespace Presentacion.Core.Producto
 
         public void ActualizarImgCodeBarras(decimal codigo)
         {
-            Barcode Codigo = new BarcodeLib.Barcode();
+            Barcode Codigo = new Barcode();
             Codigo.IncludeLabel = true;
-            imgCodigoBarras.Image = Codigo.Encode(BarcodeLib.TYPE.EAN13, $"{codigo}");
+            imgCodigoBarras.Image = Codigo.Encode(TYPE.EAN13, $"{codigo}");
 
         }
 
