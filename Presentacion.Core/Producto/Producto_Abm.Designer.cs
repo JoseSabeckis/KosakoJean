@@ -39,6 +39,8 @@
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nudCodBarraCreado = new System.Windows.Forms.NumericUpDown();
+            this.ckbCodBarraCreado = new System.Windows.Forms.CheckBox();
             this.btnVerCodBarra = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,10 +56,14 @@
             this.lblTituloFoto = new System.Windows.Forms.Label();
             this.imgFotoEmpleado = new System.Windows.Forms.PictureBox();
             this.archivo = new System.Windows.Forms.OpenFileDialog();
+            this.btnNuevoColegio = new System.Windows.Forms.Button();
+            this.btnNuevoTipo = new System.Windows.Forms.Button();
+            this.lblCodBarraVerdadero = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCodBarraCreado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCodigoBarra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCodigoBarras)).BeginInit();
             this.panel3.SuspendLayout();
@@ -87,7 +93,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(213, 76);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(254, 33);
-            this.txtDescripcion.TabIndex = 2;
+            this.txtDescripcion.TabIndex = 1;
             this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // txtExtras
@@ -96,7 +102,7 @@
             this.txtExtras.Location = new System.Drawing.Point(213, 125);
             this.txtExtras.Name = "txtExtras";
             this.txtExtras.Size = new System.Drawing.Size(254, 33);
-            this.txtExtras.TabIndex = 3;
+            this.txtExtras.TabIndex = 2;
             // 
             // label2
             // 
@@ -132,12 +138,12 @@
             0});
             this.nudPrecio.Name = "nudPrecio";
             this.nudPrecio.Size = new System.Drawing.Size(134, 33);
-            this.nudPrecio.TabIndex = 5;
+            this.nudPrecio.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(125, 277);
+            this.label4.Location = new System.Drawing.Point(91, 275);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 25);
             this.label4.TabIndex = 6;
@@ -147,24 +153,24 @@
             // 
             this.cmbColegio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbColegio.FormattingEnabled = true;
-            this.cmbColegio.Location = new System.Drawing.Point(216, 274);
+            this.cmbColegio.Location = new System.Drawing.Point(182, 272);
             this.cmbColegio.Name = "cmbColegio";
             this.cmbColegio.Size = new System.Drawing.Size(254, 33);
-            this.cmbColegio.TabIndex = 7;
+            this.cmbColegio.TabIndex = 5;
             // 
             // cmbTipo
             // 
             this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(216, 324);
+            this.cmbTipo.Location = new System.Drawing.Point(182, 322);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(254, 33);
-            this.cmbTipo.TabIndex = 8;
+            this.cmbTipo.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(155, 327);
+            this.label5.Location = new System.Drawing.Point(121, 325);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 25);
             this.label5.TabIndex = 9;
@@ -173,6 +179,11 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblCodBarraVerdadero);
+            this.panel2.Controls.Add(this.btnNuevoTipo);
+            this.panel2.Controls.Add(this.btnNuevoColegio);
+            this.panel2.Controls.Add(this.nudCodBarraCreado);
+            this.panel2.Controls.Add(this.ckbCodBarraCreado);
             this.panel2.Controls.Add(this.btnVerCodBarra);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
@@ -195,6 +206,42 @@
             this.panel2.Size = new System.Drawing.Size(994, 379);
             this.panel2.TabIndex = 10;
             // 
+            // nudCodBarraCreado
+            // 
+            this.nudCodBarraCreado.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.nudCodBarraCreado.Enabled = false;
+            this.nudCodBarraCreado.Location = new System.Drawing.Point(778, 308);
+            this.nudCodBarraCreado.Maximum = new decimal(new int[] {
+            1316134911,
+            2328,
+            0,
+            0});
+            this.nudCodBarraCreado.Minimum = new decimal(new int[] {
+            -727379968,
+            232,
+            0,
+            0});
+            this.nudCodBarraCreado.Name = "nudCodBarraCreado";
+            this.nudCodBarraCreado.Size = new System.Drawing.Size(171, 33);
+            this.nudCodBarraCreado.TabIndex = 9;
+            this.nudCodBarraCreado.Value = new decimal(new int[] {
+            -727379968,
+            232,
+            0,
+            0});
+            this.nudCodBarraCreado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudCodBarraCreado_KeyPress);
+            // 
+            // ckbCodBarraCreado
+            // 
+            this.ckbCodBarraCreado.AutoSize = true;
+            this.ckbCodBarraCreado.Location = new System.Drawing.Point(731, 273);
+            this.ckbCodBarraCreado.Name = "ckbCodBarraCreado";
+            this.ckbCodBarraCreado.Size = new System.Drawing.Size(241, 29);
+            this.ckbCodBarraCreado.TabIndex = 8;
+            this.ckbCodBarraCreado.Text = "Usar Cod Barra Creado";
+            this.ckbCodBarraCreado.UseVisualStyleBackColor = true;
+            this.ckbCodBarraCreado.CheckedChanged += new System.EventHandler(this.ckbCodBarraCreado_CheckedChanged);
+            // 
             // btnVerCodBarra
             // 
             this.btnVerCodBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -202,7 +249,7 @@
             this.btnVerCodBarra.Location = new System.Drawing.Point(731, 215);
             this.btnVerCodBarra.Name = "btnVerCodBarra";
             this.btnVerCodBarra.Size = new System.Drawing.Size(242, 42);
-            this.btnVerCodBarra.TabIndex = 78;
+            this.btnVerCodBarra.TabIndex = 10;
             this.btnVerCodBarra.Text = "Ver Codigo Barra";
             this.btnVerCodBarra.UseVisualStyleBackColor = false;
             this.btnVerCodBarra.Click += new System.EventHandler(this.btnVerCodBarra_Click);
@@ -231,7 +278,7 @@
             // nudCodigoBarra
             // 
             this.nudCodigoBarra.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.nudCodigoBarra.Location = new System.Drawing.Point(213, 31);
+            this.nudCodigoBarra.Location = new System.Drawing.Point(277, 31);
             this.nudCodigoBarra.Maximum = new decimal(new int[] {
             -727379969,
             232,
@@ -244,7 +291,7 @@
             0});
             this.nudCodigoBarra.Name = "nudCodigoBarra";
             this.nudCodigoBarra.Size = new System.Drawing.Size(159, 33);
-            this.nudCodigoBarra.TabIndex = 75;
+            this.nudCodigoBarra.TabIndex = 0;
             this.nudCodigoBarra.Value = new decimal(new int[] {
             -1943132160,
             209,
@@ -270,11 +317,11 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(69, 33);
+            this.label7.Location = new System.Drawing.Point(65, 36);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 26);
+            this.label7.Size = new System.Drawing.Size(206, 26);
             this.label7.TabIndex = 73;
-            this.label7.Text = "Codigo Barra";
+            this.label7.Text = "Nuevo Codigo Barra";
             // 
             // ckbFabricacion
             // 
@@ -282,7 +329,7 @@
             this.ckbFabricacion.Location = new System.Drawing.Point(500, 45);
             this.ckbFabricacion.Name = "ckbFabricacion";
             this.ckbFabricacion.Size = new System.Drawing.Size(151, 29);
-            this.ckbFabricacion.TabIndex = 12;
+            this.ckbFabricacion.TabIndex = 11;
             this.ckbFabricacion.Text = "Para Fabricar";
             this.ckbFabricacion.UseVisualStyleBackColor = true;
             // 
@@ -315,7 +362,7 @@
             -2147483648});
             this.nudStock.Name = "nudStock";
             this.nudStock.Size = new System.Drawing.Size(66, 33);
-            this.nudStock.TabIndex = 6;
+            this.nudStock.TabIndex = 4;
             // 
             // label6
             // 
@@ -346,7 +393,7 @@
             this.btnAgregarImagen.Location = new System.Drawing.Point(8, 185);
             this.btnAgregarImagen.Name = "btnAgregarImagen";
             this.btnAgregarImagen.Size = new System.Drawing.Size(183, 49);
-            this.btnAgregarImagen.TabIndex = 11;
+            this.btnAgregarImagen.TabIndex = 7;
             this.btnAgregarImagen.Text = "Agregar";
             this.btnAgregarImagen.UseVisualStyleBackColor = false;
             this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
@@ -380,6 +427,39 @@
             // 
             this.archivo.FileName = "archivo";
             // 
+            // btnNuevoColegio
+            // 
+            this.btnNuevoColegio.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoColegio.Location = new System.Drawing.Point(442, 272);
+            this.btnNuevoColegio.Name = "btnNuevoColegio";
+            this.btnNuevoColegio.Size = new System.Drawing.Size(36, 33);
+            this.btnNuevoColegio.TabIndex = 12;
+            this.btnNuevoColegio.Text = "...";
+            this.btnNuevoColegio.UseVisualStyleBackColor = true;
+            this.btnNuevoColegio.Click += new System.EventHandler(this.btnNuevoColegio_Click);
+            // 
+            // btnNuevoTipo
+            // 
+            this.btnNuevoTipo.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoTipo.Location = new System.Drawing.Point(442, 321);
+            this.btnNuevoTipo.Name = "btnNuevoTipo";
+            this.btnNuevoTipo.Size = new System.Drawing.Size(36, 33);
+            this.btnNuevoTipo.TabIndex = 13;
+            this.btnNuevoTipo.Text = "...";
+            this.btnNuevoTipo.UseVisualStyleBackColor = true;
+            this.btnNuevoTipo.Click += new System.EventHandler(this.btnNuevoTipo_Click);
+            // 
+            // lblCodBarraVerdadero
+            // 
+            this.lblCodBarraVerdadero.AutoSize = true;
+            this.lblCodBarraVerdadero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblCodBarraVerdadero.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodBarraVerdadero.Location = new System.Drawing.Point(501, 12);
+            this.lblCodBarraVerdadero.Name = "lblCodBarraVerdadero";
+            this.lblCodBarraVerdadero.Size = new System.Drawing.Size(30, 19);
+            this.lblCodBarraVerdadero.TabIndex = 78;
+            this.lblCodBarraVerdadero.Text = "---";
+            // 
             // Producto_Abm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -396,6 +476,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCodBarraCreado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCodigoBarra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCodigoBarras)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -436,5 +517,10 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnVerCodBarra;
+        private System.Windows.Forms.CheckBox ckbCodBarraCreado;
+        private System.Windows.Forms.NumericUpDown nudCodBarraCreado;
+        private System.Windows.Forms.Button btnNuevoTipo;
+        private System.Windows.Forms.Button btnNuevoColegio;
+        private System.Windows.Forms.Label lblCodBarraVerdadero;
     }
 }

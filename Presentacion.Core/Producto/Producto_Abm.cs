@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using BarcodeLib;
+using Presentacion.Core.Colegio;
+using Presentacion.Core.TipoProducto;
 
 namespace Presentacion.Core.Producto
 {
@@ -49,6 +51,7 @@ namespace Presentacion.Core.Producto
             {
                 nudCodigoBarra.Value = _Servicio.TraerNuevoCodBarra();
                 btnVerCodBarra.Visible = false;
+                lblCodBarraVerdadero.Visible = false;
             }
 
             AsignarEventoEnterLeave(this);
@@ -59,6 +62,8 @@ namespace Presentacion.Core.Producto
             AgregarControlesObligatorios(cmbTipo, "Tipo Producto");
 
             Inicializador(entidadId);
+
+
         }
 
         public override void Inicializador(long? entidadId)
@@ -109,8 +114,24 @@ namespace Presentacion.Core.Producto
 
             nudCodigoBarra.Value = dto.CodigoBarra;
 
-            ActualizarImgCodeBarras(dto.CodigoBarra);
+            if (dto.CodCreado)
+            {
+                ckbCodBarraCreado.Checked = true;
 
+                nudCodBarraCreado.Value = Convert.ToDecimal(dto.CodigoBarraVerdadero);
+
+                nudCodigoBarra.Enabled = false;
+
+                ActualizarImgCodeBarras(Convert.ToDecimal(dto.CodigoBarraVerdadero));
+                nudCodBarraCreado.Value = Convert.ToDecimal(dto.CodigoBarraVerdadero);
+
+            }
+            else
+            {
+                ActualizarImgCodeBarras(dto.CodigoBarra);
+            }
+
+            lblCodBarraVerdadero.Text = $"Se Esta Usando El Cod: " + dto.CodigoBarraVerdadero;
         }
 
         public void ActualizarImgCodeBarras(decimal codigo)
@@ -119,6 +140,18 @@ namespace Presentacion.Core.Producto
             Codigo.IncludeLabel = true;
             imgCodigoBarras.Image = Codigo.Encode(TYPE.EAN13, $"{codigo}");
             _Codigo = Codigo.RawData;
+        }
+
+        public void VerCodImagen()
+        {
+            if (!ckbCodBarraCreado.Checked)
+            {
+                ActualizarImgCodeBarras(nudCodigoBarra.Value);
+            }
+            else
+            {
+                ActualizarImgCodeBarras(nudCodBarraCreado.Value);
+            }
         }
 
         public override bool EjecutarComandoNuevo()
@@ -131,6 +164,13 @@ namespace Presentacion.Core.Producto
             }
 
             if (!_Servicio.VerificarCodigoDeBarra((long)nudCodigoBarra.Value, 0))
+            {
+                MessageBox.Show("Este Codigo Barra Ya Lo Tiene Un Producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
+
+            if (_Servicio.VerificarCodigoDeBarraVerdadero($"{nudCodBarraCreado.Value}", 0))
             {
                 MessageBox.Show("Este Codigo Barra Ya Lo Tiene Un Producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -153,7 +193,9 @@ namespace Presentacion.Core.Producto
                 }
             }
 
-            ActualizarImgCodeBarras(nudCodigoBarra.Value);
+            VerCodImagen();
+
+            CodDeBarraAGuardar();
 
             var nueva = new ProductoDto
             {
@@ -167,7 +209,8 @@ namespace Presentacion.Core.Producto
                 Creacion = ckbFabricacion.Checked,
                 CodigoBarra = (long)nudCodigoBarra.Value,
                 ImagenCodBarra = ImagenDb.Convertir_Imagen_Bytes(imgCodigoBarras.Image),
-                CodigoBarraVerdadero = _Codigo
+                CodigoBarraVerdadero = _Codigo,
+                CodCreado = ckbCodBarraCreado.Checked
             };
 
             _Servicio.Nuevo(nueva);
@@ -175,6 +218,18 @@ namespace Presentacion.Core.Producto
             Close();
 
             return true;
+        }
+
+        public void CodDeBarraAGuardar()
+        {
+            if (ckbCodBarraCreado.Checked)
+            {
+                _Codigo = $"{nudCodBarraCreado.Value}";
+            }
+            else
+            {
+                _Codigo = $"{nudCodigoBarra.Value}";
+            }
         }
 
         public override bool EjecutarComandoModificar()
@@ -193,6 +248,13 @@ namespace Presentacion.Core.Producto
                 return false;
             }
 
+            if (_Servicio.VerificarCodigoDeBarraVerdadero($"{nudCodBarraCreado.Value}", EntidadId.Value))
+            {
+                MessageBox.Show("Este Codigo Barra Ya Lo Tiene Un Producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return false;
+            }
+
             if (nudPrecio.Value == 0)
             {
                 if (MessageBox.Show("El Producto Valdra 0, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -201,7 +263,9 @@ namespace Presentacion.Core.Producto
                 }
             }
 
-            ActualizarImgCodeBarras(nudCodigoBarra.Value);
+            VerCodImagen();
+
+            CodDeBarraAGuardar();
 
             var localidadParaModificar = new ProductoDto
             {
@@ -216,7 +280,8 @@ namespace Presentacion.Core.Producto
                 Creacion = ckbFabricacion.Checked,
                 CodigoBarra = (long)nudCodigoBarra.Value,
                 ImagenCodBarra = ImagenDb.Convertir_Imagen_Bytes(imgCodigoBarras.Image),
-                CodigoBarraVerdadero = _Codigo
+                CodigoBarraVerdadero = _Codigo,
+                CodCreado = ckbCodBarraCreado.Checked
             };
 
             _Servicio.Modificar(localidadParaModificar);
@@ -326,6 +391,47 @@ namespace Presentacion.Core.Producto
                 form.Show();
 
             }
+        }
+
+        private void ckbCodBarraCreado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbCodBarraCreado.Checked == true)
+            {
+                nudCodigoBarra.Value = _Servicio.TraerNuevoCodBarra();
+                nudCodigoBarra.Enabled = false;
+
+                nudCodBarraCreado.Enabled = true;
+            }
+            else
+            {
+                nudCodigoBarra.Enabled = true;
+
+                nudCodBarraCreado.Enabled = false;
+            }
+        }
+
+        private void nudCodBarraCreado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                ActualizarImgCodeBarras(nudCodBarraCreado.Value);
+            }
+        }
+
+        private void btnNuevoColegio_Click(object sender, EventArgs e)
+        {
+            var nuevoCoelgio = new Colegio_Abm(TipoOperacion.Nuevo);
+            nuevoCoelgio.ShowDialog();
+
+            CargarComboBox(cmbColegio, _colegioServicio.Buscar(string.Empty), "Descripcion", "Id");
+        }
+
+        private void btnNuevoTipo_Click(object sender, EventArgs e)
+        {
+            var nuevoTipo = new TipoProducto_Abm(TipoOperacion.Nuevo);
+            nuevoTipo.ShowDialog();
+
+            CargarComboBox(cmbTipo, _tipoProductoServicio.Buscar(string.Empty), "Descripcion", "Id");
         }
     }
 }

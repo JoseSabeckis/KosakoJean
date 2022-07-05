@@ -118,6 +118,11 @@ namespace Presentacion
                     {
                         DesactivarControles(ctrolPanel);
                     }
+
+                    if (ctrolPanel is CheckBox)
+                    {
+                        ((CheckBox)ctrolPanel).Enabled = false;
+                    }
                 }
             }
         }

@@ -22,5 +22,7 @@ namespace Servicios.Core.Producto
         long TraerNuevoCodBarra();
 
         ProductoDto ObtenerPorCodigoBarra(string codigo);
+
+        bool VerificarCodigoDeBarraVerdadero(string cod, long id);
     }
 }
