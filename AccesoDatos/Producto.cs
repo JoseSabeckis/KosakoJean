@@ -33,6 +33,7 @@ namespace AccesoDatos
         public bool Creacion { get; set; }
         public long CodigoBarra { get; set; }
         public byte[] ImagenCodBarra { get; set; }
+        public string CodBarraVerdadero { get; set; }
     
         public virtual TipoProducto TipoProducto { get; set; }
         public virtual Colegio Colegio { get; set; }

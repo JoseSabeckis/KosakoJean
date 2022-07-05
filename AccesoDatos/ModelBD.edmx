@@ -101,6 +101,7 @@
     <Property Name="Creacion" Type="bit" Nullable="false" />
     <Property Name="CodigoBarra" Type="bigint" Nullable="false" />
     <Property Name="ImagenCodBarra" Type="varbinary(max)" Nullable="false" />
+    <Property Name="CodBarraVerdadero" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="TipoProductos">
     <Key>
@@ -609,6 +610,7 @@
           <Property Name="Creacion" Type="Boolean" Nullable="false" />
           <Property Name="CodigoBarra" Type="Int64" Nullable="false" />
           <Property Name="ImagenCodBarra" Type="Binary" Nullable="false" />
+          <Property Name="CodBarraVerdadero" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoProducto">
           <Key>
@@ -1071,6 +1073,7 @@
           <ScalarProperty Name="Creacion" ColumnName="Creacion" />
           <ScalarProperty Name="CodigoBarra" ColumnName="CodigoBarra" />
           <ScalarProperty Name="ImagenCodBarra" ColumnName="ImagenCodBarra" />
+          <ScalarProperty Name="CodBarraVerdadero" ColumnName="CodBarraVerdadero" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

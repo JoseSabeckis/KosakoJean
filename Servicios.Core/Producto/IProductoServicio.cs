@@ -21,6 +21,6 @@ namespace Servicios.Core.Producto
 
         long TraerNuevoCodBarra();
 
-        ProductoDto ObtenerPorCodigoBarra(long codigo);
+        ProductoDto ObtenerPorCodigoBarra(string codigo);
     }
 }

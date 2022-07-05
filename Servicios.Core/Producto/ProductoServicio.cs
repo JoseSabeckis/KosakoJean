@@ -24,7 +24,8 @@ namespace Servicios.Core.Producto
                     Stock = dto.Stock,
                     Creacion = dto.Creacion,
                     CodigoBarra = dto.CodigoBarra,
-                    ImagenCodBarra = dto.ImagenCodBarra
+                    ImagenCodBarra = dto.ImagenCodBarra,
+                    CodBarraVerdadero = dto.CodigoBarraVerdadero
                 };
 
                 context.Productos.Add(nuevo);
@@ -81,6 +82,7 @@ namespace Servicios.Core.Producto
                 producto.Creacion = dto.Creacion;
                 producto.CodigoBarra = dto.CodigoBarra;
                 producto.ImagenCodBarra = dto.ImagenCodBarra;
+                producto.CodBarraVerdadero = dto.CodigoBarraVerdadero;
 
                 context.SaveChanges();
 
@@ -109,7 +111,8 @@ namespace Servicios.Core.Producto
                         Creacion = x.Creacion,
                         Precio = x.Precio,
                         CodigoBarra = x.CodigoBarra,
-                        ImagenCodBarra = x.ImagenCodBarra
+                        ImagenCodBarra = x.ImagenCodBarra,
+                        CodigoBarraVerdadero = x.CodBarraVerdadero
 
                     }).ToList();
 
@@ -170,13 +173,14 @@ namespace Servicios.Core.Producto
                         Stock = x.Stock,
                         Creacion = x.Creacion,
                         CodigoBarra = x.CodigoBarra,
-                        ImagenCodBarra = x.ImagenCodBarra
+                        ImagenCodBarra = x.ImagenCodBarra,
+                        CodigoBarraVerdadero = x.CodBarraVerdadero
 
                     }).FirstOrDefault(x => x.Id == Id);
             }
         }
 
-        public ProductoDto ObtenerPorCodigoBarra(long codigo)
+        public ProductoDto ObtenerPorCodigoBarra(string codigo)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -197,9 +201,10 @@ namespace Servicios.Core.Producto
                         Stock = x.Stock,
                         Creacion = x.Creacion,
                         CodigoBarra = x.CodigoBarra,
-                        ImagenCodBarra = x.ImagenCodBarra
+                        ImagenCodBarra = x.ImagenCodBarra,
+                        CodigoBarraVerdadero = x.CodBarraVerdadero
 
-                    }).FirstOrDefault(x => x.CodigoBarra == codigo);
+                    }).FirstOrDefault(x => x.CodigoBarraVerdadero == codigo);
             }
         }
 

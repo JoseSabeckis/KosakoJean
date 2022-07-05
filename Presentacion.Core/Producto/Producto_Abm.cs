@@ -20,6 +20,7 @@ namespace Presentacion.Core.Producto
         private readonly IColegioServicio _colegioServicio;
         private readonly ITipoProducto _tipoProductoServicio;
         private readonly IProducto_Dato_Servicio producto_Dato_Servicio;
+        string _Codigo;
 
         public Producto_Abm(TipoOperacion tipoOperacion, long? entidadId = null)
             : base(tipoOperacion, entidadId)
@@ -117,7 +118,7 @@ namespace Presentacion.Core.Producto
             Barcode Codigo = new Barcode();
             Codigo.IncludeLabel = true;
             imgCodigoBarras.Image = Codigo.Encode(TYPE.EAN13, $"{codigo}");
-
+            _Codigo = Codigo.RawData;
         }
 
         public override bool EjecutarComandoNuevo()

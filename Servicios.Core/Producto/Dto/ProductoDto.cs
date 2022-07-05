@@ -29,5 +29,7 @@
         public byte[] Foto { get; set; }
 
         public byte[] ImagenCodBarra { get; set; }
+
+        public string CodigoBarraVerdadero { get; set; }
     }
 }

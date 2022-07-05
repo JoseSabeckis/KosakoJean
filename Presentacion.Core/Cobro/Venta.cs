@@ -826,7 +826,7 @@ namespace Presentacion.Core.Cobro
                     return;
                 }
 
-                if (productoServicio.ObtenerPorCodigoBarra(Convert.ToInt64(txtCodigoBarra.Text)) == null)
+                if (productoServicio.ObtenerPorCodigoBarra(txtCodigoBarra.Text) == null)
                 {
                     MessageBox.Show($"Ningun Producto Tiene Este Codigo {txtCodigoBarra.Text}", "Verifique El Codigo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
@@ -836,7 +836,7 @@ namespace Presentacion.Core.Cobro
                     return;
                 }
 
-                var product = productoServicio.ObtenerPorCodigoBarra(Convert.ToInt64(txtCodigoBarra.Text));
+                var product = productoServicio.ObtenerPorCodigoBarra(txtCodigoBarra.Text);
 
                 producto = product;
 
