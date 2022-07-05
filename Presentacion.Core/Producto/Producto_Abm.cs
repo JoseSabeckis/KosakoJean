@@ -167,6 +167,7 @@ namespace Presentacion.Core.Producto
                 Creacion = ckbFabricacion.Checked,
                 CodigoBarra = (long)nudCodigoBarra.Value,
                 ImagenCodBarra = ImagenDb.Convertir_Imagen_Bytes(imgCodigoBarras.Image),
+                CodigoBarraVerdadero = _Codigo
             };
 
             _Servicio.Nuevo(nueva);
@@ -214,7 +215,8 @@ namespace Presentacion.Core.Producto
                 Stock = nudStock.Value,
                 Creacion = ckbFabricacion.Checked,
                 CodigoBarra = (long)nudCodigoBarra.Value,
-                ImagenCodBarra = ImagenDb.Convertir_Imagen_Bytes(imgCodigoBarras.Image)
+                ImagenCodBarra = ImagenDb.Convertir_Imagen_Bytes(imgCodigoBarras.Image),
+                CodigoBarraVerdadero = _Codigo
             };
 
             _Servicio.Modificar(localidadParaModificar);

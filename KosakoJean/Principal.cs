@@ -237,7 +237,8 @@ namespace KosakoJean
                     Stock = 0,
                     CodigoBarra = 900000000000,
                     Foto = ImagenDb.Convertir_Imagen_Bytes(imagePrincipal.Image),
-                    ImagenCodBarra = ImagenDb.Convertir_Imagen_Bytes(Codigo.Encode(TYPE.EAN13, "900000000000"))
+                    ImagenCodBarra = ImagenDb.Convertir_Imagen_Bytes(Codigo.Encode(TYPE.EAN13, "900000000000")),
+                    CodigoBarraVerdadero = "9000000000001"
                 };
 
                 productoServicio.Nuevo(producto);
