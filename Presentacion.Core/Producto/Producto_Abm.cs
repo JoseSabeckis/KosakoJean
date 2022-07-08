@@ -177,6 +177,11 @@ namespace Presentacion.Core.Producto
                 return false;
             }
 
+            if (!VerificarCodigo())
+            {
+                return false;
+            }
+
             if (nudPrecio.Value == 0)
             {
                 if (MessageBox.Show("El Producto Valdra 0, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -195,7 +200,7 @@ namespace Presentacion.Core.Producto
 
             VerCodImagen();
 
-            CodDeBarraAGuardar();
+            //CodDeBarraAGuardar();
 
             var nueva = new ProductoDto
             {
@@ -255,6 +260,11 @@ namespace Presentacion.Core.Producto
                 return false;
             }
 
+            if (!VerificarCodigo())
+            {
+                return false;
+            }
+
             if (nudPrecio.Value == 0)
             {
                 if (MessageBox.Show("El Producto Valdra 0, Desea Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
@@ -265,7 +275,7 @@ namespace Presentacion.Core.Producto
 
             VerCodImagen();
 
-            CodDeBarraAGuardar();
+            //CodDeBarraAGuardar();
 
             var localidadParaModificar = new ProductoDto
             {
@@ -393,10 +403,22 @@ namespace Presentacion.Core.Producto
             }
         }
 
+        public bool VerificarCodigo()
+        {
+            if (nudCodigoBarra.Value > 999999998888 || nudCodBarraCreado.Value > 9999999988888)
+            {
+                MessageBox.Show("El Codigo No Puede Ser Mayor a 999999998888", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
         private void ckbCodBarraCreado_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbCodBarraCreado.Checked == true)
             {
+                VerificarCodigo();
+
                 nudCodigoBarra.Value = _Servicio.TraerNuevoCodBarra();
                 nudCodigoBarra.Enabled = false;
 

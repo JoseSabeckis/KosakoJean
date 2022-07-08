@@ -868,5 +868,29 @@ namespace Presentacion.Core.Cobro
         {
 
         }
+
+        private void nudCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnAgregarAlaGrilla.PerformClick();
+            }
+        }
+
+        private void nudPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnAgregarAlaGrilla.PerformClick();
+            }
+        }
+
+        private void cmbTalle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnAgregarAlaGrilla.PerformClick();
+            }
+        }
     }
 }

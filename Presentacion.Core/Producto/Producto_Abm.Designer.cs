@@ -39,6 +39,9 @@
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblCodBarraVerdadero = new System.Windows.Forms.Label();
+            this.btnNuevoTipo = new System.Windows.Forms.Button();
+            this.btnNuevoColegio = new System.Windows.Forms.Button();
             this.nudCodBarraCreado = new System.Windows.Forms.NumericUpDown();
             this.ckbCodBarraCreado = new System.Windows.Forms.CheckBox();
             this.btnVerCodBarra = new System.Windows.Forms.Button();
@@ -56,9 +59,6 @@
             this.lblTituloFoto = new System.Windows.Forms.Label();
             this.imgFotoEmpleado = new System.Windows.Forms.PictureBox();
             this.archivo = new System.Windows.Forms.OpenFileDialog();
-            this.btnNuevoColegio = new System.Windows.Forms.Button();
-            this.btnNuevoTipo = new System.Windows.Forms.Button();
-            this.lblCodBarraVerdadero = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPrecio)).BeginInit();
@@ -205,6 +205,39 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(994, 379);
             this.panel2.TabIndex = 10;
+            // 
+            // lblCodBarraVerdadero
+            // 
+            this.lblCodBarraVerdadero.AutoSize = true;
+            this.lblCodBarraVerdadero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblCodBarraVerdadero.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodBarraVerdadero.Location = new System.Drawing.Point(501, 12);
+            this.lblCodBarraVerdadero.Name = "lblCodBarraVerdadero";
+            this.lblCodBarraVerdadero.Size = new System.Drawing.Size(30, 19);
+            this.lblCodBarraVerdadero.TabIndex = 78;
+            this.lblCodBarraVerdadero.Text = "---";
+            // 
+            // btnNuevoTipo
+            // 
+            this.btnNuevoTipo.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoTipo.Location = new System.Drawing.Point(442, 321);
+            this.btnNuevoTipo.Name = "btnNuevoTipo";
+            this.btnNuevoTipo.Size = new System.Drawing.Size(36, 33);
+            this.btnNuevoTipo.TabIndex = 13;
+            this.btnNuevoTipo.Text = "...";
+            this.btnNuevoTipo.UseVisualStyleBackColor = true;
+            this.btnNuevoTipo.Click += new System.EventHandler(this.btnNuevoTipo_Click);
+            // 
+            // btnNuevoColegio
+            // 
+            this.btnNuevoColegio.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoColegio.Location = new System.Drawing.Point(442, 272);
+            this.btnNuevoColegio.Name = "btnNuevoColegio";
+            this.btnNuevoColegio.Size = new System.Drawing.Size(36, 33);
+            this.btnNuevoColegio.TabIndex = 12;
+            this.btnNuevoColegio.Text = "...";
+            this.btnNuevoColegio.UseVisualStyleBackColor = true;
+            this.btnNuevoColegio.Click += new System.EventHandler(this.btnNuevoColegio_Click);
             // 
             // nudCodBarraCreado
             // 
@@ -426,39 +459,6 @@
             // archivo
             // 
             this.archivo.FileName = "archivo";
-            // 
-            // btnNuevoColegio
-            // 
-            this.btnNuevoColegio.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoColegio.Location = new System.Drawing.Point(442, 272);
-            this.btnNuevoColegio.Name = "btnNuevoColegio";
-            this.btnNuevoColegio.Size = new System.Drawing.Size(36, 33);
-            this.btnNuevoColegio.TabIndex = 12;
-            this.btnNuevoColegio.Text = "...";
-            this.btnNuevoColegio.UseVisualStyleBackColor = true;
-            this.btnNuevoColegio.Click += new System.EventHandler(this.btnNuevoColegio_Click);
-            // 
-            // btnNuevoTipo
-            // 
-            this.btnNuevoTipo.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoTipo.Location = new System.Drawing.Point(442, 321);
-            this.btnNuevoTipo.Name = "btnNuevoTipo";
-            this.btnNuevoTipo.Size = new System.Drawing.Size(36, 33);
-            this.btnNuevoTipo.TabIndex = 13;
-            this.btnNuevoTipo.Text = "...";
-            this.btnNuevoTipo.UseVisualStyleBackColor = true;
-            this.btnNuevoTipo.Click += new System.EventHandler(this.btnNuevoTipo_Click);
-            // 
-            // lblCodBarraVerdadero
-            // 
-            this.lblCodBarraVerdadero.AutoSize = true;
-            this.lblCodBarraVerdadero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblCodBarraVerdadero.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodBarraVerdadero.Location = new System.Drawing.Point(501, 12);
-            this.lblCodBarraVerdadero.Name = "lblCodBarraVerdadero";
-            this.lblCodBarraVerdadero.Size = new System.Drawing.Size(30, 19);
-            this.lblCodBarraVerdadero.TabIndex = 78;
-            this.lblCodBarraVerdadero.Text = "---";
             // 
             // Producto_Abm
             // 

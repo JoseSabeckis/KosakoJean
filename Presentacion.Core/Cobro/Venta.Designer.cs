@@ -140,6 +140,7 @@
             this.cmbTalle.TabIndex = 13;
             this.cmbTalle.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.cmbTalle.RightToLeftChanged += new System.EventHandler(this.cmbTalle_RightToLeftChanged);
+            this.cmbTalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTalle_KeyPress);
             // 
             // label3
             // 
@@ -175,6 +176,7 @@
             0,
             0});
             this.nudCantidad.ValueChanged += new System.EventHandler(this.nudCantidad_ValueChanged);
+            this.nudCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudCantidad_KeyPress);
             // 
             // label4
             // 
@@ -214,6 +216,7 @@
             this.nudPrecio.Name = "nudPrecio";
             this.nudPrecio.Size = new System.Drawing.Size(109, 33);
             this.nudPrecio.TabIndex = 11;
+            this.nudPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudPrecio_KeyPress);
             // 
             // panel7
             // 
