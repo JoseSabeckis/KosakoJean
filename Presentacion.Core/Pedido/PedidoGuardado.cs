@@ -455,10 +455,29 @@ namespace Presentacion.Core.Pedido
             }
         }
 
+        public bool VerCaja()
+        {
+            var caja = cajaServicio.BuscarCajaAbierta();
+
+            if (caja == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnCobro_Click(object sender, EventArgs e)
         {
             if (nudCobro.Value > 0)
             {
+                if (!VerCaja())
+                {
+                    MessageBox.Show("Abra la Caja", "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                    return;
+                }
+
                 if (MessageBox.Show("Esta Por Cobrar Un Adelanto, Desea Continuar?", "Adelanto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     var pedido = pedidoServicio.Buscar(PedidoId);

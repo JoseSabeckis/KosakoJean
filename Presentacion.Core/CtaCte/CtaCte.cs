@@ -182,12 +182,30 @@ namespace Presentacion.Core.CtaCte
             }
         }
 
+        public bool VerCaja()
+        {
+            var caja = cajaServicio.BuscarCajaAbierta();
+
+            if (caja == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnCobrar_Click(object sender, EventArgs e)
         {
             if (_CtaCteId != 0)
             {
                 if (nudCobro.Value > 0)
                 {
+                    if (!VerCaja())
+                    {
+                        MessageBox.Show("Abra la Caja", "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                        return;
+                    }
 
                     if (ckbNormal.Checked == false && ckbTarjeta.Checked == false)
                     {

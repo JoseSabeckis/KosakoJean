@@ -111,8 +111,27 @@ namespace Presentacion.Core.CtaCte
             }
         }
 
+        public bool VerCaja()
+        {
+            var caja = cajaServicio.BuscarCajaAbierta();
+
+            if (caja == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (!VerCaja())
+            {
+                MessageBox.Show("Abra la Caja", "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                return;
+            }
+
             if (txtApellido.Text == string.Empty)
             {
                 MessageBox.Show("Coloque El Nombre o el Apellido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

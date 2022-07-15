@@ -369,8 +369,26 @@ namespace Presentacion.Core.Cobro
             factura.ShowDialog();
         }
 
+        public bool VerCaja()
+        {
+            var caja = cajaServicio.BuscarCajaAbierta();
+
+            if (caja == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnCobrar_Click(object sender, EventArgs e)
         {
+            if (!VerCaja())
+            {
+                MessageBox.Show("Abra la Caja", "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                return;
+            }
 
             if (dgvGrilla.RowCount > 0)
             {

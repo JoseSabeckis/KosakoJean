@@ -572,8 +572,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox25</rd:DefaultName>
-        <Top>0.44662cm</Top>
-        <Left>9.61661cm</Left>
+        <Top>0.34079cm</Top>
+        <Left>9.41811cm</Left>
         <Height>0.6cm</Height>
         <Width>1.41522cm</Width>
         <ZIndex>15</ZIndex>
@@ -604,10 +604,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Fecha</rd:DefaultName>
-        <Top>0.44662cm</Top>
-        <Left>11.03183cm</Left>
+        <Top>0.34079cm</Top>
+        <Left>10.83333cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.25627cm</Width>
+        <Width>2.66643cm</Width>
         <ZIndex>16</ZIndex>
         <Style>
           <Border>
@@ -636,10 +636,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Hora</rd:DefaultName>
-        <Top>0.44662cm</Top>
-        <Left>14.43935cm</Left>
+        <Top>0.34079cm</Top>
+        <Left>14.65102cm</Left>
         <Height>0.6cm</Height>
-        <Width>1.83816cm</Width>
+        <Width>2.84358cm</Width>
         <ZIndex>17</ZIndex>
         <Style>
           <Border>
@@ -668,8 +668,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>0.44662cm</Top>
-        <Left>13.39393cm</Left>
+        <Top>0.34079cm</Top>
+        <Left>13.6056cm</Left>
         <Height>0.6cm</Height>
         <Width>1.04542cm</Width>
         <ZIndex>18</ZIndex>

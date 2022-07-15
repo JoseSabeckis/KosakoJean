@@ -53,10 +53,28 @@ namespace Presentacion.Core.Arreglo
             Close();
         }
 
+        public bool VerCaja()
+        {
+            var caja = cajaServicio.BuscarCajaAbierta();
+
+            if (caja == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (VerificarDatosObligatorios())
             {
+                if (!VerCaja())
+                {
+                    MessageBox.Show("Abra la Caja", "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                    return;
+                }
 
                 if (nudTotal.Value <= 0)
                 {

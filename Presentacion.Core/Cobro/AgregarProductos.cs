@@ -340,10 +340,29 @@ namespace Presentacion.Core.Cobro
             }
         }
 
+        public bool VerCaja()
+        {
+            var caja = cajaServicio.BuscarCajaAbierta();
+
+            if (caja == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnTerminar_Click(object sender, EventArgs e)
         {
             if (dgvGrilla.RowCount > 0)
             {
+                if (!VerCaja())
+                {
+                    MessageBox.Show("Abra la Caja", "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                    return;
+                }
+
                 if (MessageBox.Show("Esta Seguro de Agregar Productos a Este Pedido?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     ProductoDto producto = new ProductoDto();

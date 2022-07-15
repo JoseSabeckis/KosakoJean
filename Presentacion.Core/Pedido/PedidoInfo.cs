@@ -309,9 +309,20 @@ namespace Presentacion.Core.Pedido
             Close();
         }
 
+        public bool VerCaja()
+        {
+            var caja = cajaServicio.BuscarCajaAbierta();
+
+            if (caja == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnTerminar_Click(object sender, EventArgs e)
         {
-
             if (cajaServicio.BuscarCajaAbierta() != null)
             {
                 if (MessageBox.Show("Esta por Terminar el Pedido, Esta Seguro?", "Preguntar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -490,6 +501,13 @@ namespace Presentacion.Core.Pedido
         {
             if (nudCobro.Value > 0)
             {
+                if (!VerCaja())
+                {
+                    MessageBox.Show("Abra la Caja", "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                    return;
+                }
+
                 if (MessageBox.Show("Esta Por Cobrar Un Adelanto, Desea Continuar?", "Adelanto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     var pedido = pedidoServicio.Buscar(PedidoId);

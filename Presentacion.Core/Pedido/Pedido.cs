@@ -150,10 +150,28 @@ namespace Presentacion.Core.Pedido
             }
         }
 
+        public bool VerCaja()
+        {
+            var caja = cajaServicio.BuscarCajaAbierta();
+
+            if (caja == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         private void btnCargar_Click(object sender, EventArgs e)
         {
             if (AsignarControles())
             {
+                if (!VerCaja())
+                {
+                    MessageBox.Show("Abra la Caja", "Caja Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                    return;
+                }
 
                 if (ckbNormal.Checked == false && ckbCtaCte.Checked == false && ckbTarjeta.Checked == false)
                 {
