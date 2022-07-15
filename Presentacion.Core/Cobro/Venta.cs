@@ -443,7 +443,7 @@ namespace Presentacion.Core.Cobro
                         ///////////////////////////////////////////////////////////////////////////////////////
                         var detalle = new DetalleCajaDto
                         {
-                            Fecha = DateTime.Now.ToLongDateString(),
+                            Fecha = DateTime.Now.ToShortDateString(),
                             Total = _total,
                             Descripcion = $"Venta {descripcion}",
                             CajaId = detalleCajaServicio.BuscarCajaAbierta(),

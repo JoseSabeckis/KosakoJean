@@ -54,6 +54,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
+            this.btnCrearTicket = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCaja)).BeginInit();
@@ -68,6 +69,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnCrearTicket);
             this.panel1.Controls.Add(this.btnEliminar);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.btnVolver);
@@ -84,7 +86,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(117, 67);
+            this.btnEliminar.Location = new System.Drawing.Point(117, 10);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(158, 25);
             this.btnEliminar.TabIndex = 8;
@@ -214,7 +216,7 @@
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.Size = new System.Drawing.Size(159, 28);
             this.btnTicket.TabIndex = 7;
-            this.btnTicket.Text = "Ver Ticket";
+            this.btnTicket.Text = "Ver Factura";
             this.btnTicket.UseVisualStyleBackColor = false;
             this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
@@ -350,6 +352,20 @@
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick);
             // 
+            // btnCrearTicket
+            // 
+            this.btnCrearTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCrearTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCrearTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearTicket.Location = new System.Drawing.Point(117, 65);
+            this.btnCrearTicket.Name = "btnCrearTicket";
+            this.btnCrearTicket.Size = new System.Drawing.Size(158, 27);
+            this.btnCrearTicket.TabIndex = 8;
+            this.btnCrearTicket.Text = "Hacer Ticket";
+            this.btnCrearTicket.UseVisualStyleBackColor = false;
+            this.btnCrearTicket.Click += new System.EventHandler(this.btnCrearTicket_Click);
+            // 
             // Historia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -412,5 +428,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnTicket;
+        private System.Windows.Forms.Button btnCrearTicket;
     }
 }

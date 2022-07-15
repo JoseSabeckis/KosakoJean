@@ -15,6 +15,8 @@ namespace Servicios.Core.DetalleCaja
 
         IEnumerable<DetalleCajaDto> BuscarDetalles(long id);
 
+        DetalleCajaDto ObtenerPorId(long detalleId);
+
         long BuscarCajaAbierta();
     }
 }

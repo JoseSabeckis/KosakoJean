@@ -49,6 +49,28 @@ namespace Servicios.Core.DetalleCaja
             }
         }
 
+        public DetalleCajaDto ObtenerPorId(long detalleId)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var detalle = context.DetalleCajas.FirstOrDefault(x => x.Id == detalleId);
+
+                return new DetalleCajaDto
+                {
+
+                    Id = detalle.Id,
+                    CajaId = detalle.CajaId,
+                    Descripcion = detalle.Descripcion,
+                    Total = detalle.Total,
+                    Fecha = detalle.Fecha,
+                    TipoPago = detalle.TipoPago
+
+                };
+
+            }
+        }
+
         public void ListaParaEliminar(IEnumerable<DetalleCajaDto> lista)
         {
             using (var context = new KosakoDBEntities())

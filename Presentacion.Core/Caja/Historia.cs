@@ -5,7 +5,10 @@ using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleProducto;
 using Servicios.Core.Fecha;
 using Servicios.Core.Image.Dto;
+using Servicios.Core.Negocio;
+using Servicios.Core.Negocio.Dto;
 using Servicios.Core.ParteVenta.Dto;
+using Servicios.Core.Ticket;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +21,12 @@ namespace Presentacion.Core.Caja
         private readonly IDetalleCajaServicio _detalleCajaServicio;
         private readonly ICajaServicio cajaServicio;
         private readonly IDetalleProductoServicio detalleProductoServicio;
+        private readonly INegocioServicio negocioServicio;
 
         long _CajaId;
         long _DetalleId;
+
+        NegocioDto _Negocio;
 
         public Historia(long id)
         {
@@ -29,6 +35,7 @@ namespace Presentacion.Core.Caja
             _detalleCajaServicio = new DetalleCajaServicio();
             cajaServicio = new CajaServicio();
             detalleProductoServicio = new DetalleProductoServicio();
+            negocioServicio = new NegocioServicio();
 
             _CajaId = id;
 
@@ -39,6 +46,13 @@ namespace Presentacion.Core.Caja
             CargarImageEnGeneral();
 
             VerificarSiHayCobros();
+
+            DatosNegocio();
+        }
+
+        public void DatosNegocio()
+        {
+            _Negocio = negocioServicio.ObtenerPorId(1);
         }
 
         public void CargarGrilla()
@@ -168,6 +182,7 @@ namespace Presentacion.Core.Caja
             if (_detalleCajaServicio.Lista(_CajaId).Count() == 0)
             {
                 btnTicket.Visible = false;
+                btnCrearTicket.Visible = false;
             }
         }
 
@@ -195,6 +210,62 @@ namespace Presentacion.Core.Caja
         private void Historia_Load(object sender, EventArgs e)
         {
             VerificarBotonTicket();
+        }
+
+        private void btnCrearTicket_Click(object sender, EventArgs e)
+        {
+            var _Detalle = _detalleCajaServicio.ObtenerPorId(_DetalleId);
+
+            CrearTicket ticket = new CrearTicket();
+
+            ticket.AbreCajon();
+
+            ticket.TextoCentro(_Negocio.RazonSocial);
+            ticket.TextoIzquierda(" ");
+            ticket.TextoIzquierda("Cuit: " + _Negocio.Cuit);
+            ticket.TextoIzquierda("Direccion: " + _Negocio.Direccion);
+            ticket.TextoIzquierda("Celular: " + _Negocio.Celular);
+            ticket.TextoIzquierda("Mail: " + _Negocio.Email);
+
+            ticket.TextoIzquierda(" ");
+            //ticket.textoExtremos("Caja #1", "Ticket #002-00001")
+            ticket.LineaAstericoMetodo();//*********
+
+            ticket.TextoIzquierda("");
+            ticket.TextoIzquierda("Atendio: VENDEDOR");
+            ticket.TextoIzquierda("Cliente: PUBLICO EN GENERAL");
+            ticket.TextoIzquierda("Fecha: " + _Detalle.Fecha);
+            ticket.LineaAstericoMetodo();//*********
+
+            ticket.Encabezado();//descripcion, cantidad, precio, total
+
+            ticket.LineaAstericoMetodo();//*********
+
+            var ListaVenta = detalleProductoServicio.ObtenerListaPorDetalleId(_DetalleId);
+
+            decimal total = 0;
+            int cantComprados = 0;
+
+            foreach (var item in ListaVenta)
+            {
+                ticket.AgregaArticulo(item.Descripcion, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
+
+                total += item.Precio * item.Cantidad;
+                cantComprados += (int)item.Cantidad;
+            }
+
+            ticket.LineaIgualMetodo();
+
+            ticket.TextoIzquierda(" ");
+            ticket.AgregarTotales("Total:....$", total);
+            ticket.TextoIzquierda(" ");
+            ticket.TextoIzquierda("Articulos Vendidos: " + cantComprados);
+            ticket.TextoIzquierda(" ");
+
+            ticket.TextoCentro("-- GRACIAS POR SU COMPRA! --");
+            ticket.CortaTicket();
+
+            ticket.ImprimirTicket("POS58 Printer");
         }
     }
 }
