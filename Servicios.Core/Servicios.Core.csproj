@@ -124,6 +124,8 @@
     <Compile Include="Talle\ITalleServicio.cs" />
     <Compile Include="Talle\TalleServicio.cs" />
     <Compile Include="Ticket\CrearTicket.cs" />
+    <Compile Include="Ticket\ITicketServicio.cs" />
+    <Compile Include="Ticket\TicketServicio.cs" />
     <Compile Include="TipoProducto\Dto\TipoProductoDto.cs" />
     <Compile Include="TipoProducto\ITipoProducto.cs" />
     <Compile Include="TipoProducto\TipoProductoServicio.cs" />

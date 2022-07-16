@@ -20,6 +20,7 @@ using Servicios.Core.Producto_Venta;
 using Servicios.Core.Producto_Venta.Dto;
 using Servicios.Core.Talle;
 using Servicios.Core.Talle.Dto;
+using Servicios.Core.Ticket;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
@@ -39,6 +40,7 @@ namespace Presentacion.Core.Cobro
         private readonly IClienteServicio clienteServicio;
         private readonly ITalleServicio talleServicio;
         private readonly IDetalleProductoServicio detalleProductoServicio;
+        private readonly ITicketServicio ticketServicio;
 
         ProductoDto producto;
         long _productoId;
@@ -68,6 +70,7 @@ namespace Presentacion.Core.Cobro
             clienteServicio = new ClienteServicio();
             talleServicio = new TalleServicio();
             detalleProductoServicio = new DetalleProductoServicio();
+            ticketServicio = new TicketServicio();
 
             CargarTalle();
 
@@ -85,6 +88,9 @@ namespace Presentacion.Core.Cobro
 
             Inicializador();
 
+            MostrarImpresoras();
+
+            cmbImpresoras.SelectedIndex = 0;
         }
 
         public void Inicializador()
@@ -443,7 +449,7 @@ namespace Presentacion.Core.Cobro
                         ///////////////////////////////////////////////////////////////////////////////////////
                         var detalle = new DetalleCajaDto
                         {
-                            Fecha = DateTime.Now.ToShortDateString(),
+                            Fecha = DateTime.Now.ToString(),
                             Total = _total,
                             Descripcion = $"Venta {descripcion}",
                             CajaId = detalleCajaServicio.BuscarCajaAbierta(),
@@ -452,7 +458,6 @@ namespace Presentacion.Core.Cobro
                         TipoPago(detalle);
 
                         var detalleCajaId = detalleCajaServicio.AgregarDetalleCaja(detalle);
-
 
                         //detalle producto
                         foreach (var item in ListaVenta)
@@ -482,9 +487,20 @@ namespace Presentacion.Core.Cobro
                         }
 
 
-                        if (ckbTicket.Checked)
+                        if (ckbFactura.Checked)
                         {
                             VerTicket(ListaVenta.ToList());
+                        }
+
+                        if (ckbTickets.Checked)
+                        {
+                            if (cmbImpresoras.Text == string.Empty)
+                            {
+                                MessageBox.Show("Elija el Formato de Impresion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            {
+                                ticketServicio.ImprimirAutomaticamente(detalleCajaId, cmbImpresoras.Text);
+                            }
                         }
 
                         //limpiar
@@ -520,7 +536,7 @@ namespace Presentacion.Core.Cobro
 
                         if (pedidos.semaforo)
                         {
-                            if (ckbTicket.Checked)
+                            if (ckbFactura.Checked)
                             {
                                 VerTicket(ListaVenta.ToList());
                             }
@@ -556,7 +572,7 @@ namespace Presentacion.Core.Cobro
 
                         if (cuenta.semaforo)
                         {
-                            if (ckbTicket.Checked)
+                            if (ckbFactura.Checked)
                             {
                                 VerTicket(ListaVenta.ToList());
                             }
@@ -640,8 +656,8 @@ namespace Presentacion.Core.Cobro
                 ckbCtaCte.Checked = false;
                 ckbGuardar.Checked = false;
 
-                ckbTicket.Checked = true;
-                ckbTicket.Enabled = true;
+                ckbFactura.Checked = true;
+                ckbFactura.Enabled = true;
             }
             txtCodigoBarra.Focus();
         }
@@ -655,7 +671,7 @@ namespace Presentacion.Core.Cobro
                 ckbCtaCte.Checked = false;
                 ckbGuardar.Checked = false;
 
-                ckbTicket.Checked = false;
+                ckbFactura.Checked = false;
                 //ckbTicket.Enabled = false;
             }
             txtCodigoBarra.Focus();
@@ -758,8 +774,8 @@ namespace Presentacion.Core.Cobro
                 ckbCtaCte.Checked = false;
                 ckbGuardar.Checked = false;
 
-                ckbTicket.Checked = true;
-                ckbTicket.Enabled = true;
+                ckbFactura.Checked = true;
+                ckbFactura.Enabled = true;
             }
             txtCodigoBarra.Focus();
         }
@@ -786,7 +802,7 @@ namespace Presentacion.Core.Cobro
                 ckbTarjeta.Checked = false;
                 ckbGuardar.Checked = false;
 
-                ckbTicket.Checked = false;
+                ckbFactura.Checked = false;
                 //ckbTicket.Enabled = false;
             }
             txtCodigoBarra.Focus();
@@ -810,7 +826,7 @@ namespace Presentacion.Core.Cobro
                 ckbTarjeta.Checked = false;
                 ckbCtaCte.Checked = false;
 
-                ckbTicket.Checked = false;
+                ckbFactura.Checked = false;
                 //ckbTicket.Enabled = false;
             }
             txtCodigoBarra.Focus();
@@ -880,6 +896,23 @@ namespace Presentacion.Core.Cobro
         private void ckbTicket_CheckedChanged(object sender, EventArgs e)
         {
             txtCodigoBarra.Focus();
+
+            if (ckbFactura.Checked)
+            {
+                ckbTickets.Checked = false;
+            }
+            else
+            {
+                ckbTickets.Checked = true;
+            }
+        }
+
+        public void MostrarImpresoras()
+        {
+            foreach (String strPrinter in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
+            {
+                cmbImpresoras.Items.Add(strPrinter);
+            }
         }
 
         private void cmbTalle_RightToLeftChanged(object sender, EventArgs e)
@@ -909,6 +942,23 @@ namespace Presentacion.Core.Cobro
             {
                 btnAgregarAlaGrilla.PerformClick();
             }
+        }
+
+        private void ckbTickets_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbTickets.Checked)
+            {
+                ckbFactura.Checked = false;
+            }
+            else
+            {
+                ckbFactura.Checked = true;
+            }
+        }
+
+        private void cmbImpresoras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtCodigoBarra.Focus();
         }
     }
 }

@@ -265,7 +265,7 @@ namespace Presentacion.Core.Pedido
                     var detalle = new DetalleCajaDto
                     {
                         Descripcion = txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
-                        Fecha = DateTime.Now.ToLongDateString(),
+                        Fecha = DateTime.Now.ToString(),
                         Total = nudAdelanto.Value,
                         CajaId = detallCajaServicio.BuscarCajaAbierta()
                     };

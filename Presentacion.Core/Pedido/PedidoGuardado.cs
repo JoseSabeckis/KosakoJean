@@ -413,7 +413,7 @@ namespace Presentacion.Core.Pedido
                     var detalle = new DetalleCajaDto
                     {
                         Descripcion = $"{lblPersona.Text} - Pedido Terminado",
-                        Fecha = DateTime.Now.ToLongDateString(),
+                        Fecha = DateTime.Now.ToString(),
                         Total = _Debe,
                         CajaId = detalleCajaServicio.BuscarCajaAbierta()
                     };
@@ -495,7 +495,7 @@ namespace Presentacion.Core.Pedido
                     var detalle = new DetalleCajaDto
                     {
                         Descripcion = $"{lblPersona.Text} - Adelanto de Pedido",
-                        Fecha = DateTime.Now.ToLongDateString(),
+                        Fecha = DateTime.Now.ToString(),
                         Total = nudCobro.Value,
                         CajaId = detalleCajaServicio.BuscarCajaAbierta()
                     };

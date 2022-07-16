@@ -74,7 +74,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.ckbTicket = new System.Windows.Forms.CheckBox();
+            this.ckbFactura = new System.Windows.Forms.CheckBox();
             this.btnNuevoTalle = new System.Windows.Forms.Button();
             this.nudTotal = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -82,6 +82,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbImpresoras = new System.Windows.Forms.ComboBox();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.ckbTickets = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -99,6 +103,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).BeginInit();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -577,6 +582,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.panel11);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.nudTotalVenta);
             this.panel4.Controls.Add(this.panel10);
@@ -667,7 +673,6 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.ckbTicket);
             this.panel5.Controls.Add(this.btnNuevoTalle);
             this.panel5.Controls.Add(this.nudTotal);
             this.panel5.Controls.Add(this.label7);
@@ -677,18 +682,18 @@
             this.panel5.Size = new System.Drawing.Size(236, 145);
             this.panel5.TabIndex = 6;
             // 
-            // ckbTicket
+            // ckbFactura
             // 
-            this.ckbTicket.AutoSize = true;
-            this.ckbTicket.Checked = true;
-            this.ckbTicket.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbTicket.Location = new System.Drawing.Point(48, 64);
-            this.ckbTicket.Name = "ckbTicket";
-            this.ckbTicket.Size = new System.Drawing.Size(148, 26);
-            this.ckbTicket.TabIndex = 8;
-            this.ckbTicket.Text = "Mostrar Ticket";
-            this.ckbTicket.UseVisualStyleBackColor = true;
-            this.ckbTicket.CheckedChanged += new System.EventHandler(this.ckbTicket_CheckedChanged);
+            this.ckbFactura.AutoSize = true;
+            this.ckbFactura.Checked = true;
+            this.ckbFactura.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbFactura.Location = new System.Drawing.Point(20, 62);
+            this.ckbFactura.Name = "ckbFactura";
+            this.ckbFactura.Size = new System.Drawing.Size(158, 26);
+            this.ckbFactura.TabIndex = 8;
+            this.ckbFactura.Text = "Mostrar Factura";
+            this.ckbFactura.UseVisualStyleBackColor = true;
+            this.ckbFactura.CheckedChanged += new System.EventHandler(this.ckbTicket_CheckedChanged);
             // 
             // btnNuevoTalle
             // 
@@ -775,6 +780,53 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 5);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(103, 13);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Usar Para Ticket";
+            // 
+            // cmbImpresoras
+            // 
+            this.cmbImpresoras.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbImpresoras.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbImpresoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbImpresoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbImpresoras.FormattingEnabled = true;
+            this.cmbImpresoras.Location = new System.Drawing.Point(5, 21);
+            this.cmbImpresoras.Name = "cmbImpresoras";
+            this.cmbImpresoras.Size = new System.Drawing.Size(189, 24);
+            this.cmbImpresoras.TabIndex = 13;
+            this.cmbImpresoras.SelectedIndexChanged += new System.EventHandler(this.cmbImpresoras_SelectedIndexChanged);
+            // 
+            // panel11
+            // 
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel11.Controls.Add(this.ckbTickets);
+            this.panel11.Controls.Add(this.ckbFactura);
+            this.panel11.Controls.Add(this.label14);
+            this.panel11.Controls.Add(this.cmbImpresoras);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel11.Location = new System.Drawing.Point(315, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(200, 145);
+            this.panel11.TabIndex = 12;
+            // 
+            // ckbTickets
+            // 
+            this.ckbTickets.AutoSize = true;
+            this.ckbTickets.Location = new System.Drawing.Point(20, 94);
+            this.ckbTickets.Name = "ckbTickets";
+            this.ckbTickets.Size = new System.Drawing.Size(148, 26);
+            this.ckbTickets.TabIndex = 15;
+            this.ckbTickets.Text = "Mostrar Ticket";
+            this.ckbTickets.UseVisualStyleBackColor = true;
+            this.ckbTickets.CheckedChanged += new System.EventHandler(this.ckbTickets_CheckedChanged);
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -818,6 +870,8 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -871,11 +925,15 @@
         private System.Windows.Forms.Button btnNuevoTalle;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown nudTotalVenta;
-        private System.Windows.Forms.CheckBox ckbTicket;
+        private System.Windows.Forms.CheckBox ckbFactura;
         private System.Windows.Forms.CheckBox ckbGuardar;
         private System.Windows.Forms.TextBox txtColegio;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtCodigoBarra;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmbImpresoras;
+        private System.Windows.Forms.CheckBox ckbTickets;
     }
 }

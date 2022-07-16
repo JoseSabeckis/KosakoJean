@@ -233,7 +233,7 @@ namespace Presentacion.Core.CtaCte
                 var detalle = new DetalleCajaDto
                 {
                     Descripcion = txtApellido.Text + " " + txtNombre.Text,
-                    Fecha = DateTime.Now.ToLongDateString(),
+                    Fecha = DateTime.Now.ToString(),
                     Total = nudAdelanto.Value,
                     CajaId = detallCajaServicio.BuscarCajaAbierta()
                 };

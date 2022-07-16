@@ -22,6 +22,7 @@ namespace Presentacion.Core.Caja
         private readonly ICajaServicio cajaServicio;
         private readonly IDetalleProductoServicio detalleProductoServicio;
         private readonly INegocioServicio negocioServicio;
+        private readonly ITicketServicio ticketServicio;
 
         long _CajaId;
         long _DetalleId;
@@ -36,6 +37,7 @@ namespace Presentacion.Core.Caja
             cajaServicio = new CajaServicio();
             detalleProductoServicio = new DetalleProductoServicio();
             negocioServicio = new NegocioServicio();
+            ticketServicio = new TicketServicio();
 
             _CajaId = id;
 
@@ -48,6 +50,8 @@ namespace Presentacion.Core.Caja
             VerificarSiHayCobros();
 
             DatosNegocio();
+
+            MostrarImpresoras();
         }
 
         public void DatosNegocio()
@@ -183,6 +187,11 @@ namespace Presentacion.Core.Caja
             {
                 btnTicket.Visible = false;
                 btnCrearTicket.Visible = false;
+                cmbImpresoras.Visible = false;
+            }
+            else
+            {
+                cmbImpresoras.SelectedIndex = 0;
             }
         }
 
@@ -212,60 +221,23 @@ namespace Presentacion.Core.Caja
             VerificarBotonTicket();
         }
 
+        public void MostrarImpresoras()
+        {
+            foreach (String strPrinter in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
+            {
+                cmbImpresoras.Items.Add(strPrinter);
+            }
+        }
+
         private void btnCrearTicket_Click(object sender, EventArgs e)
         {
-            var _Detalle = _detalleCajaServicio.ObtenerPorId(_DetalleId);
-
-            CrearTicket ticket = new CrearTicket();
-
-            ticket.AbreCajon();
-
-            ticket.TextoCentro(_Negocio.RazonSocial);
-            ticket.TextoIzquierda(" ");
-            ticket.TextoIzquierda("Cuit: " + _Negocio.Cuit);
-            ticket.TextoIzquierda("Direccion: " + _Negocio.Direccion);
-            ticket.TextoIzquierda("Celular: " + _Negocio.Celular);
-            ticket.TextoIzquierda("Mail: " + _Negocio.Email);
-
-            ticket.TextoIzquierda(" ");
-            //ticket.textoExtremos("Caja #1", "Ticket #002-00001")
-            ticket.LineaAstericoMetodo();//*********
-
-            ticket.TextoIzquierda("");
-            ticket.TextoIzquierda("Atendio: VENDEDOR");
-            ticket.TextoIzquierda("Cliente: PUBLICO EN GENERAL");
-            ticket.TextoIzquierda("Fecha: " + _Detalle.Fecha);
-            ticket.LineaAstericoMetodo();//*********
-
-            ticket.Encabezado();//descripcion, cantidad, precio, total
-
-            ticket.LineaAstericoMetodo();//*********
-
-            var ListaVenta = detalleProductoServicio.ObtenerListaPorDetalleId(_DetalleId);
-
-            decimal total = 0;
-            int cantComprados = 0;
-
-            foreach (var item in ListaVenta)
+            if (cmbImpresoras.Text == string.Empty)
             {
-                ticket.AgregaArticulo(item.Descripcion, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
-
-                total += item.Precio * item.Cantidad;
-                cantComprados += (int)item.Cantidad;
+                MessageBox.Show("Elija el Formato de Impresion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            ticket.LineaIgualMetodo();
-
-            ticket.TextoIzquierda(" ");
-            ticket.AgregarTotales("Total:....$", total);
-            ticket.TextoIzquierda(" ");
-            ticket.TextoIzquierda("Articulos Vendidos: " + cantComprados);
-            ticket.TextoIzquierda(" ");
-
-            ticket.TextoCentro("-- GRACIAS POR SU COMPRA! --");
-            ticket.CortaTicket();
-
-            ticket.ImprimirTicket("POS58 Printer");
+            ticketServicio.ImprimirAutomaticamente(_DetalleId, cmbImpresoras.Text);
         }
     }
 }
