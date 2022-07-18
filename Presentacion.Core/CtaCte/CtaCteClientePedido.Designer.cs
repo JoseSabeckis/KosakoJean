@@ -49,6 +49,8 @@ namespace Presentacion.Core.CtaCte
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtNumeroOperacion = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -70,6 +72,8 @@ namespace Presentacion.Core.CtaCte
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.txtNumeroOperacion);
+            this.panel6.Controls.Add(this.label16);
             this.panel6.Controls.Add(this.dtpFechaEntrega);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Controls.Add(this.cmbHorario);
@@ -282,6 +286,27 @@ namespace Presentacion.Core.CtaCte
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // txtNumeroOperacion
+            // 
+            this.txtNumeroOperacion.Enabled = false;
+            this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroOperacion.Location = new System.Drawing.Point(277, 196);
+            this.txtNumeroOperacion.Name = "txtNumeroOperacion";
+            this.txtNumeroOperacion.Size = new System.Drawing.Size(135, 33);
+            this.txtNumeroOperacion.TabIndex = 27;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(250, 203);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 26);
+            this.label16.TabIndex = 26;
+            this.label16.Text = "#";
+            // 
             // CtaCteClientePedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -333,5 +358,7 @@ namespace Presentacion.Core.CtaCte
         private System.Windows.Forms.ComboBox cmbHorario;
         private System.Windows.Forms.DateTimePicker dtpFechaEntrega;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtNumeroOperacion;
+        private System.Windows.Forms.Label label16;
     }
 }

@@ -45,6 +45,7 @@ namespace Presentacion.Core.Arreglo
             DetalleServicio = new DetalleProductoServicio();
 
             _ArregloId = arregloId;
+            _ArregloDto = arregloServicio.ObtenerPorId(_ArregloId);
 
             Datos();
 
@@ -61,8 +62,6 @@ namespace Presentacion.Core.Arreglo
 
         private void Datos()
         {
-            _ArregloDto = arregloServicio.ObtenerPorId(_ArregloId);
-
             //_ClienteDto = clienteServicio.ObtenerPorId(_ArregloDto.ClienteId);
             _Total = _ArregloDto.Total;
 
@@ -83,6 +82,8 @@ namespace Presentacion.Core.Arreglo
             txtDineroAdelanto.Text = $"$ {_ArregloDto.Adelanto}";
 
             txtDebe.Text = $"$ {_ArregloDto.Total - _ArregloDto.Adelanto}";
+
+            lblNumeroOperacion.Text = "#" + _ArregloDto.NumeroOperacion.ToString("00000");
 
             _Debe = _ArregloDto.Total - _ArregloDto.Adelanto;
             nudCobro.Maximum = _Debe;
@@ -231,7 +232,8 @@ namespace Presentacion.Core.Arreglo
                         Descripcion = $"{lblCliente.Text} - Cobro",
                         Fecha = DateTime.Now.ToLongDateString(),
                         Total = _Debe,
-                        CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                        CajaId = detalleCajaServicio.BuscarCajaAbierta(),
+                        NumeroOperacion = _ArregloDto.NumeroOperacion
                     };
 
                     TipoPago(detalle);
@@ -303,6 +305,11 @@ namespace Presentacion.Core.Arreglo
                 mensaje.ShowDialog();
 
             }
+        }
+
+        private void lblNumeroOperacion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

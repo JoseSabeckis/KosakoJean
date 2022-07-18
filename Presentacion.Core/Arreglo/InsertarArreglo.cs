@@ -46,6 +46,8 @@ namespace Presentacion.Core.Arreglo
             ControlDeCliente();
 
             cmbHorario.SelectedIndex = 0;
+
+            lblNumeroOperacion.Text = "#" + detallCajaServicio.TraerNuevoNumeroOperacion();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -92,6 +94,9 @@ namespace Presentacion.Core.Arreglo
 
                 if (MessageBox.Show("Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    lblNumeroOperacion.Text = "#" + detallCajaServicio.TraerNuevoNumeroOperacion();
+
+                    var numOperacion = detallCajaServicio.TraerNuevoNumeroOperacion();
 
                     var arreglo = new ArregloDto
                     {
@@ -106,7 +111,8 @@ namespace Presentacion.Core.Arreglo
                         Horario = cmbHorario.Text,
                         FechaRetirado = null,
                         FechaEntrega = dtpFechaEntrega.Value.Date,
-                        Cantidad = nudCantidad.Value
+                        Cantidad = nudCantidad.Value,
+                        NumeroOperacion = long.Parse(numOperacion)
                     };
 
                     arregloServicio.Insertar(arreglo);
@@ -116,8 +122,9 @@ namespace Presentacion.Core.Arreglo
                         Descripcion = "Arreglo de" + " " + txtApellido.Text + " " + txtNombre.Text,
                         Fecha = DateTime.Now.ToLongDateString(),
                         Total = nudAdelanto.Value,
-                        CajaId = detallCajaServicio.BuscarCajaAbierta()
-                    };
+                        CajaId = detallCajaServicio.BuscarCajaAbierta(),
+                        NumeroOperacion = long.Parse(numOperacion)
+                };
 
                     TipoPago(detalle);
 

@@ -105,6 +105,7 @@ namespace Presentacion.Core.Pedido
             }
 
             CargarImageEnGeneral();
+            txtNumeroOperacion.Text = detallCajaServicio.TraerNuevoNumeroOperacion();
         }
 
         private void CargarImageEnGeneral()
@@ -248,6 +249,8 @@ namespace Presentacion.Core.Pedido
 
                     }
 
+                    txtNumeroOperacion.Text = detallCajaServicio.TraerNuevoNumeroOperacion();
+
                     var cuenta = new CtaCteDto
                     {
                         ClienteId = ClienteId,
@@ -256,18 +259,19 @@ namespace Presentacion.Core.Pedido
                         Total = _total,
                         Debe = _total - nudAdelanto.Value,
                         Descripcion = $"{segunda}",
-                        PedidoId = pedidoId
+                        PedidoId = pedidoId,
+                        NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
                     };
 
                     ctaCteServicio.Agregar(cuenta);
-
 
                     var detalle = new DetalleCajaDto
                     {
                         Descripcion = txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
                         Fecha = DateTime.Now.ToString(),
                         Total = nudAdelanto.Value,
-                        CajaId = detallCajaServicio.BuscarCajaAbierta()
+                        CajaId = detallCajaServicio.BuscarCajaAbierta(),
+                        NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
                     };
 
                     TipoPago(detalle);

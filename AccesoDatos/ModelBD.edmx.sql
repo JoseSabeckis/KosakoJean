@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/08/2022 13:28:35
+-- Date Created: 07/18/2022 16:09:53
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -121,6 +121,9 @@ GO
 IF OBJECT_ID(N'[dbo].[DetalleProductos]', 'U') IS NOT NULL
     DROP TABLE [dbo].[DetalleProductos];
 GO
+IF OBJECT_ID(N'[dbo].[Configuraciones]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Configuraciones];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -169,7 +172,8 @@ CREATE TABLE [dbo].[Cajas] (
     [MontoCierre] decimal(18,0)  NOT NULL,
     [FechaApertura] datetime  NOT NULL,
     [FechaCierre] nvarchar(max)  NOT NULL,
-    [OpenClose] bigint  NOT NULL
+    [OpenClose] bigint  NOT NULL,
+    [EstaEliminado] bit  NOT NULL
 );
 GO
 
@@ -180,7 +184,9 @@ CREATE TABLE [dbo].[DetalleCajas] (
     [Total] decimal(18,0)  NOT NULL,
     [CajaId] bigint  NOT NULL,
     [Fecha] nvarchar(max)  NOT NULL,
-    [TipoPago] bigint  NOT NULL
+    [TipoPago] bigint  NOT NULL,
+    [NumeroOperacion] bigint  NOT NULL,
+    [EstaEliminado] bit  NOT NULL
 );
 GO
 
@@ -269,7 +275,8 @@ CREATE TABLE [dbo].[CtasCtes] (
     [Descripcion] nvarchar(max)  NOT NULL,
     [ClienteId] bigint  NOT NULL,
     [Estado] bigint  NOT NULL,
-    [PedidoId] bigint  NOT NULL
+    [PedidoId] bigint  NOT NULL,
+    [NumeroOperacion] bigint  NOT NULL
 );
 GO
 
@@ -350,7 +357,8 @@ CREATE TABLE [dbo].[Arreglos] (
     [Total] decimal(18,0)  NOT NULL,
     [Adelanto] decimal(18,0)  NOT NULL,
     [FechaRetirado] datetime  NULL,
-    [Cantidad] int  NOT NULL
+    [Cantidad] int  NOT NULL,
+    [NumeroOperacion] bigint  NOT NULL
 );
 GO
 
@@ -365,6 +373,14 @@ CREATE TABLE [dbo].[DetalleProductos] (
     [Precio] decimal(18,0)  NOT NULL,
     [Fecha] datetime  NOT NULL,
     [ProductoId] bigint  NULL
+);
+GO
+
+-- Creating table 'Configuraciones'
+CREATE TABLE [dbo].[Configuraciones] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [UsarLogin] bit  NOT NULL,
+    [UsarTicketera] bit  NOT NULL
 );
 GO
 
@@ -477,6 +493,12 @@ GO
 -- Creating primary key on [Id] in table 'DetalleProductos'
 ALTER TABLE [dbo].[DetalleProductos]
 ADD CONSTRAINT [PK_DetalleProductos]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Configuraciones'
+ALTER TABLE [dbo].[Configuraciones]
+ADD CONSTRAINT [PK_Configuraciones]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 

@@ -26,6 +26,8 @@ namespace AccesoDatos
         public long CajaId { get; set; }
         public string Fecha { get; set; }
         public TipoPago TipoPago { get; set; }
+        public long NumeroOperacion { get; set; }
+        public bool EstaEliminado { get; set; }
     
         public virtual Caja Caja { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

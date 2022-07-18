@@ -24,6 +24,7 @@
     <EntitySet Name="Images" EntityType="KosakoDBModel.Store.Images" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Arreglos" EntityType="KosakoDBModel.Store.Arreglos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="DetalleProductos" EntityType="KosakoDBModel.Store.DetalleProductos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Configuraciones" EntityType="KosakoDBModel.Store.Configuraciones" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="TipoProductoProducto" Association="KosakoDBModel.Store.TipoProductoProducto">
       <End Role="TipoProducto" EntitySet="TipoProductos" />
       <End Role="Producto" EntitySet="Productos" />
@@ -131,6 +132,7 @@
     <Property Name="FechaApertura" Type="datetime" Nullable="false" />
     <Property Name="FechaCierre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OpenClose" Type="bigint" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="DetalleCajas">
     <Key>
@@ -142,6 +144,8 @@
     <Property Name="CajaId" Type="bigint" Nullable="false" />
     <Property Name="Fecha" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TipoPago" Type="bigint" Nullable="false" />
+    <Property Name="NumeroOperacion" Type="bigint" Nullable="false" />
+    <Property Name="EstaEliminado" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Pedidos">
     <Key>
@@ -231,6 +235,7 @@
     <Property Name="ClienteId" Type="bigint" Nullable="false" />
     <Property Name="Estado" Type="bigint" Nullable="false" />
     <Property Name="PedidoId" Type="bigint" Nullable="false" />
+    <Property Name="NumeroOperacion" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="Talles">
     <Key>
@@ -312,6 +317,7 @@
     <Property Name="Adelanto" Type="decimal" Nullable="false" />
     <Property Name="FechaRetirado" Type="datetime" Nullable="true" />
     <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="NumeroOperacion" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="DetalleProductos">
     <Key>
@@ -326,6 +332,14 @@
     <Property Name="Precio" Type="decimal" Nullable="false" />
     <Property Name="Fecha" Type="datetime" Nullable="false" />
     <Property Name="ProductoId" Type="bigint" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Configuraciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsarLogin" Type="bit" Nullable="false" />
+    <Property Name="UsarTicketera" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
@@ -590,6 +604,7 @@
             <End Role="DetalleCaja" EntitySet="DetalleCajas" />
             <End Role="DetalleProducto" EntitySet="DetalleProductos" />
           </AssociationSet>
+          <EntitySet Name="Configuraciones" EntityType="KosakoDBModel.Configuracion" />
         </EntityContainer>
         <EntityType Name="Producto">
           <Key>
@@ -644,6 +659,7 @@
           <Property Name="FechaApertura" Type="DateTime" Nullable="false" />
           <Property Name="FechaCierre" Type="String" Nullable="false" />
           <Property Name="OpenClose" Type="KosakoDBModel.OpenClose" Nullable="false" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="DetalleCaja">
           <Key>
@@ -657,6 +673,8 @@
           <Property Name="Fecha" Type="String" Nullable="false" />
           <Property Name="TipoPago" Type="KosakoDBModel.TipoPago" Nullable="false" />
           <NavigationProperty Name="DetalleProducto" Relationship="KosakoDBModel.DetalleCajaDetalleProducto" FromRole="DetalleCaja" ToRole="DetalleProducto" />
+          <Property Name="NumeroOperacion" Type="Int64" Nullable="false" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="TipoProductoProducto">
           <End Type="KosakoDBModel.TipoProducto" Role="TipoProducto" Multiplicity="1" />
@@ -859,6 +877,7 @@
           <Property Name="ClienteId" Type="Int64" Nullable="false" />
           <Property Name="Estado" Type="KosakoDBModel.CtaCteEstado" Nullable="false" />
           <Property Name="PedidoId" Type="Int64" Nullable="false" />
+          <Property Name="NumeroOperacion" Type="Int64" Nullable="false" />
         </EntityType>
         <Association Name="ClienteCtaCte">
           <End Type="KosakoDBModel.Cliente" Role="Cliente" Multiplicity="1" />
@@ -1010,6 +1029,7 @@
           <Property Name="Adelanto" Type="Decimal" Nullable="false" />
           <Property Name="FechaRetirado" Type="DateTime" Nullable="true" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="NumeroOperacion" Type="Int64" Nullable="false" />
         </EntityType>
         <EnumType Name="EstadoArreglo" UnderlyingType="Int64">
           <Member Name="EnEspera" Value="0" />
@@ -1054,6 +1074,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Configuracion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UsarLogin" Type="Boolean" Nullable="false" />
+          <Property Name="UsarTicketera" Type="Boolean" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1108,6 +1136,7 @@
           <ScalarProperty Name="FechaApertura" ColumnName="FechaApertura" />
           <ScalarProperty Name="FechaCierre" ColumnName="FechaCierre" />
           <ScalarProperty Name="OpenClose" ColumnName="OpenClose" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1120,6 +1149,8 @@
           <ScalarProperty Name="CajaId" ColumnName="CajaId" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
           <ScalarProperty Name="TipoPago" ColumnName="TipoPago" />
+          <ScalarProperty Name="NumeroOperacion" ColumnName="NumeroOperacion" />
+          <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1212,6 +1243,7 @@
           <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
           <ScalarProperty Name="Estado" ColumnName="Estado" />
           <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
+          <ScalarProperty Name="NumeroOperacion" ColumnName="NumeroOperacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1299,6 +1331,7 @@
           <ScalarProperty Name="Adelanto" ColumnName="Adelanto" />
           <ScalarProperty Name="FechaRetirado" ColumnName="FechaRetirado" />
           <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="NumeroOperacion" ColumnName="NumeroOperacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1314,6 +1347,15 @@
           <ScalarProperty Name="Precio" ColumnName="Precio" />
           <ScalarProperty Name="Fecha" ColumnName="Fecha" />
           <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Configuraciones">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.Configuracion)">
+        <MappingFragment StoreEntitySet="Configuraciones">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UsarLogin" ColumnName="UsarLogin" />
+          <ScalarProperty Name="UsarTicketera" ColumnName="UsarTicketera" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

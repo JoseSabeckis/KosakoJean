@@ -27,6 +27,7 @@ namespace AccesoDatos
         public System.DateTime FechaApertura { get; set; }
         public string FechaCierre { get; set; }
         public OpenClose OpenClose { get; set; }
+        public bool EstaEliminado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleCaja> DetalleCaja { get; set; }

@@ -50,6 +50,7 @@ namespace Presentacion.Core.Pedido
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnRestar = new System.Windows.Forms.Button();
             this.btnCobro = new System.Windows.Forms.Button();
             this.lblCobrar = new System.Windows.Forms.Label();
             this.ckbNormal = new System.Windows.Forms.CheckBox();
@@ -68,7 +69,7 @@ namespace Presentacion.Core.Pedido
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnRestar = new System.Windows.Forms.Button();
+            this.lblNumeroOperacion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgGuardado)).BeginInit();
@@ -309,6 +310,7 @@ namespace Presentacion.Core.Pedido
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lblNumeroOperacion);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.lblPagado);
@@ -337,6 +339,19 @@ namespace Presentacion.Core.Pedido
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(277, 108);
             this.panel5.TabIndex = 26;
+            // 
+            // btnRestar
+            // 
+            this.btnRestar.BackColor = System.Drawing.Color.Red;
+            this.btnRestar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestar.Location = new System.Drawing.Point(120, 51);
+            this.btnRestar.Name = "btnRestar";
+            this.btnRestar.Size = new System.Drawing.Size(63, 45);
+            this.btnRestar.TabIndex = 19;
+            this.btnRestar.Text = "Restar";
+            this.btnRestar.UseVisualStyleBackColor = false;
+            this.btnRestar.Click += new System.EventHandler(this.btnRestar_Click);
             // 
             // btnCobro
             // 
@@ -559,18 +574,15 @@ namespace Presentacion.Core.Pedido
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnRestar
+            // lblNumeroOperacion
             // 
-            this.btnRestar.BackColor = System.Drawing.Color.Red;
-            this.btnRestar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestar.Location = new System.Drawing.Point(120, 51);
-            this.btnRestar.Name = "btnRestar";
-            this.btnRestar.Size = new System.Drawing.Size(63, 45);
-            this.btnRestar.TabIndex = 19;
-            this.btnRestar.Text = "Restar";
-            this.btnRestar.UseVisualStyleBackColor = false;
-            this.btnRestar.Click += new System.EventHandler(this.btnRestar_Click);
+            this.lblNumeroOperacion.AutoSize = true;
+            this.lblNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroOperacion.Location = new System.Drawing.Point(516, 89);
+            this.lblNumeroOperacion.Name = "lblNumeroOperacion";
+            this.lblNumeroOperacion.Size = new System.Drawing.Size(164, 19);
+            this.lblNumeroOperacion.TabIndex = 36;
+            this.lblNumeroOperacion.Text = "#Numero Operacion";
             // 
             // PedidoGuardado
             // 
@@ -642,5 +654,6 @@ namespace Presentacion.Core.Pedido
         private System.Windows.Forms.Label lblEliminado;
         private System.Windows.Forms.Button btnEliminarPedidoSeleccionado;
         private System.Windows.Forms.Button btnRestar;
+        private System.Windows.Forms.Label lblNumeroOperacion;
     }
 }

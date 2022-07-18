@@ -50,6 +50,7 @@ namespace Presentacion.Core.Arreglo
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lblNumeroOperacion = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.ckbNormal = new System.Windows.Forms.CheckBox();
             this.ckbTarjeta = new System.Windows.Forms.CheckBox();
@@ -59,13 +60,13 @@ namespace Presentacion.Core.Arreglo
             this.lblHorarioRetiro = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblPrendas = new System.Windows.Forms.Label();
             this.lblFechaDejado = new System.Windows.Forms.Label();
             this.lblFechaEntrega = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblPrendas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -306,6 +307,7 @@ namespace Presentacion.Core.Arreglo
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.lblNumeroOperacion);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.lblHorarioRetiro);
             this.panel4.Controls.Add(this.label6);
@@ -314,6 +316,17 @@ namespace Presentacion.Core.Arreglo
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(848, 97);
             this.panel4.TabIndex = 1;
+            // 
+            // lblNumeroOperacion
+            // 
+            this.lblNumeroOperacion.AutoSize = true;
+            this.lblNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroOperacion.Location = new System.Drawing.Point(26, 59);
+            this.lblNumeroOperacion.Name = "lblNumeroOperacion";
+            this.lblNumeroOperacion.Size = new System.Drawing.Size(164, 19);
+            this.lblNumeroOperacion.TabIndex = 35;
+            this.lblNumeroOperacion.Text = "#Numero Operacion";
+            this.lblNumeroOperacion.Click += new System.EventHandler(this.lblNumeroOperacion_Click);
             // 
             // panel6
             // 
@@ -406,7 +419,7 @@ namespace Presentacion.Core.Arreglo
             this.lblHorarioRetiro.AutoSize = true;
             this.lblHorarioRetiro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.lblHorarioRetiro.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHorarioRetiro.Location = new System.Drawing.Point(141, 30);
+            this.lblHorarioRetiro.Location = new System.Drawing.Point(142, 21);
             this.lblHorarioRetiro.Name = "lblHorarioRetiro";
             this.lblHorarioRetiro.Size = new System.Drawing.Size(36, 26);
             this.lblHorarioRetiro.TabIndex = 6;
@@ -417,7 +430,7 @@ namespace Presentacion.Core.Arreglo
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 30);
+            this.label6.Location = new System.Drawing.Point(26, 21);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 26);
             this.label6.TabIndex = 5;
@@ -438,6 +451,16 @@ namespace Presentacion.Core.Arreglo
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(848, 94);
             this.panel3.TabIndex = 0;
+            // 
+            // lblPrendas
+            // 
+            this.lblPrendas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPrendas.AutoSize = true;
+            this.lblPrendas.Location = new System.Drawing.Point(25, 53);
+            this.lblPrendas.Name = "lblPrendas";
+            this.lblPrendas.Size = new System.Drawing.Size(97, 25);
+            this.lblPrendas.TabIndex = 6;
+            this.lblPrendas.Text = "Prendas: ";
             // 
             // lblFechaDejado
             // 
@@ -502,16 +525,6 @@ namespace Presentacion.Core.Arreglo
             this.label2.Size = new System.Drawing.Size(91, 28);
             this.label2.TabIndex = 0;
             this.label2.Text = "Cliente:";
-            // 
-            // lblPrendas
-            // 
-            this.lblPrendas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPrendas.AutoSize = true;
-            this.lblPrendas.Location = new System.Drawing.Point(25, 53);
-            this.lblPrendas.Name = "lblPrendas";
-            this.lblPrendas.Size = new System.Drawing.Size(97, 25);
-            this.lblPrendas.TabIndex = 6;
-            this.lblPrendas.Text = "Prendas: ";
             // 
             // DatosArreglo
             // 
@@ -587,5 +600,6 @@ namespace Presentacion.Core.Arreglo
         private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label lblPrendas;
+        private System.Windows.Forms.Label lblNumeroOperacion;
     }
 }

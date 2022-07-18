@@ -19,7 +19,8 @@ namespace Servicios.Core.CtaCte
                     Debe = ctaCteDto.Debe,
                     Estado = ctaCteDto.Estado,
                     ClienteId = ctaCteDto.ClienteId,
-                    PedidoId = ctaCteDto.PedidoId
+                    PedidoId = ctaCteDto.PedidoId,
+                    NumeroOperacion = ctaCteDto.NumeroOperacion
                 };
 
                 contex.CtasCtes.Add(cuenta);
@@ -78,7 +79,8 @@ namespace Servicios.Core.CtaCte
                     Total = x.Total,
                     Fecha = x.Fecha,
                     Estado = x.Estado,
-                    PedidoId = x.PedidoId
+                    PedidoId = x.PedidoId,
+                    NumeroOperacion = x.NumeroOperacion
 
                 }).ToList();
             }
@@ -99,8 +101,8 @@ namespace Servicios.Core.CtaCte
                     Total = cuenta.Total,
                     Fecha = cuenta.Fecha,
                     Estado = cuenta.Estado,
-                    PedidoId = cuenta.PedidoId
-
+                    PedidoId = cuenta.PedidoId,
+                    NumeroOperacion = cuenta.NumeroOperacion
                 };
 
                 return cuentaNueva;
@@ -123,8 +125,8 @@ namespace Servicios.Core.CtaCte
                     Total = cuenta.Total,
                     Fecha = cuenta.Fecha,
                     Estado = cuenta.Estado,
-                    PedidoId = cuenta.PedidoId
-
+                    PedidoId = cuenta.PedidoId,
+                    NumeroOperacion = cuenta.NumeroOperacion
                 };
 
                 return cuentaNueva;

@@ -43,5 +43,6 @@ namespace AccesoDatos
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Arreglo> Arreglos { get; set; }
         public virtual DbSet<DetalleProducto> DetalleProductos { get; set; }
+        public virtual DbSet<Configuracion> Configuraciones { get; set; }
     }
 }

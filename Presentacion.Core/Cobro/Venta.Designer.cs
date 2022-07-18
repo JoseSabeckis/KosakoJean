@@ -67,6 +67,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.ckbTickets = new System.Windows.Forms.CheckBox();
+            this.ckbFactura = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbImpresoras = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.nudTotalVenta = new System.Windows.Forms.NumericUpDown();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -74,7 +79,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.ckbFactura = new System.Windows.Forms.CheckBox();
             this.btnNuevoTalle = new System.Windows.Forms.Button();
             this.nudTotal = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
@@ -82,10 +86,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.cmbImpresoras = new System.Windows.Forms.ComboBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.ckbTickets = new System.Windows.Forms.CheckBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.nudNumeroOperacion = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtNumeroOperacion = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -98,12 +102,13 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalVenta)).BeginInit();
             this.panel10.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).BeginInit();
-            this.panel11.SuspendLayout();
+            this.nudNumeroOperacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -206,6 +211,7 @@
             // nudPrecio
             // 
             this.nudPrecio.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.nudPrecio.DecimalPlaces = 2;
             this.nudPrecio.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPrecio.Increment = new decimal(new int[] {
             100,
@@ -598,6 +604,66 @@
             this.panel4.Size = new System.Drawing.Size(1325, 149);
             this.panel4.TabIndex = 0;
             // 
+            // panel11
+            // 
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel11.Controls.Add(this.ckbTickets);
+            this.panel11.Controls.Add(this.ckbFactura);
+            this.panel11.Controls.Add(this.label14);
+            this.panel11.Controls.Add(this.cmbImpresoras);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel11.Location = new System.Drawing.Point(315, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(200, 145);
+            this.panel11.TabIndex = 12;
+            // 
+            // ckbTickets
+            // 
+            this.ckbTickets.AutoSize = true;
+            this.ckbTickets.Location = new System.Drawing.Point(20, 94);
+            this.ckbTickets.Name = "ckbTickets";
+            this.ckbTickets.Size = new System.Drawing.Size(148, 26);
+            this.ckbTickets.TabIndex = 15;
+            this.ckbTickets.Text = "Mostrar Ticket";
+            this.ckbTickets.UseVisualStyleBackColor = true;
+            this.ckbTickets.CheckedChanged += new System.EventHandler(this.ckbTickets_CheckedChanged);
+            // 
+            // ckbFactura
+            // 
+            this.ckbFactura.AutoSize = true;
+            this.ckbFactura.Checked = true;
+            this.ckbFactura.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.ckbFactura.Location = new System.Drawing.Point(20, 62);
+            this.ckbFactura.Name = "ckbFactura";
+            this.ckbFactura.Size = new System.Drawing.Size(158, 26);
+            this.ckbFactura.TabIndex = 8;
+            this.ckbFactura.Text = "Mostrar Factura";
+            this.ckbFactura.UseVisualStyleBackColor = true;
+            this.ckbFactura.CheckedChanged += new System.EventHandler(this.ckbTicket_CheckedChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 5);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(103, 13);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Usar Para Ticket";
+            // 
+            // cmbImpresoras
+            // 
+            this.cmbImpresoras.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbImpresoras.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbImpresoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbImpresoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbImpresoras.FormattingEnabled = true;
+            this.cmbImpresoras.Location = new System.Drawing.Point(5, 21);
+            this.cmbImpresoras.Name = "cmbImpresoras";
+            this.cmbImpresoras.Size = new System.Drawing.Size(189, 24);
+            this.cmbImpresoras.TabIndex = 13;
+            this.cmbImpresoras.SelectedIndexChanged += new System.EventHandler(this.cmbImpresoras_SelectedIndexChanged);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -631,6 +697,7 @@
             // panel10
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.nudNumeroOperacion);
             this.panel10.Controls.Add(this.txtDescripcion);
             this.panel10.Controls.Add(this.label10);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
@@ -641,12 +708,15 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.MenuBar;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(114, 3);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(448, 135);
+            this.txtDescripcion.Size = new System.Drawing.Size(448, 90);
             this.txtDescripcion.TabIndex = 9;
             // 
             // label10
@@ -682,19 +752,6 @@
             this.panel5.Size = new System.Drawing.Size(236, 145);
             this.panel5.TabIndex = 6;
             // 
-            // ckbFactura
-            // 
-            this.ckbFactura.AutoSize = true;
-            this.ckbFactura.Checked = true;
-            this.ckbFactura.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbFactura.Location = new System.Drawing.Point(20, 62);
-            this.ckbFactura.Name = "ckbFactura";
-            this.ckbFactura.Size = new System.Drawing.Size(158, 26);
-            this.ckbFactura.TabIndex = 8;
-            this.ckbFactura.Text = "Mostrar Factura";
-            this.ckbFactura.UseVisualStyleBackColor = true;
-            this.ckbFactura.CheckedChanged += new System.EventHandler(this.ckbTicket_CheckedChanged);
-            // 
             // btnNuevoTalle
             // 
             this.btnNuevoTalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -709,6 +766,7 @@
             // 
             // nudTotal
             // 
+            this.nudTotal.DecimalPlaces = 2;
             this.nudTotal.Enabled = false;
             this.nudTotal.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTotal.Location = new System.Drawing.Point(91, 8);
@@ -780,52 +838,51 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
             // 
-            // label14
+            // label15
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(3, 5);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(103, 13);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Usar Para Ticket";
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(205, 13);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(170, 22);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "Numero Operacion:";
             // 
-            // cmbImpresoras
+            // nudNumeroOperacion
             // 
-            this.cmbImpresoras.BackColor = System.Drawing.SystemColors.Info;
-            this.cmbImpresoras.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbImpresoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbImpresoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbImpresoras.FormattingEnabled = true;
-            this.cmbImpresoras.Location = new System.Drawing.Point(5, 21);
-            this.cmbImpresoras.Name = "cmbImpresoras";
-            this.cmbImpresoras.Size = new System.Drawing.Size(189, 24);
-            this.cmbImpresoras.TabIndex = 13;
-            this.cmbImpresoras.SelectedIndexChanged += new System.EventHandler(this.cmbImpresoras_SelectedIndexChanged);
+            this.nudNumeroOperacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.nudNumeroOperacion.Controls.Add(this.txtNumeroOperacion);
+            this.nudNumeroOperacion.Controls.Add(this.label16);
+            this.nudNumeroOperacion.Controls.Add(this.label15);
+            this.nudNumeroOperacion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.nudNumeroOperacion.Enabled = false;
+            this.nudNumeroOperacion.Location = new System.Drawing.Point(0, 94);
+            this.nudNumeroOperacion.Name = "nudNumeroOperacion";
+            this.nudNumeroOperacion.Size = new System.Drawing.Size(566, 47);
+            this.nudNumeroOperacion.TabIndex = 11;
             // 
-            // panel11
+            // label16
             // 
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel11.Controls.Add(this.ckbTickets);
-            this.panel11.Controls.Add(this.ckbFactura);
-            this.panel11.Controls.Add(this.label14);
-            this.panel11.Controls.Add(this.cmbImpresoras);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel11.Location = new System.Drawing.Point(315, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(200, 145);
-            this.panel11.TabIndex = 12;
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(394, 13);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 26);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "#";
             // 
-            // ckbTickets
+            // txtNumeroOperacion
             // 
-            this.ckbTickets.AutoSize = true;
-            this.ckbTickets.Location = new System.Drawing.Point(20, 94);
-            this.ckbTickets.Name = "ckbTickets";
-            this.ckbTickets.Size = new System.Drawing.Size(148, 26);
-            this.ckbTickets.TabIndex = 15;
-            this.ckbTickets.Text = "Mostrar Ticket";
-            this.ckbTickets.UseVisualStyleBackColor = true;
-            this.ckbTickets.CheckedChanged += new System.EventHandler(this.ckbTickets_CheckedChanged);
+            this.txtNumeroOperacion.Enabled = false;
+            this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroOperacion.Location = new System.Drawing.Point(424, 6);
+            this.txtNumeroOperacion.Name = "txtNumeroOperacion";
+            this.txtNumeroOperacion.Size = new System.Drawing.Size(135, 33);
+            this.txtNumeroOperacion.TabIndex = 13;
             // 
             // Venta
             // 
@@ -863,6 +920,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalVenta)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
@@ -870,8 +929,8 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).EndInit();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.nudNumeroOperacion.ResumeLayout(false);
+            this.nudNumeroOperacion.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -935,5 +994,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cmbImpresoras;
         private System.Windows.Forms.CheckBox ckbTickets;
+        private System.Windows.Forms.Panel nudNumeroOperacion;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtNumeroOperacion;
     }
 }

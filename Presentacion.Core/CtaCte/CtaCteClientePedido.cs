@@ -87,7 +87,7 @@ namespace Presentacion.Core.CtaCte
             _Total = total;
 
             _Cliente = cliente;
-
+            txtNumeroOperacion.Text = detallCajaServicio.TraerNuevoNumeroOperacion();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -216,6 +216,9 @@ namespace Presentacion.Core.CtaCte
 
                 }
 
+
+                detallCajaServicio.TraerNuevoNumeroOperacion();
+
                 var cuenta = new CtaCteDto
                 {
                     ClienteId = _Cliente.Id,
@@ -224,18 +227,19 @@ namespace Presentacion.Core.CtaCte
                     Total = _Total,
                     Debe = _Total - nudAdelanto.Value,
                     Descripcion = $"Prenda Guardada",
-                    PedidoId = pedidoId
+                    PedidoId = pedidoId,
+                    NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
                 };
 
                 ctaCteServicio.Agregar(cuenta);
-
 
                 var detalle = new DetalleCajaDto
                 {
                     Descripcion = txtApellido.Text + " " + txtNombre.Text,
                     Fecha = DateTime.Now.ToString(),
                     Total = nudAdelanto.Value,
-                    CajaId = detallCajaServicio.BuscarCajaAbierta()
+                    CajaId = detallCajaServicio.BuscarCajaAbierta(),
+                    NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
                 };
 
                 TipoPago(detalle);

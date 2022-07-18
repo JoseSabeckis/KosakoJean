@@ -113,6 +113,12 @@ namespace Presentacion.Core.Pedido
             imgLogo.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Info);
         }
 
+        public void PonerNumOperacion()
+        {
+            var cuenta = ctaCteServicio.ObtenerPorIdDePedidosId(PedidoId);
+
+            lblNumeroOperacion.Text = "#" + cuenta.NumeroOperacion.ToString("00000");
+        }
         public void CargarGrilla()
         {
             dgvGrilla.DataSource = list.ToList();
@@ -252,6 +258,7 @@ namespace Presentacion.Core.Pedido
             lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dddd dd/MM/yyyy")}";
             lblFecha.Text = $"{pedido.FechaEntrega.ToString("dddd dd/MM/yyyy")}";
 
+            PonerNumOperacion();
             lblHorario.Text = $"Se Retira a la: {pedido.Horario}";
 
             txtNotas.Text = $"{pedido.Descripcion}";
@@ -356,7 +363,8 @@ namespace Presentacion.Core.Pedido
                         Descripcion = $"{lblPersona.Text} - Pedido Terminado",
                         Fecha = DateTime.Now.ToString(),
                         Total = _Debe,
-                        CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                        CajaId = detalleCajaServicio.BuscarCajaAbierta(),
+                        NumeroOperacion = cuentaId.NumeroOperacion
                     };
 
                     TipoPago(detalle);
@@ -527,7 +535,8 @@ namespace Presentacion.Core.Pedido
                         Descripcion = $"{lblPersona.Text} - Adelanto de Pedido",
                         Fecha = DateTime.Now.ToString(),
                         Total = nudCobro.Value,
-                        CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                        CajaId = detalleCajaServicio.BuscarCajaAbierta(),
+                        NumeroOperacion = cuentaId.NumeroOperacion
                     };
 
                     TipoPago(detalle);

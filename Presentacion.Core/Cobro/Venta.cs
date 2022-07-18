@@ -91,6 +91,8 @@ namespace Presentacion.Core.Cobro
             MostrarImpresoras();
 
             cmbImpresoras.SelectedIndex = 0;
+
+            TraerNumeroOperacion();
         }
 
         public void Inicializador()
@@ -116,6 +118,11 @@ namespace Presentacion.Core.Cobro
             cmb.DataSource = datos;
             cmb.DisplayMember = propiedadMostrar;
             cmb.ValueMember = propiedadDevolver;
+        }
+
+        public void TraerNumeroOperacion()
+        {
+            txtNumeroOperacion.Text = detalleCajaServicio.TraerNuevoNumeroOperacion();
         }
 
         public void ConsumidorFinall()
@@ -396,6 +403,8 @@ namespace Presentacion.Core.Cobro
                 return;
             }
 
+            TraerNumeroOperacion();
+
             if (dgvGrilla.RowCount > 0)
             {
                 if (ckbTarjeta.Checked == false && ckbPedido.Checked == false && ckbNormal.Checked == false && ckbCtaCte.Checked == false && ckbGuardar.Checked == false)
@@ -453,6 +462,7 @@ namespace Presentacion.Core.Cobro
                             Total = _total,
                             Descripcion = $"Venta {descripcion}",
                             CajaId = detalleCajaServicio.BuscarCajaAbierta(),
+                            NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
                         };
 
                         TipoPago(detalle);
@@ -590,6 +600,7 @@ namespace Presentacion.Core.Cobro
             }
 
             //btnSeleccionProducto.Select();
+            TraerNumeroOperacion();
             txtCodigoBarra.Focus();
         }
 

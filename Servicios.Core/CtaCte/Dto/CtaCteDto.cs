@@ -21,6 +21,8 @@ namespace Servicios.Core.CtaCte.Dto
 
         public long PedidoId { get; set; }
 
+        public long NumeroOperacion { get; set; }
+
 
     }
 }

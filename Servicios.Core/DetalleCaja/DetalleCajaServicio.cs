@@ -17,7 +17,8 @@ namespace Servicios.Core.DetalleCaja
                     Fecha = detalleCajaDto.Fecha,
                     Total = detalleCajaDto.Total,
                     CajaId = detalleCajaDto.CajaId,
-                    TipoPago = detalleCajaDto.TipoPago
+                    TipoPago = detalleCajaDto.TipoPago,
+                    NumeroOperacion = detalleCajaDto.NumeroOperacion
                 };
 
                 context.DetalleCajas.Add(detalleCaja);
@@ -42,7 +43,8 @@ namespace Servicios.Core.DetalleCaja
                         Descripcion = x.Descripcion,
                         Total = x.Total,
                         Fecha = x.Fecha,
-                        TipoPago = x.TipoPago
+                        TipoPago = x.TipoPago,
+                        EstaEliminado = x.EstaEliminado
 
                     }).ToList();
 
@@ -64,7 +66,8 @@ namespace Servicios.Core.DetalleCaja
                     Descripcion = detalle.Descripcion,
                     Total = detalle.Total,
                     Fecha = detalle.Fecha,
-                    TipoPago = detalle.TipoPago
+                    TipoPago = detalle.TipoPago,
+                    EstaEliminado = detalle.EstaEliminado
 
                 };
 
@@ -84,7 +87,8 @@ namespace Servicios.Core.DetalleCaja
 
                 foreach (var item in List)
                 {
-                    context.DetalleCajas.Remove(item);
+                    //context.DetalleCajas.Remove(item);
+                    item.EstaEliminado = true;
                 }
 
                 context.SaveChanges();
@@ -110,7 +114,8 @@ namespace Servicios.Core.DetalleCaja
 
                 var dinero = detalle.Total;
 
-                context.DetalleCajas.Remove(detalle);
+                //context.DetalleCajas.Remove(detalle);
+                detalle.EstaEliminado = true;
 
                 context.SaveChanges();
 
@@ -133,7 +138,8 @@ namespace Servicios.Core.DetalleCaja
                         Fecha = x.Fecha,
                         Total = x.Total,
                         Id = x.Id,
-                        TipoPago = x.TipoPago
+                        TipoPago = x.TipoPago,
+                        EstaEliminado = x.EstaEliminado
 
                     }).ToList();
 
@@ -141,6 +147,22 @@ namespace Servicios.Core.DetalleCaja
 
             }
 
+        }
+
+        public string TraerNuevoNumeroOperacion()
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                if (context.DetalleCajas.Count() == 0)
+                {
+                    return "00001";
+                }
+
+                var bandera = context.DetalleCajas.Max(x => x.NumeroOperacion);
+
+                return $"{bandera + 1:00000}";
+
+            }
         }
 
     }

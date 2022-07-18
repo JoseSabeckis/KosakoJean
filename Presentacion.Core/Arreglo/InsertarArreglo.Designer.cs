@@ -31,6 +31,9 @@ namespace Presentacion.Core.Arreglo
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsertarArreglo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNumeroOperacion = new System.Windows.Forms.Label();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             this.nudTotal = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -57,21 +60,20 @@ namespace Presentacion.Core.Arreglo
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdelanto)).BeginInit();
             this.panel6.SuspendLayout();
             this.imgArreglo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.lblNumeroOperacion);
             this.panel1.Controls.Add(this.nudCantidad);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.nudTotal);
@@ -92,6 +94,44 @@ namespace Presentacion.Core.Arreglo
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(657, 684);
             this.panel1.TabIndex = 0;
+            // 
+            // lblNumeroOperacion
+            // 
+            this.lblNumeroOperacion.AutoSize = true;
+            this.lblNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroOperacion.Location = new System.Drawing.Point(408, 271);
+            this.lblNumeroOperacion.Name = "lblNumeroOperacion";
+            this.lblNumeroOperacion.Size = new System.Drawing.Size(146, 19);
+            this.lblNumeroOperacion.TabIndex = 34;
+            this.lblNumeroOperacion.Text = "#Numero Operacion";
+            // 
+            // nudCantidad
+            // 
+            this.nudCantidad.BackColor = System.Drawing.SystemColors.Info;
+            this.nudCantidad.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudCantidad.Location = new System.Drawing.Point(511, 401);
+            this.nudCantidad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(43, 27);
+            this.nudCantidad.TabIndex = 33;
+            this.nudCantidad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(370, 401);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(135, 25);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Cant Prendas";
             // 
             // nudTotal
             // 
@@ -383,34 +423,6 @@ namespace Presentacion.Core.Arreglo
             this.label1.TabIndex = 0;
             this.label1.Text = "Pedido de Arreglo";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(370, 401);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(135, 25);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Cant Prendas";
-            // 
-            // nudCantidad
-            // 
-            this.nudCantidad.BackColor = System.Drawing.SystemColors.Info;
-            this.nudCantidad.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudCantidad.Location = new System.Drawing.Point(511, 401);
-            this.nudCantidad.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(43, 27);
-            this.nudCantidad.TabIndex = 33;
-            this.nudCantidad.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // InsertarArreglo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -432,6 +444,7 @@ namespace Presentacion.Core.Arreglo
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -440,7 +453,6 @@ namespace Presentacion.Core.Arreglo
             this.panel6.PerformLayout();
             this.imgArreglo.ResumeLayout(false);
             this.imgArreglo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -476,5 +488,6 @@ namespace Presentacion.Core.Arreglo
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblNumeroOperacion;
     }
 }

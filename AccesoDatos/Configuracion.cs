@@ -12,18 +12,10 @@ namespace AccesoDatos
     using System;
     using System.Collections.Generic;
     
-    public partial class CtaCte
+    public partial class Configuracion
     {
         public long Id { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public decimal Total { get; set; }
-        public decimal Debe { get; set; }
-        public string Descripcion { get; set; }
-        public long ClienteId { get; set; }
-        public CtaCteEstado Estado { get; set; }
-        public long PedidoId { get; set; }
-        public long NumeroOperacion { get; set; }
-    
-        public virtual Cliente Cliente { get; set; }
+        public bool UsarLogin { get; set; }
+        public bool UsarTicketera { get; set; }
     }
 }

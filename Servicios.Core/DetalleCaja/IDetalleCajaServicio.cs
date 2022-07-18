@@ -18,5 +18,7 @@ namespace Servicios.Core.DetalleCaja
         DetalleCajaDto ObtenerPorId(long detalleId);
 
         long BuscarCajaAbierta();
+
+        string TraerNuevoNumeroOperacion();
     }
 }

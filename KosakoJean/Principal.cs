@@ -202,6 +202,8 @@ namespace KosakoJean
 
         public void VerificarPrimeraVez()
         {
+            //
+
             if (tipoProductoServicio.ObtenerPorId(1) == null)
             {
                 var tipo = new TipoProductoDto

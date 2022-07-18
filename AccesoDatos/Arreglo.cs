@@ -28,6 +28,7 @@ namespace AccesoDatos
         public decimal Adelanto { get; set; }
         public Nullable<System.DateTime> FechaRetirado { get; set; }
         public int Cantidad { get; set; }
+        public long NumeroOperacion { get; set; }
     
         public virtual Cliente Cliente { get; set; }
     }

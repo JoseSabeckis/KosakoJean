@@ -55,6 +55,8 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.imgPedido = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtNumeroOperacion = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -68,6 +70,8 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtNumeroOperacion);
+            this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.ckbSinNombre);
             this.panel1.Controls.Add(this.cmbHorario);
             this.panel1.Controls.Add(this.label6);
@@ -359,6 +363,27 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Cargue mas Informacion";
             // 
+            // txtNumeroOperacion
+            // 
+            this.txtNumeroOperacion.Enabled = false;
+            this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroOperacion.Location = new System.Drawing.Point(430, 378);
+            this.txtNumeroOperacion.Name = "txtNumeroOperacion";
+            this.txtNumeroOperacion.Size = new System.Drawing.Size(135, 33);
+            this.txtNumeroOperacion.TabIndex = 25;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(403, 385);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 26);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "#";
+            // 
             // Pedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -418,5 +443,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox ckbCtaCte;
         private System.Windows.Forms.CheckBox ckbSinNombre;
+        private System.Windows.Forms.TextBox txtNumeroOperacion;
+        private System.Windows.Forms.Label label16;
     }
 }

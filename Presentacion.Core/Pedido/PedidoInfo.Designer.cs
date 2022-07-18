@@ -49,6 +49,7 @@
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnRestar = new System.Windows.Forms.Button();
             this.btnCobro = new System.Windows.Forms.Button();
             this.lblCobrar = new System.Windows.Forms.Label();
             this.ckbNormal = new System.Windows.Forms.CheckBox();
@@ -67,7 +68,7 @@
             this.btnTerminar = new System.Windows.Forms.Button();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnRestar = new System.Windows.Forms.Button();
+            this.lblNumeroOperacion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -308,6 +309,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.lblNumeroOperacion);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.lblPagado);
@@ -336,6 +338,19 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(277, 113);
             this.panel5.TabIndex = 19;
+            // 
+            // btnRestar
+            // 
+            this.btnRestar.BackColor = System.Drawing.Color.Red;
+            this.btnRestar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestar.Location = new System.Drawing.Point(117, 51);
+            this.btnRestar.Name = "btnRestar";
+            this.btnRestar.Size = new System.Drawing.Size(63, 45);
+            this.btnRestar.TabIndex = 18;
+            this.btnRestar.Text = "Restar";
+            this.btnRestar.UseVisualStyleBackColor = false;
+            this.btnRestar.Click += new System.EventHandler(this.btnRestar_Click);
             // 
             // btnCobro
             // 
@@ -492,7 +507,7 @@
             this.lblPagado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.lblPagado.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPagado.ForeColor = System.Drawing.Color.Red;
-            this.lblPagado.Location = new System.Drawing.Point(558, 68);
+            this.lblPagado.Location = new System.Drawing.Point(558, 60);
             this.lblPagado.Name = "lblPagado";
             this.lblPagado.Size = new System.Drawing.Size(166, 26);
             this.lblPagado.TabIndex = 12;
@@ -560,18 +575,15 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnRestar
+            // lblNumeroOperacion
             // 
-            this.btnRestar.BackColor = System.Drawing.Color.Red;
-            this.btnRestar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRestar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestar.Location = new System.Drawing.Point(117, 51);
-            this.btnRestar.Name = "btnRestar";
-            this.btnRestar.Size = new System.Drawing.Size(63, 45);
-            this.btnRestar.TabIndex = 18;
-            this.btnRestar.Text = "Restar";
-            this.btnRestar.UseVisualStyleBackColor = false;
-            this.btnRestar.Click += new System.EventHandler(this.btnRestar_Click);
+            this.lblNumeroOperacion.AutoSize = true;
+            this.lblNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroOperacion.Location = new System.Drawing.Point(638, 89);
+            this.lblNumeroOperacion.Name = "lblNumeroOperacion";
+            this.lblNumeroOperacion.Size = new System.Drawing.Size(164, 19);
+            this.lblNumeroOperacion.TabIndex = 36;
+            this.lblNumeroOperacion.Text = "#Numero Operacion";
             // 
             // PedidoInfo
             // 
@@ -643,5 +655,6 @@
         private System.Windows.Forms.Label lblEliminado;
         private System.Windows.Forms.Button btnEliminarPedidoSeleccionado;
         private System.Windows.Forms.Button btnRestar;
+        private System.Windows.Forms.Label lblNumeroOperacion;
     }
 }

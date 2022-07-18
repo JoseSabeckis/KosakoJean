@@ -6,6 +6,8 @@ namespace Servicios.Core.DetalleCaja.Dto
     {
         public long Id { get; set; }
 
+        public long NumeroOperacion { get; set; }
+
         public string Descripcion { get; set; }
 
         public decimal Total { get; set; }
@@ -15,5 +17,7 @@ namespace Servicios.Core.DetalleCaja.Dto
         public TipoPago TipoPago { get; set; }
 
         public long CajaId { get; set; }
+
+        public bool EstaEliminado { get; set; }
     }
 }

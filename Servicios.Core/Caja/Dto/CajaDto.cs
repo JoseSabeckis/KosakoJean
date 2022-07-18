@@ -19,5 +19,7 @@ namespace Servicios.Core.Caja.Dto
 
         public OpenClose OpenClose { get; set; }
 
+        public bool EstaEliminado { get; set; }
+
     }
 }

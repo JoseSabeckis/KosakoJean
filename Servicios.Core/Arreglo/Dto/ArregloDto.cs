@@ -42,5 +42,7 @@ namespace Servicios.Core.Arreglo.Dto
         public bool EstaEliminado { get; set; }
 
         public long ClienteId { get; set; }
+
+        public long NumeroOperacion { get; set; }
     }
 }

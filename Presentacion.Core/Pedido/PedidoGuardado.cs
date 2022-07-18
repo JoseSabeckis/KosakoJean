@@ -114,6 +114,13 @@ namespace Presentacion.Core.Pedido
             CargarImageEnGeneral();
         }
 
+        public void PonerNumOperacion()
+        {
+            var cuenta = ctaCteServicio.ObtenerPorIdDePedidosId(PedidoId);
+
+            lblNumeroOperacion.Text = "#" + cuenta.NumeroOperacion.ToString("00000");
+        }
+
         private void CargarImageEnGeneral()
         {
             imgGuardado.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Pedido_Guardado);
@@ -217,6 +224,7 @@ namespace Presentacion.Core.Pedido
             lblFechaInicio.Text = $"{pedido.FechaPedido.ToString("dddd dd/MM/yyyy")}";
             lblFecha.Text = $"{pedido.FechaEntrega.ToString("dddd dd/MM/yyyy")}";
 
+            PonerNumOperacion();
             lblHorario.Text = $"{pedido.Horario}";
 
             txtNotas.Text = $"{pedido.Descripcion}";
@@ -397,13 +405,17 @@ namespace Presentacion.Core.Pedido
 
                     var cuentaId = new CtaCteDto();
 
+                    cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
+
+                    ctaCteServicio.Pagar(_Debe, pedido.ClienteId, cuentaId.Id);
+                    /*
                     if (pedido.ClienteId != 1)
                     {
                         cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
 
                         ctaCteServicio.Pagar(_Debe, pedido.ClienteId, cuentaId.Id);
                     }
-
+                    */
                     //Fin Cta Cte
 
                     btnTerminar.Visible = false;
@@ -415,7 +427,8 @@ namespace Presentacion.Core.Pedido
                         Descripcion = $"{lblPersona.Text} - Pedido Terminado",
                         Fecha = DateTime.Now.ToString(),
                         Total = _Debe,
-                        CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                        CajaId = detalleCajaServicio.BuscarCajaAbierta(),
+                        NumeroOperacion = cuentaId.NumeroOperacion
                     };
 
                     TipoPago(detalle);
@@ -497,7 +510,8 @@ namespace Presentacion.Core.Pedido
                         Descripcion = $"{lblPersona.Text} - Adelanto de Pedido",
                         Fecha = DateTime.Now.ToString(),
                         Total = nudCobro.Value,
-                        CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                        CajaId = detalleCajaServicio.BuscarCajaAbierta(),
+                        NumeroOperacion = cuentaId.NumeroOperacion
                     };
 
                     TipoPago(detalle);

@@ -125,6 +125,7 @@
             // nudPrecio
             // 
             this.nudPrecio.BackColor = System.Drawing.SystemColors.Info;
+            this.nudPrecio.DecimalPlaces = 2;
             this.nudPrecio.Increment = new decimal(new int[] {
             100,
             0,

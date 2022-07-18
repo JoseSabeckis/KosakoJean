@@ -132,7 +132,7 @@ namespace Servicios.Core.Caja
         {
             using (var context = new KosakoDBEntities())
             {
-                return context.Cajas.AsNoTracking().Where(x => x.OpenClose == OpenClose.Cerrado)
+                return context.Cajas.AsNoTracking().Where(x => x.OpenClose == OpenClose.Cerrado && !x.EstaEliminado)
                     .Select(x => new CajaDto
                     {
                         TotalCaja = x.TotalCaja,
@@ -142,6 +142,7 @@ namespace Servicios.Core.Caja
                         MontoCierre = x.MontoCierre,
                         Id = x.Id,
                         OpenClose = x.OpenClose,
+                        EstaEliminado = x.EstaEliminado
 
                     }).ToList();
             }
@@ -162,6 +163,7 @@ namespace Servicios.Core.Caja
                     TotalCaja = caja.TotalCaja,
                     Id = caja.Id,
                     OpenClose = caja.OpenClose,
+                    EstaEliminado = caja.EstaEliminado
 
                 };
 
@@ -176,7 +178,7 @@ namespace Servicios.Core.Caja
             {
                 var caja = context.Cajas.FirstOrDefault(x => x.Id == id);
 
-                context.Cajas.Remove(caja);
+                caja.EstaEliminado = true;
 
                 context.SaveChanges();
 
@@ -187,7 +189,7 @@ namespace Servicios.Core.Caja
         {
             using (var context = new KosakoDBEntities())
             {
-                var caja = context.Cajas.Where(x => x.FechaApertura >= desde);
+                var caja = context.Cajas.Where(x => x.FechaApertura >= desde && !x.EstaEliminado);
 
                 return caja.Where(x => x.FechaApertura <= hasta)
                     .Select(x => new CajaDto
@@ -199,6 +201,7 @@ namespace Servicios.Core.Caja
                         MontoCierre = x.MontoCierre,
                         Id = x.Id,
                         OpenClose = x.OpenClose,
+                        EstaEliminado = x.EstaEliminado
 
                     }).ToList();
             }
@@ -210,7 +213,7 @@ namespace Servicios.Core.Caja
             {
                 var fecha = DateTime.Now.AddDays(-30);
 
-                return context.Cajas.Where(x => x.FechaApertura >= fecha)
+                return context.Cajas.Where(x => x.FechaApertura >= fecha && !x.EstaEliminado)
                     .Select(x => new CajaDto
                     {
                         TotalCaja = x.TotalCaja,
@@ -220,6 +223,7 @@ namespace Servicios.Core.Caja
                         MontoCierre = x.MontoCierre,
                         Id = x.Id,
                         OpenClose = x.OpenClose,
+                        EstaEliminado = x.EstaEliminado
 
                     }).ToList();
             }
