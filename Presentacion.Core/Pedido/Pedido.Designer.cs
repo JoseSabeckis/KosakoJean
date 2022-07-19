@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pedido));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNumeroOperacion = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.ckbSinNombre = new System.Windows.Forms.CheckBox();
             this.cmbHorario = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,8 +57,6 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.imgPedido = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNumeroOperacion = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -90,6 +90,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(656, 593);
             this.panel1.TabIndex = 0;
+            // 
+            // txtNumeroOperacion
+            // 
+            this.txtNumeroOperacion.Enabled = false;
+            this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroOperacion.Location = new System.Drawing.Point(430, 378);
+            this.txtNumeroOperacion.Name = "txtNumeroOperacion";
+            this.txtNumeroOperacion.Size = new System.Drawing.Size(135, 33);
+            this.txtNumeroOperacion.TabIndex = 25;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(403, 385);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 26);
+            this.label16.TabIndex = 24;
+            this.label16.Text = "#";
             // 
             // ckbSinNombre
             // 
@@ -269,6 +290,8 @@
             // nudAdelanto
             // 
             this.nudAdelanto.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.nudAdelanto.DecimalPlaces = 2;
+            this.nudAdelanto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudAdelanto.Increment = new decimal(new int[] {
             100,
             0,
@@ -281,7 +304,7 @@
             0,
             0});
             this.nudAdelanto.Name = "nudAdelanto";
-            this.nudAdelanto.Size = new System.Drawing.Size(139, 29);
+            this.nudAdelanto.Size = new System.Drawing.Size(139, 31);
             this.nudAdelanto.TabIndex = 8;
             this.nudAdelanto.ValueChanged += new System.EventHandler(this.nudAdelanto_ValueChanged);
             // 
@@ -362,27 +385,6 @@
             this.label1.Size = new System.Drawing.Size(215, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "Cargue mas Informacion";
-            // 
-            // txtNumeroOperacion
-            // 
-            this.txtNumeroOperacion.Enabled = false;
-            this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroOperacion.Location = new System.Drawing.Point(430, 378);
-            this.txtNumeroOperacion.Name = "txtNumeroOperacion";
-            this.txtNumeroOperacion.Size = new System.Drawing.Size(135, 33);
-            this.txtNumeroOperacion.TabIndex = 25;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(403, 385);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(24, 26);
-            this.label16.TabIndex = 24;
-            this.label16.Text = "#";
             // 
             // Pedido
             // 

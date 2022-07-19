@@ -237,6 +237,7 @@ namespace Presentacion.Core.CtaCte
             // nudCobro
             // 
             this.nudCobro.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.nudCobro.DecimalPlaces = 2;
             this.nudCobro.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudCobro.Increment = new decimal(new int[] {
             100,

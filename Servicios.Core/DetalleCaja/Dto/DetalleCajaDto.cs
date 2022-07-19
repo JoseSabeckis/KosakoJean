@@ -12,6 +12,8 @@ namespace Servicios.Core.DetalleCaja.Dto
 
         public decimal Total { get; set; }
 
+        public string TotalString => Total.ToString("00.00");
+
         public string Fecha { get; set; }
 
         public TipoPago TipoPago { get; set; }

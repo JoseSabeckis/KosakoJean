@@ -24,6 +24,8 @@
 
         public decimal Precio { get; set; }
 
+        public string PrecioString => Precio.ToString("00.00");
+
         public bool Creacion { get; set; }
 
         public byte[] Foto { get; set; }

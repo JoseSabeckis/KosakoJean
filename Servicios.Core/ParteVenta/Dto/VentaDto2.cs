@@ -27,6 +27,8 @@ namespace Servicios.Core.ParteVenta.Dto
 
         public decimal Precio { get; set; }
 
+        public string PrecioString => Precio.ToString("00.00");
+
         //para imprimir
         public long DetalleCajaId { get; set; }
     }

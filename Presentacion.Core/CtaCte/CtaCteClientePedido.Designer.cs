@@ -32,6 +32,8 @@ namespace Presentacion.Core.CtaCte
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CtaCteClientePedido));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.txtNumeroOperacion = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbHorario = new System.Windows.Forms.ComboBox();
@@ -49,8 +51,6 @@ namespace Presentacion.Core.CtaCte
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtNumeroOperacion = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -90,6 +90,27 @@ namespace Presentacion.Core.CtaCte
             this.panel6.Size = new System.Drawing.Size(453, 330);
             this.panel6.TabIndex = 0;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // txtNumeroOperacion
+            // 
+            this.txtNumeroOperacion.Enabled = false;
+            this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroOperacion.Location = new System.Drawing.Point(277, 196);
+            this.txtNumeroOperacion.Name = "txtNumeroOperacion";
+            this.txtNumeroOperacion.Size = new System.Drawing.Size(135, 33);
+            this.txtNumeroOperacion.TabIndex = 27;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(250, 203);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 26);
+            this.label16.TabIndex = 26;
+            this.label16.Text = "#";
             // 
             // dtpFechaEntrega
             // 
@@ -174,19 +195,21 @@ namespace Presentacion.Core.CtaCte
             // nudAdelanto
             // 
             this.nudAdelanto.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.nudAdelanto.DecimalPlaces = 2;
+            this.nudAdelanto.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudAdelanto.Increment = new decimal(new int[] {
             100,
             0,
             0,
             0});
-            this.nudAdelanto.Location = new System.Drawing.Point(293, 149);
+            this.nudAdelanto.Location = new System.Drawing.Point(277, 149);
             this.nudAdelanto.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
             this.nudAdelanto.Name = "nudAdelanto";
-            this.nudAdelanto.Size = new System.Drawing.Size(119, 33);
+            this.nudAdelanto.Size = new System.Drawing.Size(135, 33);
             this.nudAdelanto.TabIndex = 4;
             // 
             // label2
@@ -285,27 +308,6 @@ namespace Presentacion.Core.CtaCte
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // txtNumeroOperacion
-            // 
-            this.txtNumeroOperacion.Enabled = false;
-            this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroOperacion.Location = new System.Drawing.Point(277, 196);
-            this.txtNumeroOperacion.Name = "txtNumeroOperacion";
-            this.txtNumeroOperacion.Size = new System.Drawing.Size(135, 33);
-            this.txtNumeroOperacion.TabIndex = 27;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(250, 203);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(24, 26);
-            this.label16.TabIndex = 26;
-            this.label16.Text = "#";
             // 
             // CtaCteClientePedido
             // 

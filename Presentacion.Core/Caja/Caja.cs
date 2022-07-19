@@ -77,17 +77,17 @@ namespace Presentacion.Core.Caja
                 grilla.Columns[i].Visible = false;
             }
 
-            grilla.Columns["TotalCaja"].Visible = true;
-            grilla.Columns["TotalCaja"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["TotalCaja"].HeaderText = @"Total Caja";
-            grilla.Columns["TotalCaja"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["TotalCaja"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["TotalCajaString"].Visible = true;
+            grilla.Columns["TotalCajaString"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["TotalCajaString"].HeaderText = @"Total Caja";
+            grilla.Columns["TotalCajaString"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["TotalCajaString"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["MontoApertura"].Visible = true;
-            grilla.Columns["MontoApertura"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["MontoApertura"].HeaderText = @"Monto Apertura";
-            grilla.Columns["MontoApertura"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["MontoApertura"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["MontoAperturaString"].Visible = true;
+            grilla.Columns["MontoAperturaString"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["MontoAperturaString"].HeaderText = @"Monto Apertura";
+            grilla.Columns["MontoAperturaString"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["MontoAperturaString"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             /*
             grilla.Columns["MontoCierre"].Visible = true;
             grilla.Columns["MontoCierre"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

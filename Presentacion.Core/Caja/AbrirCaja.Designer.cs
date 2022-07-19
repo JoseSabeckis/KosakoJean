@@ -78,6 +78,7 @@
             // 
             // nudDinero
             // 
+            this.nudDinero.DecimalPlaces = 2;
             this.nudDinero.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudDinero.Increment = new decimal(new int[] {
             100,

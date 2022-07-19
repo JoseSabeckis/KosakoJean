@@ -48,6 +48,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblNumeroOperacion = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnRestar = new System.Windows.Forms.Button();
             this.btnCobro = new System.Windows.Forms.Button();
@@ -68,7 +69,6 @@
             this.btnTerminar = new System.Windows.Forms.Button();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.lblNumeroOperacion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.panel2.SuspendLayout();
@@ -324,6 +324,16 @@
             this.panel3.Size = new System.Drawing.Size(1302, 117);
             this.panel3.TabIndex = 1;
             // 
+            // lblNumeroOperacion
+            // 
+            this.lblNumeroOperacion.AutoSize = true;
+            this.lblNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroOperacion.Location = new System.Drawing.Point(638, 89);
+            this.lblNumeroOperacion.Name = "lblNumeroOperacion";
+            this.lblNumeroOperacion.Size = new System.Drawing.Size(164, 19);
+            this.lblNumeroOperacion.TabIndex = 36;
+            this.lblNumeroOperacion.Text = "#Numero Operacion";
+            // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -404,6 +414,7 @@
             // nudCobro
             // 
             this.nudCobro.BackColor = System.Drawing.SystemColors.Info;
+            this.nudCobro.DecimalPlaces = 2;
             this.nudCobro.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudCobro.Increment = new decimal(new int[] {
             100,
@@ -574,16 +585,6 @@
             this.btnGuardar.Text = "Guardar Extras";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // lblNumeroOperacion
-            // 
-            this.lblNumeroOperacion.AutoSize = true;
-            this.lblNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroOperacion.Location = new System.Drawing.Point(638, 89);
-            this.lblNumeroOperacion.Name = "lblNumeroOperacion";
-            this.lblNumeroOperacion.Size = new System.Drawing.Size(164, 19);
-            this.lblNumeroOperacion.TabIndex = 36;
-            this.lblNumeroOperacion.Text = "#Numero Operacion";
             // 
             // PedidoInfo
             // 

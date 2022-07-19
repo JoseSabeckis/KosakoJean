@@ -75,6 +75,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.nudTotalVenta = new System.Windows.Forms.NumericUpDown();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.nudNumeroOperacion = new System.Windows.Forms.Panel();
+            this.txtNumeroOperacion = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnCalcular = new System.Windows.Forms.Button();
@@ -86,10 +90,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.nudNumeroOperacion = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtNumeroOperacion = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -105,10 +105,10 @@
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalVenta)).BeginInit();
             this.panel10.SuspendLayout();
+            this.nudNumeroOperacion.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).BeginInit();
-            this.nudNumeroOperacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -677,6 +677,7 @@
             // nudTotalVenta
             // 
             this.nudTotalVenta.BackColor = System.Drawing.SystemColors.Info;
+            this.nudTotalVenta.DecimalPlaces = 2;
             this.nudTotalVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTotalVenta.Increment = new decimal(new int[] {
             100,
@@ -705,6 +706,52 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(570, 145);
             this.panel10.TabIndex = 9;
+            // 
+            // nudNumeroOperacion
+            // 
+            this.nudNumeroOperacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.nudNumeroOperacion.Controls.Add(this.txtNumeroOperacion);
+            this.nudNumeroOperacion.Controls.Add(this.label16);
+            this.nudNumeroOperacion.Controls.Add(this.label15);
+            this.nudNumeroOperacion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.nudNumeroOperacion.Enabled = false;
+            this.nudNumeroOperacion.Location = new System.Drawing.Point(0, 94);
+            this.nudNumeroOperacion.Name = "nudNumeroOperacion";
+            this.nudNumeroOperacion.Size = new System.Drawing.Size(566, 47);
+            this.nudNumeroOperacion.TabIndex = 11;
+            // 
+            // txtNumeroOperacion
+            // 
+            this.txtNumeroOperacion.Enabled = false;
+            this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroOperacion.Location = new System.Drawing.Point(424, 6);
+            this.txtNumeroOperacion.Name = "txtNumeroOperacion";
+            this.txtNumeroOperacion.Size = new System.Drawing.Size(135, 33);
+            this.txtNumeroOperacion.TabIndex = 13;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(394, 13);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 26);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "#";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(205, 13);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(170, 22);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "Numero Operacion:";
             // 
             // txtDescripcion
             // 
@@ -792,6 +839,7 @@
             // nudPagaron
             // 
             this.nudPagaron.BackColor = System.Drawing.SystemColors.Info;
+            this.nudPagaron.DecimalPlaces = 2;
             this.nudPagaron.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPagaron.Increment = new decimal(new int[] {
             100,
@@ -838,52 +886,6 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
             // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft YaHei", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(205, 13);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(170, 22);
-            this.label15.TabIndex = 10;
-            this.label15.Text = "Numero Operacion:";
-            // 
-            // nudNumeroOperacion
-            // 
-            this.nudNumeroOperacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.nudNumeroOperacion.Controls.Add(this.txtNumeroOperacion);
-            this.nudNumeroOperacion.Controls.Add(this.label16);
-            this.nudNumeroOperacion.Controls.Add(this.label15);
-            this.nudNumeroOperacion.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.nudNumeroOperacion.Enabled = false;
-            this.nudNumeroOperacion.Location = new System.Drawing.Point(0, 94);
-            this.nudNumeroOperacion.Name = "nudNumeroOperacion";
-            this.nudNumeroOperacion.Size = new System.Drawing.Size(566, 47);
-            this.nudNumeroOperacion.TabIndex = 11;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(394, 13);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(24, 26);
-            this.label16.TabIndex = 12;
-            this.label16.Text = "#";
-            // 
-            // txtNumeroOperacion
-            // 
-            this.txtNumeroOperacion.Enabled = false;
-            this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroOperacion.Location = new System.Drawing.Point(424, 6);
-            this.txtNumeroOperacion.Name = "txtNumeroOperacion";
-            this.txtNumeroOperacion.Size = new System.Drawing.Size(135, 33);
-            this.txtNumeroOperacion.TabIndex = 13;
-            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -925,12 +927,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTotalVenta)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
+            this.nudNumeroOperacion.ResumeLayout(false);
+            this.nudNumeroOperacion.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPagaron)).EndInit();
-            this.nudNumeroOperacion.ResumeLayout(false);
-            this.nudNumeroOperacion.PerformLayout();
             this.ResumeLayout(false);
 
         }

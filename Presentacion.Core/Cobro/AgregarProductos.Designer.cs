@@ -206,6 +206,8 @@ namespace Presentacion.Core.Cobro
             // 
             this.nudPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudPrecio.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.nudPrecio.DecimalPlaces = 2;
+            this.nudPrecio.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudPrecio.Increment = new decimal(new int[] {
             100,
             0,
@@ -388,6 +390,7 @@ namespace Presentacion.Core.Cobro
             // 
             // nudTotal
             // 
+            this.nudTotal.DecimalPlaces = 2;
             this.nudTotal.Enabled = false;
             this.nudTotal.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTotal.Location = new System.Drawing.Point(108, 20);

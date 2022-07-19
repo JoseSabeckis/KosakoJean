@@ -165,8 +165,8 @@ namespace Presentacion.Core.CtaCte
 
             }
 
-            txtDebe.Text = $"{debe}";
-            txtTotal.Text = $"{total}";
+            txtDebe.Text = debe.ToString("00.00");
+            txtTotal.Text = total.ToString("00.00");
 
         }
 

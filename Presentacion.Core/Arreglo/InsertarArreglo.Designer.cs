@@ -136,6 +136,8 @@ namespace Presentacion.Core.Arreglo
             // nudTotal
             // 
             this.nudTotal.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.nudTotal.DecimalPlaces = 2;
+            this.nudTotal.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTotal.Increment = new decimal(new int[] {
             100,
             0,
@@ -269,6 +271,8 @@ namespace Presentacion.Core.Arreglo
             // nudAdelanto
             // 
             this.nudAdelanto.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.nudAdelanto.DecimalPlaces = 2;
+            this.nudAdelanto.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudAdelanto.Increment = new decimal(new int[] {
             100,
             0,

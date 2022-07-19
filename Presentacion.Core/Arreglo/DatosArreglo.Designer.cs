@@ -294,6 +294,7 @@ namespace Presentacion.Core.Arreglo
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(452, 162);
             this.txtDescripcion.TabIndex = 31;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // label10
             // 
@@ -386,6 +387,7 @@ namespace Presentacion.Core.Arreglo
             // 
             this.nudCobro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nudCobro.BackColor = System.Drawing.SystemColors.Info;
+            this.nudCobro.DecimalPlaces = 2;
             this.nudCobro.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudCobro.Increment = new decimal(new int[] {
             100,

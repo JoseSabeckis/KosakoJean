@@ -37,6 +37,8 @@ namespace Servicios.Core.Arreglo.Dto
 
         public decimal Total { get; set; }
 
+        public string TotalString => Total.ToString("00.00");
+
         public decimal Adelanto { get; set; }
 
         public bool EstaEliminado { get; set; }

@@ -6,5 +6,7 @@
 
         public string Hora { get; set; }
 
+        public string NumeroOperacion { get; set; }
+
     }
 }

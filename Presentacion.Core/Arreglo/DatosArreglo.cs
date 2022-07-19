@@ -78,10 +78,10 @@ namespace Presentacion.Core.Arreglo
 
             txtDescripcion.Text = $"{_ArregloDto.Descripcion}";
 
-            txtTotal.Text = $"$ {_ArregloDto.Total}";
-            txtDineroAdelanto.Text = $"$ {_ArregloDto.Adelanto}";
+            txtTotal.Text = _ArregloDto.Total.ToString("00.00");
+            txtDineroAdelanto.Text = _ArregloDto.Adelanto.ToString("00.00");
 
-            txtDebe.Text = $"$ {_ArregloDto.Total - _ArregloDto.Adelanto}";
+            txtDebe.Text = (_ArregloDto.Total - _ArregloDto.Adelanto).ToString("00.00");
 
             lblNumeroOperacion.Text = "#" + _ArregloDto.NumeroOperacion.ToString("00000");
 
@@ -310,6 +310,14 @@ namespace Presentacion.Core.Arreglo
         private void lblNumeroOperacion_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnDatos.PerformClick();
+            }
         }
     }
 }

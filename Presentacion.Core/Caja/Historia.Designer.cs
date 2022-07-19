@@ -30,19 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Historia));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCrearTicket = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnTicket = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblDesde = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.imgCaja = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnCrearTicket = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnTicket = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cmbImpresoras = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.nudComienzoCaja = new System.Windows.Forms.NumericUpDown();
@@ -55,11 +58,9 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
-            this.cmbImpresoras = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCaja)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudComienzoCaja)).BeginInit();
@@ -67,7 +68,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,33 +81,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(771, 108);
             this.panel1.TabIndex = 0;
-            // 
-            // btnCrearTicket
-            // 
-            this.btnCrearTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCrearTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnCrearTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearTicket.Location = new System.Drawing.Point(19, 271);
-            this.btnCrearTicket.Name = "btnCrearTicket";
-            this.btnCrearTicket.Size = new System.Drawing.Size(159, 27);
-            this.btnCrearTicket.TabIndex = 8;
-            this.btnCrearTicket.Text = "Hacer Ticket";
-            this.btnCrearTicket.UseVisualStyleBackColor = false;
-            this.btnCrearTicket.Click += new System.EventHandler(this.btnCrearTicket_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(194, 67);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(165, 27);
-            this.btnEliminar.TabIndex = 8;
-            this.btnEliminar.Text = "Eliminar Seleccionado";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // panel4
             // 
@@ -125,6 +98,19 @@
             this.panel4.Size = new System.Drawing.Size(373, 104);
             this.panel4.TabIndex = 7;
             // 
+            // btnTicket
+            // 
+            this.btnTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTicket.Location = new System.Drawing.Point(7, 67);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(159, 27);
+            this.btnTicket.TabIndex = 7;
+            this.btnTicket.Text = "Ver Factura";
+            this.btnTicket.UseVisualStyleBackColor = false;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
+            // 
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -132,6 +118,19 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(10, 105);
             this.panel5.TabIndex = 6;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(194, 67);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(165, 27);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "Eliminar Seleccionado";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label3
             // 
@@ -171,6 +170,37 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Desde";
             // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.imgCaja);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(280, 104);
+            this.panel6.TabIndex = 9;
+            // 
+            // imgCaja
+            // 
+            this.imgCaja.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imgCaja.Image = global::Presentacion.Core.Properties.Resources.analytics_78917;
+            this.imgCaja.Location = new System.Drawing.Point(3, 10);
+            this.imgCaja.Name = "imgCaja";
+            this.imgCaja.Size = new System.Drawing.Size(100, 81);
+            this.imgCaja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCaja.TabIndex = 0;
+            this.imgCaja.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(109, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Caja de Fechas:";
+            // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.LightGreen;
@@ -184,25 +214,19 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // label1
+            // btnCrearTicket
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(109, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Caja de Fechas:";
-            // 
-            // imgCaja
-            // 
-            this.imgCaja.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.imgCaja.Image = global::Presentacion.Core.Properties.Resources.analytics_78917;
-            this.imgCaja.Location = new System.Drawing.Point(3, 10);
-            this.imgCaja.Name = "imgCaja";
-            this.imgCaja.Size = new System.Drawing.Size(100, 81);
-            this.imgCaja.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgCaja.TabIndex = 0;
-            this.imgCaja.TabStop = false;
+            this.btnCrearTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCrearTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCrearTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearTicket.Location = new System.Drawing.Point(19, 271);
+            this.btnCrearTicket.Name = "btnCrearTicket";
+            this.btnCrearTicket.Size = new System.Drawing.Size(159, 27);
+            this.btnCrearTicket.TabIndex = 8;
+            this.btnCrearTicket.Text = "Hacer Ticket";
+            this.btnCrearTicket.UseVisualStyleBackColor = false;
+            this.btnCrearTicket.Click += new System.EventHandler(this.btnCrearTicket_Click);
             // 
             // panel2
             // 
@@ -226,18 +250,29 @@
             this.panel2.Size = new System.Drawing.Size(200, 343);
             this.panel2.TabIndex = 1;
             // 
-            // btnTicket
+            // label10
             // 
-            this.btnTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTicket.Location = new System.Drawing.Point(7, 67);
-            this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Size = new System.Drawing.Size(159, 27);
-            this.btnTicket.TabIndex = 7;
-            this.btnTicket.Text = "Ver Factura";
-            this.btnTicket.UseVisualStyleBackColor = false;
-            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(2, 225);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(33, 13);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Usar";
+            // 
+            // cmbImpresoras
+            // 
+            this.cmbImpresoras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbImpresoras.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbImpresoras.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbImpresoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbImpresoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbImpresoras.FormattingEnabled = true;
+            this.cmbImpresoras.Location = new System.Drawing.Point(4, 241);
+            this.cmbImpresoras.Name = "cmbImpresoras";
+            this.cmbImpresoras.Size = new System.Drawing.Size(189, 24);
+            this.cmbImpresoras.TabIndex = 9;
             // 
             // label9
             // 
@@ -261,6 +296,7 @@
             // 
             // nudComienzoCaja
             // 
+            this.nudComienzoCaja.DecimalPlaces = 2;
             this.nudComienzoCaja.Enabled = false;
             this.nudComienzoCaja.Location = new System.Drawing.Point(38, 179);
             this.nudComienzoCaja.Maximum = new decimal(new int[] {
@@ -292,6 +328,7 @@
             // 
             // nudSinMonto
             // 
+            this.nudSinMonto.DecimalPlaces = 2;
             this.nudSinMonto.Enabled = false;
             this.nudSinMonto.Location = new System.Drawing.Point(38, 118);
             this.nudSinMonto.Maximum = new decimal(new int[] {
@@ -323,6 +360,7 @@
             // 
             // nudTotal
             // 
+            this.nudTotal.DecimalPlaces = 2;
             this.nudTotal.Enabled = false;
             this.nudTotal.Location = new System.Drawing.Point(38, 35);
             this.nudTotal.Maximum = new decimal(new int[] {
@@ -371,41 +409,6 @@
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick);
             // 
-            // cmbImpresoras
-            // 
-            this.cmbImpresoras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.cmbImpresoras.BackColor = System.Drawing.SystemColors.Info;
-            this.cmbImpresoras.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbImpresoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbImpresoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbImpresoras.FormattingEnabled = true;
-            this.cmbImpresoras.Location = new System.Drawing.Point(4, 241);
-            this.cmbImpresoras.Name = "cmbImpresoras";
-            this.cmbImpresoras.Size = new System.Drawing.Size(189, 24);
-            this.cmbImpresoras.TabIndex = 9;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(2, 225);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(33, 13);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Usar";
-            // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel6.Controls.Add(this.imgCaja);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(280, 104);
-            this.panel6.TabIndex = 9;
-            // 
             // Historia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -428,6 +431,8 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCaja)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -436,8 +441,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudTotal)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }

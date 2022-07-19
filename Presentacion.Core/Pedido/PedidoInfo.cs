@@ -150,11 +150,11 @@ namespace Presentacion.Core.Pedido
             grilla.Columns["Talle"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Talle"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["Precio"].Visible = true;
-            grilla.Columns["Precio"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["Precio"].HeaderText = @"Precio";
-            grilla.Columns["Precio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["PrecioString"].Visible = true;
+            grilla.Columns["PrecioString"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["PrecioString"].HeaderText = @"Precio";
+            grilla.Columns["PrecioString"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["PrecioString"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             grilla.Columns["Cantidad"].Visible = true;
             grilla.Columns["Cantidad"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -263,10 +263,10 @@ namespace Presentacion.Core.Pedido
 
             txtNotas.Text = $"{pedido.Descripcion}";
 
-            txtDineroAdelanto.Text = $"{pedido.Adelanto}";
-            txtTotal.Text = $"{pedido.Total}";
+            txtDineroAdelanto.Text = pedido.Adelanto.ToString("00.00");
+            txtTotal.Text = pedido.Total.ToString("00.00");
 
-            txtDebe.Text = $"{pedido.Total - pedido.Adelanto}";
+            txtDebe.Text = (pedido.Total - pedido.Adelanto).ToString("00.00");
             _Debe = pedido.Total - pedido.Adelanto;
 
             nudCobro.Maximum = _Debe;

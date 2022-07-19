@@ -56,6 +56,7 @@ namespace Presentacion.Core.Cobro
         VentaDto ventaDto;
 
         decimal _total;
+        string _NumeroOperacion;
 
         public Venta()
         {
@@ -123,6 +124,7 @@ namespace Presentacion.Core.Cobro
         public void TraerNumeroOperacion()
         {
             txtNumeroOperacion.Text = detalleCajaServicio.TraerNuevoNumeroOperacion();
+            _NumeroOperacion = txtNumeroOperacion.Text;
         }
 
         public void ConsumidorFinall()
@@ -301,11 +303,11 @@ namespace Presentacion.Core.Cobro
             grilla.Columns["Talle"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Talle"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["Precio"].Visible = true;
-            grilla.Columns["Precio"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["Precio"].HeaderText = @"Precio";
-            grilla.Columns["Precio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["PrecioString"].Visible = true;
+            grilla.Columns["PrecioString"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["PrecioString"].HeaderText = @"Precio";
+            grilla.Columns["PrecioString"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["PrecioString"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             grilla.Columns["Cantidad"].Visible = true;
             grilla.Columns["Cantidad"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -356,7 +358,7 @@ namespace Presentacion.Core.Cobro
         {
             if (nudPagaron.Value > 0 && nudTotalVenta.Value > 0)
             {
-                var pago = nudPagaron.Value - nudTotalVenta.Value;
+                var pago = (short)(nudPagaron.Value - nudTotalVenta.Value);
 
                 txtVuelto.Text = $" $ {pago}";
             }
@@ -375,7 +377,8 @@ namespace Presentacion.Core.Cobro
             var fecha = new FechaDto
             {
                 Fecha = DateTime.Now.ToShortDateString(),
-                Hora = DateTime.Now.ToShortTimeString()
+                Hora = DateTime.Now.ToShortTimeString(),
+                NumeroOperacion = _NumeroOperacion
             };
 
             var factura = new Comprobante(ListaVenta.ToList(), fecha);
