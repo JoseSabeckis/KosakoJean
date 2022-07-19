@@ -30,7 +30,7 @@ namespace Servicios.Core.CtaCte
             }
         }
 
-        public void Pagar(decimal monto, long clienteId, long cuentaId)
+        public void Pagar(double monto, long clienteId, long cuentaId)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -48,7 +48,7 @@ namespace Servicios.Core.CtaCte
             }
         }
 
-        public void SumarLoQueDebe(decimal monto, long clienteId, long cuentaId)
+        public void SumarLoQueDebe(double monto, long clienteId, long cuentaId)
         {
             using (var context = new KosakoDBEntities())
             {

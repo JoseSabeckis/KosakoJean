@@ -23,9 +23,9 @@ namespace Servicios.Core.ParteVenta.Dto
 
         public string Talle { get; set; }
 
-        public decimal Cantidad { get; set; }
+        public double Cantidad { get; set; }
 
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
 
         public string PrecioString => Precio.ToString("00.00");
 

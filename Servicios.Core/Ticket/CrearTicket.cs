@@ -186,7 +186,7 @@ namespace Servicios.Core.Ticket
             linea.AppendLine(textoCompleto);
         }
 
-        public void AgregarTotales(string texto, decimal total)
+        public void AgregarTotales(string texto, double total)
         {
 
             string resumen, valor, textoCompleto, espacios = "";
@@ -217,7 +217,7 @@ namespace Servicios.Core.Ticket
         }
 
         //Metodo para agreagar articulos al ticket de venta
-        public void AgregaArticulo(string articulo, int cant, decimal precio, decimal importe)
+        public void AgregaArticulo(string articulo, int cant, double precio, double importe)
         {
             //Valida que cant precio e importe esten dentro del rango.
             if (cant.ToString().Length <= 5 && precio.ToString().Length <= 7 && importe.ToString().Length <= 8)

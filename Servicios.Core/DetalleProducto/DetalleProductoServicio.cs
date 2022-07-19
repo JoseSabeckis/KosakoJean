@@ -20,7 +20,7 @@ namespace Servicios.Core.DetalleProducto
                     Descripcion = detalleProductoDto.Descripcion,
                     Colegio = detalleProductoDto.Colegio,
                     Talle = detalleProductoDto.Talle,
-                    Cantidad = detalleProductoDto.Cantidad,
+                    Cantidad = (decimal)detalleProductoDto.Cantidad,
                     Precio = detalleProductoDto.Precio,
                     Fecha = detalleProductoDto.Fecha,
                     DetalleCajaId = detalleProductoDto.DetalleCajaId,
@@ -62,11 +62,11 @@ namespace Servicios.Core.DetalleProducto
                     var producto = new VentaDto2
                     {
                         Descripcion = item.Descripcion,
-                        Cantidad = item.Cantidad,
+                        Cantidad = (double)item.Cantidad,
                         Talle = item.Talle,
                         Precio = item.Precio,
                         Fecha = item.Fecha,
-                        ProductoId = (long)item.ProductoId,
+                        ProductoId = (long)item.ProductoId,                       
                     };
 
                     ListaCompleta.Add(producto);

@@ -5,7 +5,7 @@ namespace Servicios.Core.ParteVenta
 {
     public interface IVentaServicio2
     {
-        void InsertarProducto(string descripcion, decimal precio, int cantidad);
+        void InsertarProducto(string descripcion, double precio, int cantidad);
 
         List<VentaDto2> Obtener(string cadenaBuscar);
 

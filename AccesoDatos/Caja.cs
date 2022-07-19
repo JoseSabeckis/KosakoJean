@@ -21,9 +21,9 @@ namespace AccesoDatos
         }
     
         public long Id { get; set; }
-        public decimal TotalCaja { get; set; }
-        public decimal MontoApertura { get; set; }
-        public decimal MontoCierre { get; set; }
+        public double TotalCaja { get; set; }
+        public double MontoApertura { get; set; }
+        public double MontoCierre { get; set; }
         public System.DateTime FechaApertura { get; set; }
         public string FechaCierre { get; set; }
         public OpenClose OpenClose { get; set; }

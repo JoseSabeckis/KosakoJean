@@ -59,7 +59,7 @@ namespace Presentacion.Core.CtaCte
 
         public void nudCobroMaximo()
         {
-            nudCobro.Maximum = _ctaDto.Debe;
+            nudCobro.Maximum = (decimal)_ctaDto.Debe;
 
             if (_ctaDto.Debe == 0)
             {
@@ -154,8 +154,8 @@ namespace Presentacion.Core.CtaCte
 
         public void DebeYTotal(IEnumerable<CtaCteDto> lista)
         {
-            decimal debe = 0;
-            decimal total = 0;
+            double debe = 0;
+            double total = 0;
 
             foreach (var item in lista)
             {
@@ -216,14 +216,14 @@ namespace Presentacion.Core.CtaCte
 
                     if (MessageBox.Show("Esta Seguro de Cobrar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        _ctaCteServicio.Pagar(nudCobro.Value, _ClienteId, _CtaCteId);
+                        _ctaCteServicio.Pagar((double)nudCobro.Value, _ClienteId, _CtaCteId);
 
                         //Inicio Pedido
                         var ctacte = _ctaCteServicio.ObtenerPorId(_CtaCteId);
 
                         var pedido = pedidoServicio.BuscarIDPedidos(ctacte.PedidoId);
 
-                        pedidoServicio.CambiarRamas(nudCobro.Value, ctacte.PedidoId);
+                        pedidoServicio.CambiarRamas((double)nudCobro.Value, ctacte.PedidoId);
 
                         if (pedido.Adelanto == pedido.Total)
                         {
@@ -235,7 +235,7 @@ namespace Presentacion.Core.CtaCte
                         var detalle = new DetalleCajaDto
                         {
                             Fecha = DateTime.Now.ToString(),
-                            Total = nudCobro.Value,
+                            Total = (double)nudCobro.Value,
                             Descripcion = $"Cobro a {_clienteDto.Apellido} {_clienteDto.Nombre}",
                             CajaId = detalleCajaServicio.BuscarCajaAbierta()
                         };
@@ -244,7 +244,7 @@ namespace Presentacion.Core.CtaCte
 
                         detalleCajaServicio.AgregarDetalleCaja(detalle);
 
-                        cajaServicio.SumarDineroACaja(nudCobro.Value);
+                        cajaServicio.SumarDineroACaja((double)nudCobro.Value);
 
                         //---//
 

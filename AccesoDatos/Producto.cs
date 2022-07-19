@@ -23,7 +23,7 @@ namespace AccesoDatos
     
         public long Id { get; set; }
         public string Descripcion { get; set; }
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
         public bool EstaEliminado { get; set; }
         public string Extras { get; set; }
         public long TipoProductoId { get; set; }

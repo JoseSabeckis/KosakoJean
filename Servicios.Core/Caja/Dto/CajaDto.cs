@@ -7,15 +7,15 @@ namespace Servicios.Core.Caja.Dto
     {
         public long Id { get; set; }
 
-        public decimal TotalCaja { get; set; }
+        public double TotalCaja { get; set; }
 
         public string TotalCajaString => TotalCaja.ToString("00.00");
 
-        public decimal MontoApertura { get; set; }
+        public double MontoApertura { get; set; }
 
         public string MontoAperturaString => MontoApertura.ToString("00.00");
 
-        public decimal MontoCierre { get; set; }
+        public double MontoCierre { get; set; }
 
         public string MontoCierreString => MontoCierre.ToString("00.00");
 

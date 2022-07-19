@@ -15,7 +15,7 @@ namespace Servicios.Core.Producto_Venta.Dto
 
         public string Descripcion { get; set; }
 
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
 
         public long ProductoId { get; set; }
 

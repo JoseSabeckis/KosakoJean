@@ -18,7 +18,7 @@ namespace Servicios.Core.DetalleProducto
 
         public decimal Cantidad { get; set; }
 
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
 
         public DateTime Fecha { get; set; }
 

@@ -17,7 +17,7 @@ namespace Servicios.Core.Arreglo
         IEnumerable<ArregloDto> ListaArreglosEnEspera();
         void ModificarDescripcion(long id, string descripcion);
         void CambiarARetiradoYFechaDeRetiro(long id, DateTime date);
-        void Cobrar(long id, decimal dinero);
+        void Cobrar(long id, double dinero);
         void Eliminar(long id);
         void EliminarEnSerio(long id);
     }

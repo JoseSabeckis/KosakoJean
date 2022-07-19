@@ -22,7 +22,7 @@ namespace AccesoDatos
     
         public long Id { get; set; }
         public System.DateTime Fecha { get; set; }
-        public decimal Total { get; set; }
+        public double Total { get; set; }
         public decimal Descuento { get; set; }
         public long ClienteId { get; set; }
     

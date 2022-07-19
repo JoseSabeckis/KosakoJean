@@ -29,7 +29,7 @@ namespace AccesoDatos
         public string Descripcion { get; set; }
         public long TalleId { get; set; }
         public bool EstaEliminado { get; set; }
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
     
         public virtual Producto Producto { get; set; }
         public virtual Pedido Pedido { get; set; }

@@ -21,8 +21,8 @@ namespace AccesoDatos
         }
     
         public long Id { get; set; }
-        public decimal Total { get; set; }
-        public decimal Adelanto { get; set; }
+        public double Total { get; set; }
+        public double Adelanto { get; set; }
         public System.DateTime FechaPedido { get; set; }
         public string Apellido { get; set; }
         public string Nombre { get; set; }

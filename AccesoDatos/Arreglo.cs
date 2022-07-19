@@ -24,8 +24,8 @@ namespace AccesoDatos
         public string Descripcion { get; set; }
         public long ClienteId { get; set; }
         public bool EstaEliminado { get; set; }
-        public decimal Total { get; set; }
-        public decimal Adelanto { get; set; }
+        public double Total { get; set; }
+        public double Adelanto { get; set; }
         public Nullable<System.DateTime> FechaRetirado { get; set; }
         public int Cantidad { get; set; }
         public long NumeroOperacion { get; set; }

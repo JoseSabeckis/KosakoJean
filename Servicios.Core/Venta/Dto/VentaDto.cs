@@ -6,7 +6,7 @@ namespace Servicios.Core.Venta.Dto
     {
         public long Id { get; set; }
 
-        public decimal Total { get; set; }
+        public double Total { get; set; }
 
         public decimal Descuento { get; set; }
 

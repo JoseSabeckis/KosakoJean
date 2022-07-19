@@ -10,7 +10,7 @@ namespace Servicios.Core.DetalleCaja.Dto
 
         public string Descripcion { get; set; }
 
-        public decimal Total { get; set; }
+        public double Total { get; set; }
 
         public string TotalString => Total.ToString("00.00");
 

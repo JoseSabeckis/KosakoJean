@@ -30,8 +30,8 @@ namespace Presentacion.Core.Arreglo
         ClienteDto _ClienteDto;
 
         long _ArregloId;
-        decimal _Debe = 0;
-        decimal _Total = 0;
+        double _Debe = 0;
+        double _Total = 0;
 
         public DatosArreglo(long arregloId)
         {
@@ -86,7 +86,7 @@ namespace Presentacion.Core.Arreglo
             lblNumeroOperacion.Text = "#" + _ArregloDto.NumeroOperacion.ToString("00000");
 
             _Debe = _ArregloDto.Total - _ArregloDto.Adelanto;
-            nudCobro.Maximum = _Debe;
+            nudCobro.Maximum = (decimal)_Debe;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -125,14 +125,14 @@ namespace Presentacion.Core.Arreglo
                 {
                     if (MessageBox.Show("Esta Por Cobrar Un Adelanto, Desea Continuar?", "Adelanto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        arregloServicio.Cobrar(_ArregloId, nudCobro.Value);
+                        arregloServicio.Cobrar(_ArregloId, (double)nudCobro.Value);
 
                         //caja
                         var detalle = new DetalleCajaDto
                         {
                             Descripcion = $"{lblCliente.Text} - Cobro Adelanto",
                             Fecha = DateTime.Now.ToLongDateString(),
-                            Total = nudCobro.Value,
+                            Total = (double)nudCobro.Value,
                             CajaId = detalleCajaServicio.BuscarCajaAbierta()
                         };
 
@@ -140,14 +140,14 @@ namespace Presentacion.Core.Arreglo
 
                         long detalleId = detalleCajaServicio.AgregarDetalleCaja(detalle);
 
-                        cajaServicio.SumarDineroACaja(nudCobro.Value);
+                        cajaServicio.SumarDineroACaja((double)nudCobro.Value);
 
                         var venta = new VentaDto
                         {
                             ClienteId = _ArregloDto.ClienteId,
                             Descuento = 0,
                             Fecha = DateTime.Now,
-                            Total = nudCobro.Value,
+                            Total = (double)nudCobro.Value,
                         };
 
                         ventaServicio.NuevaVenta(venta);
@@ -263,7 +263,7 @@ namespace Presentacion.Core.Arreglo
         {
             VentaDto2 ventaDto2 = new VentaDto2
             {
-                Cantidad = _ArregloDto.Cantidad,
+                Cantidad = (double)_ArregloDto.Cantidad,
                 Descripcion = txtDescripcion.Text,
                 DetalleCajaId = detalleId,
                 Fecha = DateTime.Now,

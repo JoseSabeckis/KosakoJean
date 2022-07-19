@@ -25,7 +25,7 @@ namespace Servicios.Core.Ticket
             ticket.AbreCajon();
 
             ticket.TextoCentro(_Negocio.RazonSocial);
-            ticket.TextoIzquierda(" ");
+            //ticket.TextoIzquierda(" ");
             ticket.TextoIzquierda("Cuit: " + _Negocio.Cuit);
             ticket.TextoIzquierda("Direccion: " + _Negocio.Direccion);
             ticket.TextoIzquierda("Celular: " + _Negocio.Celular);
@@ -47,15 +47,16 @@ namespace Servicios.Core.Ticket
 
             var ListaVenta = detalleProductoServicio.ObtenerListaPorDetalleId(_DetalleId);
 
-            decimal total = 0;
+            double total = 0;
             int cantComprados = 0;
+            string numeroOperacion = _detalleCajaServicio.ObtenerPorId(_DetalleId).NumeroOperacion.ToString("00000");
 
             foreach (var item in ListaVenta)
             {
                 ticket.AgregaArticulo(item.Descripcion, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
 
                 total += item.Precio * item.Cantidad;
-                cantComprados += (int)item.Cantidad;
+                cantComprados += (int)item.Cantidad;               
             }
 
             ticket.LineaIgualMetodo();
@@ -67,6 +68,7 @@ namespace Servicios.Core.Ticket
             ticket.TextoIzquierda(" ");
 
             ticket.TextoCentro("-- GRACIAS POR SU COMPRA! --");
+            ticket.TextoIzquierda("#" + numeroOperacion);
             ticket.CortaTicket();
 
             ticket.ImprimirTicket(impresora);//POS58 Printer

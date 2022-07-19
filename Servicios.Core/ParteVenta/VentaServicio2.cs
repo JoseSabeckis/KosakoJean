@@ -16,7 +16,7 @@ namespace Servicios.Core.ParteVenta
             }
 
         }
-        public void InsertarProducto(string descripcion, decimal precio, int cantidad)
+        public void InsertarProducto(string descripcion, double precio, int cantidad)
         {
 
             if (_detalleComprobantes.Any(x => x.Descripcion == descripcion))

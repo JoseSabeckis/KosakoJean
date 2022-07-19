@@ -45,13 +45,13 @@ namespace Presentacion.Core.Pedido
 
         public bool semaforo = false;
 
-        decimal _total;
+        double _total;
         long ClienteId;
 
         ClienteDto _Cliente;
         List<VentaDto2> ListaVentas;
 
-        public Pedido(List<VentaDto2> Lista, decimal total, string nombre, long clienteId, string descripcion)
+        public Pedido(List<VentaDto2> Lista, double total, string nombre, long clienteId, string descripcion)
         {
             InitializeComponent();
 
@@ -84,7 +84,7 @@ namespace Presentacion.Core.Pedido
             _total = total;
             ListaVentas = Lista;
 
-            nudAdelanto.Maximum = _total;
+            nudAdelanto.Maximum = (decimal)_total;
 
             ClienteId = clienteId;
 
@@ -131,7 +131,7 @@ namespace Presentacion.Core.Pedido
 
         public void VerificarSiEsTotal()
         {
-            if (nudAdelanto.Value == _total)
+            if (nudAdelanto.Value == (decimal)_total)
             {
                 if (ClienteId != 1)
                 {
@@ -185,7 +185,7 @@ namespace Presentacion.Core.Pedido
                 {
                     var pedido = new PedidoDto
                     {
-                        Adelanto = nudAdelanto.Value,
+                        Adelanto = (double)nudAdelanto.Value,
                         Apellido = txtApellido.Text,
                         FechaPedido = DateTime.Now,
                         Nombre = txtNombre.Text,
@@ -211,7 +211,7 @@ namespace Presentacion.Core.Pedido
                         segunda += " " + producto.Descripcion + " ";
 
                         //stock
-                        productoServicio.BajarStock(producto.Id, item.Cantidad);
+                        productoServicio.BajarStock(producto.Id, (decimal)item.Cantidad);
 
                     }
 
@@ -220,7 +220,7 @@ namespace Presentacion.Core.Pedido
 
                         var aux = new Producto_Pedido_Dto
                         {
-                            Cantidad = item.Cantidad,
+                            Cantidad = (decimal)item.Cantidad,
                             ProductoId = productoServicio.ObtenerPorId(item.Id).Id,
                             Estado = AccesoDatos.EstadoPedido.Esperando,
                             Talle = item.Talle,
@@ -257,7 +257,7 @@ namespace Presentacion.Core.Pedido
                         Estado = AccesoDatos.CtaCteEstado.EnEspera,
                         Fecha = dtpFechaEntrega.Value,
                         Total = _total,
-                        Debe = _total - nudAdelanto.Value,
+                        Debe = _total - (double)nudAdelanto.Value,
                         Descripcion = $"{segunda}",
                         PedidoId = pedidoId,
                         NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
@@ -269,7 +269,7 @@ namespace Presentacion.Core.Pedido
                     {
                         Descripcion = txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
                         Fecha = DateTime.Now.ToString(),
-                        Total = nudAdelanto.Value,
+                        Total = (double)nudAdelanto.Value,
                         CajaId = detallCajaServicio.BuscarCajaAbierta(),
                         NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
                     };
@@ -292,7 +292,7 @@ namespace Presentacion.Core.Pedido
                     //
 
                     //dinero a caja
-                    cajaServicio.SumarDineroACaja(nudAdelanto.Value);//
+                    cajaServicio.SumarDineroACaja((double)nudAdelanto.Value);//
 
 #pragma warning disable CS0436 // El tipo 'Afirmacion' de 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs' está en conflicto con el tipo importado 'Afirmacion' de 'Presentacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Se usará el tipo definido en 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs'.
                     var mensaje = new Afirmacion("Agregado a la Cuenta!", $"Dinero Cobrado Por Adelanto $ {nudAdelanto.Value}\nTipo de Pago: {detalle.TipoPago}");
@@ -301,7 +301,7 @@ namespace Presentacion.Core.Pedido
 
                     if (ckbNormal.Checked || ckbTarjeta.Checked)
                     {
-                        if (nudAdelanto.Value == _total)
+                        if ((double)nudAdelanto.Value == _total)
                         {
                             foreach (var item in ListaVentas)
                             {

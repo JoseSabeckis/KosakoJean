@@ -44,7 +44,7 @@ namespace Presentacion.Core.Pedido
         long EntidadParaBorrar;
         bool EstaPorEliminar = false;
 
-        decimal _Debe;
+        double _Debe;
 
         List<VentaDto2> list;
 
@@ -190,10 +190,10 @@ namespace Presentacion.Core.Pedido
                 var lista = new VentaDto2
                 {
                     Id = item.Id,
-                    Cantidad = item.Cantidad,
+                    Cantidad = (double)item.Cantidad,
                     Talle = item.Talle,
                     Descripcion = producto.Descripcion,
-                    Precio = item.Precio * item.Cantidad,
+                    Precio = item.Precio * (double)item.Cantidad,
                     ProductoId = producto.Id
                 };
 
@@ -269,7 +269,7 @@ namespace Presentacion.Core.Pedido
             txtDebe.Text = (pedido.Total - pedido.Adelanto).ToString("00.00");
             _Debe = pedido.Total - pedido.Adelanto;
 
-            nudCobro.Maximum = _Debe;
+            nudCobro.Maximum = (decimal)_Debe;
 
             if (_Debe == 0)
             {
@@ -373,14 +373,14 @@ namespace Presentacion.Core.Pedido
 
                     cajaServicio.SumarDineroACaja(_Debe);
 
-                    pedidoServicio.CambiarRamas(_Debe, PedidoId);
+                    pedidoServicio.CambiarRamas((double)_Debe, PedidoId);
 
                     var venta = new VentaDto
                     {
                         ClienteId = pedido.ClienteId,
                         Descuento = 0,
                         Fecha = DateTime.Now,
-                        Total = _Debe
+                        Total = (double)_Debe
                     };
 
                     ventaServicio.NuevaVenta(venta);
@@ -526,7 +526,7 @@ namespace Presentacion.Core.Pedido
 
                     cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
 
-                    ctaCteServicio.Pagar(nudCobro.Value, pedido.ClienteId, cuentaId.Id);
+                    ctaCteServicio.Pagar((double)nudCobro.Value, pedido.ClienteId, cuentaId.Id);
 
                     //caja
 
@@ -534,7 +534,7 @@ namespace Presentacion.Core.Pedido
                     {
                         Descripcion = $"{lblPersona.Text} - Adelanto de Pedido",
                         Fecha = DateTime.Now.ToString(),
-                        Total = nudCobro.Value,
+                        Total = (double)nudCobro.Value,
                         CajaId = detalleCajaServicio.BuscarCajaAbierta(),
                         NumeroOperacion = cuentaId.NumeroOperacion
                     };
@@ -543,16 +543,16 @@ namespace Presentacion.Core.Pedido
 
                     detalleCajaServicio.AgregarDetalleCaja(detalle);
 
-                    cajaServicio.SumarDineroACaja(nudCobro.Value);
+                    cajaServicio.SumarDineroACaja((double)nudCobro.Value);
 
-                    pedidoServicio.CambiarRamas(nudCobro.Value, PedidoId);
+                    pedidoServicio.CambiarRamas((double)nudCobro.Value, PedidoId);
 
                     var venta = new VentaDto
                     {
                         ClienteId = pedido.ClienteId,
                         Descuento = 0,
                         Fecha = DateTime.Now,
-                        Total = nudCobro.Value
+                        Total = (double)nudCobro.Value
                     };
 
                     ventaServicio.NuevaVenta(venta);
@@ -672,7 +672,7 @@ namespace Presentacion.Core.Pedido
                         var producto = productoServicio.ObtenerPorId(pedido.ProductoId);
                         var producto_pedido = producto_Pedido_Servicio.ObtenerPorId(EntidadParaBorrar);
 
-                        decimal CantRestar = 0;
+                        double CantRestar = 0;
                         int Bandera = 0;
 
                         if (producto_pedido.Cantidad > 1)
@@ -697,12 +697,12 @@ namespace Presentacion.Core.Pedido
 
                             producto_Pedido_Servicio.EliminacionDefinitiva(EntidadParaBorrar);
 
-                            CantRestar = producto_pedido.Precio;
+                            CantRestar = (double)producto_pedido.Precio;
 
                             Bandera = 2;
                         }
 
-                        pedidoServicio.RestarTotal(pedido.PedidoId, CantRestar);
+                        pedidoServicio.RestarTotal(pedido.PedidoId, (double)CantRestar);
 
                         var pedidoPrincipal = pedidoServicio.BuscarIDPedidos(pedido.PedidoId);
 
@@ -710,7 +710,7 @@ namespace Presentacion.Core.Pedido
                         {
                             if (pedidoPrincipal.Adelanto > pedidoPrincipal.Total)
                             {
-                                pedidoServicio.RestarAdelanto(pedidoPrincipal.Id, CantRestar);
+                                pedidoServicio.RestarAdelanto((double)CantRestar, pedidoPrincipal.Id);
                             }
                         }
 
@@ -778,7 +778,7 @@ namespace Presentacion.Core.Pedido
             {
                 var pedido = pedidoServicio.Buscar(PedidoId);
 
-                if (nudCobro.Value > pedido.Adelanto)
+                if ((double)nudCobro.Value > pedido.Adelanto)
                 {
                     MessageBox.Show("No Se Puedo Restar Dinero, Lo Que Quiere Restar Es Mayor Al Adelanto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -793,7 +793,7 @@ namespace Presentacion.Core.Pedido
 
                     var cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
 
-                    ctaCteServicio.SumarLoQueDebe(nudCobro.Value, pedido.ClienteId, cuentaId.Id);
+                    ctaCteServicio.SumarLoQueDebe((double)nudCobro.Value, pedido.ClienteId, cuentaId.Id);
 
                     //caja
 
@@ -801,7 +801,7 @@ namespace Presentacion.Core.Pedido
                     {
                         Descripcion = $"{lblPersona.Text} - Dinero Devuelto",
                         Fecha = DateTime.Now.ToLongDateString(),
-                        Total = Resto,
+                        Total = (double)Resto,
                         CajaId = detalleCajaServicio.BuscarCajaAbierta()
                     };
 
@@ -809,9 +809,9 @@ namespace Presentacion.Core.Pedido
 
                     detalleCajaServicio.AgregarDetalleCaja(detalle);
 
-                    cajaServicio.RestarDineroDeCaja(nudCobro.Value);
+                    cajaServicio.RestarDineroDeCaja((double)nudCobro.Value);
 
-                    pedidoServicio.RestarAdelanto(nudCobro.Value, PedidoId);
+                    pedidoServicio.RestarAdelanto((double)nudCobro.Value, PedidoId);
 
                     MessageBox.Show("Dinero Regresado Al Cliente...", "Devuelto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

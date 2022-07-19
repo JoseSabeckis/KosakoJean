@@ -22,7 +22,7 @@ namespace AccesoDatos
     
         public long Id { get; set; }
         public string Descripcion { get; set; }
-        public decimal Total { get; set; }
+        public double Total { get; set; }
         public long CajaId { get; set; }
         public string Fecha { get; set; }
         public TipoPago TipoPago { get; set; }

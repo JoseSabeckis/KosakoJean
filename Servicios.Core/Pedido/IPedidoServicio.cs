@@ -15,7 +15,7 @@ namespace Servicios.Core.Pedido
 
         void CambiarProcesoRetirado(long id);
 
-        void RestarAdelanto(decimal total, long id);
+        void RestarAdelanto(double total, long id);
 
         void Eliminar(long id);
         void EliminacionDefinitiva(long id);
@@ -28,11 +28,11 @@ namespace Servicios.Core.Pedido
 
         void CambiarProcesoGuardado(long id);
 
-        void SumarTotal(long id, decimal suma);
+        void SumarTotal(long id, double suma);
 
-        void RestarTotal(long id, decimal resta);
+        void RestarTotal(long id, double resta);
 
-        void RestarAdelanto(long id, decimal resta);
+        void RestarAdelanto(long id, double resta);
 
         IEnumerable<PedidoDto> BuscarRetirado();
 
@@ -50,7 +50,7 @@ namespace Servicios.Core.Pedido
 
         void CambiarFechaRetirado(long id);
 
-        void CambiarRamas(decimal total, long id);
+        void CambiarRamas(double total, long id);
 
         AccesoDatos.Pedido Buscar(long id);
 

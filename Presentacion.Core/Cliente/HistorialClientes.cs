@@ -22,7 +22,7 @@ namespace Presentacion.Core.Cliente
         {
             public string Descripcion { get; set; }
 
-            public decimal Total { get; set; }
+            public double Total { get; set; }
 
             public string Fecha { get; set; }
         }
@@ -77,11 +77,11 @@ namespace Presentacion.Core.Cliente
                 var historial = new HistorialCompras
                 {
                     Fecha = ventas.FechaString,
-                    Total = ventas.Total,
+                    Total = (double)ventas.Total,
                     Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
                 };
 
-                nudTotal.Value += historial.Total;
+                nudTotal.Value += (decimal)historial.Total;
 
                 ListaVentas.Add(historial);
 
@@ -98,7 +98,7 @@ namespace Presentacion.Core.Cliente
                     Descripcion = pedido.Descripcion
                 };
 
-                nudTotal.Value += historial.Total;
+                nudTotal.Value += (decimal)historial.Total;
 
                 ListaPedidos.Add(historial);
 
@@ -139,7 +139,7 @@ namespace Presentacion.Core.Cliente
                     Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
                 };
 
-                nudTotal.Value += historial.Total;
+                nudTotal.Value += (decimal)historial.Total;
 
                 ListaVentas.Add(historial);
 
@@ -156,7 +156,7 @@ namespace Presentacion.Core.Cliente
                     Descripcion = producto.Descripcion
                 };
 
-                nudTotal.Value += historial.Total;
+                nudTotal.Value += (decimal)historial.Total;
 
                 ListaPedidos.Add(historial);
 
@@ -198,7 +198,7 @@ namespace Presentacion.Core.Cliente
                     Descripcion = pedido.Descripcion
                 };
 
-                nudTotal.Value += historial.Total;
+                nudTotal.Value += (decimal)historial.Total;
 
                 ListaPedidos.Add(historial);
 
@@ -214,7 +214,7 @@ namespace Presentacion.Core.Cliente
                     Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
                 };
 
-                nudTotal.Value += historial.Total;
+                nudTotal.Value += (decimal)historial.Total;
 
                 ListaVentas.Add(historial);
 

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/18/2022 16:09:53
+-- Date Created: 07/19/2022 16:42:42
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -133,7 +133,7 @@ GO
 CREATE TABLE [dbo].[Productos] (
     [Id] bigint IDENTITY(1,1) NOT NULL,
     [Descripcion] nvarchar(max)  NOT NULL,
-    [Precio] decimal(18,0)  NOT NULL,
+    [Precio] float  NOT NULL,
     [EstaEliminado] bit  NOT NULL,
     [Extras] nvarchar(max)  NOT NULL,
     [TipoProductoId] bigint  NOT NULL,
@@ -167,9 +167,9 @@ GO
 -- Creating table 'Cajas'
 CREATE TABLE [dbo].[Cajas] (
     [Id] bigint IDENTITY(1,1) NOT NULL,
-    [TotalCaja] decimal(18,0)  NOT NULL,
-    [MontoApertura] decimal(18,0)  NOT NULL,
-    [MontoCierre] decimal(18,0)  NOT NULL,
+    [TotalCaja] float  NOT NULL,
+    [MontoApertura] float  NOT NULL,
+    [MontoCierre] float  NOT NULL,
     [FechaApertura] datetime  NOT NULL,
     [FechaCierre] nvarchar(max)  NOT NULL,
     [OpenClose] bigint  NOT NULL,
@@ -181,7 +181,7 @@ GO
 CREATE TABLE [dbo].[DetalleCajas] (
     [Id] bigint IDENTITY(1,1) NOT NULL,
     [Descripcion] nvarchar(max)  NOT NULL,
-    [Total] decimal(18,0)  NOT NULL,
+    [Total] float  NOT NULL,
     [CajaId] bigint  NOT NULL,
     [Fecha] nvarchar(max)  NOT NULL,
     [TipoPago] bigint  NOT NULL,
@@ -193,8 +193,8 @@ GO
 -- Creating table 'Pedidos'
 CREATE TABLE [dbo].[Pedidos] (
     [Id] bigint IDENTITY(1,1) NOT NULL,
-    [Total] decimal(18,0)  NOT NULL,
-    [Adelanto] decimal(18,0)  NOT NULL,
+    [Total] float  NOT NULL,
+    [Adelanto] float  NOT NULL,
     [FechaPedido] datetime  NOT NULL,
     [Apellido] nvarchar(max)  NOT NULL,
     [Nombre] nvarchar(max)  NOT NULL,
@@ -222,7 +222,7 @@ CREATE TABLE [dbo].[Producto_Pedidos] (
     [Descripcion] nvarchar(max)  NOT NULL,
     [TalleId] bigint  NOT NULL,
     [EstaEliminado] bit  NOT NULL,
-    [Precio] decimal(18,0)  NOT NULL
+    [Precio] float  NOT NULL
 );
 GO
 
@@ -230,7 +230,7 @@ GO
 CREATE TABLE [dbo].[Ventas] (
     [Id] bigint IDENTITY(1,1) NOT NULL,
     [Fecha] datetime  NOT NULL,
-    [Total] decimal(18,0)  NOT NULL,
+    [Total] float  NOT NULL,
     [Descuento] decimal(18,0)  NOT NULL,
     [ClienteId] bigint  NOT NULL,
     [Cliente_Id] bigint  NULL
@@ -246,7 +246,7 @@ CREATE TABLE [dbo].[Producto_Ventas] (
     [Cantidad] decimal(18,0)  NOT NULL,
     [Talle] nvarchar(max)  NOT NULL,
     [Descripcion] nvarchar(max)  NOT NULL,
-    [Precio] decimal(18,0)  NOT NULL,
+    [Precio] float  NOT NULL,
     [TalleId] bigint  NOT NULL,
     [Venta_Id] bigint  NULL
 );
@@ -270,8 +270,8 @@ GO
 CREATE TABLE [dbo].[CtasCtes] (
     [Id] bigint IDENTITY(1,1) NOT NULL,
     [Fecha] datetime  NOT NULL,
-    [Total] decimal(18,0)  NOT NULL,
-    [Debe] decimal(18,0)  NOT NULL,
+    [Total] float  NOT NULL,
+    [Debe] float  NOT NULL,
     [Descripcion] nvarchar(max)  NOT NULL,
     [ClienteId] bigint  NOT NULL,
     [Estado] bigint  NOT NULL,
@@ -354,8 +354,8 @@ CREATE TABLE [dbo].[Arreglos] (
     [Descripcion] nvarchar(max)  NOT NULL,
     [ClienteId] bigint  NOT NULL,
     [EstaEliminado] bit  NOT NULL,
-    [Total] decimal(18,0)  NOT NULL,
-    [Adelanto] decimal(18,0)  NOT NULL,
+    [Total] float  NOT NULL,
+    [Adelanto] float  NOT NULL,
     [FechaRetirado] datetime  NULL,
     [Cantidad] int  NOT NULL,
     [NumeroOperacion] bigint  NOT NULL
@@ -370,7 +370,7 @@ CREATE TABLE [dbo].[DetalleProductos] (
     [Colegio] nvarchar(max)  NULL,
     [Talle] nvarchar(max)  NOT NULL,
     [Cantidad] decimal(18,0)  NOT NULL,
-    [Precio] decimal(18,0)  NOT NULL,
+    [Precio] float  NOT NULL,
     [Fecha] datetime  NOT NULL,
     [ProductoId] bigint  NULL
 );

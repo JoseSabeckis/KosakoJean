@@ -11,7 +11,7 @@ namespace Presentacion.Core.Caja
         private readonly ICajaServicio _cajaServicio;
         private readonly IDetalleCajaServicio _detalleCajaServicio;
 
-        decimal _Total;
+        double _Total;
 
         public CerrarCaja()
         {

@@ -89,11 +89,11 @@ namespace Presentacion.Core.Caja
 
             //listo caja ahora detalle
 
-            nudTotal.Value = caja.TotalCaja;
+            nudTotal.Value = (decimal)caja.TotalCaja;
 
-            nudSinMonto.Value = caja.TotalCaja - caja.MontoApertura;
+            nudSinMonto.Value = (decimal)(caja.TotalCaja - caja.MontoApertura);
 
-            nudComienzoCaja.Value = caja.MontoApertura;
+            nudComienzoCaja.Value = (decimal)caja.MontoApertura;
 
         }
 
@@ -201,15 +201,16 @@ namespace Presentacion.Core.Caja
             {
                 //ticket
 
-                var fecha = new FechaDto
-                {
-                    Fecha = DateTime.Now.ToShortDateString(),
-                    Hora = DateTime.Now.ToShortTimeString()
-                };
-
                 List<VentaDto2> ListaVenta = new List<VentaDto2>();
 
                 ListaVenta = detalleProductoServicio.ObtenerListaPorDetalleId(_DetalleId);
+
+                var fecha = new FechaDto
+                {
+                    Fecha = DateTime.Now.ToShortDateString(),
+                    Hora = DateTime.Now.ToShortTimeString(),
+                    NumeroOperacion = _detalleCajaServicio.ObtenerPorId(_DetalleId).NumeroOperacion.ToString("00000")
+                };
 
                 var factura = new Comprobante(ListaVenta, fecha);
                 factura.ShowDialog();

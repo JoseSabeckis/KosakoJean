@@ -19,7 +19,7 @@ namespace Servicios.Core.Producto.Dto
 
         public string Extra { get; set; }
 
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
 
         public byte[] Imagen { get; set; }
 

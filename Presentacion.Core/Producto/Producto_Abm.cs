@@ -97,7 +97,7 @@ namespace Presentacion.Core.Producto
             txtDescripcion.Text = dto.Descripcion;
             txtExtras.Text = dto.Extras;
 
-            nudPrecio.Value = dto.Precio;
+            nudPrecio.Value = (decimal)dto.Precio;
             nudStock.Value = dto.Stock;
 
             cmbColegio.SelectedValue = dto.ColegioId;
@@ -206,7 +206,7 @@ namespace Presentacion.Core.Producto
             {
                 Descripcion = $"{txtDescripcion.Text}",
                 Extras = txtExtras.Text,
-                Precio = nudPrecio.Value,
+                Precio = (double)nudPrecio.Value,
                 ColegioId = ((ColegioDto)cmbColegio.SelectedItem).Id,
                 TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id,
                 Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
@@ -282,7 +282,7 @@ namespace Presentacion.Core.Producto
                 Id = EntidadId.Value,
                 Descripcion = $"{txtDescripcion.Text}",
                 Extras = txtExtras.Text,
-                Precio = nudPrecio.Value,
+                Precio = (double)nudPrecio.Value,
                 ColegioId = ((ColegioDto)cmbColegio.SelectedItem).Id,
                 TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id,
                 Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),

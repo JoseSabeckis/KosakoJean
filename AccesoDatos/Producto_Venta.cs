@@ -21,7 +21,7 @@ namespace AccesoDatos
         public decimal Cantidad { get; set; }
         public string Talle { get; set; }
         public string Descripcion { get; set; }
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
         public long TalleId { get; set; }
     
         public virtual Producto Producto { get; set; }

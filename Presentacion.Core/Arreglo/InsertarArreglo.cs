@@ -100,8 +100,8 @@ namespace Presentacion.Core.Arreglo
 
                     var arreglo = new ArregloDto
                     {
-                        Adelanto = nudAdelanto.Value,
-                        Total = nudTotal.Value,
+                        Adelanto = (double)nudAdelanto.Value,
+                        Total = (double)nudTotal.Value,
                         Apellido = txtApellido.Text,
                         Nombre = txtNombre.Text,
                         ClienteId = _ClienteId,
@@ -121,7 +121,7 @@ namespace Presentacion.Core.Arreglo
                     {
                         Descripcion = "Arreglo de" + " " + txtApellido.Text + " " + txtNombre.Text,
                         Fecha = DateTime.Now.ToLongDateString(),
-                        Total = nudAdelanto.Value,
+                        Total = (double)nudAdelanto.Value,
                         CajaId = detallCajaServicio.BuscarCajaAbierta(),
                         NumeroOperacion = long.Parse(numOperacion)
                 };
@@ -145,7 +145,7 @@ namespace Presentacion.Core.Arreglo
                     detalleProductoServicio.Insertar(ventaDto2);
 
                     //dinero a caja
-                    cajaServicio.SumarDineroACaja(nudAdelanto.Value);
+                    cajaServicio.SumarDineroACaja((double)nudAdelanto.Value);
 
 #pragma warning disable CS0436 // El tipo 'Afirmacion' de 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs' está en conflicto con el tipo importado 'Afirmacion' de 'Presentacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Se usará el tipo definido en 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs'.
                     var mensaje = new Afirmacion("-- Arreglo Creado --", "Se Guardo Su Arreglo");

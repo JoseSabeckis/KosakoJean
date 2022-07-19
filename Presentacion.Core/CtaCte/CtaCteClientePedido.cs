@@ -44,9 +44,9 @@ namespace Presentacion.Core.CtaCte
         VentaDto ventaDto;
         List<Producto_Venta_Dto> ListaVenta;
         List<VentaDto2> ListaVentasDto2;
-        decimal _Total;
+        double _Total;
 
-        public CtaCteClientePedido(long clienteId, decimal total, List<Producto_Venta_Dto> listProductoVenta, List<VentaDto2> listVentaDto2)
+        public CtaCteClientePedido(long clienteId, double total, List<Producto_Venta_Dto> listProductoVenta, List<VentaDto2> listVentaDto2)
         {
             InitializeComponent();
 
@@ -82,7 +82,7 @@ namespace Presentacion.Core.CtaCte
                 txtNombre.Enabled = true;
             }
 
-            nudAdelanto.Maximum = total;
+            nudAdelanto.Maximum = (decimal)total;
 
             _Total = total;
 
@@ -150,7 +150,7 @@ namespace Presentacion.Core.CtaCte
             {
                 ventaDto.ClienteId = _Cliente.Id;
                 ventaDto.Fecha = DateTime.Now;
-                ventaDto.Total = nudAdelanto.Value;
+                ventaDto.Total = (double)nudAdelanto.Value;
 
                 var ventaId = ventaServicio.NuevaVenta(ventaDto);
 
@@ -183,7 +183,7 @@ namespace Presentacion.Core.CtaCte
 
                 var pedido = new PedidoDto
                 {
-                    Adelanto = nudAdelanto.Value,
+                    Adelanto = (double)nudAdelanto.Value,
                     Apellido = txtApellido.Text,
                     FechaPedido = DateTime.Now,
                     Nombre = txtNombre.Text,
@@ -202,7 +202,7 @@ namespace Presentacion.Core.CtaCte
 
                     var aux = new Producto_Pedido_Dto
                     {
-                        Cantidad = item.Cantidad,
+                        Cantidad = (decimal)item.Cantidad,
                         ProductoId = productoServicio.ObtenerPorId(item.Id).Id,
                         Estado = AccesoDatos.EstadoPedido.Esperando,
                         Talle = item.Talle,
@@ -225,7 +225,7 @@ namespace Presentacion.Core.CtaCte
                     Estado = AccesoDatos.CtaCteEstado.EnEspera,
                     Fecha = DateTime.Now,
                     Total = _Total,
-                    Debe = _Total - nudAdelanto.Value,
+                    Debe = _Total - (double)nudAdelanto.Value,
                     Descripcion = $"Prenda Guardada",
                     PedidoId = pedidoId,
                     NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
@@ -237,7 +237,7 @@ namespace Presentacion.Core.CtaCte
                 {
                     Descripcion = txtApellido.Text + " " + txtNombre.Text,
                     Fecha = DateTime.Now.ToString(),
-                    Total = nudAdelanto.Value,
+                    Total = (double)nudAdelanto.Value,
                     CajaId = detallCajaServicio.BuscarCajaAbierta(),
                     NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
                 };
@@ -260,7 +260,7 @@ namespace Presentacion.Core.CtaCte
                 //
 
                 //dinero a caja
-                cajaServicio.SumarDineroACaja(nudAdelanto.Value);//
+                cajaServicio.SumarDineroACaja((double)nudAdelanto.Value);//
 
 #pragma warning disable CS0436 // El tipo 'Afirmacion' de 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs' está en conflicto con el tipo importado 'Afirmacion' de 'Presentacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Se usará el tipo definido en 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs'.
                 var NewPrenda = new Afirmacion("Prenda Guardada", $"A Esperar...\nAdelanto de Cobro: $ {nudAdelanto.Value}\n\nTipo de Pago: {detalle.TipoPago}");

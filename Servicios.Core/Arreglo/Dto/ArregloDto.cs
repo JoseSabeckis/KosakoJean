@@ -35,11 +35,11 @@ namespace Servicios.Core.Arreglo.Dto
 
         public string ApyNom => Apellido + " " + Nombre;
 
-        public decimal Total { get; set; }
+        public double Total { get; set; }
 
         public string TotalString => Total.ToString("00.00");
 
-        public decimal Adelanto { get; set; }
+        public double Adelanto { get; set; }
 
         public bool EstaEliminado { get; set; }
 

@@ -44,7 +44,8 @@ namespace Servicios.Core.DetalleCaja
                         Total = x.Total,
                         Fecha = x.Fecha,
                         TipoPago = x.TipoPago,
-                        EstaEliminado = x.EstaEliminado
+                        EstaEliminado = x.EstaEliminado,
+                        NumeroOperacion = x.NumeroOperacion
 
                     }).ToList();
 
@@ -67,7 +68,8 @@ namespace Servicios.Core.DetalleCaja
                     Total = detalle.Total,
                     Fecha = detalle.Fecha,
                     TipoPago = detalle.TipoPago,
-                    EstaEliminado = detalle.EstaEliminado
+                    EstaEliminado = detalle.EstaEliminado,
+                    NumeroOperacion = detalle.NumeroOperacion
 
                 };
 
@@ -106,7 +108,7 @@ namespace Servicios.Core.DetalleCaja
 
         }
 
-        public decimal BuscarDetallePorId(long detalleId)
+        public double BuscarDetallePorId(long detalleId)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -139,7 +141,8 @@ namespace Servicios.Core.DetalleCaja
                         Total = x.Total,
                         Id = x.Id,
                         TipoPago = x.TipoPago,
-                        EstaEliminado = x.EstaEliminado
+                        EstaEliminado = x.EstaEliminado,
+                        NumeroOperacion = x.NumeroOperacion
 
                     }).ToList();
 

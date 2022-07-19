@@ -29,11 +29,11 @@ namespace Presentacion.Core.Caja
                 var caja = new CajaDto
                 {
                     FechaApertura = DateTime.Now,
-                    MontoApertura = nudDinero.Value,
+                    MontoApertura = (double)nudDinero.Value,
                     OpenClose = OpenClose.Abierto,
                     MontoCierre = 0,
                     FechaCierre = "No Esta Cerrada",
-                    TotalCaja = nudDinero.Value
+                    TotalCaja = (double)nudDinero.Value
                 };
 
                 _cajaServicio.AbrirCaja(caja);

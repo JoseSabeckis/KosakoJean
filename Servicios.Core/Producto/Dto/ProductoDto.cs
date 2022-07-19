@@ -22,7 +22,7 @@
 
         public decimal Stock { get; set; }
 
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
 
         public string PrecioString => Precio.ToString("00.00");
 

@@ -25,7 +25,7 @@ namespace Servicios.Core.Producto_Pedido.Dto
 
         public string ProductoDescripcion => productoServicio.ObtenerPorId(ProductoId).Descripcion;
 
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
 
         public bool EstaEliminado { get; set; }
     }

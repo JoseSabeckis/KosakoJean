@@ -8,11 +8,11 @@ namespace Servicios.Core.Caja
     {
         CajaDto BuscarCajasId(long id);
 
-        void SumarDineroACaja(decimal total);
+        void SumarDineroACaja(double total);
 
         IEnumerable<CajaDto> BuscarCajas();
 
-        void RestarDineroACaja(long cajaId, decimal dinero);
+        void RestarDineroACaja(long cajaId, double dinero);
 
         AccesoDatos.Caja BuscarCajaAbierta();
 
@@ -20,15 +20,15 @@ namespace Servicios.Core.Caja
 
         void EliminarCaja(long id);
 
-        void CerrarCaja(decimal montoCierre, string fechaCierre);
+        void CerrarCaja(double montoCierre, string fechaCierre);
 
         void AbrirCaja(CajaDto cajaDto);
 
         IEnumerable<CajaDto> BuscarCajasPorApertura(DateTime desde, DateTime hasta);
 
-        decimal SumarCaja();
+        double SumarCaja();
 
-        void RestarDineroDeCaja(decimal monto);
+        void RestarDineroDeCaja(double monto);
 
         IEnumerable<CajaDto> BuscarCajasPorMes();
     }

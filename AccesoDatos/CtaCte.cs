@@ -16,8 +16,8 @@ namespace AccesoDatos
     {
         public long Id { get; set; }
         public System.DateTime Fecha { get; set; }
-        public decimal Total { get; set; }
-        public decimal Debe { get; set; }
+        public double Total { get; set; }
+        public double Debe { get; set; }
         public string Descripcion { get; set; }
         public long ClienteId { get; set; }
         public CtaCteEstado Estado { get; set; }

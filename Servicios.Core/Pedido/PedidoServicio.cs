@@ -338,7 +338,7 @@ namespace Servicios.Core.Pedido
             }
         }
 
-        public void SumarTotal(long id, decimal suma)
+        public void SumarTotal(long id, double suma)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -350,7 +350,7 @@ namespace Servicios.Core.Pedido
             }
         }
 
-        public void RestarTotal(long id, decimal resta)
+        public void RestarTotal(long id, double resta)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -362,7 +362,7 @@ namespace Servicios.Core.Pedido
             }
         }
 
-        public void RestarAdelanto(long id, decimal resta)
+        public void RestarAdelanto(long id, double resta)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -589,7 +589,7 @@ namespace Servicios.Core.Pedido
             }
         }
 
-        public void CambiarRamas(decimal total, long id)
+        public void CambiarRamas(double total, long id)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -603,7 +603,7 @@ namespace Servicios.Core.Pedido
             }
         }
 
-        public void RestarAdelanto(decimal total, long id)
+        public void RestarAdelanto(double total, long id)
         {
             using (var context = new KosakoDBEntities())
             {

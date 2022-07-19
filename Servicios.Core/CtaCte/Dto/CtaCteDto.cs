@@ -9,9 +9,9 @@ namespace Servicios.Core.CtaCte.Dto
 
         public string Descripcion { get; set; }
 
-        public decimal Total { get; set; }
+        public double Total { get; set; }
 
-        public decimal Debe { get; set; }
+        public double Debe { get; set; }
 
         public DateTime Fecha { get; set; }
 

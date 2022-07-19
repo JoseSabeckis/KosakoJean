@@ -29,7 +29,7 @@ namespace Servicios.Core.Caja
             }
         }
 
-        public void CerrarCaja(decimal montoCierre, string fechaCierre)
+        public void CerrarCaja(double montoCierre, string fechaCierre)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -45,7 +45,7 @@ namespace Servicios.Core.Caja
             }
         }
 
-        public decimal SumarCaja()
+        public double SumarCaja()
         {
             using (var context = new KosakoDBEntities())
             {
@@ -54,7 +54,7 @@ namespace Servicios.Core.Caja
 
                 var completa = context.DetalleCajas.Where(x => x.CajaId == detalles.Id);
 
-                decimal total = 0;
+                double total = 0;
 
                 foreach (var item in completa)
                 {
@@ -66,7 +66,7 @@ namespace Servicios.Core.Caja
             }
         }
 
-        public void RestarDineroACaja(long cajaId, decimal dinero)
+        public void RestarDineroACaja(long cajaId, double dinero)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -91,7 +91,7 @@ namespace Servicios.Core.Caja
             }
         }
 
-        public void SumarDineroACaja(decimal total)
+        public void SumarDineroACaja(double total)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -103,7 +103,7 @@ namespace Servicios.Core.Caja
             }
         }
 
-        public void RestarDineroDeCaja(decimal monto)
+        public void RestarDineroDeCaja(double monto)
         {
             using (var context = new KosakoDBEntities())
             {

@@ -74,7 +74,7 @@ namespace Servicios.Core.Arreglo
             }
         }
 
-        public void Cobrar(long id, decimal dinero)
+        public void Cobrar(long id, double dinero)
         {
             using (var context = new KosakoDBEntities())
             {

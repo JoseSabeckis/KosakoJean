@@ -20,7 +20,7 @@ namespace AccesoDatos
         public string Colegio { get; set; }
         public string Talle { get; set; }
         public decimal Cantidad { get; set; }
-        public decimal Precio { get; set; }
+        public double Precio { get; set; }
         public System.DateTime Fecha { get; set; }
         public Nullable<long> ProductoId { get; set; }
     

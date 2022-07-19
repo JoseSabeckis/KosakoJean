@@ -92,7 +92,7 @@
     </Key>
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Precio" Type="decimal" Nullable="false" />
+    <Property Name="Precio" Type="float" Nullable="false" />
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
     <Property Name="Extras" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TipoProductoId" Type="bigint" Nullable="false" />
@@ -126,9 +126,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TotalCaja" Type="decimal" Nullable="false" />
-    <Property Name="MontoApertura" Type="decimal" Nullable="false" />
-    <Property Name="MontoCierre" Type="decimal" Nullable="false" />
+    <Property Name="TotalCaja" Type="float" Nullable="false" />
+    <Property Name="MontoApertura" Type="float" Nullable="false" />
+    <Property Name="MontoCierre" Type="float" Nullable="false" />
     <Property Name="FechaApertura" Type="datetime" Nullable="false" />
     <Property Name="FechaCierre" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OpenClose" Type="bigint" Nullable="false" />
@@ -140,7 +140,7 @@
     </Key>
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Total" Type="decimal" Nullable="false" />
+    <Property Name="Total" Type="float" Nullable="false" />
     <Property Name="CajaId" Type="bigint" Nullable="false" />
     <Property Name="Fecha" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TipoPago" Type="bigint" Nullable="false" />
@@ -152,8 +152,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Total" Type="decimal" Nullable="false" />
-    <Property Name="Adelanto" Type="decimal" Nullable="false" />
+    <Property Name="Total" Type="float" Nullable="false" />
+    <Property Name="Adelanto" Type="float" Nullable="false" />
     <Property Name="FechaPedido" Type="datetime" Nullable="false" />
     <Property Name="Apellido" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
@@ -181,7 +181,7 @@
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TalleId" Type="bigint" Nullable="false" />
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
-    <Property Name="Precio" Type="decimal" Nullable="false" />
+    <Property Name="Precio" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="Ventas">
     <Key>
@@ -189,7 +189,7 @@
     </Key>
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Fecha" Type="datetime" Nullable="false" />
-    <Property Name="Total" Type="decimal" Nullable="false" />
+    <Property Name="Total" Type="float" Nullable="false" />
     <Property Name="Descuento" Type="decimal" Nullable="false" />
     <Property Name="ClienteId" Type="bigint" Nullable="false" />
     <Property Name="Cliente_Id" Type="bigint" Nullable="true" />
@@ -205,7 +205,7 @@
     <Property Name="Cantidad" Type="decimal" Nullable="false" />
     <Property Name="Talle" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Precio" Type="decimal" Nullable="false" />
+    <Property Name="Precio" Type="float" Nullable="false" />
     <Property Name="TalleId" Type="bigint" Nullable="false" />
     <Property Name="Venta_Id" Type="bigint" Nullable="true" />
   </EntityType>
@@ -229,8 +229,8 @@
     </Key>
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Fecha" Type="datetime" Nullable="false" />
-    <Property Name="Total" Type="decimal" Nullable="false" />
-    <Property Name="Debe" Type="decimal" Nullable="false" />
+    <Property Name="Total" Type="float" Nullable="false" />
+    <Property Name="Debe" Type="float" Nullable="false" />
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ClienteId" Type="bigint" Nullable="false" />
     <Property Name="Estado" Type="bigint" Nullable="false" />
@@ -313,8 +313,8 @@
     <Property Name="Descripcion" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ClienteId" Type="bigint" Nullable="false" />
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
-    <Property Name="Total" Type="decimal" Nullable="false" />
-    <Property Name="Adelanto" Type="decimal" Nullable="false" />
+    <Property Name="Total" Type="float" Nullable="false" />
+    <Property Name="Adelanto" Type="float" Nullable="false" />
     <Property Name="FechaRetirado" Type="datetime" Nullable="true" />
     <Property Name="Cantidad" Type="int" Nullable="false" />
     <Property Name="NumeroOperacion" Type="bigint" Nullable="false" />
@@ -329,7 +329,7 @@
     <Property Name="Colegio" Type="nvarchar(max)" Nullable="true" />
     <Property Name="Talle" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Cantidad" Type="decimal" Nullable="false" />
-    <Property Name="Precio" Type="decimal" Nullable="false" />
+    <Property Name="Precio" Type="float" Nullable="false" />
     <Property Name="Fecha" Type="datetime" Nullable="false" />
     <Property Name="ProductoId" Type="bigint" Nullable="true" />
   </EntityType>
@@ -612,7 +612,7 @@
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" Nullable="false" />
-          <Property Name="Precio" Type="Decimal" Nullable="false" />
+          <Property Name="Precio" Type="Double" Nullable="false" />
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
           <Property Name="Extras" Type="String" Nullable="false" />
           <NavigationProperty Name="TipoProducto" Relationship="KosakoDBModel.TipoProductoProducto" FromRole="Producto" ToRole="TipoProducto" />
@@ -652,9 +652,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TotalCaja" Type="Decimal" Nullable="false" />
-          <Property Name="MontoApertura" Type="Decimal" Nullable="false" />
-          <Property Name="MontoCierre" Type="Decimal" Nullable="false" />
+          <Property Name="TotalCaja" Type="Double" Nullable="false" />
+          <Property Name="MontoApertura" Type="Double" Nullable="false" />
+          <Property Name="MontoCierre" Type="Double" Nullable="false" />
           <NavigationProperty Name="DetalleCaja" Relationship="KosakoDBModel.CajaDetalleCaja" FromRole="Caja" ToRole="DetalleCaja" />
           <Property Name="FechaApertura" Type="DateTime" Nullable="false" />
           <Property Name="FechaCierre" Type="String" Nullable="false" />
@@ -667,7 +667,7 @@
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" Nullable="false" />
-          <Property Name="Total" Type="Decimal" Nullable="false" />
+          <Property Name="Total" Type="Double" Nullable="false" />
           <NavigationProperty Name="Caja" Relationship="KosakoDBModel.CajaDetalleCaja" FromRole="DetalleCaja" ToRole="Caja" />
           <Property Name="CajaId" Type="Int64" Nullable="false" />
           <Property Name="Fecha" Type="String" Nullable="false" />
@@ -717,8 +717,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Total" Type="Decimal" Nullable="false" />
-          <Property Name="Adelanto" Type="Decimal" Nullable="false" />
+          <Property Name="Total" Type="Double" Nullable="false" />
+          <Property Name="Adelanto" Type="Double" Nullable="false" />
           <Property Name="FechaPedido" Type="DateTime" Nullable="false" />
           <Property Name="Apellido" Type="String" Nullable="false" />
           <Property Name="Nombre" Type="String" Nullable="false" />
@@ -751,7 +751,7 @@
           <Property Name="TalleId" Type="Int64" Nullable="false" />
           <NavigationProperty Name="Producto_Dato" Relationship="KosakoDBModel.Producto_PedidoProducto_Dato" FromRole="Producto_Pedido" ToRole="Producto_Dato" />
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
-          <Property Name="Precio" Type="Decimal" Nullable="false" />
+          <Property Name="Precio" Type="Double" Nullable="false" />
         </EntityType>
         <Association Name="ProductoProducto_Pedido">
           <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="1" />
@@ -791,7 +791,7 @@
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" />
-          <Property Name="Total" Type="Decimal" Nullable="false" />
+          <Property Name="Total" Type="Double" Nullable="false" />
           <Property Name="Descuento" Type="Decimal" Nullable="false" />
           <NavigationProperty Name="Producto_Venta" Relationship="KosakoDBModel.Producto_VentaVenta" FromRole="Venta" ToRole="Producto_Venta" />
           <NavigationProperty Name="Cliente" Relationship="KosakoDBModel.VentaCliente" FromRole="Venta" ToRole="Cliente" />
@@ -809,7 +809,7 @@
           <Property Name="Cantidad" Type="Decimal" Nullable="false" />
           <Property Name="Talle" Type="String" Nullable="false" />
           <Property Name="Descripcion" Type="String" Nullable="false" />
-          <Property Name="Precio" Type="Decimal" Nullable="false" />
+          <Property Name="Precio" Type="Double" Nullable="false" />
           <NavigationProperty Name="Venta" Relationship="KosakoDBModel.Producto_VentaVenta" FromRole="Producto_Venta" ToRole="Venta" />
           <NavigationProperty Name="TalleEntidad" Relationship="KosakoDBModel.TalleProducto_Venta" FromRole="Producto_Venta" ToRole="Talle" />
           <Property Name="TalleId" Type="Int64" Nullable="false" />
@@ -870,8 +870,8 @@
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" />
-          <Property Name="Total" Type="Decimal" Nullable="false" />
-          <Property Name="Debe" Type="Decimal" Nullable="false" />
+          <Property Name="Total" Type="Double" Nullable="false" />
+          <Property Name="Debe" Type="Double" Nullable="false" />
           <Property Name="Descripcion" Type="String" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="KosakoDBModel.ClienteCtaCte" FromRole="CtaCte" ToRole="Cliente" />
           <Property Name="ClienteId" Type="Int64" Nullable="false" />
@@ -1025,8 +1025,8 @@
           <NavigationProperty Name="Cliente" Relationship="KosakoDBModel.ClienteArreglo" FromRole="Arreglo" ToRole="Cliente" />
           <Property Name="ClienteId" Type="Int64" Nullable="false" />
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
-          <Property Name="Total" Type="Decimal" Nullable="false" />
-          <Property Name="Adelanto" Type="Decimal" Nullable="false" />
+          <Property Name="Total" Type="Double" Nullable="false" />
+          <Property Name="Adelanto" Type="Double" Nullable="false" />
           <Property Name="FechaRetirado" Type="DateTime" Nullable="true" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
           <Property Name="NumeroOperacion" Type="Int64" Nullable="false" />
@@ -1058,7 +1058,7 @@
           <Property Name="Colegio" Type="String" Nullable="true" />
           <Property Name="Talle" Type="String" Nullable="false" />
           <Property Name="Cantidad" Type="Decimal" Nullable="false" />
-          <Property Name="Precio" Type="Decimal" Nullable="false" />
+          <Property Name="Precio" Type="Double" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" />
           <Property Name="ProductoId" Type="Int64" Nullable="true" />
         </EntityType>

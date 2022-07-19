@@ -7,7 +7,7 @@ namespace Servicios.Core.CtaCte
     {
         void Agregar(CtaCteDto ctaCteDto);
 
-        void Pagar(decimal monto, long clienteId, long cuentaId);
+        void Pagar(double monto, long clienteId, long cuentaId);
 
         IEnumerable<CtaCteDto> Lista(long clienteId);
 
@@ -15,6 +15,6 @@ namespace Servicios.Core.CtaCte
 
         CtaCteDto ObtenerPorIdDePedidosId(long pedidoId);
 
-        void SumarLoQueDebe(decimal monto, long clienteId, long cuentaId);
+        void SumarLoQueDebe(double monto, long clienteId, long cuentaId);
     }
 }

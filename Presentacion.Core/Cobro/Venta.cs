@@ -49,13 +49,13 @@ namespace Presentacion.Core.Cobro
         string _descripcionProducto;
         string _colegio;
         string _talle;
-        decimal _precio;
+        double _precio;
 
         List<VentaDto2> ListaVenta;
         List<Producto_Venta_Dto> ListaCtaCte;
         VentaDto ventaDto;
 
-        decimal _total;
+        double _total;
         string _NumeroOperacion;
 
         public Venta()
@@ -162,7 +162,7 @@ namespace Presentacion.Core.Cobro
                 txtProducto.Text = producto.Descripcion;
                 txtColegio.Text = producto.Colegio;
 
-                nudPrecio.Value = product.Precio;
+                nudPrecio.Value = (decimal)product.Precio;
 
                 btnAgregarAlaGrilla.Select();
             }
@@ -193,7 +193,7 @@ namespace Presentacion.Core.Cobro
         {
             if (!string.IsNullOrEmpty(txtProducto.Text))
             {
-                var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text && x.Precio == nudPrecio.Value && x.Colegio == txtColegio.Text);
+                var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text && x.Precio == (double)nudPrecio.Value && x.Colegio == txtColegio.Text);
 
                 if (nudPrecio.Value == 0)
                 {
@@ -205,7 +205,7 @@ namespace Presentacion.Core.Cobro
 
                 if (prueba != null)
                 {
-                    prueba.Cantidad += nudCantidad.Value;
+                    prueba.Cantidad += (double)nudCantidad.Value;
 
                     CargarGrilla(ListaVenta);
 
@@ -216,9 +216,9 @@ namespace Presentacion.Core.Cobro
 
                     var nuevo = new VentaDto2
                     {
-                        Cantidad = nudCantidad.Value,
+                        Cantidad = (double)nudCantidad.Value,
                         Descripcion = txtProducto.Text,
-                        Precio = nudPrecio.Value,
+                        Precio = (double)nudPrecio.Value,
                         Talle = cmbTalle.Text,
                         Id = _productoId,
                         Fecha = DateTime.Now.Date,
@@ -245,7 +245,7 @@ namespace Presentacion.Core.Cobro
 
         public void Total()
         {
-            decimal precio = 0;
+            double precio = 0;
 
             foreach (var item in ListaVenta)
             {
@@ -260,7 +260,7 @@ namespace Presentacion.Core.Cobro
 
             _total = precio;
 
-            nudTotal.Value = _total;
+            nudTotal.Value = (decimal)_total;
         }
 
         public void Limpiar()
@@ -358,9 +358,9 @@ namespace Presentacion.Core.Cobro
         {
             if (nudPagaron.Value > 0 && nudTotalVenta.Value > 0)
             {
-                var pago = (short)(nudPagaron.Value - nudTotalVenta.Value);
+                var pago = (double)(nudPagaron.Value - nudTotalVenta.Value);
 
-                txtVuelto.Text = $" $ {pago}";
+                txtVuelto.Text = pago.ToString("00.00");
             }
             else
             {
@@ -440,7 +440,7 @@ namespace Presentacion.Core.Cobro
 
                             var producto_venta = new Producto_Venta_Dto
                             {
-                                Cantidad = item.Cantidad,
+                                Cantidad = (decimal)item.Cantidad,
                                 Descripcion = item.Descripcion,
                                 Estado = AccesoDatos.EstadoPedido.Terminado,
                                 ProductoId = item.Id,
@@ -451,7 +451,7 @@ namespace Presentacion.Core.Cobro
                             };
 
                             // descontar stock
-                            productoServicio.BajarStock(producto.Id, item.Cantidad);
+                            productoServicio.BajarStock(producto.Id, (decimal)item.Cantidad);
                             //
 
                             descripcion = $"{descripcion} - {producto_venta.Descripcion}";
@@ -567,7 +567,7 @@ namespace Presentacion.Core.Cobro
 
                             var producto_venta = new Producto_Venta_Dto
                             {
-                                Cantidad = item.Cantidad,
+                                Cantidad = (decimal)item.Cantidad,
                                 Descripcion = item.Descripcion,
                                 Estado = AccesoDatos.EstadoPedido.Terminado,
                                 ProductoId = item.Id,
@@ -657,7 +657,7 @@ namespace Presentacion.Core.Cobro
                 _descripcionProducto = (string)dgvGrilla["Descripcion", e.RowIndex].Value;
                 _colegio = (string)dgvGrilla["Colegio", e.RowIndex].Value;
                 _talle = (string)dgvGrilla["Talle", e.RowIndex].Value;
-                _precio = (decimal)dgvGrilla["Precio", e.RowIndex].Value;
+                _precio = (double)dgvGrilla["Precio", e.RowIndex].Value;
             }
         }
 
@@ -892,7 +892,7 @@ namespace Presentacion.Core.Cobro
                 txtProducto.Text = producto.Descripcion;
                 txtColegio.Text = producto.Colegio;
 
-                nudPrecio.Value = product.Precio;
+                nudPrecio.Value = (decimal)product.Precio;
 
                 btnAgregarAlaGrilla.PerformClick();
 
