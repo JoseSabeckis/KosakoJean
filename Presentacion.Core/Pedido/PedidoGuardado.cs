@@ -83,25 +83,12 @@ namespace Presentacion.Core.Pedido
 
             if (_Pedido.EstaEliminado)
             {
-                lblEliminado.Visible = true;
-                btnGuardar.Visible = false;
                 btnEliminar.Visible = false;
-
-                txtNotas.Enabled = false;
-
-                btnCobro.Visible = false;
-                btnRestar.Visible = false;
-                lblCobrar.Visible = false;
-                ckbNormal.Visible = false;
-                ckbTarjeta.Visible = false;
-                nudCobro.Visible = false;
-
-                btnTerminar.Visible = false;
-
-                btnAgregarProductos.Visible = false;
-                btnEliminarPedidoSeleccionado.Visible = false;
-                btnVolverPedidoNoRetirado.Visible = false;
-
+                BloquearTodo();
+            }
+            else
+            {
+                VerSiHayProductos();
             }
 
             if (dgvGrilla.RowCount == 0)
@@ -112,6 +99,27 @@ namespace Presentacion.Core.Pedido
             }
 
             CargarImageEnGeneral();
+        }
+
+        public void BloquearTodo()
+        {
+            lblEliminado.Visible = true;
+            btnGuardar.Visible = false;
+
+            txtNotas.Enabled = false;
+
+            btnCobro.Visible = false;
+            btnRestar.Visible = false;
+            lblCobrar.Visible = false;
+            ckbNormal.Visible = false;
+            ckbTarjeta.Visible = false;
+            nudCobro.Visible = false;
+
+            btnTerminar.Visible = false;
+
+            btnAgregarProductos.Visible = false;
+            btnEliminarPedidoSeleccionado.Visible = false;
+            btnVolverPedidoNoRetirado.Visible = false;
         }
 
         public void PonerNumOperacion()
@@ -156,9 +164,7 @@ namespace Presentacion.Core.Pedido
         {
             if (dgvGrilla.RowCount == 0)
             {
-                btnEliminarPedidoSeleccionado.Visible = false;
-                btnAgregarProductos.Visible = false;
-                btnTerminar.Visible = false;
+                BloquearTodo();
             }
             else
             {
@@ -193,14 +199,19 @@ namespace Presentacion.Core.Pedido
                 }
             }
 
-            pedidoServicio.Eliminar(PedidoId);
-
-            var ListaSoloIdProductoPedido = producto_Pedido_Servicio.Eliminar(PedidoId);
+            EliminacionDefinitiva();
 
             MessageBox.Show("Pedido Eliminado...", "Borrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             VerificarSiEstaEliminadoElPedido();
 
+        }
+
+        public void EliminacionDefinitiva()
+        {
+            pedidoServicio.Eliminar(PedidoId);
+
+            producto_Pedido_Servicio.Eliminar(PedidoId);
         }
 
         public void VerSiHayProductosDespuesDeBorrar()

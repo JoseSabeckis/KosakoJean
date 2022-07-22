@@ -154,6 +154,8 @@ namespace Presentacion.Core.Arreglo
 
                         //para ticket
                         Detalle(detalleId);
+
+                        _ArregloDto = arregloServicio.ObtenerPorId(_ArregloId);
                         //
                         Datos();
 

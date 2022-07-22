@@ -340,6 +340,7 @@
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UsarLogin" Type="bit" Nullable="false" />
     <Property Name="UsarTicketera" Type="bit" Nullable="false" />
+    <Property Name="MostrarDatos" Type="bit" Nullable="false" />
   </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
@@ -1081,6 +1082,7 @@
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UsarLogin" Type="Boolean" Nullable="false" />
           <Property Name="UsarTicketera" Type="Boolean" Nullable="false" />
+          <Property Name="MostrarDatos" Type="Boolean" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1356,6 +1358,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UsarLogin" ColumnName="UsarLogin" />
           <ScalarProperty Name="UsarTicketera" ColumnName="UsarTicketera" />
+          <ScalarProperty Name="MostrarDatos" ColumnName="MostrarDatos" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

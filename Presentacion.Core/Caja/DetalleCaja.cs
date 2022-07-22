@@ -29,7 +29,7 @@ namespace Presentacion.Core.Caja
 
             var suma = Lista.Sum(x => x.Precio);
 
-            lblTotal.Text = $"Total: ${suma}";
+            lblTotal.Text = $"Total: ${suma.ToString("00.00")}";
         }
 
         public void FormatearGrilla(DataGridView grilla)

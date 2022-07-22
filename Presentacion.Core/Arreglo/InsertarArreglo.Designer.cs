@@ -108,7 +108,7 @@ namespace Presentacion.Core.Arreglo
             // nudCantidad
             // 
             this.nudCantidad.BackColor = System.Drawing.SystemColors.Info;
-            this.nudCantidad.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudCantidad.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudCantidad.Location = new System.Drawing.Point(511, 401);
             this.nudCantidad.Minimum = new decimal(new int[] {
             1,
@@ -116,7 +116,7 @@ namespace Presentacion.Core.Arreglo
             0,
             0});
             this.nudCantidad.Name = "nudCantidad";
-            this.nudCantidad.Size = new System.Drawing.Size(43, 27);
+            this.nudCantidad.Size = new System.Drawing.Size(43, 29);
             this.nudCantidad.TabIndex = 33;
             this.nudCantidad.Value = new decimal(new int[] {
             1,

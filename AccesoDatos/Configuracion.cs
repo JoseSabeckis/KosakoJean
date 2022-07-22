@@ -17,5 +17,6 @@ namespace AccesoDatos
         public long Id { get; set; }
         public bool UsarLogin { get; set; }
         public bool UsarTicketera { get; set; }
+        public bool MostrarDatos { get; set; }
     }
 }

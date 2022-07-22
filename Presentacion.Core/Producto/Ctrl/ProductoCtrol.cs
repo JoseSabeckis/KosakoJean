@@ -27,7 +27,7 @@ namespace Presentacion.Core.Producto.Ctrl
             var producto = productoServicio.ObtenerPorId(_ProductoId);
 
             lblDescripcion.Text = producto.Descripcion;
-            lblPrecio.Text = $"${producto.Precio}";
+            lblPrecio.Text = producto.Precio.ToString("00.00");
             lblExtra.Text = producto.Colegio;
 
             if (producto.ColegioId == 1)

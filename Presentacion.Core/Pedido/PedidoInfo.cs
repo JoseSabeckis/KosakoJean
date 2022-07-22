@@ -98,14 +98,37 @@ namespace Presentacion.Core.Pedido
 
             if (_Pedido.EstaEliminado)
             {
-                lblEliminado.Visible = true;
-                btnGuardar.Visible = false;
                 btnEliminar.Visible = false;
+                BloquearTodo();
+            }
+            else
+            {
+                VerSiHayProductos();
             }
 
             SiNoHayProductos();
 
             CargarImageEnGeneral();
+        }
+
+        public void BloquearTodo()
+        {
+            lblEliminado.Visible = true;
+            btnGuardar.Visible = false;
+            txtNotas.Enabled = false;
+
+            btnEliminarPedidoSeleccionado.Visible = false;
+            btnAgregarProductos.Visible = false;
+            btnVolverPedidoNoRetirado.Visible = false;
+
+            ckbTarjeta.Visible = false;
+            ckbNormal.Visible = false;
+
+            nudCobro.Visible = false;
+
+            lblCobrar.Visible = false;
+            btnCobro.Visible = false;
+            btnRestar.Visible = false;
         }
 
         private void CargarImageEnGeneral()
@@ -596,6 +619,7 @@ namespace Presentacion.Core.Pedido
             if (dgvGrilla.RowCount == 0)
             {
                 btnEliminarPedidoSeleccionado.Visible = false;
+                BloquearTodo();
             }
             else
             {

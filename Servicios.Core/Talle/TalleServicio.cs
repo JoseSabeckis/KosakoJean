@@ -9,7 +9,6 @@ namespace Servicios.Core.Talle
     {
         public void Nuevo(TalleDto talleDto)
         {
-
             using (var context = new KosakoDBEntities())
             {
                 var nuevo = new AccesoDatos.Talle

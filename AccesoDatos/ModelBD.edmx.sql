@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/19/2022 16:42:42
+-- Date Created: 07/22/2022 00:36:53
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -380,7 +380,8 @@ GO
 CREATE TABLE [dbo].[Configuraciones] (
     [Id] bigint IDENTITY(1,1) NOT NULL,
     [UsarLogin] bit  NOT NULL,
-    [UsarTicketera] bit  NOT NULL
+    [UsarTicketera] bit  NOT NULL,
+    [MostrarDatos] bit  NOT NULL
 );
 GO
 
