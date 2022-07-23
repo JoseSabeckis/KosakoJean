@@ -56,6 +56,7 @@ namespace Presentacion.Core.Negocio
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btnModificar);
             this.panel1.Controls.Add(this.label1);
@@ -69,7 +70,7 @@ namespace Presentacion.Core.Negocio
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Location = new System.Drawing.Point(341, 29);
             this.btnModificar.Name = "btnModificar";
@@ -103,7 +104,7 @@ namespace Presentacion.Core.Negocio
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Location = new System.Drawing.Point(673, 0);
@@ -116,6 +117,7 @@ namespace Presentacion.Core.Negocio
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;

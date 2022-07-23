@@ -33,11 +33,11 @@ namespace Presentacion.Core.Cliente
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSelecccionar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.imgCliente = new System.Windows.Forms.PictureBox();
-            this.btnSelecccionar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             this.panel2.SuspendLayout();
@@ -86,6 +86,20 @@ namespace Presentacion.Core.Cliente
             this.panel2.Size = new System.Drawing.Size(782, 100);
             this.panel2.TabIndex = 0;
             // 
+            // btnSelecccionar
+            // 
+            this.btnSelecccionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelecccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSelecccionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSelecccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecccionar.Location = new System.Drawing.Point(654, 21);
+            this.btnSelecccionar.Name = "btnSelecccionar";
+            this.btnSelecccionar.Size = new System.Drawing.Size(113, 52);
+            this.btnSelecccionar.TabIndex = 6;
+            this.btnSelecccionar.Text = "Seleccionar";
+            this.btnSelecccionar.UseVisualStyleBackColor = false;
+            this.btnSelecccionar.Click += new System.EventHandler(this.btnSelecccionar_Click);
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -130,20 +144,6 @@ namespace Presentacion.Core.Cliente
             this.imgCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgCliente.TabIndex = 0;
             this.imgCliente.TabStop = false;
-            // 
-            // btnSelecccionar
-            // 
-            this.btnSelecccionar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelecccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnSelecccionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSelecccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecccionar.Location = new System.Drawing.Point(654, 21);
-            this.btnSelecccionar.Name = "btnSelecccionar";
-            this.btnSelecccionar.Size = new System.Drawing.Size(113, 52);
-            this.btnSelecccionar.TabIndex = 6;
-            this.btnSelecccionar.Text = "Seleccionar";
-            this.btnSelecccionar.UseVisualStyleBackColor = false;
-            this.btnSelecccionar.Click += new System.EventHandler(this.btnSelecccionar_Click);
             // 
             // ElegirCliente
             // 

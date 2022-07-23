@@ -31,6 +31,7 @@ namespace Presentacion.Core.Image
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageDatos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.lblImage = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,7 +40,6 @@ namespace Presentacion.Core.Image
             this.lblTituloFoto = new System.Windows.Forms.Label();
             this.imgFotoEmpleado = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlFoto.SuspendLayout();
@@ -48,6 +48,7 @@ namespace Presentacion.Core.Image
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btnGuardar);
             this.panel1.Controls.Add(this.lblImage);
@@ -57,6 +58,19 @@ namespace Presentacion.Core.Image
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(607, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardar.Location = new System.Drawing.Point(0, 0);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(126, 96);
+            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // lblImage
             // 
@@ -70,7 +84,7 @@ namespace Presentacion.Core.Image
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Location = new System.Drawing.Point(490, 0);
@@ -83,6 +97,7 @@ namespace Presentacion.Core.Image
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.pnlFoto);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -150,19 +165,6 @@ namespace Presentacion.Core.Image
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGuardar.Location = new System.Drawing.Point(0, 0);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(126, 96);
-            this.btnGuardar.TabIndex = 2;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // ImageDatos
             // 

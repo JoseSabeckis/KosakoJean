@@ -57,6 +57,7 @@ namespace Presentacion.Core.Pedido
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.label1);
@@ -175,6 +176,7 @@ namespace Presentacion.Core.Pedido
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label2);
@@ -206,6 +208,7 @@ namespace Presentacion.Core.Pedido
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.btnTerminado);
             this.panel3.Controls.Add(this.btnCancelado);

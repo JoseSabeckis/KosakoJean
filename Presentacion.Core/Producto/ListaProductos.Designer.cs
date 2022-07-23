@@ -31,6 +31,7 @@ namespace Presentacion.Core.Producto
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaProductos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCodBarra = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,13 +41,13 @@ namespace Presentacion.Core.Producto
             this.imgProducto = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
-            this.btnCodBarra = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btnCodBarra);
             this.panel1.Controls.Add(this.btnBuscar);
@@ -64,10 +65,23 @@ namespace Presentacion.Core.Producto
             this.panel1.Size = new System.Drawing.Size(1171, 140);
             this.panel1.TabIndex = 0;
             // 
+            // btnCodBarra
+            // 
+            this.btnCodBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCodBarra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCodBarra.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCodBarra.Location = new System.Drawing.Point(586, 3);
+            this.btnCodBarra.Name = "btnCodBarra";
+            this.btnCodBarra.Size = new System.Drawing.Size(307, 31);
+            this.btnCodBarra.TabIndex = 8;
+            this.btnCodBarra.Text = "Ver Codigos de Barra";
+            this.btnCodBarra.UseVisualStyleBackColor = false;
+            this.btnCodBarra.Click += new System.EventHandler(this.btnCodBarra_Click);
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Location = new System.Drawing.Point(899, 46);
@@ -153,7 +167,7 @@ namespace Presentacion.Core.Producto
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,6 +183,7 @@ namespace Presentacion.Core.Producto
             // pnlPrincipal
             // 
             this.pnlPrincipal.AutoScroll = true;
+            this.pnlPrincipal.BackColor = System.Drawing.Color.Gray;
             this.pnlPrincipal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPrincipal.Location = new System.Drawing.Point(0, 140);
@@ -176,19 +191,6 @@ namespace Presentacion.Core.Producto
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(1171, 300);
             this.pnlPrincipal.TabIndex = 1;
-            // 
-            // btnCodBarra
-            // 
-            this.btnCodBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnCodBarra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCodBarra.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCodBarra.Location = new System.Drawing.Point(586, 3);
-            this.btnCodBarra.Name = "btnCodBarra";
-            this.btnCodBarra.Size = new System.Drawing.Size(307, 31);
-            this.btnCodBarra.TabIndex = 8;
-            this.btnCodBarra.Text = "Ver Codigos de Barra";
-            this.btnCodBarra.UseVisualStyleBackColor = false;
-            this.btnCodBarra.Click += new System.EventHandler(this.btnCodBarra_Click);
             // 
             // ListaProductos
             // 

@@ -38,10 +38,10 @@ namespace Presentacion.Core.Producto_Dato
             this.btnEnEspera = new System.Windows.Forms.Button();
             this.btnCancelado = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblColegio = new System.Windows.Forms.Label();
             this.lblTalle = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblColegio = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -152,6 +152,17 @@ namespace Presentacion.Core.Producto_Dato
             this.panel2.Size = new System.Drawing.Size(554, 73);
             this.panel2.TabIndex = 0;
             // 
+            // lblColegio
+            // 
+            this.lblColegio.AutoSize = true;
+            this.lblColegio.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColegio.ForeColor = System.Drawing.Color.Red;
+            this.lblColegio.Location = new System.Drawing.Point(2, 45);
+            this.lblColegio.Name = "lblColegio";
+            this.lblColegio.Size = new System.Drawing.Size(85, 26);
+            this.lblColegio.TabIndex = 3;
+            this.lblColegio.Text = "Colegio";
+            // 
             // lblTalle
             // 
             this.lblTalle.AutoSize = true;
@@ -175,7 +186,7 @@ namespace Presentacion.Core.Producto_Dato
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Location = new System.Drawing.Point(439, 0);
@@ -186,22 +197,11 @@ namespace Presentacion.Core.Producto_Dato
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lblColegio
-            // 
-            this.lblColegio.AutoSize = true;
-            this.lblColegio.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColegio.ForeColor = System.Drawing.Color.Red;
-            this.lblColegio.Location = new System.Drawing.Point(2, 45);
-            this.lblColegio.Name = "lblColegio";
-            this.lblColegio.Size = new System.Drawing.Size(85, 26);
-            this.lblColegio.TabIndex = 3;
-            this.lblColegio.Text = "Colegio";
-            // 
             // EstadoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(580, 328);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

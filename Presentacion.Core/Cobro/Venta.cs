@@ -25,6 +25,7 @@ using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -90,8 +91,6 @@ namespace Presentacion.Core.Cobro
             Inicializador();
 
             MostrarImpresoras();
-
-            cmbImpresoras.SelectedIndex = 0;
 
             TraerNumeroOperacion();
         }
@@ -926,10 +925,19 @@ namespace Presentacion.Core.Cobro
 
         public void MostrarImpresoras()
         {
-            foreach (String strPrinter in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
+            var pd = new PrintDocument();
+
+            foreach (String strPrinter in PrinterSettings.InstalledPrinters)
             {
                 cmbImpresoras.Items.Add(strPrinter);
             }
+
+            var name = pd.PrinterSettings.PrinterName;
+
+            var index = cmbImpresoras.FindString(name);
+
+            cmbImpresoras.SelectedIndex = index;
+
         }
 
         private void cmbTalle_RightToLeftChanged(object sender, EventArgs e)

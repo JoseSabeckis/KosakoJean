@@ -11,6 +11,7 @@ using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Ticket;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -188,10 +189,7 @@ namespace Presentacion.Core.Caja
                 btnTicket.Visible = false;
                 btnCrearTicket.Visible = false;
                 cmbImpresoras.Visible = false;
-            }
-            else
-            {
-                cmbImpresoras.SelectedIndex = 0;
+                lblUsar.Visible = false;
             }
         }
 
@@ -224,10 +222,18 @@ namespace Presentacion.Core.Caja
 
         public void MostrarImpresoras()
         {
-            foreach (String strPrinter in System.Drawing.Printing.PrinterSettings.InstalledPrinters)
+            var pd = new PrintDocument();
+
+            foreach (String strPrinter in PrinterSettings.InstalledPrinters)
             {
                 cmbImpresoras.Items.Add(strPrinter);
             }
+
+            var name = pd.PrinterSettings.PrinterName;
+
+            var index = cmbImpresoras.FindString(name);
+
+            cmbImpresoras.SelectedIndex = index;
         }
 
         private void btnCrearTicket_Click(object sender, EventArgs e)

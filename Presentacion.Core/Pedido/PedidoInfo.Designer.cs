@@ -81,6 +81,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btnEliminarPedidoSeleccionado);
             this.panel1.Controls.Add(this.lblEliminado);
@@ -308,6 +309,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.lblNumeroOperacion);
             this.panel3.Controls.Add(this.panel5);
@@ -566,6 +568,7 @@
             // 
             // txtNotas
             // 
+            this.txtNotas.BackColor = System.Drawing.SystemColors.Info;
             this.txtNotas.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNotas.Location = new System.Drawing.Point(4, 4);
             this.txtNotas.Multiline = true;

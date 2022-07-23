@@ -48,6 +48,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.btnCerrarCaja);
@@ -74,7 +75,7 @@
             // 
             // btmVolver
             // 
-            this.btmVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btmVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btmVolver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btmVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btmVolver.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,7 +89,7 @@
             // 
             // btnCerrarCaja
             // 
-            this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCerrarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarCaja.Location = new System.Drawing.Point(27, 67);
             this.btnCerrarCaja.Name = "btnCerrarCaja";
@@ -100,6 +101,7 @@
             // 
             // txtCobrado
             // 
+            this.txtCobrado.BackColor = System.Drawing.SystemColors.Info;
             this.txtCobrado.Enabled = false;
             this.txtCobrado.Location = new System.Drawing.Point(365, 28);
             this.txtCobrado.Name = "txtCobrado";
@@ -108,6 +110,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.BackColor = System.Drawing.SystemColors.Info;
             this.txtTotal.Enabled = false;
             this.txtTotal.Location = new System.Drawing.Point(365, 75);
             this.txtTotal.Name = "txtTotal";

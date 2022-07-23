@@ -72,6 +72,7 @@ namespace Presentacion.Core.Arreglo
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.lblNumeroOperacion);
             this.panel1.Controls.Add(this.nudCantidad);
@@ -135,7 +136,7 @@ namespace Presentacion.Core.Arreglo
             // 
             // nudTotal
             // 
-            this.nudTotal.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.nudTotal.BackColor = System.Drawing.SystemColors.Info;
             this.nudTotal.DecimalPlaces = 2;
             this.nudTotal.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudTotal.Increment = new decimal(new int[] {
@@ -227,7 +228,7 @@ namespace Presentacion.Core.Arreglo
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.ckbTarjeta);
             this.panel5.Controls.Add(this.ckbNormal);
@@ -239,7 +240,7 @@ namespace Presentacion.Core.Arreglo
             // ckbTarjeta
             // 
             this.ckbTarjeta.AutoSize = true;
-            this.ckbTarjeta.Location = new System.Drawing.Point(8, 56);
+            this.ckbTarjeta.Location = new System.Drawing.Point(4, 53);
             this.ckbTarjeta.Name = "ckbTarjeta";
             this.ckbTarjeta.Size = new System.Drawing.Size(94, 29);
             this.ckbTarjeta.TabIndex = 10;
@@ -252,7 +253,7 @@ namespace Presentacion.Core.Arreglo
             this.ckbNormal.AutoSize = true;
             this.ckbNormal.Checked = true;
             this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbNormal.Location = new System.Drawing.Point(8, 14);
+            this.ckbNormal.Location = new System.Drawing.Point(4, 11);
             this.ckbNormal.Name = "ckbNormal";
             this.ckbNormal.Size = new System.Drawing.Size(110, 29);
             this.ckbNormal.TabIndex = 9;
@@ -270,7 +271,7 @@ namespace Presentacion.Core.Arreglo
             // 
             // nudAdelanto
             // 
-            this.nudAdelanto.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.nudAdelanto.BackColor = System.Drawing.SystemColors.Info;
             this.nudAdelanto.DecimalPlaces = 2;
             this.nudAdelanto.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudAdelanto.Increment = new decimal(new int[] {

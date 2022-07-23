@@ -74,6 +74,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Size = new System.Drawing.Size(1032, 411);
             // 

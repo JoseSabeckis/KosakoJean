@@ -38,6 +38,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.MaximumSize = new System.Drawing.Size(648, 209);
             this.panel1.MinimumSize = new System.Drawing.Size(648, 209);
@@ -54,6 +55,7 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BackColor = System.Drawing.SystemColors.Info;
             this.txtDescripcion.Location = new System.Drawing.Point(230, 66);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(280, 33);

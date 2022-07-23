@@ -59,6 +59,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.btnBuscar);
             this.panel2.Controls.Add(this.label2);
@@ -143,7 +144,7 @@
             // panelGrilla
             // 
             this.panelGrilla.AutoScroll = true;
-            this.panelGrilla.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panelGrilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panelGrilla.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGrilla.Location = new System.Drawing.Point(0, 84);

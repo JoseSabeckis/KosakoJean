@@ -60,6 +60,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel2);
@@ -93,6 +94,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // txtNumeroOperacion
             // 
+            this.txtNumeroOperacion.BackColor = System.Drawing.SystemColors.Info;
             this.txtNumeroOperacion.Enabled = false;
             this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroOperacion.Location = new System.Drawing.Point(277, 196);
@@ -114,6 +116,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // dtpFechaEntrega
             // 
+            this.dtpFechaEntrega.CalendarMonthBackground = System.Drawing.SystemColors.Info;
             this.dtpFechaEntrega.Location = new System.Drawing.Point(43, 235);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(369, 33);
@@ -159,7 +162,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.ckbTarjeta);
             this.panel5.Controls.Add(this.ckbNormal);
@@ -194,7 +197,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // nudAdelanto
             // 
-            this.nudAdelanto.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.nudAdelanto.BackColor = System.Drawing.SystemColors.Info;
             this.nudAdelanto.DecimalPlaces = 2;
             this.nudAdelanto.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudAdelanto.Increment = new decimal(new int[] {
@@ -298,7 +301,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.Lime;
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Location = new System.Drawing.Point(0, 0);

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Caja));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminarCaja = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnVer = new System.Windows.Forms.Button();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +44,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvGrilla = new System.Windows.Forms.DataGridView();
-            this.btnEliminarCaja = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgCaja)).BeginInit();
@@ -54,6 +54,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btnEliminarCaja);
             this.panel1.Controls.Add(this.panel4);
@@ -66,6 +67,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(906, 136);
             this.panel1.TabIndex = 0;
+            // 
+            // btnEliminarCaja
+            // 
+            this.btnEliminarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEliminarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarCaja.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCaja.Location = new System.Drawing.Point(122, 53);
+            this.btnEliminarCaja.Name = "btnEliminarCaja";
+            this.btnEliminarCaja.Size = new System.Drawing.Size(151, 33);
+            this.btnEliminarCaja.TabIndex = 12;
+            this.btnEliminarCaja.Text = "Eliminar Caja";
+            this.btnEliminarCaja.UseVisualStyleBackColor = false;
+            this.btnEliminarCaja.Click += new System.EventHandler(this.btnEliminarCaja_Click);
             // 
             // panel4
             // 
@@ -83,7 +97,7 @@
             // 
             // btnVer
             // 
-            this.btnVer.BackColor = System.Drawing.Color.Aqua;
+            this.btnVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVer.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVer.Location = new System.Drawing.Point(98, 82);
@@ -154,7 +168,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -217,19 +231,6 @@
             this.dgvGrilla.TabIndex = 11;
             this.dgvGrilla.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_RowEnter);
             this.dgvGrilla.DoubleClick += new System.EventHandler(this.dgvGrilla_DoubleClick);
-            // 
-            // btnEliminarCaja
-            // 
-            this.btnEliminarCaja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEliminarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarCaja.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarCaja.Location = new System.Drawing.Point(122, 53);
-            this.btnEliminarCaja.Name = "btnEliminarCaja";
-            this.btnEliminarCaja.Size = new System.Drawing.Size(151, 33);
-            this.btnEliminarCaja.TabIndex = 12;
-            this.btnEliminarCaja.Text = "Eliminar Caja";
-            this.btnEliminarCaja.UseVisualStyleBackColor = false;
-            this.btnEliminarCaja.Click += new System.EventHandler(this.btnEliminarCaja_Click);
             // 
             // Caja
             // 

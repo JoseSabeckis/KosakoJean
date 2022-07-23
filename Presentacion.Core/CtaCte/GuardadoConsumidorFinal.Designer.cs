@@ -31,12 +31,12 @@ namespace Presentacion.Core.CtaCte
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuardadoConsumidorFinal));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.ptbImagen = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panelGrilla = new System.Windows.Forms.Panel();
-            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImagen)).BeginInit();
@@ -55,6 +55,20 @@ namespace Presentacion.Core.CtaCte
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(985, 92);
             this.panel1.TabIndex = 0;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(261, 20);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(230, 50);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "Eliminar Permanente";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -108,6 +122,7 @@ namespace Presentacion.Core.CtaCte
             // 
             this.panelGrilla.AutoScroll = true;
             this.panelGrilla.AutoSize = true;
+            this.panelGrilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panelGrilla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGrilla.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,20 +130,6 @@ namespace Presentacion.Core.CtaCte
             this.panelGrilla.Name = "panelGrilla";
             this.panelGrilla.Size = new System.Drawing.Size(985, 397);
             this.panelGrilla.TabIndex = 1;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(261, 20);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(230, 50);
-            this.btnEliminar.TabIndex = 8;
-            this.btnEliminar.Text = "Eliminar Permanente";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Visible = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // GuardadoConsumidorFinal
             // 

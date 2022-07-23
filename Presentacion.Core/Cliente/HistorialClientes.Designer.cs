@@ -269,6 +269,7 @@ namespace Presentacion.Core.Cliente
             // 
             // dtpDesde
             // 
+            this.dtpDesde.CalendarMonthBackground = System.Drawing.SystemColors.Info;
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDesde.Location = new System.Drawing.Point(12, 37);
             this.dtpDesde.MinDate = new System.DateTime(1839, 11, 29, 0, 0, 0, 0);
@@ -278,6 +279,7 @@ namespace Presentacion.Core.Cliente
             // 
             // dtpHasta
             // 
+            this.dtpHasta.CalendarMonthBackground = System.Drawing.SystemColors.Info;
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpHasta.Location = new System.Drawing.Point(180, 37);
             this.dtpHasta.MinDate = new System.DateTime(1839, 11, 29, 0, 0, 0, 0);
@@ -315,7 +317,7 @@ namespace Presentacion.Core.Cliente
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscar.Location = new System.Drawing.Point(320, 30);
             this.btnBuscar.Name = "btnBuscar";
@@ -347,7 +349,7 @@ namespace Presentacion.Core.Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(888, 551);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

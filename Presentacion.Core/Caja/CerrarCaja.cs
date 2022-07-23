@@ -80,6 +80,14 @@ namespace Presentacion.Core.Caja
 
         private void btnCerrarCaja_Click(object sender, EventArgs e)
         {
+            if (_cajaServicio.BuscarCajaAbierta() == null)
+            {
+                MessageBox.Show("la Caja Se Encuentra Cerrada", "...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                Close();
+                return;
+            }
+
             if (MessageBox.Show("Esta Seguro de Cerrar Caja?", "Opcion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 var caja = new DetalleCajaDto

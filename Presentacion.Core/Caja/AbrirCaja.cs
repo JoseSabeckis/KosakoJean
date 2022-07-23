@@ -24,6 +24,14 @@ namespace Presentacion.Core.Caja
 
         private void btnAbrir_Click(object sender, EventArgs e)
         {
+            if (_cajaServicio.BuscarCajaAbierta() != null)
+            {
+                MessageBox.Show("La Caja Ya Esta Abierta", "...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                Close();
+                return;
+            }
+
             if (MessageBox.Show("Esta por abrir la caja, Seguro?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 var caja = new CajaDto

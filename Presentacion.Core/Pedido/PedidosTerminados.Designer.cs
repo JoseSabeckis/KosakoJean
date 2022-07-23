@@ -46,6 +46,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Gray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btnEliminarPedidos);
             this.panel1.Controls.Add(this.panel2);
@@ -60,7 +61,7 @@
             // 
             // btnEliminarPedidos
             // 
-            this.btnEliminarPedidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminarPedidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEliminarPedidos.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnEliminarPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarPedidos.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -159,6 +160,7 @@
             // panelGrilla
             // 
             this.panelGrilla.AutoScroll = true;
+            this.panelGrilla.BackColor = System.Drawing.Color.Silver;
             this.panelGrilla.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelGrilla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelGrilla.Location = new System.Drawing.Point(0, 94);

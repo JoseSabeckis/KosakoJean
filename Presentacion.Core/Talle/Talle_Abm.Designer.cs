@@ -37,6 +37,7 @@ namespace Presentacion.Core.Talle
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.txtDescripcion);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Size = new System.Drawing.Size(506, 168);
@@ -55,7 +56,7 @@ namespace Presentacion.Core.Talle
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.Info;
             this.txtDescripcion.Location = new System.Drawing.Point(185, 61);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(201, 33);
+            this.txtDescripcion.Size = new System.Drawing.Size(208, 33);
             this.txtDescripcion.TabIndex = 1;
             // 
             // Talle_Abm

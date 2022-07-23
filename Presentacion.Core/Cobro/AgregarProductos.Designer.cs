@@ -390,6 +390,7 @@ namespace Presentacion.Core.Cobro
             // 
             // nudTotal
             // 
+            this.nudTotal.BackColor = System.Drawing.SystemColors.Info;
             this.nudTotal.DecimalPlaces = 2;
             this.nudTotal.Enabled = false;
             this.nudTotal.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

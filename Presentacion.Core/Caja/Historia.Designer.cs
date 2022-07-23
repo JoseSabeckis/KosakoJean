@@ -44,7 +44,7 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnCrearTicket = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblUsar = new System.Windows.Forms.Label();
             this.cmbImpresoras = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -84,6 +84,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.btnTicket);
             this.panel4.Controls.Add(this.panel5);
@@ -101,7 +102,7 @@
             // btnTicket
             // 
             this.btnTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTicket.Location = new System.Drawing.Point(7, 67);
             this.btnTicket.Name = "btnTicket";
@@ -121,7 +122,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(194, 67);
@@ -172,6 +173,7 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel6.Controls.Add(this.imgCaja);
             this.panel6.Controls.Add(this.label1);
@@ -203,7 +205,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.LightGreen;
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Location = new System.Drawing.Point(654, 0);
@@ -217,7 +219,7 @@
             // btnCrearTicket
             // 
             this.btnCrearTicket.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCrearTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnCrearTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnCrearTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearTicket.Location = new System.Drawing.Point(19, 271);
@@ -230,9 +232,10 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.btnCrearTicket);
-            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.lblUsar);
             this.panel2.Controls.Add(this.cmbImpresoras);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label7);
@@ -250,16 +253,16 @@
             this.panel2.Size = new System.Drawing.Size(200, 343);
             this.panel2.TabIndex = 1;
             // 
-            // label10
+            // lblUsar
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(2, 225);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(33, 13);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Usar";
+            this.lblUsar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblUsar.AutoSize = true;
+            this.lblUsar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsar.Location = new System.Drawing.Point(2, 225);
+            this.lblUsar.Name = "lblUsar";
+            this.lblUsar.Size = new System.Drawing.Size(33, 13);
+            this.lblUsar.TabIndex = 10;
+            this.lblUsar.Text = "Usar";
             // 
             // cmbImpresoras
             // 
@@ -296,6 +299,7 @@
             // 
             // nudComienzoCaja
             // 
+            this.nudComienzoCaja.BackColor = System.Drawing.SystemColors.Info;
             this.nudComienzoCaja.DecimalPlaces = 2;
             this.nudComienzoCaja.Enabled = false;
             this.nudComienzoCaja.Location = new System.Drawing.Point(38, 179);
@@ -328,6 +332,7 @@
             // 
             // nudSinMonto
             // 
+            this.nudSinMonto.BackColor = System.Drawing.SystemColors.Info;
             this.nudSinMonto.DecimalPlaces = 2;
             this.nudSinMonto.Enabled = false;
             this.nudSinMonto.Location = new System.Drawing.Point(38, 118);
@@ -360,6 +365,7 @@
             // 
             // nudTotal
             // 
+            this.nudTotal.BackColor = System.Drawing.SystemColors.Info;
             this.nudTotal.DecimalPlaces = 2;
             this.nudTotal.Enabled = false;
             this.nudTotal.Location = new System.Drawing.Point(38, 35);
@@ -474,7 +480,7 @@
         private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.Button btnCrearTicket;
         private System.Windows.Forms.ComboBox cmbImpresoras;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblUsar;
         private System.Windows.Forms.Panel panel6;
     }
 }

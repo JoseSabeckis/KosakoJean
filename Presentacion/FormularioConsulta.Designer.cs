@@ -53,7 +53,7 @@
             // 
             // menuAccesoRapido
             // 
-            this.menuAccesoRapido.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.menuAccesoRapido.BackColor = System.Drawing.Color.Silver;
             this.menuAccesoRapido.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuAccesoRapido.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNuevo,
@@ -70,34 +70,34 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.Black;
             this.btnNuevo.Image = global::Presentacion.Properties.Resources.InsertarDos;
             this.btnNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(116, 36);
+            this.btnNuevo.Size = new System.Drawing.Size(110, 36);
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Black;
             this.btnEliminar.Image = global::Presentacion.Properties.Resources.EliminarDos;
             this.btnEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(122, 36);
+            this.btnEliminar.Size = new System.Drawing.Size(125, 36);
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.Black;
             this.btnModificar.Image = global::Presentacion.Properties.Resources.ActualizarDos;
             this.btnModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(140, 36);
+            this.btnModificar.Size = new System.Drawing.Size(136, 36);
             this.btnModificar.Text = "Modificar";
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
@@ -108,37 +108,37 @@
             // 
             // toolStripButton4
             // 
-            this.toolStripButton4.Font = new System.Drawing.Font("Century Gothic", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripButton4.ForeColor = System.Drawing.Color.Black;
             this.toolStripButton4.Image = global::Presentacion.Properties.Resources.MenuPrincipal;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(146, 36);
+            this.toolStripButton4.Size = new System.Drawing.Size(143, 36);
             this.toolStripButton4.Text = "Actualizar";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.Color.Black;
             this.btnSalir.Image = global::Presentacion.Properties.Resources._1490129335_rounded14_82192;
             this.btnSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(84, 36);
+            this.btnSalir.Size = new System.Drawing.Size(91, 36);
             this.btnSalir.Text = "Salir";
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // pnlBusqueda
             // 
-            this.pnlBusqueda.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnlBusqueda.BackColor = System.Drawing.Color.Silver;
             this.pnlBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlBusqueda.Controls.Add(this.btnBuscar);
             this.pnlBusqueda.Controls.Add(this.imgBuscar);
             this.pnlBusqueda.Controls.Add(this.lblBusqueda);
             this.pnlBusqueda.Controls.Add(this.txtBuscar);
             this.pnlBusqueda.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBusqueda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlBusqueda.Location = new System.Drawing.Point(0, 449);
             this.pnlBusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBusqueda.Name = "pnlBusqueda";
@@ -147,12 +147,12 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Gray;
+            this.btnBuscar.BackColor = System.Drawing.Color.White;
             this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscar.Location = new System.Drawing.Point(774, 0);
@@ -166,6 +166,7 @@
             // 
             // imgBuscar
             // 
+            this.imgBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.imgBuscar.Dock = System.Windows.Forms.DockStyle.Left;
             this.imgBuscar.Image = global::Presentacion.Properties.Resources.BuscarDos;
             this.imgBuscar.Location = new System.Drawing.Point(0, 0);
@@ -181,12 +182,12 @@
             this.lblBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lblBusqueda.AutoSize = true;
-            this.lblBusqueda.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBusqueda.ForeColor = System.Drawing.Color.Black;
             this.lblBusqueda.Location = new System.Drawing.Point(59, 17);
             this.lblBusqueda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(61, 15);
+            this.lblBusqueda.Size = new System.Drawing.Size(63, 13);
             this.lblBusqueda.TabIndex = 2;
             this.lblBusqueda.Text = "Busqueda";
             // 
@@ -194,6 +195,7 @@
             // 
             this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscar.BackColor = System.Drawing.SystemColors.Info;
             this.txtBuscar.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.Location = new System.Drawing.Point(124, 11);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);

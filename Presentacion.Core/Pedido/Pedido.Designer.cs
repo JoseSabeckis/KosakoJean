@@ -68,7 +68,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.txtNumeroOperacion);
             this.panel1.Controls.Add(this.label16);
@@ -93,6 +93,7 @@
             // 
             // txtNumeroOperacion
             // 
+            this.txtNumeroOperacion.BackColor = System.Drawing.SystemColors.Info;
             this.txtNumeroOperacion.Enabled = false;
             this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumeroOperacion.Location = new System.Drawing.Point(430, 378);
@@ -125,7 +126,7 @@
             // 
             // cmbHorario
             // 
-            this.cmbHorario.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.cmbHorario.BackColor = System.Drawing.SystemColors.Info;
             this.cmbHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbHorario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbHorario.FormattingEnabled = true;
@@ -150,7 +151,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.txtDescripcion.BackColor = System.Drawing.SystemColors.Info;
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(113, 417);
             this.txtDescripcion.Multiline = true;
@@ -181,6 +182,7 @@
             // 
             // txtApellido
             // 
+            this.txtApellido.BackColor = System.Drawing.SystemColors.Info;
             this.txtApellido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellido.Location = new System.Drawing.Point(106, 10);
             this.txtApellido.Name = "txtApellido";
@@ -200,6 +202,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.SystemColors.Info;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(106, 45);
             this.txtNombre.Name = "txtNombre";
@@ -218,7 +221,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.ckbTarjeta);
             this.panel5.Controls.Add(this.ckbCtaCte);
@@ -273,6 +276,7 @@
             // 
             // dtpFechaEntrega
             // 
+            this.dtpFechaEntrega.CalendarMonthBackground = System.Drawing.SystemColors.Info;
             this.dtpFechaEntrega.Location = new System.Drawing.Point(113, 281);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(336, 29);
@@ -342,7 +346,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.BackColor = System.Drawing.Color.Lime;
+            this.btnCargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnCargar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargar.Location = new System.Drawing.Point(0, 0);

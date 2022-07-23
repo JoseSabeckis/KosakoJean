@@ -64,6 +64,13 @@ namespace KosakoJean
             DatosComercio();
             CargarImagenes();
             CargarImageEnGeneral();
+
+            Color();
+        }
+
+        public void Color()
+        {
+            //btn.BackColor = System.Drawing.Color.Gray;
         }
 
         private void CargarImageEnGeneral()
@@ -213,7 +220,7 @@ namespace KosakoJean
                 var config = new ConfiguracionDto
                 {
                     UsarLogin = false,
-                    MostrarDatos = true,
+                    MostrarDatos = false,
                     UsarTicketera = false
                 };
 

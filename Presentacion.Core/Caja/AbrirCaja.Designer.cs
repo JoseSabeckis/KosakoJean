@@ -42,6 +42,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnAbrir);
@@ -65,7 +66,7 @@
             // 
             // btnAbrir
             // 
-            this.btnAbrir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAbrir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnAbrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbrir.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbrir.Location = new System.Drawing.Point(193, 185);
@@ -78,6 +79,7 @@
             // 
             // nudDinero
             // 
+            this.nudDinero.BackColor = System.Drawing.SystemColors.Info;
             this.nudDinero.DecimalPlaces = 2;
             this.nudDinero.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudDinero.Increment = new decimal(new int[] {
@@ -107,7 +109,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnVolver.BackColor = System.Drawing.Color.Silver;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Location = new System.Drawing.Point(402, 10);
             this.btnVolver.Name = "btnVolver";

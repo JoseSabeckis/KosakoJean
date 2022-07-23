@@ -55,6 +55,7 @@ namespace Presentacion.Core.Cliente
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Size = new System.Drawing.Size(661, 279);
             // 
@@ -80,6 +81,7 @@ namespace Presentacion.Core.Cliente
             // 
             // txtDni
             // 
+            this.txtDni.BackColor = System.Drawing.SystemColors.Info;
             this.txtDni.Location = new System.Drawing.Point(127, 114);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(133, 33);
@@ -158,6 +160,7 @@ namespace Presentacion.Core.Cliente
             // 
             // txtDireccion
             // 
+            this.txtDireccion.BackColor = System.Drawing.SystemColors.Info;
             this.txtDireccion.Location = new System.Drawing.Point(127, 206);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(259, 33);
@@ -165,6 +168,7 @@ namespace Presentacion.Core.Cliente
             // 
             // txtTelefono
             // 
+            this.txtTelefono.BackColor = System.Drawing.SystemColors.Info;
             this.txtTelefono.Location = new System.Drawing.Point(127, 160);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(259, 33);
@@ -172,6 +176,7 @@ namespace Presentacion.Core.Cliente
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.SystemColors.Info;
             this.txtNombre.Location = new System.Drawing.Point(127, 69);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(259, 33);
@@ -179,6 +184,7 @@ namespace Presentacion.Core.Cliente
             // 
             // txtApellido
             // 
+            this.txtApellido.BackColor = System.Drawing.SystemColors.Info;
             this.txtApellido.Location = new System.Drawing.Point(127, 20);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(259, 33);

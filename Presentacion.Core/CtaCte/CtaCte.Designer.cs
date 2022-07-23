@@ -104,6 +104,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.lblDomicilio);
             this.panel3.Controls.Add(this.panel5);
@@ -155,6 +156,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.ckbTarjeta);
             this.panel2.Controls.Add(this.ckbNormal);
@@ -213,7 +215,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // btnCobrar
             // 
-            this.btnCobrar.BackColor = System.Drawing.Color.Lime;
+            this.btnCobrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCobrar.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCobrar.Location = new System.Drawing.Point(146, 58);
@@ -257,6 +259,7 @@ namespace Presentacion.Core.CtaCte
             // 
             // txtDebe
             // 
+            this.txtDebe.BackColor = System.Drawing.SystemColors.Info;
             this.txtDebe.Enabled = false;
             this.txtDebe.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDebe.Location = new System.Drawing.Point(233, 67);

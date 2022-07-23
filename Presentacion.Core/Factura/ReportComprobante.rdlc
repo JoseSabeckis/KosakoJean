@@ -175,7 +175,7 @@
                         </Line>
                         <Line Name="Line5">
                           <Top>0.74111cm</Top>
-                          <Left>0.29986cm</Left>
+                          <Left>0.26459cm</Left>
                           <Height>0cm</Height>
                           <Width>14.57854cm</Width>
                           <ZIndex>4</ZIndex>
@@ -727,7 +727,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox6</rd:DefaultName>
         <Top>5.81766cm</Top>
-        <Left>11.7021cm</Left>
+        <Left>11.56634cm</Left>
         <Height>0.6cm</Height>
         <Width>3.41125cm</Width>
         <ZIndex>20</ZIndex>
@@ -748,7 +748,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>GRACIAS  POR  SU  VISITA</Value>
+                <Value>GRACIAS  POR  SU  COMPRA</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                 </Style>
@@ -758,10 +758,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox7</rd:DefaultName>
-        <Top>6.84953cm</Top>
-        <Left>10.67022cm</Left>
+        <Top>6.45294cm</Top>
+        <Left>9.98641cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.60729cm</Width>
+        <Width>6.21583cm</Width>
         <ZIndex>21</ZIndex>
         <Style>
           <Border>
@@ -867,9 +867,9 @@
         </Paragraphs>
         <rd:DefaultName>PrecioString1</rd:DefaultName>
         <Top>4.77717cm</Top>
-        <Left>12.58689cm</Left>
+        <Left>13.04922cm</Left>
         <Height>0.6cm</Height>
-        <Width>2.52646cm</Width>
+        <Width>2.06413cm</Width>
         <ZIndex>25</ZIndex>
         <Style>
           <Border>
