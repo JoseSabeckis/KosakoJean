@@ -239,7 +239,10 @@ namespace Presentacion.Core.CtaCte
                     Fecha = DateTime.Now.ToString(),
                     Total = (double)nudAdelanto.Value,
                     CajaId = detallCajaServicio.BuscarCajaAbierta(),
-                    NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
+                    NumeroOperacion = long.Parse(txtNumeroOperacion.Text),
+                    TipoOperacion = AccesoDatos.TipoOperacion.CtaCte,
+                    ClienteId = _Cliente.Id,
+                    PedidoId = null
                 };
 
                 TipoPago(detalle);

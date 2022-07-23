@@ -18,7 +18,10 @@ namespace Servicios.Core.DetalleCaja
                     Total = detalleCajaDto.Total,
                     CajaId = detalleCajaDto.CajaId,
                     TipoPago = detalleCajaDto.TipoPago,
-                    NumeroOperacion = detalleCajaDto.NumeroOperacion
+                    NumeroOperacion = detalleCajaDto.NumeroOperacion,
+                    TipoOperacion = detalleCajaDto.TipoOperacion,
+                    ClienteId = detalleCajaDto.ClienteId,
+                    PedidoId = detalleCajaDto.PedidoId
                 };
 
                 context.DetalleCajas.Add(detalleCaja);
@@ -45,7 +48,10 @@ namespace Servicios.Core.DetalleCaja
                         Fecha = x.Fecha,
                         TipoPago = x.TipoPago,
                         EstaEliminado = x.EstaEliminado,
-                        NumeroOperacion = x.NumeroOperacion
+                        NumeroOperacion = x.NumeroOperacion,
+                        TipoOperacion = x.TipoOperacion,
+                        ClienteId = x.ClienteId,
+                        PedidoId = x.PedidoId
 
                     }).ToList();
 
@@ -69,7 +75,10 @@ namespace Servicios.Core.DetalleCaja
                     Fecha = detalle.Fecha,
                     TipoPago = detalle.TipoPago,
                     EstaEliminado = detalle.EstaEliminado,
-                    NumeroOperacion = detalle.NumeroOperacion
+                    NumeroOperacion = detalle.NumeroOperacion,
+                    TipoOperacion = detalle.TipoOperacion,
+                    ClienteId = detalle.ClienteId,
+                    PedidoId = detalle.PedidoId
 
                 };
 
@@ -142,7 +151,10 @@ namespace Servicios.Core.DetalleCaja
                         Id = x.Id,
                         TipoPago = x.TipoPago,
                         EstaEliminado = x.EstaEliminado,
-                        NumeroOperacion = x.NumeroOperacion
+                        NumeroOperacion = x.NumeroOperacion,
+                        TipoOperacion = x.TipoOperacion,
+                        ClienteId = x.ClienteId,
+                        PedidoId = x.PedidoId
 
                     }).ToList();
 

@@ -85,6 +85,10 @@
       <End Role="DetalleCaja" EntitySet="DetalleCajas" />
       <End Role="DetalleProducto" EntitySet="DetalleProductos" />
     </AssociationSet>
+    <AssociationSet Name="ClienteDetalleCaja" Association="KosakoDBModel.Store.ClienteDetalleCaja">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="DetalleCaja" EntitySet="DetalleCajas" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Productos">
     <Key>
@@ -146,6 +150,9 @@
     <Property Name="TipoPago" Type="bigint" Nullable="false" />
     <Property Name="NumeroOperacion" Type="bigint" Nullable="false" />
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+    <Property Name="TipoOperacion" Type="bigint" Nullable="false" />
+    <Property Name="ClienteId" Type="bigint" Nullable="false" />
+    <Property Name="PedidoId" Type="bigint" Nullable="true" />
   </EntityType>
   <EntityType Name="Pedidos">
     <Key>
@@ -522,6 +529,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ClienteDetalleCaja">
+    <End Role="Cliente" Type="KosakoDBModel.Store.Clientes" Multiplicity="1" />
+    <End Role="DetalleCaja" Type="KosakoDBModel.Store.DetalleCajas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetalleCaja">
+        <PropertyRef Name="ClienteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -606,6 +625,10 @@
             <End Role="DetalleProducto" EntitySet="DetalleProductos" />
           </AssociationSet>
           <EntitySet Name="Configuraciones" EntityType="KosakoDBModel.Configuracion" />
+          <AssociationSet Name="ClienteDetalleCaja" Association="KosakoDBModel.ClienteDetalleCaja">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="DetalleCaja" EntitySet="DetalleCajas" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Producto">
           <Key>
@@ -676,6 +699,10 @@
           <NavigationProperty Name="DetalleProducto" Relationship="KosakoDBModel.DetalleCajaDetalleProducto" FromRole="DetalleCaja" ToRole="DetalleProducto" />
           <Property Name="NumeroOperacion" Type="Int64" Nullable="false" />
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <Property Name="TipoOperacion" Type="KosakoDBModel.TipoOperacion" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="KosakoDBModel.ClienteDetalleCaja" FromRole="DetalleCaja" ToRole="Cliente" />
+          <Property Name="ClienteId" Type="Int64" Nullable="false" />
+          <Property Name="PedidoId" Type="Int64" Nullable="true" />
         </EntityType>
         <Association Name="TipoProductoProducto">
           <End Type="KosakoDBModel.TipoProducto" Role="TipoProducto" Multiplicity="1" />
@@ -856,6 +883,7 @@
           <Property Name="Principal" Type="Boolean" Nullable="false" />
           <Property Name="Dni" Type="String" Nullable="false" />
           <NavigationProperty Name="Arreglo" Relationship="KosakoDBModel.ClienteArreglo" FromRole="Cliente" ToRole="Arreglo" />
+          <NavigationProperty Name="DetalleCaja" Relationship="KosakoDBModel.ClienteDetalleCaja" FromRole="Cliente" ToRole="DetalleCaja" />
         </EntityType>
         <Association Name="PedidoCliente">
           <End Type="KosakoDBModel.Pedido" Role="Pedido" Multiplicity="*" />
@@ -1084,6 +1112,24 @@
           <Property Name="UsarTicketera" Type="Boolean" Nullable="false" />
           <Property Name="MostrarDatos" Type="Boolean" Nullable="false" />
         </EntityType>
+        <EnumType Name="TipoOperacion" UnderlyingType="Int64">
+          <Member Name="Venta" Value="1" />
+          <Member Name="Pedido" Value="2" />
+          <Member Name="Arreglo" Value="3" />
+          <Member Name="CtaCte" Value="4" />
+        </EnumType>
+        <Association Name="ClienteDetalleCaja">
+          <End Type="KosakoDBModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="KosakoDBModel.DetalleCaja" Role="DetalleCaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleCaja">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1153,6 +1199,9 @@
           <ScalarProperty Name="TipoPago" ColumnName="TipoPago" />
           <ScalarProperty Name="NumeroOperacion" ColumnName="NumeroOperacion" />
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+          <ScalarProperty Name="TipoOperacion" ColumnName="TipoOperacion" />
+          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+          <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

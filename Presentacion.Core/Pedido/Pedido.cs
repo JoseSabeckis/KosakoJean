@@ -267,11 +267,14 @@ namespace Presentacion.Core.Pedido
 
                     var detalle = new DetalleCajaDto
                     {
-                        Descripcion = txtApellido.Text + " " + txtNombre.Text + " - " + segunda,
+                        Descripcion = txtApellido.Text + " " + txtNombre.Text,
                         Fecha = DateTime.Now.ToString(),
                         Total = (double)nudAdelanto.Value,
                         CajaId = detallCajaServicio.BuscarCajaAbierta(),
-                        NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
+                        NumeroOperacion = long.Parse(txtNumeroOperacion.Text),
+                        TipoOperacion = AccesoDatos.TipoOperacion.Pedido,
+                        ClienteId = ClienteId,
+                        PedidoId = pedidoId
                     };
 
                     TipoPago(detalle);

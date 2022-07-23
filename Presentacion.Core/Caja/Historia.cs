@@ -238,7 +238,23 @@ namespace Presentacion.Core.Caja
                 return;
             }
 
-            ticketServicio.ImprimirAutomaticamente(_DetalleId, cmbImpresoras.Text);
+            var detalle = _detalleCajaServicio.ObtenerPorId(_DetalleId);
+
+            if (detalle.TipoOperacion == AccesoDatos.TipoOperacion.Venta || detalle.TipoOperacion == AccesoDatos.TipoOperacion.CtaCte)
+            {
+                ticketServicio.ImprimirAutomaticamenteVenta(_DetalleId, cmbImpresoras.Text, detalle.ClienteId);
+            }
+
+            if (detalle.TipoOperacion == AccesoDatos.TipoOperacion.Pedido)
+            {
+                ticketServicio.ImprimirAutomaticamentePedido(_DetalleId, cmbImpresoras.Text, detalle.ClienteId, detalle.PedidoId);
+            }
+
+            if (detalle.TipoOperacion == AccesoDatos.TipoOperacion.Arreglo)
+            {
+                ticketServicio.ImprimirAutomaticamenteArreglo(_DetalleId, cmbImpresoras.Text, detalle.PedidoId);
+            }
+
         }
     }
 }

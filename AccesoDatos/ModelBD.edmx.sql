@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/22/2022 00:36:53
+-- Date Created: 07/22/2022 23:58:45
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -186,7 +186,10 @@ CREATE TABLE [dbo].[DetalleCajas] (
     [Fecha] nvarchar(max)  NOT NULL,
     [TipoPago] bigint  NOT NULL,
     [NumeroOperacion] bigint  NOT NULL,
-    [EstaEliminado] bit  NOT NULL
+    [EstaEliminado] bit  NOT NULL,
+    [TipoOperacion] bigint  NOT NULL,
+    [ClienteId] bigint  NOT NULL,
+    [PedidoId] bigint  NULL
 );
 GO
 
@@ -730,6 +733,21 @@ GO
 CREATE INDEX [IX_FK_DetalleCajaDetalleProducto]
 ON [dbo].[DetalleProductos]
     ([DetalleCajaId]);
+GO
+
+-- Creating foreign key on [ClienteId] in table 'DetalleCajas'
+ALTER TABLE [dbo].[DetalleCajas]
+ADD CONSTRAINT [FK_ClienteDetalleCaja]
+    FOREIGN KEY ([ClienteId])
+    REFERENCES [dbo].[Clientes]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ClienteDetalleCaja'
+CREATE INDEX [IX_FK_ClienteDetalleCaja]
+ON [dbo].[DetalleCajas]
+    ([ClienteId]);
 GO
 
 -- --------------------------------------------------

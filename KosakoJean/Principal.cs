@@ -30,6 +30,8 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using BarcodeLib;
+using Servicios.Core.Configuracion;
+using Servicios.Core.Configuracion.Dto;
 
 namespace KosakoJean
 {
@@ -43,6 +45,7 @@ namespace KosakoJean
         private readonly INegocioServicio negocioServicio;
         private readonly I_ImageServicio imageServicio;
         private readonly IProductoServicio productoServicio;
+        private readonly IConfiguracionServicio configuracionServicio;
 
         public Principal()
         {
@@ -56,6 +59,7 @@ namespace KosakoJean
             negocioServicio = new NegocioServicio();
             imageServicio = new ImageServicio();
             productoServicio = new ProductoServicio();
+            configuracionServicio = new ConfiguracionServicio();
 
             DatosComercio();
             CargarImagenes();
@@ -86,7 +90,7 @@ namespace KosakoJean
 
         private void verColegiosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var colegio = new Colegio_Abm(TipoOperacion.Nuevo);
+            var colegio = new Colegio_Abm(Presentacion.Clases.TipoOperacion.Nuevo);
             colegio.ShowDialog();
         }
 
@@ -98,7 +102,7 @@ namespace KosakoJean
 
         private void nuevoProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var producto = new Producto_Abm(TipoOperacion.Nuevo);
+            var producto = new Producto_Abm(Presentacion.Clases.TipoOperacion.Nuevo);
             producto.ShowDialog();
         }
 
@@ -202,7 +206,19 @@ namespace KosakoJean
 
         public void VerificarPrimeraVez()
         {
-            //
+            //Unica Vez
+
+            if (configuracionServicio.ObtenerPorId(1) == null)
+            {
+                var config = new ConfiguracionDto
+                {
+                    UsarLogin = false,
+                    MostrarDatos = true,
+                    UsarTicketera = false
+                };
+
+                configuracionServicio.Nuevo(config);
+            }
 
             if (tipoProductoServicio.ObtenerPorId(1) == null)
             {
@@ -442,7 +458,7 @@ namespace KosakoJean
 
         private void nuevoTipoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var tipo = new TipoProducto_Abm(TipoOperacion.Nuevo);
+            var tipo = new TipoProducto_Abm(Presentacion.Clases.TipoOperacion.Nuevo);
             tipo.ShowDialog();
         }
 
@@ -460,7 +476,7 @@ namespace KosakoJean
 
         private void nuevoClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var cliente = new Cliente_Abm(TipoOperacion.Nuevo);
+            var cliente = new Cliente_Abm(Presentacion.Clases.TipoOperacion.Nuevo);
             cliente.ShowDialog();
         }
 
@@ -478,7 +494,7 @@ namespace KosakoJean
 
         private void nuevoTalleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var talle = new Talle_Abm(TipoOperacion.Nuevo);
+            var talle = new Talle_Abm(Presentacion.Clases.TipoOperacion.Nuevo);
             talle.ShowDialog();
         }
 

@@ -18,7 +18,13 @@ namespace Servicios.Core.DetalleCaja.Dto
 
         public TipoPago TipoPago { get; set; }
 
+        public TipoOperacion TipoOperacion { get; set; }
+
         public long CajaId { get; set; }
+
+        public long ClienteId { get; set; }
+
+        public long? PedidoId { get; set; }
 
         public bool EstaEliminado { get; set; }
     }

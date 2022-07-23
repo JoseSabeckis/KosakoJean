@@ -135,6 +135,9 @@
     <Compile Include="Talle.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="TipoOperacion.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="TipoPago.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>

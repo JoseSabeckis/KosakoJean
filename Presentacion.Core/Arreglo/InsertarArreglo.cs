@@ -123,7 +123,10 @@ namespace Presentacion.Core.Arreglo
                         Fecha = DateTime.Now.ToLongDateString(),
                         Total = (double)nudAdelanto.Value,
                         CajaId = detallCajaServicio.BuscarCajaAbierta(),
-                        NumeroOperacion = long.Parse(numOperacion)
+                        NumeroOperacion = long.Parse(numOperacion),
+                        TipoOperacion = AccesoDatos.TipoOperacion.Arreglo,
+                        ClienteId = _ClienteId,
+                        PedidoId = null
                 };
 
                     TipoPago(detalle);

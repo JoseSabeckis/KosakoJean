@@ -21,6 +21,7 @@ namespace AccesoDatos
             this.Venta = new HashSet<Venta>();
             this.CtaCte = new HashSet<CtaCte>();
             this.Arreglo = new HashSet<Arreglo>();
+            this.DetalleCaja = new HashSet<DetalleCaja>();
         }
     
         public long Id { get; set; }
@@ -41,5 +42,7 @@ namespace AccesoDatos
         public virtual ICollection<CtaCte> CtaCte { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Arreglo> Arreglo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DetalleCaja> DetalleCaja { get; set; }
     }
 }

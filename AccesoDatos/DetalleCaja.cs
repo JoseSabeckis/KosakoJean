@@ -28,9 +28,13 @@ namespace AccesoDatos
         public TipoPago TipoPago { get; set; }
         public long NumeroOperacion { get; set; }
         public bool EstaEliminado { get; set; }
+        public TipoOperacion TipoOperacion { get; set; }
+        public long ClienteId { get; set; }
+        public Nullable<long> PedidoId { get; set; }
     
         public virtual Caja Caja { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleProducto> DetalleProducto { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 }

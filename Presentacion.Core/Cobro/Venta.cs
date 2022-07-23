@@ -465,7 +465,10 @@ namespace Presentacion.Core.Cobro
                             Total = _total,
                             Descripcion = $"Venta {descripcion}",
                             CajaId = detalleCajaServicio.BuscarCajaAbierta(),
-                            NumeroOperacion = long.Parse(txtNumeroOperacion.Text)
+                            NumeroOperacion = long.Parse(txtNumeroOperacion.Text),
+                            TipoOperacion = AccesoDatos.TipoOperacion.Venta,
+                            ClienteId = _clienteId,
+                            PedidoId = null
                         };
 
                         TipoPago(detalle);
@@ -512,7 +515,7 @@ namespace Presentacion.Core.Cobro
                                 MessageBox.Show("Elija el Formato de Impresion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             {
-                                ticketServicio.ImprimirAutomaticamente(detalleCajaId, cmbImpresoras.Text);
+                                ticketServicio.ImprimirAutomaticamenteVenta(detalleCajaId, cmbImpresoras.Text, _clienteId);
                             }
                         }
 
