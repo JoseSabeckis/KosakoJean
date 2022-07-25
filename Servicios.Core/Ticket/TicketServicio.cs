@@ -223,5 +223,66 @@ namespace Servicios.Core.Ticket
             ticket.ImprimirTicket(impresora);//POS58 Printer
         }
 
+        public void ImprimirAutomaticamenteCtaCte(long _DetalleId, string impresora, long clienteId)//CtaCte
+        {
+            var _Detalle = _detalleCajaServicio.ObtenerPorId(_DetalleId);
+            var _Negocio = negocioServicio.ObtenerPorId(1);
+            var _Cliente = clienteServicio.ObtenerPorId(clienteId);
+
+            //configuracion
+            var Config = configuracionServicio.ObtenerPorId(1);
+
+            CrearTicket ticket = new CrearTicket();
+
+            ticket.AbreCajon();
+
+            ticket.TextoCentro(_Negocio.RazonSocial);
+
+            if (Config.MostrarDatos)
+            {
+                ticket.TextoIzquierda("Cuit: " + _Negocio.Cuit);
+                ticket.TextoIzquierda("Direccion: " + _Negocio.Direccion);
+                ticket.TextoIzquierda("Mail: " + _Negocio.Email);
+            }
+            ticket.TextoIzquierda("Celular: " + _Negocio.Celular);
+
+            //ticket.textoExtremos("Caja #1", "Ticket #002-00001")
+            ticket.LineaAstericoMetodo();//*********
+
+            //ticket.TextoIzquierda("");
+            ticket.TextoIzquierda("Atencion: VENDEDOR");
+            ticket.TextoIzquierda($"{_Cliente.Apellido} {_Cliente.Nombre}");
+            ticket.TextoIzquierda("Fecha: " + _Detalle.Fecha);
+            ticket.LineaAstericoMetodo();//*********
+
+            ticket.Encabezado();//descripcion, cantidad, precio, total
+            ticket.LineaIgualMetodo();
+            //ticket.LineaAstericoMetodo();//*********
+
+            var ListaVenta = detalleProductoServicio.ObtenerListaPorDetalleId(_DetalleId);
+
+            double total = 0;
+            string numeroOperacion = _detalleCajaServicio.ObtenerPorId(_DetalleId).NumeroOperacion.ToString("00000");
+
+            foreach (var item in ListaVenta)
+            {
+                ticket.AgregaArticulo(item.Descripcion, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
+
+                total += item.Precio * item.Cantidad;
+            }
+
+            ticket.LineaIgualMetodo();
+
+            ticket.TextoIzquierda(" ");
+            ticket.AgregarTotales("Total:....$", total);
+            ticket.TextoIzquierda(" ");
+
+            ticket.TextoCentro("-- GRACIAS POR SU COMPRA! --");
+            ticket.TextoIzquierda("#" + numeroOperacion);
+            ticket.CortaTicket();
+
+            ticket.ImprimirTicket(impresora);//POS58 Printer
+        }
+
     }
 }

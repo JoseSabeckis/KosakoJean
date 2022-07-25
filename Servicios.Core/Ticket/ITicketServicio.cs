@@ -11,5 +11,6 @@ namespace Servicios.Core.Ticket
         void ImprimirAutomaticamenteVenta(long _DetalleId, string impresora, long clienteId);
         void ImprimirAutomaticamentePedido(long _DetalleId, string impresora, long clienteId, long? pedidoId);
         void ImprimirAutomaticamenteArreglo(long _DetalleId, string impresora, long? pedidoId);
+        void ImprimirAutomaticamenteCtaCte(long _DetalleId, string impresora, long clienteId);
     }
 }

@@ -166,6 +166,12 @@
     <Compile Include="Caja\DetalleCaja.Designer.cs">
       <DependentUpon>DetalleCaja.cs</DependentUpon>
     </Compile>
+    <Compile Include="Caja\DetalleNroOperacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\DetalleNroOperacion.Designer.cs">
+      <DependentUpon>DetalleNroOperacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Caja\Historia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -467,6 +473,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\DetalleCaja.resx">
       <DependentUpon>DetalleCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\DetalleNroOperacion.resx">
+      <DependentUpon>DetalleNroOperacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\Historia.resx">
       <DependentUpon>Historia.cs</DependentUpon>

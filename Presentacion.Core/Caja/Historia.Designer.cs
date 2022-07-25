@@ -72,6 +72,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel6);
@@ -93,10 +94,10 @@
             this.panel4.Controls.Add(this.lblDesde);
             this.panel4.Controls.Add(this.lblHasta);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(281, 0);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(275, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(373, 104);
+            this.panel4.Size = new System.Drawing.Size(379, 104);
             this.panel4.TabIndex = 7;
             // 
             // btnTicket
@@ -180,7 +181,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(280, 104);
+            this.panel6.Size = new System.Drawing.Size(275, 104);
             this.panel6.TabIndex = 9;
             // 
             // imgCaja

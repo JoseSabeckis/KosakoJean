@@ -164,6 +164,34 @@ namespace Servicios.Core.DetalleCaja
 
         }
 
+        public IEnumerable<DetalleCajaDto> BuscarDetallesNumerosOperacion(string numeroOperacion)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var lista = context.DetalleCajas.AsNoTracking().Where(x => x.NumeroOperacion.ToString().Contains(numeroOperacion))
+                    .Select(x => new DetalleCajaDto
+                    {
+                        CajaId = x.CajaId,
+                        Descripcion = x.Descripcion,
+                        Fecha = x.Fecha,
+                        Total = x.Total,
+                        Id = x.Id,
+                        TipoPago = x.TipoPago,
+                        EstaEliminado = x.EstaEliminado,
+                        NumeroOperacion = x.NumeroOperacion,
+                        TipoOperacion = x.TipoOperacion,
+                        ClienteId = x.ClienteId,
+                        PedidoId = x.PedidoId
+
+                    }).ToList();
+
+                return lista;
+
+            }
+
+        }
+
         public string TraerNuevoNumeroOperacion()
         {
             using (var context = new KosakoDBEntities())

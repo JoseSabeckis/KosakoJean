@@ -8,6 +8,8 @@ namespace Servicios.Core.DetalleCaja.Dto
 
         public long NumeroOperacion { get; set; }
 
+        public string NumeroOperacionVista => NumeroOperacion.ToString("00000");
+
         public string Descripcion { get; set; }
 
         public double Total { get; set; }

@@ -19,6 +19,8 @@ namespace Servicios.Core.DetalleCaja
 
         long BuscarCajaAbierta();
 
+        IEnumerable<DetalleCajaDto> BuscarDetallesNumerosOperacion(string numeroOperacion);
+
         string TraerNuevoNumeroOperacion();
     }
 }

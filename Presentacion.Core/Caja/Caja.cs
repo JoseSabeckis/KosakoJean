@@ -187,5 +187,11 @@ namespace Presentacion.Core.Caja
 
             VerificarBotonEliminar();
         }
+
+        private void btnNroOperacion_Click(object sender, EventArgs e)
+        {
+            var detalles = new DetalleNroOperacion();
+            detalles.Show();
+        }
     }
 }

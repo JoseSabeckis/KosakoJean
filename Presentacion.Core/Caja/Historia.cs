@@ -105,6 +105,12 @@ namespace Presentacion.Core.Caja
                 grilla.Columns[i].Visible = false;
             }
 
+            grilla.Columns["NumeroOperacionVista"].Visible = true;
+            grilla.Columns["NumeroOperacionVista"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["NumeroOperacionVista"].HeaderText = @"Nro";
+            grilla.Columns["NumeroOperacionVista"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["NumeroOperacionVista"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             grilla.Columns["Descripcion"].Visible = true;
             grilla.Columns["Descripcion"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             grilla.Columns["Descripcion"].HeaderText = @"Descripcion";
@@ -246,7 +252,7 @@ namespace Presentacion.Core.Caja
 
             var detalle = _detalleCajaServicio.ObtenerPorId(_DetalleId);
 
-            if (detalle.TipoOperacion == AccesoDatos.TipoOperacion.Venta || detalle.TipoOperacion == AccesoDatos.TipoOperacion.CtaCte)
+            if (detalle.TipoOperacion == AccesoDatos.TipoOperacion.Venta)
             {
                 ticketServicio.ImprimirAutomaticamenteVenta(_DetalleId, cmbImpresoras.Text, detalle.ClienteId);
             }
@@ -259,6 +265,11 @@ namespace Presentacion.Core.Caja
             if (detalle.TipoOperacion == AccesoDatos.TipoOperacion.Arreglo)
             {
                 ticketServicio.ImprimirAutomaticamenteArreglo(_DetalleId, cmbImpresoras.Text, detalle.PedidoId);
+            }
+
+            if (detalle.TipoOperacion == AccesoDatos.TipoOperacion.CtaCte)
+            {
+                ticketServicio.ImprimirAutomaticamenteCtaCte(_DetalleId, cmbImpresoras.Text, detalle.ClienteId);
             }
 
         }
