@@ -199,6 +199,68 @@ namespace Servicios.Core.DetalleCaja
 
         }
 
+        public DetalleCajaDto BuscarDetalleConPedidoId(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var x = context.DetalleCajas.FirstOrDefault(a => a.PedidoId == id);
+
+                var arreglo = new DetalleCajaDto
+                {
+
+                    CajaId = x.CajaId,
+                    Descripcion = x.Descripcion,
+                    Fecha = x.Fecha,
+                    Total = x.Total,
+                    Id = x.Id,
+                    TipoPago = x.TipoPago,
+                    EstaEliminado = x.EstaEliminado,
+                    NumeroOperacion = x.NumeroOperacion,
+                    TipoOperacion = x.TipoOperacion,
+                    ClienteId = x.ClienteId,
+                    PedidoId = x.PedidoId,
+                    ArregloId = x.ArregloId
+
+                };
+
+                return arreglo;
+
+            }
+
+        }
+
+        public DetalleCajaDto BuscarDetalleConCtaCteId(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var x = context.DetalleCajas.FirstOrDefault(a => a.CtaCteId == id);
+
+                var arreglo = new DetalleCajaDto
+                {
+
+                    CajaId = x.CajaId,
+                    Descripcion = x.Descripcion,
+                    Fecha = x.Fecha,
+                    Total = x.Total,
+                    Id = x.Id,
+                    TipoPago = x.TipoPago,
+                    EstaEliminado = x.EstaEliminado,
+                    NumeroOperacion = x.NumeroOperacion,
+                    TipoOperacion = x.TipoOperacion,
+                    ClienteId = x.ClienteId,
+                    PedidoId = x.PedidoId,
+                    ArregloId = x.ArregloId
+
+                };
+
+                return arreglo;
+
+            }
+
+        }
+
         public IEnumerable<DetalleCajaDto> BuscarDetallesNumerosOperacion(string numeroOperacion)
         {
             using (var context = new KosakoDBEntities())

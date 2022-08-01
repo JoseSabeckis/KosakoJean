@@ -51,6 +51,9 @@ namespace Presentacion.Core.CtaCte
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.ckbTickets = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbImpresoras = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -73,6 +76,9 @@ namespace Presentacion.Core.CtaCte
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label14);
+            this.panel6.Controls.Add(this.cmbImpresoras);
+            this.panel6.Controls.Add(this.ckbTickets);
             this.panel6.Controls.Add(this.txtNumeroOperacion);
             this.panel6.Controls.Add(this.label16);
             this.panel6.Controls.Add(this.dtpFechaEntrega);
@@ -86,9 +92,9 @@ namespace Presentacion.Core.CtaCte
             this.panel6.Controls.Add(this.label3);
             this.panel6.Controls.Add(this.txtNombre);
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(67, 93);
+            this.panel6.Location = new System.Drawing.Point(10, 93);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(453, 330);
+            this.panel6.Size = new System.Drawing.Size(558, 330);
             this.panel6.TabIndex = 0;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
@@ -97,7 +103,7 @@ namespace Presentacion.Core.CtaCte
             this.txtNumeroOperacion.BackColor = System.Drawing.SystemColors.Info;
             this.txtNumeroOperacion.Enabled = false;
             this.txtNumeroOperacion.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroOperacion.Location = new System.Drawing.Point(277, 196);
+            this.txtNumeroOperacion.Location = new System.Drawing.Point(357, 189);
             this.txtNumeroOperacion.Name = "txtNumeroOperacion";
             this.txtNumeroOperacion.Size = new System.Drawing.Size(135, 33);
             this.txtNumeroOperacion.TabIndex = 27;
@@ -108,7 +114,7 @@ namespace Presentacion.Core.CtaCte
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(250, 203);
+            this.label16.Location = new System.Drawing.Point(330, 196);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(24, 26);
             this.label16.TabIndex = 26;
@@ -117,7 +123,7 @@ namespace Presentacion.Core.CtaCte
             // dtpFechaEntrega
             // 
             this.dtpFechaEntrega.CalendarMonthBackground = System.Drawing.SystemColors.Info;
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(43, 235);
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(123, 228);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(369, 33);
             this.dtpFechaEntrega.TabIndex = 5;
@@ -127,7 +133,7 @@ namespace Presentacion.Core.CtaCte
             this.label6.AutoSize = true;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Location = new System.Drawing.Point(43, 205);
+            this.label6.Location = new System.Drawing.Point(123, 198);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(144, 27);
             this.label6.TabIndex = 16;
@@ -144,7 +150,7 @@ namespace Presentacion.Core.CtaCte
             "Mañana",
             "Siesta",
             "Ultima Hora"});
-            this.cmbHorario.Location = new System.Drawing.Point(241, 101);
+            this.cmbHorario.Location = new System.Drawing.Point(321, 94);
             this.cmbHorario.Name = "cmbHorario";
             this.cmbHorario.Size = new System.Drawing.Size(171, 33);
             this.cmbHorario.TabIndex = 3;
@@ -154,7 +160,7 @@ namespace Presentacion.Core.CtaCte
             this.label5.AutoSize = true;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(43, 104);
+            this.label5.Location = new System.Drawing.Point(123, 97);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 27);
             this.label5.TabIndex = 14;
@@ -166,7 +172,7 @@ namespace Presentacion.Core.CtaCte
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.ckbTarjeta);
             this.panel5.Controls.Add(this.ckbNormal);
-            this.panel5.Location = new System.Drawing.Point(132, 283);
+            this.panel5.Location = new System.Drawing.Point(176, 274);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(214, 33);
             this.panel5.TabIndex = 13;
@@ -187,7 +193,7 @@ namespace Presentacion.Core.CtaCte
             this.ckbNormal.AutoSize = true;
             this.ckbNormal.Checked = true;
             this.ckbNormal.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ckbNormal.Location = new System.Drawing.Point(3, 3);
+            this.ckbNormal.Location = new System.Drawing.Point(3, 2);
             this.ckbNormal.Name = "ckbNormal";
             this.ckbNormal.Size = new System.Drawing.Size(110, 29);
             this.ckbNormal.TabIndex = 6;
@@ -205,7 +211,7 @@ namespace Presentacion.Core.CtaCte
             0,
             0,
             0});
-            this.nudAdelanto.Location = new System.Drawing.Point(277, 149);
+            this.nudAdelanto.Location = new System.Drawing.Point(357, 142);
             this.nudAdelanto.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -218,7 +224,7 @@ namespace Presentacion.Core.CtaCte
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 151);
+            this.label2.Location = new System.Drawing.Point(118, 144);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(191, 25);
             this.label2.TabIndex = 9;
@@ -229,7 +235,7 @@ namespace Presentacion.Core.CtaCte
             this.txtApellido.BackColor = System.Drawing.SystemColors.Info;
             this.txtApellido.Enabled = false;
             this.txtApellido.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(123, 16);
+            this.txtApellido.Location = new System.Drawing.Point(203, 16);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(289, 33);
             this.txtApellido.TabIndex = 1;
@@ -239,7 +245,7 @@ namespace Presentacion.Core.CtaCte
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 19);
+            this.label3.Location = new System.Drawing.Point(118, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 25);
             this.label3.TabIndex = 3;
@@ -250,7 +256,7 @@ namespace Presentacion.Core.CtaCte
             this.txtNombre.BackColor = System.Drawing.SystemColors.Info;
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(123, 55);
+            this.txtNombre.Location = new System.Drawing.Point(203, 55);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(289, 33);
             this.txtNombre.TabIndex = 2;
@@ -259,7 +265,7 @@ namespace Presentacion.Core.CtaCte
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 58);
+            this.label4.Location = new System.Drawing.Point(118, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 25);
             this.label4.TabIndex = 4;
@@ -311,6 +317,39 @@ namespace Presentacion.Core.CtaCte
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // ckbTickets
+            // 
+            this.ckbTickets.AutoSize = true;
+            this.ckbTickets.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbTickets.Location = new System.Drawing.Point(400, 285);
+            this.ckbTickets.Name = "ckbTickets";
+            this.ckbTickets.Size = new System.Drawing.Size(92, 21);
+            this.ckbTickets.TabIndex = 56;
+            this.ckbTickets.Text = "Usar Ticket";
+            this.ckbTickets.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(12, 267);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(103, 13);
+            this.label14.TabIndex = 58;
+            this.label14.Text = "Usar Para Ticket";
+            // 
+            // cmbImpresoras
+            // 
+            this.cmbImpresoras.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbImpresoras.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbImpresoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbImpresoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbImpresoras.FormattingEnabled = true;
+            this.cmbImpresoras.Location = new System.Drawing.Point(14, 283);
+            this.cmbImpresoras.Name = "cmbImpresoras";
+            this.cmbImpresoras.Size = new System.Drawing.Size(156, 24);
+            this.cmbImpresoras.TabIndex = 57;
             // 
             // CtaCteClientePedido
             // 
@@ -365,5 +404,8 @@ namespace Presentacion.Core.CtaCte
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNumeroOperacion;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.CheckBox ckbTickets;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmbImpresoras;
     }
 }

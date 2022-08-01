@@ -30,6 +30,8 @@ namespace Servicios.Core.DetalleCaja.Dto
 
         public long? ArregloId { get; set; }
 
+        public long? CtaCteId { get; set; }
+
         public bool EstaEliminado { get; set; }
     }
 }

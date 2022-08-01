@@ -22,6 +22,9 @@ namespace Servicios.Core.DetalleCaja
         IEnumerable<DetalleCajaDto> BuscarDetallesNumerosOperacion(string numeroOperacion);
 
         DetalleCajaDto BuscarDetalleConArregloId(long id);
+        DetalleCajaDto BuscarDetalleConPedidoId(long id);
+
+        DetalleCajaDto BuscarDetalleConCtaCteId(long id);
 
         string TraerNuevoNumeroOperacion();
     }

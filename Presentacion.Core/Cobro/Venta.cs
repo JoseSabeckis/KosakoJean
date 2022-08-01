@@ -472,7 +472,8 @@ namespace Presentacion.Core.Cobro
                             TipoOperacion = AccesoDatos.TipoOperacion.Venta,
                             ClienteId = _clienteId,
                             PedidoId = null,
-                            ArregloId = null
+                            ArregloId = null,
+                            CtaCteId = null
                         };
 
                         TipoPago(detalle);

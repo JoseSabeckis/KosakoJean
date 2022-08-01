@@ -45,6 +45,11 @@ namespace Presentacion.Core.Arreglo
                 dgvGrilla.DataSource = PonerFecha(arregloServicio.ListaArreglosRetirados());
             }
 
+            if (dgvGrilla.RowCount == 0)//si no tiene arreglos
+            {
+                btnEliminar.Visible = false;
+            }
+
             FormatearGrilla(dgvGrilla);
         }
 

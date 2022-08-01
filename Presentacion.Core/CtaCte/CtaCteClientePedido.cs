@@ -2,6 +2,7 @@
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
+using Servicios.Core.Configuracion;
 using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
@@ -16,10 +17,12 @@ using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Producto_Venta;
 using Servicios.Core.Producto_Venta.Dto;
 using Servicios.Core.Talle;
+using Servicios.Core.Ticket;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.CtaCte
@@ -37,6 +40,8 @@ namespace Presentacion.Core.CtaCte
         private readonly IProducto_Pedido_Servicio producto_Pedido_Servicio;
         private readonly ITalleServicio talleServicio;
         private readonly IDetalleProductoServicio detalleProductoServicio;
+        private readonly ITicketServicio ticketServicio;
+        private readonly IConfiguracionServicio configuracionServicio;
 
         public bool semaforo = false;
 
@@ -61,6 +66,8 @@ namespace Presentacion.Core.CtaCte
             pedidoServicio = new PedidoServicio();
             talleServicio = new TalleServicio();
             detalleProductoServicio = new DetalleProductoServicio();
+            ticketServicio = new TicketServicio();
+            configuracionServicio = new ConfiguracionServicio();
 
             ventaDto = new VentaDto();
 
@@ -88,6 +95,34 @@ namespace Presentacion.Core.CtaCte
 
             _Cliente = cliente;
             txtNumeroOperacion.Text = detallCajaServicio.TraerNuevoNumeroOperacion();
+
+            MostrarImpresoras();
+            VerSiSeUsaraLaTicketera();
+        }
+
+        public void VerSiSeUsaraLaTicketera()
+        {
+            if (configuracionServicio.ObtenerPorId(1).UsarTicketera)
+            {
+                ckbTickets.Checked = true;
+            }
+        }
+
+        public void MostrarImpresoras()
+        {
+            var pd = new PrintDocument();
+
+            foreach (String strPrinter in PrinterSettings.InstalledPrinters)
+            {
+                cmbImpresoras.Items.Add(strPrinter);
+            }
+
+            var name = pd.PrinterSettings.PrinterName;
+
+            var index = cmbImpresoras.FindString(name);
+
+            cmbImpresoras.SelectedIndex = index;
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -242,7 +277,9 @@ namespace Presentacion.Core.CtaCte
                     NumeroOperacion = long.Parse(txtNumeroOperacion.Text),
                     TipoOperacion = AccesoDatos.TipoOperacion.CtaCte,
                     ClienteId = _Cliente.Id,
-                    PedidoId = null
+                    PedidoId = null,
+                    ArregloId = null,
+                    CtaCteId = pedidoId
                 };
 
                 TipoPago(detalle);
@@ -264,6 +301,18 @@ namespace Presentacion.Core.CtaCte
 
                 //dinero a caja
                 cajaServicio.SumarDineroACaja((double)nudAdelanto.Value);//
+
+                if (ckbTickets.Checked)
+                {
+                    if (cmbImpresoras.Text == string.Empty)
+                    {
+                        MessageBox.Show("Elija el Formato de Impresion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        ticketServicio.ImprimirAutomaticamenteCtaCte(detalleCajaId, cmbImpresoras.Text, _Cliente.Id);
+                    }
+                }
 
 #pragma warning disable CS0436 // El tipo 'Afirmacion' de 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs' está en conflicto con el tipo importado 'Afirmacion' de 'Presentacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Se usará el tipo definido en 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs'.
                 var NewPrenda = new Afirmacion("Prenda Guardada", $"A Esperar...\nAdelanto de Cobro: $ {nudAdelanto.Value}\n\nTipo de Pago: {detalle.TipoPago}");

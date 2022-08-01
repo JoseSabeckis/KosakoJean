@@ -32,6 +32,7 @@ namespace AccesoDatos
         public long ClienteId { get; set; }
         public Nullable<long> PedidoId { get; set; }
         public Nullable<long> ArregloId { get; set; }
+        public Nullable<long> CtaCteId { get; set; }
     
         public virtual Caja Caja { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

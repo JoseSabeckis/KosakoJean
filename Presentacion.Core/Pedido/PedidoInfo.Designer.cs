@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidoInfo));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnEliminarPedidoSeleccionado = new System.Windows.Forms.Button();
             this.lblEliminado = new System.Windows.Forms.Label();
             this.btnAgregarProductos = new System.Windows.Forms.Button();
@@ -83,6 +84,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.btnEliminarPedidoSeleccionado);
             this.panel1.Controls.Add(this.lblEliminado);
             this.panel1.Controls.Add(this.btnAgregarProductos);
@@ -101,6 +103,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1306, 92);
             this.panel1.TabIndex = 0;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(10, 53);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(77, 26);
+            this.btnImprimir.TabIndex = 14;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnEliminarPedidoSeleccionado
             // 
@@ -660,5 +675,6 @@
         private System.Windows.Forms.Button btnEliminarPedidoSeleccionado;
         private System.Windows.Forms.Button btnRestar;
         private System.Windows.Forms.Label lblNumeroOperacion;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

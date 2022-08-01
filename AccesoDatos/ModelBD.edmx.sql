@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/31/2022 21:01:57
+-- Date Created: 08/01/2022 00:47:36
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -193,7 +193,8 @@ CREATE TABLE [dbo].[DetalleCajas] (
     [TipoOperacion] bigint  NOT NULL,
     [ClienteId] bigint  NOT NULL,
     [PedidoId] bigint  NULL,
-    [ArregloId] bigint  NULL
+    [ArregloId] bigint  NULL,
+    [CtaCteId] bigint  NULL
 );
 GO
 

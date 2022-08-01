@@ -244,6 +244,12 @@
     <Compile Include="Colegio\Colegio_Abm.Designer.cs">
       <DependentUpon>Colegio_Abm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Configuracion\Configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Configuracion.Designer.cs">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="CtaCte\CtaCte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -514,6 +520,9 @@
     <EmbeddedResource Include="Colegio\Colegio_Abm.resx">
       <DependentUpon>Colegio_Abm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Configuracion\Configuracion.resx">
+      <DependentUpon>Configuracion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CtaCte\CtaCte.resx">
       <DependentUpon>CtaCte.cs</DependentUpon>
     </EmbeddedResource>
@@ -695,9 +704,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Configuracion\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

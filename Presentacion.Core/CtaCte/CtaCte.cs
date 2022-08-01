@@ -9,8 +9,10 @@ using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.Image.Dto;
 using Servicios.Core.Pedido;
+using Servicios.Core.Ticket;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.CtaCte
@@ -22,6 +24,7 @@ namespace Presentacion.Core.CtaCte
         private readonly IDetalleCajaServicio detalleCajaServicio;
         private readonly ICajaServicio cajaServicio;
         private readonly IPedidoServicio pedidoServicio;
+        private readonly ITicketServicio ticketServicio;
 
         long _ClienteId = 0;
         long _CtaCteId = 0;
@@ -37,6 +40,7 @@ namespace Presentacion.Core.CtaCte
             detalleCajaServicio = new DetalleCajaServicio();
             cajaServicio = new CajaServicio();
             pedidoServicio = new PedidoServicio();
+            ticketServicio = new TicketServicio();
 
             _ClienteId = clienteId;
             _clienteDto = _clienteServicio.ObtenerPorId(clienteId);
@@ -50,6 +54,24 @@ namespace Presentacion.Core.CtaCte
             Datos();
 
             CargarImageEnGeneral();
+            MostrarImpresoras();
+        }
+
+        public void MostrarImpresoras()
+        {
+            var pd = new PrintDocument();
+
+            foreach (String strPrinter in PrinterSettings.InstalledPrinters)
+            {
+                cmbImpresoras.Items.Add(strPrinter);
+            }
+
+            var name = pd.PrinterSettings.PrinterName;
+
+            var index = cmbImpresoras.FindString(name);
+
+            cmbImpresoras.SelectedIndex = index;
+
         }
 
         private void CargarImageEnGeneral()
@@ -87,6 +109,11 @@ namespace Presentacion.Core.CtaCte
         {
             dgvGrilla.DataSource = _ctaCteServicio.Lista(_ClienteId);
             FormatearGrilla(dgvGrilla);
+
+            if (dgvGrilla.RowCount == 0)
+            {
+                btnImprimir.Enabled = false;
+            }
         }
 
         public void FormatearGrilla(DataGridView grilla)
@@ -304,6 +331,21 @@ namespace Presentacion.Core.CtaCte
             else
             {
                 ckbNormal.Checked = true;
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta Seguro De Imprimir","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (cmbImpresoras.Text == string.Empty)
+                {
+                    MessageBox.Show("Elija el Formato de Impresion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    ticketServicio.ImprimirAutomaticamenteCtaCte(detalleCajaServicio.BuscarDetalleConCtaCteId(_CtaCteId).Id, cmbImpresoras.Text, _ClienteId);
+                }
             }
         }
     }

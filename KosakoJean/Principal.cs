@@ -32,6 +32,7 @@ using System.Windows.Forms;
 using BarcodeLib;
 using Servicios.Core.Configuracion;
 using Servicios.Core.Configuracion.Dto;
+using Presentacion.Core.Configuracion;
 
 namespace KosakoJean
 {
@@ -562,6 +563,13 @@ namespace KosakoJean
             config.ShowDialog();
 
             imageServicio.CargarImagenes();
+        }
+
+        private void configurarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var config = new Presentacion.Core.Configuracion.Configuracion();
+            config.ShowDialog();
+            
         }
     }
 }

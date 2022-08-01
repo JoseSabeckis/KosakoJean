@@ -150,7 +150,7 @@ namespace Servicios.Core.Ticket
             ticket.TextoIzquierda("Articulos Vendidos: " + cantComprados);
             ticket.TextoIzquierda(" ");
 
-            ticket.TextoCentro("-- GRACIAS POR SU COMPRA! --");
+            ticket.TextoCentro("-- GRACIAS POR SU CONFIANZA! --");
             ticket.TextoIzquierda("#" + numeroOperacion);
             ticket.CortaTicket();
 
@@ -218,7 +218,7 @@ namespace Servicios.Core.Ticket
             ticket.TextoIzquierda("Articulos Vendidos: " + cantComprados);
             ticket.TextoIzquierda(" ");
 
-            ticket.TextoCentro("-- GRACIAS POR SU COMPRA! --");
+            ticket.TextoCentro("-- GRACIAS POR TENERNOS CONFIANZA! --");
             ticket.TextoIzquierda("#" + numeroOperacion);
             ticket.CortaTicket();
 
@@ -279,7 +279,7 @@ namespace Servicios.Core.Ticket
             ticket.AgregarTotales("Total:....$", total);
             ticket.TextoIzquierda(" ");
 
-            ticket.TextoCentro("-- GRACIAS POR SU COMPRA! --");
+            ticket.TextoCentro("-- GRACIAS POR SU RESERVA! --");
             ticket.TextoIzquierda("#" + numeroOperacion);
             ticket.CortaTicket();
 

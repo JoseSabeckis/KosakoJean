@@ -70,6 +70,7 @@ namespace Presentacion.Core.Pedido
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtNotas = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgGuardado)).BeginInit();
@@ -85,6 +86,7 @@ namespace Presentacion.Core.Pedido
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnImprimir);
             this.panel1.Controls.Add(this.btnEliminarPedidoSeleccionado);
             this.panel1.Controls.Add(this.lblEliminado);
             this.panel1.Controls.Add(this.btnAgregarProductos);
@@ -588,6 +590,19 @@ namespace Presentacion.Core.Pedido
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(27, 67);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(77, 26);
+            this.btnImprimir.TabIndex = 21;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // PedidoGuardado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -659,5 +674,6 @@ namespace Presentacion.Core.Pedido
         private System.Windows.Forms.Button btnEliminarPedidoSeleccionado;
         private System.Windows.Forms.Button btnRestar;
         private System.Windows.Forms.Label lblNumeroOperacion;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

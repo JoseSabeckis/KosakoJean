@@ -26,6 +26,7 @@ using Servicios.Core.Ticket;
 using Servicios.Core.Venta;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -113,7 +114,24 @@ namespace Presentacion.Core.Pedido
             CargarImageEnGeneral();
             txtNumeroOperacion.Text = detallCajaServicio.TraerNuevoNumeroOperacion();
 
+            MostrarImpresoras();
             VerSiSeUsaraLaTicketera();
+        }
+        public void MostrarImpresoras()
+        {
+            var pd = new PrintDocument();
+
+            foreach (String strPrinter in PrinterSettings.InstalledPrinters)
+            {
+                cmbImpresoras.Items.Add(strPrinter);
+            }
+
+            var name = pd.PrinterSettings.PrinterName;
+
+            var index = cmbImpresoras.FindString(name);
+
+            cmbImpresoras.SelectedIndex = index;
+
         }
 
         public void VerSiSeUsaraLaTicketera()
@@ -291,7 +309,8 @@ namespace Presentacion.Core.Pedido
                         TipoOperacion = AccesoDatos.TipoOperacion.Pedido,
                         ClienteId = ClienteId,
                         PedidoId = pedidoId,
-                        ArregloId = null
+                        ArregloId = null,
+                        CtaCteId = null
                     };
 
                     TipoPago(detalle);

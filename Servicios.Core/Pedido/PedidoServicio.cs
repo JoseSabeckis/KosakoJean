@@ -547,6 +547,34 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public PedidoDto BuscarDto(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var x = context.Pedidos.FirstOrDefault(c => c.Id == id);
+
+                return new PedidoDto
+                {
+                    Adelanto = x.Adelanto,
+                    Apellido = x.Apellido,
+                    Nombre = x.Nombre,
+                    FechaEntrega = x.FechaEntrega,
+                    FechaPedido = x.FechaPedido,
+                    Total = x.Total,
+                    Id = x.Id,
+                    Proceso = x.Proceso,
+                    ClienteId = x.ClienteId,
+                    Descripcion = x.Descripcion,
+                    FechaRetiro = x.FechaRetirado,
+                    Horario = x.Horario,
+                    DiasHastaRetiro = x.DiasHastaRetiro,
+                    FechaIniciado = x.FechaPedido,
+                    EstaEliminado = x.EstaEliminado
+
+                };
+            }
+        }
+
         public void CambiarProcesoRetiro(long id)
         {
             using (var context = new KosakoDBEntities())

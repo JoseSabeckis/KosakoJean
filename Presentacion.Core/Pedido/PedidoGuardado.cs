@@ -2,6 +2,7 @@
 using Presentacion.Core.Cobro;
 using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
+using Servicios.Core.Configuracion;
 using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
@@ -9,13 +10,16 @@ using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.Image.Dto;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Pedido;
+using Servicios.Core.Pedido.Dto;
 using Servicios.Core.Producto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
+using Servicios.Core.Ticket;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -29,10 +33,13 @@ namespace Presentacion.Core.Pedido
         private readonly IVentaServicio ventaServicio;
         private readonly ICajaServicio cajaServicio;
         private readonly IDetalleCajaServicio detalleCajaServicio;
+        private readonly IConfiguracionServicio configuracionServicio;
+        private readonly ITicketServicio ticketServicio;
 
         private readonly ICtaCteServicio ctaCteServicio;
 
         AccesoDatos.Proceso Estado;
+        PedidoDto _PedidoDto;
 
         long PedidoId;
         long EntidadId;
@@ -52,6 +59,8 @@ namespace Presentacion.Core.Pedido
             detalleCajaServicio = new DetalleCajaServicio();
             ctaCteServicio = new CtaCteServicio();
             ventaServicio = new VentaServicio();
+            configuracionServicio = new ConfiguracionServicio();
+            ticketServicio = new TicketServicio();
 
             list = new List<VentaDto2>();
 
@@ -226,6 +235,7 @@ namespace Presentacion.Core.Pedido
         public void Datos(long pedidoId)
         {
             var pedido = pedidoServicio.Buscar(pedidoId);
+            _PedidoDto = pedidoServicio.BuscarDto(pedidoId);
 
             txtTotal.Text = string.Empty;
             txtDebe.Text = string.Empty;
@@ -732,6 +742,18 @@ namespace Presentacion.Core.Pedido
                     Datos(PedidoId);
 
                 }
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta Seguro De Imprimir?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var pd = new PrintDocument();
+
+                var name = pd.PrinterSettings.PrinterName;
+
+                ticketServicio.ImprimirAutomaticamentePedido(detalleCajaServicio.BuscarDetalleConPedidoId(PedidoId).Id, name, _PedidoDto.ClienteId, PedidoId);
             }
         }
     }
