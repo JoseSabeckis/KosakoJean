@@ -21,7 +21,8 @@ namespace Servicios.Core.DetalleCaja
                     NumeroOperacion = detalleCajaDto.NumeroOperacion,
                     TipoOperacion = detalleCajaDto.TipoOperacion,
                     ClienteId = detalleCajaDto.ClienteId,
-                    PedidoId = detalleCajaDto.PedidoId
+                    PedidoId = detalleCajaDto.PedidoId,
+                    ArregloId = detalleCajaDto.ArregloId
                 };
 
                 context.DetalleCajas.Add(detalleCaja);
@@ -51,7 +52,8 @@ namespace Servicios.Core.DetalleCaja
                         NumeroOperacion = x.NumeroOperacion,
                         TipoOperacion = x.TipoOperacion,
                         ClienteId = x.ClienteId,
-                        PedidoId = x.PedidoId
+                        PedidoId = x.PedidoId,
+                        ArregloId = x.ArregloId
 
                     }).ToList();
 
@@ -78,7 +80,8 @@ namespace Servicios.Core.DetalleCaja
                     NumeroOperacion = detalle.NumeroOperacion,
                     TipoOperacion = detalle.TipoOperacion,
                     ClienteId = detalle.ClienteId,
-                    PedidoId = detalle.PedidoId
+                    PedidoId = detalle.PedidoId,
+                    ArregloId = detalle.ArregloId
 
                 };
 
@@ -154,11 +157,43 @@ namespace Servicios.Core.DetalleCaja
                         NumeroOperacion = x.NumeroOperacion,
                         TipoOperacion = x.TipoOperacion,
                         ClienteId = x.ClienteId,
-                        PedidoId = x.PedidoId
+                        PedidoId = x.PedidoId,
+                        ArregloId = x.ArregloId
 
                     }).ToList();
 
                 return lista;
+
+            }
+
+        }
+
+        public DetalleCajaDto BuscarDetalleConArregloId(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var x = context.DetalleCajas.FirstOrDefault(a => a.ArregloId == id);
+
+                var arreglo = new DetalleCajaDto
+                {
+
+                    CajaId = x.CajaId,
+                    Descripcion = x.Descripcion,
+                    Fecha = x.Fecha,
+                    Total = x.Total,
+                    Id = x.Id,
+                    TipoPago = x.TipoPago,
+                    EstaEliminado = x.EstaEliminado,
+                    NumeroOperacion = x.NumeroOperacion,
+                    TipoOperacion = x.TipoOperacion,
+                    ClienteId = x.ClienteId,
+                    PedidoId = x.PedidoId,
+                    ArregloId = x.ArregloId
+
+                };
+
+                return arreglo;
 
             }
 
@@ -182,7 +217,8 @@ namespace Servicios.Core.DetalleCaja
                         NumeroOperacion = x.NumeroOperacion,
                         TipoOperacion = x.TipoOperacion,
                         ClienteId = x.ClienteId,
-                        PedidoId = x.PedidoId
+                        PedidoId = x.PedidoId,
+                        ArregloId = x.ArregloId
 
                     }).ToList();
 

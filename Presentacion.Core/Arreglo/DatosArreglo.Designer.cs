@@ -67,6 +67,9 @@ namespace Presentacion.Core.Arreglo
             this.label3 = new System.Windows.Forms.Label();
             this.lblCliente = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbImpresoras = new System.Windows.Forms.ComboBox();
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -81,6 +84,9 @@ namespace Presentacion.Core.Arreglo
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnImprimir);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.cmbImpresoras);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.imgArreglo);
             this.panel1.Controls.Add(this.label1);
@@ -96,9 +102,9 @@ namespace Presentacion.Core.Arreglo
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel7.Controls.Add(this.lblEstado);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(350, 0);
+            this.panel7.Location = new System.Drawing.Point(375, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(387, 96);
+            this.panel7.Size = new System.Drawing.Size(362, 96);
             this.panel7.TabIndex = 3;
             // 
             // lblEstado
@@ -129,7 +135,7 @@ namespace Presentacion.Core.Arreglo
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(121, 36);
+            this.label1.Location = new System.Drawing.Point(121, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 26);
             this.label1.TabIndex = 1;
@@ -528,6 +534,40 @@ namespace Presentacion.Core.Arreglo
             this.label2.TabIndex = 0;
             this.label2.Text = "Cliente:";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(124, 52);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(103, 13);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Usar Para Ticket";
+            // 
+            // cmbImpresoras
+            // 
+            this.cmbImpresoras.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbImpresoras.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbImpresoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbImpresoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbImpresoras.FormattingEnabled = true;
+            this.cmbImpresoras.Location = new System.Drawing.Point(126, 68);
+            this.cmbImpresoras.Name = "cmbImpresoras";
+            this.cmbImpresoras.Size = new System.Drawing.Size(156, 24);
+            this.cmbImpresoras.TabIndex = 15;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(288, 52);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(82, 40);
+            this.btnImprimir.TabIndex = 17;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
             // DatosArreglo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -603,5 +643,8 @@ namespace Presentacion.Core.Arreglo
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label lblPrendas;
         private System.Windows.Forms.Label lblNumeroOperacion;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmbImpresoras;
     }
 }

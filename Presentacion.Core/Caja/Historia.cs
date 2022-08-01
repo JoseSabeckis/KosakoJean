@@ -264,7 +264,7 @@ namespace Presentacion.Core.Caja
 
             if (detalle.TipoOperacion == AccesoDatos.TipoOperacion.Arreglo)
             {
-                ticketServicio.ImprimirAutomaticamenteArreglo(_DetalleId, cmbImpresoras.Text, detalle.PedidoId);
+                ticketServicio.ImprimirAutomaticamenteArreglo(_DetalleId, cmbImpresoras.Text, (long)detalle.PedidoId);
             }
 
             if (detalle.TipoOperacion == AccesoDatos.TipoOperacion.CtaCte)

@@ -5,13 +5,16 @@ using Servicios.Core.Arreglo.Dto;
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
+using Servicios.Core.Configuracion;
 using Servicios.Core.CtaCte;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.DetalleProducto;
 using Servicios.Core.ParteVenta.Dto;
+using Servicios.Core.Ticket;
 using Servicios.Core.Venta;
 using System;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Arreglo
@@ -25,6 +28,8 @@ namespace Presentacion.Core.Arreglo
         private readonly IVentaServicio ventaServicio;
         private readonly IArregloServicio arregloServicio;
         private readonly IDetalleProductoServicio detalleProductoServicio;
+        private readonly ITicketServicio ticketServicio;
+        private readonly IConfiguracionServicio configuracionServicio;
 
         long _ClienteId;
         ClienteDto _Cliente;
@@ -40,6 +45,8 @@ namespace Presentacion.Core.Arreglo
             ventaServicio = new VentaServicio();
             arregloServicio = new ArregloServicio();
             detalleProductoServicio = new DetalleProductoServicio();
+            ticketServicio = new TicketServicio();
+            configuracionServicio = new ConfiguracionServicio();
 
             _ClienteId = 1;
 
@@ -48,6 +55,18 @@ namespace Presentacion.Core.Arreglo
             cmbHorario.SelectedIndex = 0;
 
             lblNumeroOperacion.Text = "#" + detallCajaServicio.TraerNuevoNumeroOperacion();
+
+            MostrarImpresoras();
+
+            VerSiSeUsaraLaTicketera();
+        }
+
+        public void VerSiSeUsaraLaTicketera()
+        {
+            if (configuracionServicio.ObtenerPorId(1).UsarTicketera)
+            {
+                ckbTickets.Checked = true;
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -65,6 +84,23 @@ namespace Presentacion.Core.Arreglo
             }
 
             return true;
+        }
+
+        public void MostrarImpresoras()
+        {
+            var pd = new PrintDocument();
+
+            foreach (String strPrinter in PrinterSettings.InstalledPrinters)
+            {
+                cmbImpresoras.Items.Add(strPrinter);
+            }
+
+            var name = pd.PrinterSettings.PrinterName;
+
+            var index = cmbImpresoras.FindString(name);
+
+            cmbImpresoras.SelectedIndex = index;
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -115,7 +151,7 @@ namespace Presentacion.Core.Arreglo
                         NumeroOperacion = long.Parse(numOperacion)
                     };
 
-                    arregloServicio.Insertar(arreglo);
+                    var arregloID = arregloServicio.Insertar(arreglo);
 
                     var detalle = new DetalleCajaDto
                     {
@@ -126,19 +162,20 @@ namespace Presentacion.Core.Arreglo
                         NumeroOperacion = long.Parse(numOperacion),
                         TipoOperacion = AccesoDatos.TipoOperacion.Arreglo,
                         ClienteId = _ClienteId,
-                        PedidoId = null
+                        PedidoId = null,
+                        ArregloId = arregloID
                 };
 
                     TipoPago(detalle);
 
-                    var detallleId = detallCajaServicio.AgregarDetalleCaja(detalle);
+                    var detalleId = detallCajaServicio.AgregarDetalleCaja(detalle);
 
                     //para ticket
                     VentaDto2 ventaDto2 = new VentaDto2
                     {
                         Cantidad = 1,
                         Descripcion = arreglo.Descripcion,
-                        DetalleCajaId = detallleId,
+                        DetalleCajaId = detalleId,
                         Fecha = DateTime.Now,
                         Talle = "---",
                         Precio = arreglo.Total,
@@ -154,6 +191,18 @@ namespace Presentacion.Core.Arreglo
                     var mensaje = new Afirmacion("-- Arreglo Creado --", "Se Guardo Su Arreglo");
 #pragma warning restore CS0436 // El tipo 'Afirmacion' de 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs' está en conflicto con el tipo importado 'Afirmacion' de 'Presentacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Se usará el tipo definido en 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs'.
                     mensaje.ShowDialog();
+
+                    if (ckbTickets.Checked)
+                    {
+                        if (cmbImpresoras.Text == string.Empty)
+                        {
+                            MessageBox.Show("Elija el Formato de Impresion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            ticketServicio.ImprimirAutomaticamenteArreglo(detalleId, cmbImpresoras.Text, arregloID);
+                        }
+                    }
 
                     LimpiarArreglo();
                 }

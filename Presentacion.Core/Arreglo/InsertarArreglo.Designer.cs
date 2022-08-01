@@ -60,6 +60,9 @@ namespace Presentacion.Core.Arreglo
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.ckbTickets = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cmbImpresoras = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -301,6 +304,7 @@ namespace Presentacion.Core.Arreglo
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.ckbTickets);
             this.panel6.Controls.Add(this.btnSeleccionarCliente);
             this.panel6.Controls.Add(this.txtCliente);
             this.panel6.Controls.Add(this.label9);
@@ -384,6 +388,8 @@ namespace Presentacion.Core.Arreglo
             // 
             this.imgArreglo.BackgroundImage = global::Presentacion.Core.Properties.Resources.categorias_de_producto;
             this.imgArreglo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imgArreglo.Controls.Add(this.label14);
+            this.imgArreglo.Controls.Add(this.cmbImpresoras);
             this.imgArreglo.Controls.Add(this.btnGuardar);
             this.imgArreglo.Controls.Add(this.btnVolver);
             this.imgArreglo.Controls.Add(this.label1);
@@ -427,6 +433,39 @@ namespace Presentacion.Core.Arreglo
             this.label1.Size = new System.Drawing.Size(178, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pedido de Arreglo";
+            // 
+            // ckbTickets
+            // 
+            this.ckbTickets.AutoSize = true;
+            this.ckbTickets.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbTickets.Location = new System.Drawing.Point(356, 132);
+            this.ckbTickets.Name = "ckbTickets";
+            this.ckbTickets.Size = new System.Drawing.Size(92, 21);
+            this.ckbTickets.TabIndex = 17;
+            this.ckbTickets.Text = "Usar Ticket";
+            this.ckbTickets.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(172, 53);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(103, 13);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Usar Para Ticket";
+            // 
+            // cmbImpresoras
+            // 
+            this.cmbImpresoras.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbImpresoras.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbImpresoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbImpresoras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbImpresoras.FormattingEnabled = true;
+            this.cmbImpresoras.Location = new System.Drawing.Point(174, 69);
+            this.cmbImpresoras.Name = "cmbImpresoras";
+            this.cmbImpresoras.Size = new System.Drawing.Size(189, 24);
+            this.cmbImpresoras.TabIndex = 17;
             // 
             // InsertarArreglo
             // 
@@ -494,5 +533,8 @@ namespace Presentacion.Core.Arreglo
         private System.Windows.Forms.NumericUpDown nudCantidad;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblNumeroOperacion;
+        private System.Windows.Forms.CheckBox ckbTickets;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmbImpresoras;
     }
 }

@@ -28,6 +28,8 @@ namespace Servicios.Core.DetalleCaja.Dto
 
         public long? PedidoId { get; set; }
 
+        public long? ArregloId { get; set; }
+
         public bool EstaEliminado { get; set; }
     }
 }

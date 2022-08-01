@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 07/22/2022 23:58:45
+-- Date Created: 07/31/2022 21:01:57
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -61,6 +61,9 @@ IF OBJECT_ID(N'[dbo].[FK_ClienteArreglo]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_DetalleCajaDetalleProducto]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[DetalleProductos] DROP CONSTRAINT [FK_DetalleCajaDetalleProducto];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ClienteDetalleCaja]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetalleCajas] DROP CONSTRAINT [FK_ClienteDetalleCaja];
 GO
 
 -- --------------------------------------------------
@@ -189,7 +192,8 @@ CREATE TABLE [dbo].[DetalleCajas] (
     [EstaEliminado] bit  NOT NULL,
     [TipoOperacion] bigint  NOT NULL,
     [ClienteId] bigint  NOT NULL,
-    [PedidoId] bigint  NULL
+    [PedidoId] bigint  NULL,
+    [ArregloId] bigint  NULL
 );
 GO
 

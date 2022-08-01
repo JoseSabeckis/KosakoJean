@@ -113,6 +113,7 @@ namespace Presentacion.Core.Arreglo
             if (ckbEnEspera.Checked)
             {
                 ckbRetirados.Checked = false;
+                btnEliminar.Visible = false;
             }
 
             CargarGrilla();
@@ -123,6 +124,7 @@ namespace Presentacion.Core.Arreglo
             if (ckbRetirados.Checked)
             {
                 ckbEnEspera.Checked = false;
+                btnEliminar.Visible = true;
             }
 
             CargarGrilla();
@@ -186,6 +188,16 @@ namespace Presentacion.Core.Arreglo
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnBuscar.PerformClick();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Esta Seguro De Borrar Este Arreglo?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                arregloServicio.Eliminar(_ArregloId);
+
+                CargarGrilla();
             }
         }
     }

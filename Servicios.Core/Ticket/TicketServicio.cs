@@ -1,4 +1,5 @@
-﻿using Servicios.Core.Cliente;
+﻿using Servicios.Core.Arreglo;
+using Servicios.Core.Cliente;
 using Servicios.Core.Configuracion;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleProducto;
@@ -20,6 +21,7 @@ namespace Servicios.Core.Ticket
         private readonly IClienteServicio clienteServicio = new ClienteServicio();
         private readonly IPedidoServicio pedidoServicio = new PedidoServicio();
         private readonly IConfiguracionServicio configuracionServicio = new ConfiguracionServicio();
+        private readonly IArregloServicio arregloServicio = new ArregloServicio(); 
 
         public void ImprimirAutomaticamenteVenta(long _DetalleId, string impresora, long clienteId)//Venta
         {
@@ -116,7 +118,7 @@ namespace Servicios.Core.Ticket
 
             //ticket.TextoIzquierda("");
             ticket.TextoIzquierda("Atencion: VENDEDOR");
-            ticket.TextoIzquierda($"Cliente: {_Detalle.Descripcion}");
+            ticket.TextoIzquierda($"Cliente: {_Pedido.Apellido} {_Pedido.Nombre}");
             ticket.TextoIzquierda("Fecha: " + _Detalle.Fecha);
             ticket.TextoIzquierda("Retirar El: " + _Pedido.FechaEntrega.ToLongDateString());
             ticket.TextoIzquierda("A La: " + _Pedido.Horario);
@@ -155,12 +157,12 @@ namespace Servicios.Core.Ticket
             ticket.ImprimirTicket(impresora);//POS58 Printer
         }
 
-        public void ImprimirAutomaticamenteArreglo(long _DetalleId, string impresora, long? pedidoId)//Arreglo
+        public void ImprimirAutomaticamenteArreglo(long _DetalleId, string impresora, long arregloId)//Arreglo
         {
             var _Detalle = _detalleCajaServicio.ObtenerPorId(_DetalleId);
             var _Negocio = negocioServicio.ObtenerPorId(1);
 
-            var _Pedido = pedidoServicio.BuscarIDPedidos((long)pedidoId);
+            var _Arreglo = arregloServicio.ObtenerPorId(arregloId);
 
             //configuracion
             var Config = configuracionServicio.ObtenerPorId(1);
@@ -184,10 +186,10 @@ namespace Servicios.Core.Ticket
 
             //ticket.TextoIzquierda("");
             ticket.TextoIzquierda("Atencion: VENDEDOR");
-            ticket.TextoIzquierda($"{_Detalle.Descripcion}");
+            ticket.TextoIzquierda($"{_Arreglo.ApyNom}");
             ticket.TextoIzquierda("Fecha: " + _Detalle.Fecha);
-            ticket.TextoIzquierda("Retirar El: " + _Pedido.FechaEntrega.ToLongDateString());
-            ticket.TextoIzquierda("A La: " + _Pedido.Horario);
+            ticket.TextoIzquierda("Retirar El: " + _Arreglo.FechaEntrega.ToLongDateString());
+            ticket.TextoIzquierda("A La: " + _Arreglo.Horario);
             ticket.LineaAstericoMetodo();//*********
 
             ticket.Encabezado();//descripcion, cantidad, precio, total

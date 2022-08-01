@@ -153,6 +153,7 @@
     <Property Name="TipoOperacion" Type="bigint" Nullable="false" />
     <Property Name="ClienteId" Type="bigint" Nullable="false" />
     <Property Name="PedidoId" Type="bigint" Nullable="true" />
+    <Property Name="ArregloId" Type="bigint" Nullable="true" />
   </EntityType>
   <EntityType Name="Pedidos">
     <Key>
@@ -703,6 +704,7 @@
           <NavigationProperty Name="Cliente" Relationship="KosakoDBModel.ClienteDetalleCaja" FromRole="DetalleCaja" ToRole="Cliente" />
           <Property Name="ClienteId" Type="Int64" Nullable="false" />
           <Property Name="PedidoId" Type="Int64" Nullable="true" />
+          <Property Name="ArregloId" Type="Int64" Nullable="true" />
         </EntityType>
         <Association Name="TipoProductoProducto">
           <End Type="KosakoDBModel.TipoProducto" Role="TipoProducto" Multiplicity="1" />
@@ -1202,6 +1204,7 @@
           <ScalarProperty Name="TipoOperacion" ColumnName="TipoOperacion" />
           <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
           <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
+          <ScalarProperty Name="ArregloId" ColumnName="ArregloId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

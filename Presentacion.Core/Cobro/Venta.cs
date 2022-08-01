@@ -8,6 +8,7 @@ using Presentacion.Core.Talle;
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
+using Servicios.Core.Configuracion;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.DetalleProducto;
@@ -42,6 +43,7 @@ namespace Presentacion.Core.Cobro
         private readonly ITalleServicio talleServicio;
         private readonly IDetalleProductoServicio detalleProductoServicio;
         private readonly ITicketServicio ticketServicio;
+        private readonly IConfiguracionServicio configuracionServicio;
 
         ProductoDto producto;
         long _productoId;
@@ -73,6 +75,7 @@ namespace Presentacion.Core.Cobro
             talleServicio = new TalleServicio();
             detalleProductoServicio = new DetalleProductoServicio();
             ticketServicio = new TicketServicio();
+            configuracionServicio = new ConfiguracionServicio();
 
             CargarTalle();
 
@@ -93,6 +96,7 @@ namespace Presentacion.Core.Cobro
             MostrarImpresoras();
 
             TraerNumeroOperacion();
+            VerSiSeUsaraLaTicketera();
         }
 
         public void Inicializador()
@@ -467,7 +471,8 @@ namespace Presentacion.Core.Cobro
                             NumeroOperacion = long.Parse(txtNumeroOperacion.Text),
                             TipoOperacion = AccesoDatos.TipoOperacion.Venta,
                             ClienteId = _clienteId,
-                            PedidoId = null
+                            PedidoId = null,
+                            ArregloId = null
                         };
 
                         TipoPago(detalle);
@@ -513,6 +518,7 @@ namespace Presentacion.Core.Cobro
                             {
                                 MessageBox.Show("Elija el Formato de Impresion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
+                            else
                             {
                                 ticketServicio.ImprimirAutomaticamenteVenta(detalleCajaId, cmbImpresoras.Text, _clienteId);
                             }
@@ -985,5 +991,14 @@ namespace Presentacion.Core.Cobro
         {
             txtCodigoBarra.Focus();
         }
+
+        public void VerSiSeUsaraLaTicketera()
+        {
+            if (configuracionServicio.ObtenerPorId(1).UsarTicketera)
+            {
+                ckbTickets.Checked = true;
+            }           
+        }
+
     }
 }

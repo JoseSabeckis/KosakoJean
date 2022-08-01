@@ -8,7 +8,7 @@ namespace Servicios.Core.Arreglo
 {
     public class ArregloServicio : IArregloServicio
     {
-        public void Insertar(ArregloDto arregloDto)
+        public long Insertar(ArregloDto arregloDto)
         {
             using (var context = new KosakoDBEntities())
             {
@@ -25,12 +25,14 @@ namespace Servicios.Core.Arreglo
                     Nombre = arregloDto.Nombre,
                     Total = arregloDto.Total,
                     Cantidad = (int)arregloDto.Cantidad,
-                    NumeroOperacion = arregloDto.NumeroOperacion
+                    NumeroOperacion = arregloDto.NumeroOperacion,                    
                 };
 
                 context.Arreglos.Add(arreglo);
 
                 context.SaveChanges();
+
+                return arreglo.Id;
             }
         }
 

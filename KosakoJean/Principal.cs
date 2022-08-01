@@ -221,7 +221,7 @@ namespace KosakoJean
                 {
                     UsarLogin = false,
                     MostrarDatos = false,
-                    UsarTicketera = false
+                    UsarTicketera = true
                 };
 
                 configuracionServicio.Nuevo(config);

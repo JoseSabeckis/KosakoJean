@@ -6,7 +6,7 @@ namespace Servicios.Core.Arreglo
 {
     public interface IArregloServicio
     {
-        void Insertar(ArregloDto arregloDto);
+        long Insertar(ArregloDto arregloDto);
         ArregloDto ObtenerPorId(long id);
         void CambiarAEnEsperaYFechaDeRetiro(long id);
         void GuardarDescripcion(long id, string descripcion);

@@ -5,14 +5,17 @@ using Servicios.Core.Arreglo.Dto;
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
+using Servicios.Core.Configuracion;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
 using Servicios.Core.DetalleProducto;
 using Servicios.Core.Image.Dto;
 using Servicios.Core.ParteVenta.Dto;
+using Servicios.Core.Ticket;
 using Servicios.Core.Venta;
 using Servicios.Core.Venta.Dto;
 using System;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Arreglo
@@ -25,6 +28,8 @@ namespace Presentacion.Core.Arreglo
         private readonly IVentaServicio ventaServicio;
         private readonly IArregloServicio arregloServicio;
         private readonly IDetalleProductoServicio DetalleServicio;
+        private readonly ITicketServicio ticketServicio;
+        private readonly IConfiguracionServicio configuracionServicio;
 
         ArregloDto _ArregloDto;
         ClienteDto _ClienteDto;
@@ -43,6 +48,8 @@ namespace Presentacion.Core.Arreglo
             ventaServicio = new VentaServicio();
             arregloServicio = new ArregloServicio();
             DetalleServicio = new DetalleProductoServicio();
+            ticketServicio = new TicketServicio();
+            configuracionServicio = new ConfiguracionServicio();
 
             _ArregloId = arregloId;
             _ArregloDto = arregloServicio.ObtenerPorId(_ArregloId);
@@ -53,11 +60,30 @@ namespace Presentacion.Core.Arreglo
             VerificarSiEstaTerminado();
 
             CargarImageEnGeneral();
+
+            MostrarImpresoras();
         }
 
         private void CargarImageEnGeneral()
         {
             imgArreglo.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Arreglos);
+        }
+
+        public void MostrarImpresoras()
+        {
+            var pd = new PrintDocument();
+
+            foreach (String strPrinter in PrinterSettings.InstalledPrinters)
+            {
+                cmbImpresoras.Items.Add(strPrinter);
+            }
+
+            var name = pd.PrinterSettings.PrinterName;
+
+            var index = cmbImpresoras.FindString(name);
+
+            cmbImpresoras.SelectedIndex = index;
+
         }
 
         private void Datos()
@@ -319,6 +345,23 @@ namespace Presentacion.Core.Arreglo
             if (e.KeyChar == (char)Keys.Enter)
             {
                 btnDatos.PerformClick();
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea Imprimir?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                if (cmbImpresoras.Text == string.Empty)
+                {
+                    MessageBox.Show("Elija el Formato de Impresion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    ticketServicio.ImprimirAutomaticamenteArreglo(detalleCajaServicio.BuscarDetalleConArregloId(_ArregloId).Id, cmbImpresoras.Text, _ArregloDto.ClienteId);
+                }
+
             }
         }
     }

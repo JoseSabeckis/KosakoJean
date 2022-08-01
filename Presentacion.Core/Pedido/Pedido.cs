@@ -4,6 +4,7 @@ using Presentacion.Core.Mensaje;
 using Servicios.Core.Caja;
 using Servicios.Core.Cliente;
 using Servicios.Core.Cliente.Dto;
+using Servicios.Core.Configuracion;
 using Servicios.Core.CtaCte;
 using Servicios.Core.CtaCte.Dto;
 using Servicios.Core.DetalleCaja;
@@ -21,6 +22,7 @@ using Servicios.Core.Producto_Dato.Dto;
 using Servicios.Core.Producto_Pedido;
 using Servicios.Core.Producto_Pedido.Dto;
 using Servicios.Core.Talle;
+using Servicios.Core.Ticket;
 using Servicios.Core.Venta;
 using System;
 using System.Collections.Generic;
@@ -42,6 +44,8 @@ namespace Presentacion.Core.Pedido
         private readonly IVentaServicio ventaServicio;
         private readonly IProducto_Dato_Servicio producto_Dato_Servicio;
         private readonly IDetalleProductoServicio detalleProductoServicio;
+        private readonly ITicketServicio ticketServicio;
+        private readonly IConfiguracionServicio configuracionServicio;
 
         public bool semaforo = false;
 
@@ -66,6 +70,8 @@ namespace Presentacion.Core.Pedido
             ventaServicio = new VentaServicio();
             producto_Dato_Servicio = new Producto_Dato_Servicio();
             detalleProductoServicio = new DetalleProductoServicio();
+            ticketServicio = new TicketServicio();
+            configuracionServicio = new ConfiguracionServicio();
 
             _Cliente = new ClienteDto();
 
@@ -106,6 +112,16 @@ namespace Presentacion.Core.Pedido
 
             CargarImageEnGeneral();
             txtNumeroOperacion.Text = detallCajaServicio.TraerNuevoNumeroOperacion();
+
+            VerSiSeUsaraLaTicketera();
+        }
+
+        public void VerSiSeUsaraLaTicketera()
+        {
+            if (configuracionServicio.ObtenerPorId(1).UsarTicketera)
+            {
+                ckbTickets.Checked = true;
+            }
         }
 
         private void CargarImageEnGeneral()
@@ -274,7 +290,8 @@ namespace Presentacion.Core.Pedido
                         NumeroOperacion = long.Parse(txtNumeroOperacion.Text),
                         TipoOperacion = AccesoDatos.TipoOperacion.Pedido,
                         ClienteId = ClienteId,
-                        PedidoId = pedidoId
+                        PedidoId = pedidoId,
+                        ArregloId = null
                     };
 
                     TipoPago(detalle);
@@ -302,27 +319,41 @@ namespace Presentacion.Core.Pedido
 #pragma warning restore CS0436 // El tipo 'Afirmacion' de 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs' está en conflicto con el tipo importado 'Afirmacion' de 'Presentacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Se usará el tipo definido en 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs'.
                     mensaje.ShowDialog();
 
-                    if (ckbNormal.Checked || ckbTarjeta.Checked)
+                    if (ckbTickets.Checked)
                     {
-                        if ((double)nudAdelanto.Value == _total)
+                        if (cmbImpresoras.Text == string.Empty)
                         {
-                            foreach (var item in ListaVentas)
-                            {
-                                item.Precio = item.Cantidad * item.Precio;
-                            }
-
-                            //ticket
-
-                            var fecha = new FechaDto
-                            {
-                                Fecha = DateTime.Now.ToShortDateString(),
-                                Hora = DateTime.Now.ToShortTimeString()
-                            };
-
-                            var factura = new Comprobante(ListaVentas.ToList(), fecha);
-                            factura.ShowDialog();
+                            MessageBox.Show("Elija el Formato de Impresion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            ticketServicio.ImprimirAutomaticamentePedido(detalleCajaId, cmbImpresoras.Text, ClienteId, pedidoId);
                         }
                     }
+                    else
+                    {
+                        if (ckbNormal.Checked || ckbTarjeta.Checked)
+                        {
+                            if ((double)nudAdelanto.Value == _total)
+                            {
+                                foreach (var item in ListaVentas)
+                                {
+                                    item.Precio = item.Cantidad * item.Precio;
+                                }
+
+                                //ticket
+
+                                var fecha = new FechaDto
+                                {
+                                    Fecha = DateTime.Now.ToShortDateString(),
+                                    Hora = DateTime.Now.ToShortTimeString()
+                                };
+
+                                var factura = new Comprobante(ListaVentas.ToList(), fecha);
+                                factura.ShowDialog();
+                            }
+                        }
+                    }               
 
                     semaforo = true;
 
