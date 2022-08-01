@@ -27,6 +27,7 @@ using Servicios.Core.Talle.Dto;
 using Servicios.Core.TipoProducto;
 using Servicios.Core.TipoProducto.Dto;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using BarcodeLib;
