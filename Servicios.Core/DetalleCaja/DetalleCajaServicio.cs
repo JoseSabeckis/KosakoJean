@@ -22,7 +22,8 @@ namespace Servicios.Core.DetalleCaja
                     TipoOperacion = detalleCajaDto.TipoOperacion,
                     ClienteId = detalleCajaDto.ClienteId,
                     PedidoId = detalleCajaDto.PedidoId,
-                    ArregloId = detalleCajaDto.ArregloId
+                    ArregloId = detalleCajaDto.ArregloId,
+                    CtaCteId = detalleCajaDto.CtaCteId,                   
                 };
 
                 context.DetalleCajas.Add(detalleCaja);

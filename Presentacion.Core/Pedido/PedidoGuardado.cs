@@ -408,13 +408,49 @@ namespace Presentacion.Core.Pedido
             }
         }
 
+        public AccesoDatos.TipoPago DetalleCaja(CtaCteDto cuenta, PedidoDto pedido, double cobro)
+        {
+            var detalle = new DetalleCajaDto
+            {
+                Descripcion = $"{lblPersona.Text} - Pago de Pedido",
+                Fecha = DateTime.Now.ToLongDateString(),
+                Total = cobro,
+                CajaId = detalleCajaServicio.BuscarCajaAbierta(),
+                NumeroOperacion = cuenta.NumeroOperacion,
+                ArregloId = null,
+                ClienteId = pedido.ClienteId,
+                CtaCteId = cuenta.Id,
+                PedidoId = pedido.Id,
+                TipoOperacion = AccesoDatos.TipoOperacion.Pedido,
+            };
+
+            TipoPago(detalle);
+
+            detalleCajaServicio.AgregarDetalleCaja(detalle);
+
+            //venta
+            var venta = new VentaDto
+            {
+                ClienteId = pedido.ClienteId,
+                Descuento = 0,
+                Fecha = DateTime.Now,
+                Total = cobro
+            };
+
+            ventaServicio.NuevaVenta(venta);
+
+            return detalle.TipoPago;
+        }
+
         private void btnTerminar_Click(object sender, EventArgs e)
         {
             if (cajaServicio.BuscarCajaAbierta() != null)
             {
                 if (MessageBox.Show("Esta por Terminar el Pedido, Esta Seguro?", "Preguntar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var pedido = pedidoServicio.Buscar(PedidoId);
+                    Datos(PedidoId);
+
+                    var pedido = pedidoServicio.BuscarDto(PedidoId);
 
                     pedidoServicio.CambiarProcesoRetirado(pedido.Id);
 
@@ -424,11 +460,9 @@ namespace Presentacion.Core.Pedido
 
                     //Total Cta Cte
 
-                    var cuentaId = new CtaCteDto();
+                    var cuenta = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
 
-                    cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
-
-                    ctaCteServicio.Pagar((double)_Debe, pedido.ClienteId, cuentaId.Id);
+                    ctaCteServicio.Pagar(_Debe, pedido.ClienteId, cuenta.Id);
                     /*
                     if (pedido.ClienteId != 1)
                     {
@@ -443,35 +477,14 @@ namespace Presentacion.Core.Pedido
 
                     //caja
 
-                    var detalle = new DetalleCajaDto
-                    {
-                        Descripcion = $"{lblPersona.Text} - Pedido Terminado",
-                        Fecha = DateTime.Now.ToString(),
-                        Total = (double)_Debe,
-                        CajaId = detalleCajaServicio.BuscarCajaAbierta(),
-                        NumeroOperacion = cuentaId.NumeroOperacion
-                    };
+                    var tipoDato = DetalleCaja(cuenta, pedido, _Debe);
 
-                    TipoPago(detalle);
+                    cajaServicio.SumarDineroACaja(_Debe);
 
-                    detalleCajaServicio.AgregarDetalleCaja(detalle);
-
-                    cajaServicio.SumarDineroACaja((double)_Debe);
-
-                    pedidoServicio.CambiarRamas((double)_Debe, PedidoId);
-
-                    var venta = new VentaDto
-                    {
-                        ClienteId = pedido.ClienteId,
-                        Descuento = 0,
-                        Fecha = DateTime.Now,
-                        Total = (double)_Debe
-                    };
-
-                    ventaServicio.NuevaVenta(venta);
+                    pedidoServicio.CambiarRamas(_Debe, PedidoId);
 
 #pragma warning disable CS0436 // El tipo 'Afirmacion' de 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs' está en conflicto con el tipo importado 'Afirmacion' de 'Presentacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Se usará el tipo definido en 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs'.
-                    var completado = new Afirmacion("Felicidades!", $"Completado \nse obtuvo de ganancias $ {_Debe}\nTipo de Pago: {detalle.TipoPago}");
+                    var completado = new Afirmacion("Felicidades!", $"Completado \nse obtuvo de ganancias $ {_Debe}\nTipo de Pago: {tipoDato}");
 #pragma warning restore CS0436 // El tipo 'Afirmacion' de 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs' está en conflicto con el tipo importado 'Afirmacion' de 'Presentacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Se usará el tipo definido en 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs'.
                     completado.ShowDialog();
 
@@ -514,47 +527,43 @@ namespace Presentacion.Core.Pedido
 
                 if (MessageBox.Show("Esta Por Cobrar Un Adelanto, Desea Continuar?", "Adelanto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var pedido = pedidoServicio.Buscar(PedidoId);
+                    Datos(PedidoId);
+
+                    var pedido = pedidoServicio.BuscarDto(PedidoId);
 
                     //Total Cta Cte
 
-                    var cuentaId = new CtaCteDto();
+                    var cuenta = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
 
-                    cuentaId = ctaCteServicio.ObtenerPorIdDePedidosId(pedido.Id);
-
-                    ctaCteServicio.Pagar((double)nudCobro.Value, pedido.ClienteId, cuentaId.Id);
+                    ctaCteServicio.Pagar((double)nudCobro.Value, pedido.ClienteId, cuenta.Id);
 
                     //caja
-
+                    /*
                     var detalle = new DetalleCajaDto
                     {
                         Descripcion = $"{lblPersona.Text} - Adelanto de Pedido",
                         Fecha = DateTime.Now.ToString(),
                         Total = (double)nudCobro.Value,
                         CajaId = detalleCajaServicio.BuscarCajaAbierta(),
-                        NumeroOperacion = cuentaId.NumeroOperacion
+                        NumeroOperacion = cuentaId.NumeroOperacion,
+                        ArregloId = null,
+                        ClienteId = pedido.ClienteId,
+                        CtaCteId = cuentaId.Id,
+                        PedidoId = pedido.Id,
+                        TipoOperacion = AccesoDatos.TipoOperacion.Pedido,
                     };
 
                     TipoPago(detalle);
 
-                    detalleCajaServicio.AgregarDetalleCaja(detalle);
+                    detalleCajaServicio.AgregarDetalleCaja(detalle);*/
+                    var tipoPago = DetalleCaja(cuenta, pedido, (double)nudCobro.Value);
 
                     cajaServicio.SumarDineroACaja((double)nudCobro.Value);
 
                     pedidoServicio.CambiarRamas((double)nudCobro.Value, PedidoId);
 
-                    var venta = new VentaDto
-                    {
-                        ClienteId = pedido.ClienteId,
-                        Descuento = 0,
-                        Fecha = DateTime.Now,
-                        Total = (double)nudCobro.Value
-                    };
-
-                    ventaServicio.NuevaVenta(venta);
-
 #pragma warning disable CS0436 // El tipo 'Afirmacion' de 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs' está en conflicto con el tipo importado 'Afirmacion' de 'Presentacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Se usará el tipo definido en 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs'.
-                    var completado = new Afirmacion("Felicidades!", $"Completado \nSe obtuvo de ganancias $ {nudCobro.Value}\nTipo de Pago: {detalle.TipoPago}");
+                    var completado = new Afirmacion("Felicidades!", $"Completado \nSe obtuvo de ganancias $ {nudCobro.Value}\nTipo de Pago: {tipoPago}");
 #pragma warning restore CS0436 // El tipo 'Afirmacion' de 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs' está en conflicto con el tipo importado 'Afirmacion' de 'Presentacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Se usará el tipo definido en 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Afirmacion.cs'.
                     completado.ShowDialog();
 

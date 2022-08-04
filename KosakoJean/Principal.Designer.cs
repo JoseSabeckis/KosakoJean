@@ -42,6 +42,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDeLaAplicacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configurarImagenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configurarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiposToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoTipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verTiposToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +57,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.lblActualizacion = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.btnProductos = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -87,7 +89,6 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.btnCobrar2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.configurarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -211,6 +212,13 @@
             this.configurarImagenesToolStripMenuItem.Text = "Configurar Imagenes";
             this.configurarImagenesToolStripMenuItem.Click += new System.EventHandler(this.configurarImagenesToolStripMenuItem_Click);
             // 
+            // configurarToolStripMenuItem
+            // 
+            this.configurarToolStripMenuItem.Name = "configurarToolStripMenuItem";
+            this.configurarToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.configurarToolStripMenuItem.Text = "Configuracion General";
+            this.configurarToolStripMenuItem.Click += new System.EventHandler(this.configurarToolStripMenuItem_Click);
+            // 
             // tiposToolStripMenuItem1
             // 
             this.tiposToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -321,6 +329,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.lblActualizacion);
             this.panel8.Controls.Add(this.panel15);
             this.panel8.Controls.Add(this.panel5);
             this.panel8.Controls.Add(this.lblFecha);
@@ -332,6 +341,17 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(544, 422);
             this.panel8.TabIndex = 7;
+            // 
+            // lblActualizacion
+            // 
+            this.lblActualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblActualizacion.AutoSize = true;
+            this.lblActualizacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblActualizacion.Location = new System.Drawing.Point(535, 1);
+            this.lblActualizacion.Name = "lblActualizacion";
+            this.lblActualizacion.Size = new System.Drawing.Size(10, 13);
+            this.lblActualizacion.TabIndex = 46;
+            this.lblActualizacion.Text = ".";
             // 
             // panel15
             // 
@@ -720,13 +740,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // configurarToolStripMenuItem
-            // 
-            this.configurarToolStripMenuItem.Name = "configurarToolStripMenuItem";
-            this.configurarToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.configurarToolStripMenuItem.Text = "Configuracion General";
-            this.configurarToolStripMenuItem.Click += new System.EventHandler(this.configurarToolStripMenuItem_Click);
-            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -830,6 +843,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.ToolStripMenuItem configurarToolStripMenuItem;
+        private System.Windows.Forms.Label lblActualizacion;
     }
 }
 

@@ -24,6 +24,8 @@ namespace Presentacion.Core.Cliente
 
             public double Total { get; set; }
 
+            public string TotalVista => Total.ToString("00.00");
+
             public string Fecha { get; set; }
         }
 
@@ -54,7 +56,7 @@ namespace Presentacion.Core.Cliente
             dgvGrillaVentas.DataSource = ListaVentas.ToList();
             dgvGrillaPedidos.DataSource = ListaPedidos.ToList();
 
-            FormatearGrilla(dgvGrillaVentas);
+            FormatearGrillaVentas(dgvGrillaVentas);
             FormatearGrilla(dgvGrillaPedidos);
 
             CargarImageEnGeneral();
@@ -78,7 +80,7 @@ namespace Presentacion.Core.Cliente
                 {
                     Fecha = ventas.FechaString,
                     Total = (double)ventas.Total,
-                    Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
+                    //Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id)
                 };
 
                 nudTotal.Value += (decimal)historial.Total;
@@ -136,7 +138,7 @@ namespace Presentacion.Core.Cliente
                 {
                     Fecha = ventas.FechaString,
                     Total = ventas.Total,
-                    Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
+                    //Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
                 };
 
                 nudTotal.Value += (decimal)historial.Total;
@@ -211,7 +213,7 @@ namespace Presentacion.Core.Cliente
                 {
                     Fecha = ventas.FechaString,
                     Total = ventas.Total,
-                    Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
+                    //Descripcion = producto_Venta_Servicio.ObtenerDescripcion(ventas.Id).Descripcion
                 };
 
                 nudTotal.Value += (decimal)historial.Total;
@@ -262,11 +264,32 @@ namespace Presentacion.Core.Cliente
             grilla.Columns["Descripcion"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Descripcion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["Total"].Visible = true;
-            grilla.Columns["Total"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["Total"].HeaderText = @"Total";
-            grilla.Columns["Total"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["Total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["TotalVista"].Visible = true;
+            grilla.Columns["TotalVista"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["TotalVista"].HeaderText = @"Total";
+            grilla.Columns["TotalVista"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["TotalVista"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            grilla.Columns["Fecha"].Visible = true;
+            grilla.Columns["Fecha"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["Fecha"].HeaderText = @"Fecha";
+            grilla.Columns["Fecha"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["Fecha"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+        }
+
+        public void FormatearGrillaVentas(DataGridView grilla)
+        {
+            for (var i = 0; i < grilla.ColumnCount; i++)
+            {
+                grilla.Columns[i].Visible = false;
+            }
+
+            grilla.Columns["TotalVista"].Visible = true;
+            grilla.Columns["TotalVista"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["TotalVista"].HeaderText = @"Total";
+            grilla.Columns["TotalVista"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["TotalVista"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             grilla.Columns["Fecha"].Visible = true;
             grilla.Columns["Fecha"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;

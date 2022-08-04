@@ -20,8 +20,8 @@ namespace Presentacion.Core.Cliente.Ctrol
 
             Datos(clienteServicio.ObtenerPorId(idCliente));
 
-            Id = idCliente;
-
+            Id = idCliente;          
+            
         }
 
         public void Datos(ClienteDto cliente)

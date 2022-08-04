@@ -13,6 +13,7 @@ using Servicios.Core.DetalleProducto;
 using Servicios.Core.ParteVenta.Dto;
 using Servicios.Core.Ticket;
 using Servicios.Core.Venta;
+using Servicios.Core.Venta.Dto;
 using System;
 using System.Drawing.Printing;
 using System.Windows.Forms;
@@ -183,6 +184,17 @@ namespace Presentacion.Core.Arreglo
                     };
 
                     detalleProductoServicio.Insertar(ventaDto2);
+
+                    //venta
+                    var venta = new VentaDto
+                    {
+                        ClienteId = arreglo.ClienteId,
+                        Descuento = 0,
+                        Fecha = DateTime.Now,
+                        Total = (double)nudAdelanto.Value
+                    };
+
+                    ventaServicio.NuevaVenta(venta);
 
                     //dinero a caja
                     cajaServicio.SumarDineroACaja((double)nudAdelanto.Value);

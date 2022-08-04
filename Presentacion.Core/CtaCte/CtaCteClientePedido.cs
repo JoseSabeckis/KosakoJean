@@ -227,7 +227,7 @@ namespace Presentacion.Core.CtaCte
                     Total = _Total,
                     ClienteId = _Cliente.Id,
                     Descripcion = $"Espera de Pago - {txtApellido.Text} {txtNombre.Text}",
-                    Horario = $"Sera Retirado a la {cmbHorario.Text}"
+                    Horario = $"Sera Retirado a la {cmbHorario.Text}",
                 };
 
                 var pedidoId = pedidoServicio.NuevoPedido(pedido);

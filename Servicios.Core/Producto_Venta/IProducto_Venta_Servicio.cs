@@ -1,4 +1,5 @@
 ﻿using Servicios.Core.Producto_Venta.Dto;
+using Servicios.Core.Venta.Dto;
 using System.Collections.Generic;
 
 namespace Servicios.Core.Producto_Venta
@@ -11,7 +12,7 @@ namespace Servicios.Core.Producto_Venta
 
         void NuevoProductoVenta(Producto_Venta_Dto producto);
 
-        Producto_Venta_Dto ObtenerDescripcion(long id);
+        VentaDto ObtenerDescripcion(long id);
 
         void CambiarCant(string descripcion, decimal cantidad);
 

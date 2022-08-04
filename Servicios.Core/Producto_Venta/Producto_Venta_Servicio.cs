@@ -1,5 +1,6 @@
 ﻿using AccesoDatos;
 using Servicios.Core.Producto_Venta.Dto;
+using Servicios.Core.Venta.Dto;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -80,25 +81,20 @@ namespace Servicios.Core.Producto_Venta
             }
         }
 
-        public Producto_Venta_Dto ObtenerDescripcion(long id)
+        public VentaDto ObtenerDescripcion(long id)
         {
             using (var context = new KosakoDBEntities())
             {
 
-                var aux = context.Producto_Ventas.FirstOrDefault(x => x.VentaId == id);
+                var aux = context.Ventas.FirstOrDefault(x => x.Id == id);
 
-                var producto = new Producto_Venta_Dto
+                var producto = new VentaDto
                 {
-                    Cantidad = aux.Cantidad,
-                    Descripcion = aux.Descripcion,
-                    Estado = aux.Estado,
                     Id = aux.Id,
-                    Precio = aux.Precio,
-                    ProductoId = aux.ProductoId,
-                    Talle = aux.Talle,
-                    VentaId = aux.VentaId,
-                    TalleId = aux.TalleId
-
+                    Total = aux.Total,
+                    Descuento = aux.Descuento,
+                    ClienteId = aux.ClienteId,
+                    Fecha = aux.Fecha,                    
                 };
 
                 return producto;

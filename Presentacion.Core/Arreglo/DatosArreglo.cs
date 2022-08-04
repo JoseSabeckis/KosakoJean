@@ -52,7 +52,6 @@ namespace Presentacion.Core.Arreglo
             configuracionServicio = new ConfiguracionServicio();
 
             _ArregloId = arregloId;
-            _ArregloDto = arregloServicio.ObtenerPorId(_ArregloId);
 
             Datos();
 
@@ -89,6 +88,8 @@ namespace Presentacion.Core.Arreglo
         private void Datos()
         {
             //_ClienteDto = clienteServicio.ObtenerPorId(_ArregloDto.ClienteId);
+            _ArregloDto = arregloServicio.ObtenerPorId(_ArregloId);
+
             _Total = _ArregloDto.Total;
 
             lblPrendas.Text = $"Prendas: {_ArregloDto.Cantidad}";
@@ -143,43 +144,47 @@ namespace Presentacion.Core.Arreglo
             }
         }
 
+
+        public long NuevoDetalleCaja()
+        {
+            //caja
+            var detalle = new DetalleCajaDto
+            {
+                Descripcion = $"{lblCliente.Text} - Cobro",
+                Fecha = DateTime.Now.ToLongDateString(),
+                Total = _Debe,
+                CajaId = detalleCajaServicio.BuscarCajaAbierta(),
+                NumeroOperacion = _ArregloDto.NumeroOperacion,
+                ArregloId = _ArregloId,
+                ClienteId = _ArregloDto.ClienteId,
+                CtaCteId = null,
+                PedidoId = null,
+                TipoOperacion = AccesoDatos.TipoOperacion.Arreglo,
+            };
+
+            TipoPago(detalle);
+
+            return detalleCajaServicio.AgregarDetalleCaja(detalle);
+        }
+
         private void btnCobro_Click(object sender, EventArgs e)
         {
             if (cajaServicio.BuscarCajaAbierta() != null)
             {
                 if (nudCobro.Value > 0)
                 {
+                    Datos();
+
                     if (MessageBox.Show("Esta Por Cobrar Un Adelanto, Desea Continuar?", "Adelanto", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         arregloServicio.Cobrar(_ArregloId, (double)nudCobro.Value);
 
-                        //caja
-                        var detalle = new DetalleCajaDto
-                        {
-                            Descripcion = $"{lblCliente.Text} - Cobro Adelanto",
-                            Fecha = DateTime.Now.ToLongDateString(),
-                            Total = (double)nudCobro.Value,
-                            CajaId = detalleCajaServicio.BuscarCajaAbierta()
-                        };
-
-                        TipoPago(detalle);
-
-                        long detalleId = detalleCajaServicio.AgregarDetalleCaja(detalle);
+                        var detalleId = NuevoDetalleCaja();
 
                         cajaServicio.SumarDineroACaja((double)nudCobro.Value);
 
-                        var venta = new VentaDto
-                        {
-                            ClienteId = _ArregloDto.ClienteId,
-                            Descuento = 0,
-                            Fecha = DateTime.Now,
-                            Total = (double)nudCobro.Value,
-                        };
-
-                        ventaServicio.NuevaVenta(venta);
-
                         //para ticket
-                        Detalle(detalleId);
+                        Detalle(detalleId, (double)nudCobro.Value);
 
                         _ArregloDto = arregloServicio.ObtenerPorId(_ArregloId);
                         //
@@ -217,6 +222,7 @@ namespace Presentacion.Core.Arreglo
 
                 ckbNormal.Visible = false;
                 ckbTarjeta.Visible = false;
+
             }
         }
 
@@ -248,30 +254,24 @@ namespace Presentacion.Core.Arreglo
         {
             if (cajaServicio.BuscarCajaAbierta() != null)
             {
+                Datos();
+
                 if (MessageBox.Show("Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     arregloServicio.Cobrar(_ArregloId, _Debe);
 
                     arregloServicio.CambiarARetiradoYFechaDeRetiro(_ArregloId, DateTime.Now);
 
-                    //caja
-                    var detalle = new DetalleCajaDto
-                    {
-                        Descripcion = $"{lblCliente.Text} - Cobro",
-                        Fecha = DateTime.Now.ToLongDateString(),
-                        Total = _Debe,
-                        CajaId = detalleCajaServicio.BuscarCajaAbierta(),
-                        NumeroOperacion = _ArregloDto.NumeroOperacion
-                    };
+                    //detalle
 
-                    TipoPago(detalle);
-
-                    long detalleId = detalleCajaServicio.AgregarDetalleCaja(detalle);
+                    var detalleId = NuevoDetalleCaja();
 
                     //para ticket
-                    Detalle(detalleId);
+                    Detalle(detalleId, _Debe);
                     //
                     Datos();
+
+                    arregloServicio.CambiarARetiradoYFechaDeRetiro(_ArregloId, DateTime.Now);
 
                     VerificarSiEstaPagado();
                     VerificarSiEstaTerminado();
@@ -287,7 +287,7 @@ namespace Presentacion.Core.Arreglo
             }
         }
 
-        public void Detalle(long detalleId)
+        public void Detalle(long detalleId, double cobro)
         {
             VentaDto2 ventaDto2 = new VentaDto2
             {
@@ -296,11 +296,22 @@ namespace Presentacion.Core.Arreglo
                 DetalleCajaId = detalleId,
                 Fecha = DateTime.Now,
                 Talle = "---",
-                Precio = _Total,
+                Precio = cobro,
                 ProductoId = 1,
             };
 
             DetalleServicio.Insertar(ventaDto2);
+
+            //venta
+            var venta = new VentaDto
+            {
+                ClienteId = _ArregloDto.ClienteId,
+                Descuento = 0,
+                Fecha = DateTime.Now,
+                Total = cobro
+            };
+
+            ventaServicio.NuevaVenta(venta);
         }
 
         public void VerificarSiEstaTerminado()

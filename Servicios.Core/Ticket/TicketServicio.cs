@@ -37,6 +37,7 @@ namespace Servicios.Core.Ticket
             ticket.AbreCajon();
 
             ticket.TextoCentro(_Negocio.RazonSocial);
+            ticket.TextoIzquierda(" ");
 
             if (Config.MostrarDatos)
             {
@@ -104,6 +105,7 @@ namespace Servicios.Core.Ticket
             ticket.AbreCajon();
 
             ticket.TextoCentro(_Negocio.RazonSocial);
+            ticket.TextoIzquierda(" ");
 
             if (Config.MostrarDatos)
             {
@@ -146,11 +148,13 @@ namespace Servicios.Core.Ticket
 
             ticket.TextoIzquierda(" ");
             ticket.AgregarTotales("Total:....$", total);
+            ticket.AgregarTotales("Adelanto:.$", _Pedido.Adelanto);
+            ticket.AgregarTotales("Debe:.....$", total - _Pedido.Adelanto);
             //ticket.TextoIzquierda(" ");
             ticket.TextoIzquierda("Articulos Vendidos: " + cantComprados);
             ticket.TextoIzquierda(" ");
 
-            ticket.TextoCentro("-- GRACIAS POR SU CONFIANZA! --");
+            ticket.TextoCentro("-- GRACIAS POR SU COMPRA! --");
             ticket.TextoIzquierda("#" + numeroOperacion);
             ticket.CortaTicket();
 
@@ -172,6 +176,7 @@ namespace Servicios.Core.Ticket
             ticket.AbreCajon();
 
             ticket.TextoCentro(_Negocio.RazonSocial);
+            ticket.TextoIzquierda(" ");
 
             if (Config.MostrarDatos)
             {
@@ -214,11 +219,13 @@ namespace Servicios.Core.Ticket
 
             ticket.TextoIzquierda(" ");
             ticket.AgregarTotales("Total:....$", total);
+            ticket.AgregarTotales("Adelanto:.$", _Arreglo.Adelanto);
+            ticket.AgregarTotales("Debe:.....$", total - _Arreglo.Adelanto);
             //ticket.TextoIzquierda(" ");
             ticket.TextoIzquierda("Articulos Vendidos: " + cantComprados);
             ticket.TextoIzquierda(" ");
 
-            ticket.TextoCentro("-- GRACIAS POR TENERNOS CONFIANZA! --");
+            ticket.TextoCentro("-- GRACIAS POR SU COMPRA! --");
             ticket.TextoIzquierda("#" + numeroOperacion);
             ticket.CortaTicket();
 
@@ -239,6 +246,7 @@ namespace Servicios.Core.Ticket
             ticket.AbreCajon();
 
             ticket.TextoCentro(_Negocio.RazonSocial);
+            ticket.TextoIzquierda(" ");
 
             if (Config.MostrarDatos)
             {
@@ -279,7 +287,7 @@ namespace Servicios.Core.Ticket
             ticket.AgregarTotales("Total:....$", total);
             ticket.TextoIzquierda(" ");
 
-            ticket.TextoCentro("-- GRACIAS POR SU RESERVA! --");
+            ticket.TextoCentro("-- GRACIAS POR SU COMPRA! --");
             ticket.TextoIzquierda("#" + numeroOperacion);
             ticket.CortaTicket();
 

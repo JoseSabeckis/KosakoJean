@@ -129,17 +129,17 @@ namespace Presentacion.Core.CtaCte
             grilla.Columns["Descripcion"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             grilla.Columns["Descripcion"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["Total"].Visible = true;
-            grilla.Columns["Total"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["Total"].HeaderText = @"Total";
-            grilla.Columns["Total"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["Total"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["TotalVista"].Visible = true;
+            grilla.Columns["TotalVista"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["TotalVista"].HeaderText = @"Total";
+            grilla.Columns["TotalVista"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["TotalVista"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            grilla.Columns["Debe"].Visible = true;
-            grilla.Columns["Debe"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            grilla.Columns["Debe"].HeaderText = @"Debe";
-            grilla.Columns["Debe"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            grilla.Columns["Debe"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["DebeVista"].Visible = true;
+            grilla.Columns["DebeVista"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            grilla.Columns["DebeVista"].HeaderText = @"Debe";
+            grilla.Columns["DebeVista"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            grilla.Columns["DebeVista"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             grilla.Columns["Fecha"].Visible = true;
             grilla.Columns["Fecha"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -194,7 +194,7 @@ namespace Presentacion.Core.CtaCte
 
             txtDebe.Text = debe.ToString("00.00");
             txtTotal.Text = total.ToString("00.00");
-
+            txtDebeTotal.Text = debe.ToString("00.00");
         }
 
         public void TipoPago(DetalleCajaDto detalle)
@@ -264,7 +264,13 @@ namespace Presentacion.Core.CtaCte
                             Fecha = DateTime.Now.ToString(),
                             Total = (double)nudCobro.Value,
                             Descripcion = $"Cobro a {_clienteDto.Apellido} {_clienteDto.Nombre}",
-                            CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                            CajaId = detalleCajaServicio.BuscarCajaAbierta(),
+                            ArregloId = null,
+                            ClienteId = pedido.ClienteId,
+                            CtaCteId = _CtaCteId,
+                            TipoOperacion = AccesoDatos.TipoOperacion.CtaCte,
+                            NumeroOperacion = _ctaDto.NumeroOperacion,
+                            PedidoId = pedido.Id,                           
                         };
 
                         TipoPago(detalle);

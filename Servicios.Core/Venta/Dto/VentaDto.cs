@@ -8,6 +8,8 @@ namespace Servicios.Core.Venta.Dto
 
         public double Total { get; set; }
 
+        public string TotalVista => Total.ToString("00.00");
+
         public decimal Descuento { get; set; }
 
         public DateTime Fecha { get; set; }
