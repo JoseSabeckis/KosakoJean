@@ -203,6 +203,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(642, 26);
             this.txtBuscar.TabIndex = 0;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dgvGrilla
             // 

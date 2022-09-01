@@ -204,6 +204,11 @@ namespace Presentacion
                     {
                         Limpiar(ctrolPanel);
                     }
+
+                    if (ctrolPanel is CheckBox)
+                    {
+                        ((CheckBox)ctrolPanel).Checked = false;
+                    }
                 }
             }
         }

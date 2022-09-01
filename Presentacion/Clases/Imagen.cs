@@ -20,5 +20,6 @@ namespace Presentacion.Clases
         public static Image OjoPassword = Properties.Resources.bloquearMio;
         public static Image Usuario = Properties.Resources.LoginDos_png;
         public static Image Buscar = Properties.Resources.BuscarDos;
+        public static Image Producto = Properties.Resources.distribucion_por_producto;
     }
 }

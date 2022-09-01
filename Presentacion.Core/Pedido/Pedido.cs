@@ -302,7 +302,7 @@ namespace Presentacion.Core.Pedido
                     var detalle = new DetalleCajaDto
                     {
                         Descripcion = txtApellido.Text + " " + txtNombre.Text,
-                        Fecha = DateTime.Now.ToString(),
+                        Fecha = DateTime.Now.ToLongDateString(),
                         Total = (double)nudAdelanto.Value,
                         CajaId = detallCajaServicio.BuscarCajaAbierta(),
                         NumeroOperacion = long.Parse(txtNumeroOperacion.Text),

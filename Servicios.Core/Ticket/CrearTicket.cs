@@ -53,7 +53,7 @@ namespace Servicios.Core.Ticket
 
         public void Encabezado()
         {
-            linea.AppendLine("Articulo| Cant |Precio |Importe");
+            linea.AppendLine("Articulo  Cant  Precio  Importe");
         }
 
         public void TextoIzquierda(string texto)

@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.panel2.SuspendLayout();
@@ -65,12 +66,24 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblInfo);
             this.panel2.Controls.Add(this.txtDescripcion);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(20, 19);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(562, 145);
             this.panel2.TabIndex = 2;
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblInfo.Location = new System.Drawing.Point(101, 120);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(17, 21);
+            this.lblInfo.TabIndex = 3;
+            this.lblInfo.Text = "-";
             // 
             // Colegio_Abm
             // 
@@ -97,5 +110,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

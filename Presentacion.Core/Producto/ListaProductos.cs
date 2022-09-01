@@ -116,5 +116,11 @@ namespace Presentacion.Core.Producto
 
             }
         }
+
+        private void btnConPocoStock_Click(object sender, EventArgs e)
+        {
+            var stock = new PocoStock();
+            stock.ShowDialog();
+        }
     }
 }

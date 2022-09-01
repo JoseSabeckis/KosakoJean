@@ -103,6 +103,16 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap distribucion_por_producto {
+            get {
+                object obj = ResourceManager.GetObject("distribucion_por_producto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EditarDos {
             get {
                 object obj = ResourceManager.GetObject("EditarDos", resourceCulture);

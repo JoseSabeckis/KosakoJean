@@ -261,7 +261,7 @@ namespace Presentacion.Core.CtaCte
 
                         var detalle = new DetalleCajaDto
                         {
-                            Fecha = DateTime.Now.ToString(),
+                            Fecha = DateTime.Now.ToLongDateString(),
                             Total = (double)nudCobro.Value,
                             Descripcion = $"Cobro a {_clienteDto.Apellido} {_clienteDto.Nombre}",
                             CajaId = detalleCajaServicio.BuscarCajaAbierta(),

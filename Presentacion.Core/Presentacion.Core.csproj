@@ -376,6 +376,12 @@
     <Compile Include="Producto\ListaProductos.Designer.cs">
       <DependentUpon>ListaProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Producto\PocoStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\PocoStock.Designer.cs">
+      <DependentUpon>PocoStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto\Producto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -588,6 +594,9 @@
     <EmbeddedResource Include="Producto\ListaProductos.resx">
       <DependentUpon>ListaProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Producto\PocoStock.resx">
+      <DependentUpon>PocoStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Producto\Producto.resx">
       <DependentUpon>Producto.cs</DependentUpon>
     </EmbeddedResource>
@@ -690,6 +699,7 @@
     <None Include="Resources\prendas-armario-look_crop1608776690890.jpg_242310155.jpg" />
     <None Include="Resources\imagee.jpg" />
     <None Include="Resources\Archivos_25593.png" />
+    <None Include="Resources\distribucion-por-producto.jpeg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -1,5 +1,6 @@
 ﻿using Servicios.Core.Arreglo;
 using Servicios.Core.Cliente;
+using Servicios.Core.Colegio;
 using Servicios.Core.Configuracion;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleProducto;
@@ -21,7 +22,7 @@ namespace Servicios.Core.Ticket
         private readonly IClienteServicio clienteServicio = new ClienteServicio();
         private readonly IPedidoServicio pedidoServicio = new PedidoServicio();
         private readonly IConfiguracionServicio configuracionServicio = new ConfiguracionServicio();
-        private readonly IArregloServicio arregloServicio = new ArregloServicio(); 
+        private readonly IArregloServicio arregloServicio = new ArregloServicio();
 
         public void ImprimirAutomaticamenteVenta(long _DetalleId, string impresora, long clienteId)//Venta
         {
@@ -68,7 +69,13 @@ namespace Servicios.Core.Ticket
 
             foreach (var item in ListaVenta)
             {
-                ticket.AgregaArticulo(item.Descripcion, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
+                var colegio = "";
+                var talle = "";
+
+                colegio = NombreSiEsDistintoaA1(item.ColegioId, item.Colegio);
+                talle = NombreSiEsDistintoaA1(item.TalleId, item.Talle);
+
+                ticket.AgregaArticulo(item.Descripcion + colegio + talle, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
 
                 total += item.Precio * item.Cantidad;
                 cantComprados += (int)item.Cantidad;               
@@ -138,7 +145,13 @@ namespace Servicios.Core.Ticket
 
             foreach (var item in ListaVenta)
             {
-                ticket.AgregaArticulo(item.Descripcion, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
+                var colegio = "";
+                var talle = "";
+
+                colegio = NombreSiEsDistintoaA1(item.ColegioId, item.Colegio);
+                talle = NombreSiEsDistintoaA1(item.TalleId, item.Talle);
+
+                ticket.AgregaArticulo(item.Descripcion + colegio + talle, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
 
                 total += item.Precio * item.Cantidad;
                 cantComprados += (int)item.Cantidad;
@@ -209,7 +222,13 @@ namespace Servicios.Core.Ticket
 
             foreach (var item in ListaVenta)
             {
-                ticket.AgregaArticulo(item.Descripcion, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
+                var colegio = "";
+                var talle = "";
+
+                colegio = NombreSiEsDistintoaA1(item.ColegioId, item.Colegio);
+                talle = NombreSiEsDistintoaA1(item.TalleId, item.Talle);
+
+                ticket.AgregaArticulo(item.Descripcion + colegio + talle, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
 
                 total += item.Precio * item.Cantidad;
                 cantComprados += (int)item.Cantidad;
@@ -276,7 +295,13 @@ namespace Servicios.Core.Ticket
 
             foreach (var item in ListaVenta)
             {
-                ticket.AgregaArticulo(item.Descripcion, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
+                var colegio = "";
+                var talle = "";
+
+                colegio = NombreSiEsDistintoaA1(item.ColegioId, item.Colegio);
+                talle = NombreSiEsDistintoaA1(item.TalleId, item.Talle);
+
+                ticket.AgregaArticulo(item.Descripcion + colegio + talle, (int)item.Cantidad, item.Precio, item.Precio * item.Cantidad);
 
                 total += item.Precio * item.Cantidad;
             }
@@ -292,6 +317,19 @@ namespace Servicios.Core.Ticket
             ticket.CortaTicket();
 
             ticket.ImprimirTicket(impresora);//POS58 Printer
+        }
+
+        public string NombreSiEsDistintoaA1(long? id, string nombre)
+        {
+            var retorno = "";
+
+            if (id != null && id != 1)
+            {
+                retorno = " " + nombre;
+            }
+
+            return retorno;
+
         }
 
     }

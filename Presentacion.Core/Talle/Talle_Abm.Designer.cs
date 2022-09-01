@@ -31,13 +31,14 @@ namespace Presentacion.Core.Talle
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Controls.Add(this.lblInfo);
             this.panel1.Controls.Add(this.txtDescripcion);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Size = new System.Drawing.Size(506, 168);
@@ -58,6 +59,18 @@ namespace Presentacion.Core.Talle
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(208, 33);
             this.txtDescripcion.TabIndex = 1;
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.lblInfo.Location = new System.Drawing.Point(61, 136);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(17, 21);
+            this.lblInfo.TabIndex = 2;
+            this.lblInfo.Text = "-";
+            this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
             // 
             // Talle_Abm
             // 
@@ -82,5 +95,6 @@ namespace Presentacion.Core.Talle
 
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblInfo;
     }
 }

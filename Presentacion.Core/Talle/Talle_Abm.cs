@@ -56,10 +56,15 @@ namespace Presentacion.Core.Talle
                 btnLimpiar.Enabled = false;
             }
 
-            var localidad = _Servicio.ObtenerPorId(entidadId.Value);
+            var dato = _Servicio.ObtenerPorId(entidadId.Value);
 
             // Datos Personales
-            txtDescripcion.Text = localidad.Descripcion;
+            txtDescripcion.Text = dato.Descripcion;
+
+            if (entidadId == 1)
+            {
+                lblInfo.Text = "INFO - Este Talle No Aparecera En El Ticket";
+            }
         }
 
         public override bool EjecutarComandoNuevo()
@@ -126,6 +131,11 @@ namespace Presentacion.Core.Talle
         {
             var zon = new Talle_Abm(TipoOperacion.Nuevo);
             zon.ShowDialog();
+
+        }
+
+        private void lblInfo_Click(object sender, System.EventArgs e)
+        {
 
         }
     }

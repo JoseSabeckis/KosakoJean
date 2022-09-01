@@ -537,25 +537,6 @@ namespace Presentacion.Core.Pedido
 
                     ctaCteServicio.Pagar((double)nudCobro.Value, pedido.ClienteId, cuenta.Id);
 
-                    //caja
-                    /*
-                    var detalle = new DetalleCajaDto
-                    {
-                        Descripcion = $"{lblPersona.Text} - Adelanto de Pedido",
-                        Fecha = DateTime.Now.ToString(),
-                        Total = (double)nudCobro.Value,
-                        CajaId = detalleCajaServicio.BuscarCajaAbierta(),
-                        NumeroOperacion = cuentaId.NumeroOperacion,
-                        ArregloId = null,
-                        ClienteId = pedido.ClienteId,
-                        CtaCteId = cuentaId.Id,
-                        PedidoId = pedido.Id,
-                        TipoOperacion = AccesoDatos.TipoOperacion.Pedido,
-                    };
-
-                    TipoPago(detalle);
-
-                    detalleCajaServicio.AgregarDetalleCaja(detalle);*/
                     var tipoPago = DetalleCaja(cuenta, pedido, (double)nudCobro.Value);
 
                     cajaServicio.SumarDineroACaja((double)nudCobro.Value);

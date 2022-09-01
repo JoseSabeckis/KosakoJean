@@ -57,7 +57,7 @@
             this.pnlFoto = new System.Windows.Forms.Panel();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
             this.lblTituloFoto = new System.Windows.Forms.Label();
-            this.imgFotoEmpleado = new System.Windows.Forms.PictureBox();
+            this.imgFotoProducto = new System.Windows.Forms.PictureBox();
             this.archivo = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
@@ -69,12 +69,11 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             this.pnlFoto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgFotoEmpleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFotoProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Size = new System.Drawing.Size(1032, 411);
             // 
@@ -326,7 +325,7 @@
             0});
             this.nudCodigoBarra.Name = "nudCodigoBarra";
             this.nudCodigoBarra.Size = new System.Drawing.Size(159, 33);
-            this.nudCodigoBarra.TabIndex = 0;
+            this.nudCodigoBarra.TabIndex = 15;
             this.nudCodigoBarra.Value = new decimal(new int[] {
             -1943132160,
             209,
@@ -414,7 +413,7 @@
             this.pnlFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlFoto.Controls.Add(this.btnAgregarImagen);
             this.pnlFoto.Controls.Add(this.lblTituloFoto);
-            this.pnlFoto.Controls.Add(this.imgFotoEmpleado);
+            this.pnlFoto.Controls.Add(this.imgFotoProducto);
             this.pnlFoto.Location = new System.Drawing.Point(500, 76);
             this.pnlFoto.Name = "pnlFoto";
             this.pnlFoto.Size = new System.Drawing.Size(201, 239);
@@ -446,17 +445,17 @@
             this.lblTituloFoto.Text = "Foto";
             this.lblTituloFoto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // imgFotoEmpleado
+            // imgFotoProducto
             // 
-            this.imgFotoEmpleado.BackColor = System.Drawing.Color.White;
-            this.imgFotoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.imgFotoEmpleado.Image = global::Presentacion.Core.Properties.Resources.iPhoto_photo_picture_camera_2661;
-            this.imgFotoEmpleado.Location = new System.Drawing.Point(8, 38);
-            this.imgFotoEmpleado.Name = "imgFotoEmpleado";
-            this.imgFotoEmpleado.Size = new System.Drawing.Size(183, 141);
-            this.imgFotoEmpleado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgFotoEmpleado.TabIndex = 0;
-            this.imgFotoEmpleado.TabStop = false;
+            this.imgFotoProducto.BackColor = System.Drawing.Color.White;
+            this.imgFotoProducto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imgFotoProducto.Image = global::Presentacion.Core.Properties.Resources.distribucion_por_producto;
+            this.imgFotoProducto.Location = new System.Drawing.Point(8, 38);
+            this.imgFotoProducto.Name = "imgFotoProducto";
+            this.imgFotoProducto.Size = new System.Drawing.Size(183, 141);
+            this.imgFotoProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgFotoProducto.TabIndex = 0;
+            this.imgFotoProducto.TabStop = false;
             // 
             // archivo
             // 
@@ -485,7 +484,7 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             this.pnlFoto.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgFotoEmpleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgFotoProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,7 +506,7 @@
         private System.Windows.Forms.Panel pnlFoto;
         private System.Windows.Forms.Button btnAgregarImagen;
         private System.Windows.Forms.Label lblTituloFoto;
-        private System.Windows.Forms.PictureBox imgFotoEmpleado;
+        private System.Windows.Forms.PictureBox imgFotoProducto;
         private System.Windows.Forms.OpenFileDialog archivo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown nudStock;

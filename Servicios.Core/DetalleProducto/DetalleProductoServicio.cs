@@ -66,7 +66,7 @@ namespace Servicios.Core.DetalleProducto
                         Talle = item.Talle,
                         Precio = item.Precio,
                         Fecha = item.Fecha,
-                        ProductoId = (long)item.ProductoId,                       
+                        ProductoId = (long)item.ProductoId,
                     };
 
                     ListaCompleta.Add(producto);

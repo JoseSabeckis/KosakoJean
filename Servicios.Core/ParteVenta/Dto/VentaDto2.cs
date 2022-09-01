@@ -1,5 +1,6 @@
 ﻿using Servicios.Core.Colegio;
 using Servicios.Core.Producto;
+using Servicios.Core.Talle;
 using System;
 
 namespace Servicios.Core.ParteVenta.Dto
@@ -8,6 +9,7 @@ namespace Servicios.Core.ParteVenta.Dto
     {
         private readonly IProductoServicio productoServicio = new ProductoServicio();
         private readonly IColegioServicio colegioServicio = new ColegioServicio();
+        private readonly ITalleServicio talleServicio = new TalleServicio();
 
         public long Id { get; set; }
 
@@ -17,11 +19,15 @@ namespace Servicios.Core.ParteVenta.Dto
 
         public string Colegio => colegioServicio.ObtenerPorId(productoServicio.ObtenerPorId(ProductoId).ColegioId).Descripcion;
 
+        public long ColegioId => productoServicio.ObtenerPorId(ProductoId).ColegioId;
+
         public DateTime Fecha { get; set; }
 
         public string Estado { get; set; }
 
         public string Talle { get; set; }
+
+        public long? TalleId => talleServicio.BuscarNombreDevuelveId(Talle);
 
         public double Cantidad { get; set; }
 

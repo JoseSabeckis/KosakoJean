@@ -155,5 +155,10 @@ namespace Presentacion
         {
             RowEnter(e);
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            ActualizarDatos(dgvGrilla, txtBuscar.Text);
+        }
     }
 }

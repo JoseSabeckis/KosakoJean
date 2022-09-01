@@ -31,6 +31,7 @@ namespace Presentacion.Core.Producto
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaProductos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnConPocoStock = new System.Windows.Forms.Button();
             this.btnCodBarra = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -49,6 +50,7 @@ namespace Presentacion.Core.Producto
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnConPocoStock);
             this.panel1.Controls.Add(this.btnCodBarra);
             this.panel1.Controls.Add(this.btnBuscar);
             this.panel1.Controls.Add(this.txtBusqueda);
@@ -65,6 +67,21 @@ namespace Presentacion.Core.Producto
             this.panel1.Size = new System.Drawing.Size(1171, 140);
             this.panel1.TabIndex = 0;
             // 
+            // btnConPocoStock
+            // 
+            this.btnConPocoStock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConPocoStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnConPocoStock.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConPocoStock.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConPocoStock.Location = new System.Drawing.Point(834, 3);
+            this.btnConPocoStock.Name = "btnConPocoStock";
+            this.btnConPocoStock.Size = new System.Drawing.Size(163, 31);
+            this.btnConPocoStock.TabIndex = 9;
+            this.btnConPocoStock.Text = "Ver Productos Con Poco Stock";
+            this.btnConPocoStock.UseVisualStyleBackColor = false;
+            this.btnConPocoStock.Click += new System.EventHandler(this.btnConPocoStock_Click);
+            // 
             // btnCodBarra
             // 
             this.btnCodBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -72,7 +89,7 @@ namespace Presentacion.Core.Producto
             this.btnCodBarra.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCodBarra.Location = new System.Drawing.Point(586, 3);
             this.btnCodBarra.Name = "btnCodBarra";
-            this.btnCodBarra.Size = new System.Drawing.Size(307, 31);
+            this.btnCodBarra.Size = new System.Drawing.Size(242, 31);
             this.btnCodBarra.TabIndex = 8;
             this.btnCodBarra.Text = "Ver Codigos de Barra";
             this.btnCodBarra.UseVisualStyleBackColor = false;
@@ -229,5 +246,6 @@ namespace Presentacion.Core.Producto
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCodBarra;
+        private System.Windows.Forms.Button btnConPocoStock;
     }
 }

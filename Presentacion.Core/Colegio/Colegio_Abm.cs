@@ -59,6 +59,11 @@ namespace Presentacion.Core.Colegio
 
             // Datos Personales
             txtDescripcion.Text = localidad.Descripcion;
+
+            if (entidadId == 1)
+            {
+                lblInfo.Text = "INFO - Este Colegio No Aparecera En El Ticket";
+            }
         }
 
         public override bool EjecutarComandoNuevo()

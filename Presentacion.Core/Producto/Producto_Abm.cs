@@ -63,7 +63,6 @@ namespace Presentacion.Core.Producto
 
             Inicializador(entidadId);
 
-
         }
 
         public override void Inicializador(long? entidadId)
@@ -72,9 +71,8 @@ namespace Presentacion.Core.Producto
 
             txtDescripcion.KeyPress += Validacion.NoSimbolos;
 
-            imgFotoEmpleado.Image = Imagen.Usuario;
+            imgFotoProducto.Image = Imagen.Producto;
 
-            txtDescripcion.Focus();
         }
 
         public override void CargarDatos(long? entidadId)
@@ -105,7 +103,7 @@ namespace Presentacion.Core.Producto
 
             ckbFabricacion.Checked = dto.Creacion;
 
-            imgFotoEmpleado.Image = ImagenDb.Convertir_Bytes_Imagen(dto.Foto);
+            imgFotoProducto.Image = ImagenDb.Convertir_Bytes_Imagen(dto.Foto);
 
             if (dto.Creacion)
             {
@@ -132,6 +130,7 @@ namespace Presentacion.Core.Producto
             }
 
             lblCodBarraVerdadero.Text = $"Se Esta Usando El Cod: " + dto.CodigoBarraVerdadero;
+
         }
 
         public void ActualizarImgCodeBarras(decimal codigo)
@@ -209,7 +208,7 @@ namespace Presentacion.Core.Producto
                 Precio = (double)nudPrecio.Value,
                 ColegioId = ((ColegioDto)cmbColegio.SelectedItem).Id,
                 TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id,
-                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
+                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoProducto.Image),
                 Stock = nudStock.Value,
                 Creacion = ckbFabricacion.Checked,
                 CodigoBarra = (long)nudCodigoBarra.Value,
@@ -285,7 +284,7 @@ namespace Presentacion.Core.Producto
                 Precio = (double)nudPrecio.Value,
                 ColegioId = ((ColegioDto)cmbColegio.SelectedItem).Id,
                 TipoProductoId = ((TipoProductoDto)cmbTipo.SelectedItem).Id,
-                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoEmpleado.Image),
+                Foto = ImagenDb.Convertir_Imagen_Bytes(imgFotoProducto.Image),
                 Stock = nudStock.Value,
                 Creacion = ckbFabricacion.Checked,
                 CodigoBarra = (long)nudCodigoBarra.Value,
@@ -350,16 +349,16 @@ namespace Presentacion.Core.Producto
                 // Pregunta si Selecciono un Archivo
                 if (!string.IsNullOrEmpty(archivo.FileName))
                 {
-                    imgFotoEmpleado.Image = System.Drawing.Image.FromFile(archivo.FileName);
+                    imgFotoProducto.Image = System.Drawing.Image.FromFile(archivo.FileName);
                 }
                 else
                 {
-                    imgFotoEmpleado.Image = Imagen.Usuario;
+                    imgFotoProducto.Image = Imagen.Producto;
                 }
             }
             else
             {
-                imgFotoEmpleado.Image = Imagen.Usuario;
+                imgFotoProducto.Image = Imagen.Producto;
             }
         }
 

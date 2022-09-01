@@ -295,7 +295,7 @@ namespace Presentacion.Core.Arreglo
                 Descripcion = txtDescripcion.Text,
                 DetalleCajaId = detalleId,
                 Fecha = DateTime.Now,
-                Talle = "---",
+                Talle = "-",
                 Precio = cobro,
                 ProductoId = 1,
             };

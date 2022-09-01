@@ -275,7 +275,7 @@ namespace KosakoJean
             {
                 var talle0 = new TalleDto
                 {
-                    Descripcion = "Sin Talle"
+                    Descripcion = "-"
                 };
 
                 talleServicio.Nuevo(talle0);

@@ -55,11 +55,16 @@ namespace Presentacion.Core.Arreglo
 
             cmbHorario.SelectedIndex = 0;
 
-            lblNumeroOperacion.Text = "#" + detallCajaServicio.TraerNuevoNumeroOperacion();
+            NumeroOperacion();
 
             MostrarImpresoras();
 
             VerSiSeUsaraLaTicketera();
+        }
+
+        public void NumeroOperacion()
+        {
+            lblNumeroOperacion.Text = "#" + detallCajaServicio.TraerNuevoNumeroOperacion();
         }
 
         public void VerSiSeUsaraLaTicketera()
@@ -131,7 +136,7 @@ namespace Presentacion.Core.Arreglo
 
                 if (MessageBox.Show("Esta Seguro de Continuar?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    lblNumeroOperacion.Text = "#" + detallCajaServicio.TraerNuevoNumeroOperacion();
+                    NumeroOperacion();
 
                     var numOperacion = detallCajaServicio.TraerNuevoNumeroOperacion();
 
@@ -217,6 +222,7 @@ namespace Presentacion.Core.Arreglo
                     }
 
                     LimpiarArreglo();
+                    NumeroOperacion();
                 }
             }
             else
