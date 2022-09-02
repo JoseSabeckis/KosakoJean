@@ -346,7 +346,7 @@
             // 
             this.lblActualizacion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblActualizacion.AutoSize = true;
-            this.lblActualizacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblActualizacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblActualizacion.Location = new System.Drawing.Point(535, 1);
             this.lblActualizacion.Name = "lblActualizacion";
             this.lblActualizacion.Size = new System.Drawing.Size(10, 13);

@@ -66,6 +66,21 @@ namespace Servicios.Core.Producto
 
         }
 
+        public void CambiarStock(long id, decimal stock)
+        {
+
+            using (var context = new KosakoDBEntities())
+            {
+                var producto = context.Productos.FirstOrDefault(x => x.Id == id);
+
+                producto.Stock = stock;
+
+                context.SaveChanges();
+
+            }
+
+        }
+
         public void Modificar(ProductoDto dto)
         {
             using (var context = new KosakoDBEntities())
@@ -124,12 +139,45 @@ namespace Servicios.Core.Producto
 
         }
 
-        public IEnumerable<ProductoDto> BuscarConBajoStock()
+        public IEnumerable<ProductoDto> BuscarConBajoStock(decimal stock)
         {
             using (var context = new KosakoDBEntities())
             {
 
-                var productos = context.Productos.AsNoTracking().Where(x => x.Stock <= 3 && x.EstaEliminado == false && x.Id != 1) //  hasta ahora solo bajo de 3 de stock
+                var productos = context.Productos.AsNoTracking().Where(x => x.Stock <= stock && x.EstaEliminado == false && x.Id != 1) //  hasta ahora solo bajo de 3 de stock
+                    .Select(x => new ProductoDto
+                    {
+
+                        Id = x.Id,
+                        Descripcion = x.Descripcion,
+                        EstaEliminado = x.EstaEliminado,
+                        Extras = x.Extras,
+                        TipoProductoId = x.TipoProductoId,
+                        ColegioId = x.ColegioId,
+                        Foto = x.Foto,
+                        Colegio = context.Colegios.FirstOrDefault(f => f.Id == x.ColegioId).Descripcion,
+                        TipoProducto = context.TipoProductos.FirstOrDefault(f => f.Id == x.TipoProductoId).Descripcion,
+                        Stock = x.Stock,
+                        Creacion = x.Creacion,
+                        Precio = x.Precio,
+                        CodigoBarra = x.CodigoBarra,
+                        ImagenCodBarra = x.ImagenCodBarra,
+                        CodigoBarraVerdadero = x.CodBarraVerdadero,
+                        CodCreado = x.CodCreado
+
+                    }).ToList();
+
+                return productos;
+            }
+
+        }
+
+        public IEnumerable<ProductoDto> BuscarConMayorStock(decimal stock)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var productos = context.Productos.AsNoTracking().Where(x => x.Stock >= stock && x.EstaEliminado == false && x.Id != 1) //  hasta ahora solo bajo de 3 de stock
                     .Select(x => new ProductoDto
                     {
 

@@ -274,6 +274,12 @@
     <Compile Include="Factura\Comprobante.Designer.cs">
       <DependentUpon>Comprobante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Factura\FormListaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura\FormListaProductos.Designer.cs">
+      <DependentUpon>FormListaProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Factura\ListaPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -393,6 +399,12 @@
     </Compile>
     <Compile Include="Producto\Producto_Abm.Designer.cs">
       <DependentUpon>Producto_Abm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto\SumarStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto\SumarStock.Designer.cs">
+      <DependentUpon>SumarStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Producto_Dato\EstadoProducto.cs">
       <SubType>Form</SubType>
@@ -541,11 +553,15 @@
     <EmbeddedResource Include="Factura\Comprobante.resx">
       <DependentUpon>Comprobante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Factura\FormListaProductos.resx">
+      <DependentUpon>FormListaProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Factura\ListaPedidos.resx">
       <DependentUpon>ListaPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Factura\ReportComprobante.rdlc" />
     <EmbeddedResource Include="Factura\ReportPrendas.rdlc" />
+    <EmbeddedResource Include="Factura\ReportProductos.rdlc" />
     <EmbeddedResource Include="Image\ImageDatos.resx">
       <DependentUpon>ImageDatos.cs</DependentUpon>
     </EmbeddedResource>
@@ -603,6 +619,9 @@
     <EmbeddedResource Include="Producto\Producto_Abm.resx">
       <DependentUpon>Producto_Abm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Producto\SumarStock.resx">
+      <DependentUpon>SumarStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Producto_Dato\EstadoProducto.resx">
       <DependentUpon>EstadoProducto.cs</DependentUpon>
     </EmbeddedResource>
@@ -641,6 +660,7 @@
     <None Include="Properties\DataSources\Servicios.Core.Fecha.FechaDto.datasource" />
     <None Include="Properties\DataSources\Servicios.Core.ParteVenta.Dto.VentaDto2.datasource" />
     <None Include="Properties\DataSources\Servicios.Core.Producto.Dto.CodBarraDto.datasource" />
+    <None Include="Properties\DataSources\Servicios.Core.Producto.Dto.ProductoDto.datasource" />
     <None Include="Properties\DataSources\Servicios.Core.Producto_Dato.Dto.Producto_Dato_Dto.datasource" />
     <None Include="Properties\DataSources\Servicios.Core.Producto_Dato.Dto.Producto_Dato_Impresion.datasource" />
     <None Include="Resources\1490129335-rounded14_82192.png" />

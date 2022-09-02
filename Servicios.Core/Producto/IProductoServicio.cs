@@ -13,7 +13,11 @@ namespace Servicios.Core.Producto
 
         void BajarStock(long id, decimal stock);
 
-        IEnumerable<ProductoDto> BuscarConBajoStock();
+        void CambiarStock(long id, decimal stock);
+
+        IEnumerable<ProductoDto> BuscarConBajoStock(decimal stock);
+
+        IEnumerable<ProductoDto> BuscarConMayorStock(decimal stock);
 
         IEnumerable<ProductoDto> Buscar(string cadenaBuscar);
 

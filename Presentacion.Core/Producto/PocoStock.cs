@@ -17,6 +17,8 @@ namespace Presentacion.Core.Producto
         private readonly IProductoServicio productoServicio;
         private readonly IColegioServicio colegioServicio;
 
+        long _codigo;
+
         public PocoStock()
         {
             InitializeComponent();
@@ -29,8 +31,17 @@ namespace Presentacion.Core.Producto
 
         public void CargarGrilla()
         {
-            dgvGrilla.DataSource = productoServicio.BuscarConBajoStock();
-            lblCantidad.Text = $"{productoServicio.BuscarConBajoStock().Count()} Productos";
+            if (ckbMayor.Checked)
+            {
+                dgvGrilla.DataSource = productoServicio.BuscarConMayorStock(nudStock.Value);
+                lblCantidad.Text = $"{productoServicio.BuscarConMayorStock(nudStock.Value).Count()} Productos";
+            }
+            else
+            {
+                dgvGrilla.DataSource = productoServicio.BuscarConBajoStock(nudStock.Value);
+                lblCantidad.Text = $"{productoServicio.BuscarConBajoStock(nudStock.Value).Count()} Productos";
+            }
+
             FormatearGrilla(dgvGrilla);
         }
 
@@ -65,6 +76,51 @@ namespace Presentacion.Core.Producto
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void dgvGrilla_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvGrilla.RowCount > 0)
+            {
+                _codigo = (long)dgvGrilla["Id", e.RowIndex].Value;
+            }
+            else
+            {
+                _codigo = 0;
+            }
+        }
+
+        private void dgvGrilla_DoubleClick(object sender, EventArgs e)
+        {
+            var verificar = new SumarStock(_codigo);
+            verificar.ShowDialog();
+
+            CargarGrilla();
+        }
+
+        private void ckbMenor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbMenor.Checked)
+            {
+                ckbMayor.Checked = false;
+            }
+
+            CargarGrilla();
+        }
+
+        private void ckbMayor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbMayor.Checked)
+            {
+                ckbMenor.Checked = false;
+            }
+
+            CargarGrilla();
+        }
+
+        private void nudStock_ValueChanged(object sender, EventArgs e)
+        {
+            CargarGrilla();
         }
     }
 }

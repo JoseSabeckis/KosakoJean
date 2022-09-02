@@ -1,5 +1,6 @@
 ﻿using Presentacion.Clases;
 using Presentacion.Core.CodBarra;
+using Presentacion.Core.Factura;
 using Presentacion.Core.Producto.Ctrl;
 using Servicios.Core.Image.Dto;
 using Servicios.Core.Producto;
@@ -121,6 +122,12 @@ namespace Presentacion.Core.Producto
         {
             var stock = new PocoStock();
             stock.ShowDialog();
+        }
+
+        private void btnListaProductos_Click(object sender, EventArgs e)
+        {
+            var lista = new FormListaProductos();
+            lista.Show();
         }
     }
 }

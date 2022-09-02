@@ -42,6 +42,7 @@ namespace Presentacion.Core.Producto
             this.imgProducto = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.pnlPrincipal = new System.Windows.Forms.Panel();
+            this.btnListaProductos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgProducto)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +51,7 @@ namespace Presentacion.Core.Producto
             // 
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.btnListaProductos);
             this.panel1.Controls.Add(this.btnConPocoStock);
             this.panel1.Controls.Add(this.btnCodBarra);
             this.panel1.Controls.Add(this.btnBuscar);
@@ -74,11 +76,11 @@ namespace Presentacion.Core.Producto
             this.btnConPocoStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnConPocoStock.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConPocoStock.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConPocoStock.Location = new System.Drawing.Point(834, 3);
+            this.btnConPocoStock.Location = new System.Drawing.Point(899, 9);
             this.btnConPocoStock.Name = "btnConPocoStock";
-            this.btnConPocoStock.Size = new System.Drawing.Size(163, 31);
+            this.btnConPocoStock.Size = new System.Drawing.Size(120, 31);
             this.btnConPocoStock.TabIndex = 9;
-            this.btnConPocoStock.Text = "Ver Productos Con Poco Stock";
+            this.btnConPocoStock.Text = "Verificar STOCK";
             this.btnConPocoStock.UseVisualStyleBackColor = false;
             this.btnConPocoStock.Click += new System.EventHandler(this.btnConPocoStock_Click);
             // 
@@ -87,9 +89,9 @@ namespace Presentacion.Core.Producto
             this.btnCodBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnCodBarra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCodBarra.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCodBarra.Location = new System.Drawing.Point(586, 3);
+            this.btnCodBarra.Location = new System.Drawing.Point(586, 9);
             this.btnCodBarra.Name = "btnCodBarra";
-            this.btnCodBarra.Size = new System.Drawing.Size(242, 31);
+            this.btnCodBarra.Size = new System.Drawing.Size(162, 31);
             this.btnCodBarra.TabIndex = 8;
             this.btnCodBarra.Text = "Ver Codigos de Barra";
             this.btnCodBarra.UseVisualStyleBackColor = false;
@@ -101,7 +103,7 @@ namespace Presentacion.Core.Producto
             this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(899, 46);
+            this.btnBuscar.Location = new System.Drawing.Point(904, 60);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(98, 55);
             this.btnBuscar.TabIndex = 7;
@@ -115,7 +117,7 @@ namespace Presentacion.Core.Producto
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBusqueda.BackColor = System.Drawing.SystemColors.Info;
             this.txtBusqueda.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(586, 60);
+            this.txtBusqueda.Location = new System.Drawing.Point(591, 74);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(307, 29);
             this.txtBusqueda.TabIndex = 6;
@@ -125,7 +127,7 @@ namespace Presentacion.Core.Producto
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(495, 63);
+            this.label2.Location = new System.Drawing.Point(500, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 21);
             this.label2.TabIndex = 5;
@@ -188,10 +190,10 @@ namespace Presentacion.Core.Producto
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(1056, 0);
+            this.btnVolver.Location = new System.Drawing.Point(1067, 0);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(111, 136);
+            this.btnVolver.Size = new System.Drawing.Size(100, 136);
             this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -208,6 +210,19 @@ namespace Presentacion.Core.Producto
             this.pnlPrincipal.Name = "pnlPrincipal";
             this.pnlPrincipal.Size = new System.Drawing.Size(1171, 300);
             this.pnlPrincipal.TabIndex = 1;
+            // 
+            // btnListaProductos
+            // 
+            this.btnListaProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnListaProductos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnListaProductos.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListaProductos.Location = new System.Drawing.Point(754, 9);
+            this.btnListaProductos.Name = "btnListaProductos";
+            this.btnListaProductos.Size = new System.Drawing.Size(139, 31);
+            this.btnListaProductos.TabIndex = 10;
+            this.btnListaProductos.Text = "Lista Productos";
+            this.btnListaProductos.UseVisualStyleBackColor = false;
+            this.btnListaProductos.Click += new System.EventHandler(this.btnListaProductos_Click);
             // 
             // ListaProductos
             // 
@@ -247,5 +262,6 @@ namespace Presentacion.Core.Producto
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCodBarra;
         private System.Windows.Forms.Button btnConPocoStock;
+        private System.Windows.Forms.Button btnListaProductos;
     }
 }
