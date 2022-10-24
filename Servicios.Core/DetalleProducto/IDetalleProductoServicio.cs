@@ -14,5 +14,6 @@ namespace Servicios.Core.DetalleProducto
         List<VentaDto2> ObtenerListaPorDetalleId(long detalleId);
 
         void EliminarTodoPorDetalleCajaId(long detalleCajaId);
+
     }
 }

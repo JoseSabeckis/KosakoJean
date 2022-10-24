@@ -24,6 +24,11 @@ namespace Servicios.Core.Ticket
         private readonly IConfiguracionServicio configuracionServicio = new ConfiguracionServicio();
         private readonly IArregloServicio arregloServicio = new ArregloServicio();
 
+        public DateTime CambiarAFechaCorta(string fecha)
+        {
+            return Convert.ToDateTime(fecha);
+        }
+
         public void ImprimirAutomaticamenteVenta(long _DetalleId, string impresora, long clienteId)//Venta
         {
             var _Detalle = _detalleCajaServicio.ObtenerPorId(_DetalleId);
@@ -54,7 +59,8 @@ namespace Servicios.Core.Ticket
             //ticket.TextoIzquierda("");
             ticket.TextoIzquierda("Atencion: VENDEDOR");
             ticket.TextoIzquierda($"Cliente: {_Cliente.Apellido} {_Cliente.Nombre}");
-            ticket.TextoIzquierda("Fecha: " + _Detalle.Fecha);
+            ticket.TextoIzquierda("Fecha: " + CambiarAFechaCorta(_Detalle.Fecha).ToShortDateString());
+            ticket.TextoDerecha($"Hora: {CambiarAFechaCorta(_Detalle.Fecha).ToShortTimeString()}");
             ticket.LineaAstericoMetodo();//*********
 
             ticket.Encabezado();//descripcion, cantidad, precio, total
@@ -128,7 +134,7 @@ namespace Servicios.Core.Ticket
             //ticket.TextoIzquierda("");
             ticket.TextoIzquierda("Atencion: VENDEDOR");
             ticket.TextoIzquierda($"Cliente: {_Pedido.Apellido} {_Pedido.Nombre}");
-            ticket.TextoIzquierda("Fecha: " + _Detalle.Fecha);
+            ticket.TextoIzquierda("Fecha: " + CambiarAFechaCorta(_Detalle.Fecha).ToShortDateString());
             ticket.TextoIzquierda("Retirar El: " + _Pedido.FechaEntrega.ToLongDateString());
             ticket.TextoIzquierda("A La: " + _Pedido.Horario);
             ticket.LineaAstericoMetodo();//*********
@@ -205,7 +211,7 @@ namespace Servicios.Core.Ticket
             //ticket.TextoIzquierda("");
             ticket.TextoIzquierda("Atencion: VENDEDOR");
             ticket.TextoIzquierda($"{_Arreglo.ApyNom}");
-            ticket.TextoIzquierda("Fecha: " + _Detalle.Fecha);
+            ticket.TextoIzquierda("Fecha: " + CambiarAFechaCorta(_Detalle.Fecha).ToShortDateString());
             ticket.TextoIzquierda("Retirar El: " + _Arreglo.FechaEntrega.ToLongDateString());
             ticket.TextoIzquierda("A La: " + _Arreglo.Horario);
             ticket.LineaAstericoMetodo();//*********
@@ -281,7 +287,8 @@ namespace Servicios.Core.Ticket
             //ticket.TextoIzquierda("");
             ticket.TextoIzquierda("Atencion: VENDEDOR");
             ticket.TextoIzquierda($"{_Cliente.Apellido} {_Cliente.Nombre}");
-            ticket.TextoIzquierda("Fecha: " + _Detalle.Fecha);
+            ticket.TextoIzquierda("Fecha: " + CambiarAFechaCorta(_Detalle.Fecha).ToShortDateString());
+            ticket.TextoDerecha($"Hora: {CambiarAFechaCorta(_Detalle.Fecha).ToShortTimeString()}");
             ticket.LineaAstericoMetodo();//*********
 
             ticket.Encabezado();//descripcion, cantidad, precio, total

@@ -1,7 +1,10 @@
 ﻿using Servicios.Core.Caja;
 using Servicios.Core.DetalleCaja;
 using Servicios.Core.DetalleCaja.Dto;
+using Servicios.Core.DetalleProducto;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Caja
@@ -10,8 +13,11 @@ namespace Presentacion.Core.Caja
     {
         private readonly ICajaServicio _cajaServicio;
         private readonly IDetalleCajaServicio _detalleCajaServicio;
+        private readonly IDetalleProductoServicio detalleProductoServicio;
 
         double _Total;
+        long CajaAbiertaId;
+        long _DetalleId;
 
         public CerrarCaja()
         {
@@ -19,14 +25,37 @@ namespace Presentacion.Core.Caja
 
             _cajaServicio = new CajaServicio();
             _detalleCajaServicio = new DetalleCajaServicio();
+            detalleProductoServicio = new DetalleProductoServicio();
 
             CargarDatos();
 
-            var cajaAbierta = _detalleCajaServicio.BuscarCajaAbierta();
+            CajaAbiertaId = _detalleCajaServicio.BuscarCajaAbierta();
+            lblApertura.Text = $"Monto Apertura: {_cajaServicio.BuscarCajasId(CajaAbiertaId).MontoApertura}";
+            CargarGrilla();
+            VerSiHayVentas();
+        }
 
-            dgvGrilla.DataSource = _detalleCajaServicio.BuscarDetalles(cajaAbierta);
+        public void CargarGrilla()
+        {
+            dgvGrilla.DataSource = ActualizarGrilla().ToList();
             FormatearGrilla(dgvGrilla);
+        }
 
+        public IEnumerable<DetalleCajaDto> ActualizarGrilla()
+        {
+            return _detalleCajaServicio.BuscarDetalles(CajaAbiertaId);
+        }
+
+        private void VerSiHayVentas()
+        {
+            if (_detalleCajaServicio.BuscarDetalles(CajaAbiertaId).Count() == 0)
+            {
+                btnQuitar.Visible = false;
+            }
+            else
+            {
+                btnQuitar.Visible = true;
+            }
         }
 
         public void FormatearGrilla(DataGridView grilla)
@@ -107,6 +136,36 @@ namespace Presentacion.Core.Caja
         private void CerrarCaja_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnQuitar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Este Seguro De Eliminar Este Cobro?", "Pregunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                var dinero = _detalleCajaServicio.BuscarDetallePorId(_DetalleId);
+                detalleProductoServicio.EliminarTodoPorDetalleCajaId(_DetalleId);
+                _detalleCajaServicio.EliminarUnaVenta(_DetalleId);
+
+                _cajaServicio.RestarDineroACaja(CajaAbiertaId, dinero);
+
+                VerSiHayVentas();
+
+                CargarGrilla();
+                CargarDatos();
+            }
+        }
+
+        private void dgvGrilla_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvGrilla.RowCount > 0)
+            {
+                _DetalleId = (long)dgvGrilla["Id", e.RowIndex].Value;
+            }
+            else
+            {
+                _DetalleId = 0;
+            }
         }
     }
 }

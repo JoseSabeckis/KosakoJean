@@ -158,7 +158,15 @@ namespace Presentacion
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            ActualizarDatos(dgvGrilla, txtBuscar.Text);
+            //ActualizarDatos(dgvGrilla, txtBuscar.Text);
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnBuscar.PerformClick();
+            }
         }
     }
 }

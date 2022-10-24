@@ -26,6 +26,8 @@ namespace Servicios.Core.DetalleCaja
 
         DetalleCajaDto BuscarDetalleConCtaCteId(long id);
 
+        void EliminarUnaVenta(long id);
+
         string TraerNuevoNumeroOperacion();
     }
 }

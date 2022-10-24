@@ -309,6 +309,11 @@
             0,
             0,
             0});
+            this.nudComienzoCaja.Minimum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            -2147483648});
             this.nudComienzoCaja.Name = "nudComienzoCaja";
             this.nudComienzoCaja.Size = new System.Drawing.Size(120, 26);
             this.nudComienzoCaja.TabIndex = 7;
@@ -342,6 +347,11 @@
             0,
             0,
             0});
+            this.nudSinMonto.Minimum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            -2147483648});
             this.nudSinMonto.Name = "nudSinMonto";
             this.nudSinMonto.Size = new System.Drawing.Size(120, 26);
             this.nudSinMonto.TabIndex = 4;
@@ -371,10 +381,15 @@
             this.nudTotal.Enabled = false;
             this.nudTotal.Location = new System.Drawing.Point(38, 35);
             this.nudTotal.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
+            1215752192,
+            23,
             0,
             0});
+            this.nudTotal.Minimum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            -2147483648});
             this.nudTotal.Name = "nudTotal";
             this.nudTotal.Size = new System.Drawing.Size(120, 26);
             this.nudTotal.TabIndex = 1;

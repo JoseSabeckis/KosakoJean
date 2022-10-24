@@ -202,8 +202,9 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(642, 26);
             this.txtBuscar.TabIndex = 0;
-            this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // dgvGrilla
             // 

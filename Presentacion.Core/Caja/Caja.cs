@@ -41,6 +41,10 @@ namespace Presentacion.Core.Caja
             {
                 btnEliminarCaja.Visible = false;
             }
+            else
+            {
+                btnEliminarCaja.Visible = true;
+            }
         }
 
         private void CargarImageEnGeneral()

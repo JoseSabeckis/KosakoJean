@@ -110,6 +110,18 @@ namespace Servicios.Core.DetalleCaja
             }
         }
 
+        public void EliminarUnaVenta(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+                var venta = context.DetalleCajas.FirstOrDefault(x => x.Id == id);
+
+                context.DetalleCajas.Remove(venta);
+
+                context.SaveChanges();
+            }
+        }
+
         public long BuscarCajaAbierta()
         {
             using (var context = new KosakoDBEntities())
