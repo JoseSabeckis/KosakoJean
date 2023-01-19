@@ -8,6 +8,7 @@ using Servicios.Core.Producto.Dto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Presentacion.Core.Producto
@@ -64,8 +65,12 @@ namespace Presentacion.Core.Producto
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            btnActualizar.Enabled = false;
+            Thread.Sleep(2000);
+
             pnlPrincipal.Controls.Clear();
             CrearControles(string.Empty);
+            btnActualizar.Enabled = true;
         }
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)

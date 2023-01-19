@@ -622,7 +622,13 @@ namespace Presentacion.Core.Pedido
             }
             else
             {
-                btnEliminarPedidoSeleccionado.Visible = true;
+                var _Pedido = pedidoServicio.Buscar(PedidoId);
+
+                if (_Pedido.Proceso != AccesoDatos.Proceso.PedidoTerminado)
+                {
+                    btnEliminarPedidoSeleccionado.Visible = true;
+                }
+
             }
         }
 
@@ -825,7 +831,8 @@ namespace Presentacion.Core.Pedido
                         Descripcion = $"{lblPersona.Text} - Dinero Devuelto",
                         Fecha = DateTime.Now.ToLongDateString(),
                         Total = (double)Resto,
-                        CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                        CajaId = detalleCajaServicio.BuscarCajaAbierta(),
+                        ClienteId = pedido.ClienteId
                     };
 
                     TipoPago(detalle);

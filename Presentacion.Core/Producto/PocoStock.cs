@@ -104,6 +104,10 @@ namespace Presentacion.Core.Producto
             {
                 ckbMayor.Checked = false;
             }
+            else
+            {
+                ckbMayor.Checked = true;
+            }
 
             CargarGrilla();
         }
@@ -113,6 +117,10 @@ namespace Presentacion.Core.Producto
             if (ckbMayor.Checked)
             {
                 ckbMenor.Checked = false;
+            }
+            else
+            {
+                ckbMenor.Checked = true;
             }
 
             CargarGrilla();

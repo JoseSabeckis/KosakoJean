@@ -127,7 +127,7 @@ namespace Presentacion.Core.Caja
 
                 _cajaServicio.CerrarCaja(caja.Total, caja.Fecha);
 
-                MessageBox.Show("Caja Cerrada, Exitosamente!", "Caja Cerrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Caja Cerrada, Exitosamente!\nCobrado: ${_Total}", "Cerrar Caja", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Close();
             }

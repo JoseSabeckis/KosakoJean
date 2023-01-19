@@ -31,6 +31,11 @@ namespace Presentacion.Core.Pedido
 
             var cuentas = pedidoServicio.BuscandoTerminados(string.Empty);
 
+            if (cuentas.Count() != 0)//PRUEBA-------------------
+            {
+                cuentas.Min(x => x.FechaRetiro);
+            }
+            
             CrearControles(cuentas);
 
             CargarImageEnGeneral();

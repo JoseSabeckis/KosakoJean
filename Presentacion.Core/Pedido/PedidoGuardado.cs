@@ -714,7 +714,8 @@ namespace Presentacion.Core.Pedido
                         Descripcion = $"{lblPersona.Text} - Dinero Devuelto",
                         Fecha = DateTime.Now.ToLongDateString(),
                         Total = (double)Resto,
-                        CajaId = detalleCajaServicio.BuscarCajaAbierta()
+                        CajaId = detalleCajaServicio.BuscarCajaAbierta(),
+                        ClienteId = pedido.ClienteId
                     };
 
                     TipoPago(detalle);

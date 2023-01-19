@@ -1,5 +1,6 @@
 ﻿using AccesoDatos;
 using Servicios.Core.DetalleCaja.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -23,7 +24,8 @@ namespace Servicios.Core.DetalleCaja
                     ClienteId = detalleCajaDto.ClienteId,
                     PedidoId = detalleCajaDto.PedidoId,
                     ArregloId = detalleCajaDto.ArregloId,
-                    CtaCteId = detalleCajaDto.CtaCteId,                   
+                    CtaCteId = detalleCajaDto.CtaCteId,
+                    
                 };
 
                 context.DetalleCajas.Add(detalleCaja);
@@ -82,7 +84,8 @@ namespace Servicios.Core.DetalleCaja
                     TipoOperacion = detalle.TipoOperacion,
                     ClienteId = detalle.ClienteId,
                     PedidoId = detalle.PedidoId,
-                    ArregloId = detalle.ArregloId
+                    ArregloId = detalle.ArregloId,
+                    Hora = $"{DateTime.Now.ToShortTimeString()}"
 
                 };
 

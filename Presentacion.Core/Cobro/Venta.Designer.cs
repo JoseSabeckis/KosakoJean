@@ -227,6 +227,7 @@
             this.nudPrecio.Name = "nudPrecio";
             this.nudPrecio.Size = new System.Drawing.Size(109, 33);
             this.nudPrecio.TabIndex = 11;
+            this.nudPrecio.ValueChanged += new System.EventHandler(this.nudPrecio_ValueChanged);
             this.nudPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nudPrecio_KeyPress);
             // 
             // panel7
@@ -278,6 +279,8 @@
             this.txtCodigoBarra.Name = "txtCodigoBarra";
             this.txtCodigoBarra.Size = new System.Drawing.Size(137, 29);
             this.txtCodigoBarra.TabIndex = 12;
+            this.txtCodigoBarra.Click += new System.EventHandler(this.txtCodigoBarra_Click);
+            this.txtCodigoBarra.TabIndexChanged += new System.EventHandler(this.txtCodigoBarra_TabIndexChanged);
             this.txtCodigoBarra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoBarra_KeyPress);
             // 
             // txtColegio
@@ -368,7 +371,7 @@
             this.btnAgregarAlaGrilla.Name = "btnAgregarAlaGrilla";
             this.btnAgregarAlaGrilla.Size = new System.Drawing.Size(141, 77);
             this.btnAgregarAlaGrilla.TabIndex = 10;
-            this.btnAgregarAlaGrilla.Text = "Agregar";
+            this.btnAgregarAlaGrilla.Text = "Agregar (Enter)";
             this.btnAgregarAlaGrilla.UseVisualStyleBackColor = false;
             this.btnAgregarAlaGrilla.Click += new System.EventHandler(this.btnAgregarAlaGrilla_Click);
             this.btnAgregarAlaGrilla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnAgregarAlaGrilla_KeyPress);
@@ -530,7 +533,7 @@
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(121, 72);
             this.btnCobrar.TabIndex = 2;
-            this.btnCobrar.Text = "Cobrar";
+            this.btnCobrar.Text = "(Esc) Cobrar";
             this.btnCobrar.UseVisualStyleBackColor = false;
             this.btnCobrar.Click += new System.EventHandler(this.btnCobrar_Click);
             // 
@@ -765,6 +768,7 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(448, 90);
             this.txtDescripcion.TabIndex = 9;
+            this.txtDescripcion.Click += new System.EventHandler(this.txtDescripcion_Click);
             // 
             // label10
             // 

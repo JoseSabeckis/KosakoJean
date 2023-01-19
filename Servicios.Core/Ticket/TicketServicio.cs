@@ -59,8 +59,7 @@ namespace Servicios.Core.Ticket
             //ticket.TextoIzquierda("");
             ticket.TextoIzquierda("Atencion: VENDEDOR");
             ticket.TextoIzquierda($"Cliente: {_Cliente.Apellido} {_Cliente.Nombre}");
-            ticket.TextoIzquierda("Fecha: " + CambiarAFechaCorta(_Detalle.Fecha).ToShortDateString());
-            ticket.TextoDerecha($"Hora: {CambiarAFechaCorta(_Detalle.Fecha).ToShortTimeString()}");
+            ticket.TextoIzquierda("Fecha: " + CambiarAFechaCorta(_Detalle.Fecha).ToShortDateString() + " " + $"Hora: {_Detalle.Hora}");
             ticket.LineaAstericoMetodo();//*********
 
             ticket.Encabezado();//descripcion, cantidad, precio, total
@@ -89,7 +88,7 @@ namespace Servicios.Core.Ticket
 
             ticket.LineaIgualMetodo();
 
-            ticket.TextoIzquierda(" ");
+            //ticket.TextoIzquierda(" ");
             ticket.AgregarTotales("Total:....$", total);
             //ticket.TextoIzquierda(" ");
             ticket.TextoIzquierda("Articulos Vendidos: " + cantComprados);
@@ -135,8 +134,8 @@ namespace Servicios.Core.Ticket
             ticket.TextoIzquierda("Atencion: VENDEDOR");
             ticket.TextoIzquierda($"Cliente: {_Pedido.Apellido} {_Pedido.Nombre}");
             ticket.TextoIzquierda("Fecha: " + CambiarAFechaCorta(_Detalle.Fecha).ToShortDateString());
-            ticket.TextoIzquierda("Retirar El: " + _Pedido.FechaEntrega.ToLongDateString());
-            ticket.TextoIzquierda("A La: " + _Pedido.Horario);
+            ticket.TextoIzquierda("Retirar El: " + _Pedido.FechaEntrega.ToLongDateString() + " " + "A La: " + _Pedido.Horario);
+            //ticket.TextoIzquierda("A La: " + _Pedido.Horario);
             ticket.LineaAstericoMetodo();//*********
 
             ticket.Encabezado();//descripcion, cantidad, precio, total
@@ -165,7 +164,7 @@ namespace Servicios.Core.Ticket
 
             ticket.LineaIgualMetodo();
 
-            ticket.TextoIzquierda(" ");
+            //ticket.TextoIzquierda(" ");
             ticket.AgregarTotales("Total:....$", total);
             ticket.AgregarTotales("Adelanto:.$", _Pedido.Adelanto);
             ticket.AgregarTotales("Debe:.....$", total - _Pedido.Adelanto);
@@ -212,8 +211,8 @@ namespace Servicios.Core.Ticket
             ticket.TextoIzquierda("Atencion: VENDEDOR");
             ticket.TextoIzquierda($"{_Arreglo.ApyNom}");
             ticket.TextoIzquierda("Fecha: " + CambiarAFechaCorta(_Detalle.Fecha).ToShortDateString());
-            ticket.TextoIzquierda("Retirar El: " + _Arreglo.FechaEntrega.ToLongDateString());
-            ticket.TextoIzquierda("A La: " + _Arreglo.Horario);
+            ticket.TextoIzquierda("Retirar El: " + _Arreglo.FechaEntrega.ToLongDateString() + " " + "A La: " + _Arreglo.Horario);
+            //ticket.TextoIzquierda("A La: " + _Arreglo.Horario);
             ticket.LineaAstericoMetodo();//*********
 
             ticket.Encabezado();//descripcion, cantidad, precio, total
@@ -242,7 +241,7 @@ namespace Servicios.Core.Ticket
 
             ticket.LineaIgualMetodo();
 
-            ticket.TextoIzquierda(" ");
+            //ticket.TextoIzquierda(" ");
             ticket.AgregarTotales("Total:....$", total);
             ticket.AgregarTotales("Adelanto:.$", _Arreglo.Adelanto);
             ticket.AgregarTotales("Debe:.....$", total - _Arreglo.Adelanto);
@@ -287,8 +286,8 @@ namespace Servicios.Core.Ticket
             //ticket.TextoIzquierda("");
             ticket.TextoIzquierda("Atencion: VENDEDOR");
             ticket.TextoIzquierda($"{_Cliente.Apellido} {_Cliente.Nombre}");
-            ticket.TextoIzquierda("Fecha: " + CambiarAFechaCorta(_Detalle.Fecha).ToShortDateString());
-            ticket.TextoDerecha($"Hora: {CambiarAFechaCorta(_Detalle.Fecha).ToShortTimeString()}");
+            ticket.TextoIzquierda("Fecha: " + CambiarAFechaCorta(_Detalle.Fecha).ToShortDateString() + " " + $"Hora: {_Detalle.Hora}");
+            //ticket.TextoDerecha($"Hora: {CambiarAFechaCorta(_Detalle.Fecha).ToShortTimeString()}");
             ticket.LineaAstericoMetodo();//*********
 
             ticket.Encabezado();//descripcion, cantidad, precio, total
@@ -315,7 +314,7 @@ namespace Servicios.Core.Ticket
 
             ticket.LineaIgualMetodo();
 
-            ticket.TextoIzquierda(" ");
+            //ticket.TextoIzquierda(" ");
             ticket.AgregarTotales("Total:....$", total);
             ticket.TextoIzquierda(" ");
 

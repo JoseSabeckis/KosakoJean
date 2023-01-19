@@ -106,6 +106,16 @@ namespace Presentacion.Core.Cobro
             txtCodigoBarra.KeyPress += Validacion.NoLetras;
         }
 
+        public void EscanerHabilitado()
+        {
+            txtCodigoBarra.BackColor = System.Drawing.Color.LightGreen;
+        }
+
+        public void EscanerDesabilitado()
+        {
+            txtCodigoBarra.BackColor = System.Drawing.Color.Silver;
+        }
+
         private void CargarImageEnGeneral()
         {
             imgCobro.Image = ImagenDb.Convertir_Bytes_Imagen(ImageLogueado.Image_Cobrar);
@@ -168,22 +178,15 @@ namespace Presentacion.Core.Cobro
                 nudPrecio.Value = (decimal)product.Precio;
 
                 btnAgregarAlaGrilla.Select();
+                EscanerDesabilitado();
             }
 
         }
 
         private void nudCantidad_ValueChanged(object sender, EventArgs e)
         {
-            /*
-            if (!string.IsNullOrEmpty(txtProducto.Text))
-            {
-                nudPrecio.Value = producto.Precio;
-            }
-            else
-            {
-                producto = null;
-            }
-            */
+            btnAgregarAlaGrilla.Select();
+            EscanerDesabilitado();
         }
 
         public void CargarGrilla(List<VentaDto2> producto)
@@ -244,6 +247,7 @@ namespace Presentacion.Core.Cobro
 
             //btnSeleccionProducto.Select();
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         public void Total()
@@ -277,7 +281,7 @@ namespace Presentacion.Core.Cobro
 
             txtVuelto.Text = string.Empty;
             nudPagaron.Value = 0;
-            nudTotalVenta.Value = 0;
+            //nudTotalVenta.Value = 0;
             cmbTalle.SelectedIndex = 0;
         }
 
@@ -323,6 +327,7 @@ namespace Presentacion.Core.Cobro
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnAgregarAlaGrilla.Select();
+            EscanerDesabilitado();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -355,6 +360,7 @@ namespace Presentacion.Core.Cobro
             CargarGrilla(ListaVenta);
 
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -371,6 +377,7 @@ namespace Presentacion.Core.Cobro
             }
 
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         public void VerTicket(List<VentaDto2> Lista)
@@ -614,6 +621,11 @@ namespace Presentacion.Core.Cobro
             //btnSeleccionProducto.Select();
             TraerNumeroOperacion();
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
+
+            nudTotalVenta.Value = 0;
+            nudPagaron.Value = 0;
+            txtVuelto.Text = "";
         }
 
         public void TipoPago(DetalleCajaDto detalle)
@@ -657,6 +669,7 @@ namespace Presentacion.Core.Cobro
             }
 
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         private void dgvGrilla_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -683,6 +696,7 @@ namespace Presentacion.Core.Cobro
                 ckbFactura.Enabled = true;
             }
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         private void ckbPedido_CheckedChanged(object sender, EventArgs e)
@@ -698,6 +712,7 @@ namespace Presentacion.Core.Cobro
                 //ckbTicket.Enabled = false;
             }
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         private void ckbCtaCte_CheckedChanged(object sender, EventArgs e)
@@ -731,6 +746,7 @@ namespace Presentacion.Core.Cobro
             }
 
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         public void VerificarSiEsValidoCtaCte(long clienteId)
@@ -748,6 +764,7 @@ namespace Presentacion.Core.Cobro
         private void Venta_Load(object sender, EventArgs e)
         {
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         public void CargarConsumidorFinal()
@@ -773,10 +790,13 @@ namespace Presentacion.Core.Cobro
             cliente.ShowDialog();
 
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         private void nudPagaron_ValueChanged(object sender, EventArgs e)
         {
+            EscanerDesabilitado();
+
             if (nudTotalVenta.Value != 0 && nudPagaron.Value != 0)
             {
                 btnCalcular.PerformClick();
@@ -801,6 +821,7 @@ namespace Presentacion.Core.Cobro
                 ckbFactura.Enabled = true;
             }
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         private void ckbTarjeta_AppearanceChanged(object sender, EventArgs e)
@@ -829,6 +850,7 @@ namespace Presentacion.Core.Cobro
                 //ckbTicket.Enabled = false;
             }
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         private void btnNuevoTalle_Click(object sender, EventArgs e)
@@ -838,6 +860,7 @@ namespace Presentacion.Core.Cobro
 
             CargarTalle();
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         private void ckbGuardar_CheckedChanged(object sender, EventArgs e)
@@ -853,15 +876,21 @@ namespace Presentacion.Core.Cobro
                 //ckbTicket.Enabled = false;
             }
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         private void Venta_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                btnCobrar.PerformClick();
+            }
         }
 
         private void nudTotalVenta_ValueChanged(object sender, EventArgs e)
         {
+            EscanerDesabilitado();
+
             if (nudTotalVenta.Value != 0 && nudPagaron.Value != 0)
             {
                 btnCalcular.PerformClick();
@@ -870,7 +899,7 @@ namespace Presentacion.Core.Cobro
 
         private void nudTotal_ValueChanged(object sender, EventArgs e)
         {
-            
+            nudTotalVenta.Value = nudTotal.Value;
         }
 
         private void txtCodigoBarra_KeyPress(object sender, KeyPressEventArgs e)
@@ -880,6 +909,7 @@ namespace Presentacion.Core.Cobro
                 if (txtCodigoBarra.Text == string.Empty)
                 {
                     txtCodigoBarra.Focus();
+                    EscanerHabilitado();
                     return;
                 }
 
@@ -889,6 +919,7 @@ namespace Presentacion.Core.Cobro
 
                     txtCodigoBarra.Clear();
                     txtCodigoBarra.Focus();
+                    EscanerHabilitado();
 
                     return;
                 }
@@ -907,6 +938,7 @@ namespace Presentacion.Core.Cobro
 
                 txtCodigoBarra.Clear();
                 txtCodigoBarra.Focus();
+                EscanerHabilitado();
             }
 
             if (e.KeyChar == (char)Keys.Escape)
@@ -991,6 +1023,7 @@ namespace Presentacion.Core.Cobro
         private void cmbImpresoras_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtCodigoBarra.Focus();
+            EscanerHabilitado();
         }
 
         public void VerSiSeUsaraLaTicketera()
@@ -1001,5 +1034,25 @@ namespace Presentacion.Core.Cobro
             }           
         }
 
+        private void nudPrecio_ValueChanged(object sender, EventArgs e)
+        {
+            btnAgregarAlaGrilla.Select();
+            EscanerDesabilitado();
+        }
+
+        private void txtCodigoBarra_TabIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigoBarra_Click(object sender, EventArgs e)
+        {
+            EscanerHabilitado();
+        }
+
+        private void txtDescripcion_Click(object sender, EventArgs e)
+        {
+            EscanerDesabilitado();
+        }
     }
 }

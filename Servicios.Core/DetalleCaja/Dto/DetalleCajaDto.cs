@@ -1,4 +1,5 @@
 ﻿using AccesoDatos;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Servicios.Core.DetalleCaja.Dto
 {
@@ -17,6 +18,8 @@ namespace Servicios.Core.DetalleCaja.Dto
         public string TotalString => Total.ToString("00.00");
 
         public string Fecha { get; set; }
+
+        public string Hora { get; set; }
 
         public TipoPago TipoPago { get; set; }
 
