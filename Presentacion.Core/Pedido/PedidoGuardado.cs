@@ -177,7 +177,10 @@ namespace Presentacion.Core.Pedido
             }
             else
             {
-                btnEliminarPedidoSeleccionado.Visible = true;
+                if (_PedidoDto.Proceso != AccesoDatos.Proceso.PedidoTerminado)
+                {
+                    btnEliminarPedidoSeleccionado.Visible = true;
+                }
             }
         }
 
