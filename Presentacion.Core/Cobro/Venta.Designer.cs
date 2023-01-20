@@ -90,6 +90,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtVuelto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
@@ -127,6 +128,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.label17);
             this.panel8.Controls.Add(this.cmbTalle);
             this.panel8.Controls.Add(this.label3);
             this.panel8.Controls.Add(this.nudCantidad);
@@ -890,6 +892,16 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Cuanto Pagaron";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(-2, 1);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(260, 16);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "-SELECCIONAR EL TALLE ANTES DE SCANEAR-";
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -1004,5 +1016,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtNumeroOperacion;
+        private System.Windows.Forms.Label label17;
     }
 }
