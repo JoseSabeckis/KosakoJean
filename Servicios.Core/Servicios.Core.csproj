@@ -109,6 +109,9 @@
     <Compile Include="Pedido\Dto\PedidoDto.cs" />
     <Compile Include="Pedido\IPedidoServicio.cs" />
     <Compile Include="Pedido\PedidoServicio.cs" />
+    <Compile Include="PrecioSegunTalle\Dto\PrecioSegunTalleDto.cs" />
+    <Compile Include="PrecioSegunTalle\IPrecioSegunTalleServicio.cs" />
+    <Compile Include="PrecioSegunTalle\PrecioSegunTalleServicio.cs" />
     <Compile Include="Producto\Dto\CodBarraDto.cs" />
     <Compile Include="Producto\Dto\ProductoDto.cs" />
     <Compile Include="Producto\IProductoServicio.cs" />

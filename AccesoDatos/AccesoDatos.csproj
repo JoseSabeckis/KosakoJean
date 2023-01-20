@@ -116,6 +116,9 @@
     <Compile Include="Pedido.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="PrecioSegunTalle.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Proceso.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>

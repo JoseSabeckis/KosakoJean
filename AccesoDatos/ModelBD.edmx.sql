@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/01/2022 01:22:12
+-- Date Created: 01/19/2023 23:29:31
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -393,6 +393,16 @@ CREATE TABLE [dbo].[Configuraciones] (
 );
 GO
 
+-- Creating table 'PrecioSegunTalles'
+CREATE TABLE [dbo].[PrecioSegunTalles] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [Precio] decimal(18,0)  NOT NULL,
+    [ProductoId] bigint  NOT NULL,
+    [TalleId] bigint  NOT NULL,
+    [EstaEliminado] bit  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -508,6 +518,12 @@ GO
 -- Creating primary key on [Id] in table 'Configuraciones'
 ALTER TABLE [dbo].[Configuraciones]
 ADD CONSTRAINT [PK_Configuraciones]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'PrecioSegunTalles'
+ALTER TABLE [dbo].[PrecioSegunTalles]
+ADD CONSTRAINT [PK_PrecioSegunTalles]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -753,6 +769,36 @@ GO
 CREATE INDEX [IX_FK_ClienteDetalleCaja]
 ON [dbo].[DetalleCajas]
     ([ClienteId]);
+GO
+
+-- Creating foreign key on [ProductoId] in table 'PrecioSegunTalles'
+ALTER TABLE [dbo].[PrecioSegunTalles]
+ADD CONSTRAINT [FK_ProductoPrecioSegunTalle]
+    FOREIGN KEY ([ProductoId])
+    REFERENCES [dbo].[Productos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ProductoPrecioSegunTalle'
+CREATE INDEX [IX_FK_ProductoPrecioSegunTalle]
+ON [dbo].[PrecioSegunTalles]
+    ([ProductoId]);
+GO
+
+-- Creating foreign key on [TalleId] in table 'PrecioSegunTalles'
+ALTER TABLE [dbo].[PrecioSegunTalles]
+ADD CONSTRAINT [FK_TallePrecioSegunTalle]
+    FOREIGN KEY ([TalleId])
+    REFERENCES [dbo].[Talles]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TallePrecioSegunTalle'
+CREATE INDEX [IX_FK_TallePrecioSegunTalle]
+ON [dbo].[PrecioSegunTalles]
+    ([TalleId]);
 GO
 
 -- --------------------------------------------------

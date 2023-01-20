@@ -19,6 +19,7 @@ namespace AccesoDatos
         {
             this.Producto_Pedido = new HashSet<Producto_Pedido>();
             this.Producto_Venta = new HashSet<Producto_Venta>();
+            this.PrecioSegunTalle = new HashSet<PrecioSegunTalle>();
         }
     
         public long Id { get; set; }
@@ -29,5 +30,7 @@ namespace AccesoDatos
         public virtual ICollection<Producto_Pedido> Producto_Pedido { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producto_Venta> Producto_Venta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PrecioSegunTalle> PrecioSegunTalle { get; set; }
     }
 }

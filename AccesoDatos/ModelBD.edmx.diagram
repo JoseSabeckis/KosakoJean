@@ -26,7 +26,7 @@
         <AssociationConnector Association="KosakoDBModel.VentaCliente" />
         <EntityTypeShape EntityType="KosakoDBModel.CtaCte" Width="1.5" PointX="11.625" PointY="3.125" FillColor="Cyan" IsExpanded="true" />
         <AssociationConnector Association="KosakoDBModel.ClienteCtaCte" />
-        <EntityTypeShape EntityType="KosakoDBModel.Talle" Width="1.5" PointX="2.25" PointY="5.375" FillColor="Lime" />
+        <EntityTypeShape EntityType="KosakoDBModel.Talle" Width="1.5" PointX="2.125" PointY="5.875" FillColor="Lime" />
         <AssociationConnector Association="KosakoDBModel.TalleProducto_Pedido" />
         <AssociationConnector Association="KosakoDBModel.TalleProducto_Venta" />
         <EntityTypeShape EntityType="KosakoDBModel.Producto_Dato" Width="1.5" PointX="4.875" PointY="7.875" FillColor="0, 0, 192" />
@@ -40,6 +40,9 @@
         <AssociationConnector Association="KosakoDBModel.DetalleCajaDetalleProducto" />
         <EntityTypeShape EntityType="KosakoDBModel.Configuracion" Width="1.5" PointX="18.375" PointY="7.875" FillColor="Red" />
         <AssociationConnector Association="KosakoDBModel.ClienteDetalleCaja" />
+        <EntityTypeShape EntityType="KosakoDBModel.PrecioSegunTalle" Width="1.75" PointX="0.5" PointY="8.5" FillColor="Yellow" />
+        <AssociationConnector Association="KosakoDBModel.ProductoPrecioSegunTalle" />
+        <AssociationConnector Association="KosakoDBModel.TallePrecioSegunTalle" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
