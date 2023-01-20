@@ -140,11 +140,11 @@ namespace Presentacion.Core.Cobro
             // 
             this.cmbTalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTalle.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTalle.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTalle.FormattingEnabled = true;
-            this.cmbTalle.Location = new System.Drawing.Point(849, 45);
+            this.cmbTalle.Location = new System.Drawing.Point(849, 41);
             this.cmbTalle.Name = "cmbTalle";
-            this.cmbTalle.Size = new System.Drawing.Size(87, 27);
+            this.cmbTalle.Size = new System.Drawing.Size(87, 30);
             this.cmbTalle.TabIndex = 19;
             // 
             // label3
@@ -232,7 +232,7 @@ namespace Presentacion.Core.Cobro
             this.btnAgregarAlaGrilla.Name = "btnAgregarAlaGrilla";
             this.btnAgregarAlaGrilla.Size = new System.Drawing.Size(141, 96);
             this.btnAgregarAlaGrilla.TabIndex = 11;
-            this.btnAgregarAlaGrilla.Text = "Agregar";
+            this.btnAgregarAlaGrilla.Text = "Agregar (Enter)";
             this.btnAgregarAlaGrilla.UseVisualStyleBackColor = false;
             this.btnAgregarAlaGrilla.Click += new System.EventHandler(this.btnAgregarAlaGrilla_Click);
             // 
@@ -373,7 +373,7 @@ namespace Presentacion.Core.Cobro
             this.btnTerminar.Name = "btnTerminar";
             this.btnTerminar.Size = new System.Drawing.Size(218, 77);
             this.btnTerminar.TabIndex = 12;
-            this.btnTerminar.Text = "Agregar Todos Estos Productos";
+            this.btnTerminar.Text = "Agregar Todos Estos Productos (Esc)";
             this.btnTerminar.UseVisualStyleBackColor = false;
             this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
             // 
@@ -447,6 +447,7 @@ namespace Presentacion.Core.Cobro
             this.Text = "Agregar Productos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AgregarProductos_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AgregarProductos_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -445,5 +445,21 @@ namespace Presentacion.Core.Cobro
         {
             btnSeleccionProducto.Select();
         }
+
+        private void AgregarProductos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+
+                btnAgregarAlaGrilla.PerformClick();
+
+            }
+
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                btnTerminar.PerformClick();
+            }
+
+        }
     }
 }
