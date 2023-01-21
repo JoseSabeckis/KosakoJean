@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/19/2023 23:29:31
+-- Date Created: 01/20/2023 23:34:38
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -65,6 +65,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ClienteDetalleCaja]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[DetalleCajas] DROP CONSTRAINT [FK_ClienteDetalleCaja];
 GO
+IF OBJECT_ID(N'[dbo].[FK_ProductoPrecioSegunTalle]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PrecioSegunTalles] DROP CONSTRAINT [FK_ProductoPrecioSegunTalle];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TallePrecioSegunTalle]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PrecioSegunTalles] DROP CONSTRAINT [FK_TallePrecioSegunTalle];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -126,6 +132,9 @@ IF OBJECT_ID(N'[dbo].[DetalleProductos]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Configuraciones]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Configuraciones];
+GO
+IF OBJECT_ID(N'[dbo].[PrecioSegunTalles]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PrecioSegunTalles];
 GO
 
 -- --------------------------------------------------
@@ -397,9 +406,16 @@ GO
 CREATE TABLE [dbo].[PrecioSegunTalles] (
     [Id] bigint IDENTITY(1,1) NOT NULL,
     [Precio] decimal(18,0)  NOT NULL,
-    [ProductoId] bigint  NOT NULL,
-    [TalleId] bigint  NOT NULL,
-    [EstaEliminado] bit  NOT NULL
+    [EstaEliminado] bit  NOT NULL,
+    [ProductoId] bigint  NOT NULL
+);
+GO
+
+-- Creating table 'TalleSegunProductoPrecioSet'
+CREATE TABLE [dbo].[TalleSegunProductoPrecioSet] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [PrecioSegunTalleId] bigint  NOT NULL,
+    [TalleId] bigint  NOT NULL
 );
 GO
 
@@ -524,6 +540,12 @@ GO
 -- Creating primary key on [Id] in table 'PrecioSegunTalles'
 ALTER TABLE [dbo].[PrecioSegunTalles]
 ADD CONSTRAINT [PK_PrecioSegunTalles]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'TalleSegunProductoPrecioSet'
+ALTER TABLE [dbo].[TalleSegunProductoPrecioSet]
+ADD CONSTRAINT [PK_TalleSegunProductoPrecioSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -786,18 +808,33 @@ ON [dbo].[PrecioSegunTalles]
     ([ProductoId]);
 GO
 
--- Creating foreign key on [TalleId] in table 'PrecioSegunTalles'
-ALTER TABLE [dbo].[PrecioSegunTalles]
-ADD CONSTRAINT [FK_TallePrecioSegunTalle]
+-- Creating foreign key on [PrecioSegunTalleId] in table 'TalleSegunProductoPrecioSet'
+ALTER TABLE [dbo].[TalleSegunProductoPrecioSet]
+ADD CONSTRAINT [FK_PrecioSegunTalleTalleSegunProductoPrecio]
+    FOREIGN KEY ([PrecioSegunTalleId])
+    REFERENCES [dbo].[PrecioSegunTalles]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PrecioSegunTalleTalleSegunProductoPrecio'
+CREATE INDEX [IX_FK_PrecioSegunTalleTalleSegunProductoPrecio]
+ON [dbo].[TalleSegunProductoPrecioSet]
+    ([PrecioSegunTalleId]);
+GO
+
+-- Creating foreign key on [TalleId] in table 'TalleSegunProductoPrecioSet'
+ALTER TABLE [dbo].[TalleSegunProductoPrecioSet]
+ADD CONSTRAINT [FK_TalleTalleSegunProductoPrecio]
     FOREIGN KEY ([TalleId])
     REFERENCES [dbo].[Talles]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_TallePrecioSegunTalle'
-CREATE INDEX [IX_FK_TallePrecioSegunTalle]
-ON [dbo].[PrecioSegunTalles]
+-- Creating non-clustered index for FOREIGN KEY 'FK_TalleTalleSegunProductoPrecio'
+CREATE INDEX [IX_FK_TalleTalleSegunProductoPrecio]
+ON [dbo].[TalleSegunProductoPrecioSet]
     ([TalleId]);
 GO
 

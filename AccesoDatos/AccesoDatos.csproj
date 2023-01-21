@@ -138,6 +138,9 @@
     <Compile Include="Talle.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="TalleSegunProductoPrecio.cs">
+      <DependentUpon>ModelBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="TipoOperacion.cs">
       <DependentUpon>ModelBD.tt</DependentUpon>
     </Compile>

@@ -127,6 +127,9 @@
     <Compile Include="Producto_Venta\IProducto_Venta_Servicio.cs" />
     <Compile Include="Producto_Venta\Producto_Venta_Servicio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TalleSegunProductoPrecio\Dto\TalleSegunProductoPrecioDto.cs" />
+    <Compile Include="TalleSegunProductoPrecio\ITalleSegunProductoServicio.cs" />
+    <Compile Include="TalleSegunProductoPrecio\TalleSegunProductoPrecioServicio.cs" />
     <Compile Include="Talle\Dto\TalleDto.cs" />
     <Compile Include="Talle\ITalleServicio.cs" />
     <Compile Include="Talle\TalleServicio.cs" />

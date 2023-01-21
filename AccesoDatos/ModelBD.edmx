@@ -26,6 +26,7 @@
     <EntitySet Name="DetalleProductos" EntityType="KosakoDBModel.Store.DetalleProductos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Configuraciones" EntityType="KosakoDBModel.Store.Configuraciones" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="PrecioSegunTalles" EntityType="KosakoDBModel.Store.PrecioSegunTalles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TalleSegunProductoPrecioSet" EntityType="KosakoDBModel.Store.TalleSegunProductoPrecioSet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="TipoProductoProducto" Association="KosakoDBModel.Store.TipoProductoProducto">
       <End Role="TipoProducto" EntitySet="TipoProductos" />
       <End Role="Producto" EntitySet="Productos" />
@@ -94,9 +95,13 @@
       <End Role="Producto" EntitySet="Productos" />
       <End Role="PrecioSegunTalle" EntitySet="PrecioSegunTalles" />
     </AssociationSet>
-    <AssociationSet Name="TallePrecioSegunTalle" Association="KosakoDBModel.Store.TallePrecioSegunTalle">
-      <End Role="Talle" EntitySet="Talles" />
+    <AssociationSet Name="PrecioSegunTalleTalleSegunProductoPrecio" Association="KosakoDBModel.Store.PrecioSegunTalleTalleSegunProductoPrecio">
       <End Role="PrecioSegunTalle" EntitySet="PrecioSegunTalles" />
+      <End Role="TalleSegunProductoPrecio" EntitySet="TalleSegunProductoPrecioSet" />
+    </AssociationSet>
+    <AssociationSet Name="TalleTalleSegunProductoPrecio" Association="KosakoDBModel.Store.TalleTalleSegunProductoPrecio">
+      <End Role="Talle" EntitySet="Talles" />
+      <End Role="TalleSegunProductoPrecio" EntitySet="TalleSegunProductoPrecioSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Productos">
@@ -366,9 +371,16 @@
     </Key>
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Precio" Type="decimal" Nullable="false" />
-    <Property Name="ProductoId" Type="bigint" Nullable="false" />
-    <Property Name="TalleId" Type="bigint" Nullable="false" />
     <Property Name="EstaEliminado" Type="bit" Nullable="false" />
+    <Property Name="ProductoId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TalleSegunProductoPrecioSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrecioSegunTalleId" Type="bigint" Nullable="false" />
+    <Property Name="TalleId" Type="bigint" Nullable="false" />
   </EntityType>
   <Association Name="TipoProductoProducto">
     <End Role="TipoProducto" Type="KosakoDBModel.Store.TipoProductos" Multiplicity="1" />
@@ -574,14 +586,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="TallePrecioSegunTalle">
+  <Association Name="PrecioSegunTalleTalleSegunProductoPrecio">
+    <End Role="PrecioSegunTalle" Type="KosakoDBModel.Store.PrecioSegunTalles" Multiplicity="1" />
+    <End Role="TalleSegunProductoPrecio" Type="KosakoDBModel.Store.TalleSegunProductoPrecioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrecioSegunTalle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TalleSegunProductoPrecio">
+        <PropertyRef Name="PrecioSegunTalleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TalleTalleSegunProductoPrecio">
     <End Role="Talle" Type="KosakoDBModel.Store.Talles" Multiplicity="1" />
-    <End Role="PrecioSegunTalle" Type="KosakoDBModel.Store.PrecioSegunTalles" Multiplicity="*" />
+    <End Role="TalleSegunProductoPrecio" Type="KosakoDBModel.Store.TalleSegunProductoPrecioSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Talle">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="PrecioSegunTalle">
+      <Dependent Role="TalleSegunProductoPrecio">
         <PropertyRef Name="TalleId" />
       </Dependent>
     </ReferentialConstraint>
@@ -679,9 +703,14 @@
             <End Role="Producto" EntitySet="Productos" />
             <End Role="PrecioSegunTalle" EntitySet="PrecioSegunTalles" />
           </AssociationSet>
-          <AssociationSet Name="TallePrecioSegunTalle" Association="KosakoDBModel.TallePrecioSegunTalle">
-            <End Role="Talle" EntitySet="Talles" />
+          <EntitySet Name="TalleSegunProductoPrecioSet" EntityType="KosakoDBModel.TalleSegunProductoPrecio" />
+          <AssociationSet Name="PrecioSegunTalleTalleSegunProductoPrecio" Association="KosakoDBModel.PrecioSegunTalleTalleSegunProductoPrecio">
             <End Role="PrecioSegunTalle" EntitySet="PrecioSegunTalles" />
+            <End Role="TalleSegunProductoPrecio" EntitySet="TalleSegunProductoPrecioSet" />
+          </AssociationSet>
+          <AssociationSet Name="TalleTalleSegunProductoPrecio" Association="KosakoDBModel.TalleTalleSegunProductoPrecio">
+            <End Role="Talle" EntitySet="Talles" />
+            <End Role="TalleSegunProductoPrecio" EntitySet="TalleSegunProductoPrecioSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Producto">
@@ -990,7 +1019,7 @@
           <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Producto_Pedido" Relationship="KosakoDBModel.TalleProducto_Pedido" FromRole="Talle" ToRole="Producto_Pedido" />
           <NavigationProperty Name="Producto_Venta" Relationship="KosakoDBModel.TalleProducto_Venta" FromRole="Talle" ToRole="Producto_Venta" />
-          <NavigationProperty Name="PrecioSegunTalle" Relationship="KosakoDBModel.TallePrecioSegunTalle" FromRole="Talle" ToRole="PrecioSegunTalle" />
+          <NavigationProperty Name="TalleSegunProductoPrecio" Relationship="KosakoDBModel.TalleTalleSegunProductoPrecio" FromRole="Talle" ToRole="TalleSegunProductoPrecio" />
         </EntityType>
         <Association Name="TalleProducto_Pedido">
           <End Type="KosakoDBModel.Talle" Role="Talle" Multiplicity="1" />
@@ -1194,11 +1223,10 @@
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Precio" Type="Decimal" Nullable="false" />
+          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Producto" Relationship="KosakoDBModel.ProductoPrecioSegunTalle" FromRole="PrecioSegunTalle" ToRole="Producto" />
           <Property Name="ProductoId" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="Talle" Relationship="KosakoDBModel.TallePrecioSegunTalle" FromRole="PrecioSegunTalle" ToRole="Talle" />
-          <Property Name="TalleId" Type="Int64" Nullable="false" />
-          <Property Name="EstaEliminado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="TalleSegunProductoPrecio" Relationship="KosakoDBModel.PrecioSegunTalleTalleSegunProductoPrecio" FromRole="PrecioSegunTalle" ToRole="TalleSegunProductoPrecio" />
         </EntityType>
         <Association Name="ProductoPrecioSegunTalle">
           <End Type="KosakoDBModel.Producto" Role="Producto" Multiplicity="1" />
@@ -1212,14 +1240,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="TallePrecioSegunTalle">
+        <EntityType Name="TalleSegunProductoPrecio">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="PrecioSegunTalle" Relationship="KosakoDBModel.PrecioSegunTalleTalleSegunProductoPrecio" FromRole="TalleSegunProductoPrecio" ToRole="PrecioSegunTalle" />
+          <Property Name="PrecioSegunTalleId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Talle" Relationship="KosakoDBModel.TalleTalleSegunProductoPrecio" FromRole="TalleSegunProductoPrecio" ToRole="Talle" />
+          <Property Name="TalleId" Type="Int64" Nullable="false" />
+        </EntityType>
+        <Association Name="PrecioSegunTalleTalleSegunProductoPrecio">
+          <End Type="KosakoDBModel.PrecioSegunTalle" Role="PrecioSegunTalle" Multiplicity="1" />
+          <End Type="KosakoDBModel.TalleSegunProductoPrecio" Role="TalleSegunProductoPrecio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PrecioSegunTalle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TalleSegunProductoPrecio">
+              <PropertyRef Name="PrecioSegunTalleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TalleTalleSegunProductoPrecio">
           <End Type="KosakoDBModel.Talle" Role="Talle" Multiplicity="1" />
-          <End Type="KosakoDBModel.PrecioSegunTalle" Role="PrecioSegunTalle" Multiplicity="*" />
+          <End Type="KosakoDBModel.TalleSegunProductoPrecio" Role="TalleSegunProductoPrecio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Talle">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="PrecioSegunTalle">
+            <Dependent Role="TalleSegunProductoPrecio">
               <PropertyRef Name="TalleId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1512,9 +1562,17 @@
         <MappingFragment StoreEntitySet="PrecioSegunTalles">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Precio" ColumnName="Precio" />
-          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
-          <ScalarProperty Name="TalleId" ColumnName="TalleId" />
           <ScalarProperty Name="EstaEliminado" ColumnName="EstaEliminado" />
+          <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TalleSegunProductoPrecioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(KosakoDBModel.TalleSegunProductoPrecio)">
+        <MappingFragment StoreEntitySet="TalleSegunProductoPrecioSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PrecioSegunTalleId" ColumnName="PrecioSegunTalleId" />
+          <ScalarProperty Name="TalleId" ColumnName="TalleId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

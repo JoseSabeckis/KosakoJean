@@ -14,13 +14,19 @@ namespace AccesoDatos
     
     public partial class PrecioSegunTalle
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PrecioSegunTalle()
+        {
+            this.TalleSegunProductoPrecio = new HashSet<TalleSegunProductoPrecio>();
+        }
+    
         public long Id { get; set; }
         public decimal Precio { get; set; }
-        public long ProductoId { get; set; }
-        public long TalleId { get; set; }
         public bool EstaEliminado { get; set; }
+        public long ProductoId { get; set; }
     
         public virtual Producto Producto { get; set; }
-        public virtual Talle Talle { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TalleSegunProductoPrecio> TalleSegunProductoPrecio { get; set; }
     }
 }

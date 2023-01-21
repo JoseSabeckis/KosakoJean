@@ -18,7 +18,6 @@ namespace Servicios.Core.PrecioSegunTalle
                 {
                     Precio = Dto.Precio,
                     ProductoId = Dto.ProductoId,
-                    TalleId = Dto.TalleId,
                 };
 
                 context.PrecioSegunTalles.Add(nuevo);
@@ -52,7 +51,6 @@ namespace Servicios.Core.PrecioSegunTalle
 
                 producto.Precio = Dto.Precio;
                 producto.ProductoId = Dto.ProductoId;
-                producto.TalleId = Dto.TalleId;
 
                 context.SaveChanges();
 
@@ -70,7 +68,6 @@ namespace Servicios.Core.PrecioSegunTalle
                         Id = x.Id,
                         Precio = x.Precio,
                         ProductoId = x.ProductoId,
-                        TalleId = x.TalleId,
                         EstaEliminado = x.EstaEliminado
 
                     }).FirstOrDefault(x => x.Id == precioSegunTalleId && x.EstaEliminado == false);
@@ -88,7 +85,6 @@ namespace Servicios.Core.PrecioSegunTalle
                         Id = x.Id,
                         Precio = x.Precio,
                         ProductoId = x.ProductoId,
-                        TalleId = x.TalleId,
                         EstaEliminado = x.EstaEliminado
 
                     }).ToList();
@@ -105,7 +101,7 @@ namespace Servicios.Core.PrecioSegunTalle
             {
                 foreach (var item in BuscarTodos())
                 {
-                    if (item.ProductoId == productoId && item.TalleId == talleId)
+                    if (item.ProductoId == productoId)
                     {
                         return true;
                     }
@@ -120,7 +116,7 @@ namespace Servicios.Core.PrecioSegunTalle
             using (var context = new KosakoDBEntities())
             {
 
-                var precio = context.PrecioSegunTalles.FirstOrDefault(x => x.ProductoId == productoId && x.TalleId == talleId && x.EstaEliminado == false);
+                var precio = context.PrecioSegunTalles.FirstOrDefault(x => x.ProductoId == productoId && x.EstaEliminado == false);
 
                 return precio.Precio;
 

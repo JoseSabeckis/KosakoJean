@@ -328,6 +328,12 @@ namespace Presentacion.Core.Cobro
         {
             btnAgregarAlaGrilla.Select();
             EscanerDesabilitado();
+
+            if (txtCodigoBarra.Text == string.Empty && txtProducto.Text == string.Empty)
+            {
+                txtCodigoBarra.Focus();
+                EscanerHabilitado();
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

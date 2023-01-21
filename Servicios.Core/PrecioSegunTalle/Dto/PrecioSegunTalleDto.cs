@@ -14,7 +14,7 @@ namespace Servicios.Core.PrecioSegunTalle.Dto
 
         public long ProductoId { get; set; }
 
-        public long TalleId { get; set; }
+        //public long TalleId { get; set; }
 
         public bool EstaEliminado { get; set; }
 

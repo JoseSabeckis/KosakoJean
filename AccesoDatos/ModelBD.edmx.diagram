@@ -42,7 +42,9 @@
         <AssociationConnector Association="KosakoDBModel.ClienteDetalleCaja" />
         <EntityTypeShape EntityType="KosakoDBModel.PrecioSegunTalle" Width="1.75" PointX="0.5" PointY="8.5" FillColor="Yellow" />
         <AssociationConnector Association="KosakoDBModel.ProductoPrecioSegunTalle" />
-        <AssociationConnector Association="KosakoDBModel.TallePrecioSegunTalle" />
+        <EntityTypeShape EntityType="KosakoDBModel.TalleSegunProductoPrecio" Width="2.125" PointX="2.75" PointY="10.25" FillColor="255, 224, 192" />
+        <AssociationConnector Association="KosakoDBModel.PrecioSegunTalleTalleSegunProductoPrecio" />
+        <AssociationConnector Association="KosakoDBModel.TalleTalleSegunProductoPrecio" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
