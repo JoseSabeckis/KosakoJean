@@ -65,24 +65,46 @@ namespace Presentacion.Core.Producto
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            btnActualizar.Enabled = false;
+            InabilitarButton(btnActualizar);
+
             Thread.Sleep(2000);
 
             pnlPrincipal.Controls.Clear();
             CrearControles(string.Empty);
-            btnActualizar.Enabled = true;
+
+            InabilitarButton(btnActualizar);
         }
 
         private void btnNuevoProducto_Click(object sender, EventArgs e)
         {
-            var nuevo = new Producto_Abm(Clases.TipoOperacion.Nuevo);
+            InabilitarButton(btnNuevoProducto);
+
+            var nuevo = new Producto_Abm(TipoOperacion.Nuevo);
             nuevo.ShowDialog();
+
+            InabilitarButton(btnNuevoProducto);
+        }
+
+        public void InabilitarButton(Button btn)
+        {
+            if (btn.Enabled)
+            {
+                btn.Enabled = false;
+            }
+            else
+            {
+                btn.Enabled = true;
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnBuscar);
+
             pnlPrincipal.Controls.Clear();
             CrearControles(txtBusqueda.Text);
+
+            InabilitarButton(btnBuscar);
         }
 
         private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)
@@ -95,6 +117,8 @@ namespace Presentacion.Core.Producto
 
         private void btnCodBarra_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnCodBarra);
+
             if (productoServicio.Buscar(string.Empty).Count() != 0)
             {
                 var productos = productoServicio.Buscar(string.Empty);
@@ -121,18 +145,26 @@ namespace Presentacion.Core.Producto
                 form.Show();
 
             }
+
+            InabilitarButton(btnCodBarra);
         }
 
         private void btnConPocoStock_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnConPocoStock);
             var stock = new PocoStock();
             stock.ShowDialog();
+            InabilitarButton(btnConPocoStock);
         }
 
         private void btnListaProductos_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnListaProductos);
+
             var lista = new FormListaProductos();
-            lista.Show();
+            lista.ShowDialog();
+
+            InabilitarButton(btnListaProductos);
         }
     }
 }

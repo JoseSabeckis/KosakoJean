@@ -55,7 +55,8 @@ namespace Presentacion.Core.Unidad
 
             foreach (var item in respuesta)
             {
-                txtProductos.Text += $"{respuesta.FirstOrDefault(x => x.Id == item.Id).Descripcion} |";
+                var product = producto.ObtenerPorId(item.ProductoId);
+                txtProductos.Text += $"{product.Descripcion} {product.Colegio} |";
                 lblIdPedido.Text = $"{item.PedidoId}";
                 estado = item.Estado;
             }

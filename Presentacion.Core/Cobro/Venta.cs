@@ -160,10 +160,26 @@ namespace Presentacion.Core.Cobro
             Close();
         }
 
+        public void InabilitarButton(Button btn)
+        {
+            if (btn.Enabled)
+            {
+                btn.Enabled = false;
+            }
+            else
+            {
+                btn.Enabled = true;
+            }
+        }
+
         private void btnSeleccionProducto_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnSeleccionProducto);
+
             var seleccionar = new ElegirProducto();
             seleccionar.ShowDialog();
+
+            InabilitarButton(btnSeleccionProducto);
 
             if (seleccionar._codigo != 0)
             {
@@ -422,6 +438,8 @@ namespace Presentacion.Core.Cobro
                 return;
             }
 
+            InabilitarButton(btnCobrar);
+
             TraerNumeroOperacion();
 
             if (dgvGrilla.RowCount > 0)
@@ -585,7 +603,7 @@ namespace Presentacion.Core.Cobro
 
                         foreach (var item in ListaVenta)
                         {
-                            var producto = productoServicio.ObtenerPorId(item.Id);
+                            //var producto = productoServicio.ObtenerPorId(item.Id);
 
                             var producto_venta = new Producto_Venta_Dto
                             {
@@ -632,6 +650,8 @@ namespace Presentacion.Core.Cobro
             nudTotalVenta.Value = 0;
             nudPagaron.Value = 0;
             txtVuelto.Text = "";
+
+            InabilitarButton(btnCobrar);
         }
 
         public void TipoPago(DetalleCajaDto detalle)
@@ -736,8 +756,12 @@ namespace Presentacion.Core.Cobro
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnCliente);
+
             var seleccionar = new ElegirCliente();
             seleccionar.ShowDialog();
+
+            InabilitarButton(btnCliente);
 
             if (seleccionar._codigo != 0)
             {
@@ -792,8 +816,12 @@ namespace Presentacion.Core.Cobro
 
         private void btnNewCliente_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnNewCliente);
+
             var cliente = new Cliente_Abm(TipoOperacion.Nuevo);
             cliente.ShowDialog();
+
+            InabilitarButton(btnNewCliente);
 
             txtCodigoBarra.Focus();
             EscanerHabilitado();
@@ -861,8 +889,12 @@ namespace Presentacion.Core.Cobro
 
         private void btnNuevoTalle_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnNuevoTalle);
+
             var verTalle = new Talle_Abm(TipoOperacion.Nuevo);
             verTalle.ShowDialog();
+
+            InabilitarButton(btnNuevoTalle);
 
             CargarTalle();
             txtCodigoBarra.Focus();

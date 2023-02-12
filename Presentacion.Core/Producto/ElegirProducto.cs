@@ -105,8 +105,22 @@ namespace Presentacion.Core.Producto
             Close();
         }
 
+        public void InabilitarButton(Button btn)
+        {
+            if (btn.Enabled)
+            {
+                btn.Enabled = false;
+            }
+            else
+            {
+                btn.Enabled = true;
+            }
+        }
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnBuscar);
+
             if (!string.IsNullOrEmpty(txtBusqueda.Text))
             {
                 dgvGrilla.DataSource = productoServicio.Buscar(txtBusqueda.Text);
@@ -116,6 +130,8 @@ namespace Presentacion.Core.Producto
             {
                 MessageBox.Show("Campo Vacio...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            InabilitarButton(btnBuscar);
         }
 
         private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)

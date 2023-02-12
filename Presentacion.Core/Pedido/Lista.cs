@@ -72,13 +72,28 @@ namespace Presentacion.Core.Pedido
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+            InabilitarButton(btnBuscar);
+
              panelGrilla.Controls.Clear();
 
              var cuenta = pedidoServicio.BuscarEnInicio(txtBusqueda.Text);
 
              CrearControles(cuenta);
 
+            InabilitarButton(btnBuscar);
+
+        }
+
+        public void InabilitarButton(Button btn)
+        {
+            if (btn.Enabled)
+            {
+                btn.Enabled = false;
+            }
+            else
+            {
+                btn.Enabled = true;
+            }
         }
 
         private void txtBusqueda_KeyPress(object sender, KeyPressEventArgs e)

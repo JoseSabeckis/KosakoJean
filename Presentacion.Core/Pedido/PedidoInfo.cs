@@ -671,8 +671,22 @@ namespace Presentacion.Core.Pedido
             }
         }
 
+        public void InabilitarButton(Button btn)
+        {
+            if (btn.Enabled)
+            {
+                btn.Enabled = false;
+            }
+            else
+            {
+                btn.Enabled = true;
+            }
+        }
+
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnAgregarProductos);
+
             var pedido = new AgregarProductos(PedidoId, true);
             pedido.ShowDialog();
 
@@ -687,6 +701,7 @@ namespace Presentacion.Core.Pedido
                 VerSiHayProductos();
             }
 
+            InabilitarButton(btnAgregarProductos);
         }
 
         private void btnEliminarPedidoSeleccionado_Click(object sender, EventArgs e)

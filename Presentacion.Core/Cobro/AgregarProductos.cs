@@ -113,10 +113,26 @@ namespace Presentacion.Core.Cobro
             Close();
         }
 
+        public void InabilitarButton(Button btn)
+        {
+            if (btn.Enabled)
+            {
+                btn.Enabled = false;
+            }
+            else
+            {
+                btn.Enabled = true;
+            }
+        }
+
         private void btnSeleccionProducto_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnSeleccionProducto);
+
             var seleccionar = new ElegirProducto();
             seleccionar.ShowDialog();
+
+            InabilitarButton(btnSeleccionProducto);
 
             if (seleccionar._codigo != 0)
             {

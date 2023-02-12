@@ -97,6 +97,18 @@ namespace KosakoJean
             lblRazonSocial.Text = NegocioLogeado.RazonSocial;
         }
 
+        public void InabilitarButton(Button btn)
+        {
+            if (btn.Enabled)
+            {
+                btn.Enabled = false;
+            }
+            else
+            {
+                btn.Enabled = true;
+            }
+        }
+
         private void verColegiosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var colegio = new Colegio_Abm(Presentacion.Clases.TipoOperacion.Nuevo);
@@ -129,8 +141,12 @@ namespace KosakoJean
 
         private void btnCajas_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnCajas);
+
             var caja = new Presentacion.Core.Caja.Caja();
             caja.ShowDialog();
+
+            InabilitarButton(btnCajas);
         }
 
         private void verCajasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -141,10 +157,14 @@ namespace KosakoJean
 
         private void btnAbrirCaja_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnAbrirCaja);
+
             var abrir = new AbrirCaja();
             abrir.ShowDialog();
 
             ValidarCajas();
+
+            InabilitarButton(btnAbrirCaja);
         }
 
         public void ValidarCajas()
@@ -167,10 +187,14 @@ namespace KosakoJean
 
         private void btnCerrarCaja_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnCerrarCaja);
+
             var cerrar = new CerrarCaja();
             cerrar.ShowDialog();
 
             ValidarCajas();
+
+            InabilitarButton(btnCerrarCaja);
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -422,6 +446,8 @@ namespace KosakoJean
                 return;
             }
 
+            InabilitarButton(btnCobrar2);
+
             if (_cajaServicio.BuscarCajaAbiertaBool())
             {
                 var cobro = new Presentacion.Core.Cobro.Venta();
@@ -431,10 +457,14 @@ namespace KosakoJean
             {
                 MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            InabilitarButton(btnCobrar2);
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnPedidos);
+
             if (_cajaServicio.BuscarCajaAbiertaBool())
             {
                 var lista = new Lista();
@@ -444,19 +474,27 @@ namespace KosakoJean
             {
                 MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            InabilitarButton(btnPedidos);
         }
 
         private void btnListoParaEntregar_Click(object sender, EventArgs e)
         {
+
             if (_cajaServicio.BuscarCajaAbiertaBool())
             {
+                InabilitarButton(btnListoParaEntregar);
+
                 var pedidos = new PedidosEsperando();
-                pedidos.Show();
+                pedidos.ShowDialog();
+                
             }
             else
             {
                 MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            InabilitarButton(btnListoParaEntregar);
         }
 
         private void nuevoColegioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -479,8 +517,12 @@ namespace KosakoJean
 
         private void btnTerminados_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnTerminados);
+
             var terminado = new PedidosTerminados();
             terminado.ShowDialog();
+
+            InabilitarButton(btnTerminados);
         }
 
         private void nuevoClienteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -497,8 +539,10 @@ namespace KosakoJean
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnClientes);
             var cliente = new VerClientes();
             cliente.ShowDialog();
+            InabilitarButton(btnClientes);
         }
 
         private void nuevoTalleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -515,26 +559,40 @@ namespace KosakoJean
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnProductos);
             var lista = new ListaProductos();
             lista.ShowDialog();
+            InabilitarButton(btnProductos);
         }
 
         private void btnPrendasEntregadas_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnPrendasEntregadas);
+
             var prenda = new GuardadoConsumidorFinal(Proceso.Retirado);
             prenda.ShowDialog();
+
+            InabilitarButton(btnPrendasEntregadas);
         }
 
         private void btnPrendaGuardadas_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnPrendaGuardadas);
+
             var prenda = new GuardadoConsumidorFinal(Proceso.Guardado);
             prenda.ShowDialog();
+
+            InabilitarButton(btnPrendaGuardadas);
         }
 
         private void btn_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btn);
+
             var fabricar = new PrendaFabricar();
             fabricar.ShowDialog();
+
+            InabilitarButton(btn);
         }
 
         private void verNegocioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -547,6 +605,8 @@ namespace KosakoJean
 
         private void btnArreglos_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnArreglos);
+
             if (_cajaServicio.BuscarCajaAbiertaBool())
             {
                 var arreglos = new ListaArreglos();
@@ -556,6 +616,8 @@ namespace KosakoJean
             {
                 MessageBox.Show("La Caja No Se Encuentra Abierta...", "Caja", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            InabilitarButton(btnArreglos);
         }
 
         private void configurarImagenesToolStripMenuItem_Click(object sender, EventArgs e)

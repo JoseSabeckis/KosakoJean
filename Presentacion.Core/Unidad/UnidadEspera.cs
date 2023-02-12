@@ -66,7 +66,9 @@ namespace Presentacion.Core.Unidad
 
             foreach (var item in Lista)
             {
-                txtProductos.Text += $"{item.ProductoDescripcion} | ";
+                var product = producto.ObtenerPorId(item.ProductoId);
+
+                txtProductos.Text += $"{product.Descripcion} {product.Colegio} | ";
                 lblIdPedido.Text = $"{item.PedidoId}";
             }
 
