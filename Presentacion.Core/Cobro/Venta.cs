@@ -113,7 +113,7 @@ namespace Presentacion.Core.Cobro
 
         public void EscanerDesabilitado()
         {
-            txtCodigoBarra.BackColor = System.Drawing.Color.Silver;
+            txtCodigoBarra.BackColor = System.Drawing.Color.Red;
         }
 
         private void CargarImageEnGeneral()
