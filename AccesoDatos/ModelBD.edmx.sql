@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/20/2023 23:34:38
+-- Date Created: 02/19/2023 12:28:39
 -- Generated from EDMX file: C:\Users\Pepe\source\repos\JoseSabeckis\KosakoJean\AccesoDatos\ModelBD.edmx
 -- --------------------------------------------------
 
@@ -68,8 +68,11 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ProductoPrecioSegunTalle]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PrecioSegunTalles] DROP CONSTRAINT [FK_ProductoPrecioSegunTalle];
 GO
-IF OBJECT_ID(N'[dbo].[FK_TallePrecioSegunTalle]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PrecioSegunTalles] DROP CONSTRAINT [FK_TallePrecioSegunTalle];
+IF OBJECT_ID(N'[dbo].[FK_PrecioSegunTalleTalleSegunProductoPrecio]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TalleSegunProductoPrecioSet] DROP CONSTRAINT [FK_PrecioSegunTalleTalleSegunProductoPrecio];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TalleTalleSegunProductoPrecio]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[TalleSegunProductoPrecioSet] DROP CONSTRAINT [FK_TalleTalleSegunProductoPrecio];
 GO
 
 -- --------------------------------------------------
@@ -135,6 +138,9 @@ IF OBJECT_ID(N'[dbo].[Configuraciones]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[PrecioSegunTalles]', 'U') IS NOT NULL
     DROP TABLE [dbo].[PrecioSegunTalles];
+GO
+IF OBJECT_ID(N'[dbo].[TalleSegunProductoPrecioSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TalleSegunProductoPrecioSet];
 GO
 
 -- --------------------------------------------------

@@ -276,7 +276,7 @@ namespace Presentacion.Core.Cobro
                 {
                     if (item.Descripcion == producto.Descripcion && item.Colegio == producto.Colegio)
                     {
-                        precio += item.Cantidad * item.Precio;
+                        precio += (item.Precio * item.Cantidad);
                     }
                 }
             }
