@@ -255,6 +255,8 @@ namespace Presentacion.Core.Cobro
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnEliminar);
+
             if (dgvGrilla.RowCount > 0)
             {
                 var lista = ListaVenta.FirstOrDefault(x => x.Descripcion == _descripcionProducto && x.Colegio == _colegio && x.Talle == _talle && x.Precio == _precio);
@@ -279,6 +281,8 @@ namespace Presentacion.Core.Cobro
 #pragma warning restore CS0436 // El tipo 'Negativo' de 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Negativo.cs' está en conflicto con el tipo importado 'Negativo' de 'Presentacion, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'. Se usará el tipo definido en 'C:\Users\Pepe\Source\Repos\JoseSabeckis\KosakoJean\Presentacion.Core\Mensaje\Negativo.cs'.
                 error.ShowDialog();
             }
+
+            InabilitarButton(btnEliminar);
         }
 
         public void Total()
@@ -306,6 +310,8 @@ namespace Presentacion.Core.Cobro
 
         private void btnAgregarAlaGrilla_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnAgregarAlaGrilla);
+
             if (!string.IsNullOrEmpty(txtProducto.Text))
             {
                 var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text && x.Precio == (double)nudPrecio.Value && x.Colegio == txtColegio.Text);
@@ -354,6 +360,8 @@ namespace Presentacion.Core.Cobro
             {
                 MessageBox.Show("Cargue un Producto Antes", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            InabilitarButton(btnAgregarAlaGrilla);
         }
 
         public bool VerCaja()

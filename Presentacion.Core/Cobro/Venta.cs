@@ -213,6 +213,8 @@ namespace Presentacion.Core.Cobro
 
         private void btnAgregarAlaGrilla_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnAgregarAlaGrilla);
+
             if (!string.IsNullOrEmpty(txtProducto.Text))
             {
                 var prueba = ListaVenta.FirstOrDefault(x => x.Descripcion == txtProducto.Text && x.Talle == cmbTalle.Text && x.Precio == (double)nudPrecio.Value && x.Colegio == txtColegio.Text);
@@ -262,6 +264,7 @@ namespace Presentacion.Core.Cobro
             }
 
             //btnSeleccionProducto.Select();
+            InabilitarButton(btnAgregarAlaGrilla);
             txtCodigoBarra.Focus();
             EscanerHabilitado();
         }
@@ -668,6 +671,8 @@ namespace Presentacion.Core.Cobro
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            InabilitarButton(btnEliminar);
+
             if (dgvGrilla.RowCount > 0)
             {
                 var lista = ListaVenta.FirstOrDefault(x => x.Descripcion == _descripcionProducto && x.Colegio == _colegio && x.Talle == _talle && x.Precio == _precio);
@@ -693,6 +698,8 @@ namespace Presentacion.Core.Cobro
                 error.ShowDialog();
                 //MessageBox.Show("No Hay Nada Para Eliminar...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            InabilitarButton(btnEliminar);
 
             txtCodigoBarra.Focus();
             EscanerHabilitado();
