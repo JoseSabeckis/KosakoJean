@@ -146,6 +146,8 @@ namespace Presentacion.Core.Caja
             var historial = new Historia(_Id);
             historial.ShowDialog();
 
+            VerCaja();
+
         }
 
         private void dgvGrilla_RowEnter(object sender, DataGridViewCellEventArgs e)

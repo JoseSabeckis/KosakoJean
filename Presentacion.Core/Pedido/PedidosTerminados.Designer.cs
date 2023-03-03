@@ -65,7 +65,7 @@
             this.btnEliminarPedidos.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnEliminarPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarPedidos.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarPedidos.Location = new System.Drawing.Point(381, 0);
+            this.btnEliminarPedidos.Location = new System.Drawing.Point(351, 0);
             this.btnEliminarPedidos.Name = "btnEliminarPedidos";
             this.btnEliminarPedidos.Size = new System.Drawing.Size(92, 90);
             this.btnEliminarPedidos.TabIndex = 8;
@@ -80,9 +80,9 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtBusqueda);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(473, 0);
+            this.panel2.Location = new System.Drawing.Point(443, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(637, 90);
+            this.panel2.Size = new System.Drawing.Size(667, 90);
             this.panel2.TabIndex = 7;
             // 
             // btnBuscar
@@ -91,7 +91,7 @@
             this.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(362, 28);
+            this.btnBuscar.Location = new System.Drawing.Point(392, 28);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(98, 29);
             this.btnBuscar.TabIndex = 6;
@@ -117,7 +117,7 @@
             this.txtBusqueda.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBusqueda.Location = new System.Drawing.Point(94, 29);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(262, 29);
+            this.txtBusqueda.Size = new System.Drawing.Size(292, 29);
             this.txtBusqueda.TabIndex = 5;
             this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBusqueda_KeyPress);
             // 

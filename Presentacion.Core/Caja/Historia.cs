@@ -152,6 +152,8 @@ namespace Presentacion.Core.Caja
 
                 cajaServicio.RestarDineroACaja(_CajaId, dinero);
 
+                _detalleCajaServicio.EliminarUnaVenta(_DetalleId);
+
                 VerificarSiHayCobros();
 
                 CargarGrilla();
