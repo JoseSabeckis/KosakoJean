@@ -36,6 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtProductos = new System.Windows.Forms.TextBox();
             this.lblFechaHastaRetiro = new System.Windows.Forms.Label();
+            this.BtnVolverAEnEspera = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,12 +130,24 @@
             this.lblFechaHastaRetiro.TabIndex = 12;
             this.lblFechaHastaRetiro.Text = "-";
             // 
+            // BtnVolverAEnEspera
+            // 
+            this.BtnVolverAEnEspera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVolverAEnEspera.Location = new System.Drawing.Point(160, 41);
+            this.BtnVolverAEnEspera.Name = "BtnVolverAEnEspera";
+            this.BtnVolverAEnEspera.Size = new System.Drawing.Size(66, 40);
+            this.BtnVolverAEnEspera.TabIndex = 20;
+            this.BtnVolverAEnEspera.Text = "Volver a Pendiente";
+            this.BtnVolverAEnEspera.UseVisualStyleBackColor = true;
+            this.BtnVolverAEnEspera.Click += new System.EventHandler(this.BtnVolverAEnEspera_Click);
+            // 
             // UnidadRetiro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Controls.Add(this.BtnVolverAEnEspera);
             this.Controls.Add(this.lblFechaHastaRetiro);
             this.Controls.Add(this.txtProductos);
             this.Controls.Add(this.panel1);
@@ -161,5 +174,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtProductos;
         private System.Windows.Forms.Label lblFechaHastaRetiro;
+        private System.Windows.Forms.Button BtnVolverAEnEspera;
     }
 }

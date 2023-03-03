@@ -660,6 +660,20 @@ namespace Servicios.Core.Pedido
             }
         }
 
+        public void CambiarProcesoEnEspera(long id)
+        {
+            using (var context = new KosakoDBEntities())
+            {
+
+                var pedido = context.Pedidos.FirstOrDefault(x => x.Id == id);
+
+                pedido.Proceso = Proceso.InicioPedido;
+
+                context.SaveChanges();
+
+            }
+        }
+
         public void CambiarProcesoGuardado(long id)
         {
             using (var context = new KosakoDBEntities())

@@ -61,12 +61,34 @@ namespace Presentacion.Core.Unidad
                 estado = item.Estado;
             }
 
+            if (Pedido.Proceso != AccesoDatos.Proceso.EsperandoRetiro)
+            {
+                BtnVolverAEnEspera.Visible = false;
+            }
+
         }
 
         private void btnVista_Click(object sender, EventArgs e)
         {
             var pedido = new PedidoInfo(Pedido.Id, estado);
             pedido.ShowDialog();
+
+            if (pedido.Bandera())
+            {
+                BtnVolverAEnEspera.Visible = false;
+            }
+        }
+
+        private void BtnVolverAEnEspera_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro de volver a este pedido a Pendiente?","Pregunta",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                pedidoServicio.CambiarProcesoEnEspera(Pedido.Id);
+
+                BtnVolverAEnEspera.Visible = false;
+
+            }
         }
     }
 }

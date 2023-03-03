@@ -61,6 +61,8 @@ namespace Servicios.Core.Pedido
 
         void CambiarProcesoTerminado(long id);
 
+        void CambiarProcesoEnEspera(long id);
+
         IEnumerable<PedidoDto> Buscar30Dias();
 
         IEnumerable<PedidoDto> BuscarPedidosNuevos();

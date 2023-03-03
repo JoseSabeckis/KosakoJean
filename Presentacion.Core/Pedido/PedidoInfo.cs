@@ -49,6 +49,7 @@ namespace Presentacion.Core.Pedido
         long PedidoId;
         long EntidadParaBorrar;
         bool EstaPorEliminar = false;
+        bool _Bandera = false;
         PedidoDto _PedidoDto;
 
         double _Debe;
@@ -407,6 +408,8 @@ namespace Presentacion.Core.Pedido
                     btnAgregarProductos.Visible = false;
                     btnVolverPedidoNoRetirado.Visible = true;
                     btnEliminarPedidoSeleccionado.Visible = false;
+
+                    _Bandera = true;
                 }
             }
             else
@@ -414,6 +417,11 @@ namespace Presentacion.Core.Pedido
                 MessageBox.Show("la Caja se encuentra cerrada", "Cerrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        public bool Bandera()
+        {
+            return _Bandera;
         }
 
         public void TipoPago(DetalleCajaDto detalle)
